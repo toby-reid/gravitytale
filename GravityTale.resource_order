@@ -207,6 +207,7 @@
     {"name":"spr_coolDude_moving","order":8,"path":"sprites/spr_coolDude_moving/spr_coolDude_moving.yy",},
     {"name":"spr_soos_battle","order":9,"path":"sprites/spr_soos_battle/spr_soos_battle.yy",},
     {"name":"spr_soos_d","order":10,"path":"sprites/spr_soos_d/spr_soos_d.yy",},
+    {"name":"obj_wendyne_ow_21","order":7,"path":"objects/obj_wendyne_ow_21/obj_wendyne_ow_21.yy",},
     {"name":"spr_greasys","order":17,"path":"sprites/spr_greasys/spr_greasys.yy",},
     {"name":"spr_grapplingHook","order":18,"path":"sprites/spr_grapplingHook/spr_grapplingHook.yy",},
     {"name":"obj_enemy_cav_ghost_7","order":8,"path":"objects/obj_enemy_cav_ghost_7/obj_enemy_cav_ghost_7.yy",},

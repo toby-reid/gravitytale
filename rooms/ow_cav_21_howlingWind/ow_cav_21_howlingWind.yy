@@ -15,6 +15,7 @@
     {"name":"inst_229100FB","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
     {"name":"inst_5549B115","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
     {"name":"inst_1CD05926","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
+    {"name":"inst_77744766","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -33,6 +34,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_229100FB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collide","path":"objects/obj_collide/obj_collide.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":3.0,"x":280.0,"y":740.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5549B115","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collide","path":"objects/obj_collide/obj_collide.yy",},"properties":[],"rotation":0.0,"scaleX":14.0,"scaleY":1.0,"x":0.0,"y":800.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1CD05926","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_save","path":"objects/obj_save/obj_save.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":760.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_77744766","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wendyne_ow_21","path":"objects/obj_wendyne_ow_21/obj_wendyne_ow_21.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":142.0,"y":130.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_FAB2D1D","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_cav_wendyMtn","path":"sprites/spr_cav_wendyMtn/spr_cav_wendyMtn.yy",},"x":0.0,"y":0.0,},
