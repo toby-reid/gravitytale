@@ -14,8 +14,8 @@
     {"name":"inst_6AE79D4","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
     {"name":"inst_229100FB","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
     {"name":"inst_5549B115","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
-    {"name":"inst_1CD05926","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
     {"name":"inst_77744766","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
+    {"name":"inst_1CD05926","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -71,7 +71,7 @@
   },
   "sequenceId": null,
   "views": [
-    {"hborder":160,"hport":480,"hspeed":-1,"hview":240,"inherit":false,"objectId":{"name":"obj_dipper","path":"objects/obj_dipper/obj_dipper.yy",},"vborder":120,"visible":true,"vspeed":-1,"wport":640,"wview":320,"xport":0,"xview":0,"yport":0,"yview":0,},
+    {"hborder":160,"hport":480,"hspeed":-1,"hview":240,"inherit":false,"objectId":{"name":"obj_dipper","path":"objects/obj_dipper/obj_dipper.yy",},"vborder":120,"visible":true,"vspeed":-1,"wport":640,"wview":320,"xport":0,"xview":0,"yport":0,"yview":80,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},

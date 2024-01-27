@@ -25,6 +25,7 @@
     {"name":"Heads","order":1,"path":"folders/Sprites/Characters/Ford/Battle/Heads.yy",},
     {"name":"Mabel","order":8,"path":"folders/Sprites/Characters/Mabel.yy",},
     {"name":"Battle","order":5,"path":"folders/Sprites/Characters/Pacifica/Battle.yy",},
+    {"name":"Heads","order":11,"path":"folders/Sprites/Characters/Wendyne/Heads.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"ow_fst_8_pz4","order":10,"path":"rooms/ow_fst_8_pz4/ow_fst_8_pz4.yy",},
@@ -497,6 +498,7 @@
     {"name":"fnt_sans_bubble","order":7,"path":"fonts/fnt_sans_bubble/fnt_sans_bubble.yy",},
     {"name":"fnt_sans_gui","order":8,"path":"fonts/fnt_sans_gui/fnt_sans_gui.yy",},
     {"name":"spr_enemy_sheriff","order":11,"path":"sprites/spr_enemy_sheriff/spr_enemy_sheriff.yy",},
+    {"name":"spr_wendyne_helmet","order":12,"path":"sprites/spr_wendyne_helmet/spr_wendyne_helmet.yy",},
     {"name":"spr_atk_dancakes","order":10,"path":"sprites/spr_atk_dancakes/spr_atk_dancakes.yy",},
     {"name":"obj_btl_axeBarrage","order":3,"path":"objects/obj_btl_axeBarrage/obj_btl_axeBarrage.yy",},
     {"name":"obj_battleAttack","order":3,"path":"objects/obj_battleAttack/obj_battleAttack.yy",},
