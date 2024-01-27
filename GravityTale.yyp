@@ -966,7 +966,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
-    {"roomId":{"name":"rm_fst_gravityMalls","path":"rooms/rm_fst_gravityMalls/rm_fst_gravityMalls.yy",},},
+    {"roomId":{"name":"rm_cav_18_multiwares","path":"rooms/rm_cav_18_multiwares/rm_cav_18_multiwares.yy",},},
     {"roomId":{"name":"ow_cav_18_pz7","path":"rooms/ow_cav_18_pz7/ow_cav_18_pz7.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
@@ -1047,6 +1047,7 @@
         {"roomId":{"name":"ow_fst_19_determinedNews","path":"rooms/ow_fst_19_determinedNews/ow_fst_19_determinedNews.yy",},},
         {"roomId":{"name":"ow_fst_19_greasys","path":"rooms/ow_fst_19_greasys/ow_fst_19_greasys.yy",},},
         {"roomId":{"name":"ow_fst_20_town_2","path":"rooms/ow_fst_20_town_2/ow_fst_20_town_2.yy",},},
+        {"roomId":{"name":"rm_fst_gravityMalls","path":"rooms/rm_fst_gravityMalls/rm_fst_gravityMalls.yy",},},
         {"roomId":{"name":"ow_fst_21_ford","path":"rooms/ow_fst_21_ford/ow_fst_21_ford.yy",},},
         {"roomId":{"name":"btl_fst_21_ford","path":"rooms/btl_fst_21_ford/btl_fst_21_ford.yy",},},
         {"roomId":{"name":"ow_fst_22_caves","path":"rooms/ow_fst_22_caves/ow_fst_22_caves.yy",},},
@@ -1079,7 +1080,6 @@
     {"roomId":{"name":"ow_cav_7_manCave","path":"rooms/ow_cav_7_manCave/ow_cav_7_manCave.yy",},},
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_cav_16_crypt","path":"rooms/ow_cav_16_crypt/ow_cav_16_crypt.yy",},},
-    {"roomId":{"name":"rm_cav_18_multiwares","path":"rooms/rm_cav_18_multiwares/rm_cav_18_multiwares.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

@@ -8,7 +8,7 @@ msg = [
 	"Greetings, child, and #welcome to my lair.",
 	"Hm.&Child, where are your #wares with no wear?&Bring those forth for #purchasing.",
 	"A fine deal indeed.&Please, stay as long #as you'd like.",
-	"And what is it you'd #like to discuss?",
+	"And what is#it you'd#like to#discuss?",
 	[ "Yes, I am what you'd call the Multibear.",
 		"We are many, yet we #are one.",
 		"I wish I could tell #you more, but I'm not #truly certain myself.",
@@ -43,3 +43,7 @@ msg = [
 text[0] = msg[0];
 if(!variable_global_exists("karen")) global.karen = false;//set to 'true' if Karen *can* be encountered.
 armor = 0;
+if(global.karen) {
+	buy = [buy[0],buy[1],buy[2]];
+	talk = [talk[0],talk[1],talk[2]];
+}
