@@ -1,0 +1,1 @@
+window_set_caption("GravityTale - Once Upon a Time...")

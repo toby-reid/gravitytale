@@ -1,0 +1,9 @@
+text = [
+	"WELCOME TO THE FINAL #PUZZLE, CHILD!",
+	"THIS SHALL BE THE MOST #DIFFICULT PUZZLE YOU WILL #FACE IN YOUR ADVENTURE!",
+	"OR SOMETHING LIKE THAT...&I'M NOT ENTIRELY CERTAIN...",
+	"IT IS AN F TO REMEMBER MY #NAME, #@AC9E65STANFORD FILBRICK PINES@FFFFFF,",
+	"NOT TO \"PAY RESPECTS\", #AS THE KIDS SAY.",
+	"GOOD LUCK."
+]
+font = [fnt_papyrus_gui,fnt_papyrus_gui,fnt_papyrus_gui,fnt_papyrus_gui,fnt_papyrus_gui,fnt_papyrus_gui]

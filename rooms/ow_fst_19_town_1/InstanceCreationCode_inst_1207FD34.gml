@@ -1,0 +1,1 @@
+text = ["(You tried to move beyond it, #but some sort of force repels #you.)"]

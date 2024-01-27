@@ -1,0 +1,1 @@
+text = ["(It's a rotary telephone.&(It was probably last replaced #in the 1950s...)","(This reporter may be a big #phoney...)"]

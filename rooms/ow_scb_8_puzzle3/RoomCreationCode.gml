@@ -1,0 +1,1 @@
+global.battleTimer = 120

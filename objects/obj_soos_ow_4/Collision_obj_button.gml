@@ -1,0 +1,1 @@
+if other.alarm[0] == -1 other.alarm[0] = 10

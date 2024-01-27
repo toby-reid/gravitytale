@@ -1,0 +1,1 @@
+/// @description Can't destroy self if this is greater than -1

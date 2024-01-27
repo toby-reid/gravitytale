@@ -1,0 +1,1 @@
+text = ["(The writing is in a language #you don't understand.)"]

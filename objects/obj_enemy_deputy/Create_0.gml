@@ -1,0 +1,22 @@
+name = "Deputy Durland"
+act = ["Check","Dismiss","Discuss","Desist"]
+check = "Best friends with the Sheriff.&Admires his every action."
+spare = false
+run = false
+hp = 15
+maxhp = hp
+at = 4
+lv = true//set true if killing person increases LV
+sb = 16
+zone = area.unknown
+timer = 0
+create = true
+bubble = noone
+bubbleText = "WOOOOOO!\nWE'RE GONNA GETCHA, CITY BOOOOOY!"
+deathx = 0
+stage = 0
+
+image_xscale = 2
+image_yscale = 2
+image_index = 1//Legs
+arm = 0

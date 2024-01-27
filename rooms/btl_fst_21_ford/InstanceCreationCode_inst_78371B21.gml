@@ -1,0 +1,1 @@
+if goto == room goto = ow_fst_21_ford

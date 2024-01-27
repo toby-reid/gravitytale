@@ -1,0 +1,1 @@
+text = ["(Various images and news #clippings dot the walls.)","(It's more a mess than a #collage.)","(I guess he doesn't have enough #in his wall-et for better #decoration...)"]

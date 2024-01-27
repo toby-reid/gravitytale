@@ -1,0 +1,3 @@
+instance_destroy(obj_wayman_teeth)
+instance_destroy(obj_wayman_mazeGoal)
+instance_destroy(obj_wayman_platform,false)

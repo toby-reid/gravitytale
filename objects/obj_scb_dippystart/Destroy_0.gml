@@ -1,0 +1,1 @@
+global.trashCan[array_length(global.trashCan)] = room

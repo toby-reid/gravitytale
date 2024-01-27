@@ -1,0 +1,1 @@
+if !keyboard_check_pressed(vk_escape) if !keyboard_check_pressed(vk_f4) room_goto(rm_menu)

@@ -1,0 +1,1 @@
+text = ["(You were about to venture into #the unknown, but something felt #wrong about it.)","(Maybe the programmer's laziness #is the driving force.)"]

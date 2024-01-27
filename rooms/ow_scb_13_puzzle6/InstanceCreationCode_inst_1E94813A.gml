@@ -1,0 +1,1 @@
+text = ["Training Grounds A#`&(Who arranged these?)"]

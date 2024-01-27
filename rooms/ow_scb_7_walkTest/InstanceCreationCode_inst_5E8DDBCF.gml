@@ -1,0 +1,1 @@
+text = ["(The clock is ticking!&(Why are you reading signs?)"]

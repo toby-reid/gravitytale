@@ -1,0 +1,1 @@
+text = ["Reached a dead-end?&Contact your friendly #neighborhood... ``spiders."]

@@ -1,0 +1,1 @@
+if global.stage[4] != 0 global.enemy[global.stage[2]].image_alpha = 1

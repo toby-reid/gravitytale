@@ -1,0 +1,1 @@
+text = ["(This is some very bougie grass.&(Your shoes are unworthy.)"]

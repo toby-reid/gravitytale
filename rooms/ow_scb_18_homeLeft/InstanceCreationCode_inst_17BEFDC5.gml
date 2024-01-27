@@ -1,0 +1,2 @@
+text = ["(The refrigerator is empty.&(The freezer contains only #frozen pizza.)","(Kind of a letdown, for such a #cool appliance.)"]
+if global.killed[enemy.soos] text = ["(The refrigerator is empty.#`&(So is your soul.)"]

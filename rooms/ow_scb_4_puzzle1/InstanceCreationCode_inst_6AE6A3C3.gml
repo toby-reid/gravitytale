@@ -1,0 +1,1 @@
+text = ["(It's just some scribbles...&(They look like a T?)"]

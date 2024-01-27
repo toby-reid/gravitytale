@@ -1,0 +1,24 @@
+name = "Chainsaw Beaver"
+act = ["Check","Hug","Picture","Siphon"]
+check = "A beaver with a chainsaw."
+spare = false
+run = false
+hp = 12
+maxhp = hp
+at = 2
+lv = false//set true if killing person increases LV
+sb = 0
+zone = area.unknown
+timer = 0
+stage = -1
+bubble = noone
+deathx = 0
+
+alarm[7] = 1
+alarm[8] = 12
+image_xscale = 2
+image_yscale = 2
+image_blend = c_black
+image_speed = 0
+index = 0
+global.stage[0] = 4

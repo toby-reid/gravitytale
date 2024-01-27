@@ -1,0 +1,1 @@
+text = ["(It's a typewriter, but it looks #so primitive, he must have #made it himself...)","(I guess that's what happens #when you're that Determined to #be a reporter...)"]

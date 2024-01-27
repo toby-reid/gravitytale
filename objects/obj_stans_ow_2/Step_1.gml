@@ -1,0 +1,1 @@
+if !instance_exists(obj_ford_ow_1) with obj_dipper if place_meeting(x,y,obj_toRoom) instance_destroy(obj_stans_ow_2)

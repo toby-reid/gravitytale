@@ -1,0 +1,1 @@
+if alarm[1] == -1 draw_rectangle_color(0,0,639,479,0,0,0,0,0)

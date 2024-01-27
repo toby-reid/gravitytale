@@ -1,0 +1,1 @@
+text = ["(Isn't it frustrating how you #can't slip through these trees?)","(Oh well, better go around...)"]

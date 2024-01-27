@@ -1,0 +1,10 @@
+at = obj_enemy_cav_eyebat.at
+image_xscale = 0
+image_yscale = 2
+if x < 300 image_angle = 265
+else if x > 340 image_angle = 275
+else image_angle = 240+60*irandom(1)
+rot = 2*(.5 - (image_angle > 270))
+alarm[1] = 1
+alarm[0] = 150
+image_blend = choose(c_aqua,c_orange)

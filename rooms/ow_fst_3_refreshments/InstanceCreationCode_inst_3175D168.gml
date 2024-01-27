@@ -1,0 +1,2 @@
+text = ["GREETINGS, CHILD!","I HOPE THAT PUZZLE DID NOT #TIRE YOUR MIND TOO MUCH.","PLEASE TAKE SOME #COMPLEMENTARY #REFRESHMENTS TO UNWIND."]
+font = [fnt_papyrus_gui,fnt_papyrus_gui,fnt_papyrus_gui]

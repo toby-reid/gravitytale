@@ -1,0 +1,1 @@
+text = ["(It looks like part of the #sign has been scratched out #severely.)","(What is left reads:)&       BUTT#  ISLAND"]

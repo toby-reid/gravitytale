@@ -1,0 +1,1 @@
+text = ["(a very conveniently-#obstructive sign.)"]

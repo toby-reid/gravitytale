@@ -1,0 +1,1 @@
+if x < -100 or x > 640 instance_destroy()

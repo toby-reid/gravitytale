@@ -1,0 +1,1 @@
+text = ["(It's an ancient TV, likely #from the Bronze Age.)","(You can tele- that his business #is suffering...)"]

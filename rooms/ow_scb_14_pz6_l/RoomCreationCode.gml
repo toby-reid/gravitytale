@@ -1,0 +1,1 @@
+if global.toRoom_num == 2 layer_depth("Assets_2",350)

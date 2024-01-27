@@ -1,0 +1,23 @@
+{
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "sfx_giffany_hithere",
+  "audioGroupId": {
+    "name": "Minigames",
+    "path": "audiogroups/Minigames",
+  },
+  "bitDepth": 0,
+  "bitRate": 128,
+  "compression": 2,
+  "conversionMode": 0,
+  "duration": 5.503271,
+  "parent": {
+    "name": "Minigames",
+    "path": "folders/Sounds/SFX/Minigames.yy",
+  },
+  "preload": false,
+  "sampleRate": 44100,
+  "soundFile": "sfx_giffany_hithere.ogg",
+  "type": 0,
+  "volume": 1.0,
+}

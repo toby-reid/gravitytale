@@ -1,0 +1,1 @@
+if image_index >= 4 {image_index = 3; audio_play_sound(sfx_beep,0,false)}

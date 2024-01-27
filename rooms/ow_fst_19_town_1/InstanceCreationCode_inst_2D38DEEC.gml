@@ -1,0 +1,1 @@
+text = ["(Something about these #roadblocks almost seems like #they don't want you there...)"]

@@ -1,0 +1,5 @@
+ var set = layer_tilemap_get_id("Tiles_1")
+tilemap_set(set,0,x/20,y/20)
+tilemap_set(set,0,x/20 + 1,y/20)
+tilemap_set(set,0,x/20,y/20 + 1)
+tilemap_set(set,0,x/20 + 1,y/20 + 1)

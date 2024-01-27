@@ -1,0 +1,1 @@
+text = ["Thank you for using STANCO(tm) #brand portable toilets!&\"It's not crap!\"","There are many different things #you can do with portable #toilets!","You could pretend you're in an #airplane or on a... &I dunno, a hippo?","STANCO is not responsible for #accidental teleportation, which #may occur during use."]

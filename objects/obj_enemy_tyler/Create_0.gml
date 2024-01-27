@@ -1,0 +1,20 @@
+name = "Tyler Cutebiker"
+act = ["Check","Jeer","Cheer","Rear"]
+check = "Local enthusiasm enthusiast.&Will heal, buff, and support."
+spare = false
+run = false
+hp = 15
+maxhp = hp
+at = 2
+lv = true//set true if killing person increases LV
+sb = 40
+zone = area.unknown
+timer = 0
+distracted = false
+bubble = noone
+deathx = 0
+attack = -1
+global.enemy = [obj_enemy_manDan,obj_enemy_tyler]
+
+image_xscale = 2
+image_yscale = 2

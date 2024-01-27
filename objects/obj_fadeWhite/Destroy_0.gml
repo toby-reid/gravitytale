@@ -1,0 +1,1 @@
+if goto != noone room_goto(goto)

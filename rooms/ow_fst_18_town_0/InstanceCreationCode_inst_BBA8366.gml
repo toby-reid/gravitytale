@@ -1,0 +1,2 @@
+sprite_index = spr_fst_hydrant
+text = ["(It's a fire hydrant.)","(Is the pool fed by the water #tower?)","(Is the hydrant fed by the pool?&or perhaps the tower?)","(. . .&(No, the water tower is fed by #the pool.)"]
