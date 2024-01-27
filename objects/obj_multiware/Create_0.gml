@@ -26,5 +26,20 @@ msg = [
 		"Bearadley, #Bearian, #and, of course, #Jerry.",
 		"No, unfortunately, #I was not the one to #name us.&It does help to #remember them though.",
 		"Now, then, what is it #you wanted to buy?" ],
-	
+	[ "Hm...&Truly, I am uncertain #as to what, exactly, #it does.",
+		"I discovered it many #years ago, when a #mute cross-dressing #child wandered #through here.",
+		"Being an RPG shop-#keeper, I was com-#pelled to purchase #all his useless junk.",
+		"I would dearly love #to part with it, but #it seems to be truly #magic...&Or cursed.",
+		"As you may have #noticed, it adjusts #its own prices.",
+		"I can't ever sell it #for less than what #it's listed for.",
+		"So, child, the only #thing I can say is #that it is pointless #to look into.",
+		"Now, then, what is it #you actually wanted #to buy?" ],
+	[ "Oh, the small human #wishes to speak?",
+		"I find it quite #ironic, child, that #between you and me, #they would likely #still consider me #the monster.",
+		"But, of course, such is life.",
+		"Now, then, I think we both know you're not here to chat.&What is it you wanted to buy?" ],
+	"I can buy#that for"
 ];
+text[0] = msg[0];
+if(!variable_global_exists("karen")) global.karen = false;//set to 'true' if Karen *can* be encountered.
+armor = 0;

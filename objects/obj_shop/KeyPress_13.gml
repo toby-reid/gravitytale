@@ -47,6 +47,7 @@ switch stage {
 						confirm = true
 						choice[2] = 0
 					}
+					else audio_play_sound(sfx_glass,0,false,.5);
 				}
 				else {
 					if choice[2] == 0 {
