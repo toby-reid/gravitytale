@@ -29,6 +29,7 @@
     {"name":"inst_24067E08","path":"rooms/ow_cav_18_pz7/ow_cav_18_pz7.yy",},
     {"name":"inst_3C59F11A","path":"rooms/ow_cav_18_pz7/ow_cav_18_pz7.yy",},
     {"name":"inst_2DDE311A","path":"rooms/ow_cav_18_pz7/ow_cav_18_pz7.yy",},
+    {"name":"inst_4095ED7C","path":"rooms/ow_cav_18_pz7/ow_cav_18_pz7.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -67,11 +68,14 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"dir","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"1",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"music","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"mus_shop",},
           ],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":420.0,"y":20.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4095ED7C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"properties":[
+            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"goto","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"ow_cav_19_pz8",},
+          ],"rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":640.0,"y":100.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_2","depth":200,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":12,"SerialiseWidth":32,"TileCompressedData":[
 -66,-2147483648,1,268435515,-18,58,1,0,-10,58,-2,-2147483648,1,268435525,-24,-2147483648,1,0,-6,-2147483648,1,268435525,-24,-2147483648,1,0,-6,-2147483648,1,268435525,-24,-2147483648,
 1,0,-6,-2147483648,1,268435525,-24,-2147483648,1,0,-6,-2147483648,1,268435525,-24,-2147483648,1,0,-3,-2147483648,4,0,-2147483648,-2147483648,268435525,-24,-2147483648,1,0,-3,-2147483648,4,
-0,-2147483648,-2147483648,268435535,-4,78,-2,-2147483648,-23,78,-64,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tl_caves","path":"tilesets/tl_caves/tl_caves.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+0,-2147483648,-2147483648,268435535,-4,1073741893,-2,-2147483648,-23,1073741893,-64,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tl_caves","path":"tilesets/tl_caves/tl_caves.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":300,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":12,"SerialiseWidth":32,"TileCompressedData":[
 2,88,89,-18,88,3,89,0,87,-10,88,1,89,-18,98,3,99,0,97,-9,98,2,88,89,-19,68,1,67,-10,68,2,98,
 99,-3,68,-6,57,-10,68,1,67,-10,68,-2,-2147483648,-3,68,1,57,-4,54,1,57,-4,68,-13,57,-4,68,-2,-2147483648,-3,68,1,
