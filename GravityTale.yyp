@@ -134,7 +134,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.11.0.121",
   },
   "resources": [
     {"id":{"name":"ow_fst_8_pz4","path":"rooms/ow_fst_8_pz4/ow_fst_8_pz4.yy",},},
@@ -993,6 +993,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"btl_cav_wendyne","path":"rooms/btl_cav_wendyne/btl_cav_wendyne.yy",},},
     {"roomId":{"name":"ow_cav_21_howlingWind","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
@@ -1110,7 +1111,6 @@
     {"roomId":{"name":"ow_cav_7_manCave","path":"rooms/ow_cav_7_manCave/ow_cav_7_manCave.yy",},},
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_cav_16_crypt","path":"rooms/ow_cav_16_crypt/ow_cav_16_crypt.yy",},},
-    {"roomId":{"name":"btl_cav_wendyne","path":"rooms/btl_cav_wendyne/btl_cav_wendyne.yy",},},
     {"roomId":{"name":"btl_cav_wendyne_geno","path":"rooms/btl_cav_wendyne_geno/btl_cav_wendyne_geno.yy",},},
   ],
   "templateType": null,

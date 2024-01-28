@@ -15,6 +15,7 @@ deathx = 0;
 
 image_xscale = 2;
 image_yscale = 2;
+vspeed = .4;
 
 global.enemy = [id];
 global.stage[0] = 4;
