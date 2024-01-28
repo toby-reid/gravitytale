@@ -24,7 +24,6 @@ bubble = instance_create_layer(x+80,y-100,layer,obj_textBubble);
 bubble.sound = [tlk_wendy];
 if(!variable_global_exists("wendyne")) global.wendyne = 20;
 if(global.wendyne < 21) {
-	global.wendyne = 21;
 	obj_battleCore.text[0] = "Wendy Corduroy has arrived to #administer the final test!";
 	bubble.text = ["En garde!"];
 	trap = 5;
