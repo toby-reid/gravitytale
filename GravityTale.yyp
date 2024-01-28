@@ -212,6 +212,7 @@
     {"id":{"name":"spr_nyarfDart","path":"sprites/spr_nyarfDart/spr_nyarfDart.yy",},},
     {"id":{"name":"mus_rushB_intro","path":"sounds/mus_rushB_intro/mus_rushB_intro.yy",},},
     {"id":{"name":"spr_nyarfGun","path":"sprites/spr_nyarfGun/spr_nyarfGun.yy",},},
+    {"id":{"name":"btl_cav_wendyne_geno","path":"rooms/btl_cav_wendyne_geno/btl_cav_wendyne_geno.yy",},},
     {"id":{"name":"sfx_slurp","path":"sounds/sfx_slurp/sfx_slurp.yy",},},
     {"id":{"name":"obj_stans_ow_13","path":"objects/obj_stans_ow_13/obj_stans_ow_13.yy",},},
     {"id":{"name":"spr_smoke","path":"sprites/spr_smoke/spr_smoke.yy",},},
@@ -293,6 +294,7 @@
     {"id":{"name":"spr_soos_face_disapsmile_side","path":"sprites/spr_soos_face_disapsmile_side/spr_soos_face_disapsmile_side.yy",},},
     {"id":{"name":"spr_soos_face_happy","path":"sprites/spr_soos_face_happy/spr_soos_face_happy.yy",},},
     {"id":{"name":"spr_soos_face_happy_closed","path":"sprites/spr_soos_face_happy_closed/spr_soos_face_happy_closed.yy",},},
+    {"id":{"name":"btl_cav_wendyne","path":"rooms/btl_cav_wendyne/btl_cav_wendyne.yy",},},
     {"id":{"name":"spr_atk_danMeat","path":"sprites/spr_atk_danMeat/spr_atk_danMeat.yy",},},
     {"id":{"name":"spr_pacifica_d","path":"sprites/spr_pacifica_d/spr_pacifica_d.yy",},},
     {"id":{"name":"spr_soos_face_happy_side","path":"sprites/spr_soos_face_happy_side/spr_soos_face_happy_side.yy",},},
@@ -346,6 +348,7 @@
     {"id":{"name":"spr_fst_skullFracture","path":"sprites/spr_fst_skullFracture/spr_fst_skullFracture.yy",},},
     {"id":{"name":"mus_bonetrousle","path":"sounds/mus_bonetrousle/mus_bonetrousle.yy",},},
     {"id":{"name":"spr_soos_u","path":"sprites/spr_soos_u/spr_soos_u.yy",},},
+    {"id":{"name":"spr_nettrap","path":"sprites/spr_nettrap/spr_nettrap.yy",},},
     {"id":{"name":"spr_stans_head_BOeye","path":"sprites/spr_stans_head_BOeye/spr_stans_head_BOeye.yy",},},
     {"id":{"name":"spr_stans_head_content","path":"sprites/spr_stans_head_content/spr_stans_head_content.yy",},},
     {"id":{"name":"spr_stans_head_hollowEye","path":"sprites/spr_stans_head_hollowEye/spr_stans_head_hollowEye.yy",},},
@@ -982,6 +985,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"ow_cav_21_howlingWind","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
         {"roomId":{"name":"rm_endDemo","path":"rooms/rm_endDemo/rm_endDemo.yy",},},
@@ -1098,7 +1102,8 @@
     {"roomId":{"name":"ow_cav_7_manCave","path":"rooms/ow_cav_7_manCave/ow_cav_7_manCave.yy",},},
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_cav_16_crypt","path":"rooms/ow_cav_16_crypt/ow_cav_16_crypt.yy",},},
-    {"roomId":{"name":"ow_cav_21_howlingWind","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},},
+    {"roomId":{"name":"btl_cav_wendyne","path":"rooms/btl_cav_wendyne/btl_cav_wendyne.yy",},},
+    {"roomId":{"name":"btl_cav_wendyne_geno","path":"rooms/btl_cav_wendyne_geno/btl_cav_wendyne_geno.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
