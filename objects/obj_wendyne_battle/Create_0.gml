@@ -12,6 +12,7 @@ sb = 100;
 zone = area.unknown;
 timer = 0;
 deathx = 0;
+attack = 0;
 
 image_xscale = 2;
 image_yscale = 2;
@@ -24,11 +25,11 @@ global.enemy = [id];
 
 bubble = noone//instance_create_layer(x+80,y-100,layer,obj_textBubble);
 //bubble.sound = [tlk_wendy];
-if(!variable_global_exists("wendyne")) global.wendyne = 20;
+if(!variable_global_exists("wendyne")) global.wendyne = 21//20;
 if(global.wendyne < 21) {
 	obj_battleCore.text[0] = "Wendy Corduroy has arrived to #administer the final test!";
 	//bubble.text = ["En garde!"];
-	trap = 1;
+	trap = 5;
 }
 else {
 	obj_battleCore.text[0] = "Once again, you've been caught #in a trap.&The nachos are quite tricky.";
@@ -36,7 +37,7 @@ else {
 	trap = 1+irandom(3);
 }
 
-function makeaxe(_x,_y,_spd = 1,_at = at,_blend = c_orange,_xscale = 1,_yscale = 1) {
+function makeaxe(_x,_y,_spd = 1,_at = at,_blend = c_orange,_xscale = 1,_yscale = 2*(irandom(0)-.5)) {
 	var _axe = instance_create_layer(_x,_y,layer,obj_battleAttack);
 	with _axe {
 		sprite_index = spr_wendyne_axe_btl;
