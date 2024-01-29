@@ -28,10 +28,26 @@ if(!variable_global_exists("wendyne")) global.wendyne = 20;
 if(global.wendyne < 21) {
 	obj_battleCore.text[0] = "Wendy Corduroy has arrived to #administer the final test!";
 	//bubble.text = ["En garde!"];
-	trap = 5;
+	trap = 1;
 }
 else {
 	obj_battleCore.text[0] = "Once again, you've been caught #in a trap.&The nachos are quite tricky.";
 	//bubble.text = ["You can't escape that easily!"];
 	trap = 1+irandom(3);
+}
+
+function makeaxe(_x,_y,_spd = 1,_at = at,_blend = c_orange,_xscale = 1,_yscale = 1) {
+	var _axe = instance_create_layer(_x,_y,layer,obj_battleAttack);
+	with _axe {
+		sprite_index = spr_wendyne_axe_btl;
+		image_xscale = _xscale;
+		image_yscale = _yscale;
+		image_blend = _blend;
+		var _dir = 90*(y > 260) + 180*(x > 340) + 270*(y < 220);
+		image_angle = _dir;
+		direction = _dir;
+		speed = _spd;
+		at = _at;
+	}
+	return _axe;
 }

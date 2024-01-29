@@ -465,6 +465,7 @@
     {"name":"ow_scb_22_dock_0","order":33,"path":"rooms/ow_scb_22_dock_0/ow_scb_22_dock_0.yy",},
     {"name":"tlk_gideon","order":5,"path":"sounds/tlk_gideon/tlk_gideon.yy",},
     {"name":"tlk_mabel","order":6,"path":"sounds/tlk_mabel/tlk_mabel.yy",},
+    {"name":"obj_wendyne_axe_yellow","order":9,"path":"objects/obj_wendyne_axe_yellow/obj_wendyne_axe_yellow.yy",},
     {"name":"tlk_mcg","order":7,"path":"sounds/tlk_mcg/tlk_mcg.yy",},
     {"name":"tlk_pacifica","order":8,"path":"sounds/tlk_pacifica/tlk_pacifica.yy",},
     {"name":"spr_paz_putt_ball","order":1,"path":"sprites/spr_paz_putt_ball/spr_paz_putt_ball.yy",},

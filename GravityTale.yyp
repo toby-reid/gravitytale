@@ -612,6 +612,7 @@
     {"id":{"name":"ow_scb_22_dock_0","path":"rooms/ow_scb_22_dock_0/ow_scb_22_dock_0.yy",},},
     {"id":{"name":"tlk_gideon","path":"sounds/tlk_gideon/tlk_gideon.yy",},},
     {"id":{"name":"tlk_mabel","path":"sounds/tlk_mabel/tlk_mabel.yy",},},
+    {"id":{"name":"obj_wendyne_axe_yellow","path":"objects/obj_wendyne_axe_yellow/obj_wendyne_axe_yellow.yy",},},
     {"id":{"name":"tlk_mcg","path":"sounds/tlk_mcg/tlk_mcg.yy",},},
     {"id":{"name":"tlk_pacifica","path":"sounds/tlk_pacifica/tlk_pacifica.yy",},},
     {"id":{"name":"spr_paz_putt_ball","path":"sprites/spr_paz_putt_ball/spr_paz_putt_ball.yy",},},
