@@ -159,7 +159,7 @@ switch global.stage[0] {
 				if keyboard_check_pressed(vk_up)   if !place_meeting(x,y-20,obj_battleBox) y-=40
 				if keyboard_check(vk_right) if !place_meeting(x+3,y,obj_battleBox) x+=2
 				if keyboard_check(vk_left)  if !place_meeting(x-3,y,obj_battleBox) x-=2
-				obj_battleBox.image_index = 1
+				obj_battleBox.image_index = 2
 			break
 			case 6://Cyan - 9-Square (McGucket)
 				x = obj_battleBox.x
@@ -168,7 +168,7 @@ switch global.stage[0] {
 				if keyboard_check(vk_up)    y-=44
 				if keyboard_check(vk_right) x+=52
 				if keyboard_check(vk_left)  x-=52
-				obj_battleBox.image_index = 2
+				obj_battleBox.image_index = 3
 			break
 		}
 	break
