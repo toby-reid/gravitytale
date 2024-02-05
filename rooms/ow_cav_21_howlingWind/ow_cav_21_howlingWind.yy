@@ -15,7 +15,7 @@
     {"name":"inst_229100FB","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
     {"name":"inst_5549B115","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
     {"name":"inst_77744766","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
-    {"name":"inst_toRoom","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
+    {"name":"inst_toRoom_cav_21","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -34,7 +34,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_229100FB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collide","path":"objects/obj_collide/obj_collide.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":3.0,"x":280.0,"y":740.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5549B115","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collide","path":"objects/obj_collide/obj_collide.yy",},"properties":[],"rotation":0.0,"scaleX":14.0,"scaleY":1.0,"x":0.0,"y":800.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_77744766","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_wendyne_ow_21","path":"objects/obj_wendyne_ow_21/obj_wendyne_ow_21.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":180.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_toRoom","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"properties":[
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_toRoom_cav_21","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"properties":[
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"dir","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"1",},
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"goto","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"ow_cav_22_chase_0",},
           ],"rotation":0.0,"scaleX":4.0,"scaleY":1.0,"x":120.0,"y":500.0,},

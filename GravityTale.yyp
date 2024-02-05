@@ -1009,6 +1009,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"ow_min_00_hotwendy","path":"rooms/ow_min_00_hotwendy/ow_min_00_hotwendy.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
         {"roomId":{"name":"rm_endDemo","path":"rooms/rm_endDemo/rm_endDemo.yy",},},
@@ -1131,7 +1132,6 @@
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_cav_16_crypt","path":"rooms/ow_cav_16_crypt/ow_cav_16_crypt.yy",},},
     {"roomId":{"name":"btl_cav_wendyne_geno","path":"rooms/btl_cav_wendyne_geno/btl_cav_wendyne_geno.yy",},},
-    {"roomId":{"name":"ow_min_00_hotwendy","path":"rooms/ow_min_00_hotwendy/ow_min_00_hotwendy.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
