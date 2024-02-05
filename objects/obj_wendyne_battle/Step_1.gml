@@ -2,6 +2,7 @@
 if hp <= 0 { if global.stage[0] != 3 {
 	hp = 0
 	if image_alpha == 1 audio_play_sound(sfx_enemyDead,0,false)
+	sprite_index = spr_wendyne_btl_dying;
 	image_alpha -= .05
 	if image_alpha == 0 instance_destroy()
 	instance_destroy(bubble)
