@@ -34,7 +34,7 @@ if(global.wendyne < 21) {
 else {
 	obj_battleCore.text[0] = "Once again, you've been caught #in a trap.&The nachos are quite tricky.";
 	//bubble.text = ["You can't escape that easily!"];
-	trap = 1+irandom(3);
+	trap = 2+irandom(3);
 }
 
 function makeaxe(_x,_y,_spd = 1,_at = at,_blend = c_orange,_xscale = 1,_yscale = 2*(irandom(0)-.5)) {

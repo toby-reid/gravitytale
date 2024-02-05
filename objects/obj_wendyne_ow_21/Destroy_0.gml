@@ -11,6 +11,7 @@ with instance_create_layer(240,760,layer,obj_save) {
 instance_destroy(obj_dontGo);
 if(global.wendyne < 22) global.wendyne = 22;
 with inst_toRoom {
-	//goto = ow_min_0_hotwendy;
-	//music = mus_wind;
+	goto = ow_min_00_hotwendy;
+	music = mus_wind;
+	dir = 0;
 }

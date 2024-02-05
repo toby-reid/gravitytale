@@ -312,8 +312,8 @@ if(instance_exists(obj_dipper)) switch stage {
 	case 7://Help! The nachos tricked me!
 		if(obj_dipper.y <= 540) {
 			if(place_meeting(x,y,obj_dipper)) {
-				if(hspeed > 0) {
-					hspeed = 0;
+				if(vspeed > 0) {
+					vspeed = 0;
 					with instance_create_layer(0,0,layer,obj_toBattle) {
 						if(global.player[player.runActive] == 2) {
 							music = mus_ngahhh;
@@ -323,6 +323,7 @@ if(instance_exists(obj_dipper)) switch stage {
 							music = mus_spearjustice;
 							goto = btl_cav_wendyne;
 						}
+						image_index = 3;
 					}
 				}
 				else if(!instance_exists(obj_toBattle)) {
@@ -333,13 +334,14 @@ if(instance_exists(obj_dipper)) switch stage {
 						stage++;
 						audio_stop_all();
 						audio_play_sound(mus_run,0,true);
+						with instance_create_layer(120,740,layer,obj_collide) image_xscale = 2;
 					}
 					obj_dipper.canMove = true;
 				}
 			}
-			else hspeed = 2;
+			else vspeed = 2;
 		}
 		break;
-	case 8://The chase is on!
-		
+	case 8://Woo! The chase is on. We're not gonna do anything about it though (yet).
+		break;
 }
