@@ -186,6 +186,7 @@
     {"id":{"name":"spr_soul","path":"sprites/spr_soul/spr_soul.yy",},},
     {"id":{"name":"mus_fallen","path":"sounds/mus_fallen/mus_fallen.yy",},},
     {"id":{"name":"spr_soul_3_shield","path":"sprites/spr_soul_3_shield/spr_soul_3_shield.yy",},},
+    {"id":{"name":"mus_truehero","path":"sounds/mus_truehero/mus_truehero.yy",},},
     {"id":{"name":"spr_soul_4_beam","path":"sprites/spr_soul_4_beam/spr_soul_4_beam.yy",},},
     {"id":{"name":"spr_soul_alts","path":"sprites/spr_soul_alts/spr_soul_alts.yy",},},
     {"id":{"name":"spr_ghost_3","path":"sprites/spr_ghost_3/spr_ghost_3.yy",},},
@@ -618,6 +619,7 @@
     {"id":{"name":"spr_atk_tylerCuteBike","path":"sprites/spr_atk_tylerCuteBike/spr_atk_tylerCuteBike.yy",},},
     {"id":{"name":"obj_atk_fairy","path":"objects/obj_atk_fairy/obj_atk_fairy.yy",},},
     {"id":{"name":"spr_atk_cat2","path":"sprites/spr_atk_cat2/spr_atk_cat2.yy",},},
+    {"id":{"name":"mus_refusedToDie","path":"sounds/mus_refusedToDie/mus_refusedToDie.yy",},},
     {"id":{"name":"spr_mg_ssf2_title","path":"sprites/spr_mg_ssf2_title/spr_mg_ssf2_title.yy",},},
     {"id":{"name":"mus_snowy","path":"sounds/mus_snowy/mus_snowy.yy",},},
     {"id":{"name":"tlk_ford","path":"sounds/tlk_ford/tlk_ford.yy",},},
@@ -1017,6 +1019,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"btl_cav_wendyne_geno","path":"rooms/btl_cav_wendyne_geno/btl_cav_wendyne_geno.yy",},},
     {"roomId":{"name":"ow_min_00_hotwendy","path":"rooms/ow_min_00_hotwendy/ow_min_00_hotwendy.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
@@ -1139,7 +1142,6 @@
     {"roomId":{"name":"ow_cav_7_manCave","path":"rooms/ow_cav_7_manCave/ow_cav_7_manCave.yy",},},
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_cav_16_crypt","path":"rooms/ow_cav_16_crypt/ow_cav_16_crypt.yy",},},
-    {"roomId":{"name":"btl_cav_wendyne_geno","path":"rooms/btl_cav_wendyne_geno/btl_cav_wendyne_geno.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [

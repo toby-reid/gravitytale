@@ -37,6 +37,13 @@ if(image_alpha==1 and alarm[11]==-1 and !instance_exists(bubble) and instance_ex
 				else if(timer >= 600) timer = 3000;
 			}
 		}
+		else if(geno) {// first time
+			//TODO: set animation sequence starts
+			sprite_index = spr_wendyne_geno_legs;
+			audio_play_sound(mus_truehero,0,true);
+			geno = false;
+			global.stage[0]++;
+		}
 		else {
 			
 		}

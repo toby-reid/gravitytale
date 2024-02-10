@@ -14,6 +14,7 @@ timer = 0;
 bubble = noone;
 deathx = 0;
 alpha = 0; // used for the fadewhite
+geno = false;
 
 image_xscale = 2;
 image_yscale = 2;
