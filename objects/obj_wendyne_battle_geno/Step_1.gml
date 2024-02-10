@@ -1,28 +1,46 @@
 ///@desc Dying / Round Reset
 if hp <= 0 { if(global.stage[0] != 3) {
 	hp = 0;
-	if(sprite_index = spr_wendyne_btl_legs) {//but the earth refused to die
+	if(sprite_index = spr_wendyne_btl_legs) {
+		sprite_index = spr_wendyne_btl_dying;
+		vspeed = 0;
+		y = ystart;
+	}
+	else if(sprite_index == spr_wendyne_btl_dying) {//but the earth refused to die
 		if(!instance_exists(obj_textBubble)) {
-			bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble);
-			with bubble {
-				text = [
-					". . .",
-					"No...",
-					"No...!",
-					"This... can't be happening...",
-					"So easily...",
-					"Robbie... Soos... Dad... I'm sorry.",
-					". . .",
-					"No.",
-					"I can't let it end like this.",
-					"I WON'T let it end like this.",
-					"I will destroy you, no matter what.",
-					"'Cause I'm a flippin' CORDUROY!!!"
-				]
+			if(alpha == 0) {
+				bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble);
+				with bubble {
+					text = [
+						". . .",
+						"No...",
+						"Robbie... Soos... Dad... I'm sorry.",
+						". . .",
+						"No.",
+						"I can't let it end like this.",
+						"I WON'T let it end like this.",
+						"I will destroy you, no matter what.",
+						"'Cause I'm a flippin' CORDUROY!!!     "
+					]
+					for(var i = 0; i < array_length(text); i++) {
+						sound[i] = tlk_wendy;
+						charRate[i] = 5;
+					}
+					image_index = 1;
+				}
+			}
+			else {
+				alpha += .0025;
+				if(alpha >= 1) event_user(0);
 			}
 		}
-		else {
-			
+		else with obj_textBubble if(page >= 0) {
+			if(variable_instance_exists(id,"head")) other.head = head[page];
+			if(page == array_length(text)-1) {
+				if(charCount >= string_length(text[page])-5) charCount = string_length(text[page]) - 5;
+				alpha += .0025;
+				if(alpha >= 1) event_user(0);
+			}
 		}
 	}
 	else if(!instance_exists(obj_textBubble)) {//actually dead

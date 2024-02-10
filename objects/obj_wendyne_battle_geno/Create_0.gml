@@ -1,7 +1,7 @@
 name = "Wendy Corduroy";
 act = ["Check","Chill out","Struggle","Flirt"];
 if(global.player[player.mabel]) act[3] = "Girl talk";
-check = "The strongest person in town.&Can chop anything, even you.";
+check = "The coolest person in town.&Can climb and/or chop anything.";
 spare = false;
 run = false;
 hp = 60;
@@ -13,9 +13,11 @@ zone = area.unknown;
 timer = 0;
 bubble = noone;
 deathx = 0;
+alpha = 0; // used for the fadewhite
 
 image_xscale = 2;
 image_yscale = 2;
+head = noone; // used for our own head sprite_index
 vspeed = .4;
 obj_soul.image_index = 3;
 

@@ -28,8 +28,8 @@
   "nineSlice": null,
   "origin": 7,
   "parent": {
-    "name": "Wendyne",
-    "path": "folders/Sprites/Characters/Wendyne.yy",
+    "name": "Armored",
+    "path": "folders/Sprites/Characters/Wendyne/Armored.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
