@@ -2,7 +2,7 @@
 sprite_index = spr_wendyne_geno_dying;
 alarm[11] = 60;
 alpha = 0;
-maxhp = 100000;
+maxhp = 5000000;
 hp = maxhp;
 at = 9;
 check = "The strongest person in town.&Can chop anything, even you.";

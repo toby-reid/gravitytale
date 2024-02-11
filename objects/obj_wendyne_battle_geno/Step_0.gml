@@ -1,5 +1,5 @@
 /// @desc Attack
-if(image_alpha==1 and alarm[11]==-1 and !instance_exists(bubble) and instance_exists(obj_battleBox) and global.stage[0]==4) {
+if(image_alpha==1 and alarm[11]==-1 and !instance_exists(bubble) and alpha==0 and instance_exists(obj_battleBox) and global.stage[0]==4) {
 	if(obj_soul.image_index == 3) {
 		if(timer < 20) with obj_battleBox {//set up battlebox
 			image_xscale -= .04;
@@ -45,7 +45,7 @@ if(image_alpha==1 and alarm[11]==-1 and !instance_exists(bubble) and instance_ex
 			global.stage[0]++;
 		}
 		else {
-			
+			global.stage[0]++;
 		}
 	}
 	else {//default soul attacks

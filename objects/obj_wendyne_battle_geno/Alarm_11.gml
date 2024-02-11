@@ -8,7 +8,7 @@ with bubble {
 		"No, I had the old kook make me a potion.",
 		"With this... with my determina- tion...",
 		"I will make sure you never leave these caves.",
-		"I will make sure you        \n(ach)          \nnever end another life.",
+		"I will make sure you        (ach)          never end another life.",
 		"(Man, it hurts...)"
 	];
 	for(var i = 0; i < array_length(text); i++) sound[i] = tlk_wendy;

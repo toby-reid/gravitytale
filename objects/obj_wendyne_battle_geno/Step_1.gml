@@ -9,18 +9,22 @@ if hp <= 0 {
 	}
 	if(global.stage[0] != 3) {
 		if(sprite_index == spr_wendyne_btl_dying) {//but the earth refused to die
-			if(!instance_exists(obj_textBubble)) {
+			if(!instance_exists(obj_textBubble) or alpha != 0) {
 				if(alpha == 0) {
 					bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble);
 					with bubble {
 						text = [
 							". . .",
 							"So that's it...",
-							"Robbie... Soos... Dad... I'm sorry.",
+							"I wasn't strong enough...",
+							"Robbie... Soos... Dad... \nI'm sorry.",
+							"I couldn't even slow them down...",
 							". . .",
 							"No.",
+							"NO.",
 							"I can't let it end like this.",
 							"I WON'T let it end like this.",
+							"It's time to unleash my secret weapon.",
 							"I will destroy you, no matter what.",
 							"'Cause I'm a flippin' CORDUROY!!!        "
 						];
@@ -35,7 +39,7 @@ if hp <= 0 {
 					audio_sound_gain(mus_refusedToDie,1,2000);
 				}
 				else {
-					alpha += .0025;
+					alpha += .004;
 					if(alpha >= 1) event_user(0);
 				}
 			}
@@ -43,7 +47,8 @@ if hp <= 0 {
 				if(variable_instance_exists(id,"head")) other.head = head[page];
 				if(page == array_length(text)-1) {
 					if(charCount >= string_length(text[page])-5) charCount = string_length(text[page]) - 4;
-					other.alpha += .0025;
+					other.alpha += .004;
+					if(audio_sound_get_gain(mus_refusedToDie) == 1) audio_sound_gain(mus_refusedToDie,0,4000);
 				}
 			}
 		}
@@ -60,7 +65,11 @@ if hp <= 0 {
 }
 else if(global.stage[0] == 3 and global.stage[1] == 0 and global.stage[4] > 0 and global.stage[4] <= 10) {
 	if(sprite_index == spr_wendyne_btl_legs) global.stage[4] = 999999;
-	else global.stage[4] = 9*power(10,global.stage[4]);
+	else {
+		var _dmg = "0";
+		for(var i = 0; i < global.stage[4] and i < 5; i++) _dmg += "9";
+		global.stage[4] = real(string_digits(_dmg));
+	}
 }
 
 if global.stage[0] == 5 {timer = 0;}
