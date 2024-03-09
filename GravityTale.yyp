@@ -1019,8 +1019,6 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
-    {"roomId":{"name":"btl_cav_wendyne_geno","path":"rooms/btl_cav_wendyne_geno/btl_cav_wendyne_geno.yy",},},
-    {"roomId":{"name":"ow_min_00_hotwendy","path":"rooms/ow_min_00_hotwendy/ow_min_00_hotwendy.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
         {"roomId":{"name":"rm_endDemo","path":"rooms/rm_endDemo/rm_endDemo.yy",},},
@@ -1134,11 +1132,15 @@
         {"roomId":{"name":"ow_cav_20_pz9","path":"rooms/ow_cav_20_pz9/ow_cav_20_pz9.yy",},},
         {"roomId":{"name":"ow_cav_21_howlingWind","path":"rooms/ow_cav_21_howlingWind/ow_cav_21_howlingWind.yy",},},
         {"roomId":{"name":"btl_cav_wendyne","path":"rooms/btl_cav_wendyne/btl_cav_wendyne.yy",},},
+        {"roomId":{"name":"btl_cav_wendyne_geno","path":"rooms/btl_cav_wendyne_geno/btl_cav_wendyne_geno.yy",},},
         {"roomId":{"name":"ow_cav_22_chase_0","path":"rooms/ow_cav_22_chase_0/ow_cav_22_chase_0.yy",},},
         {"roomId":{"name":"ow_cav_23_chase_1","path":"rooms/ow_cav_23_chase_1/ow_cav_23_chase_1.yy",},},
         {"roomId":{"name":"ow_cav_24_chase_2","path":"rooms/ow_cav_24_chase_2/ow_cav_24_chase_2.yy",},},
         {"roomId":{"name":"ow_cav_25_chase_3","path":"rooms/ow_cav_25_chase_3/ow_cav_25_chase_3.yy",},},
       ],"groupName":"Caves",},
+    {"children":[
+        {"roomId":{"name":"ow_min_00_hotwendy","path":"rooms/ow_min_00_hotwendy/ow_min_00_hotwendy.yy",},},
+      ],"groupName":"Mines",},
     {"roomId":{"name":"ow_cav_7_manCave","path":"rooms/ow_cav_7_manCave/ow_cav_7_manCave.yy",},},
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_cav_16_crypt","path":"rooms/ow_cav_16_crypt/ow_cav_16_crypt.yy",},},
