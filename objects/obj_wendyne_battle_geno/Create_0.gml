@@ -11,6 +11,7 @@ lv = true;//set true if killing person increases LV
 sb = 100;
 zone = area.unknown;
 timer = 0;
+attack = 0;
 bubble = noone;
 deathx = 0;
 alpha = 0; // used for the fadewhite
@@ -23,6 +24,7 @@ vspeed = .4;
 obj_soul.image_index = 3;
 
 global.enemy = [id];
+if(!variable_global_exists("wendyne")) global.wendyne = 20;
 
 obj_battleCore.text[0] = "Wendy Corduroy is here to end #this!&Let's end her first!";
 trap = 5;

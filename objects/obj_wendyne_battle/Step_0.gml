@@ -128,7 +128,7 @@ if image_alpha == 1 if(instance_exists(obj_battleBox)) if global.stage[0] == 4 {
 							var _dir = 90*irandom(3);
 							if(irandom(3) == 0) {
 								if(irandom(3) == 0) makeaxe(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),1,at*2,c_fuchsia);
-								with instance_create_layer(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),layer,obj_wendyne_axe_yellow) speed = 1;
+								else with instance_create_layer(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),layer,obj_wendyne_axe_yellow) speed = 1;
 							}
 							else makeaxe(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),1);
 						}
@@ -166,7 +166,7 @@ if image_alpha == 1 if(instance_exists(obj_battleBox)) if global.stage[0] == 4 {
 		}
 	}
 	else {//default soul attacks
-		if(timer == 30) instance_create_layer(0,0,layer,obj_btl_axeBarrage);
+		if(timer == 30) with instance_create_layer(0,0,layer,obj_btl_axeBarrage) at = other.at;
 		else if(timer >= 300) {
 			global.stage[0]++;
 			instance_destroy(obj_btl_axeBarrage);

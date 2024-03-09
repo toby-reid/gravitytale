@@ -14,5 +14,6 @@ with bubble {
 	for(var i = 0; i < array_length(text); i++) sound[i] = tlk_wendy;
 	image_index = 1;
 }
+if(audio_sound_get_gain(mus_refusedToDie) == 1) audio_sound_gain(mus_refusedToDie,0,4000)
 geno = true;
 timer = 120; // just to avoid resetting the battlebox

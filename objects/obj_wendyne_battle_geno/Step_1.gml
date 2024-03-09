@@ -48,20 +48,53 @@ if hp <= 0 {
 				if(page == array_length(text)-1) {
 					if(charCount >= string_length(text[page])-5) charCount = string_length(text[page]) - 4;
 					other.alpha += .004;
-					if(audio_sound_get_gain(mus_refusedToDie) == 1) audio_sound_gain(mus_refusedToDie,0,4000);
 				}
 			}
 		}
 		else if(!instance_exists(obj_textBubble)) {//actually dead
-			if(image_alpha == 1) {
-				audio_play_sound(sfx_enemyDead,0,false);
-				global.enemy = [instance_create_layer(x,y-40,layer,obj_enemySoulBreak)];
-				global.enemy[0].image_index = 3;
+			if(!instance_exists(obj_textBubble)) {
+				if(global.wendyne < 22) {
+					bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble);
+					with bubble {
+						text = [
+							"...ah.",
+							"So I guess that's it.",
+							"It just wasn't enough.",
+							"Well... it wasn't a complete waste, at least...",
+							"I bought enough time... for the kook to finish...",
+							"Your terror is about to... come to an end...",
+							"You may be strong... but you can't attack...",
+							"...if you... can't...",
+							". . .",
+							"Soon... soon... you'll see...",
+							"You'll see... what happens... when we rise together...",
+							"The whole town...",
+							"Everyone's hopes...",
+							"Everyone's dreams...",
+							"We will persist.",
+							"Soos... Robbie... Dad...",
+							"I'm coming home."
+						]
+						for(var i = 0; i < array_length(text); i++) {
+							sound[i] = tlk_wendy;
+							charRate[i] = .2;
+						}
+					}
+					global.wendyne = 22;
+				}
+				else {
+					if(image_alpha == 1) {
+						audio_play_sound(sfx_enemyDead,0,false);
+						global.enemy = [instance_create_layer(x,y-40,layer,obj_enemySoulBreak)];
+						global.enemy[0].image_index = 3;
+					}
+					image_alpha -= .05
+					if(image_alpha == 0) instance_destroy();
+				}
 			}
-			image_alpha -= .05
-			if(image_alpha == 0) instance_destroy();
 		}
 	}
+	else if(sprite_index != spr_wendyne_btl_dying) audio_stop_all()
 }
 else if(global.stage[0] == 3 and global.stage[1] == 0 and global.stage[4] > 0 and global.stage[4] <= 10) {
 	if(sprite_index == spr_wendyne_btl_legs) global.stage[4] = 999999;
@@ -72,4 +105,17 @@ else if(global.stage[0] == 3 and global.stage[1] == 0 and global.stage[4] > 0 an
 	}
 }
 
-if global.stage[0] == 5 {timer = 0;}
+if global.stage[0] == 5 {
+	audio_stop_sound(mus_refusedToDie);
+	if(timer != 0) {
+		timer = 0;
+		trap--;// must be negative to re-trap
+		if(trap == 0) {
+			obj_soul.image_index = 0;
+		}
+		else if(trap < 0 and irandom(abs(trap)+1) > 1) {
+			trap = 2+irandom(2);
+			obj_soul.image_index = 3;
+		}
+	}
+}
