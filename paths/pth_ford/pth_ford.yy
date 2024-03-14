@@ -1,14 +1,14 @@
 {
-  "resourceType": "GMPath",
-  "resourceVersion": "1.0",
-  "name": "pth_ford",
-  "closed": false,
-  "kind": 1,
-  "parent": {
-    "name": "Paths",
-    "path": "folders/Paths.yy",
+  "$GMPath":"",
+  "%Name":"pth_ford",
+  "closed":false,
+  "kind":1,
+  "name":"pth_ford",
+  "parent":{
+    "name":"Paths",
+    "path":"folders/Paths.yy",
   },
-  "points": [
+  "points":[
     {"speed":100.0,"x":-0.08546448,"y":1.4574127,},
     {"speed":100.0,"x":-12.200012,"y":-27.142578,},
     {"speed":100.0,"x":-41.98845,"y":-67.01271,},
@@ -26,5 +26,7 @@
     {"speed":100.0,"x":-321.77905,"y":-126.86087,},
     {"speed":100.0,"x":-349.12985,"y":-87.15407,},
   ],
-  "precision": 4,
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
 }

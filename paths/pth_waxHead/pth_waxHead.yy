@@ -1,14 +1,14 @@
 {
-  "resourceType": "GMPath",
-  "resourceVersion": "1.0",
-  "name": "pth_waxHead",
-  "closed": false,
-  "kind": 1,
-  "parent": {
-    "name": "Paths",
-    "path": "folders/Paths.yy",
+  "$GMPath":"",
+  "%Name":"pth_waxHead",
+  "closed":false,
+  "kind":1,
+  "name":"pth_waxHead",
+  "parent":{
+    "name":"Paths",
+    "path":"folders/Paths.yy",
   },
-  "points": [
+  "points":[
     {"speed":100.0,"x":0.0,"y":0.0,},
     {"speed":100.0,"x":10.0,"y":-20.0,},
     {"speed":100.0,"x":24.0,"y":-29.0,},
@@ -19,5 +19,7 @@
     {"speed":100.0,"x":74.0,"y":46.0,},
     {"speed":100.0,"x":80.0,"y":90.0,},
   ],
-  "precision": 4,
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
 }

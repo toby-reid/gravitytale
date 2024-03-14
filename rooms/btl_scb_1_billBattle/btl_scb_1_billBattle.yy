@@ -1,49 +1,51 @@
 {
-  "resourceType": "GMRoom",
-  "resourceVersion": "1.0",
-  "name": "btl_scb_1_billBattle",
-  "creationCodeFile": "RoomCreationCode.gml",
-  "inheritCode": false,
-  "inheritCreationOrder": false,
-  "inheritLayers": false,
-  "instanceCreationOrder": [
+  "$GMRoom":"",
+  "%Name":"btl_scb_1_billBattle",
+  "creationCodeFile":"RoomCreationCode.gml",
+  "inheritCode":false,
+  "inheritCreationOrder":false,
+  "inheritLayers":false,
+  "instanceCreationOrder":[
     {"name":"inst_2A5565A9","path":"rooms/btl_scb_1_billBattle/btl_scb_1_billBattle.yy",},
     {"name":"inst_234407E9","path":"rooms/btl_scb_1_billBattle/btl_scb_1_billBattle.yy",},
     {"name":"inst_1E8D243E","path":"rooms/btl_scb_1_billBattle/btl_scb_1_billBattle.yy",},
   ],
-  "isDnd": false,
-  "layers": [
-    {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_1","assets":[
-        {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_48BE6E09","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":5.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":2.0,"scaleY":2.0,"spriteId":{"name":"spr_atk_laser_fireup","path":"sprites/spr_atk_laser_fireup/spr_atk_laser_fireup.yy",},"x":358.0,"y":128.0,},
-        {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_42E9DC3F","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":5.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"rotation":0.0,"scaleX":-2.0,"scaleY":2.0,"spriteId":{"name":"spr_atk_laser_fireup","path":"sprites/spr_atk_laser_fireup/spr_atk_laser_fireup.yy",},"x":284.0,"y":128.0,},
-      ],"depth":0,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"userdefinedDepth":false,"visible":false,},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2A5565A9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_battleCore","path":"objects/obj_battleCore/obj_battleCore.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":320.0,"y":320.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_234407E9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_soul","path":"objects/obj_soul/obj_soul.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":320.0,"y":320.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1E8D243E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_bill_startBattle","path":"objects/obj_bill_startBattle/obj_bill_startBattle.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":320.0,"y":120.0,},
-      ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
-    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
+  "isDnd":false,
+  "layers":[
+    {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
+        {"$GMRSpriteGraphic":"","%Name":"graphic_48BE6E09","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":5.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_48BE6E09","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"spriteId":{"name":"spr_atk_laser_fireup","path":"sprites/spr_atk_laser_fireup/spr_atk_laser_fireup.yy",},"x":358.0,"y":128.0,},
+        {"$GMRSpriteGraphic":"","%Name":"graphic_42E9DC3F","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":5.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_42E9DC3F","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":-2.0,"scaleY":2.0,"spriteId":{"name":"spr_atk_laser_fireup","path":"sprites/spr_atk_laser_fireup/spr_atk_laser_fireup.yy",},"x":284.0,"y":128.0,},
+      ],"depth":0,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Assets_1","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
+    {"$GMRInstanceLayer":"","%Name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"","%Name":"inst_2A5565A9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2A5565A9","objectId":{"name":"obj_battleCore","path":"objects/obj_battleCore/obj_battleCore.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":320.0,"y":320.0,},
+        {"$GMRInstance":"","%Name":"inst_234407E9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_234407E9","objectId":{"name":"obj_soul","path":"objects/obj_soul/obj_soul.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":320.0,"y":320.0,},
+        {"$GMRInstance":"","%Name":"inst_1E8D243E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1E8D243E","objectId":{"name":"obj_bill_startBattle","path":"objects/obj_bill_startBattle/obj_bill_startBattle.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":320.0,"y":120.0,},
+      ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "parent": {
-    "name": "Scuttlebutt",
-    "path": "folders/Rooms/Scuttlebutt.yy",
+  "name":"btl_scb_1_billBattle",
+  "parent":{
+    "name":"Scuttlebutt",
+    "path":"folders/Rooms/Scuttlebutt.yy",
   },
-  "parentRoom": null,
-  "physicsSettings": {
-    "inheritPhysicsSettings": false,
-    "PhysicsWorld": false,
-    "PhysicsWorldGravityX": 0.0,
-    "PhysicsWorldGravityY": 10.0,
-    "PhysicsWorldPixToMetres": 0.1,
+  "parentRoom":null,
+  "physicsSettings":{
+    "inheritPhysicsSettings":false,
+    "PhysicsWorld":false,
+    "PhysicsWorldGravityX":0.0,
+    "PhysicsWorldGravityY":10.0,
+    "PhysicsWorldPixToMetres":0.1,
   },
-  "roomSettings": {
-    "Height": 480,
-    "inheritRoomSettings": false,
-    "persistent": false,
-    "Width": 640,
+  "resourceType":"GMRoom",
+  "resourceVersion":"2.0",
+  "roomSettings":{
+    "Height":480,
+    "inheritRoomSettings":false,
+    "persistent":false,
+    "Width":640,
   },
-  "sequenceId": null,
-  "views": [
+  "sequenceId":null,
+  "views":[
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1024,"wview":0,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1024,"wview":1024,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1024,"wview":1024,"xport":0,"xview":0,"yport":0,"yview":0,},
@@ -53,11 +55,11 @@
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1024,"wview":1024,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1024,"wview":1024,"xport":0,"xview":0,"yport":0,"yview":0,},
   ],
-  "viewSettings": {
-    "clearDisplayBuffer": false,
-    "clearViewBackground": false,
-    "enableViews": false,
-    "inheritViewSettings": false,
+  "viewSettings":{
+    "clearDisplayBuffer":false,
+    "clearViewBackground":false,
+    "enableViews":false,
+    "inheritViewSettings":false,
   },
-  "volume": 1.0,
+  "volume":1.0,
 }

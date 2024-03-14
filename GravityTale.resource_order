@@ -1,5 +1,5 @@
 {
-  "FolderOrderSettings": [
+  "FolderOrderSettings":[
     {"name":"Ghosts","order":10,"path":"folders/Objects/Battle/Caves/Ghosts.yy",},
     {"name":"Grunts","order":11,"path":"folders/Objects/Battle/Caves/Grunts.yy",},
     {"name":"Grunts","order":11,"path":"folders/Objects/Battle/Forest/Grunts.yy",},
@@ -34,7 +34,7 @@
     {"name":"Pickups","order":2,"path":"folders/Sprites/Overworld/Pickups.yy",},
     {"name":"Scuttlebutt","order":3,"path":"folders/Sprites/Overworld/Scuttlebutt.yy",},
   ],
-  "ResourceOrderSettings": [
+  "ResourceOrderSettings":[
     {"name":"ow_fst_8_pz4","order":10,"path":"rooms/ow_fst_8_pz4/ow_fst_8_pz4.yy",},
     {"name":"obj_atk_barf","order":3,"path":"objects/obj_atk_barf/obj_atk_barf.yy",},
     {"name":"obj_wendyne_battle","order":8,"path":"objects/obj_wendyne_battle/obj_wendyne_battle.yy",},

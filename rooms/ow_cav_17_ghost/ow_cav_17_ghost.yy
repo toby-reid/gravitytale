@@ -1,12 +1,11 @@
 {
-  "resourceType": "GMRoom",
-  "resourceVersion": "1.0",
-  "name": "ow_cav_17_ghost",
-  "creationCodeFile": "",
-  "inheritCode": false,
-  "inheritCreationOrder": false,
-  "inheritLayers": false,
-  "instanceCreationOrder": [
+  "$GMRoom":"",
+  "%Name":"ow_cav_17_ghost",
+  "creationCodeFile":"",
+  "inheritCode":false,
+  "inheritCreationOrder":false,
+  "inheritLayers":false,
+  "instanceCreationOrder":[
     {"name":"inst_51CA927C_11","path":"rooms/ow_cav_17_ghost/ow_cav_17_ghost.yy",},
     {"name":"inst_44D9A326","path":"rooms/ow_cav_17_ghost/ow_cav_17_ghost.yy",},
     {"name":"inst_29637609","path":"rooms/ow_cav_17_ghost/ow_cav_17_ghost.yy",},
@@ -16,55 +15,60 @@
     {"name":"inst_6ADD216B","path":"rooms/ow_cav_17_ghost/ow_cav_17_ghost.yy",},
     {"name":"inst_6C9B0E5C","path":"rooms/ow_cav_17_ghost/ow_cav_17_ghost.yy",},
   ],
-  "isDnd": false,
-  "layers": [
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"PLayer","depth":0,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_51CA927C_11","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_dipper","path":"objects/obj_dipper/obj_dipper.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":220.0,},
-      ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_44D9A326","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"properties":[
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"goto","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"ow_cav_16_crypt",},
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"dir","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"3",},
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"music","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"mus_mysterious",},
-          ],"rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":140.0,"y":240.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_29637609","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collide","path":"objects/obj_collide/obj_collide.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":12.0,"x":120.0,"y":0.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_65EF6212","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_collide","path":"objects/obj_collide/obj_collide.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":12.0,"x":180.0,"y":0.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6ADD216B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cav_spotlight","path":"objects/obj_cav_spotlight/obj_cav_spotlight.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":0.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1D721CA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_cav_trembleyPlaque","path":"objects/obj_cav_trembleyPlaque/obj_cav_trembleyPlaque.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":150.0,"y":100.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_796B27F4","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_ford_ow_1","path":"objects/obj_ford_ow_1/obj_ford_ow_1.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":150.0,"y":-40.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6C9B0E5C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"properties":[
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"goto","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"ow_cav_18_pz7",},
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"dir","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"1",},
-            {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"music","path":"objects/obj_toRoom/obj_toRoom.yy",},"value":"mus_waterquiet",},
-          ],"rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":140.0,"y":-20.0,},
-      ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
-    {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":200,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
--7,-2147483648,2,1879048194,1073741826,-14,-2147483648,2,1879048194,1073741826,-14,-2147483648,2,1610612738,1073741826,-14,
--2147483648,2,1610612738,1342177282,-14,-2147483648,2,1610612738,1342177282,-14,-2147483648,2,1610612738,1073741826,-14,-2147483648,
-2,1610612738,1342177282,-14,-2147483648,2,1879048194,1073741826,-14,-2147483648,2,1879048194,1073741826,-14,-2147483648,2,
-1879048194,1342177282,-14,-2147483648,2,1879048194,1342177282,-14,-2147483648,2,1610612738,1073741826,-7,-2147483648,],"TileDataFormat":1,},"tilesetId":{"name":"tl_caves","path":"tilesets/tl_caves/tl_caves.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":300,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
+  "isDnd":false,
+  "layers":[
+    {"$GMRInstanceLayer":"","%Name":"PLayer","depth":0,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"","%Name":"inst_51CA927C_11","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_51CA927C_11","objectId":{"name":"obj_dipper","path":"objects/obj_dipper/obj_dipper.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":220.0,},
+      ],"layers":[],"name":"PLayer","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"","%Name":"inst_44D9A326","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_44D9A326","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"properties":[
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"goto","path":"objects/obj_toRoom/obj_toRoom.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"ow_cav_16_crypt",},
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"dir","path":"objects/obj_toRoom/obj_toRoom.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"3",},
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"music","path":"objects/obj_toRoom/obj_toRoom.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"mus_mysterious",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":140.0,"y":240.0,},
+        {"$GMRInstance":"","%Name":"inst_29637609","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_29637609","objectId":{"name":"obj_collide","path":"objects/obj_collide/obj_collide.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":12.0,"x":120.0,"y":0.0,},
+        {"$GMRInstance":"","%Name":"inst_65EF6212","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_65EF6212","objectId":{"name":"obj_collide","path":"objects/obj_collide/obj_collide.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":12.0,"x":180.0,"y":0.0,},
+        {"$GMRInstance":"","%Name":"inst_6ADD216B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6ADD216B","objectId":{"name":"obj_cav_spotlight","path":"objects/obj_cav_spotlight/obj_cav_spotlight.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":0.0,},
+        {"$GMRInstance":"","%Name":"inst_1D721CA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1D721CA","objectId":{"name":"obj_cav_trembleyPlaque","path":"objects/obj_cav_trembleyPlaque/obj_cav_trembleyPlaque.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":150.0,"y":100.0,},
+        {"$GMRInstance":"","%Name":"inst_796B27F4","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_796B27F4","objectId":{"name":"obj_ford_ow_1","path":"objects/obj_ford_ow_1/obj_ford_ow_1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":150.0,"y":-40.0,},
+        {"$GMRInstance":"","%Name":"inst_6C9B0E5C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6C9B0E5C","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"properties":[
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"goto","path":"objects/obj_toRoom/obj_toRoom.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"ow_cav_18_pz7",},
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"dir","path":"objects/obj_toRoom/obj_toRoom.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"music","path":"objects/obj_toRoom/obj_toRoom.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"mus_waterquiet",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":140.0,"y":-20.0,},
+      ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRTileLayer":"","%Name":"Tiles_1","depth":200,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
+          -7,-2147483648,2,1879048194,1073741826,-14,-2147483648,2,1879048194,1073741826,-14,-2147483648,2,1610612738,
+          1073741826,-14,-2147483648,2,1610612738,1342177282,-14,-2147483648,2,1610612738,1342177282,-14,-2147483648,
+          2,1610612738,1073741826,-14,-2147483648,2,1610612738,1342177282,-14,-2147483648,2,1879048194,1073741826,
+          -14,-2147483648,2,1879048194,1073741826,-14,-2147483648,2,1879048194,1342177282,-14,-2147483648,2,1879048194,
+          1342177282,-14,-2147483648,2,1610612738,1073741826,-7,-2147483648,
+        ],"TileDataFormat":1,},"tilesetId":{"name":"tl_caves","path":"tilesets/tl_caves/tl_caves.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":300,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "parent": {
-    "name": "Caves",
-    "path": "folders/Rooms/Caves.yy",
+  "name":"ow_cav_17_ghost",
+  "parent":{
+    "name":"Caves",
+    "path":"folders/Rooms/Caves.yy",
   },
-  "parentRoom": null,
-  "physicsSettings": {
-    "inheritPhysicsSettings": false,
-    "PhysicsWorld": false,
-    "PhysicsWorldGravityX": 0.0,
-    "PhysicsWorldGravityY": 10.0,
-    "PhysicsWorldPixToMetres": 0.1,
+  "parentRoom":null,
+  "physicsSettings":{
+    "inheritPhysicsSettings":false,
+    "PhysicsWorld":false,
+    "PhysicsWorldGravityX":0.0,
+    "PhysicsWorldGravityY":10.0,
+    "PhysicsWorldPixToMetres":0.1,
   },
-  "roomSettings": {
-    "Height": 240,
-    "inheritRoomSettings": false,
-    "persistent": false,
-    "Width": 320,
+  "resourceType":"GMRoom",
+  "resourceVersion":"2.0",
+  "roomSettings":{
+    "Height":240,
+    "inheritRoomSettings":false,
+    "persistent":false,
+    "Width":320,
   },
-  "sequenceId": null,
-  "views": [
+  "sequenceId":null,
+  "views":[
     {"hborder":160,"hport":480,"hspeed":-1,"hview":240,"inherit":false,"objectId":{"name":"obj_dipper","path":"objects/obj_dipper/obj_dipper.yy",},"vborder":120,"visible":true,"vspeed":-1,"wport":640,"wview":320,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
@@ -74,11 +78,11 @@
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
     {"hborder":32,"hport":768,"hspeed":-1,"hview":768,"inherit":false,"objectId":null,"vborder":32,"visible":false,"vspeed":-1,"wport":1366,"wview":1366,"xport":0,"xview":0,"yport":0,"yview":0,},
   ],
-  "viewSettings": {
-    "clearDisplayBuffer": false,
-    "clearViewBackground": false,
-    "enableViews": true,
-    "inheritViewSettings": false,
+  "viewSettings":{
+    "clearDisplayBuffer":false,
+    "clearViewBackground":false,
+    "enableViews":true,
+    "inheritViewSettings":false,
   },
-  "volume": 1.0,
+  "volume":1.0,
 }
