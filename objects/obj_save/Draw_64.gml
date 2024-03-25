@@ -18,7 +18,7 @@ if save > 0 switch save {
 				if keyboard_check_pressed(vk_enter) {
 					save = 3
 					alarm[0] = 15
-					scr_save(rmName,music)
+					scr_save(rmName);
 				}
 			}
 			else {

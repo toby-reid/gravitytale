@@ -60,12 +60,10 @@ switch image_index {
 		break
 	//shouldn't need a case 1
 	case 2:
-		if rightVersion scr_load()
-		else with instance_create_layer(160,192,"Instances",obj_textbox) text = ["@ff0000Whoops!@ffffff&Looks like you've got an old #save loaded!","Contact the Creator if you #believe this is a mistake."]
+		if !scr_load() with instance_create_layer(160,192,"Instances",obj_textbox) text = ["@ff0000Whoops!@ffffff&Looks like you've got an old #save loaded!","Contact the Creator if you #believe this is a mistake."]
 		break
 	case 3: image_index = 5; audio_play_sound(sfx_select,0,false) break
 	case 4:
-		file_delete("Inst.save")
 		file_delete("Info.save")
 		file_delete("Prof.save")
 		file_delete("Save.save")

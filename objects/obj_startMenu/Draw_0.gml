@@ -1,6 +1,6 @@
 draw_self()
 draw_sprite(sprite_index,1,x,y)
-if image_index > 1 /*if audio_is_playing(mus_menu_full)*/ {
+/*if image_index > 1 if audio_is_playing(mus_menu_full) {
 	if spared[enemy.soos]		draw_sprite(spr_soos_d,0,146,195)
 	if spared[enemy.robbie]		draw_sprite(spr_ow_robbie,0,70,145)
 	if spared[enemy.ford]		draw_sprite(spr_ford_d,0,195,201)
@@ -12,4 +12,4 @@ if image_index > 1 /*if audio_is_playing(mus_menu_full)*/ {
 								draw_sprite(spr_mcg_d,0,210+x,174+y)
 								draw_sprite(spr_bill_ow,0,159,135)
 	}
-}
+}*/

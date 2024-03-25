@@ -1,45 +1,65 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_load(){
-	audio_group_stop_all(Music)
-	/*if file_exists("Save.save") game_load("Save.save")
-	else game_restart()*/
-	
-	
-	//Custom Save/Load
-	global.load = true
-	ini_open("Info.save")
-	
-	window_set_caption(ini_read_string("Save","WC",window_get_caption()))
-	global.player[0] = ini_read_string("Save","PL0","ERROR")
-	for(var i = 1; i < player.total; i++) global.player[i] = ini_read_real("Save","PL"+string(i),noone)
-	global.menu = [ini_read_real("Save","MN0",0),ini_read_real("Save","MN1",0)]
-	global.battleTimer = ini_read_real("Save","BTLTM",0)
-	for(var i = 0; i < enemy.total; i++) {
-		global.killed[i] = ini_read_real("Save","K"+string(i),false)
-		global.spared[i] = ini_read_real("Save","S"+string(i),false)
+/// @param {bool} _softload: Set to 'true' to avoid resetting certain variables, such as global.soos
+function scr_load(_softload=false) {
+	var _bin = file_bin_open("Info.save",0);
+		
+	if(scr_read_bin_string(_bin) != GM_version) {
+		file_bin_close(_bin);
+		return false;
 	}
-	for(var i = 0; i <= 7; i++) global.inventory[i] = ini_read_real("Save","IV"+string(i),item.none)
-	for(var i = 0; i < area.total; i++) global.areaKilled[i] = ini_read_real("Save","AK"+string(i),0)
-	global.soos = ini_read_real("Save","soos",0)
-	global.stans = ini_read_real("Save","stans",0)
-	global.toby = ini_read_real("Save","toby",0)
-	global.wendy = ini_read_real("Save","wendy",0)
-	global.hamstick = ini_read_real("Save","hamstick",false)
-	global.fairydust = ini_read_real("Save","fairydust",0)
-	global.runemy = []
-	for(var i = 0; i < ini_read_real("Save","RUNL",0); i++) global.runemy[i] = ini_read_real("Save","RUN"+string(i),noone)
-	global.buttSwitch = []
-	for(var i = 0; i < ini_read_real("Save","BUTTL",0); i++) global.buttSwitch[i] = ini_read_real("Save","BUTT"+string(i),noone)
-	global.trashCan = []
-	for(var i = 0; i < ini_read_real("Save","TRASHL",0); i++) global.trashCan[i] = ini_read_real("Save","TRASH"+string(i),noone)
+	room_goto(asset_get_index(scr_read_bin_string(_bin)));
+	window_set_caption(scr_read_bin_string(_bin));
+		
+	global.player[player.name] = scr_read_bin_string(_bin);
+	var _next = file_bin_read_byte(_bin);
+	for(var i = 1; i < _next; i++) {
+		if(_softload and (i == player.hours or i == player.minutes or i == player.seconds)) file_bin_read_byte(_bin);
+		else global.player[i] = file_bin_read_byte(_bin);
+	}
+	for(var i = 0; i < 8; i++) {
+		if(!_softload) global.inventory[i] = file_bin_read_byte(_bin);
+		else file_bin_read_byte(_bin);
+	}
 	
-	audio_group_stop_all(Music)
-	audio_play_sound(ini_read_real("Save","MS",noone),0,true)
-	obj_core.goto = ini_read_real("Save","RM",rm_menu)
-	
-	ini_close()
-	scr_genoMusic()
-	obj_core.alarm[2] = 1
-	
+	if(_softload) {file_bin_read_byte(_bin); file_bin_read_byte(_bin);}
+	else global.menu = [file_bin_read_byte(_bin), file_bin_read_byte(_bin)];
+	global.battleTimer = file_bin_read_byte(_bin);
+		
+	_next = file_bin_read_byte(_bin);
+	var _killed = 0;
+	var _spared = 0;
+	for(var i = 8 * floor(_next / 8); i >= 0; i -= 8) {
+		_killed += (file_bin_read_byte(_bin) << i);
+		_spared += (file_bin_read_byte(_bin) << i);
+	}
+	for(var i = _next - 1; i >= 0; i--) {
+		global.killed[i] = (_killed % 2 == 1);
+		_killed = floor(_killed / 2);
+		global.spared[i] = (_spared % 2 == 1);
+		_spared = floor(_spared / 2);
+	}
+	_next = file_bin_read_byte(_bin);
+	for(var i = 0; i < _next; i++) global.areaKilled[i] = file_bin_read_byte(_bin);
+		
+	if(!_softload) {
+		global.soos = file_bin_read_byte(_bin);
+		global.stans = file_bin_read_byte(_bin);
+		global.toby = file_bin_read_byte(_bin);
+		global.wendy = file_bin_read_byte(_bin);
+		
+		_next = file_bin_read_byte(_bin);
+		global.hamstick = (_next >> 4) & 0b1111;
+		global.fairydust = _next & 0b1111;
+		
+		_next = file_bin_read_byte(_bin);
+		for(var i = 0; i < _next; i++) global.runemy[i] = file_bin_read_byte(_bin);
+		
+		_next = file_bin_read_byte(_bin);
+		for(var i = 0; i < _next; i++) global.buttSwitch[i] = asset_get_index(scr_read_bin_string(_bin));
+		
+		_next = file_bin_read_byte(_bin);
+		for(var i = 0; i < _next; i++) global.trashCan[i] = file_bin_read_byte(_bin);
+	}
+		
+	file_bin_close(_bin);
+	return true;
 }

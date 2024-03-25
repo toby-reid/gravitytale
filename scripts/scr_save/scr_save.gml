@@ -1,151 +1,88 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_save(rmName,music) {
-	file_delete("Info.save");//Holds all necessary global variable values
-	file_delete("Prof.save");//Holds information for obj_startMenu to use
-	file_delete("Inst.save");//Holds all information for Instances in the room
-	//game_save("Save.save");
+/// @param {string} rmName: The name of the current room, to be used in Prof.save
+function scr_save(rmName="Unknown") {
+	file_delete("Prof.save"); // ini for obj_startMenu info
+	file_delete("Info.save"); // bitfile for in-game global variables
+	// Rest.save is the information that stays between Resets & Saves, like how many times a person has killed you
 	
 	ini_open("Prof.save");
-		ini_write_string("Profile","NM",global.player[player.name])
-		ini_write_string("Profile","LV",global.player[player.lv])
-		var time = string(global.player[player.hours])
-		if string_length(time) < 2 time = "0"+time
-		ini_write_string("Profile","HR",time)
-		if instance_exists(obj_save) obj_save.savedTime = time+":"
-		time = string(global.player[player.minutes])
-		if string_length(time) < 2 time = "0"+time
-		ini_write_string("Profile","MN",time)
-		if instance_exists(obj_save) obj_save.savedTime += time+":"
-		time = string(global.player[player.seconds])
-		if string_length(time) < 2 time = "0"+time
-		ini_write_string("Profile","SC",time)
-		if instance_exists(obj_save) obj_save.savedTime += time
-		ini_write_string("Profile","RM",rmName)
-	ini_close()
-	ini_open("Info.save")
-		ini_write_string("Save","WARNING","\n! WARNING !\nEditing ANY of these values will break the game!\n")
-		ini_write_string("Save","VS",GM_version)
-		ini_write_string("Save","WC",window_get_caption())
-		ini_write_real("Save","RM",room)
-		//global.player[0] shouldn't ever change.... //You idiot! You need the global.player[player.name] for that too!
-		ini_write_string("Save","PL0",global.player[0])//player.name
-		for(var i = 1; i < player.total; i++) ini_write_real("Save","PL"+string(i),global.player[i])
-		ini_write_real("Save","MN0",global.menu[0])
-		ini_write_real("Save","MN1",global.menu[1])
-		ini_write_real("Save","BTLTM",global.battleTimer)
-		for(var i = 0; i < enemy.total; i++) {
-			ini_write_real("Save","K"+string(i),global.killed[i])
-			ini_write_real("Save","S"+string(i),global.spared[i])
-		}
-		for(var i = 0; i <= 7; i++) ini_write_real("Save","IV"+string(i),global.inventory[i])
-		for(var i = 0; i < area.total; i++) ini_write_real("Save","AK"+string(i),global.areaKilled[i])
-		if variable_global_exists("soos") ini_write_real("Save","soos",global.soos)
-		if variable_global_exists("stans") ini_write_real("Save","stans",global.stans)
-		if variable_global_exists("toby") ini_write_real("Save","toby",global.toby)
-		if variable_global_exists("wendy") ini_write_real("Save","wendy",global.wendy)
-		if variable_global_exists("hamstick") ini_write_real("Save","hamstick",global.hamstick)
-		if variable_global_exists("fairydust") ini_write_real("Save","fairydust",global.fairydust)
-		if variable_global_exists("runemy") {
-			ini_write_real("Save","RUNL",array_length(global.runemy))
-			for(var i = 0; i < array_length(global.runemy); i++) ini_write_real("Save","RUN"+string(i),global.runemy[i])
-		}
-		if variable_global_exists("buttSwitch") {
-			ini_write_real("Save","BUTTL",array_length(global.buttSwitch))
-			for(var i = 0; i < array_length(global.buttSwitch); i++) ini_write_real("Save","BUTT"+string(i),global.buttSwitch[i])
-		}
-		if variable_global_exists("trashCan") {
-			ini_write_real("Save","TRASHL",array_length(global.trashCan))
-			for(var i = 0; i < array_length(global.trashCan); i++) ini_write_real("Save","TRASH"+string(i),global.trashCan[i])
-		}
-		ini_write_real("Save","MS",music)
-		ini_write_string("Save","WARNING0","\n! WARNING !\nEditing ANY of these values will break the game!\n")
-	ini_close()
-	
-	ini_open("Inst.save")
-	
-	ini_write_string("WARNING","WARNING","\n! WARNING !\nEditing ANY of these values will break the game!\n")
-	for(var i = 0; i < instance_count; i++) {
-		var inst = instance_find(all,i)
-		switch inst.object_index {
-			case obj_scb_barrier:
-				ini_write_real(inst,"size",inst.size)
-			break
-			case obj_buttSwitch:
-				ini_write_real(inst,"active",inst.active)
-				ini_write_real(inst,"done",inst.done)
-				ini_write_real(inst,"pressed",inst.pressed)
-				ini_write_real(inst,"order length",array_length(inst.order))
-				for(var j = 0; j < array_length(inst.order); j++) ini_write_real(inst,"order["+string(j)+"]",inst.order[j])
-			break
-			case obj_core:
-				ini_write_real(inst,"alarm[0]",inst.alarm[0])
-			break
-			case obj_dipper:
-				ini_write_real(inst,"canMove",inst.canMove)
-				ini_write_real(inst,"menu[0]",inst.menu[0])
-				ini_write_real(inst,"menu[1]",inst.menu[1])
-				ini_write_real(inst,"dir",inst.dir)
-				ini_write_real(inst,"moving",inst.moving)
-			break
-			case obj_fallingTree:
-				ini_write_real(inst,"rotAmt",inst.rotAmt)
-				ini_write_real(inst,"rotDir",inst.rotDir)
-				ini_write_real(inst,"stage", inst.stage)
-			break
-			case obj_portalPotty:
-				ini_write_real(inst,"active",false)
-				ini_write_real(inst,"teleport",false)
-				ini_write_real(inst,"drawx[320]",0)
-				ini_write_real(inst,"loc",0)
-			break
-			case obj_randBattle:
-				ini_write_real(inst,"loc",inst.loc)
-				ini_write_real(inst,"image_alpha",0)
-			break
-			case obj_save:
-				ini_write_string(inst,"rmName",inst.rmName)
-				ini_write_string(inst,"text",inst.text)
-				ini_write_real(inst,"music",inst.music)
-				ini_write_real(inst,"size",inst.size)
-				ini_write_real(inst,"save",inst.save)
-				ini_write_real(inst,"ybox",inst.ybox)
-				ini_write_string(inst,"savedTime",inst.savedTime)
-			break
-			case obj_sign:
-				ini_write_real(inst,"text length",array_length(inst.text))
-				for(var j = 0; j < array_length(inst.text); j++) ini_write_string(inst,"text["+string(j)+"]",inst.text[j])
-				for(var j = 0; j < array_length(inst.font); j++) ini_write_real(inst,"font["+string(j)+"]",inst.font[j])
-				for(var j = 0; j < array_length(inst.sound);j++) ini_write_real(inst,"sound["+string(j)+"]",inst.sound[j])
-				for(var j = 0; j < array_length(inst.charRate); j++) ini_write_real(inst,"charRate["+string(j)+"]",inst.charRate[j])
-				for(var j = 0; j < array_length(inst.choice);j++)ini_write_real(inst,"choice["+string(j)+"]",inst.choice[j])
-			break
-			case obj_stans_ow_1:
-				ini_write_real(inst,"stage",inst.stage)
-				ini_write_real(inst,"killTime",inst.killTime)
-				ini_write_real(inst,"image_speed",inst.image_speed)
-			break
-			case obj_toRoom:
-				ini_write_real(inst,"goto",inst.goto)
-				ini_write_real(inst,"alpha",inst.alpha)
-				ini_write_real(inst,"dir",inst.dir)
-				ini_write_real(inst,"music",inst.music)
-				ini_write_real(inst,"num",inst.num)
-			break
-		}
-		ini_write_real(inst,"sprite_index",inst.sprite_index)
-		ini_write_real(inst,"image_index",inst.image_index)
-		ini_write_real(inst,"image_speed",inst.image_speed)
-		ini_write_real(inst,"image_alpha",inst.image_alpha)
-		ini_write_real(inst,"image_blend",inst.image_blend)
-		ini_write_real(inst,"x",inst.x)
-		ini_write_real(inst,"y",inst.y)
-		ini_write_real(inst,"xstart",inst.xstart)
-		ini_write_real(inst,"ystart",inst.ystart)
+	ini_write_string("Profile","NM",global.player[player.name]);
+	ini_write_real("Profile","LV",global.player[player.lv]);
+	ini_write_string("Profile","RM",rmName);
+		
+	var time = string(global.player[player.seconds]);
+	while(string_length(time) < 2) time = "0" + time;
+	time = string(global.player[player.minutes]) + ":" + time;
+	while(string_length(time) < 5) time = "0" + time;
+	time = string(global.player[player.hours]) + ":" + time;
+	while(string_length(time) < 8) time = "0" + time;
+	// Keep length low if very long
+	if(string_length(time) > 10) time = string_copy(time,1,string_length(time)-3); // removes seconds
+	if(string_length(time) > 10) time = string_copy(time,1,string_length(time)-3); // removes minutes
+	ini_write_string("Profile","TM",time);
+	with obj_save savedTime = time;
+	ini_close();
+		
+		
+	var _bin = file_bin_open("Info.save",1); // opens new binary file in write mode
+		
+	// The following must be read/written in order.
+	scr_write_bin_string(_bin, GM_version);
+	scr_write_bin_string(_bin, room_get_name(room));
+	scr_write_bin_string(_bin, window_get_caption());
+		
+	scr_write_bin_string(_bin, global.player[player.name]);
+	file_bin_write_byte(_bin, player.total);
+	for(var i = 1; i < player.total; i++) file_bin_write_byte(_bin, global.player[i]);
+	for(var i = 0; i < 8; i++) {
+		file_bin_write_byte(_bin, global.inventory[i]);
 	}
-	ini_write_string("WARNING0","WARNING0","\n! WARNING !\nEditing ANY of these values will break the game!\n")
-	
-	ini_close()
-
-	audio_play_sound(sfx_save,0,false)
+		
+	file_bin_write_byte(_bin, global.menu[0]);
+	file_bin_write_byte(_bin, global.menu[1]);
+	file_bin_write_byte(_bin, global.battleTimer);
+		
+	// Write a set of bytes that directly interprets a 1 as 'true' and 0 as 'false'
+	var _killed = 0;
+	var _spared = 0;
+	file_bin_write_byte(_bin, enemy.total);
+	for(var i = 0; i < enemy.total; i++) {
+		_killed *= 2; // shifts the binary left by one
+		if(global.killed[i]) _killed++; // turns the last into a 1 if killed
+		_spared *= 2;
+		if(global.spared[i]) _spared++;
+	}
+	for(var i = 8 * floor(enemy.total / 8); i >= 0; i -= 8) {
+		file_bin_write_byte(_bin, (_killed >> i) & 0b11111111); // bit-shifts _spared right, then 'and's it with 0xff
+		// Potential issue here in that it might write more than 1 byte for those after the first
+		file_bin_write_byte(_bin, (_spared >> i) & 0b11111111);
+	}
+	file_bin_write_byte(_bin, area.total);
+	for(var i = 0; i < area.total; i++) file_bin_write_byte(_bin, global.areaKilled[i]);
+		
+	if(!variable_global_exists("soos"))  global.soos = 0;
+	if(!variable_global_exists("stans")) global.stans = 0;
+	if(!variable_global_exists("toby"))  global.toby = 0;
+	if(!variable_global_exists("wendy")) global.wendy = 0;
+	file_bin_write_byte(_bin, global.soos);
+	file_bin_write_byte(_bin, global.stans);
+	file_bin_write_byte(_bin, global.toby);
+	file_bin_write_byte(_bin, global.wendy);
+		
+	if(!variable_global_exists("hamstick")) global.hamstick = false;
+	if(!variable_global_exists("fairydust")) global.fairydust = false;
+	file_bin_write_byte(_bin, (global.hamstick << 4) + global.fairydust);
+		
+	if(!variable_global_exists("runemy")) global.runemy = [];
+	file_bin_write_byte(_bin, array_length(global.runemy));
+	for(var i = 0; i < array_length(global.runemy); i++) file_bin_write_byte(_bin, instance_id_get(global.runemy[i]));
+		
+	if(!variable_global_exists("buttSwitch")) global.buttSwitch = [];
+	file_bin_write_byte(_bin, array_length(global.buttSwitch));
+	for(var i = 0; i < array_length(global.buttSwitch); i++) scr_write_bin_string(_bin, room_get_name(global.buttSwitch[i]));
+		
+	if(!variable_global_exists("trashCan")) global.trashCan = [];
+	file_bin_write_byte(_bin, array_length(global.trashCan));
+	for(var i = 0; i < array_length(global.trashCan); i++) file_bin_write_byte(_bin, instance_id_get(global.trashCan[i]));
+		
+	file_bin_close(_bin);
 }

@@ -47,9 +47,7 @@ switch stage {
 			}
 			if charCount > string_length(text)+9 if keyboard_check_pressed(vk_enter) {
 				instance_destroy()
-				scr_load()
-				//temp
-				//game_end()
+				if(!scr_load(true)) game_restart();
 			}
 		}
 		if keyboard_check_pressed(vk_shift) charCount = string_length(text)+10

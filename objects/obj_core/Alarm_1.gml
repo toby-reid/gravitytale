@@ -1,2 +1,2 @@
 /// @description Load game
-scr_load()
+scr_load_old()
