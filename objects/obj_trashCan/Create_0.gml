@@ -8,5 +8,6 @@ charRate = []//Change as needed
 
 get = item.none
 newText = text
+trashCan = room_get_name(room); // Change to a String if needed in CC.
 if !variable_global_exists("trashCan") global.trashCan = []
-for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == id {alarm[0] = 1; break}
+alarm[0] = 1; // so it triggers after CC

@@ -11,9 +11,8 @@ if !instance_exists(obj_textbox) if instance_exists(obj_dipper) if obj_dipper.ca
 		}
 		if get != item.none {
 			if scr_get_item(get, true) {
-				get = item.none
-				text = newText
-				global.trashCan[array_length(global.trashCan)] = id
+				event_user(0);
+				global.trashCan[array_length(global.trashCan)] = trashCan;
 			}
 			else obj_textbox.text[array_length(obj_textbox.text)] = "(Whoops!&(You lack inventory space.&(Come back later...)"
 		}

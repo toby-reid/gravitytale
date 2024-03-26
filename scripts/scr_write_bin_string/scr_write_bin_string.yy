@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_write_bin_string",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"SaveLoad",
+    "path":"folders/Scripts/SaveLoad.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

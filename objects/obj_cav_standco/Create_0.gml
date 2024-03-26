@@ -28,8 +28,7 @@ head = [
 	spr_stans_head_hollowEye
 ]
 stage = 0
+trashCan = room_get_name(room);
 if !variable_global_exists("trashCan") global.trashCan = []
-else for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == id {image_index = 1; break}
-ini_open("Reset.save")
-if global.killed[enemy.ford] or ini_read_real("K",enemy.stans_cave,false) image_index = 1
-ini_close()
+else for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == trashCan {image_index = 1; break}
+if global.killed[enemy.ford] image_index = 1;

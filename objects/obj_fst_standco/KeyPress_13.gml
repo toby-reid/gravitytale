@@ -16,5 +16,5 @@ else if active if obj_textbox.page == array_length(obj_textbox.text)-1 if obj_te
 	image_index++
 	active = false
 	audio_play_sound(sfx_click,0,false)
-	global.trashCan[array_length(global.trashCan)] = id
+	global.trashCan[array_length(global.trashCan)] = trashCan;
 }

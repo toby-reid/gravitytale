@@ -10,7 +10,7 @@ charCount = 0
 lv = 0//Set higher if you kill someone important
 sb = 0//How many Stan Bucks are earned at the end
 goto = room_previous(room)//Should be changed by obj_toBattle
-music = noone//Music to play after battle Ends. Will not play if still noone.
+music = silence;//Music to play after battle Ends. Will not play if still noone.
 battle = false
 
 for(i = 0; i < 4; i++) with instance_create_layer(33+i*156,431,"Instances",obj_battleButtons) image_index = other.i

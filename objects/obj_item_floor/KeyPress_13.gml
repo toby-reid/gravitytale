@@ -6,7 +6,7 @@ if get != item.none if !instance_exists(obj_textbox) if instance_exists(obj_dipp
 		if scr_get_item(get, true) {//script plays audio lol
 			with instance_create_layer(160,ybox,"Instances",obj_textbox)
 				text[0] = "Got "+global.item_index[# other.get,item_info.name]+" - Heals "+string(global.item_index[# other.get,item_info.heal])+".&"+global.item_index[# other.get,item_info.desc]
-			global.trashCan[array_length(global.trashCan)] = id
+			global.trashCan[array_length(global.trashCan)] = trashCan;
 			instance_destroy()
 		}
 		else with instance_create_layer(160,ybox,"Instances",obj_textbox) text = ["(Whoops!&(Looks like your inventory is #already full.)"]

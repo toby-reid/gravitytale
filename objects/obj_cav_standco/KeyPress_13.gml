@@ -20,7 +20,7 @@ else if stage == 1 with obj_textbox {
 		text[12] = "here we go."//head is already good to go
 		setMove = false
 	}}
-	else if page == 12 if charCount >= string_length(text[12]) {other.alarm[0] = 5; global.trashCan[array_length(global.trashCan)] = other.id}
+	else if page == 12 if charCount >= string_length(text[12]) {other.alarm[0] = 5; global.trashCan[array_length(global.trashCan)] = other.trashCan}
 }
 else if stage == 3 with obj_textbox {
 	if page == array_length(text)-1 if charCount >= string_length(text[array_length(text)-1]) {

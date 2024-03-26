@@ -1,3 +1,9 @@
+if(array_length(global.dip_pos) > 0) {
+	x = global.dip_pos[0];
+	y = global.dip_pos[1];
+	global.dip_pos = [];
+}
+
 image_speed = 0
 if canMove {
 	if keyboard_check(vk_down) {

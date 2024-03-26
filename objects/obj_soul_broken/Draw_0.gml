@@ -18,31 +18,29 @@ switch stage {
 		else {
 			charCount += .2
 			draw_set_font(fnt_basic_gui)
-			var drawx = 50
-			var drawy = 272
-			draw_text_transformed(drawx,drawy,"*",1,1,-1*drawAng[1])
-			drawx += string_width("* ")
+			var _drawx = 50
+			var _drawy = 272
+			draw_text(_drawx+irandom(2)-1,_drawy+irandom(2)-1,"*")
+			_drawx += string_width("* ")
 			for(var i = 1; i <= charCount and i <= string_length(text); i++) {
 				if i >= charCount-10 draw_set_font(fnt_bill_gui)
-				if i == charCount-10 drawy += 2
-				if timer[i] == 0 {timer[i] = 5; drawAng[i] = irandom(6)-3}
-				timer[i]--
+				if i == charCount-10 _drawy += 2
 				var char = string_copy(text,i,1)
 				if char == "&" {
 					draw_set_font(fnt_basic_gui)
-					drawx = 50
-					drawy += 35
-					draw_text_transformed(drawx,drawy,"*",1,1,drawAng[i])
-					drawx += string_width("* ")
+					_drawx = 50
+					_drawy += 35
+					draw_text(_drawx+irandom(2)-1,_drawy+irandom(2)-1,"*")
+					_drawx += string_width("* ")
 				}
 				else if char == "#" {
 					draw_set_font(fnt_basic_gui)
-					drawx = 50+string_width("* ")
-					drawy += 35
+					_drawx = 50+string_width("* ")
+					_drawy += 35
 				}
 				else {
-					draw_text_transformed(drawx,drawy,string_copy(text,i,1),1,1,drawAng[i])
-					drawx += string_width(string_copy(text,i,1))
+					draw_text(_drawx+irandom(2)-1,_drawy+irandom(2)-1,string_copy(text,i,1))
+					_drawx += string_width(string_copy(text,i,1))
 				}
 			}
 			if charCount > string_length(text)+9 if keyboard_check_pressed(vk_enter) {

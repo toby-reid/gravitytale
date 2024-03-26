@@ -1,10 +1,11 @@
 /// @param {string} rmName: The name of the current room, to be used in Prof.save
-function scr_save(rmName="Unknown") {
+function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
 	file_delete("Prof.save"); // ini for obj_startMenu info
 	file_delete("Info.save"); // bitfile for in-game global variables
 	// Rest.save is the information that stays between Resets & Saves, like how many times a person has killed you
 	
 	ini_open("Prof.save");
+	
 	ini_write_string("Profile","NM",global.player[player.name]);
 	ini_write_real("Profile","LV",global.player[player.lv]);
 	ini_write_string("Profile","RM",rmName);
@@ -20,6 +21,7 @@ function scr_save(rmName="Unknown") {
 	if(string_length(time) > 10) time = string_copy(time,1,string_length(time)-3); // removes minutes
 	ini_write_string("Profile","TM",time);
 	with obj_save savedTime = time;
+	
 	ini_close();
 		
 		
@@ -58,6 +60,18 @@ function scr_save(rmName="Unknown") {
 	}
 	file_bin_write_byte(_bin, area.total);
 	for(var i = 0; i < area.total; i++) file_bin_write_byte(_bin, global.areaKilled[i]);
+	
+	if(instance_exists(obj_dipper)) {
+		var _x = obj_dipper.x;
+		file_bin_write_byte(_bin, _x >> 8);
+		file_bin_write_byte(_bin, _x & 255);
+		var _y = obj_dipper.y;
+		file_bin_write_byte(_bin, _y >> 8);
+		file_bin_write_byte(_bin, _y & 255);
+	}
+	else for(var i = 0; i < 4; i++) file_bin_write_byte(_bin, 255); // writes the maximum value for Dipper's x/y
+	
+	scr_write_bin_string(_bin, audio_get_name(_music));
 		
 	if(!variable_global_exists("soos"))  global.soos = 0;
 	if(!variable_global_exists("stans")) global.stans = 0;
@@ -72,17 +86,15 @@ function scr_save(rmName="Unknown") {
 	if(!variable_global_exists("fairydust")) global.fairydust = false;
 	file_bin_write_byte(_bin, (global.hamstick << 4) + global.fairydust);
 		
-	if(!variable_global_exists("runemy")) global.runemy = [];
-	file_bin_write_byte(_bin, array_length(global.runemy));
-	for(var i = 0; i < array_length(global.runemy); i++) file_bin_write_byte(_bin, instance_id_get(global.runemy[i]));
-		
 	if(!variable_global_exists("buttSwitch")) global.buttSwitch = [];
 	file_bin_write_byte(_bin, array_length(global.buttSwitch));
 	for(var i = 0; i < array_length(global.buttSwitch); i++) scr_write_bin_string(_bin, room_get_name(global.buttSwitch[i]));
 		
 	if(!variable_global_exists("trashCan")) global.trashCan = [];
 	file_bin_write_byte(_bin, array_length(global.trashCan));
-	for(var i = 0; i < array_length(global.trashCan); i++) file_bin_write_byte(_bin, instance_id_get(global.trashCan[i]));
+	for(var i = 0; i < array_length(global.trashCan); i++) scr_write_bin_string(_bin, global.trashCan[i]);
 		
 	file_bin_close(_bin);
+	
+	if(_playsound) audio_play_sound(sfx_save,0,false);
 }

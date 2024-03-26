@@ -7,5 +7,6 @@ get = item.none
 //head not needed.
 ///@desc text[],item
 
+trashCan = room_get_name(room); // Change as needed
 if !variable_global_exists("trashCan") global.trashCan = []
-for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == id {instance_destroy(); break}
+alarm[0] = 1;

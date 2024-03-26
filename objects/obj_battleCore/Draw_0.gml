@@ -247,9 +247,9 @@ if !instance_exists(obj_toBattle) {
 					audio_group_stop_all(Music)
 					audio_stop_sound(sfx_rocket)
 					audio_group_unload(Battle)
-					if other.music != noone audio_play_sound(other.music,0,true)
+					audio_play_sound(other.music,0,true)
 					if room == btl_scb_general or room == btl_fst_general or room == btl_cav_general {
-						global.battleTimer = -1770
+						global.battleTimer = -1740
 						global.runemy = []
 						for(var i = 0; i < array_length(global.enemy); i++) if instance_exists(global.enemy[i]) global.runemy[array_length(global.runemy)] = global.enemy[i].object_index
 					}
@@ -306,7 +306,7 @@ if !instance_exists(obj_toBattle) {
 		}
 		if keyboard_check_pressed(vk_enter) {
 			if (battle or global.player[player.runActive] != 2) {
-				if music != noone audio_play_sound(music,0,true)
+				audio_play_sound(music,0,true)
 			}
 			audio_group_unload(Battle)
 			global.player[player.money] += sb

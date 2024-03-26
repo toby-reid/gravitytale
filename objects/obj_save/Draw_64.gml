@@ -6,9 +6,9 @@ if save > 0 switch save {
 		if instance_exists(obj_textbox) {if obj_textbox.grow < 0 size += .1}
 		else {
 			draw_text(140,ybox-67,nm)
-			draw_text(280,ybox-67,"LV "+lv)
+			draw_text(280,ybox-67,"LV "+string(lv))
 			draw_set_halign(fa_right)
-			draw_text(500,ybox-67,string_copy(time[0]+":"+time[1]+":"+time[2],1,8))
+			draw_text(500,ybox-67,time)
 			draw_set_halign(fa_left)
 			draw_text(140,ybox-17,rm)
 			if save == 1 {
@@ -18,7 +18,7 @@ if save > 0 switch save {
 				if keyboard_check_pressed(vk_enter) {
 					save = 3
 					alarm[0] = 15
-					scr_save(rmName);
+					scr_save(rmName, music);
 				}
 			}
 			else {

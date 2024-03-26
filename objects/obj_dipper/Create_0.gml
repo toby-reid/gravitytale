@@ -13,3 +13,4 @@ if string_lower(global.player[player.name]) == "lamby" sprite_index = spr_diplam
 else if global.player[player.nyarf] < 2 sprite_index = spr_dipper
 else if string_lower(global.player[player.name]) == "mason" sprite_index = spr_dipstar
 else sprite_index = spr_diphat
+if(!variable_global_exists("dip_pos")) global.dip_pos = [];

@@ -32,4 +32,4 @@ alpha = 0
 charCount = 0
 stage = 0
 text = "Hey, what's the big idea, kid?&You don't die until I say so.&Now get back out there, and #win this time."
-for(var i = 1; i <= string_length(text); i++) {timer[i] = irandom(5); drawAng[i] = irandom(6)-3}
+for(var i = 1; i <= string_length(text); i++) {timer[i] = irandom(5)}

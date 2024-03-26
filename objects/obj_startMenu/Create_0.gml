@@ -2,14 +2,12 @@ if !audio_is_playing(mus_menu) {
 	audio_stop_all();
 	audio_play_sound(mus_menu,0,true);
 }
-if file_exists("Info.save") and file_exists("Inst.save") {
+if(file_exists("Info.save")) {
 	image_index = 2;
 	ini_open("Prof.save");
 		nm = ini_read_string("Profile","NM","ERROR");
 		lv = ini_read_string("Profile","LV","00");
-		time[0] = ini_read_string("Profile","HR","00");
-		time[1] = ini_read_string("Profile","MN","00");
-		time[2] = ini_read_string("Profile","SC","00");
+		time = ini_read_string("Profile","TM","00:00:00");
 		rm = ini_read_string("Profile","RM","ERROR");
 	ini_close();
 }

@@ -18,12 +18,12 @@ if save == 0 if instance_exists(obj_dipper) if obj_dipper.canMove {
 		}
 		save = 1
 		size = 0
-		ini_open("Prof.save")
-		nm = ini_read_string("Profile","NM","EMPTY")
-		lv = ini_read_string("Profile","LV","0")
-		time = [ini_read_string("Profile","HR","00"),ini_read_string("Profile","MN","00"),ini_read_string("Profile","SC","00")]
-		rm = ini_read_string("Profile","RM","--")
-		ini_close()
+		ini_open("Prof.save");
+		nm = ini_read_string("Profile","NM","EMPTY");
+		lv = ini_read_real("Profile","LV",0);
+		time = ini_read_string("Profile","TM","00:00:00");
+		rm = ini_read_string("Profile","RM","--");
+		ini_close();
 		global.player[player.hp] = global.player[player.maxhp]
 		audio_play_sound(sfx_heal,0,false)
 	}

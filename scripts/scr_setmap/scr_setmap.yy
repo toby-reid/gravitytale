@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_setmap",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Startup",
+    "path":"folders/Scripts/Startup.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

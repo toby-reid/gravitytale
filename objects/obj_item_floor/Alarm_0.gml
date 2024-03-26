@@ -1,0 +1,1 @@
+for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == trashCan {instance_destroy(); break}

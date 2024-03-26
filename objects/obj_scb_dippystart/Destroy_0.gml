@@ -1,1 +1,1 @@
-global.trashCan[array_length(global.trashCan)] = room
+global.trashCan[array_length(global.trashCan)] = trashCan;
