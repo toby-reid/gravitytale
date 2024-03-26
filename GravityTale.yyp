@@ -1025,7 +1025,6 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
-    {"roomId":{"name":"ow_scb_8_puzzle3","path":"rooms/ow_scb_8_puzzle3/ow_scb_8_puzzle3.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
         {"roomId":{"name":"rm_endDemo","path":"rooms/rm_endDemo/rm_endDemo.yy",},},
@@ -1051,6 +1050,7 @@
         {"roomId":{"name":"ow_scb_6_nyarf","path":"rooms/ow_scb_6_nyarf/ow_scb_6_nyarf.yy",},},
         {"roomId":{"name":"btl_scb_6_battle","path":"rooms/btl_scb_6_battle/btl_scb_6_battle.yy",},},
         {"roomId":{"name":"ow_scb_7_walkTest","path":"rooms/ow_scb_7_walkTest/ow_scb_7_walkTest.yy",},},
+        {"roomId":{"name":"ow_scb_8_puzzle3","path":"rooms/ow_scb_8_puzzle3/ow_scb_8_puzzle3.yy",},},
         {"roomId":{"name":"ow_scb_9_pz3cal","path":"rooms/ow_scb_9_pz3cal/ow_scb_9_pz3cal.yy",},},
         {"roomId":{"name":"ow_scb_10_puzzle4","path":"rooms/ow_scb_10_puzzle4/ow_scb_10_puzzle4.yy",},},
         {"roomId":{"name":"ow_scb_11_blendin","path":"rooms/ow_scb_11_blendin/ow_scb_11_blendin.yy",},},
