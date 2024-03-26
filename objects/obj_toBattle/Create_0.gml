@@ -2,7 +2,7 @@
 alarm[0] = 1
 flashes = 0
 music = mus_battle//Change if special
-prevMusic = noone//Change if needed
+prevMusic = silence//Change if needed
 goto = room//Change!
 prev = room
 dest = 0//0 to the FIGHT button, 1 to the BattleBox, 2 to the middle

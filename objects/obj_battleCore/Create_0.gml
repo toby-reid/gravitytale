@@ -13,7 +13,7 @@ goto = room_previous(room)//Should be changed by obj_toBattle
 music = silence;//Music to play after battle Ends. Will not play if still noone.
 battle = false
 
-for(i = 0; i < 4; i++) with instance_create_layer(33+i*156,431,"Instances",obj_battleButtons) image_index = other.i
+for(var i = 0; i < 4; i++) with instance_create_layer(33+i*156,431,"Instances",obj_battleButtons) image_index = i;
 
 global.enemy = []//CC should Create enemies
 if !variable_global_exists("runemy") global.runemy = []

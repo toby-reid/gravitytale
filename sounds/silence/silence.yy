@@ -6,10 +6,10 @@
     "path":"audiogroups/SFX",
   },
   "bitDepth":0,
-  "bitRate":16,
-  "compression":1,
+  "bitRate":8,
+  "compression":2,
   "conversionMode":0,
-  "duration":0.168991,
+  "duration":0.163991,
   "name":"silence",
   "parent":{
     "name":"Sounds",

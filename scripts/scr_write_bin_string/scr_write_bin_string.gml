@@ -3,5 +3,6 @@ function scr_write_bin_string(_bin, _str) {
 	file_bin_write_byte(_bin, string_length(_str));
 	for(var i = 1; i <= string_length(_str); i++) {
 		file_bin_write_byte(_bin, string_ord_at(_str, i) + 2);
+		// TODO: Change the Caesar +2 cipher into a Vigenere cipher
 	}
 }
