@@ -449,6 +449,7 @@
     {"name":"sfx_gaster_charge","order":17,"path":"sounds/sfx_gaster_charge/sfx_gaster_charge.yy",},
     {"name":"sfx_gaster_fire","order":18,"path":"sounds/sfx_gaster_fire/sfx_gaster_fire.yy",},
     {"name":"sfx_giffany_thatsok","order":1,"path":"sounds/sfx_giffany_thatsok/sfx_giffany_thatsok.yy",},
+    {"name":"sfx_glass_reverse","order":44,"path":"sounds/sfx_glass_reverse/sfx_glass_reverse.yy",},
     {"name":"sfx_glass","order":36,"path":"sounds/sfx_glass/sfx_glass.yy",},
     {"name":"sfx_gobberRoar","order":10,"path":"sounds/sfx_gobberRoar/sfx_gobberRoar.yy",},
     {"name":"sfx_grass","order":28,"path":"sounds/sfx_grass/sfx_grass.yy",},

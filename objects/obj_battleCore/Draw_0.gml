@@ -323,7 +323,4 @@ if !instance_exists(obj_toBattle) {
 	draw_healthbar(280,400,300+(4*global.player[player.lv]),420,100*(global.player[player.hp]/global.player[player.maxhp]),c_red,c_yellow,c_yellow,0,true,false)
 	draw_text(315+(4*global.player[player.lv]),403,string(global.player[player.hp])+" / "+string(global.player[player.maxhp]))
 	//if instance_exists(obj_stans_battle) we'll move that text, add a second healthbar, draw hpkr,1, and calculate Karma
-	
-	draw_text(0,0,music);
-	draw_text(0,30,silence);
 }

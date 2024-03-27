@@ -110,8 +110,6 @@ if menu[0] > 0 {
 									case ow_scb_13_puzzle6:
 									case ow_scb_14_pz6_l:
 									case ow_scb_14_pz6_r:
-									case ow_scb_14_pz6ul:
-									case ow_scb_14_pz6ur:
 										text[4] = "Did you read that sign, #dude?"
 										text[5] = "There are 4 rooms to the #east and west..."
 										head[4] = spr_soos_face_happy
@@ -137,9 +135,14 @@ if menu[0] > 0 {
 										head[1] = spr_soos_face_happy
 										head[2] = spr_soos_face_happy_side
 										break
-									case ow_scb_22_dockPath:
+									case ow_scb_22_dock_0:
+									case ow_scb_23_dock_1:
+									case ow_scb_24_dock_2:
+									case ow_scb_25_dock_3:
+									case ow_scb_26_dock_4:
+									case ow_scb_27_dock:
 									case ow_fst_0_boatDock:
-										if !instance_exists(obj_soos_ow_21) {
+										if(!instance_exists(obj_soos_ow_dock) and !instance_exists(obj_soos_ow_27)) {
 											text[4] = ". . ."
 											text[5] = "Water you docking aboat?&I'm right here, dude!"
 											head[4] = spr_soos_face_neutral
@@ -195,14 +198,14 @@ if menu[0] > 0 {
 									case ow_fst_16_pz11:
 										text[4] = "These puzzles are all the #same, dude..."
 										text[5] = "Turn all the triangles #into circles."
-										text[6] = "Don't ask for help if you #don't need it, dude."
+										text[6] = "You don't really need #my help here."
 										head[4] = spr_soos_face_disappoint_side
 										head[5] = spr_soos_face_neutral
 										head[6] = spr_soos_face_neutral_side
 										break
 									case ow_fst_7_stanco:
 									case ow_cav_2_standco:
-										text[4] = "What kind of hint do you #need, dude!?"
+										text[4] = "What kind of hint do you #need??"
 										text[5] = "You got the amazing #Mr. Pines right in front #of you!"
 										text[6] = "Take a few moments to #bask in his glory, dude!"
 										head[4] = spr_soos_face_surprise
@@ -227,8 +230,11 @@ if menu[0] > 0 {
 										head[5] = spr_soos_face_neutral
 										head[6] = spr_soos_face_happy_side
 										break
+									case ow_fst_18_town_0:
+									case ow_fst_18_waterTower:
 									case ow_fst_19_town_1:
-									case ow_fst_18_town_old:
+									case ow_fst_19_determinedNews:
+									case ow_fst_19_greasys:
 										text[3] = "Welcome to Gravity Falls, #dude!"
 										text[4] = "Take a look around!&There's a lot to do!"
 										text[5] = "You can visit the Mystery #Shack to the east, too!"
@@ -247,10 +253,8 @@ if menu[0] > 0 {
 										head[5] = spr_soos_face_happy
 										break
 									default:
-										text[4] = "Are you sure you need a #hint here, dude?"
-										text[5] = "There doesn't seem to be #anything challenging #around here..."
-										head[4] = spr_soos_face_disappoint_side
-										head[5] = spr_soos_face_disappoint
+										text = [text[0], "(...no answer.&(You must have a bad #connection.)"];
+										head = [];
 										break
 								}
 								for(var i = 1; i < array_length(text); i++) sound[i] = tlk_soos

@@ -5,7 +5,7 @@ if image_alpha == 1 { if !instance_exists(obj_textBubble) if global.stage[0] == 
 		event_perform(ev_alarm,5)
 	}
 	else {
-		if timer%20 == 0 {
+		if timer%30 == 0 {
 			if timer == 420 global.stage[0]++
 			else {
 				var dir = irandom(359)
@@ -18,7 +18,7 @@ if image_alpha == 1 { if !instance_exists(obj_textBubble) if global.stage[0] == 
 					image_index = 2 + irandom(2)
 					image_angle = 90 * irandom(3)
 					direction = point_direction(x,y,obj_soul.x,obj_soul.y)
-					speed = 4
+					speed = 2
 				}
 			}
 		}

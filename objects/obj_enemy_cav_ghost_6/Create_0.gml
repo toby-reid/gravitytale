@@ -14,7 +14,7 @@ zone = area.unknown
 timer = 0
 bubble = noone
 
-attention = 1
+attention = 1;
 alarm[11] = 30 + irandom(60)
 
 image_xscale = 2

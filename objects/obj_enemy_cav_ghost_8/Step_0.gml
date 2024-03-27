@@ -11,9 +11,9 @@ if image_alpha == 1 { if !instance_exists(obj_textBubble) if global.stage[0] == 
 		}
 	}
 	else if timer%30 == 0 {
-		if timer <= 180 {
+		if(timer < 150) {
 			var rock = irandom(array_length(rocks)-1)
-			with instance_create_layer(rocks[rock],y,layer,obj_battleAttack) {
+			with instance_create_layer(rocks[rock],0,layer,obj_battleAttack) {
 				sprite_index = spr_atk_cat8
 				image_xscale = 2
 				image_yscale = 2
@@ -24,11 +24,13 @@ if image_alpha == 1 { if !instance_exists(obj_textBubble) if global.stage[0] == 
 			rocks = []
 			for(var i = 0; i < array_length(temp); i++) if i != rock rocks[array_length(rocks)] = temp[i]
 		}
-		else if timer == 240 {
-			audio_play_sound(sfx_glass,0,false)
-			obj_soul.active = false
+		else if timer == 180 {
+			audio_play_sound(sfx_glass,0,false);
+			obj_soul.active = false;
 		}
-		else if timer == 420 global.stage[0]++
+		else if(timer == 360) audio_play_sound(sfx_glass_reverse,0,false);
+		else if(timer == 390) obj_soul.active = true;
+		else if(timer >= 450) global.stage[0]++;
 	}
 	timer++
 }}

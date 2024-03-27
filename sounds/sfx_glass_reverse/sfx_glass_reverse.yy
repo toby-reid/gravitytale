@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sfx_glass_reverse",
+  "audioGroupId":{
+    "name":"SFX",
+    "path":"audiogroups/SFX",
+  },
+  "bitDepth":0,
+  "bitRate":128,
+  "compression":2,
+  "conversionMode":0,
+  "duration":0.609524,
+  "name":"sfx_glass_reverse",
+  "parent":{
+    "name":"SFX",
+    "path":"folders/Sounds/SFX.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_glass_reverse.wav",
+  "type":0,
+  "volume":1.0,
+}

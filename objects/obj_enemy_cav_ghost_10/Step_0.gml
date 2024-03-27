@@ -11,7 +11,7 @@ if image_alpha == 1 { if !instance_exists(obj_textBubble) if global.stage[0] == 
 			"The Cat. 10 is steadily #dropping the temperature on #the Rankine scale.",
 			"Oh hey, did you know that if #you run, you can come right #back here?",
 			"Kinda late to mention, but #it's helpful, right?                 &...right?",
-			"This message will never appear #on the splash screen.&Isn't that weird?"
+			"This message will never appear #in the flavor text.&Isn't that weird?"
 		]
 		obj_battleCore.text[0] = text[stage]
 		stage++
@@ -37,11 +37,11 @@ if image_alpha == 1 { if !instance_exists(obj_textBubble) if global.stage[0] == 
 			case 299:
 				with instance_create_layer(0,80,layer,obj_textBubble) {
 					id.text = [
-						"Nyes, how'd you like that, foul beast?",
-						"A splash of my home-brewed holy moley water, good for the soul.",
-						"Although, if you have none, it's quite toxic, nyes.",
-						"And to you, child cowering before the beast...",
-						"Always remember that the only thing we have to fear is gigantic, man-eating spiders!",
+						"Nyes, how'd you like that, #foul beast?",
+						"A splash of my home-brewed #holy moley water, good for #the soul.",
+						"Although, if you have none, #it's quite toxic, nyes.",
+						"And to you, child cowering #before the beast...",
+						"Always remember that the only #thing we have to fear is #gigantic, man-eating spiders!",
 						"Not some rubbishry of a demon!",
 						"Now then, I'd best be off.",
 						"Trembley, away!"
@@ -74,23 +74,32 @@ if image_alpha == 1 { if !instance_exists(obj_textBubble) if global.stage[0] == 
 		else if timer == 600 global.stage[0]++
 		for(var i = 0; i < instance_number(obj_battleAttack); i++) with instance_find(obj_battleAttack,i) {
 			if object_index == obj_atk_beaver {
-				if image_alpha < 1 image_alpha += .005
-				else if angle != image_angle image_angle -= image_yscale
+				if image_alpha < 1 image_alpha += .01
+				else if angle != image_angle image_angle -= 2*image_yscale
 				else {
 					var coords = []
-					if y == 380 coords = [260,310,20,0]
-					else if y == 260 coords = [260,330,20,0]
-					else if x == 240 coords = [310,260,0,20]
-					else coords = [330,260,0,20]
-					for(var i = 0; i < 7; i++) {
-						with instance_create_layer(coords[0]+i*coords[2],coords[1]+i*coords[3],layer,obj_battleAttack) {
+					if y == 380 coords = [260,310,30,0]
+					else if y == 260 coords = [260,330,30,0]
+					else if x == 240 coords = [310,260,0,30]
+					else coords = [330,260,0,30]
+					for(var j = 0; j < 5; j++) {
+						with instance_create_layer(coords[0]+j*coords[2],coords[1]+j*coords[3],layer,obj_battleAttack) {
 							sprite_index = spr_atk_cat10_fire
 							image_xscale = 2
 							image_yscale = 2
-							direction = 9*coords[2]/2 + 180*irandom(1)
+							direction = 3*coords[2] + 180*irandom(1)
 							at = other.at
 						}
 					}
+					var _atk_2 = instance_find(obj_battleAttack,2);
+					var _dir = _atk_2.direction + 180;
+					for(var j = 0; j < 5; j++) {
+						if(instance_find(obj_battleAttack,j).direction != _dir-180) {
+							_dir -= 180;
+							break;
+						}
+					}
+					_atk_2.direction = _dir;
 					audio_play_sound(sfx_sans_pound,0,false)
 					instance_destroy()
 				}

@@ -1,0 +1,1 @@
+if(!variable_global_exists("ghost")) global.ghost = 0;

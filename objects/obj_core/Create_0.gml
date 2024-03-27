@@ -25,7 +25,8 @@ enum player {
 	pic,//true beaver pic
 	total
 }
-scr_rst_global_player()
+scr_rst_global_player();
+global.player[player.nyarf] = 2; // for testing, so we have the comlink
 audio_group_load(Music)
 audio_group_load(Talk)
 audio_group_load(SFX)
