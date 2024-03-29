@@ -1,0 +1,1 @@
+if(instance_exists(obj_dipper) and obj_dipper.y < y) draw_self();

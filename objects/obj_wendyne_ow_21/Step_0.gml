@@ -6,6 +6,9 @@ if(instance_exists(obj_dipper)) switch stage {
 				obj_dipper.dir = 1;
 				alarm[0] = 30;
 				camera_set_view_target(view_camera[0],noone);
+				if(global.player[player.runActive] == 2) // Abort geno if not enough kills
+					if(global.areaKilled[area.caves] < global.areaMax[area.caves]) 
+						global.player[player.runActive] = 0;
 			}
 			else if(alarm[0] == -1) {
 				var _viewy = camera_get_view_y(view_camera[0]);
@@ -339,7 +342,7 @@ if(instance_exists(obj_dipper)) switch stage {
 					obj_dipper.canMove = true;
 				}
 			}
-			else vspeed = 2;
+			else vspeed = 4;
 		}
 		break;
 	case 8://Woo! The chase is on. We're not gonna do anything about it though (yet).

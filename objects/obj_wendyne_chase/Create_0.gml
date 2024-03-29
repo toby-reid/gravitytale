@@ -1,5 +1,5 @@
 /// @description dir: where we're chasing
-alarm[0] = 120;
+alarm[0] = 60;
 switch direction {
 	case 0:   sprite_index = spr_wendyne_h_r; break;
 	case 90:  sprite_index = spr_wendyne_h_u; break;

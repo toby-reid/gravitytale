@@ -13,7 +13,7 @@ else if stage == 3 {
 		alarm[1] = 30
 	}
 	else {
-		vspeed = -10
+		obj_ford_ow_1.vspeed = -10
 		stage++
 	}
 }

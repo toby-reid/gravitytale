@@ -17,14 +17,7 @@ if !instance_exists(obj_textbox) switch stage {
 	case 3: 
 		if !instance_exists(obj_toBattle) {
 			if global.killed[enemy.qt] {
-				instance_destroy()
-				with instance_create_layer(160,192,layer,obj_textbox) {
-					text = [
-						"(. . .)",
-						"(He left you with a -12 #dollar bill.&(It's less than worthless.)",
-						"(No use crying about it now #though.)"
-					]
-				}
+				if(alarm[2] == -1) alarm[2] = 20;
 			}
 			else if alarm[1] == -1 alarm[1] = 60
 		}

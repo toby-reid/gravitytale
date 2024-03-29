@@ -81,7 +81,7 @@ if image_alpha == 1 if(instance_exists(obj_battleBox)) if global.stage[0] == 4 {
 			}
 		}
 		else {//randomize!
-			if(timer == 60) attack = 5//irandom(5);
+			if(timer == 60) attack = irandom(5);
 			switch attack {
 				case 0://onslaught of medi-speedy
 					if(timer%20 == 0) {
@@ -106,8 +106,8 @@ if image_alpha == 1 if(instance_exists(obj_battleBox)) if global.stage[0] == 4 {
 					if(timer%40 == 0) {
 						if(timer <= 600) {
 							var _dir = 90*irandom(3);
-							if(irandom(3) == 0) with instance_create_layer(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),layer,obj_wendyne_axe_yellow) speed = 8;
-							else makeaxe(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),8);
+							if(irandom(3) == 0) with instance_create_layer(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),layer,obj_wendyne_axe_yellow) speed = 6;
+							else makeaxe(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),6);
 						}
 						else if(timer >= 720) timer = 3000;
 					}
@@ -142,7 +142,7 @@ if image_alpha == 1 if(instance_exists(obj_battleBox)) if global.stage[0] == 4 {
 							if(irandom(15) == 0) {
 								makeaxe(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),1,at*2,c_fuchsia);
 							}
-							else makeaxe(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),1+3*(irandom(3)==0));
+							else makeaxe(obj_soul.x+lengthdir_x(320,_dir),obj_soul.y+lengthdir_y(320,_dir),1+3*(irandom(6)==0));
 						}
 						else if(!instance_exists(obj_battleAttack)) timer = 3000;
 					}

@@ -134,10 +134,10 @@ switch stage {
 		break;
 	case 6:
 		if(!instance_exists(obj_textbox)) {
-			image_speed = -1;
-			hspeed = -.5;
+			image_speed = -0.5;
+			hspeed = -0.25;
 			if(image_index%2 == 1) audio_play_sound(sfx_wendyne_step,0,false);
-			if(x <= 20) {
+			if(x <= -20) {
 				obj_dipper.canMove = true;
 				instance_destroy();
 			}

@@ -25,6 +25,10 @@ if image_alpha == 1 if !instance_exists(obj_textBubble) { if global.stage[0] == 
 		}
 	}
 	timer++
+	if(keyboard_check_pressed(vk_enter)) for(var i = 0; i < instance_number(obj_atk_beaver); i++) 
+		with instance_find(obj_atk_beaver,i) image_angle += 90;
+	if(keyboard_check_pressed(vk_shift)) for(var i = 0; i < instance_number(obj_atk_beaver); i++)
+		with instance_find(obj_atk_beaver,i) image_angle -= 90;
 }}
 else bubble.x = x+80
 if instance_exists(obj_nyarfGun) obj_nyarfGun.x = x

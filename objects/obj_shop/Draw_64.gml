@@ -40,7 +40,7 @@ for(var i = 0; i < 8; i++) if global.inventory[i] != item.none itemCT++
 draw_text(602,421,string(itemCT)+"/8")
 draw_set_halign(fa_left)
 
-var sprite = spr_soulM;
+var sprite = spr_soul;
 if(global.player[player.mabel]) sprite = spr_soulM
 if confirm draw_sprite(sprite,0,458,354+40*choice[2])
 else {
