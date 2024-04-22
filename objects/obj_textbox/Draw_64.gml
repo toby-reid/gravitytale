@@ -79,16 +79,16 @@ else {
 			else var i = spr_soul
 			switch action[page] {
 				case 0://left
-					draw_sprite(i,0,x-132-6*(head[page]!=noone),y+35*(choice[page]<3))
+					draw_sprite(i,0,x-132-6*(head[page]!=noone),y-2+35*(choice[page]<3))
 					break
 				case 1://right
-					draw_sprite(i,0,x+62+6*(head[page]!=noone),y+35*(choice[page]<3))
+					draw_sprite(i,0,x+60+6*(head[page]!=noone),y-2+35*(choice[page]<3))
 					break
 				case 2://up
-					draw_sprite(i,0,x-20,y-35)
+					draw_sprite(i,0,x-20,y-2-35)
 					break
 				case 3://down
-					draw_sprite(i,0,x-20,y+35)
+					draw_sprite(i,0,x-20,y-2+35)
 					break
 			}
 		}

@@ -162,9 +162,9 @@ enum area {
 	scuttlebutt,
 	forest,
 	caves,
+	mines,
 	tent,
-	ufo,
 	total
 }
 global.areaKilled[area.total] = 0
-global.areaMax = [0,18,25,20,20,20,0]
+global.areaMax = [0,18,25,30,20,20,0]

@@ -28,16 +28,14 @@ if teleport {//If we're on the front end (the starting point)
 		teleport = false
 		drawx[320] = 0
 		sprite_delete(screen)
-		ini_open("Reset.save")
-		if ini_read_real("C","W",false) switch loc {
-			case 0: room_goto(ow_fst_1_meetStans) break//Forest
-			case 1: room_goto(ow_fst_22_caves) break//Caves
-			case 2: room_goto(room) break//Tent
-			case 3: room_goto(room) break//UFO
-			default: room_goto(room) break//Just in case it didn't work right
+		var _goto = room;
+		if (cantp) switch loc {
+			case 0: _goto = ow_fst_1_meetStans; break;//Forest
+			case 1: _goto = ow_fst_22_caves; break;//Caves
+			case 2: _goto = ow_min_01_dump; break;//Dump
+			//case 3: _goto = room; break;//UFO
 		}
-		else room_goto(room)
-		ini_close()
+		room_goto(_goto);
 	}
 	obj_dipper.canMove = false
 	instance_destroy(obj_textbox)
@@ -72,14 +70,10 @@ else if global.teleport {//If we're on the back end (the destination)
 		global.teleport = false
 		obj_dipper.canMove = true
 		drawx[320] = 0
-		switch room {
-			case ow_fst_1_meetStans:
-			case ow_fst_22_caves:
-				var music = mus_snowy
-				break
-			
-		}
-		audio_play_sound(music,0,true)
+		var _music = mus_snowy;
+		if (room == ow_min_01_dump) _music = mus_alphys;
+		// else if (room == UFO) _music = UFO;
+		audio_play_sound(_music, 0, true)
 	}
 	if alarm[0] > -1 {
 		draw_set_alpha(alpha)
@@ -87,4 +81,3 @@ else if global.teleport {//If we're on the back end (the destination)
 		draw_set_alpha(1)
 	}
 }
-else if variable_instance_exists(id,"screen") sprite_delete(screen)

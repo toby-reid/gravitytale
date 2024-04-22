@@ -1,1 +1,1 @@
-if global.player[player.portalPotty] < 2 global.player[player.portalPotty] = 2
+if global.player[player.portalPotty] < 2 global.player[player.portalPotty] = 2;

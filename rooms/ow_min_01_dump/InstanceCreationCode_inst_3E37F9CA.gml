@@ -1,0 +1,1 @@
+if global.player[player.portalPotty] < 3 global.player[player.portalPotty] = 3;
