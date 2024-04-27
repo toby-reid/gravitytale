@@ -1,0 +1,1 @@
+text = ["(!!!&(It's the SUPER ARTIFACT!)", "(...but it's on fire, #so we'll put it back.)"];

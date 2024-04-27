@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"McGucket",
-    "path":"folders/Sprites/Characters/McGucket.yy",
+    "name":"McG",
+    "path":"folders/Sprites/Characters/McG.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

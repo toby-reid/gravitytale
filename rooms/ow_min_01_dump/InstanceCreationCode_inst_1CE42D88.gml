@@ -1,0 +1,1 @@
+text = ["(Some broken puzzle parts.&(There's no switch to reset #them.)"];

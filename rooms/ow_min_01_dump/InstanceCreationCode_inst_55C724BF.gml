@@ -1,0 +1,1 @@
+text = ["(Another bicycle.&(Since there are two, #they're bi-bicycles.)"];

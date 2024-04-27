@@ -1,0 +1,1 @@
+text = ["(This oven is remarkably #similar to Soos's.)", "(Maybe this is where he got #his.)"];

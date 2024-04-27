@@ -1,0 +1,1 @@
+text = ["(Pretend it's a seed, okay?)"];

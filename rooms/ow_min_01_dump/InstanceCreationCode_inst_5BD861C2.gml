@@ -1,0 +1,1 @@
+text = ["(A piano.&(It's facing the wrong way, #so you can't play it.)"];

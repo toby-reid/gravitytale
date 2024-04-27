@@ -1,0 +1,1 @@
+text = ["(A conveniently-placed pedestal #to block your path.)"];

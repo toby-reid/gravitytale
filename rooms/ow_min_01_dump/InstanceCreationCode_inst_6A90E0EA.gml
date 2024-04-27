@@ -1,0 +1,1 @@
+text = ["(Telescopes.&(They've been arranged in a row #for some reason.)", "(It's probably a good idea to #follow the path between.)"];

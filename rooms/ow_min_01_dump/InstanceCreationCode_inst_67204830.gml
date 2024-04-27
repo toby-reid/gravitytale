@@ -1,0 +1,1 @@
+text = ["(Wax figures.&(They seem similar to Soos's #somehow.)"];

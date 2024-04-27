@@ -1,0 +1,1 @@
+text = ["(This ice cooler was printed #backwards.&(No wonder it's inoperable.)"];

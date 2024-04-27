@@ -1,0 +1,1 @@
+text = ["(It's a bench.&(You'd take a rest if it #weren't for the stench.)"];

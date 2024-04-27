@@ -1,0 +1,1 @@
+text = ["(A bicycle.&(It's too rusted to salvage.)"];
