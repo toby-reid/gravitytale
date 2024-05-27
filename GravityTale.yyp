@@ -142,7 +142,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2024.4.1.152",
   },
   "name":"GravityTale",
   "resources":[
@@ -286,6 +286,7 @@
     {"id":{"name":"obj_item_floor","path":"objects/obj_item_floor/obj_item_floor.yy",},},
     {"id":{"name":"obj_lakeBoat","path":"objects/obj_lakeBoat/obj_lakeBoat.yy",},},
     {"id":{"name":"obj_mallody","path":"objects/obj_mallody/obj_mallody.yy",},},
+    {"id":{"name":"obj_mcg_ow_1","path":"objects/obj_mcg_ow_1/obj_mcg_ow_1.yy",},},
     {"id":{"name":"obj_mg_date_answerBox","path":"objects/obj_mg_date_answerBox/obj_mg_date_answerBox.yy",},},
     {"id":{"name":"obj_mg_date_cursor","path":"objects/obj_mg_date_cursor/obj_mg_date_cursor.yy",},},
     {"id":{"name":"obj_mg_date_giffany","path":"objects/obj_mg_date_giffany/obj_mg_date_giffany.yy",},},
@@ -363,7 +364,6 @@
     {"id":{"name":"obj_wendyne_ow_21","path":"objects/obj_wendyne_ow_21/obj_wendyne_ow_21.yy",},},
     {"id":{"name":"obj_wendyne_ow_3","path":"objects/obj_wendyne_ow_3/obj_wendyne_ow_3.yy",},},
     {"id":{"name":"obj_wendyne_ow_9","path":"objects/obj_wendyne_ow_9/obj_wendyne_ow_9.yy",},},
-    {"id":{"name":"obj_mcg_ow_1","path":"objects/obj_mcg_ow_1/obj_mcg_ow_1.yy",},},
     {"id":{"name":"pth_deputy","path":"paths/pth_deputy/pth_deputy.yy",},},
     {"id":{"name":"pth_float","path":"paths/pth_float/pth_float.yy",},},
     {"id":{"name":"pth_ford","path":"paths/pth_ford/pth_ford.yy",},},

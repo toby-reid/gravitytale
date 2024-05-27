@@ -4,5 +4,5 @@ text = [
 	"4 seems to be the customer #favorite, after all!",
 	"STANCO is not responsible for #any damage to property by #barrier puzzles.",
 	"(Something else is written at #the bottom...)",
-	"C is BAD.&do better."
+	"C is BAD.&Be better."
 ]
