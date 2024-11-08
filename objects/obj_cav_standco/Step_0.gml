@@ -1,7 +1,7 @@
 if stage == 2 if !instance_exists(obj_toBattle) {//post-battle thing
 	obj_dipper.canMove = false
 	with instance_create_layer(160,48,layer,obj_textbox) {
-		if global.killed[enemy.stans_cave] {
+		if global.enemy_killed[ENEMY.STANS_CAVE] {
 			text = [
 				"whoa, there, kiddo.",
 				"in case it wasn't obvious, i #wasn't trying to fight.",
@@ -14,8 +14,7 @@ if stage == 2 if !instance_exists(obj_toBattle) {//post-battle thing
 				spr_stans_head_content,
 				spr_stans_head_hollowEye
 			]
-		}
-		else {
+		} else {
 			text = [
 				"heh, nice one, kid.",
 				"alright, as i promised...",

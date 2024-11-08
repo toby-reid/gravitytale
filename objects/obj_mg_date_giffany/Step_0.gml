@@ -2,7 +2,6 @@ if stage == 2 {
 	if hithere if !audio_is_playing(sfx_giffany_hithere) {hithere = false; event_perform(ev_alarm,1)}
 	
 	if charCount >= string_length(questions[day-1,0]) if !instance_exists(obj_mg_date_answerBox) {
-		var dest = [60,100,140]
 		for(var i = 0; i < 3; i++) {
 			var dest = 60+40*irandom(2)
 			while position_meeting(200,dest,obj_mg_date_answerBox) dest = 60+40*irandom(2)

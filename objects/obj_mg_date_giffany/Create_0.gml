@@ -8,6 +8,8 @@ audio_group_load(Minigames)
 if !audio_group_is_loaded(Minigames) room_restart()
 audio_sound_pitch(tlk_default,1.5)
 
+letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.!?>,'"; // matches spr_mg_date_letters
+
 image_speed = 0
 
 charCount = 0
@@ -24,3 +26,4 @@ questions = [
 	["Please take a moment to rate it#on the Crapp Store.","Don't ask again","Yes master","Squids"],
 	["Would you please be my#boyfriend?","Yes of course","I'm not interested","I'm already taken (by a squid)"]
 ]
+feedback = "";

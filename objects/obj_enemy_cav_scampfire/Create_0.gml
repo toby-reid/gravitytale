@@ -8,7 +8,7 @@ maxhp = hp
 at = 3
 lv = false//set true if killing person increases LV
 sb = 12
-zone = area.caves
+area = AREA.CAVES;
 timer = 0
 if instance_number(obj_battleEnemy) == 2 timer = 30
 create = true

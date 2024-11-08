@@ -1,6 +1,6 @@
 name = "Wendy Corduroy";
 act = ["Check","Chill out","Struggle","Flirt"];
-if(global.player[player.mabel]) act[3] = "Girl talk";
+if(global.player.mabel) act[3] = "Girl talk";
 check = "The coolest person in town.&Can climb and/or chop anything.";
 spare = false;
 run = false;
@@ -9,7 +9,7 @@ maxhp = hp;
 at = 5;
 lv = true;//set true if killing person increases LV
 sb = 100;
-zone = area.unknown;
+area = AREA.UNKNOWN;
 timer = 0;
 attack = 0;
 bubble = noone;

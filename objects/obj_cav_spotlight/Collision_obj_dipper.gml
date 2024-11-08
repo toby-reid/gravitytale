@@ -1,5 +1,5 @@
 /// @description if not geno
-if global.player[player.runActive] != 2 if other.canMove {
+if global.player.genocide != RUN.ACTIVE if other.canMove {
 	if global.ghost == 0 {
 		stage++
 		audio_play_sound(sfx_alert,0,false)

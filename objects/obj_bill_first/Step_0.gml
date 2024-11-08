@@ -82,8 +82,8 @@ else if image_index >= 19 {
 			if alarm[0] > 0 {if alarm[0] mod 5 == 0 image_alpha += .02}
 			else if alarm[0] == 0 {
 				with instance_create_layer(160,196,"Instances",obj_textbox) {
-					if global.player[player.mabel] {var col = "@CC277A"; var soul = "Shooting Star"}
-					else {var col = "@1970ff"; var soul = "Pine Tree"}
+					var col = (global.player.mabel) ? "@CC277A" : "@1970ff";
+					var soul = (global.player.mabel) ? "Shooting Star" : "Pine Tree";
 					ini_open("Reset.save")
 					switch ini_read_real("R","R",0) {
 						case 0://no previous resets
@@ -91,7 +91,7 @@ else if image_index >= 19 {
 								"Hey there, kid!",
 								"The name's @ffff00Bill Cipher@ffffff!",
 								"...and I take it you're #some kind of living #ventriloquist dummy?",
-								"I'm just kidding, #I know who you are, #"+col+global.player[player.name]+"@ffffff!",
+								"I'm just kidding, #I know who you are, #" + col + global.player.name + "@ffffff!",
 								"Oh, don't look so #shocked, kid.",
 								"Don't you know where #you are?",
 								"Welcome to the @ff0000Mindscape@ffffff, #my infinite domain of #unlimited power!",
@@ -116,7 +116,7 @@ else if image_index >= 19 {
 							text = [
 								"Hey there, kid!",
 								"The name's @ffff00Bill Cipher@ffffff -`#but I'll skip the #pleasantries!",
-								"That's right, I know #who you are, "+col+global.player[player.name]+"@ffffff!",
+								"That's right, I know #who you are, " + col + global.player.name + "@ffffff!",
 								"This ain't your first #rodeo, eh, kid?",
 								"Well, welcome back to the #@ff0000Mindscape@ffffff, my domain of #unlimited power!",
 								"...what?",
@@ -146,10 +146,10 @@ else if image_index >= 19 {
 							text = [
 								"Hey there, kid!",
 								"The name's @ffff00Bill Cipher@ffffff -`#but I'll skip the #pleasantries!",
-								"That's right, I know #who you are, "+col+global.player[player.name]+"@ffffff!",
+								"That's right, I know #who you are, " + col + global.player.name + "@ffffff!",
 								"I know @ff0000lots of things@ffffff.",
 								"Like how you seem to #think you've \"defeated\" me #before!",
-								"Oh, that's just rich, #"+col+soul+"@ffffff!",
+								"Oh, that's just rich, #" + col + soul + "@ffffff!",
 								"Why d'you suppose you #made it back here then, #hm?",
 								"You just couldn't be #happy in a happy world,",
 								"and now you've returned #to throw yourself right #back into my loving arms!",

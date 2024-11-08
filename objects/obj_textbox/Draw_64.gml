@@ -64,19 +64,17 @@ else {
 	if charCount >= string_length(segText[segment]) {
 		if(segment < array_length(segText)-1) segment++
 		else {
+			var color = c_white;
 			if(choice[page] > 0) {
-				if global.player[player.mabel] var color = scr_hexdec("CC277A")
-				else var color = scr_hexdec("3280ff")
+				color = global.player.mabel ? scr_hexdec("CC277A") : scr_hexdec("3280ff");
 			}
-			else var color = c_white
 			if(page < array_length(text)-1 and color == c_white) draw_sprite_ext(spr_moreText,arrow,x+270,y+50,3,3,0,color,1)
 			else draw_sprite_ext(spr_moreText,arrow,x+270,y+50,3,3,90,color,1)
 			face = 0
 			if keyboard_check_pressed(vk_enter) alarm[2] = 1
 		}
 		if(choice[page] > 0) {
-			if global.player[player.mabel] var i = spr_soulM
-			else var i = spr_soul
+			var i = global.player.mabel ? spr_soulM : spr_soul;
 			switch action[page] {
 				case 0://left
 					draw_sprite(i,0,x-132-6*(head[page]!=noone),y-2+35*(choice[page]<3))
@@ -99,8 +97,8 @@ else {
 		charCount = string_length(segText[segment])+15
 		for(var i = 0; i < array_length(swapTime); i++) swapTime[i] = 15
 	}
-	if keyboard_check_pressed(vk_left)  action[page] = 0
-	if keyboard_check_pressed(vk_right) action[page] = 1
-	if keyboard_check_pressed(vk_up)   if(choice[page] > 1) action[page] = 2
-	if keyboard_check_pressed(vk_down) if(choice[page] > 2) action[page] = 3
+	if keyboard_check_pressed(vk_left)  action[page] = 0;
+	if keyboard_check_pressed(vk_right) action[page] = 1;
+	if keyboard_check_pressed(vk_up)   if (choice[page] > 1) action[page] = 2;
+	if keyboard_check_pressed(vk_down) if (choice[page] > 2) action[page] = 3;
 }

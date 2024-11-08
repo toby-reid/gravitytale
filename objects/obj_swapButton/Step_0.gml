@@ -8,7 +8,10 @@ if instance_exists(obj_buttSwitch) {
 			var done = true
 			for(var i = 0; i < instance_number(obj_swapButton); i++) 
 				if instance_find(obj_swapButton,i).image_index != 1 {done = false; break}
-			if done {obj_buttSwitch.done = true; global.buttSwitch[array_length(global.buttSwitch)] = room}
+			if done {
+				obj_buttSwitch.done = true;
+				array_push(global.buttSwitch, room_get_name(room));
+			}
 		}
 		step = true
 	}

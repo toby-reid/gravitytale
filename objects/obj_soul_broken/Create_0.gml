@@ -1,8 +1,8 @@
+if global.player.mabel sprite_index = spr_soulM_broken;
 if instance_exists(obj_soul) {
 	switch obj_soul.image_index {
 		case 0:
-			if global.player[player.mabel] image_blend = scr_hexdec("CC277A")
-			else image_blend = 0xff7019
+			image_blend = global.player.mabel ? scr_hexdec("CC277A") : 0xff7019;
 			break
 		case 1: image_blend = 0xff4123 break
 		case 2: image_blend = 0x00aaff break
@@ -13,23 +13,18 @@ if instance_exists(obj_soul) {
 	}
 	angle = obj_soul.image_angle
 	image_angle = angle - 360*(angle==270)
+} else { // not certain why the 'else' is here, but oh well
+	angle = 0;
 }
-else angle = 0
-if global.player[player.mabel] sprite_index = spr_soulM_broken
-audio_stop_all()
-if instance_exists(obj_battleCore) goto = obj_battleCore.goto
-else if room == btl_cav_axeBarrage goto = ow_cav_3_chase1
-if variable_instance_exists(id,goto) alarm[2] = 1
-else {
-	room_goto(rm_gameover)
-	alarm[0] = 60
-}
-/*if instance_exists(obj_battleCore) room_set_persistent(obj_battleCore.goto,false)
-else room_set_persistent(ow_cav_3_chase1,false)*/
-audio_play_sound(sfx_soulBreak,0,false)
+audio_stop_all();
 
-alpha = 0
-charCount = 0
-stage = 0
-text = "Hey, what's the big idea, kid?&You don't die until I say so.&Now get back out there, and #win this time."
-for(var i = 1; i <= string_length(text); i++) {timer[i] = irandom(5)}
+room_goto(rm_gameover)
+alarm[0] = 60
+
+audio_play_sound(sfx_soulBreak,0,false);
+
+alpha = 0;
+charCount = 0;
+stage = 0;
+text = "Hey, what's the big idea, kid?&You don't die until I say so.&Now get back out there, and #win this time.";
+for(var i = 1; i <= string_length(text); i++) {timer[i] = irandom(5);}

@@ -8,7 +8,7 @@ if(!global.karen)
 			if(armor == 2) {
 				charCount = 0;
 				stage = 0;
-				text[0] = msg[0];
+				text[0] = msg.l_greeting;
 				event_user(1);
 			}
 			else if(armor == 3) {

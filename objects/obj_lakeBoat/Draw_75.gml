@@ -1,7 +1,7 @@
 if stage == 0 {
 	if (x>=480 and image_xscale==-1) or (x<=860 and image_xscale==1) {
 		x += 320*image_xscale
-		/*if !global.killed[enemy.soos] {
+		/*if !global.enemy_killed[ENEMY.SOOS] {
 			with instance_create_layer(160,192,"Instances",obj_textbox) {
 				//randomize()
 				text = [". . .","Da dada da da...",other.text[irandom(array_length(other.text)-1)]]

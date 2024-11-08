@@ -15,4 +15,4 @@ if instance_exists(obj_dipper) {
 image_alpha = 0
 //audio_stop_all()
 global.dir = 4
-if global.player[player.mabel] sprite_index = spr_soulM
+if global.player.mabel sprite_index = spr_soulM

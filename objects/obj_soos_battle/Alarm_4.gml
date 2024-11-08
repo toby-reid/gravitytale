@@ -42,15 +42,14 @@ with instance_create_layer(372,64,"Instances",obj_textBubble) {
 		default: text[0] = "Let's end this.\nI'll bring you to the mainland." break
 	}
 	else if other.hp <= 0 {
-		if global.player[player.runActive] == 2 {//genocide death
+		if global.player.genocide == RUN.ACTIVE {//genocide death
 			text = [
 				". . .",
 				"Oh..."
 			]
 			other.sprite_index = spr_soos_face_surprise
 			other.result = 0
-		}
-		else if other.spare {//shot him for no reason
+		} else if other.spare {//shot him for no reason
 			text = [
 				". . .",
 				"You...",
@@ -62,8 +61,7 @@ with instance_create_layer(372,64,"Instances",obj_textBubble) {
 			for(var i = 0; i < array_length(text); i++) charRate[i] = .2
 			other.sprite_index = spr_soos_face_surprise
 			other.result = 1
-		}
-		else {//Regular death
+		} else {//Regular death
 			text = [
 				". . .",
 				"Ah, I see...",
@@ -78,7 +76,15 @@ with instance_create_layer(372,64,"Instances",obj_textBubble) {
 		}
 		audio_stop_sound(mus_heartache)
 	}
-	if other.stage < 12 obj_battleCore.text[0] = choose("Soos looks through you.","Soos takes a deep breath and #clenches his fists.","Soos takes a moment to admire #the scenery.","Soos recalls the skills he #learned from First Person #Puncher and Tiger Fist.","Soos digs through his toolbox #for child-safe weapons.","Soos anxiously grabs another #handful of Burrito Bites.","Soos prepares his Soos Love #Stomach Beam Stare attack.")
+	if other.stage < 12 {
+		obj_battleCore.text[0] = choose("Soos looks through you.",
+										"Soos takes a deep breath and #clenches his fists.",
+										"Soos takes a moment to admire #the scenery.",
+										"Soos recalls the skills he #learned from First Person #Puncher and Tiger Fist.",
+										"Soos digs through his toolbox #for child-safe weapons.",
+										"Soos anxiously grabs another #handful of Burrito Bites.",
+										"Soos prepares his Soos Love #Stomach Beam Stare attack.");
+	}
 	for(var i = 0; i < array_length(text); i++) sound[i] = tlk_soos
 }
 

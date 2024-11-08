@@ -33,15 +33,15 @@ for(var i = 1; i <= string_length(text[1]); i++) {
 	}
 }
 
-draw_text(458,421,"$"+string(global.player[player.money]))
+draw_text(458,421,string_concat("$", global.player.money));
 draw_set_halign(fa_right)
-var itemCT = 0//Leave it like this since Pizza won't be in local.inventory
-for(var i = 0; i < 8; i++) if global.inventory[i] != item.none itemCT++
-draw_text(602,421,string(itemCT)+"/8")
+var itemCt = 0
+for(var i = 0; i < array_length(global.inventory); i++) if global.inventory[i] != ITEM_NAME.NONE itemCt++
+draw_text(602,421,string_concat(itemCt, "/", array_length(global.inventory)));
 draw_set_halign(fa_left)
 
 var sprite = spr_soul;
-if(global.player[player.mabel]) sprite = spr_soulM
+if(global.player.mabel) sprite = spr_soulM
 if confirm draw_sprite(sprite,0,458,354+40*choice[2])
 else {
 	if stage == 0 draw_sprite(sprite,0,458,274+40*choice[0])

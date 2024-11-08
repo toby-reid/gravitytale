@@ -179,9 +179,13 @@ switch global.stage[0] {
 }
 
 if alarm[0] > 0 image_blend = c_silver
-if global.player[player.hp] <= 0 if !instance_exists(obj_soul_broken) {global.player[player.hp] = 0; instance_create_layer(x,y,layer,obj_soul_broken)}
-if x != xprev or y != yprev moving = true
-else moving = false
+if (global.player.hp <= 0) {
+	global.player.hp = 0;
+	if !instance_exists(obj_soul_broken) {
+		instance_create_layer(x,y,layer,obj_soul_broken);
+	}
+}
+moving = ((x != xprev) or (y != yprev));
 xprev = x
 yprev = y
 

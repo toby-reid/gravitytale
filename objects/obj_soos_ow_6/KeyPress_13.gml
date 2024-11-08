@@ -1,8 +1,8 @@
 if instance_exists(obj_dipper) if obj_dipper.canMove
 	if (place_meeting(x-2,y,obj_dipper) and obj_dipper.dir==0) or (place_meeting(x,y+2,obj_dipper) and obj_dipper.dir==1) or (place_meeting(x+2,y,obj_dipper) and obj_dipper.dir==2) {
 		with instance_create_layer(160,192,"Instances",obj_textbox) {
-			if global.player[player.mabel] var slang = "Girldude"
-			else var slang = "dude"
+			var slang = "dude";
+			if (global.player.mabel) slang = "Girl" + slang;
 			text = [
 				"No, no, "+slang+"!&Fight the Dummy, not me!",
 				"Oh, you're confused?",

@@ -1,4 +1,4 @@
-if global.killed[enemy.soos] {
+if global.enemy_killed[ENEMY.SOOS] {
 	text = ["(It's a fireplace.&(The fire has died out.)"]
 	sprite_index = spr_scb_fireplace
 }

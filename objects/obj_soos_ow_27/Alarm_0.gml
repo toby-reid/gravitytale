@@ -11,11 +11,11 @@ switch sprite_index {
 	case spr_soos_l:
 		with instance_create_layer(160,192,layer,obj_textbox) {
 			var slang = "dude"
-			var col = "1970FF"
-			if global.player[player.mabel] {slang = "Hambone"; col = "CC277A"}
+			if global.player.mabel slang = "Girl" + slang;
+			var col = global.player.mabel ? "CC277A" : "1970FF";
 			if global.soos < 27 {
 				ini_open("Reset.save")
-				if ini_read_real("K",enemy.soos,0) > 0 {
+				if ini_read_real("K",ENEMY.SOOS,0) > 0 {
 					text = [
 						". . .",
 						"You all right there, #"+slang+"?",
@@ -28,7 +28,7 @@ switch sprite_index {
 						". . .&You're still here?",
 						"Well, then, maybe you #should learn by hands-on #experience.",
 						"I'll show you what #you're up against when #you reach the mainland.",
-						"I'm sorry, @"+col+global.player[player.name]+"@ffffff.",
+						"I'm sorry, @"+col+global.player.name+"@ffffff.",
 						"It's for your own good."
 					]
 					head = [
@@ -47,7 +47,7 @@ switch sprite_index {
 						spr_soos_face_disappoint
 					]
 				}
-				else if ini_read_real("S",enemy.soos,0) > 0 or ini_read_real("D",enemy.soos,0) > 0 {
+				else if ini_read_real("S",ENEMY.SOOS,0) > 0 or ini_read_real("D",ENEMY.SOOS,0) > 0 {
 					text = [
 						". . .",
 						"Are you all right, #"+slang+"?",
@@ -56,7 +56,7 @@ switch sprite_index {
 						"But I guess you can't #have met me here before, #``...right?",
 						"Well, either way, I'll #need to give you hands-#on experience.",
 						"I'll show you what #you're up against when #you reach the mainland.",
-						"I'm sorry, @"+col+global.player[player.name]+"@ffffff.",
+						"I'm sorry, @"+col+global.player.name+"@ffffff.",
 						"It's for your own good."
 					]
 					head = [
@@ -86,7 +86,7 @@ switch sprite_index {
 						"You won't even consider #my advice.",
 						"Well, then, maybe you #should learn by hands-on #experience.",
 						"I'll show you what #you're up against when #you reach the mainland.",
-						"I'm sorry, @"+col+global.player[player.name]+"@ffffff.",
+						"I'm sorry, @"+col+global.player.name+"@ffffff.",
 						"It's for your own good."
 					]
 					head = [

@@ -1,7 +1,5 @@
-alarm[0] = 120
 stage = 0
-if x > 670 hspeed = -2
-else hspeed = 2
+hspeed = (x > 670) ? -2 : 2;
 alpha = 1
 
 text = [
@@ -13,5 +11,3 @@ text = [
 	"Memories are strange...&So easy to erase...&So simple to return...",
 	"Every shop buys and sells #for the same prices, so #don't waste time..."
 ]
-
-global.runemy = []

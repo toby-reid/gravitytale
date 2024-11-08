@@ -1,5 +1,5 @@
 /// @description Desist
-if !global.killed[enemy.deputy] switch stage {
+if !global.enemy_killed[ENEMY.DEPUTY] switch stage {
 	case 0:
 		obj_battleCore.text[1] = "You suggest the sheriff stops #attacking."
 		bubbleText = "Hmm... now you onto somethin', kid."

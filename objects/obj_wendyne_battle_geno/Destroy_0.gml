@@ -3,11 +3,12 @@
 //Alarm[4]: text bubble (global.stage[0] = 4)
 //Alarm[5-6]: Spare/Run actions
 
+// There's no way to spare her
 obj_battleCore.lv += lv;
-global.areaKilled[zone]++;
-global.player[player.kills]++;
+global.areaKills[? area].killCount++;
+global.player.kills++;
 obj_battleCore.sb += sb;
-global.killed[enemy.wendy] = true;
+global.enemy_killed[ENEMY.WENDY] = true;
 ini_open("Reset.save");
-ini_write_real("K",enemy.wendy,ini_read_real("K",enemy.wendy,0)+1);
+ini_write_real("K",ENEMY.WENDY,ini_read_real("K",ENEMY.WENDY,0)+1);
 ini_close();

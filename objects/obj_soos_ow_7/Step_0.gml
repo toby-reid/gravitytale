@@ -1,53 +1,55 @@
 switch stage {
-	case 0: if obj_dipper.x >= 220 {
-		obj_dipper.canMove = false
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
-			if global.player[player.mabel] var slang = "Hambone"
-			else var slang = "dude"
-			text = [
-				"I'm still concerned for #your perception and #coordination, "+slang+"...",
-				"So I'm going to see #how well you can cross #this clearing.",
-				"I'll be up ahead, so #don't worry too much.",
-				"If you need anything, #just holler.",
-				"See how fast you can #reach the end!"
-			]
-			head = [
-				spr_soos_face_neutral,
-				spr_soos_face_happy,
-				spr_soos_face_happy_closed,
-				spr_soos_face_happy,
-				spr_soos_face_happy_closed
-			]
-			sound = [tlk_soos,tlk_soos,tlk_soos,tlk_soos,tlk_soos]
-		}
-		stage++
-	}
-	else if obj_dipper.y > 220 obj_dipper.y = 210
-	break
-	case 1: if !instance_exists(obj_textbox) {
-		speed = 3
-		image_speed = 2
-		sprite_index = spr_soos_r
-		if x >= 400 {
-			audio_stop_all()
-			audio_play_sound(mus_tension,0,true)
-			obj_dipper.canMove = true
-			speed = 0
-			image_speed = 0
-			image_index = 0
-			sprite_index = spr_soos_l
-			x = 1540
-			y = 120
+	case 0:
+		if obj_dipper.x >= 220 {
+			obj_dipper.canMove = false
+			with instance_create_layer(160,192,"Instances",obj_textbox) {
+				var slang = "dude"
+				if (global.player.mabel) slang = "girl" + slang;
+				text = [
+					"I'm still concerned for #your perception and #coordination, "+slang+"...",
+					"So I'm going to see #how well you can cross #this clearing.",
+					"I'll be up ahead, so #don't worry too much.",
+					"If you need anything, #just holler.",
+					"See how fast you can #reach the end!"
+				]
+				head = [
+					spr_soos_face_neutral,
+					spr_soos_face_happy,
+					spr_soos_face_happy_closed,
+					spr_soos_face_happy,
+					spr_soos_face_happy_closed
+				]
+				sound = [tlk_soos,tlk_soos,tlk_soos,tlk_soos,tlk_soos]
+			}
 			stage++
 		}
-	} break
+		else if obj_dipper.y > 220 obj_dipper.y = 210
+		break;
+	case 1:
+		if !instance_exists(obj_textbox) {
+			speed = 3
+			image_speed = 2
+			sprite_index = spr_soos_r
+			if x >= 400 {
+				audio_stop_all()
+				audio_play_sound(mus_tension,0,true)
+				obj_dipper.canMove = true
+				speed = 0
+				image_speed = 0
+				image_index = 0
+				sprite_index = spr_soos_l
+				x = 1540
+				y = 120
+				stage++
+			}
+		}
+		break;
 	case 2:
 		timer++
 		if obj_dipper.x >= 1460 {//minimum possible time is 826.66666666666666666666666666
 			obj_dipper.canMove = false
+			var slang = global.player.mabel ? "Hambone" : "dude";
 			with instance_create_layer(160,192,"Instances",obj_textbox) {
-				if global.player[player.mabel] var slang = "Hambone"
-				else var slang = "dude"
 				text = [
 					"Sup, "+slang+"?",
 					"You're finally here!",
@@ -85,8 +87,15 @@ switch stage {
 					spr_soos_face_happy
 				]
 				for(var i = 0; i < array_length(text); i++) sound[i] = tlk_soos
-				if global.player[player.mabel] text[7] = "That @CC277AShooting Star sweater #@ffffffshould provide decent #defence if attacked."
-				else if string_lower(global.player[player.name]) == "lamby" text[8] = "Oh, you already have...&that..."
+				if ((global.player.mabel and string_lower(global.player.name)=="waddle") 
+						or (!global.player.mabel and string_lower(global.player.name)=="lamby")) {
+					text[8] = "Oh, you already have...&that...";
+				}
+				else if global.player.mabel {
+					text[7] = "Here's a @CC277AShooting Star #sweater @ffffffmy Abuelita made.&It's too small for me.";
+					text[8] = "It should give you some #defence, but it's not #invulnerable, so be careful.";
+					head[8] = spr_soos_face_happy_side;
+				}
 			}
 			if timer <= 830 with obj_textbox {
 				text[0] = "Wow, "+slang+"!"
@@ -147,12 +156,12 @@ switch stage {
 		}
 		else with obj_textbox {
 			if page == 7 {
-				if !global.player[player.mabel] {
+				if !global.player.mabel {
 					if charCount == 11 audio_play_sound(sfx_itemGet,0,false)
-					if string_lower(global.player[player.name]) == "mason" obj_dipper.sprite_index = spr_dipstar
-					else if string_lower(global.player[player.name]) != "lamby" obj_dipper.sprite_index = spr_diphat
+					if string_lower(global.player.name) == "mason" obj_dipper.sprite_index = spr_dipstar
+					else if string_lower(global.player.name) != "lamby" obj_dipper.sprite_index = spr_diphat
 				}
-				global.player[player.nyarf] = 2
+				global.player.df = AT_DF.BASE;
 			}
 			if page == 13 if charCount == 17 audio_play_sound(sfx_itemGet,0,false)
 		}
@@ -163,8 +172,8 @@ switch stage {
 			timer++
 			switch timer {//to call at random intervals =P
 				case 3600: with instance_create_layer(160,192,"Instances",obj_textbox) {
-					if global.player[player.mabel] var slang = "Hambone"
-					else var slang = "dude"
+					var slang = "dude"
+					if global.player.mabel slang = "Girl" + slang
 					text = [
 						"Beep, beep... *",
 						"Hey, "+slang+"!",
@@ -188,8 +197,7 @@ switch stage {
 					audio_play_sound(sfx_comlink,0,false)
 				} break
 				case 18000: with instance_create_layer(160,192,"Instances",obj_textbox) {
-					if global.player[player.mabel] var slang = "Hambone"
-					else var slang = "dude"
+					var slang = global.player.mabel ? "Hambone" : "dude";
 					text = [
 						"Beep, beep... *",
 						"Hey, uh...",
@@ -211,8 +219,7 @@ switch stage {
 					audio_play_sound(sfx_comlink,0,false)
 				} break
 				case 36000: with instance_create_layer(160,192,"Instances",obj_textbox) {
-					if global.player[player.mabel] var slang = "Hambone"
-					else var slang = "dude"
+					var slang = global.player.mabel ? "Hambone" : "dude";
 					text = [
 						"Beep, beep... *",
 						"Hey, "+slang+"...",
@@ -232,6 +239,7 @@ switch stage {
 					audio_play_sound(sfx_comlink,0,false)
 				} break
 				case 54000: with instance_create_layer(160,192,"Instances",obj_textbox) {
+					var slang = global.player.mabel ? "Hambone" : "dude";
 					text = [
 						"Beep, beep... *",
 						"Oh, I get it, "+slang+"...",

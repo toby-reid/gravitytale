@@ -6,10 +6,10 @@
 ini_open("Reset.save");
 if hp <= 0 {//we should never be able to 'spare' her in-battle
 	obj_battleCore.lv += lv;
-	global.areaKilled[zone]++;
-	global.player[player.kills]++;
+	global.areaKills[? area].killCount++;
+	global.player.kills++;
 	obj_battleCore.sb += sb;
-	global.killed[enemy.wendy] = true;
-	ini_write_real("K",enemy.wendy,ini_read_real("K",enemy.wendy,0)+1);
+	global.enemy_killed[ENEMY.WENDY] = true;
+	ini_write_real("K",ENEMY.WENDY,ini_read_real("K",ENEMY.WENDY,0)+1);
 }
 ini_close();

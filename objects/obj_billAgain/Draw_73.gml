@@ -4,16 +4,15 @@ if stage == 0 or instance_exists(obj_textbox) {
 	for(var i = 0; i < 640; i += 20) for(var j = 0; j < 240; j += 20) draw_sprite(spr_bill_greyout_lake,(index/20)+2,i,j)
 	with obj_lakeBoat {
 		var dip = spr_mabel
-		if !global.player[player.mabel] {
-			if string_lower(global.player[player.name]) == "lamby" dip = spr_diplamb
-			else if string_lower(global.player[player.name]) == "mason" dip = spr_dipstar
+		if !global.player.mabel {
+			if string_lower(global.player.name) == "lamby" dip = spr_diplamb
+			else if string_lower(global.player.name) == "mason" dip = spr_dipstar
 			else dip = spr_diphat
 		}
-		if !global.killed[enemy.soos] {
+		if !global.enemy_killed[ENEMY.SOOS] {
 			draw_sprite_part(spr_soos_r,0,0,0,24,24,x-10,y-22)
 			draw_sprite(dip,0,x-25,y+5)
-		}
-		else draw_sprite(dip,0,x,y)
+		} else draw_sprite(dip,0,x,y)
 		image_index = other.index/10
 		draw_self()
 	}
@@ -21,12 +20,12 @@ if stage == 0 or instance_exists(obj_textbox) {
 	for(var i = 0; i < 640; i += 20) for(var j = 0; j < 240; j += 20) draw_sprite(spr_bill_greyout_lake,index/20,i,j)
 	with obj_lakeBoat {
 		var dip = spr_mabel
-		if !global.player[player.mabel] {
-			if string_lower(global.player[player.name]) == "lamby" dip = spr_diplamb
-			else if string_lower(global.player[player.name]) == "mason" dip = spr_dipstar
+		if !global.player.mabel {
+			if string_lower(global.player.name) == "lamby" dip = spr_diplamb
+			else if string_lower(global.player.name) == "mason" dip = spr_dipstar
 			else dip = spr_diphat
 		}
-		if !global.killed[enemy.soos] {
+		if !global.enemy_killed[ENEMY.SOOS] {
 			draw_sprite(spr_bill_greyout_soos,0,x-10,y-22)
 			draw_sprite(dip,0+6*(other.image_alpha==1),x-25,y+5)
 		}

@@ -1,7 +1,8 @@
+/// @desc Shandra Jimenez, a real reporter
 stage++
 with instance_create_layer(160,48,"Instances",obj_textbox) {
 	text = [
-		"Shandra Jimenez,#a real reporter.",
+		"Shandra Jimenez, #a real reporter.",
 		"I'll pay 300 Stan Bucks for #that picture.",
 		"Way better than whatever he's #got, I'd say.",
 		"Wow, Shandra Jimenez, in *my* #shop!&Huh ray!",

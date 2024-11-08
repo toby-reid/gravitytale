@@ -4,10 +4,13 @@
 //Alarm[5-6]: Spare/Run actions
 
 ini_open("Reset.save")
-if global.killed[enemy.stans_cave] ini_write_real("K",enemy.stans_cave,true)//if they try resetting, he'll be gone.
-else {
-	global.player[player.spares]++
-	global.spared[enemy.stans_cave] = true
-	ini_write_real("S",enemy.stans_cave,true)
+if global.enemy_killed[ENEMY.STANS_CAVE] {
+	ini_write_real("K",ENEMY.STANS_CAVE,ini_read_real("K",ENEMY.STANS_CAVE,0)+1);
+	global.areaKills[? area].killCount++;
+	// do not increment global.player.kills - he didn't actually die
+} else {
+	global.player.spares++
+	global.enemy_spared[ENEMY.STANS_CAVE] = true
+	ini_write_real("S",ENEMY.STANS_CAVE,ini_read_real("S",ENEMY.STANS_CAVE,0)+1);
 }
 ini_close()

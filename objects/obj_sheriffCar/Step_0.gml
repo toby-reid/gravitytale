@@ -10,8 +10,7 @@ switch stage {
 	} break
 	case 1: if alarm[0] == -1 {
 		with instance_create_layer(160,192,"Instances",obj_textbox) {
-			var slang = "city boy"
-			if global.player[player.mabel] slang = "little missy"
+			var slang = global.player.mabel ? "little missy" : "city boy";
 			text = [
 				"Whoa there, "+slang+".&That's the town up ahead.",
 				"The name's Blubs.&Sheriff Daryl Blubs.&That there is Deputy Durland.",

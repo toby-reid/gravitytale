@@ -3,9 +3,9 @@
 //Alarm[4]: text bubble (global.stage[0] = 4)
 //Alarm[5-6]: Spare/Run actions
 
-if hp <= 0 {//possible if they use dual NYARF guns
+if hp <= 0 {//possible if they use the AT upgrade
 	obj_battleCore.lv += lv
-	global.areaKilled[zone]++
-	global.player[player.kills]++
+	global.areaKills[? area].killCount++;
+	global.player.kills++
 	obj_battleCore.sb += sb
 }

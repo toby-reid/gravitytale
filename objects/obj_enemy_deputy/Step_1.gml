@@ -1,6 +1,6 @@
 ///@desc Dying / Round Reset
 if hp <= 0 {
-	global.killed[enemy.deputy] = true
+	global.enemy_killed[ENEMY.DEPUTY] = true
 	if global.stage[0] != 3 {
 		hp = 0
 		obj_battleCore.text[0] = "With the loss of Durland,&Sheriff Blubs is a whirlwind                             #of emotion."

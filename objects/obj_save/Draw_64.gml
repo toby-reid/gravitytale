@@ -19,6 +19,7 @@ if save > 0 switch save {
 					save = 3
 					alarm[0] = 15
 					scr_save(rmName, music);
+					time = scr_format_time();
 				}
 			}
 			else {
@@ -32,12 +33,12 @@ if save > 0 switch save {
 		}
 	break
 	case 3:
-		if alarm[0] > -1 and variable_instance_exists(id,"savedTime") {
+		if alarm[0] > -1 {
 			draw_set_color(c_yellow)
-			draw_text(140,ybox-67,global.player[player.name])
-			draw_text(280,ybox-67,"LV "+string(global.player[player.lv]))
+			draw_text(140,ybox-67,global.player.name)
+			draw_text(280,ybox-67,"LV "+string(global.player.lv))
 			draw_set_halign(fa_right)
-			draw_text(500,ybox-67,string_copy(savedTime,1,8))
+			draw_text(500,ybox-67,string_copy(time,1,8))
 			draw_set_halign(fa_left)
 			draw_text(140,ybox-17,rmName)
 			draw_text(169,ybox+36,"Game has been saved!")

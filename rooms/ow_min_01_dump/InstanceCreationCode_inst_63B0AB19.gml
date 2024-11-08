@@ -1,3 +1,3 @@
 text = ["(A pile of trash."];
-if (global.player[player.runActive] == 2) text[0] += "&(You feel like you belong #here.)";
-else text[0] += ")";
+if (global.player.genocide == RUN.ACTIVE) text[0] += "&(You feel like you belong #here.";
+text[0] += ")";

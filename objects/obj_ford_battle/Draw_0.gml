@@ -8,5 +8,4 @@ if hp <= 0 and (audio_is_playing(sfx_enemyDead) or deathx != 0) {
 }
 else {
 	draw_self()
-	draw_sprite_ext(spr_ford_battle_body,0,x+2,y+22,2,2,0,image_blend,image_alpha)
 }

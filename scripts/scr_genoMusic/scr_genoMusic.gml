@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_genoMusic(){
 	///@desc Sets music slower or normal for geno or not geno route
-	if global.player[player.runActive] == 2 {
+	if global.player.genocide == RUN.ACTIVE {
 		//Music
 		audio_sound_pitch(mus_birds,.2)
 		audio_sound_pitch(mus_karsong,.5)

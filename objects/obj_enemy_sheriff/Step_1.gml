@@ -1,6 +1,6 @@
 ///@desc Dying / Round Reset
 if hp <= 0 {
-	global.killed[enemy.sheriff] = true
+	global.enemy_killed[ENEMY.SHERIFF] = true
 	if global.stage[0] != 3 {
 		hp = 0
 		obj_battleCore.text[0] = "Sheriff Blubs?&More like SherRIP Blubs...&I'm sorry."

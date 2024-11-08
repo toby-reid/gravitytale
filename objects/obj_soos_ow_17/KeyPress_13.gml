@@ -5,7 +5,7 @@ if instance_exists(obj_dipper) if obj_dipper.canMove {
 			case 0:
 				with instance_create_layer(160,192,"Instances",obj_textbox) {
 					text = [
-						"Sup, "+global.player[player.name]+"-dawg?&Did you need anything?#Yes          No",
+						"Sup, "+global.player.name+"-dawg?&Did you need anything?#Yes          No",
 						"Nothing, right?&Cool, go explore!"
 					]
 					head = [spr_soos_face_happy,spr_soos_face_happy_side]

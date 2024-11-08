@@ -32,7 +32,6 @@ switch stage {
 		sprite_index = spr_ford_r
 		if x >= 360 {
 			obj_dipper.canMove = true
-			with instance_create_layer(0,0,"Instances",obj_randBattle) loc = area.forest
 			audio_stop_all()
 			audio_play_sound(mus_snowy,0,true)
 			global.stans = 8

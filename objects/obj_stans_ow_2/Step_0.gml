@@ -61,7 +61,7 @@ switch stage {
 			vspeed = 0
 			image_speed = 0
 			image_index = 0
-			if global.player[player.runActive] == 2 if alarm[0] == -1 {
+			if global.player.genocide == RUN.ACTIVE if alarm[0] == -1 {
 				sprite_index = spr_stans_d
 				image_speed = .5
 				vspeed = 1
@@ -74,7 +74,7 @@ switch stage {
 			vspeed = 0
 			image_speed = 0
 			image_index = 0
-			if global.player[player.runActive] == 2 {
+			if global.player.genocide == RUN.ACTIVE {
 				with instance_create_layer(160,192,"Instances",obj_textbox) {
 					text = [
 						"but you know that's not true, #don't you?",

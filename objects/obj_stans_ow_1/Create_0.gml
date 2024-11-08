@@ -8,7 +8,7 @@ if global.stans >= 1 {
 		text = "(Meeting such eccentric old men #fills you with anticipation.)"
 		music = mus_snowy
 		music_nbs = mus_snowy
-		loc = area.forest
+		loc = AREA.FOREST
 	}
 	instance_destroy(obj_ford_ow_1)
 	instance_destroy()

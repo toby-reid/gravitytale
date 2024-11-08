@@ -10,7 +10,12 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 		"If it doesn't work this time, #it's all over.",
 		". . ."
 	]
-	if(!global.killed[enemy.manlydan]) text = array_concat(text, ["Oh, right...` the other six.","Well, you see, it all started #long ago..."]);
+	if (!global.enemy_killed[ENEMY.MANLY_DAN]) {
+		text = array_concat(text,[
+			"Oh, right...` the other six.",
+			"Well, you see, it all started #long ago..."
+		]);
+	}
 	for(var i = 0; i < array_length(text); i++) {
 		sound[i] = tlk_wendy;
 		charRate[i] = 4;

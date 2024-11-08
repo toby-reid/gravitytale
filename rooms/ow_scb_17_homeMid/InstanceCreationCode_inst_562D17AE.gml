@@ -4,7 +4,7 @@ text = [
 	"(He calls it \"Abuelita\" and #avoids sitting on it...)",
 	"(Perhaps this is a topic you #shouldn't bring up.)"
 ]
-if global.killed[enemy.soos] {
+if global.enemy_killed[ENEMY.SOOS] {
 	text = ["(It was Soos's precious chair.&(I guess it's yours now though.)"]
 	image_index = 1
 }

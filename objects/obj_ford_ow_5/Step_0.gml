@@ -2,8 +2,7 @@ switch stage {
 	case 0: if obj_dipper.y <= 520 {
 		obj_dipper.canMove = false
 		with instance_create_layer(160,192,"Instances",obj_textbox) {
-			var slang = "BOY"
-			if global.player[player.mabel] slang = "CHILD"
+			var slang = global.player.mabel ? "CHILD" : "BOY";
 			text = [
 				"HELLO AGAIN, CHILD.",
 				"DID YOU SEE THE #REFRESHMENTS I #LEFT BACK THERE?",

@@ -10,5 +10,5 @@ if hspeed != 0 {
 	else if alarm[1] >=  9 global.stage[4] = 2
 	else if alarm[1] >=  1 global.stage[4] = 1
 	else global.stage[4] = 0
-	if global.player[player.nyarf] >= 4 global.stage[4] *= 2
+	if global.player.at == AT_DF.UPGRADE global.stage[4] *= 2
 }

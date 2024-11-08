@@ -1,10 +1,9 @@
 /// @description Bill's message
 with instance_create_layer(160,192,layer,obj_textbox) {
-	var soul = "@1970ffPine Tree@ffffff"
-	var sibling = "@CC277Asister@ffffff"
-	if global.player[player.mabel] {soul = "@CC277AShooting Star@ffffff"; sibling = "@1970ffbrother@ffffff"}
+	var soul = global.player.mabel ? "@CC277AShooting Star@ffffff" : "@1970ffPine Tree@ffffff";
+	var sibling = global.player.mabel ? "@1970ffbrother@ffffff" : "@CC277Asister@ffffff";
 	ini_open("Reset.save")
-	if global.player[player.runActive] == 2 and ini_read_real("C","G",0) > 0 {
+	if global.player.genocide == RUN.ACTIVE and ini_read_real("C","G",0) > 0 {
 		text = [
 			"Ah hahahahaha!&Hahaha!",
 			"Oh, it's beautiful...&Kid, you were beautiful #back there!",
@@ -40,8 +39,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 		charRate[8] = 3
 		charRate[9] = 4
 		sound[9] = tlk_bill_creepy
-	}
-	else if global.player[player.runActive] == 2 {
+	} else if global.player.genocide == RUN.ACTIVE {
 		text = [
 			"Ah hahahahaha!&Hahaha!",
 			"Kid, you're one in a #Bill-ion!",
@@ -55,7 +53,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			"This should be fun!",
 			"Don't die out there, kid!"
 		]
-		if global.player[player.mabel] text[6] = "You have a real gift #for doing what you want, #no regards for others!"
+		if global.player.mabel text[6] = "You have a real gift #for doing what you want, #no regards for others!"
 		head = [
 			spr_bill_face_laugh,
 			spr_bill_face_smile,
@@ -69,8 +67,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_neutral,
 			spr_bill_face_neutral
 		]
-	}
-	else if global.spared[enemy.soos] and ini_read_real("K",enemy.soos,0) >= 1 {
+	} else if global.enemy_spared[ENEMY.SOOS] and ini_read_real("K",ENEMY.SOOS,0) >= 1 {
 		text = [
 			"Well, howdy, #"+soul+"!",
 			"So ya messed up.",
@@ -95,8 +92,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_smile,
 			spr_bill_face_neutral
 		]
-	}
-	else if global.killed[enemy.soos] and ini_read_real("K",enemy.soos,0) > 1 {
+	} else if global.enemy_killed[ENEMY.SOOS] and ini_read_real("K",ENEMY.SOOS,0) > 1 {
 		text = [
 			"Well, hey there, #"+soul+"!",
 			"You truly are the lowest #scum in history!",
@@ -117,8 +113,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_neutral_side,
 			spr_bill_face_neutral
 		]
-	}
-	else if global.killed[enemy.soos] and ini_read_real("S",enemy.soos,0) >= 1 {
+	} else if global.enemy_killed[ENEMY.SOOS] and ini_read_real("S",ENEMY.SOOS,0) >= 1 {
 		text = [
 			"Well, howdy indeed, #"+soul+"!",
 			"I gotta say, I was not #expecting that!",
@@ -139,8 +134,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_smile,
 			spr_bill_face_neutral
 		]
-	}
-	else if global.player[player.kills] == 0 {
+	} else if global.player.kills == 0 {
 		text = [
 			"Well, hey there, #"+soul+"!",
 			"That was some impressive #maneuvering out there!",
@@ -171,8 +165,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_mad,
 			spr_bill_face_neutral
 		]
-	}
-	else if global.killed[enemy.soos] and global.player[player.kills] == 1 {
+	} else if global.enemy_killed[ENEMY.SOOS] and global.player.kills == 1 {
 		text = [
 			"Ha...!&Hahahahahahaha!",
 			"Oh, oh, that was #beautiful, kid!",
@@ -197,8 +190,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_smile,
 			spr_bill_face_neutral
 		]
-	}
-	else if global.spared[enemy.soos] {
+	} else if global.enemy_spared[ENEMY.SOOS] {
 		text = [
 			"Well, hey there, #"+soul+"!",
 			"That was some reeeal #shonky business there!",
@@ -225,8 +217,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_smile_side,
 			spr_bill_face_neutral
 		]
-	}
-	else if global.player[player.spares] > 0 {
+	} else if global.player.spares > 0 {
 		text = [
 			"Ah, the lazy route it is!",
 			"You didn't even try, #did ya, kid?",
@@ -245,8 +236,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_neutral,
 			spr_bill_face_neutral
 		]
-	}
-	else if global.player[player.spares] == 0 {
+	} else if global.player.spares == 0 {
 		text = [
 			"Ha ha...&Hahahahaha!",
 			"It's funny how dumb #you are!",

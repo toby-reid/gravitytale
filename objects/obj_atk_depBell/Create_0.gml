@@ -4,4 +4,4 @@ image_yscale = 2
 alarm[0] = 20
 if x < 320 hspeed = 1
 else hspeed = -1
-if global.killed[enemy.sheriff] hspeed *= 2
+if global.enemy_killed[ENEMY.SHERIFF] hspeed *= 2

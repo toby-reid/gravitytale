@@ -16,7 +16,7 @@ if !instance_exists(obj_textbox) switch stage {
 	break
 	case 3: 
 		if !instance_exists(obj_toBattle) {
-			if global.killed[enemy.qt] {
+			if global.enemy_killed[ENEMY.TREMBLEY] {
 				if(alarm[2] == -1) alarm[2] = 20;
 			}
 			else if alarm[1] == -1 alarm[1] = 60

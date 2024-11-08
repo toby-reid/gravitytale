@@ -88,7 +88,7 @@ switch stage {
 			if char == "#" {drawx = 21; drawy += 9}
 			else if char == " " {drawx += 7}
 			else {
-				draw_sprite(spr_mg_date_letters,scr_letnum(char),drawx,drawy)
+				draw_sprite(spr_mg_date_letters,string_pos(char, letters) - 1,drawx,drawy)
 				drawx += 7
 			}
 		}

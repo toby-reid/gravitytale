@@ -1,2 +1,2 @@
 stage = 0
-if global.killed[enemy.bmgnome] or global.spared[enemy.bmgnome] instance_destroy()
+if global.enemy_killed[ENEMY.BLACK_MKT_GNOME] or global.enemy_spared[ENEMY.BLACK_MKT_GNOME] instance_destroy()

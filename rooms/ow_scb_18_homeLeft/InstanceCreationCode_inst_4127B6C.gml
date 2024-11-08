@@ -1,2 +1,2 @@
 text = ["(It's a microwave and a toaster.&(They look well-used.)","(You know what they say:&(All toasters toast toast.)"]
-if global.killed[enemy.soos] text = ["(It's a microwave and a toaster.&(They look well-used.&(At least, they were.)"]
+if global.enemy_killed[ENEMY.SOOS] text = ["(It's a microwave and a toaster.&(They look well-used.&(At least, they were.)"]

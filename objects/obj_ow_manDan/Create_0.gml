@@ -1,2 +1,4 @@
 stage = 0
-if global.killed[enemy.manlydan] or global.spared[enemy.manlydan] instance_destroy()
+if global.enemy_killed[ENEMY.MANLY_DAN] or global.enemy_spared[ENEMY.MANLY_DAN] {
+	instance_destroy()
+}

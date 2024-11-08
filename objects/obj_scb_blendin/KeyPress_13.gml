@@ -2,7 +2,7 @@ if stage == 0 if instance_exists(obj_dipper) if obj_dipper.canMove
 	if (place_meeting(x-2,y,obj_dipper) and obj_dipper.dir==0) or (place_meeting(x,y+2,obj_dipper) and obj_dipper.dir==1) or (place_meeting(x+2,y,obj_dipper) and obj_dipper.dir==2) or (place_meeting(x,y-2,obj_dipper) and obj_dipper.dir==3) {
 		obj_dipper.canMove = false
 		ini_open("Reset.save")
-		if !ini_read_real("K",enemy.blendin,false) with instance_create_layer(160,192,"Instances",obj_textbox) {
+		if !ini_read_real("K",ENEMY.BLENDIN,false) with instance_create_layer(160,192,"Instances",obj_textbox) {
 			text = [
 				". . .",
 				"huh?",

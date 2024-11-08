@@ -1,1 +1,1 @@
-with instance_create_layer(0,0,"Instances",obj_randBattle) loc = area.forest
+with instance_create_layer(0,0,"Instances",obj_randBattle) loc = AREA.FOREST

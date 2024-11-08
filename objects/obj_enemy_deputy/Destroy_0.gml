@@ -6,17 +6,17 @@
 ini_open("Reset.save")
 if hp <= 0 {
 	obj_battleCore.lv += lv
-	global.player[player.kills]++
-	obj_battleCore.sb += sb
-	global.killed[enemy.deputy] = true
-	ini_write_real("K",enemy.deputy,ini_read_real("K",enemy.deputy,0)+1)
+	global.areaKills[? area].killCount++;
+	global.player.kills++;
+	obj_battleCore.sb += sb;
+	global.enemy_killed[ENEMY.DEPUTY] = true;
+	ini_write_real("K",ENEMY.DEPUTY,ini_read_real("K",ENEMY.DEPUTY,0)+1)
 	obj_battleEnemy.at += 5
 	obj_battleEnemy.check = "Sheriff of Roadkill County.&Devoid of all happiness."
-}
-else {
-	global.player[player.spares]++
+} else {
+	global.player.spares++
 	obj_battleCore.sb += ceil(sb/2)
-	global.spared[enemy.deputy] = true
-	ini_write_real("S",enemy.deputy,ini_read_real("S",enemy.deputy,0)+1)
+	global.enemy_spared[ENEMY.DEPUTY] = true
+	ini_write_real("S",ENEMY.DEPUTY,ini_read_real("S",ENEMY.DEPUTY,0)+1)
 }
 ini_close()

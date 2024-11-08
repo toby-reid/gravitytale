@@ -1,2 +1,2 @@
-goto = ow_scb_12_puzzle5
-dir = 1
+goto = ow_scb_12_puzzle5;
+dir = 1;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_generate_enemy_indices",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_generate_enemy_indices",
+  "parent":{
+    "name":"Startup",
+    "path":"folders/Scripts/Startup.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

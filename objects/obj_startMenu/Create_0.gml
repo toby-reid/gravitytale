@@ -22,6 +22,6 @@ else {
 }
 if file_exists("Reset.save") {
 	ini_open("Reset.save");
-	global.player[player.mabel] = ini_read_real("State","M",false);//this value will be set when creating the character
+	global.player.mabel = bool(ini_read_real("State","M",false));//this value will be set when creating the character
 	ini_close();
 }

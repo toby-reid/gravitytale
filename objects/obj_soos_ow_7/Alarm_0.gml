@@ -12,9 +12,9 @@ obj_sign.text = [
 	"What wilt thou choose?#Which way is right?",
 	"Is there a way to get #out of this plight?",
 	"(Oh, man...&(Oh man, oh man...)",
-	"(That was just a bunch of #symbols we don't understand...)"
-]
-if global.player[player.mabel] {
+	"(That was just a bunch of #symbols we don't understand.)"
+];
+if global.player.mabel {
 	obj_sign.text[11] = "(Oh, wow!&(There's definitely something #here...!)"
 	obj_sign.text[12] = "(If only we had the brains or #tenacity to figure out those #symbols...)"
 }

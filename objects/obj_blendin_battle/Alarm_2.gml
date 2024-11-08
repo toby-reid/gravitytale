@@ -32,7 +32,7 @@ switch talk {
 		obj_battleCore.text[0] = "Blendin's starting to trust #you."
 		break
 	case 7:
-		bubbleText = ["just tell me if #you see #anything, ok?"]
+		bubbleText = ["just tell me #if you see #anything, ok?"]
 		obj_battleCore.text[1] = "You prepare to write his #request in your calendar."
 		obj_battleCore.text[0] = "Blendin wants to show you #something."
 		break

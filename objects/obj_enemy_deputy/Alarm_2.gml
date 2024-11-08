@@ -1,5 +1,5 @@
 /// @description Discuss
-if !global.killed[enemy.sheriff] switch stage {
+if !global.enemy_killed[ENEMY.SHERIFF] switch stage {
 	case 0:
 		obj_battleCore.text[1] = "You were going to start a #discussion, but you have no idea #what to talk about."
 		obj_battleCore.text[0] = "Try focusing them both first."

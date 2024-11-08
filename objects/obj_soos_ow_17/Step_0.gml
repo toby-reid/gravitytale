@@ -18,7 +18,7 @@ if stage == 2 {if !instance_exists(obj_textbox) {
 else if !instance_exists(obj_textbox) sprite_index = spr_soos_d
 
 if instance_exists(obj_textbox) with obj_textbox if variable_instance_exists(id,"charCount") {
-	if(text[0] == "Sup, "+global.player[player.name]+"-dawg?&Did you need anything?#Yes          No" and charCount > 36) or (obj_textbox.text[0] == "Did you need anything?#I want       No,#to leave     nothing." and charCount > 22) {
+	if(text[0] == "Sup, "+global.player.name+"-dawg?&Did you need anything?#Yes          No" and charCount > 36) or (obj_textbox.text[0] == "Did you need anything?#I want       No,#to leave     nothing." and charCount > 22) {
 		segment = array_length(segText)-1
 		charCount = string_length(segText[segment])+15
 		sound[page] = silence

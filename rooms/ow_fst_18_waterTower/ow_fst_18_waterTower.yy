@@ -1,5 +1,5 @@
 {
-  "$GMRoom":"",
+  "$GMRoom":"v1",
   "%Name":"ow_fst_18_waterTower",
   "creationCodeFile":"",
   "inheritCode":false,

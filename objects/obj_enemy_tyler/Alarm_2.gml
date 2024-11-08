@@ -5,7 +5,7 @@ if instance_exists(obj_enemy_manDan) {
 	obj_enemy_manDan.encouraged = true
 }
 else {
-	if global.killed[enemy.manlydan] {
+	if global.enemy_killed[ENEMY.MANLY_DAN] {
 		obj_battleCore.text[1] = "You encourage Tyler just to #give up.&That sounds appealing to him..."
 		obj_battleCore.text[0] = "Tyler gives up on everything.&Very inspiring."
 	}

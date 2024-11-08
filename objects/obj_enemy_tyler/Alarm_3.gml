@@ -6,7 +6,7 @@ if distracted == 0 {
 		distracted = 4
 		image_xscale = -2
 	}
-	else if global.killed[enemy.manlydan] obj_battleCore.text[1] = "You try to distract Tyler, #but he is intent on avenging #Manly Dan."
+	else if global.enemy_killed[ENEMY.MANLY_DAN] obj_battleCore.text[1] = "You try to distract Tyler, #but he is intent on avenging #Manly Dan."
 	else obj_battleCore.text[1] = "You were going to distract, #but he doesn't care about the #battle anymore anyway."
 }
 else obj_battleCore.text[1] = "You were going to distract #Tyler, but he wasn't paying #attention."

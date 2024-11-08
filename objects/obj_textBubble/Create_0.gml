@@ -7,6 +7,10 @@ style = []//Change if needed; default 0 - 1shake,2swap,etc.
 alarm[0] = 1
 alarm[1] = 4
 page = -1
+segText = [];
+segColor = [];
+drawAng = [];
+drawShift = [];
 
 image_xscale = 0
 image_yscale = 0

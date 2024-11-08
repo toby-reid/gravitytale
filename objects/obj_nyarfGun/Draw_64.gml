@@ -1,5 +1,4 @@
 draw_self()
-if global.player[player.nyarf] >= 4 draw_sprite_ext(sprite_index,image_index,x,y,-1*image_xscale,image_yscale,image_angle,image_blend,image_alpha)
 if alarm[0] > -1 {
 	if global.stage[4] <= 10 and global.stage[4] != 9 draw_sprite(spr_battleDamage,global.stage[4],x,20)
 	else {

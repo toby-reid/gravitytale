@@ -1,16 +1,17 @@
 if(instance_exists(obj_dipper)) switch stage {
 	case 0:
-		if(obj_dipper.y <= 720) if(alarm[1] == -1) {
-			if(obj_dipper.canMove) {
+		if (obj_dipper.y <= 720) if(alarm[1] == -1) {
+			if (obj_dipper.canMove) {
 				obj_dipper.canMove = false;
 				obj_dipper.dir = 1;
 				alarm[0] = 30;
 				camera_set_view_target(view_camera[0],noone);
-				if(global.player[player.runActive] == 2) // Abort geno if not enough kills
-					if(global.areaKilled[area.caves] < global.areaMax[area.caves]) 
-						global.player[player.runActive] = 0;
-			}
-			else if(alarm[0] == -1) {
+				if (global.player.genocide == RUN.ACTIVE) { // Abort geno if not enough kills
+					if (global.areaKills[? AREA.CAVES].killCount < global.areaKills[? AREA.CAVES].MAX_KILLS) {
+						global.player.genocide = RUN.ABORTED;
+					}
+				}
+			} else if(alarm[0] == -1) {
 				var _viewy = camera_get_view_y(view_camera[0]);
 				if(_viewy > 80) camera_set_view_pos(view_camera[0],0,_viewy-1);
 				else alarm[1] = 30;
@@ -39,14 +40,13 @@ if(instance_exists(obj_dipper)) switch stage {
 		}
 		break;
 	case 2://NGAHHH
-		if(alarm[0] == -1) {
-			if(!instance_exists(obj_textbox)) {
+		if (alarm[0] == -1) {
+			if (!instance_exists(obj_textbox)) {
 				audio_stop_sound(mus_wind);
 				audio_sound_gain(mus_wind,1,0);
-				if(global.killed[enemy.manlydan]) {
+				if (global.enemy_killed[ENEMY.MANLY_DAN]) {
 					stage++;
-				}
-				else with instance_create_layer(160,192,layer,obj_textbox) {
+				} else with instance_create_layer(160,192,layer,obj_textbox) {
 					text = [
 						". . .",
 						"No, you know what?",
@@ -55,10 +55,9 @@ if(instance_exists(obj_dipper)) switch stage {
 						"We'll never be strong enough #to fight the @ffff00monster @ffffffif we're #stuck in storytime!"
 					];
 				}
-			}
-			else {
-				if(!audio_is_playing(mus_ngahhh)) if(obj_textbox.page == 1) audio_play_sound(mus_ngahhh,0,true);
-				if(obj_textbox.alarm[2] > -1 and obj_textbox.page > 0) {
+			} else {
+				if (!audio_is_playing(mus_ngahhh)) if (obj_textbox.page == 1) audio_play_sound(mus_ngahhh,0,true);
+				if (obj_textbox.alarm[2] > -1 and obj_textbox.page > 0) {
 					alpha = 1;
 					var _cam = view_camera[0];
 					camera_set_view_size(_cam,camera_get_view_width(_cam)-40,camera_get_view_height(_cam)-30);
@@ -88,13 +87,13 @@ if(instance_exists(obj_dipper)) switch stage {
 		if(alpha > 0) alpha -= .05;
 		else {
 			image_speed = 1;
-			if(image_index > 4 and image_index <= 5 and !audio_is_playing(sfx_ding)) audio_play_sound(sfx_ding,0,false);
-			else if(image_index > 8) {
+			if (image_index > 4 and image_index <= 5 and !audio_is_playing(sfx_ding)) audio_play_sound(sfx_ding,0,false);
+			else if (image_index > 8) {
 				image_speed = 0;
-				if(alarm[0] == -1) alarm[0] = 60;
-				else if(alarm[0] == 0) {
+				if (alarm[0] == -1) alarm[0] = 60;
+				else if (alarm[0] == 0) {
 					with instance_create_layer(160,192,layer,obj_textbox) {
-						if(global.player[player.runActive] == 2) {//geno
+						if (global.player.genocide == RUN.ACTIVE) {
 							text = [
 								"You.",
 								"You're her brother, #aren't you?",
@@ -106,7 +105,7 @@ if(instance_exists(obj_dipper)) switch stage {
 								"Because when you step #forward, when you walk #into that trap...",
 								"I will KILL you."
 							];
-							if(global.player[player.mabel]) text[1] = "You're his sister, #aren't you?";
+							if (global.player.mabel) text[1] = "You're his sister, #aren't you?";
 							head = [
 								spr_wendy_head_anger,
 								spr_wendy_head_ohcrap,
@@ -118,8 +117,7 @@ if(instance_exists(obj_dipper)) switch stage {
 								spr_wendy_head_closed,
 								spr_wendy_head_anger
 							];
-						}
-						else if(global.killed[enemy.manlydan]) {//neut but ManDan dead
+						} else if (global.enemy_killed[ENEMY.MANLY_DAN]) {//neut but ManDan dead
 							text = [
 								". . .",
 								"Forget it.",
@@ -157,8 +155,7 @@ if(instance_exists(obj_dipper)) switch stage {
 								spr_wendy_head_anger
 							];
 							charRate[array_length(text)-1] = 4;
-						}
-						else if(global.player[player.kills] > 0) {//neut but ManDan alive
+						} else if (global.player.kills > 0) {//neut but ManDan alive
 							text = [
 								"YOU!",
 								"What have you been doing #here?",
@@ -169,7 +166,7 @@ if(instance_exists(obj_dipper)) switch stage {
 								"You wander through the #valley, attacking #whomever...",
 								"...or whatever...#you want."
 							];
-							if(global.player[player.mabel]) text[3] = "After your brother came #through, I almost thought #you'd be reasonable.";
+							if (global.player.mabel) text[3] = "After your brother came #through, I almost thought #you'd be reasonable.";
 							head = [
 								spr_wendy_head_ohcrap,
 								spr_wendy_head_ohcrap,
@@ -180,7 +177,7 @@ if(instance_exists(obj_dipper)) switch stage {
 								spr_wendy_head_anger,
 								spr_wendy_head_anger
 							]
-							if(global.killed[enemy.sheriff] or global.killed[enemy.deputy]) {
+							if (global.enemy_killed[ENEMY.SHERIFF] or global.enemy_killed[ENEMY.DEPUTY]) {
 								text = array_concat(text,[
 									"I know those cops weren't #all that useful, but they #at least kept some order.",
 									"Do you realise how hard #it is to keep everyone #together now?"
@@ -190,7 +187,7 @@ if(instance_exists(obj_dipper)) switch stage {
 									spr_wendy_head_ohcrap
 								]);
 							}
-							if(global.killed[enemy.ford]) {
+							if (global.enemy_killed[ENEMY.FORD]) {
 								text = array_concat(text,[
 									"Heck, you're the reason #I lost my job, did you #know that?",
 									"Mr. Pines shut down the #Shack since you murdered #his brother."
@@ -200,7 +197,7 @@ if(instance_exists(obj_dipper)) switch stage {
 									spr_wendy_head_side
 								]);
 							}
-							if(global.killed[enemy.robbie]) {
+							if (global.enemy_killed[ENEMY.ROBBIE]) {
 								text = array_concat(text,[
 									"And now even my closest #friends are scared, since #Robbie's missing.",
 									"They all think it was #some forest monster...",
@@ -234,8 +231,7 @@ if(instance_exists(obj_dipper)) switch stage {
 								spr_wendy_head_anger,
 								spr_wendy_head_ohcrap
 							]);
-						}
-						else {//paci
+						} else {//paci
 							text = [
 								"YOU!",
 								"You're the only one who's #ever made it this far!",
@@ -293,11 +289,12 @@ if(instance_exists(obj_dipper)) switch stage {
 				}
 				with instance_create_layer(240,760,layer,obj_save) {
 					rmName = "Cave - Wendy";
-					text = "(The looming shadows mark an #impending battle, ";
-					if(global.player[player.mabel]) text += "exciting #your imagination.)"
-					else text += "filling you #with dedication.)";
+					text = "(The looming shadows mark an #impending battle, "
+						+ (global.player.mabel
+							? "exciting #your imagination.)"
+							: "filling you #with dedication.)");
 					if(audio_is_playing(mus_ngahhh)) music = mus_ngahhh;
-					loc = area.caves;
+					loc = AREA.CAVES;
 				}
 				obj_dipper.dir = 3;
 				obj_dipper.canMove = true;
@@ -318,11 +315,10 @@ if(instance_exists(obj_dipper)) switch stage {
 				if(vspeed > 0) {
 					vspeed = 0;
 					with instance_create_layer(0,0,layer,obj_toBattle) {
-						if(global.player[player.runActive] == 2) {
+						if (global.player.genocide == RUN.ACTIVE) {
 							music = mus_ngahhh;
 							goto = btl_cav_wendyne_geno;
-						}
-						else {
+						} else {
 							music = mus_spearjustice;
 							goto = btl_cav_wendyne;
 						}
@@ -332,7 +328,7 @@ if(instance_exists(obj_dipper)) switch stage {
 				else if(!instance_exists(obj_toBattle)) {
 					y += 80;
 					obj_dipper.y += 80;
-					if(global.killed[enemy.wendy]) instance_destroy();
+					if (global.enemy_killed[ENEMY.WENDY]) instance_destroy();
 					else {//we ran from battle
 						stage++;
 						audio_stop_all();

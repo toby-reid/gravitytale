@@ -20,6 +20,8 @@ switch hug {
 		obj_battleCore.text[1] = "You continue to smack Beaver.&You feel lower than the scum #of the earth."
 		break
 }
-obj_battleCore.text[0] = "PETA charges you $5 for #mistreatment of animals."
-global.player[player.money] -= 5
-if hug < 0 obj_battleCore.text[0] = "PETA repossesses your #"+choose("neighbor's","best","nice","lawn","left","grandmother's")+" "+choose("goldfish","toaster","fork","chair","foot","onions")+" to pay for #damages."
+obj_battleCore.text[0] = string_concat("PETA repossesses your #",
+									   choose("neighbor's","best","nice","lawn","left","grandmother's"),
+									   " ",
+									   choose("goldfish","toaster","fork","chair","foot","onions"),
+									   " to pay for #damages.")

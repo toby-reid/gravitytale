@@ -7,12 +7,12 @@ if save == 0 if instance_exists(obj_dipper) if obj_dipper.canMove {
 		with instance_create_layer(160,ybox/2,"Instances",obj_textbox) {
 			text[0] = other.text
 			sound[0] = silence
-			if global.player[player.runActive] == 2 {
-				text[0] = "@ff0000"
-				if global.areaKilled[other.loc] < global.areaMax[other.loc] text[0] += string(global.areaMax[other.loc]-global.areaKilled[other.loc])+" left."
-				else {
-					if global.player[player.mabel] text[0] += "Immolation."
-					else text[0] += "Devastation."
+			if global.player.genocide == RUN.ACTIVE {
+				var remaining = global.areaKills[? other.loc].MAX_KILLS - global.areaKills[? other.loc].killCount;
+				if remaining > 0 {
+					text[0] = string_concat("@ff0000", remaining, " left.");
+				} else {
+					text[0] = global.player.mabel ? "Immolation." : "Devastation.";
 				}
 			}
 		}
@@ -21,10 +21,10 @@ if save == 0 if instance_exists(obj_dipper) if obj_dipper.canMove {
 		ini_open("Prof.save");
 		nm = ini_read_string("Profile","NM","EMPTY");
 		lv = ini_read_real("Profile","LV",0);
-		time = ini_read_string("Profile","TM","00:00:00");
+		time = ini_read_string("Profile","TM",scr_format_time(0,0,0));
 		rm = ini_read_string("Profile","RM","--");
 		ini_close();
-		global.player[player.hp] = global.player[player.maxhp]
+		global.player.hp = global.player.maxHp;
 		audio_play_sound(sfx_heal,0,false)
 	}
 }

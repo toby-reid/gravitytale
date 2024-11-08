@@ -1,5 +1,5 @@
 /// @description Dismiss
-if !global.killed[enemy.deputy] switch stage {
+if !global.enemy_killed[ENEMY.DEPUTY] switch stage {
 	case 0:
 	case 1:
 		obj_battleCore.text[1] = "You try to tell the sheriff to #leave, but he won't listen to a #criminal."

@@ -2,13 +2,17 @@
 
 if obj_soul.alarm[0] == -1 or at < 0 {
 	if(!((image_blend == c_orange and other.moving) or (image_blend == c_aqua and !other.moving))) {
-		global.player[player.hp] -= at
+		global.player.hp -= at;
 		if at > 0 {
-			obj_soul.alarm[0] = 45
-			obj_soul.image_blend = c_silver
-			audio_play_sound(sfx_damageTaken,0,false)
+			obj_soul.alarm[0] = 45;
+			obj_soul.image_blend = c_silver;
+			audio_play_sound(sfx_damageTaken, 0, false);
+		} else if at < 0 {
+			audio_play_sound(sfx_heal,0,false);
+			if global.player.hp > global.player.maxHp {
+				global.player.hp = global.player.maxHp;
+			}
 		}
-		else if at < 0 {audio_play_sound(sfx_heal,0,false); if global.player[player.hp] > global.player[player.maxhp] global.player[player.hp] = global.player[player.maxhp]}
-		instance_destroy()
+		instance_destroy();
 	}
 }

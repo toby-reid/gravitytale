@@ -11,8 +11,8 @@ switch stage {
 			speed = 0
 			obj_dipper.dir = 0
 			with instance_create_layer(160,192,"Instances",obj_textbox) {
-				if global.player[player.mabel] {var slang = "Hambone"; var col = "@CC277A"}
-				else {var slang = "dude"; var col = "@1970FF"}
+				var slang = global.player.mabel ? "Hambone" : "dude";
+				var col = global.player.mabel ? "@CC277A" : "@1970FF";
 				text = [
 					"Hey, "+slang+"!&Good to see you're alive!",
 					"You seemed close to #death...",
@@ -26,13 +26,15 @@ switch stage {
 					"Apparently the waters #here have supernatural #something-or-others...",
 					"They're supposed to be #good for healing or #something.",
 					"Oh, yeah, and your name #is...?",
-					col+global.player[player.name]+"@ffffff, huh?&Kinda surprising for #someone like you.",
+					col+global.player.name+"@ffffff, huh?&Kinda surprising for #someone like you.",
 					"Anyway, since you're #alive, we should get #going.",
 					"Life forms are more #likely to die when #they're alive.",
 					"Follow me, "+slang+".&And hurry -` these parts #can be dangerous.",
 				]
-				if (global.player[player.mabel] and string_lower(global.player[player.name])=="mabel") or (!global.player[player.mabel] and string_lower(global.player[player.name])=="dipper")
-					text[12] = col+global.player[player.name]+"@ffffff, huh?&I thought as much."
+				if (global.player.mabel and string_lower(global.player.name)=="mabel") 
+						or (!global.player.mabel and string_lower(global.player.name)=="dipper") {
+					text[12] = col+global.player.name+"@ffffff, huh?&I thought as much."
+				}
 				head = [
 					spr_soos_face_happy,
 					spr_soos_face_neutral_side,

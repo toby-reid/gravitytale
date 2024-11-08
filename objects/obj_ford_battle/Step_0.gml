@@ -2,7 +2,9 @@
 if image_alpha == 1 if !instance_exists(obj_textBubble) {
 	if global.stage[0] == 4 {
 		if stage != -1 {
-			if global.player[player.runActive] == 2 and global.areaKilled[area.forest] >= global.areaMax[area.forest] global.stage[0]++
+			if global.player.genocide == RUN.ACTIVE and global.areaKills[? AREA.FOREST].killCount >= global.areaKills[? AREA.FOREST].MAX_KILLS {
+				global.stage[0]++ // he won't attack if you're in full geno
+			}
 			else if(global.stage[1] == 0 and global.stage[4] != 0) {//shot down
 				if timer == 0 instance_create_layer(290,330,"Instances",obj_btl_platform)
 				if timer <= 810 {

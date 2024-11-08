@@ -11,7 +11,7 @@ if timer < 20 {
 }
 else {
 	with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
-		if global.player[player.hp] == global.player[player.maxhp] {
+		if global.player.hp == global.player.maxHp {
 			text = [
 				"Ha ha... #hahahahaha!",
 				"You don't need #my guidance at #all, do you?",
@@ -95,7 +95,7 @@ else {
 				text[5] = "I'm still #willing to #offer you #that deal."
 				text[6] = "Remember, I #was meant to #gain full power #with a... #certain deal."
 			}
-			if global.player[player.mabel] {
+			if global.player.mabel {
 				text[7] = "Unfortunately, #they failed #partway #through their #mission,"
 				text[9] = "So that, #@CC277AShooting Star@000000, #is where you #come in!"
 				text[14]= "Money, fame, #riches... #friends who dote #over your #every action, #even!"

@@ -1,6 +1,6 @@
 /// @description RPS
 if act[2] == "Paper" {
-	obj_battleCore.text[1] = "Papers, please.&We'll see if Geodite is #a legal immigrant."
+	obj_battleCore.text[1] = "Papers, please.&No entry without proper #documentation.."
 	obj_battleCore.text[0] = "Darn, seems everything's in #order.&Guess paper can't beat rock."
 }
 else if act[2] == "Scissors" {
@@ -15,10 +15,10 @@ else {//rock
 			if !(obj_battleEnemy.x == i) {ecks = i; break}
 		}
 		else {
-			if !(obj_battleEnemy.x == 192) ecks = 192
-			else ecks = 448
+			ecks = !(obj_battleEnemy.x == 192) ? 192 : 448;
 		}
-		for(var j = 0; j < array_length(global.enemy); j++) {
+		var j = 0;
+		for(; j < array_length(global.enemy); j++) {
 			if !instance_exists(global.enemy[j]) break
 		}
 		global.enemy[j] = instance_create_layer(ecks,y,layer,object_index)

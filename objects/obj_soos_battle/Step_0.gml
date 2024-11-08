@@ -1,13 +1,7 @@
 /// @description Attack
 if image_alpha == 1 if global.stage[0] == 4 if hp > 0 {
 	if !instance_exists(obj_textBubble) {
-		if global.player[player.hp] <= 0 {
-			ini_open("Reset.save")
-			ini_write_real("D",enemy.soos,ini_read_real("D",enemy.soos,0)+1)
-			ini_close()
-		}
-		if audio_is_playing(sfx_damageTaken) global.stage[0]++
-		else if stage < 18 switch attack {
+		if stage < 18 switch attack {
 			case 0://Burrito Bites
 				if timer == 0 instance_create_layer(320,252,"Instances",obj_atk_soos_bBites)
 				if timer == 420 global.stage[0]++
@@ -19,20 +13,20 @@ if image_alpha == 1 if global.stage[0] == 4 if hp > 0 {
 			case 2://Question Mark
 				with instance_create_layer(320,114,"Instances",obj_atk_beaver) {
 					direction = other.angle
-					if global.player[player.hp] <= 3 or other.stage >= 13 speed = 3
+					if global.player.hp <= 3 or other.stage >= 13 speed = 3
 					else speed = 10
 					sprite_index = spr_atk_soos_qMark
 					image_index = other.timer%2
 					at = other.at
 				}
 				angle += angDir
-				if angle == 270+16*angDir or (angle==270 and (global.player[player.hp]<=3 or stage>=12)) {angle = 270+64*angDir; angDir = -1*angDir}
+				if angle == 270+16*angDir or (angle==270 and (global.player.hp<=3 or stage>=12)) {angle = 270+64*angDir; angDir = -1*angDir}
 				if timer == 360 global.stage[0]++
 				break
 			case 3://Screwdriver
 				if timer == 15 {
 					var screws = []
-					while array_length(screws) < 4 - 2*(global.player[player.hp] <= 3) {
+					while array_length(screws) < 5 - 2*(global.player.hp <= 3) {
 						var screw = irandom(8)
 						var create = true
 						var total = 0
@@ -62,10 +56,16 @@ if image_alpha == 1 if global.stage[0] == 4 if hp > 0 {
 		timer++
 	}
 	else {
-		if variable_instance_exists(obj_textBubble,"charCount") if obj_textBubble.image_xscale == 2
-			if obj_textBubble.charCount < string_length(obj_textBubble.text[obj_textBubble.page]) image_index += .1; else image_index = 0
+		if variable_instance_exists(instance_find(obj_textBubble,0),"charCount") {
+			if obj_textBubble.image_xscale == 2 {
+				if obj_textBubble.charCount < string_length(obj_textBubble.text[obj_textBubble.page]) {
+					image_index += .1; 
+				} 
+				else image_index = 0
+			}
+		}
 		if hp <= 0 {
-			if global.player[player.runActive] == 2 {
+			if global.player.genocide = RUN.ACTIVE {
 				if obj_textBubble.page == 1 sprite_index = spr_soos_face_surprise_side
 			}
 			else if spare switch obj_textBubble.page {

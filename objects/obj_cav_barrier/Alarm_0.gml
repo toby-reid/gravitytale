@@ -7,7 +7,7 @@ if stage <= 4 {
 	if stage == 4 {
 		if audio_is_playing(sfx_moveRock) {
 			audio_stop_sound(sfx_moveRock)
-			if global.player[player.runActive] == 2 audio_play_sound(sfx_puzDone_distort,0,false)
+			if global.player.genocide == RUN.ACTIVE audio_play_sound(sfx_puzDone_distort,0,false)
 			else audio_play_sound(sfx_puzDone,0,false)
 		}
 		alarm[1] = -1

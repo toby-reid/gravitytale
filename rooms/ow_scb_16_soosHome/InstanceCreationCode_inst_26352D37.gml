@@ -1,5 +1,6 @@
 rmName = "Soos's Home"
-if global.player[player.mabel] text = "(The sight of Soos's cozy home #excites your imagination.)"
-else text = "(The sight of Soos's cozy home #fills you with dedication.)"
+text = "(The sight of Soos's cozy home #";
+if global.player.mabel text += "excites your imagination.)";
+else text += "fills you with dedication.)";
 music = mus_birds
-loc = area.scuttlebutt
+loc = AREA.SCUTTLEBUTT;

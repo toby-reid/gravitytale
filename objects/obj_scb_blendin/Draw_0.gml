@@ -10,8 +10,8 @@ switch stage {
 	} break
 	case 2: if !instance_exists(obj_toBattle) {
 		ini_open("Reset.save")
-		if global.killed[enemy.blendin] {
-			if ini_read_real("K",enemy.blendin,false) with instance_create_layer(160,192,"Instances",obj_textbox) {
+		if global.enemy_killed[ENEMY.BLENDIN] {
+			if ini_read_real("K",ENEMY.BLENDIN,false) with instance_create_layer(160,192,"Instances",obj_textbox) {
 				text = [
 					"d... did you just...",
 					"did you reset the timeline #just to kill me again?",
@@ -29,10 +29,10 @@ switch stage {
 				]
 				sound = [tlk_blendin,tlk_blendin]
 			}
-			ini_write_real("K",enemy.blendin,ini_read_real("K",enemy.blendin,0)+1)
+			ini_write_real("K",ENEMY.BLENDIN,ini_read_real("K",ENEMY.BLENDIN,0)+1)
 		}
-		else if global.spared[enemy.blendin] {
-			if ini_read_real("K",enemy.blendin,false) with instance_create_layer(160,192,"Instances",obj_textbox) {
+		else if global.enemy_spared[ENEMY.BLENDIN] {
+			if ini_read_real("K",ENEMY.BLENDIN,false) with instance_create_layer(160,192,"Instances",obj_textbox) {
 				text = [
 					"thanks for letting me talk...",
 					"i've never really had a friend #before...",
@@ -51,15 +51,15 @@ switch stage {
 					"i'm blendin, by the way...&blendin blenjamin blandin...",
 					"i guess i should know your name, #right?",
 					". . .",
-					"@ffff00"+string_lower(global.player[player.name])+"@ffffff...?&weird name...",
-					"i guess it is from the past #though, huh...",
+					"@ffff00"+string_lower(global.player.name)+"@ffffff...?&weird name...",
+					"i guess it is from the past #though, huh?",
 					"well, i'd better get going...&i'll see you around...",
 					"friend."
 				]
 				for(var i = 0; i < array_length(text); i++) sound[i] = tlk_blendin
 			}
 			sprite_index = spr_blendin_r_hair
-			ini_write_real("S",enemy.blendin,ini_read_real("S",enemy.blendin,0)+1)
+			ini_write_real("S",ENEMY.BLENDIN,ini_read_real("S",ENEMY.BLENDIN,0)+1)
 		}
 		else {room_persistent = false; room_restart()}
 		ini_close()
@@ -77,7 +77,7 @@ switch stage {
 			else {
 				audio_play_sound(mus_ruins,0,true)
 				audio_play_sound(mus_ruins,0,true)
-				with instance_create_layer(0,0,"Instances",obj_randBattle) loc = area.scuttlebutt
+				with instance_create_layer(0,0,"Instances",obj_randBattle) loc = AREA.SCUTTLEBUTT;
 				instance_destroy()
 			}
 			timer++

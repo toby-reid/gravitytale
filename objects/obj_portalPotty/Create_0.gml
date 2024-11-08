@@ -7,4 +7,6 @@ changeChange[320] = 0
 loc = 0
 cantp = false;
 if !variable_global_exists("teleport") global.teleport = false
-if !global.spared[enemy.wayman] and !global.killed[enemy.wayman] instance_create_layer(0,0,layer,obj_wayman_ow)
+if !global.enemy_spared[ENEMY.WAYMAN] and !global.enemy_killed[ENEMY.WAYMAN] {
+	instance_create_layer(0,0,layer,obj_wayman_ow)
+}

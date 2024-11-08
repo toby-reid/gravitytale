@@ -12,7 +12,7 @@ if !active {
 	}
 }
 else if !instance_exists(obj_textbox) and !instance_exists(obj_toBattle) {
-	if global.killed[enemy.soos] instance_destroy()
+	if global.enemy_killed[ENEMY.SOOS] instance_destroy()
 	else if global.soos < 27 {
 		with instance_create_layer(0,0,layer,obj_toBattle) {
 			goto = btl_scb_22_soos
@@ -23,14 +23,12 @@ else if !instance_exists(obj_textbox) and !instance_exists(obj_toBattle) {
 	}
 	else if global.soos == 27 with instance_create_layer(160,192,layer,obj_textbox) {
 		setMove = true
-		var slang = "dude"
-		var col = "1970FF"
-		if global.player[player.mabel] {slang = "Hambone"; col = "CC277A"}
-		if global.spared[enemy.soos] {
+		if global.enemy_spared[ENEMY.SOOS] {
+			var col = global.player.mabel ? "CC277A" : "1970FF";
 			text = [
 				"Well, it seems no one #will be able to stop #you...",
 				"...let's hope.",
-				"Good luck out there, #@"+col+global.player[player.name]+"@ffffff.",
+				"Good luck out there, #@"+col+global.player.name+"@ffffff.",
 				"Come talk to me when #you're ready to go."
 			]
 			head = [
@@ -41,7 +39,8 @@ else if !instance_exists(obj_textbox) and !instance_exists(obj_toBattle) {
 			]
 			global.soos = 28
 		}
-		else {
+		else { // we "ran" from the battle
+			var slang = global.player.mabel ? "Hambone" : "dude";
 			text = [
 				"There ya go, "+slang+"!&I knew you'd #understand...",
 				"It's too dangerous for #you out there.",

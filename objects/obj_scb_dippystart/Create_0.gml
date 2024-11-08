@@ -1,7 +1,6 @@
-trashCan = room_get_name(room);
 if !variable_global_exists("trashCan") global.trashCan = []
 var inst = false;
-for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == trashCan {
+for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == id {
 	instance_destroy(id, false)
 	inst = true
 	break

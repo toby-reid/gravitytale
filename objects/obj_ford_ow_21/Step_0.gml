@@ -6,17 +6,16 @@ switch stage {
 		audio_play_sound(mus_nyeh,0,true)
 		with instance_create_layer(160,192,"Instances",obj_textbox) {
 			ini_open("Reset.save")
-			if ini_read_real("D",enemy.ford,0) > 0 var died = true;
-			else var died = false
+			var died = (ini_read_real("D",ENEMY.FORD,0) > 0)
 			ini_close()
-			if global.player[player.runActive] == 2 and global.areaKilled[area.forest] >= global.areaMax[area.forest] {
+			if global.player.genocide == RUN.ACTIVE and global.areaKills[? area].killCount >= global.areaKills[? area].MAX_KILLS {
 				text = [
 					"CHILD!",
 					"YOU HAVE FINALLY #REACHED THE FINAL #BOSS!",
 					"...IS WHAT YOU #THOUGHT I'D SAY, EH, #KID?",
 					"BUT NO...&YOU DON'T HAVE TIME #FOR THAT, HUH?",
 					". . .",
-					"I'VE BEEN ANALYZING #YOUR MOVES, KID...",
+					"I'VE BEEN ANALYZING #YOUR MOVES, CHILD...",
 					"AND I HAVE REACHED A #CONCLUSION.",
 					"YOU'VE BEEN WORKING #FOR @FFFF00BILL@FFFFFF, HAVEN'T YOU?",
 					". . .",
@@ -45,14 +44,13 @@ switch stage {
 					spr_ford_head_neutral,
 					spr_ford_head_bashful
 				]	
-			}
-			else if global.player[player.runActive] == 2 {//Genocide, but not enough kills to continue
+			} else if global.player.genocide == RUN.ACTIVE {//Genocide, but not enough kills to continue
 				if died {
 					text = [
 						"WAH HAH HAH!",
 						"YOU WERE KILLED AND #CAME BACK...",
 						"BUT YOU STILL DON'T #HAVE ENOUGH KILLS TO #CONTINUE THIS ROUTE!",
-						"LET'S GO AGAIN THEN, #BOY!",
+						"LET'S GO AGAIN THEN, #" + (global.player.mabel ? "GIRL" : "BOY") + "!",
 						"YOUR FAILURES ARE #HILARIOUS TO ME!"
 					]
 					head = [
@@ -62,8 +60,7 @@ switch stage {
 						spr_ford_head_mad,
 						spr_ford_head_neutral
 					]
-				}
-				else {
+				} else {
 					text = [
 						"WAH HAH HAH!",
 						"SO @FFFF00BILL@FFFFFF'S HAVING YOU #DO HIS DIRTY WORK, EH, #KID?",
@@ -85,8 +82,7 @@ switch stage {
 						spr_ford_head_neutral
 					]
 				}
-			}
-			else if global.player[player.kills] > 0 {
+			} else if global.player.kills > 0 {
 				if died {
 					text = [
 						"CHILD!",
@@ -108,8 +104,7 @@ switch stage {
 						spr_ford_head_mad,
 						spr_ford_head_neutral
 					]
-				}
-				else {
+				} else {
 					text = [
 						"CHILD!",
 						"YOU HAVE REACHED #WHAT YOU MIGHT CALL #THE FINAL BOSS!",
@@ -156,8 +151,7 @@ switch stage {
 					]
 					charRate[11] = .2
 				}
-			}
-			else {
+			} else {
 				if died {
 					text = [
 						"CHILD!",
@@ -167,7 +161,7 @@ switch stage {
 						"YOU'VE HEARD THIS #ALL BEFORE, #HAVEN'T YOU?",
 						"SO ANOTHER \"ME\" #HAS MANAGED TO #STOP YOU...",
 						"LET US HOPE I CAN TOO.",
-						"MAYBE I CAN BE THE #END OF YOUR TIMELINE #HOPPING..."
+						"MAYBE I CAN BE THE #END OF YOUR TIME #TEARING."
 					]
 					head = [
 						spr_ford_head_mad,
@@ -179,8 +173,7 @@ switch stage {
 						spr_ford_head_mad,
 						spr_ford_head_neutral
 					]
-				}
-				else {
+				} else {
 					text = [
 						"CHILD!",
 						"YOU HAVE REACHED #WHAT YOU MIGHT CALL #THE FINAL BOSS!",
@@ -232,11 +225,11 @@ switch stage {
 		stage++
 	} break
 	case 2: if !instance_exists(obj_toBattle) {
-		if global.killed[enemy.ford] instance_destroy()
-		else if global.spared[enemy.ford] {
+		if global.enemy_killed[ENEMY.FORD] instance_destroy()
+		else if global.enemy_spared[ENEMY.FORD] {
 			obj_dipper.canMove = false
 			with instance_create_layer(160,192,"Instances",obj_textbox) {
-				if other.geno {//Ran genocide, but stopped
+				if global.player.genocide == RUN.ABORTED {
 					text = [
 						"THANK YOU, CHILD...",
 						"I KNEW THERE WAS #STILL GOOD IN #YOU...",
@@ -253,8 +246,7 @@ switch stage {
 						spr_ford_head_neutral,
 						spr_ford_head_neutral
 					]
-				}
-				else {//Weren't in Genocide
+				} else {//Weren't in Genocide
 					text = [
 						"WELL, UH...",
 						"I'M...&UH...",
@@ -268,7 +260,7 @@ switch stage {
 						"SO I WILL LET YOU GO #FOR NOW.",
 						"COME VISIT ME IN THE #SHACK'S BASEMENT #SOMETIME.",
 						"YOU CAN GET THE #CODE FROM MY IDIOT #BROTHER.",
-						"NOW, FARE WELL, KID...&NO...&@ffff00"+string_upper(global.player[player.name])+"@ffffff...",
+						"NOW, FARE WELL, KID...&NO...&@ffff00"+string_upper(global.player.name)+"@ffffff...",
 						"GOOD LUCK IN YOUR #ADVENTURE."
 					]
 					head = [
@@ -291,15 +283,14 @@ switch stage {
 				for(var i = 0; i < array_length(text); i++) {font[i] = fnt_papyrus_gui; sound[i] = tlk_ford}
 			}
 			stage++
-		}
-		else {//Ran
+		} else {//Ran
 			obj_dipper.canMove = true//The textbox will make him move after it's done
 			with instance_create_layer(160,192,"Instances",obj_textbox) {
 				text = [
-					"AN EXCELLENT CHOICE, #KID!",
+					"AN EXCELLENT CHOICE, #CHILD!",
 					"PERHAPS YOU TRULY #ARE MILDLY #INTELLIGENT...",
 					"I WILL GUARD HERE #UNTIL YOU HAVE LEFT #GRAVITY FALLS.",
-					"I HOPE YOU #UNDERSTAND..."
+					"I HOPE YOU #UNDERSTAND."
 				]
 				head = [
 					spr_ford_head_neutral,

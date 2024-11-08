@@ -113,10 +113,9 @@ switch stage {
 	} break
 	case 5: if alarm[0] == -1 {
 		audio_stop_all()
-		if !(string_lower(global.player[player.name])=="lamby" and !global.player[player.mabel]) and !(string_lower(global.player[player.name])=="waddle" and global.player[player.mabel])
+		if !(string_lower(global.player.name)=="lamby" and !global.player.mabel) and !(string_lower(global.player.name)=="waddle" and global.player.mabel)
 			audio_play_sound(sfx_click,0,false)
-		if global.player[player.mabel] obj_dipper.sprite_index = spr_mabdles
-		else obj_dipper.sprite_index = spr_diplamb
+		obj_dipper.sprite_index = global.player.mabel ? spr_mabdles : spr_diplamb;
 		alarm[0] = 30
 		stage++
 	} break
@@ -144,7 +143,7 @@ switch stage {
 					"CLEARLY, THAT IS #MERELY A LAMB.",
 					"NOW, COME.&WE MUST READY THE #TESTS."
 				]
-				if global.player[player.mabel] {
+				if global.player.mabel {
 					text[9] = "SILENCE, BROTHER.&NOW IS NOT THE TIME."
 					text[10] = "when will it be time?&when pigs fly?"
 					text[12] = "CLEARLY, THIS ONE #IS WELL GROUNDED."
@@ -187,80 +186,83 @@ switch stage {
 		}
 		else if alarm[0] == -1 {
 			obj_dipper.canMove = true//Set by obj_textbox now
-			if global.player[player.runActive] != 2 with instance_create_layer(160,192,"Instances",obj_textbox) {
-				text = [
-					"he's gone.&you can take off that #beautiful costume now.",
-					"what, deception?&no...&don't be ridiculous.",
-					"i would never put you in a #dumb-looking outfit just to #ridicule you.",
-					"though it was super easy to #lead you into it...&like a lamb to the slaughter.",
-					"anyway, you heard my brother.&he's expecting you to follow #him.",
-					"wouldn't wanna disappoint #him, eh?"
-				]
-				if global.player[player.mabel]
-					text[3] = "though it was super easy to #lead you into it...&you're like a hog on ice."
-				head = [
-					spr_stans_head_neutral,
-					spr_stans_head_content,
-					spr_stans_head_sly,
-					spr_stans_head_joke,
-					spr_stans_head_sly,
-					spr_stans_head_neutral
-				]
-				for(var i = 0; i < array_length(text); i++) {sound[i] = tlk_stans; font[i] = fnt_sans_gui}
-			}
-			else with instance_create_layer(160,192,"Instances",obj_textbox) {
-				if (string_lower(global.player[player.name])=="lamby" and !global.player[player.mabel]) or (string_lower(global.player[player.name])=="waddle" and global.player[player.mabel]) {
+			if global.player.genocide != RUN.ACTIVE {
+				with instance_create_layer(160,192,"Instances",obj_textbox) {
 					text = [
-						"he's gone.&take that stupid costume off.",
-						"...oh, i see.",
-						"this is all a game to you, isn't it?",
-						"killing is all fun and games to you, is it?",
-						"well, listen to me, you #little demon.",
-						"my brother isn't perfect, but #we've always worked through #our issues.",
-						"If you lay one finger on him, #I will make you regret the day #you stepped foot in here.",
-						"now, get going.&and don't you dare try #anything."
+						"he's gone.&you can take off that #beautiful costume now.",
+						"what, deception?&no...&don't be ridiculous.",
+						"i would never put you in a #dumb-looking outfit just to #ridicule you.",
+						"though it was super easy to #lead you into it...&like a lamb to the slaughter.",
+						"anyway, you heard my brother.&he's expecting you to follow #him.",
+						"wouldn't wanna disappoint #him, eh?"
 					]
-					head = [
-						spr_stans_head_neutral,
-						spr_stans_head_content,
-						spr_stans_head_hollowEye,
-						spr_stans_head_neutral,
-						spr_stans_head_content,
-						spr_stans_head_neutral,
-						spr_stans_head_hollowEye,
-						spr_stans_head_neutral
-					]
-					charRate[6] = .25
-					font[6] = fnt_basic_gui
-				}
-				else {
-					text = [
-						"he's gone.&we're alone for the time #being.",
-						"look, kid, i know what you've #done.",
-						"i know how many lives you've #ended.",
-						"and i know you're not going #to stop now.",
-						"but listen to me, you little #demon.",
-						"my brother isn't perfect, but #we've always worked through #our issues.",
-						"If you lay one finger on him, I #will make you regret the day #you stepped foot in here.",
-						"now, get going.&and don't you dare try #anything."
-					]
+					if global.player.mabel {
+						text[3] = "though it was super easy to #lead you into it...&you're like a hog on ice."
+					}
 					head = [
 						spr_stans_head_neutral,
 						spr_stans_head_content,
 						spr_stans_head_sly,
-						spr_stans_head_neutral,
-						spr_stans_head_hollowEye,
-						spr_stans_head_neutral,
-						spr_stans_head_hollowEye,
+						spr_stans_head_joke,
+						spr_stans_head_sly,
 						spr_stans_head_neutral
 					]
-					charRate[6] = .25
-					font[6] = fnt_basic_gui
+					for(var i = 0; i < array_length(text); i++) {sound[i] = tlk_stans; font[i] = fnt_sans_gui}
 				}
-				font[array_length(text)] = 0
-				for(var i = 0; i < array_length(text); i++) {
-					sound[i] = tlk_stans
-					if font[i] == 0 font[i] = fnt_sans_gui
+			} else {
+				with instance_create_layer(160,192,"Instances",obj_textbox) {
+					if (string_lower(global.player.name)=="lamby" and !global.player.mabel) or (string_lower(global.player.name)=="waddle" and global.player.mabel) {
+						text = [
+							"he's gone.&take that stupid costume off.",
+							"...oh, i see.",
+							"this is all a game to you, isn't it?",
+							"killing is all fun and games to you, is it?",
+							"well, listen to me, you #little demon.",
+							"my brother isn't perfect, but #we've always worked through #our issues.",
+							"If you lay one finger on him, #I will make you regret the day #you stepped foot in here.",
+							"now, get going.&and don't you dare try #anything."
+						]
+						head = [
+							spr_stans_head_neutral,
+							spr_stans_head_content,
+							spr_stans_head_hollowEye,
+							spr_stans_head_neutral,
+							spr_stans_head_content,
+							spr_stans_head_neutral,
+							spr_stans_head_hollowEye,
+							spr_stans_head_neutral
+						]
+						charRate[6] = .25
+						font[6] = fnt_basic_gui
+					} else {
+						text = [
+							"he's gone.&we're alone for the time #being.",
+							"look, kid, i know what you've #done.",
+							"i know how many lives you've #ended.",
+							"and i know you're not going #to stop now.",
+							"but listen to me, you little #demon.",
+							"my brother isn't perfect, but #we've always worked through #our issues.",
+							"If you lay one finger on him, I #will make you regret the day #you stepped foot in here.",
+							"now, get going.&and don't you dare try #anything."
+						]
+						head = [
+							spr_stans_head_neutral,
+							spr_stans_head_content,
+							spr_stans_head_sly,
+							spr_stans_head_neutral,
+							spr_stans_head_hollowEye,
+							spr_stans_head_neutral,
+							spr_stans_head_hollowEye,
+							spr_stans_head_neutral
+						]
+						charRate[6] = .25
+						font[6] = fnt_basic_gui
+					}
+					font[array_length(text)] = 0
+					for(var i = 0; i < array_length(text); i++) {
+						sound[i] = tlk_stans
+						if font[i] == 0 font[i] = fnt_sans_gui
+					}
 				}
 			}
 			stage++
@@ -268,8 +270,13 @@ switch stage {
 	} break
 	case 8:
 		if instance_exists(obj_textbox) { if obj_textbox.page == 1 if obj_textbox.charCount == 0 {
-			if string_lower(global.player[player.name]) == "mason" {obj_dipper.sprite_index = spr_dipstar; if !audio_is_playing(sfx_click) audio_play_sound(sfx_click,0,false)}
-			else if string_lower(global.player[player.name]) != "lamby" {obj_dipper.sprite_index = spr_diphat; if !audio_is_playing(sfx_click) audio_play_sound(sfx_click,0,false)}
+			if string_lower(global.player.name) == "mason" {
+				obj_dipper.sprite_index = spr_dipstar; 
+				if !audio_is_playing(sfx_click) audio_play_sound(sfx_click,0,false)
+			} else if string_lower(global.player.name) != "lamby" {
+				obj_dipper.sprite_index = spr_diphat; 
+				if !audio_is_playing(sfx_click) audio_play_sound(sfx_click,0,false)
+			}
 		}}
 		else {
 			global.stans = 1
@@ -277,11 +284,12 @@ switch stage {
 			audio_play_sound(mus_wind,0,true)
 			with instance_create_layer(1220,60,"Instances",obj_save) {
 				rmName = "Forest - Grunkle Stans"
-				if global.player[player.mabel] text = "(Meeting such eccentric old men #excites your imagination.)"
-				else text = "(Meeting such eccentric old men #fills you with dedication.)"
+				text = global.player.mabel
+					? "(Meeting such eccentric old men #excites your imagination.)"
+					: "(Meeting such eccentric old men #fills you with dedication.)";
 				music = mus_snowy
 				music_nbs = mus_snowy
-				loc = area.forest
+				loc = AREA.FOREST
 			}
 		}
 	break

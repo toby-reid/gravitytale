@@ -1,1 +1,1 @@
-get = item.chipackerz
+get = ITEM_NAME.CHIPACKERZ;

@@ -1,4 +1,4 @@
-if global.player[player.runActive] != 2 switch stage {
+if global.player.genocide != RUN.ACTIVE switch stage {
 	case 1: if !audio_is_playing(sfx_alert) {
 		with instance_create_layer(160,192,layer,obj_textbox) {
 			text = [
@@ -18,7 +18,7 @@ if global.player[player.runActive] != 2 switch stage {
 		stage++
 	} break
 	case 3: if !instance_exists(obj_toBattle) {
-		if global.spared[enemy.ghosts] {
+		if global.enemy_spared[ENEMY.GHOSTS] {
 			with instance_create_layer(160,192,layer,obj_textbox) {
 				setMove = true
 				text = [
@@ -38,7 +38,7 @@ if global.player[player.runActive] != 2 switch stage {
 	} break
 }
 
-if global.killed[enemy.qt] or global.spared[enemy.qt] or global.spared[enemy.ghosts] {
+if global.enemy_killed[ENEMY.TREMBLEY] or global.enemy_spared[ENEMY.TREMBLEY] or global.enemy_spared[ENEMY.GHOSTS] {
 	image_xscale -= .1
 	if image_xscale <= 0 instance_destroy()
 }

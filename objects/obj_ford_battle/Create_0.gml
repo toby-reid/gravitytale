@@ -28,7 +28,7 @@ maxhp = hp
 at = 4
 lv = true//set true if killing person increases LV
 sb = 60
-zone = area.unknown
+area = AREA.UNKNOWN;
 timer = 0
 create = true
 deathx = 0
@@ -40,7 +40,7 @@ image_speed = 0
 
 global.enemy = [id]
 obj_battleCore.text[0] = "Grunkle Ford can save this #dimension when all of Bill's #puppets are destroyed!"
-if global.player[player.runActive] == 2 if global.areaKilled[area.forest] >= global.areaMax[area.forest] {
+if global.player.genocide == RUN.ACTIVE and global.areaKills[? AREA.FOREST].killCount >= global.areaKills[? AREA.FOREST].MAX_KILLS {
 	obj_battleCore.text[0] = "Grunkle Ford demonstrates how #to win without killing!&He is trying to spare you!"
 	run = false
 	spare = true

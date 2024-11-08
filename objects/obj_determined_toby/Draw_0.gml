@@ -13,8 +13,7 @@ if !instance_exists(obj_textbox) {
 			audio_play_sound(mus_thundersnail,0,true)
 			obj_dipper.dir = 3
 		}
-	}
-	else if stage == 5 {
+	} else if stage == 5 {
 		if alpha > 0 {
 			alpha -= .02
 			audio_sound_gain(mus_thundersnail,audio_sound_get_gain(mus_thundersnail)-.1,0)
@@ -29,7 +28,7 @@ if !instance_exists(obj_textbox) {
 			obj_dipper.dir = dir
 			obj_dipper.canMove = true
 			with instance_create_layer(160,48,"Instances",obj_textbox) {
-				if global.player[player.runActive] == 2 {
+				if global.player.genocide == RUN.ACTIVE {
 					text = [
 						". . .",
 						"I've been holding my tongue like a #good boy this entire time...",
@@ -39,8 +38,7 @@ if !instance_exists(obj_textbox) {
 						"Go away...&Please..."
 					]
 					for(var i = 0; i < array_length(text); i++) charRate[i] = 4
-				}
-				else if global.toby == 1 {
+				} else if global.player.beaverPic == BEAVER_PIC.SOLD_NEWSPAPER {
 					text = [
 						"Hoarghoh...&I'm not sure how to feel about #this...",
 						"I got the exclusive photo, #but now I have no chance with #Shandra Jimenez...",
@@ -56,8 +54,7 @@ if !instance_exists(obj_textbox) {
 						". . .&Now get out."
 					]
 					for(var i = 0; i < array_length(text); i++) if i != 3 charRate[i] = 4
-				}
-				else {
+				} else {
 					text = [
 						"Ooh...&Shandra Jimenez...&In my shop...",
 						"Oh... you're still here...?",
@@ -67,17 +64,17 @@ if !instance_exists(obj_textbox) {
 					for(var i = 0; i < array_length(text); i++) charRate[i] = 4
 				}
 			}
-			stage++
+			stage++;
 		}
-	}
-	else if stage == 6 {
-		stage++
-		if global.toby == 1 global.player[player.nyarf]++
+	} else if stage == 6 {
+		stage++;
+		if global.player.beaverPic == BEAVER_PIC.SOLD_NEWSPAPER {
+			global.player.df = AT_DF.UPGRADE;
+		}
 		if !audio_is_playing(mus_spooktune) {
-			audio_play_sound(mus_spooktune,0,true)
-			audio_play_sound(mus_spooktune,0,true)
+			audio_play_sound(mus_spooktune, 0, true);
 		}
 	}
 }
 //else if stage == 5 if obj_textbox.page == 3 if obj_textbox.charCount == 1 audio_play_sound(sfx_itemGet,0,false)
-draw_sprite_ext(spr_fst_jimenez,0,152,191,1,1,0,c_white,alpha)
+draw_sprite_ext(spr_fst_jimenez,0,152,191,1,1,0,c_white,alpha);

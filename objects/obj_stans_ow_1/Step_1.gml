@@ -1,6 +1,6 @@
 /// @description Kill with time / Destroy
 if !instance_exists(obj_ford_ow_1) {
-	if !instance_exists(obj_textbox) if global.player[player.runActive] == 2 {
+	if !instance_exists(obj_textbox) if global.player.genocide == RUN.ACTIVE {
 		if obj_dipper.x >= x-200 killTime++
 		else killTime = 0
 		if killTime == 900 with instance_create_layer(160,192,"Instances",obj_textbox) {

@@ -2,11 +2,9 @@ sprite_index = spr_soos_u
 direction = 90
 dipy = 110
 soos = 26
-if global.player[player.mabel] var slang = "Hambone"
-else var slang = "dude"
 text = [
 	". . .",
-	"C'mon, "+slang+"...",
+	"C'mon, "+global.player.name+"...",
 	"Just stop..."
 ]
 head = [

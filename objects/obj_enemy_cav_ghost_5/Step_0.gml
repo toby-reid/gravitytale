@@ -53,7 +53,7 @@ if image_alpha == 1 { if !instance_exists(obj_textBubble) {
 						audio_play_sound(sfx_slurp,0,false)
 					}
 					else if timer == 160 {
-						global.player[player.hp] -= at
+						global.player.hp -= at
 						audio_play_sound(sfx_damageTaken,0,false)
 					}
 					else if timer >= 220 {

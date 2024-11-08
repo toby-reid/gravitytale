@@ -18,7 +18,7 @@ if instance_exists(obj_dipper) switch stage {
 		if !instance_exists(obj_textbox) {
 			audio_stop_sound(mus_dgame)
 			with instance_create_layer(0,0,layer,obj_toBattle) {
-				music = noone
+				music = silence
 				goto = btl_wayman
 			}
 			stage++
@@ -34,7 +34,7 @@ if instance_exists(obj_dipper) switch stage {
 			if(alpha > 0) alpha -= .005
 			else {
 				obj_dipper.canMove = true
-				if global.killed[enemy.wayman] or global.spared[enemy.wayman]//won't make textbox if we just ran
+				if global.enemy_killed[ENEMY.WAYMAN] or global.enemy_spared[ENEMY.WAYMAN]//won't make textbox if we just ran
 					if prev with instance_create_layer(160,192,layer,obj_textbox) {
 						text = [
 							"(You can now use Portal-#Potties.)",

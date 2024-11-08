@@ -10,7 +10,7 @@ maxhp = hp
 at = 4
 lv = false//set true if killing person increases LV
 sb = 0
-zone = area.unknown
+area = AREA.UNKNOWN;
 timer = 0
 bubble = noone
 

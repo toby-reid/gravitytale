@@ -28,8 +28,7 @@ switch stage {
 		if obj_buttSwitch.done {
 			obj_dipper.canMove = false
 			if tries >= 3 with instance_create_layer(160,192,"Instances",obj_textbox) {
-				if global.player[player.mabel] var slang = "Hambone"
-				else var slang = "dude"
+				var slang = global.player.mabel ? "Hambone" : "dude";
 				text = [
 					"There ya go, "+slang+"!",
 					"Nicely done...",
@@ -44,10 +43,8 @@ switch stage {
 					spr_soos_face_neutral_side,
 					spr_soos_face_happy
 				]
-			}
-			else with instance_create_layer(160,192,"Instances",obj_textbox) {
-				if global.player[player.mabel] var slang = "Hambone"
-				else var slang = "dude"
+			} else with instance_create_layer(160,192,"Instances",obj_textbox) {
+				var slang = global.player.mabel ? "Hambone" : "dude";
 				text = [
 					"Nice one, "+slang+"!",
 					"You put out more #intellect than I first #thought!",
@@ -72,8 +69,7 @@ switch stage {
 				tries++
 				switch tries {
 					case 1: with instance_create_layer(160,192,"Instances",obj_textbox) {
-						if global.player[player.mabel] var slang = "Hambone"
-						else var slang = "dude"
+						var slang = global.player.mabel ? "Hambone" : "dude";
 						text = [
 							"Uh...",
 							"I thought I had explained #it plainly...",

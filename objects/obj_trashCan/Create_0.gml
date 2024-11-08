@@ -6,8 +6,12 @@ charRate = []//Change as needed
 //head not needed.
 //alarm[0] = 1
 
-get = item.none
+get = ITEM_NAME.NONE;
 newText = text
-trashCan = room_get_name(room); // Change to a String if needed in CC.
-if !variable_global_exists("trashCan") global.trashCan = []
-alarm[0] = 1; // so it triggers after CC
+if !variable_global_exists("trashCan") global.trashCan = []; // array of IDs
+for (var i = 0; i < array_length(global.trashCan); i++) {
+	if (global.trashCan[i] == id) {
+		instance_destroy();
+		break;
+	}
+}

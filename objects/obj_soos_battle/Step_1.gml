@@ -6,7 +6,7 @@ if hp <= 0 if global.stage[0] != 3 if !instance_exists(obj_textBubble) {
 		global.enemy[0].image_index = 0
 	}
 	image_alpha -= .05
-	if image_alpha == 0 {scr_get_item(item.infinite_pizza,false); instance_destroy()}
+	if image_alpha == 0 {scr_get_item(ITEM_NAME.PIZZA_INFINITE, false); instance_destroy()}
 	instance_destroy(bubble)
 }
 else if variable_instance_exists(id,"result") switch result {
@@ -25,9 +25,14 @@ else if variable_instance_exists(id,"result") switch result {
 	} break
 }
 
-if global.player[player.hp] <= 0 {
+if global.player.hp <= 0 {
 	ini_open("Reset.save")
-	ini_write_real("D",enemy.soos,ini_read_real("D",enemy.soos,0)+1)
+	ini_write_real("D",ENEMY.SOOS,ini_read_real("D",ENEMY.SOOS,0)+1)
 	ini_close()
 }
-if global.player[player.runActive] == 2 or spare if global.stage[4] > 0 if global.stage[1] == 0 {global.stage[4] = 999; sprite_index = spr_soos_face_surprise}
+if (global.player.genocide == RUN.ACTIVE) or spare {
+	if global.stage[4] > 0 and global.stage[1] == 0 {
+		global.stage[4] = 999;
+		sprite_index = spr_soos_face_surprise;
+	}
+}

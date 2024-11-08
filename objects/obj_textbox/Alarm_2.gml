@@ -10,7 +10,8 @@ segText = []
 segColor = []
 if string_copy(text[page],1,1) != "@" segColor[0] = c_white
 var copyChar = 1
-for(var i = 1; i < string_length(text[page]); i++) if(string_copy(text[page],i,1) == "@") {
+var i = 1;
+for(; i < string_length(text[page]); i++) if(string_copy(text[page],i,1) == "@") {
 	if i != 1 {
 		if(array_length(segText) > 0) segText[array_length(segText)] = segText[array_length(segText)-1] + string_copy(text[page],copyChar,i-copyChar)
 		else segText[0] = string_copy(text[page],copyChar,i-copyChar)

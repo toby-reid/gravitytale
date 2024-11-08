@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_new_global_player",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_new_global_player",
+  "parent":{
+    "name":"Startup",
+    "path":"folders/Scripts/Startup.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

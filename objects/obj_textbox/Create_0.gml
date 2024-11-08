@@ -15,6 +15,8 @@ font = []//default fnt_basic_gui
 style = []//default 0 no effect; 1 shake; 2 fontswap; 3 shake/fontswap; 4 wave; 5 shake/wave; 6 swap/wave; 7 all
 sound = []//default tlk_default
 choice = []//default 0; 1 two choices; 2 three; 3 four choices
+charCount = 0;
+swapTime = [];
 
 action = []//set when choice[page] > 0
 face = 0//used to specify frame of a talking animation

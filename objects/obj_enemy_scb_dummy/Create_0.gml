@@ -8,7 +8,7 @@ maxhp = 1
 at = 0
 lv = false
 sb = 0
-zone = area.unknown
+area = AREA.UNKNOWN;
 bubble = noone
 
 tries = 0//How many times you've talked

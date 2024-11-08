@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_generate_item_index",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_generate_item_index",
+  "parent":{
+    "name":"Startup",
+    "path":"folders/Scripts/Startup.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -8,8 +8,8 @@ else {
 	draw_sprite_ext(sprite_index,2,x,y+4+lengthdir_y(4,arm),2,2,0,c_white,image_alpha)
 	draw_sprite_part_ext(sprite_index,3,0,0,sprite_width/4,sprite_height,x-38-lengthdir_x(2,arm),y-144+lengthdir_y(4,arm),2,2,c_white,image_alpha)
 	draw_sprite_part_ext(sprite_index,3,sprite_width/4,0,sprite_width/4,sprite_height,x+3+lengthdir_x(2,arm),y-144+lengthdir_y(4,arm),2,2,c_white,image_alpha)
-	draw_sprite_ext(sprite_index,4+global.killed[enemy.sheriff],x,y+8+lengthdir_y(8,arm),2,2,0,c_white,image_alpha)
-	if !global.killed[enemy.sheriff] arm += 5
+	draw_sprite_ext(sprite_index,4+global.enemy_killed[ENEMY.SHERIFF],x,y+8+lengthdir_y(8,arm),2,2,0,c_white,image_alpha)
+	if !global.enemy_killed[ENEMY.SHERIFF] arm += 5
 	arm += 5
 	if arm >= 360 arm -= 360
 }

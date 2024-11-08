@@ -55,10 +55,10 @@ switch stage {
 		if(!instance_exists(obj_textbox)) if(keyboard_check_pressed(vk_enter) and place_meeting(x+2,y,obj_dipper) and obj_dipper.dir == 2) {
 			if(obj_icebox.ice) {
 				obj_icebox.ice = false;
-				global.spared[enemy.wendy] = true;
-				global.player[player.spares]++;
+				global.enemy_spared[ENEMY.WENDY] = true;
+				global.player.spares++;
 				ini_open("Reset.save");
-				ini_write_real("S",enemy.wendy,ini_read_real("S",enemy.wendy,0)+1);
+				ini_write_real("S",ENEMY.WENDY,ini_read_real("S",ENEMY.WENDY,0)+1);
 				ini_close();
 				alarm[0] = 30;
 				obj_dipper.canMove = false;
@@ -110,7 +110,7 @@ switch stage {
 					spr_wendy_head_happy,
 					spr_wendy_head_side
 				];
-				if(global.player[player.kills] == 0) {
+				if(global.player.kills == 0) {
 					text = array_concat(text, [
 						"Oh, wait, there was #something else.",
 						"My friends and I were #gonna hang out later.",

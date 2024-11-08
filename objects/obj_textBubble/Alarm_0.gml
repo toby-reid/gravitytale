@@ -8,16 +8,14 @@ if string_copy(text[page],1,1) != "@" segColor[0] = 0
 var startChar = 1
 for(var char = 1; char <= string_length(text[page]); char++) {
 	if string_copy(text[page],char,1) == "@" {
-		if array_length(segText) > 0 var oldText = segText[array_length(segText)-1]
-		else var oldText = ""
+		var oldText = (array_length(segText) > 0) ? segText[array_length(segText) - 1] : "";
 		if char != 1 segText[array_length(segText)] = oldText+string_copy(text[page],startChar,char-startChar)
 		segColor[array_length(segColor)] = scr_hexdec(string_copy(text[page],char+1,6))
 		char += 7
 		startChar = char
 	}
 }
-if array_length(segText) > 0 var oldText = segText[array_length(segText)-1]
-else var oldText = ""
+var oldText = (array_length(segText) > 0) ? segText[array_length(segText) - 1] : "";
 segText[array_length(segText)] = oldText+string_copy(text[page],startChar,string_length(text[page])-startChar+1)
 
 charRate[array_length(charRate)] = .5

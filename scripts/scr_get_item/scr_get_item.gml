@@ -1,13 +1,16 @@
-function scr_get_item(iIndex, playSound) {
-	// scr_get_item(item.name)
-
-	for(var slot = 0; slot < 8; slot++)
-		if global.inventory[slot] == item.none {
-			global.inventory[slot] = iIndex
-			if playSound if !audio_is_playing(sfx_itemGet) audio_play_sound(sfx_itemGet,0,false)
+/// @desc
+/// Usage:
+/// scr_get_item(ITEM_NAME)
+/// 
+/// Returns whether we could successfully add the requested item
+function scr_get_item(itemName, playSound=false) {
+	for(var slot = 0; slot < array_length(global.inventory); slot++)
+		if global.inventory[slot] == ITEM_NAME.NONE {
+			global.inventory[slot] = itemName;
+			if playSound and !audio_is_playing(sfx_itemGet) {
+				audio_play_sound(sfx_itemGet,0,false)
+			}
 			return true//successfully assigned slot
-			exit
 		}
-
 	return false//full inventory
 }

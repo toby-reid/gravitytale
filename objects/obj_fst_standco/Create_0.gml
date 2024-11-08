@@ -24,7 +24,6 @@ head = [
 ]
 for(var i = 0; i < array_length(text); i++) if head[i] != noone {font[i] = fnt_sans_gui; sound[i] = tlk_stans}
 active = false
-trashCan = room_get_name(room);
-if !variable_global_exists("trashCan") global.trashCan = []
-else for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == trashCan {image_index = 1; break}
-if global.player[player.runActive] == 2 or global.killed[enemy.ford] image_index = 1
+if !variable_global_exists("trashCan") global.trashCan = [];
+else for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == id {image_index = 1; break}
+if global.player.genocide == RUN.ACTIVE or global.enemy_killed[ENEMY.FORD] image_index = 1

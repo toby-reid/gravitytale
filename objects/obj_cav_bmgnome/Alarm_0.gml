@@ -8,7 +8,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 		"(Oh great, it's another one of #these things)"
 	]
 	for(var i = 0; i < array_length(text); i++) charRate[i] = 3
-	if global.player[player.mabel] {
+	if global.player.mabel {
 		text[5] = "QUEEEEEEEEEEEEEEEEEEEEEEEEEEEEE#EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE#EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
 		charRate[5] = 1
 	}

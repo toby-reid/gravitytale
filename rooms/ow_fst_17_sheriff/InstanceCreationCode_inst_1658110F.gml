@@ -1,3 +1,3 @@
 dir = 0
-goto = ow_fst_19_town_1
+goto = ow_fst_18_town_0
 music = mus_town

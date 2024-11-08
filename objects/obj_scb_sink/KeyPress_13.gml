@@ -9,8 +9,7 @@ if !instance_exists(obj_textbox) {
 			active = true
 		}
 	}
-}
-else if active if obj_textbox.page == 1 {
+} else if active if obj_textbox.page == 1 {
 	obj_textbox.text[2] = "(Sanitization is important.)"
 	obj_scb_toilet.washed = true
 	active = false

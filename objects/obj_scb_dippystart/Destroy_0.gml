@@ -1,1 +1,1 @@
-global.trashCan[array_length(global.trashCan)] = trashCan;
+array_push(global.trashCan, id);

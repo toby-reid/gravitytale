@@ -10,11 +10,15 @@ if hp <= 0 if global.stage[0] != 3 {
 	if image_alpha == 0 instance_destroy()
 	instance_destroy(bubble)
 }
-if global.player[player.runActive] == 2 or spare if global.stage[1] == 0 if global.stage[4] > 0 global.stage[4] = 99
+if (global.player.genocide == RUN.ACTIVE) or spare {
+	if global.stage[1] == 0 and global.stage[4] > 0 {
+		global.stage[4] = 99 // set player's dmg to max
+	}
+}
 
-if global.player[player.hp] <= 0 {
+if global.player.hp <= 0 {
 	ini_open("Reset.save")
-	ini_write_real("D",enemy.robbie,ini_read_real("D",enemy.robbie,0)+1)
+	ini_write_real("D",ENEMY.ROBBIE,ini_read_real("D",ENEMY.ROBBIE,0)+1)
 	ini_close()
 }
 if global.stage[0] == 5 {timer = 0; create = true}

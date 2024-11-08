@@ -3,7 +3,7 @@ switch stage {
 	case 1:
 		if !instance_exists(obj_bill_laser) and !instance_exists(obj_atk_laser) {
 			with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
-				if global.player[player.hp] < global.player[player.maxhp] {
+				if global.player.hp < global.player.maxHp {
 					text = [
 						"Ah hahahahaha!",
 						"It's funny how #dumb you are!",
@@ -44,7 +44,7 @@ switch stage {
 		break
 	case 3:
 		if !instance_exists(obj_bill_laser) and !instance_exists(obj_atk_laser) {
-			if global.player[player.hp] + 2 == global.player[player.maxhp] {
+			if global.player.hp + 2 == global.player.maxHp {
 				with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
 					text = [
 						"Ah hahahahaha!",
@@ -76,7 +76,7 @@ switch stage {
 						spr_bill_face_smile_side,
 						spr_bill_face_neutral
 					]
-					if global.player[player.mabel] text[4] = "Why did you #come to #Gravity Falls #without doing #any research #first, kid?"
+					if global.player.mabel text[4] = "Why did you #come to #Gravity Falls #without doing #any research #first, kid?"
 					charRate[9] = .2
 				}
 				audio_sound_pitch(mus_bestFriend,audio_sound_get_pitch(mus_bestFriend)-.1)
@@ -89,7 +89,7 @@ switch stage {
 		break
 	case 5:
 		if !instance_exists(obj_bill_laser) and !instance_exists(obj_atk_laser) {
-			if global.player[player.hp] + 3 == global.player[player.maxhp] {
+			if global.player.hp + 3 == global.player.maxHp {
 				with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
 					text = [
 						"Alright, kid, #this is #getting real #old real fast.",
@@ -112,7 +112,7 @@ switch stage {
 		break
 	case 7:
 		if !instance_exists(obj_bill_laser) and !instance_exists(obj_atk_laser) {
-			if global.player[player.hp] + 4 == global.player[player.maxhp] {
+			if global.player.hp + 4 == global.player.maxHp {
 				with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
 					text = [
 						"Oh, I see.",

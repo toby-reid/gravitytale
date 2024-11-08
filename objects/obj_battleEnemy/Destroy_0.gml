@@ -5,11 +5,11 @@
 
 if hp <= 0 {
 	obj_battleCore.lv += lv
-	global.areaKilled[zone]++
-	global.player[player.kills]++
+	global.areaKills[? area].killCount++;
+	global.player.kills++
 	obj_battleCore.sb += sb
 }
 else {
-	global.player[player.spares]++
+	global.player.spares++
 	obj_battleCore.sb += ceil(sb/2)
 }

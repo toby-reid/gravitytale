@@ -9,8 +9,9 @@ tiledata = [20,5,15]//by default: path edges, walls, base
 
 if !variable_global_exists("buttSwitch") global.buttSwitch = []
 var butt = false;
+var room_name = room_get_name(room);
 for(var i = 0; i < array_length(global.buttSwitch); i++) {
-	if global.buttSwitch[i] == room {
+	if global.buttSwitch[i] == room_name {
 		stage = 4
 		event_user(0)
 		instance_destroy()
@@ -18,5 +19,6 @@ for(var i = 0; i < array_length(global.buttSwitch); i++) {
 		break
 	}
 }
-if !butt if global.player[player.runActive] == 2
-	global.buttSwitch[array_length(global.buttSwitch)] = room
+if !butt and global.player.genocide == RUN.ACTIVE {
+	array_push(global.buttSwitch, room_name);
+}

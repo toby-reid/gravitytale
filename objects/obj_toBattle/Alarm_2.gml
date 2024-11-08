@@ -1,7 +1,7 @@
 /// @description Set goto, play music
 
 if !audio_is_playing(music)
-	if music != silence
+	if music != silence and music != noone
 		audio_play_sound(music,0,true)
 if instance_exists(obj_battleCore) {
 	obj_battleCore.goto = prev

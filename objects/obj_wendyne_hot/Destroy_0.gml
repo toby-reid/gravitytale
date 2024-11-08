@@ -5,3 +5,4 @@ with inst_toRoom_min_00 {
 	dir = 3;
 	music = mus_wind;
 }
+if (global.wendyne < 23) global.wendyne = 23;

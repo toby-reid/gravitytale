@@ -7,11 +7,11 @@ y -= 1
 image_xscale = 2
 image_yscale = 2
 image_speed = 0
-if global.player[player.mabel] {
-	if global.player[player.nyarf] >= 4 sprite_index = spr_confetti
-	else sprite_index = spr_grapplingHook
-}
-else if global.player[player.nyarf] >= 4 {
+if global.player.mabel {
+	sprite_index = global.player.at == AT_DF.UPGRADE
+				   ? spr_confetti
+				   : spr_grapplingHook;
+} else if global.player.at == AT_DF.UPGRADE {
 	sprite_index = spr_slash
 	image_xscale = 4
 	image_yscale = 4

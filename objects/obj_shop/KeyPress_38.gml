@@ -8,17 +8,9 @@ if !confirm switch stage {
 		choice[1]--
 		if choice[1] < 0 choice[1] = array_length(buy)
 		break
-	case 2:
-		choice[1]--
-		if choice[1] < 0 {
-			if array_length(inventory) <= 5 choice[1] = array_length(inventory)-1
-			else choice[1] = 4
-		}
-		break
-	case 3:
-		choice[1]--
-		if choice[1] < 0 choice[1] = array_length(inventory)-4
-		break
+	case 2://Sell pg 1
+	case 3://Sell pg 2
+		break;
 	case 4:
 		choice[1]--
 		if choice[1] < 0 choice[1] = array_length(talk)

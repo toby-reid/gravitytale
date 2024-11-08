@@ -1,8 +1,7 @@
 /// @description after-battle dialogue
 with instance_create_layer(160,192,layer,obj_textbox) {
-	if global.spared[enemy.sheriff] and global.spared[enemy.deputy] {
-		var slang = "city boy"
-		if global.player[player.mabel] slang = "little missy"
+	if global.enemy_spared[ENEMY.SHERIFF] and global.enemy_spared[ENEMY.DEPUTY] {
+		var slang = global.player.mabel ? "little missy" : "city boy";
 		text = [
 			"Well, "+slang+", I gotta say, #I'm almost impressed.",
 			"You've managed to avoid the #mighty arm of the law...```#this time.",
@@ -13,8 +12,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			"LET'S GO RUN SHIRTLESS AROUND A #FIRE HYDRANT!",
 			"Quit readin' my mind!"
 		]
-	}
-	else if global.spared[enemy.sheriff] {
+	} else if global.enemy_spared[ENEMY.SHERIFF] {
 		text = [
 			"You...",
 			"Why...",
@@ -23,8 +21,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			"You have to disrupt it wherever #you go...",
 			"I'll destroy you, kid...&You just wait..."
 		]
-	}
-	else if global.spared[enemy.deputy] {
+	} else if global.enemy_spared[ENEMY.DEPUTY] {
 		text = [
 			"WHAT...",
 			"WHY...",

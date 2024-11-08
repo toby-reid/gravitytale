@@ -1,1 +1,1 @@
-if global.player[player.portalPotty] < 1 global.player[player.portalPotty] = 1
+if global.player.portalPotty < PORTAL_POTTY.FOREST_START global.player.portalPotty = PORTAL_POTTY.FOREST_START;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_generate_area_kills",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_generate_area_kills",
+  "parent":{
+    "name":"Startup",
+    "path":"folders/Scripts/Startup.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

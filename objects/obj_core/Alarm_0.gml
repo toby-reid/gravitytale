@@ -1,13 +1,14 @@
-global.player[player.seconds]++
-if global.player[player.seconds] == 60 {
-	global.player[player.minutes]++
-	global.player[player.seconds] = 0
-	if global.player[player.minutes] == 60 {
-		global.player[player.hours]++
-		global.player[player.minutes] = 0
-		if global.player[player.hours] == 100
-			global.player[player.hours] = 0
+///@desc Gameplay Timer
+global.player.time[TIME.SECONDS]++;
+if (global.player.time[TIME.SECONDS] == 60) {
+	global.player.time[TIME.SECONDS] = 0;
+	global.player.time[TIME.MINUTES]++;
+	if (global.player.time[TIME.MINUTES] == 60) {
+		global.player.time[TIME.MINUTES] = 0;
+		global.player.time[TIME.HOURS]++;
+		if (global.player.time[TIME.HOURS] == 100) { // cannot exceed 128 for saving as a single byte
+			global.player.time[TIME.HOURS] = 0;
+		}
 	}
 }
-alarm[0] = 60
-///@desc Gameplay Timer
+alarm[0] = 60;

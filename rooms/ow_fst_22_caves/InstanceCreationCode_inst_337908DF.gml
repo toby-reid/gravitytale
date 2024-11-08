@@ -1,6 +1,6 @@
 rmName = "Forest - Cave Entrance"
 text = "(Defeating an eccentric old man #"
-if global.player[player.mabel] text += "excites your imagination.)"
+if global.player.mabel text += "excites your imagination.)"
 else text += "fills you with dedication.)"
-loc = area.forest
+loc = AREA.FOREST
 music = mus_snowy

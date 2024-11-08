@@ -20,10 +20,8 @@ if instance_exists(obj_dipper) switch stage {
 				"(But, oh well...&(At least it's no longer after #your ",
 				"(Either way, time to move out.)"
 			]
-			if global.player[player.mabel] text[2] += "hand in marriage"
-			else text[2] += "sister"
-			if global.spared[enemy.bmgnome] text[2] += "...```right?)"
-			else text[2] += ".)"
+			text[2] += global.player.mabel ? "hand in marriage" : "sister";
+			text[2] += global.enemy_spared[ENEMY.BLACK_MKT_GNOME] ? "...```right?)" : ".)";
 			for(var i = 0; i < array_length(text); i++) charRate[i] = 3
 		}
 		stage++

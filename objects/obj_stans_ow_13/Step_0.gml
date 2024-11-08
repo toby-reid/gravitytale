@@ -40,7 +40,15 @@ switch stage {
 				spr_ford_head_mad,
 				spr_ford_head_neutral
 			]
-			for(var i=0; i<array_length(text); i++) if string_upper(text[i])==text[i] {sound[i]=tlk_ford; font[i]=fnt_papyrus_gui}; else {sound[i]=tlk_stans; font[i]=fnt_sans_gui}
+			for(var i = 0; i < array_length(text); i++) {
+				if string_upper(text[i]) == text[i] {
+					sound[i]=tlk_ford;
+					font[i]=fnt_papyrus_gui;
+				} else {
+					sound[i]=tlk_stans;
+					font[i]=fnt_sans_gui;
+				}
+			}
 		}
 		audio_stop_all()
 		audio_play_sound(mus_nyeh,0,true)
@@ -55,60 +63,63 @@ switch stage {
 			audio_stop_all()
 			audio_sound_gain(mus_nyeh,1,0)
 			instance_destroy(obj_ford_ow_1)
-			if global.player[player.runActive] != 2 with instance_create_layer(160,192,"Instances",obj_textbox) {
-				text = [
-					"look, kid...&i don't know if you were #aware...",
-					"but my brother's a little...&eccentric.",
-					"i didn't want to correct him #to his face, but you may want #a real hint here...",
-					"as you've found, small rocks #can be moved once.",
-					"you're likely also aware that #they can be moved again if #they are reset.",
-					"rocks will always move back to #their original positions when #you hit a lever...",
-					"but if there are multiple levers #in different locations...",
-					"i know it's kinda convoluted, #but try your best, ok?"
-				]
-				head = [
-					spr_stans_head_content,
-					spr_stans_head_joke,
-					spr_stans_head_sly,
-					spr_stans_head_neutral,
-					spr_stans_head_sly,
-					spr_stans_head_neutral,
-					spr_stans_head_content,
-					spr_stans_head_sly
-				]
-				for(var i = 0; i < array_length(text); i++) {sound[i] = tlk_stans; font[i] = fnt_sans_gui}
-			}
-			else with instance_create_layer(160,192,"Instances",obj_textbox) {
-				text = [
-					"well, kid...&you still haven't given up, eh?",
-					"your murder spree is still #strong, and the fire in your #eyes is only brighter.",
-					"you've already done enough #damage to get locked up for #twelve lifetimes.",
-					"but you don't care, do you?",
-					"you're just flying along, #killing as you please.",
-					"no...",
-					"you're just blasting through, #killing everything you can.",
-					"but i've said this before, and #i'll say it again...",
-					"the time will come when my #brother will actually #try to stop you.",
-					"when that time comes, kid...",
-					"you'd better end this path #you're taking then and there #or i will do it for you.",
-					"now, get lost, kid.&there's no place for you #around here."
-				]
-				head = [
-					spr_stans_head_content,
-					spr_stans_head_sly,
-					spr_stans_head_content,
-					spr_stans_head_hollowEye,
-					spr_stans_head_sly,
-					spr_stans_head_content,
-					spr_stans_head_hollowEye,
-					spr_stans_head_content,
-					spr_stans_head_neutral,
-					spr_stans_head_sly,
-					spr_stans_head_hollowEye,
-					spr_stans_head_content
-				]
-				for(var i = 0; i < array_length(text); i++) {font[i] = fnt_sans_gui; sound[i] = tlk_stans}
-				charRate[10] = .2
+			if global.player.genocide != RUN.ACTIVE {
+				with instance_create_layer(160,192,"Instances",obj_textbox) {
+					text = [
+						"look, kid...&i don't know if you were #aware...",
+						"but my brother's a little...&eccentric.",
+						"i didn't want to correct him #to his face, but you may want #a real hint here...",
+						"as you've found, small rocks #can be moved once.",
+						"you're likely also aware that #they can be moved again if #they are reset.",
+						"rocks will always move back to #their original positions when #you hit a lever...",
+						"but if there are multiple levers #in different locations...",
+						"i know it's kinda convoluted, #but try your best, ok?"
+					]
+					head = [
+						spr_stans_head_content,
+						spr_stans_head_joke,
+						spr_stans_head_sly,
+						spr_stans_head_neutral,
+						spr_stans_head_sly,
+						spr_stans_head_neutral,
+						spr_stans_head_content,
+						spr_stans_head_sly
+					]
+					for(var i = 0; i < array_length(text); i++) {sound[i] = tlk_stans; font[i] = fnt_sans_gui}
+				}
+			} else {
+				with instance_create_layer(160,192,"Instances",obj_textbox) {
+					text = [
+						"well, kid...&you still haven't given up, eh?",
+						"your murder spree is still #strong, and the fire in your #eyes is only brighter.",
+						"you've already done enough #damage to get locked up for #twelve lifetimes.",
+						"but you don't care, do you?",
+						"you're just flying along, #killing as you please.",
+						"no...",
+						"you're just blasting through, #killing everything you can.",
+						"but i've said this before, and #i'll say it again...",
+						"the time will come when my #brother will actually #try to stop you.",
+						"when that time comes, kid...",
+						"you'd better end this path #you're taking then and there #or i will do it for you.",
+						"now, get lost, kid.&there's no place for you #around here."
+					]
+					head = [
+						spr_stans_head_content,
+						spr_stans_head_sly,
+						spr_stans_head_content,
+						spr_stans_head_hollowEye,
+						spr_stans_head_sly,
+						spr_stans_head_content,
+						spr_stans_head_hollowEye,
+						spr_stans_head_content,
+						spr_stans_head_neutral,
+						spr_stans_head_sly,
+						spr_stans_head_hollowEye,
+						spr_stans_head_content
+					]
+					for(var i = 0; i < array_length(text); i++) {font[i] = fnt_sans_gui; sound[i] = tlk_stans}
+					charRate[10] = .2
+				}
 			}
 			stage++
 		}

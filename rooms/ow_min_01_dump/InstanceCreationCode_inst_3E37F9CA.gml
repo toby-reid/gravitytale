@@ -1,1 +1,1 @@
-if global.player[player.portalPotty] < 3 global.player[player.portalPotty] = 3;
+if global.player.portalPotty < PORTAL_POTTY.MINES_START global.player.portalPotty = PORTAL_POTTY.MINES_START;

@@ -5,9 +5,11 @@ if other.canMove {
 		text = other.text
 		style[0] = 5
 	}
-	for(var i = 0; i < array_length(global.inventory); i++) if global.inventory[i] == item.none {
-		if array_length(text) == 3 global.inventory[i] = item.onion16
-		else global.inventory[i] = item.onion04 + irandom(3)
+	for(var i = 0; i < array_length(global.inventory); i++) {
+		if global.inventory[i] == ITEM_NAME.NONE {
+			if shrek global.inventory[i] = ITEM_NAME.ONION_MAX;
+			else global.inventory[i] = ITEM_NAME.ONION_1 + irandom(3)
+		}
 	}
 	other.dir = dir
 	audio_sound_gain(mus_allstar,0,5000)

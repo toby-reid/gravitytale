@@ -1,7 +1,7 @@
 switch image_index {
 	case 0://Starting new game
 		if !instance_exists(obj_textbox) { if size == 0 {
-			scr_rst_global_player()
+			scr_new_global_player()
 			with instance_create_layer(320,376,layer,obj_textbox) {
 				if !file_exists("Reset.save") {
 					text = [
@@ -16,8 +16,7 @@ switch image_index {
 					]
 					choice[7] = 1
 					action[4] = irandom(1)
-				}
-				else {
+				} else {
 					text = [
 						"Greetings, Child!",
 						"Welcome back to the world of #GRAVITYTALE.",
@@ -25,8 +24,7 @@ switch image_index {
 						"Now, then...&What is your @ffff00name@ffffff?&  ",
 						"&@ffffffIs this name correct?     #       yes         no"
 					]
-					if global.player[player.mabel] text[2] += "@CC277Agirl@ffffff."
-					else text[2] += "@3280ffboy@ffffff."
+					text[2] += global.player.mabel ? "@CC277Agirl@ffffff." : "@3280ffboy@ffffff.";
 					choice[7] = 0
 				}
 				for(var i = 0; i < array_length(text); i++) {
@@ -41,17 +39,15 @@ switch image_index {
 			if ((choice[7] == 1 and page == 7) or (choice[7] == 0 and page == 4)) {
 				if choice[4] == 1 and action[page] == 0 {//valid, yes name
 					other.size = 1
-					global.player[player.name] = other.name
+					global.player.name = other.name
 					with instance_create_layer(0,0,layer,obj_fadeWhite) goto = ow_scb_0_meetBill
-				}
-				else {//invalid or no name
+				} else {//invalid or 'no' to name
 					page -= 2
 					alarm[2] = 1
+					var index = file_exists("Reset.save") ? 4 : 7;
 					if !file_exists("Reset.save") {
 						choice[7] = 1
-						var index = 7
 					}
-					else var index = 4
 					text[index] = "&@ffffffIs this name correct?     #       yes         no"
 					other.name = ""
 				}

@@ -1,3 +1,5 @@
-if global.player[player.runActive] != 2 or global.player[player.spares] > 0 or global.spared[enemy.qt] or global.killed[enemy.qt]
+if global.player.genocide != RUN.ACTIVE or global.enemy_spared[ENEMY.TREMBLEY] or global.enemy_killed[ENEMY.TREMBLEY] {
 	instance_destroy()
-stage = 0
+} else {
+	stage = 0
+}

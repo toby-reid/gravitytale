@@ -7,11 +7,11 @@ switch stage {
 				"to @FF7F27FIGHT@ffffff.",
 				"If possible, always try #to @FF7F27ACT @ffffffon Enemies instead #of attacking.",
 				"Sometimes, however, you #can't spare them, in #which case...",
-				"How about that @ff7f27NYARF GUN #@ffffffin your pocket?&Use it as needed.",
+				"Here's a @ff7f27NYARF GUN @ffffffI #found in my work trash.&Use it as needed.",
 				"Then, to defend yourself, #you'll need to know the #basics...",
 				"Why don't you try ACTing #on that @993D3DDUMMY @ffffffover there?"
 			]
-			if global.player[player.mabel] text[4] = "Here's a @ff7f27GRAPPLING HOOK @fffffffrom #the gift shop at my work.&Use it only as needed."
+			if global.player.mabel text[4] = "Here's a @ff7f27GRAPPLING HOOK @fffffffrom #the gift shop at my work.&Use it only as needed."
 			head = [
 				spr_soos_face_happy,
 				spr_soos_face_happy,
@@ -23,7 +23,7 @@ switch stage {
 			]
 			for(var i = 0; i < array_length(text); i++) sound[i] = tlk_soos
 		}
-		global.player[player.nyarf] = 1
+		global.player.at = AT_DF.BASE;
 		stage++
 	} break
 	case 1:
@@ -37,8 +37,9 @@ switch stage {
 				sprite_index = spr_soos_u
 				stage++
 			}
-		}
-		else if global.player[player.mabel] if obj_textbox.page == 4 if obj_textbox.charCount == 10 audio_play_sound(sfx_itemGet,0,false)
+		} else if global.player.mabel
+			if obj_textbox.page == 4 and obj_textbox.charCount == 10 
+				audio_play_sound(sfx_itemGet,0,false)
 	break
 	case 2: if y <= 40 {
 		speed = 0
@@ -74,7 +75,8 @@ switch stage {
 					"You actually fixed my #Wax Stans...",
 					"That was really nice...&I guess I should give you #something, huh?",
 					"How's 10 Stan Bucks #sound?",
-					"I know it's not much, #but...",
+					"I know it's not much, #but it's all I've...",
+					". . .",
 					"Anyway, we should get #going."
 				]
 				head = [
@@ -83,9 +85,10 @@ switch stage {
 					spr_soos_face_neutral_side,
 					spr_soos_face_happy,
 					spr_soos_face_happy_side,
+					spr_soos_face_neutral_side,
 					spr_soos_face_happy
 				]
-				global.player[player.money] += 10
+				global.player.money += 10
 			} break
 			case 2: case 3: case 5: case 6: with instance_create_layer(160,192,"Instances",obj_textbox) {
 				text = [

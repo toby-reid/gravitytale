@@ -1,8 +1,9 @@
 /// @description Scribe
 if act[3] == "Scribe" {
 	obj_battleCore.text[1] = "You were about to write out a #contract with the Gnome, but #you thought better."
-	if global.player[player.mabel] obj_battleCore.text[0] = "It's probably best to save #marriage for much later."
-	else obj_battleCore.text[0] = "It's not a very good idea to #try to outhustle a hustler."
+	obj_battleCore.text[0] = global.player.mabel
+		? "It's probably best to save #marriage for much later."
+		: "It's not a very good idea to #try to outhustle a hustler.";
 	act[3] = "Script"
 	act[2] = "Drip"
 	act[1] = "Tip"

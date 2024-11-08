@@ -4,5 +4,5 @@ text = [
 	"That way, we can sell more #buttons at once!",
 	"STANCO is not responsible for #any damage to property by #barrier puzzles.",
 	"(Something else is written at #the bottom...)",
-	"BIG-FACED&n. When someone is so close #you can smell their breath."
+	"BIG-FACED&adj. When someone is so close #you can smell their breath."
 ]

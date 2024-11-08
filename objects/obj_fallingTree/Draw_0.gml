@@ -1,8 +1,9 @@
 if stage < 3 draw_self()
 if instance_exists(obj_buttSwitch) if obj_buttSwitch.done switch stage {
 	case 0:
-		if global.player[player.runActive] == 2 {if !audio_is_playing(sfx_puzDone_distort) audio_play_sound(sfx_puzDone_distort,0,false)}
-		else if !audio_is_playing(sfx_puzDone) audio_play_sound(sfx_puzDone,0,false)
+		if global.player.genocide == RUN.ACTIVE {
+			if !audio_is_playing(sfx_puzDone_distort) audio_play_sound(sfx_puzDone_distort,0,false)
+		} else if !audio_is_playing(sfx_puzDone) audio_play_sound(sfx_puzDone,0,false)
 		obj_dipper.canMove = false
 		if image_angle < 90 or image_angle > 270 {
 			rotAmt += .2*rotDir

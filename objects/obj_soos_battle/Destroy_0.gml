@@ -6,15 +6,16 @@
 ini_open("Reset.save")
 if hp <= 0 {
 	obj_battleCore.lv = lv
-	global.player[player.kills]++
-	global.killed[enemy.soos] = true
+	global.areaKills[? area].killCount++;
+	global.player.kills++
+	global.enemy_killed[ENEMY.SOOS] = true
 	obj_battleCore.sb += sb
-	ini_write_real("K",enemy.soos,ini_read_real("K",enemy.soos,0)+1)
+	ini_write_real("K",ENEMY.SOOS,ini_read_real("K",ENEMY.SOOS,0)+1)
 }
 else {
-	global.player[player.spares]++
-	global.spared[enemy.soos] = true
+	global.player.spares++
+	global.enemy_spared[ENEMY.SOOS] = true
 	obj_battleCore.sb += ceil(sb/2)
-	ini_write_real("S",enemy.soos,ini_read_real("S",enemy.soos,0)+1)
+	ini_write_real("S",ENEMY.SOOS,ini_read_real("S",ENEMY.SOOS,0)+1)
 }
 ini_close()

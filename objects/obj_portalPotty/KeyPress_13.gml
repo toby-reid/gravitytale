@@ -3,7 +3,7 @@ if !instance_exists(obj_textbox) {
 	if instance_exists(obj_dipper) if obj_dipper.canMove {
 		if place_meeting(x,y+2,obj_dipper) and obj_dipper.dir==1 {
 			if (!cantp) {
-				if (global.spared[enemy.wayman]) cantp = true;
+				if (global.enemy_spared[ENEMY.WAYMAN]) cantp = true;
 				else {
 					ini_open("Reset.save")
 					if (ini_read_real("C","W",false)) cantp = true;
@@ -13,13 +13,12 @@ if !instance_exists(obj_textbox) {
 			
 			var _text = "(Seems the Potty isn't #functioning right...&(Here we go...)";
 			var _choice = 0;
-			if (cantp) switch global.player[player.portalPotty] {
-				case 1: _text = "(Go where?)##       Forest      (Cancel)"; _choice = 1; break;
-				case 2: _text = "(Go where?)##       Forest      Caves"; _choice = 1; break;
-				case 3: _text = "(Go where?)   Dump##       Forest      Caves"; _choice = 2; break;
-				case 4: _text = "(Go where?)   Dump#       Forest      Caves#              UFO"; _choice = 3; break;
+			if (cantp) switch global.player.portalPotty {
+				case PORTAL_POTTY.FOREST_START: _text = "(Go where?)##       Forest      (Cancel)"; _choice = 1; break;
+				case PORTAL_POTTY.CAVES_START:  _text = "(Go where?)##       Forest      Caves"; _choice = 1; break;
+				case PORTAL_POTTY.MINES_START:  _text = "(Go where?)   Dump##       Forest      Caves"; _choice = 2; break;
+				case PORTAL_POTTY.UFO_START:    _text = "(Go where?)   Dump#       Forest      Caves#              UFO"; _choice = 3; break;
 			}
-			
 			with instance_create_layer(160,192,"Instances",obj_textbox) {
 				text[0] = _text;
 				choice[0] = _choice;
@@ -31,7 +30,7 @@ if !instance_exists(obj_textbox) {
 	}
 }
 else if active if obj_textbox.charCount >= string_length(obj_textbox.text[0]) {
-	if global.player[player.portalPotty]>1 or obj_textbox.action[0] != 1 {
+	if global.player.portalPotty != PORTAL_POTTY.NONE or obj_textbox.action[0] != 1 {
 		teleport = true
 		drawx[320] = 0
 		loc = obj_textbox.action[0]

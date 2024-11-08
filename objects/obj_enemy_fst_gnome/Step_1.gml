@@ -8,8 +8,9 @@ if hp <= 0 { if global.stage[0] != 3 {
 }}
 else if hp == 1 if !spare {
 	spare = true;
-	obj_battleCore.text[0] = "Gnome still has a job to do, #so he decides to spare you."
-	if global.player[player.mabel] obj_battleCore.text[0] = "Gnome has realised you would #make an abusive queen, #so he decides to spare you."
+	obj_battleCore.text[0] = global.player.mabel
+		? "Gnome has realised you would #make an abusive queen, #so he decides to spare you."
+		: "Gnome still has a job to do, #so he decides to spare you.";
 }
 
 if global.stage[0] == 5 {

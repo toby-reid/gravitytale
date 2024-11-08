@@ -1,10 +1,10 @@
 switch stage {
 	case 0: draw_self() break
 	case 1:
-		draw_sprite_general(spr_soul_broken,0,0,0,8,8,x,y,1,1,image_angle,image_blend,image_blend,image_blend,image_blend,1)
-		draw_sprite_general(spr_soul_broken,0,8,0,8,8,xstart-(x-xstart),y,1,1,-1*image_angle,image_blend,image_blend,image_blend,image_blend,1)
-		draw_sprite_general(spr_soul_broken,0,0,8,8,8,x,ystart-(y-ystart),1,1,-1*image_angle,image_blend,image_blend,image_blend,image_blend,1)
-		draw_sprite_general(spr_soul_broken,0,8,8,8,8,xstart-(x-xstart),ystart-(y-ystart),1,1,image_angle,image_blend,image_blend,image_blend,image_blend,1)
+		draw_sprite_general(sprite_index,0,0,0,8,8,x,y,1,1,image_angle,image_blend,image_blend,image_blend,image_blend,1)
+		draw_sprite_general(sprite_index,0,8,0,8,8,xstart-(x-xstart),y,1,1,-1*image_angle,image_blend,image_blend,image_blend,image_blend,1)
+		draw_sprite_general(sprite_index,0,0,8,8,8,x,ystart-(y-ystart),1,1,-1*image_angle,image_blend,image_blend,image_blend,image_blend,1)
+		draw_sprite_general(sprite_index,0,8,8,8,8,xstart-(x-xstart),ystart-(y-ystart),1,1,image_angle,image_blend,image_blend,image_blend,image_blend,1)
 		image_angle += 15
 		if y-ystart >= 480 {
 			stage++
@@ -45,7 +45,7 @@ switch stage {
 			}
 			if charCount > string_length(text)+9 if keyboard_check_pressed(vk_enter) {
 				instance_destroy()
-				if(!scr_load(true)) game_restart();
+				if !scr_load() game_restart();
 			}
 		}
 		if keyboard_check_pressed(vk_shift) charCount = string_length(text)+10

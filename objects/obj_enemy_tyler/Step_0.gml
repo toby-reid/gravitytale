@@ -15,9 +15,9 @@ if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 
 		else if timer%30==0 if timer < 600 with instance_create_layer(x,y,"Instances",obj_atk_tylerAssist) image_index = other.attack-1
 	}
 	else if !instance_exists(obj_enemy_manDan) global.stage[0]++
-	if global.player[player.hp] <= 0 if !instance_exists(obj_enemy_manDan) {
+	if global.player.hp <= 0 if !instance_exists(obj_enemy_manDan) {
 		ini_open("Reset.save")
-		ini_write_real("D",enemy.tyler,ini_read_real("D",enemy.tyler,0)+1)
+		ini_write_real("D",ENEMY.TYLER,ini_read_real("D",ENEMY.TYLER,0)+1)
 		ini_close()
 		global.stage[0]++
 	}

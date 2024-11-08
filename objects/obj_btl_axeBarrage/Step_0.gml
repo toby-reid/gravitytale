@@ -3,7 +3,7 @@ if timer <= 120 { if timer%15 == 0 {
 	var dir = irandom(359)
 	with instance_create_layer(320+lengthdir_x(300,dir),240+lengthdir_y(300,dir),layer,obj_battleAttack) {
 		at = other.at
-		if global.player[player.nyarf] == 3 or global.player[player.nyarf] == 5 at = 2
+		if global.player.df == AT_DF.UPGRADE at = ceil(at/2);
 		direction = point_direction(x,y,obj_soul.x,obj_soul.y)
 		image_angle = direction
 		speed = 8

@@ -10,21 +10,18 @@ switch stage {
 		if y <= ystart-20 {
 			vspeed = 0
 			with instance_create_layer(160,192,"Instances",obj_textbox) {
-				if global.player[player.mabel] {
-					text = [
+				text = global.player.mabel
+					? [
 						"hey kid",
 						"wut u doin here",
 						"im boutta start practic",
-						"thes r edvancd songs kid&not 4 lil kids lik u",
+						"thes r edvancd songs kid&not 4 lil kids liek u",
 						". . .",
 						"cmon kid, go awy",
 						". . .",
 						"wel, as long as u @00ffffstay #perfectly still @fffffffor my @00ffffcyan #@ffffffatacks u wil b ok",
 						"make sur u stay still"
-					]
-				}
-				else {
-					text = [
+					] : [
 						"hey kid",
 						"u just gunna walk right past my #stand without say hi",
 						"u think ur better then me",
@@ -34,8 +31,7 @@ switch stage {
 						"ill tech u a lesson kid",
 						"make sur u dont @00ffffstay perfectly #still @fffffffor my @00ffffcyan @ffffffatacks ok",
 						"its no fun hurtin kids standin #still"
-					]
-				}
+					];
 				for(var i = 0; i < array_length(text); i++) sound[i] = tlk_robbie
 			}
 			stage++
@@ -49,24 +45,20 @@ switch stage {
 		stage++
 	} break
 	case 3: if !instance_exists(obj_toBattle) {
-		if global.killed[enemy.robbie] instance_destroy()
+		if global.enemy_killed[ENEMY.ROBBIE] instance_destroy()
 		else with instance_create_layer(160,192,"Instances",obj_textbox) {
-			if global.player[player.mabel] {
-				text = [
+			text = global.player.mabel
+				? [
 					"hey kid",
 					"that wasnt so bad",
 					"thx for lissenin me play",
 					"ill cya l8r kid"
-				]
-			}
-			else {
-				text = [
+				] : [
 					"u no wut squirt?",
 					"ur not so bad",
 					"thx for lissenin me play",
 					"ill cya l8r kid"
-				]
-			}
+				];
 			sound = [tlk_robbie,tlk_robbie,tlk_robbie,tlk_robbie]
 			other.stage++
 		}

@@ -1,7 +1,10 @@
 rmName = "Forest - Puzzle 6"
-if global.killed[enemy.tyler] text = "(Victory(?) in the Manliness #Competition "
-else text = "(Victory in the Manliness #Competition "
-if global.player[player.mabel] text += "excites your #imagination.)"
-else text += "fills you with #dedication.)"
+text = string_concat("(Victory",
+					 global.enemy_killed[ENEMY.TYLER] ? "(?)" : "",
+					 "in the Manliness #Competition ",
+					 global.player.mabel
+						 ? "excites your #imagination"
+						 : "fills you with #dedication",
+					 ".)");
 music = mus_snowy
-loc = area.forest
+loc = AREA.FOREST;

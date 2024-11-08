@@ -1,9 +1,8 @@
 if instance_exists(obj_dipper) switch stage {
 	case 0: if obj_dipper.x >= 130 {
 		with instance_create_layer(160,48,"Instances",obj_textbox) {
-			if global.spared[enemy.soos] {
-				var slang = "dude"
-				if global.player[player.mabel] slang = "Hambone"
+			if global.enemy_spared[ENEMY.SOOS] {
+				var slang = global.player.mabel ? "Hambone" : "dude";
 				text = [
 					"Beep, beep... *",
 					"Sup, "+slang+"?&How's it going?",
@@ -38,8 +37,7 @@ if instance_exists(obj_dipper) switch stage {
 					spr_soos_face_happy
 				]
 				for(var i = 1; i < array_length(text)-1; i++) sound[i] = tlk_soos
-			}
-			else if global.spared[enemy.ford] {
+			} else if global.enemy_spared[ENEMY.FORD] {
 				text = [
 					"Beep, beep... *",
 					"huh, so you are on this #frequency after all...",
@@ -70,8 +68,7 @@ if instance_exists(obj_dipper) switch stage {
 					spr_stans_head_hollowEye
 				]
 				for(var i = 1; i < array_length(text)-1; i++) {sound[i] = tlk_stans; font[i] = fnt_sans_gui}
-			}
-			else if global.killed[enemy.blendin] {
+			} else if global.enemy_killed[ENEMY.BLENDIN] {
 				text = [
 					"Beep, beep... *",
 					"h-hey there, remember me?",
@@ -83,11 +80,10 @@ if instance_exists(obj_dipper) switch stage {
 					"Click *"
 				]
 				for(var i = 1; i < array_length(text)-1; i++) sound[i] = tlk_blendin
-			}
-			else {
+			} else {
 				text = [
 					"Beep, beep... *",
-					"hey there, remember me?",
+					"h-hey there, remember me?",
 					"of course you do!&y-you're my first friend, #after all!",
 					"it's blendin!&blendin blenjamin blandin!",
 					"d-don't think i've forgotten #what you did for me back there!",
@@ -119,12 +115,12 @@ if instance_exists(obj_dipper) switch stage {
 		stage++
 		obj_dipper.canMove = true
 		global.wendy = .3
-		if !global.spared[enemy.soos] instance_destroy()
+		if !global.enemy_spared[ENEMY.SOOS] instance_destroy()
 	} break
 	case 3: if obj_dipper.x >= 830 {
 		with instance_create_layer(160,48,"Instances",obj_textbox) {
 			var slang = "dude"
-			if global.player[player.mabel] slang = "Hambone"
+			if (global.player.mabel) slang = "Girl" + slang;
 			text = [
 				"Beep, beep... *",
 				"Hey, "+slang+", you must be #deeper in the caves than #I first @888888[garbled]@ffffff...",

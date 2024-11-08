@@ -3,7 +3,7 @@ if place_meeting(x,y,obj_mg_date_cursor) {
 	if damage > 99 {damage = 99; hp--}
 	if !audio_is_playing(sfx_giffany_hithere) {
 		var copyChar = 1
-		for(var i = 1; i < string_length(feedback); i++) if string_copy(feedback,i,1) == "#" {copyChar = i+1; break}
+		for(var i = 1; i <= string_length(feedback); i++) if string_copy(feedback,i,1) == "#" {copyChar = i+1; break}
 		feedback = string_copy(feedback,copyChar,string_length(feedback)-copyChar+1)+"#"
 		if damage == 99 feedback += "> Ouch! That hurt!"
 		else feedback += "> Ha ha! You are so funny!"
@@ -17,13 +17,11 @@ else if sprite_index == spr_mg_date_giffany with obj_mg_date_cursor {
 			if other.day < 11 switch inst.answer {
 				case 0:
 					inst.image_blend = c_yellow
-					with other {
-						lovePoints += 100
-						baggage = true
-						alarm[2] = 120
-						sprite_index = spr_mg_date_giffany_happy
-						feedback = "> Great job!#> Your LOVE increased!"
-					}
+					other.lovePoints += 100
+					other.baggage = true
+					other.alarm[2] = 120
+					other.sprite_index = spr_mg_date_giffany_happy
+					other.feedback = "> Great job!#> Your LOVE increased!"
 					audio_play_sound(sfx_mg_date_goodAnswer,0,false)
 					break
 				case 2:

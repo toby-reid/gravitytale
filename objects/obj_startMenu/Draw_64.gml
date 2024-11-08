@@ -1,12 +1,12 @@
 draw_set_font(fnt_basic_gui)
 if image_index == 0 {//new game
 	if size >= 1 {
-		draw_text_transformed_color(56+string_width("* "),325,global.player[player.name],size,size,0,c_aqua,c_aqua,c_aqua,c_aqua,1)
+		draw_text_transformed_color(56+string_width("* "),325,global.player.name,size,size,0,c_aqua,c_aqua,c_aqua,c_aqua,1)
 		size += .01
 	}
 	else if instance_exists(obj_textbox) with obj_textbox {
 		if page == 4 and choice[7] == 1 {
-			global.player[player.mabel] = action[4]
+			global.player.mabel = bool(action[4]);
 		}
 		else if (choice[7] == 1 and page == 6) or (choice[7] == 0 and page == 3) {
 			keyboard_unset_map()
@@ -21,10 +21,10 @@ if image_index == 0 {//new game
 							response[4] = 0
 							break
 						case "dipper":
-							response[0] = "WARNING!&This will do absolutely nothing."
+							response[0] = "WARNING!&This will do absolutely nothing.";
+							break;
 					}
-					if global.player[player.mabel] var col = "@CC277A"
-					else var col = "@1970ff"
+					var col = global.player.mabel ? "@CC277A" : "@1970ff";
 					text[page+1] = col + other.name + text[page+1]
 					scr_setmap()
 					audio_play_sound(sfx_select,0,0)
@@ -35,8 +35,7 @@ if image_index == 0 {//new game
 					if string_length(name) > 6 name = string_copy(name,1,6)
 					keyboard_string = ""
 				}
-				if global.player[player.mabel] var color = scr_hexdec("CC277A")
-				else var color = scr_hexdec("1970FF")
+				var color = global.player.mabel ? scr_hexdec("CC277A") : scr_hexdec("1970FF");
 				draw_text_color(56+string_width("* "),395,name+"_",color,color,color,color,1)
 			}
 			else keyboard_string = ""
