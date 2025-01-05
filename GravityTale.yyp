@@ -853,6 +853,7 @@
     {"id":{"name":"spr_mallody","path":"sprites/spr_mallody/spr_mallody.yy",},},
     {"id":{"name":"spr_mcg_d","path":"sprites/spr_mcg_d/spr_mcg_d.yy",},},
     {"id":{"name":"spr_mcg_l","path":"sprites/spr_mcg_l/spr_mcg_l.yy",},},
+    {"id":{"name":"spr_mcg_r","path":"sprites/spr_mcg_r/spr_mcg_r.yy",},},
     {"id":{"name":"spr_menu","path":"sprites/spr_menu/spr_menu.yy",},},
     {"id":{"name":"spr_menuIcons","path":"sprites/spr_menuIcons/spr_menuIcons.yy",},},
     {"id":{"name":"spr_mg_date_anthyding","path":"sprites/spr_mg_date_anthyding/spr_mg_date_anthyding.yy",},},

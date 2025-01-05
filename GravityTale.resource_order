@@ -696,6 +696,7 @@
     {"name":"spr_mallody_talking","order":2,"path":"sprites/spr_mallody_talking/spr_mallody_talking.yy",},
     {"name":"spr_mallody","order":1,"path":"sprites/spr_mallody/spr_mallody.yy",},
     {"name":"spr_mcg_l","order":1,"path":"sprites/spr_mcg_l/spr_mcg_l.yy",},
+    {"name":"spr_mcg_r","order":2,"path":"sprites/spr_mcg_r/spr_mcg_r.yy",},
     {"name":"spr_menu","order":2,"path":"sprites/spr_menu/spr_menu.yy",},
     {"name":"spr_menuIcons","order":9,"path":"sprites/spr_menuIcons/spr_menuIcons.yy",},
     {"name":"spr_mg_date_anthyding","order":11,"path":"sprites/spr_mg_date_anthyding/spr_mg_date_anthyding.yy",},
