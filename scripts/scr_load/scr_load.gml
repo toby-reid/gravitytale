@@ -79,15 +79,16 @@ function scr_load() {
 	}
 
 	var _music = asset_get_index(read_bin_string(_bin));
-	if(_music != silence) {
+	if (_music != silence) {
 		audio_stop_all();
 		audio_play_sound(_music, 0, true);
 	}
 
-	global.soos  = file_bin_read_byte(_bin);
-	global.stans = file_bin_read_byte(_bin);
-	global.toby  = file_bin_read_byte(_bin);
-	global.wendy = file_bin_read_byte(_bin);
+	global.soos   = file_bin_read_byte(_bin);
+	global.stans  = file_bin_read_byte(_bin);
+	global.toby   = file_bin_read_byte(_bin);
+	global.wendy  = file_bin_read_byte(_bin);
+	global.gideon = file_bin_read_byte(_bin);
 
 	var next = file_bin_read_byte(_bin);
 	global.hamstick = (next >> 4) & 0b1111;
