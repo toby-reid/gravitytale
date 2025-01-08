@@ -10,7 +10,7 @@ if (sprite_index == spr_mcg_l) {
 			"It had a big head like a #dino-saurus!",
 			"And short, stubbly legs #like...",
 			"well, like this young " + ((global.player.mabel) ? "lady" : "boy") + " #over here!",
-			"It disappeared a bald #gentleman on Scuttlebutt #Island,",
+			"It vanishified a bald #gentleman on Scuttlebutt #Island,",
 			"then shim-shammed on over #into this forest!&You gotta believe me!",
 			". . .",
 			"Well, now that I take a closer look...",
@@ -20,8 +20,26 @@ if (sprite_index == spr_mcg_l) {
 			"Quickly, to arms!"
 		];
 		head = [
-			
+			spr_mcg_head_crazy,
+			spr_mcg_head_crazy,
+			spr_mcg_head_ohcrap,
+			spr_mcg_head_uncertain,
+			spr_mcg_head_crazy,
+			spr_mcg_head_ohcrap,
+			spr_mcg_head_uncertain,
+			spr_mcg_head_happy,
+			spr_mcg_head_uncertain,
+			spr_mcg_head_ohcrap,
+			spr_mcg_head_uncertain,
+			spr_mcg_head_uncertain,
+			spr_mcg_head_ohcrap,
+			spr_mcg_head_uncertain,
+			spr_mcg_head_crazy,
+			spr_mcg_head_crazy
 		];
+		for (var i = 0; i < array_length(text); i++) {
+			sound[i] = tlk_mcg;
+		}
 	}
 	stage++;
 } else {

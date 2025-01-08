@@ -4,8 +4,7 @@ if obj_dipper.canMove {
 		case 1: obj_dipper.y += 2 break
 		case 2: obj_dipper.x += 2 break
 		case 3: obj_dipper.y -= 2 break
-	}
-	else {
+	} else {
 		obj_dipper.canMove = false
 		room_persistent = false
 		alarm[1] = 1

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"mus_showtime",
+  "audioGroupId":{
+    "name":"Music",
+    "path":"audiogroups/Music",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":1,
+  "conversionMode":0,
+  "duration":45.199093,
+  "name":"mus_showtime",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Sounds/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_showtime.ogg",
+  "type":1,
+  "volume":1.0,
+}
