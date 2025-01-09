@@ -497,7 +497,7 @@
     {"name":"sfx_wendyne_axe_fly","order":32,"path":"sounds/sfx_wendyne_axe_fly/sfx_wendyne_axe_fly.yy",},
     {"name":"sfx_wendyne_step","order":29,"path":"sounds/sfx_wendyne_step/sfx_wendyne_step.yy",},
     {"name":"sfx_whoop","order":9,"path":"sounds/sfx_whoop/sfx_whoop.yy",},
-    {"name":"sfx_whoosh","order":10,"path":"sounds/sfx_whoosh/sfx_whoosh.yy",},
+    {"name":"sfx_whoosh","order":45,"path":"sounds/sfx_whoosh/sfx_whoosh.yy",},
     {"name":"sfx_zap","order":19,"path":"sounds/sfx_zap/sfx_zap.yy",},
     {"name":"silence","order":3,"path":"sounds/silence/silence.yy",},
     {"name":"tlk_bill_creepy","order":1,"path":"sounds/tlk_bill_creepy/tlk_bill_creepy.yy",},

@@ -6,7 +6,10 @@ if (!variable_global_exists("gideon")) {
 
 draw_y = 21;
 image_alpha = 0;
+image_speed = 0;
 stage = 0;
+
+alpha = 0;
 
 car = inst_mcg_car;
 car.image_speed = 0;

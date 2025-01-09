@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"sfx_whoosh",
   "audioGroupId":{
-    "name":"Battle",
-    "path":"audiogroups/Battle",
+    "name":"SFX",
+    "path":"audiogroups/SFX",
   },
   "bitDepth":0,
   "bitRate":128,
@@ -12,8 +12,8 @@
   "duration":0.449417,
   "name":"sfx_whoosh",
   "parent":{
-    "name":"Battle",
-    "path":"folders/Sounds/SFX/Battle.yy",
+    "name":"SFX",
+    "path":"folders/Sounds/SFX.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

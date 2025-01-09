@@ -6,16 +6,16 @@ if (sprite_index == spr_mcg_l) {
 			"It's the Gravity Falls #Grompelslumper!",
 			"Come quick before it #scrabdoodles away!",
 			". . .",
-			"NOOO!&You're all in grave DANGER!",
+			"NOOO!&You're all in grave #DANGER!",
 			"It had a big head like a #dino-saurus!",
 			"And short, stubbly legs #like...",
 			"well, like this young " + ((global.player.mabel) ? "lady" : "boy") + " #over here!",
 			"It vanishified a bald #gentleman on Scuttlebutt #Island,",
 			"then shim-shammed on over #into this forest!&You gotta believe me!",
 			". . .",
-			"Well, now that I take a closer look...",
+			"Well, now that I take a #closer look...",
 			"It's you who's them #Grompelslumper!&We're DOOMED!",
-			"There's only one thing left #to do!",
+			"There's only one thing #left to do!",
 			"I'll have to call out my #@99D9EAsecret weapon @ffffffbefore #it's ready!",
 			"Quickly, to arms!"
 		];
@@ -41,7 +41,6 @@ if (sprite_index == spr_mcg_l) {
 			sound[i] = tlk_mcg;
 		}
 	}
-	stage++;
 } else {
 	switch (sprite_index) {
 		case spr_mcg_d: sprite_index = spr_mcg_u; break;

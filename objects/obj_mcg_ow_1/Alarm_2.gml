@@ -2,24 +2,23 @@
 with obj_ford_ow_1 {
 	switch (other.stage) {
 		case 3:
-			if (x > 360 or arm_index != 0) {
-				arm_index++;
-				if (arm_index >= image_number) {
-					arm_index = 0;
-				}
+			if (x > 370 or arm_index != 0) {
 				switch (arm_index) {
 					case 0:
-						audio_play_sound(sfx_click, 0, false);
-						other.alarm[2] = 60;
-						break;
-					case 1:
-						audio_play_sound(sfx_pound, 0, false);
+						arm_index = 1;
+						audio_play_sound(sfx_sans_pound, 0, false);
 						other.alarm[2] = 30;
 						break;
-					case 2:
+					case 1:
+						arm_index = 2;
 						audio_play_sound(sfx_grass, 0, false);
-						other.alarm[2] = 90;
+						other.alarm[2] = 60;
 						x -= 10;
+						break;
+					case 2:
+						arm_index = 0;
+						audio_play_sound(sfx_click, 0, false);
+						other.alarm[2] = 30;
 						break;
 				}
 			} else {
@@ -29,7 +28,7 @@ with obj_ford_ow_1 {
 			}
 			break;
 		case 4: // Retracting move arm
-			if (arm_index < image_number - 1) {
+			if (arm_index < sprite_get_number(spr_gideon_tv_arm_move_retract) - 1) {
 				arm_index++;
 				other.alarm[2] = 5;
 			} else {
@@ -44,12 +43,13 @@ with obj_ford_ow_1 {
 				other.alarm[2] = 5;
 			} else {
 				other.stage++;
-				other.alarm[2] = 180;
-				audio_play_sound(sfx_rocket, 0, true);
+				other.alarm[2] = 120;
+				audio_play_sound(sfx_noise, 0, true);
+				arm = spr_gideon_tv_arm_talk;
 			}
 			break;
 		case 6: // end the static
-			audio_stop_sound(sfx_rocket);
+			audio_stop_sound(sfx_noise);
 			face = spr_gideon_tv_face_cheery;
 			other.stage++;
 			other.alarm[2] = 120;

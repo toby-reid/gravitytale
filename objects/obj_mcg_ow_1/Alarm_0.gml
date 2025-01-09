@@ -5,7 +5,9 @@ if (global.player.genocide == RUN.ACTIVE) {
 	car.image_index = 1;
 	audio_play_sound(sfx_pound, 0, false);
 	image_alpha = 1;
-	alarm[0] = 60;
+	alarm[0] = 150;
 } else {
-	vspeed = -2;
+	vspeed = -1.5;
+	audio_sound_pitch(sfx_whoosh, .5);
+	audio_play_sound(sfx_whoosh, 0, false);
 }
