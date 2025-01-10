@@ -1,16 +1,16 @@
 {
   "$GMSound":"",
-  "%Name":"mus_sharkstart",
+  "%Name":"mus_medium",
   "audioGroupId":{
     "name":"Music",
     "path":"audiogroups/Music",
   },
-  "bitDepth":0,
+  "bitDepth":1,
   "bitRate":128,
   "compression":1,
   "conversionMode":0,
-  "duration":2.08,
-  "name":"mus_sharkstart",
+  "duration":142.15692,
+  "name":"mus_medium",
   "parent":{
     "name":"Music",
     "path":"folders/Sounds/Music.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_sharkstart.ogg",
-  "type":0,
+  "soundFile":"mus_medium.ogg",
+  "type":1,
   "volume":1.0,
 }
