@@ -1,16 +1,16 @@
 {
   "$GMSound":"",
-  "%Name":"mus_hippie",
+  "%Name":"mus_hippie_nes",
   "audioGroupId":{
     "name":"Music",
     "path":"audiogroups/Music",
   },
   "bitDepth":1,
   "bitRate":128,
-  "compression":1,
+  "compression":2,
   "conversionMode":0,
-  "duration":33.333332,
-  "name":"mus_hippie",
+  "duration":32.537647,
+  "name":"mus_hippie_nes",
   "parent":{
     "name":"Music",
     "path":"folders/Sounds/Music.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_hippie.ogg",
-  "type":0,
+  "soundFile":"mus_hippie_nes.ogg",
+  "type":1,
   "volume":1.0,
 }

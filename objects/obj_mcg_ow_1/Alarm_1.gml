@@ -1,5 +1,6 @@
 /// @description Look around
 if (sprite_index == spr_mcg_l) {
+    audio_play_sound(mus_hippie_gba, 0, true);
 	with instance_create_layer(160, 192, layer, obj_textbox) {
 		text = [
 			"I seen it!&I seen it again!",

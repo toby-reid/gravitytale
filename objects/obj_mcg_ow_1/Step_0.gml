@@ -26,7 +26,7 @@ if (instance_exists(obj_dipper)) switch (stage) {
 		break;
 	case 2:
 		if (alarm[1] == -1 and !instance_exists(obj_textbox)) {
-			audio_stop_sound(mus_alphys);
+			audio_group_stop_all(Music);
 			audio_play_sound(sfx_ding, 0, false);
 			sprite_index = spr_mcg_r;
 			with instance_create_layer(520, 110, layer, obj_ford_ow_1) {
@@ -43,7 +43,7 @@ if (instance_exists(obj_dipper)) switch (stage) {
 	// cases 3-7 covered entirely in alarm[2]
 	case 8:
 		if (!instance_exists(obj_textbox)) {
-			audio_stop_sound(mus_showtime);
+			audio_group_stop_all(Music);
 			audio_play_sound(sfx_click, 0, false);
 			alarm[3] = 60;
 			stage++;
