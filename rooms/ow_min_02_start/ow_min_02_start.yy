@@ -14,6 +14,7 @@
     {"name":"inst_2C45AF11","path":"rooms/ow_min_02_start/ow_min_02_start.yy",},
     {"name":"inst_3AA68BDD","path":"rooms/ow_min_02_start/ow_min_02_start.yy",},
     {"name":"inst_74474BBC","path":"rooms/ow_min_02_start/ow_min_02_start.yy",},
+    {"name":"inst_606781FC","path":"rooms/ow_min_02_start/ow_min_02_start.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -31,14 +32,23 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"music","path":"objects/obj_toRoom/obj_toRoom.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"mus_medium",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"goto","path":"objects/obj_toRoom/obj_toRoom.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"ow_min_03_gideon1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":320.0,"y":100.0,},
+        {"$GMRInstance":"v1","%Name":"inst_606781FC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_606781FC","objectId":{"name":"obj_min_roomBrightener","path":"objects/obj_min_roomBrightener/obj_min_roomBrightener.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":20.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRTileLayer":"","%Name":"Tiles_1","depth":200,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
-          2,0,69,-7,67,1,85,-6,-2147483648,2,0,112,-4,0,-10,-2147483648,2,0,112,-4,0,-10,-2147483648,2,0,112,-9,
-          0,-5,-2147483648,2,0,112,-3,0,1,4,-4,5,3,6,-2147483648,13,-3,-2147483648,2,0,112,-3,0,2,19,0,-3,-2147483648,
-          1,31,-5,5,2,0,112,-3,0,2,19,0,-3,-2147483648,1,46,-5,35,2,67,85,-3,0,1,34,-4,35,1,36,-5,50,-5,0,1,49,
-          -4,50,1,51,-5,50,-5,0,1,49,-4,50,1,51,-5,50,-5,0,1,49,-4,50,1,51,-5,-2147483648,-3,0,1,1,-12,2,
+    {"$GMRTileLayer":"","%Name":"Tiles_3","depth":200,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
+          2,-2147483648,69,-7,67,1,85,-7,-2147483648,1,112,-15,-2147483648,1,112,-15,-2147483648,1,112,-15,-2147483648,
+          1,112,-10,-2147483648,1,13,-4,-2147483648,1,112,-15,-2147483648,1,112,-14,-2147483648,2,67,85,-65,-2147483648,
+          1,1,-12,2,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tl_mines","path":"tilesets/tl_mines/tl_mines.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":300,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":true,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
+    {"$GMRTileLayer":"","%Name":"Tiles_2","depth":300,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_2","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
+          -69,26,1,7,-4,8,1,9,-10,26,1,22,-4,23,1,33,-5,8,-5,26,1,22,-4,23,1,48,-5,38,-5,26,1,37,-4,38,1,39,-5,
+          50,-5,26,1,49,-4,50,1,51,-5,56,-5,26,1,55,-4,56,1,57,-37,26,
+        ],"TileDataFormat":1,},"tilesetId":{"name":"tl_mines","path":"tilesets/tl_mines/tl_mines.yy",},"userdefinedDepth":false,"visible":false,"x":0,"y":0,},
+    {"$GMRTileLayer":"","%Name":"Tiles_1","depth":400,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
+          -11,0,-5,-2147483648,-6,0,-10,-2147483648,-6,0,-10,-2147483648,-11,0,-5,-2147483648,-5,0,1,4,-4,5,3,
+          6,-2147483648,0,-3,-2147483648,-5,0,1,19,-4,20,1,31,-5,5,-5,0,1,19,-4,20,1,46,-5,35,-5,0,1,34,-4,35,
+          1,36,-5,50,-5,0,1,49,-4,50,1,51,-5,53,-5,0,1,52,-4,53,1,54,-16,0,-5,-2147483648,-16,0,
+        ],"TileDataFormat":1,},"tilesetId":{"name":"tl_mines","path":"tilesets/tl_mines/tl_mines.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":500,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":true,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "name":"ow_min_02_start",
   "parent":{

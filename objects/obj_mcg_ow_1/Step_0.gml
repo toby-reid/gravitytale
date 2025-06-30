@@ -12,7 +12,7 @@ if (instance_exists(obj_dipper)) switch (stage) {
 			if (draw_y < sprite_height) {
 				draw_y++;
 			} else {
-				drawy = -1; // indicates to 'Draw' event to draw full self
+				draw_y = -1; // indicates to 'Draw' event to draw full self
 			}
 			if (y >= 120) {
 				vspeed = 0;

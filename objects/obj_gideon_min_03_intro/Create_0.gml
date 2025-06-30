@@ -1,0 +1,1 @@
+self.stage = 0;
