@@ -39,7 +39,7 @@
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
-    "$GMSequence":"",
+    "$GMSequence":"v1",
     "%Name":"spr_ford_atk_gravityFall_antenna",
     "autoRecord":true,
     "backdropHeight":768,
@@ -75,30 +75,14 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d577fee7-7d8d-4c3b-ae28-0667a4ef90bb","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"fc7acf46-da67-4a96-9ac3-648873dfe081","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"419d3a15-841d-48be-a8c7-c18a4e4b7653","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"bc98eb0f-b36c-4098-a1d1-94c992d8c2be","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cbdee60f-7ed2-4ee6-a9f0-e90ee708a5ac","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"97726ce9-2a8a-4623-949f-6e49655e715c","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"81fba0a2-2c1e-4ed0-af26-3697a81c2d72","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"9eacf023-6da8-49a3-a26c-dc95831b4b49","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ae44e2b3-14b1-404a-9a9d-f2f033784329","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"44803d2b-ed64-45e9-83eb-8315e830cd3b","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7e5ca756-3be4-42fc-a7f9-01027037c0e3","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"c8d4e917-1fbd-413e-9b75-4996868d47c0","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c2996b40-390f-4f88-9636-7df43d22b5d7","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7c2fdce4-f2d9-4d89-86f4-1c0cc0fb5786","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"27a63308-2595-47c5-b5d9-20e05b6ace39","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"cc8531a1-2b74-4db7-b0c7-4ee03adf8cb0","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"d577fee7-7d8d-4c3b-ae28-0667a4ef90bb","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"fc7acf46-da67-4a96-9ac3-648873dfe081","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"419d3a15-841d-48be-a8c7-c18a4e4b7653","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"bc98eb0f-b36c-4098-a1d1-94c992d8c2be","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"cbdee60f-7ed2-4ee6-a9f0-e90ee708a5ac","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"97726ce9-2a8a-4623-949f-6e49655e715c","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"81fba0a2-2c1e-4ed0-af26-3697a81c2d72","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"9eacf023-6da8-49a3-a26c-dc95831b4b49","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"ae44e2b3-14b1-404a-9a9d-f2f033784329","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"44803d2b-ed64-45e9-83eb-8315e830cd3b","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"7e5ca756-3be4-42fc-a7f9-01027037c0e3","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"c8d4e917-1fbd-413e-9b75-4996868d47c0","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"c2996b40-390f-4f88-9636-7df43d22b5d7","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"7c2fdce4-f2d9-4d89-86f4-1c0cc0fb5786","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"27a63308-2595-47c5-b5d9-20e05b6ace39","path":"sprites/spr_ford_atk_gravityFall_antenna/spr_ford_atk_gravityFall_antenna.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"cc8531a1-2b74-4db7-b0c7-4ee03adf8cb0","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

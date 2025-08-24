@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":32.819084,
+  "duration":32.81907,
   "name":"mus_hippie_gba",
   "parent":{
     "name":"Music",

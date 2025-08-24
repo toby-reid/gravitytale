@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":1,
   "conversionMode":0,
-  "duration":57.6,
+  "duration":57.58984,
   "name":"mus_bonetrousle",
   "parent":{
     "name":"Music",

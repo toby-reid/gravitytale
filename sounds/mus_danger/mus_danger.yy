@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":1,
   "conversionMode":0,
-  "duration":18.43357,
+  "duration":18.428572,
   "name":"mus_danger",
   "parent":{
     "name":"Music",

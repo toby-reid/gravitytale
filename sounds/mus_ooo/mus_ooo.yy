@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":1,
   "conversionMode":0,
-  "duration":5.156463,
+  "duration":5.1564627,
   "name":"mus_ooo",
   "parent":{
     "name":"Music",

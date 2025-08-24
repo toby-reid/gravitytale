@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":2,
   "conversionMode":0,
-  "duration":32.537647,
+  "duration":32.537663,
   "name":"mus_hippie_nes",
   "parent":{
     "name":"Music",
