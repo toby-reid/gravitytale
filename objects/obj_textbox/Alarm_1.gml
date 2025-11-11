@@ -1,4 +1,4 @@
-/// @description Arrow/Face
+ /// @description Arrow/Face
 arrow += 1
 if arrow >= 2 arrow = 0
 

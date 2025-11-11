@@ -18,6 +18,7 @@ if (instance_exists(obj_dipper)) switch (stage) {
 				vspeed = 0;
 				y = 120;
 				alarm[1] = 45 + irandom(30);
+                self.draw_y = -1; // TODO: REMOVE
 				stage++;
 				audio_sound_pitch(sfx_whoosh, 1);
 				audio_play_sound(sfx_grass, 0, false);
