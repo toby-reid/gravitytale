@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"tlk_ford",
   "audioGroupId":{
     "name":"Talk",
     "path":"audiogroups/Talk",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":0.070261,
+  "exportDir":"",
   "name":"tlk_ford",
   "parent":{
     "name":"Talk",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"tlk_ford",
-  "type":0,
   "volume":0.39,
 }

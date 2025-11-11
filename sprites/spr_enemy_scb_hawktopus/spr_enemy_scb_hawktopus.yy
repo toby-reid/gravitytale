@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_scb_hawktopus",
   "bboxMode":0,
   "bbox_bottom":37,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5073ec64-f765-45f4-acae-4b34d849ffb8","name":"5073ec64-f765-45f4-acae-4b34d849ffb8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"b8aafead-e42d-4a47-af89-6d2b7a94f8eb","name":"b8aafead-e42d-4a47-af89-6d2b7a94f8eb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5073ec64-f765-45f4-acae-4b34d849ffb8","name":"5073ec64-f765-45f4-acae-4b34d849ffb8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b8aafead-e42d-4a47-af89-6d2b7a94f8eb","name":"b8aafead-e42d-4a47-af89-6d2b7a94f8eb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

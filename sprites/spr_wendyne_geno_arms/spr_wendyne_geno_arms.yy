@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_wendyne_geno_arms",
   "bboxMode":0,
   "bbox_bottom":37,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"795c0bcf-d23d-437a-9771-9e9537b7bc21","name":"795c0bcf-d23d-437a-9771-9e9537b7bc21","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"795c0bcf-d23d-437a-9771-9e9537b7bc21","name":"795c0bcf-d23d-437a-9771-9e9537b7bc21","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

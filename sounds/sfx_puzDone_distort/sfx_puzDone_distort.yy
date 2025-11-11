@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"sfx_puzDone_distort",
   "audioGroupId":{
     "name":"SFX",
     "path":"audiogroups/SFX",
   },
   "bitDepth":0,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":1.224048,
+  "exportDir":"",
   "name":"sfx_puzDone_distort",
   "parent":{
     "name":"SFX",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_puzDone_distort.wav",
-  "type":0,
   "volume":1.0,
 }

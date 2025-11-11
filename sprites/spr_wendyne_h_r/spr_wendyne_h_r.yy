@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_wendyne_h_r",
   "bboxMode":0,
   "bbox_bottom":48,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"fdff0e41-8081-4dd4-9a2f-8e5652dde693","name":"fdff0e41-8081-4dd4-9a2f-8e5652dde693","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"17a4fba8-de9b-483f-94cd-9fbf8ae441d4","name":"17a4fba8-de9b-483f-94cd-9fbf8ae441d4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"fdff0e41-8081-4dd4-9a2f-8e5652dde693","name":"fdff0e41-8081-4dd4-9a2f-8e5652dde693","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"17a4fba8-de9b-483f-94cd-9fbf8ae441d4","name":"17a4fba8-de9b-483f-94cd-9fbf8ae441d4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

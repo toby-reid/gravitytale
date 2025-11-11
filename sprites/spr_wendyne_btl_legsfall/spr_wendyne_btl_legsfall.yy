@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_wendyne_btl_legsfall",
   "bboxMode":0,
   "bbox_bottom":47,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b27887bd-5c2a-4b2e-be2f-a71200ae2b8c","name":"b27887bd-5c2a-4b2e-be2f-a71200ae2b8c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b27887bd-5c2a-4b2e-be2f-a71200ae2b8c","name":"b27887bd-5c2a-4b2e-be2f-a71200ae2b8c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

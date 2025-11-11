@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_shockWave",
   "bboxMode":1,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"46cede3b-61af-4d0a-9b6b-b30f02bc3d51","name":"46cede3b-61af-4d0a-9b6b-b30f02bc3d51","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"46cede3b-61af-4d0a-9b6b-b30f02bc3d51","name":"46cede3b-61af-4d0a-9b6b-b30f02bc3d51","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

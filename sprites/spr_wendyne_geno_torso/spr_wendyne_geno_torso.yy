@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_wendyne_geno_torso",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"623a6be6-8ef1-42fb-98a4-96ea6aeebc21","name":"623a6be6-8ef1-42fb-98a4-96ea6aeebc21","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"623a6be6-8ef1-42fb-98a4-96ea6aeebc21","name":"623a6be6-8ef1-42fb-98a4-96ea6aeebc21","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

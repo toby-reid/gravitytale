@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"silence",
   "audioGroupId":{
     "name":"SFX",
     "path":"audiogroups/SFX",
   },
   "bitDepth":0,
-  "bitRate":8,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":0,
   "conversionMode":0,
   "duration":0.163991,
+  "exportDir":"",
   "name":"silence",
   "parent":{
     "name":"Sounds",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":5512,
   "soundFile":"silence",
-  "type":0,
   "volume":1.0,
 }

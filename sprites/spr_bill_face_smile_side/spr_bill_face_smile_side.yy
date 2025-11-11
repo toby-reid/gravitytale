@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_bill_face_smile_side",
   "bboxMode":0,
   "bbox_bottom":43,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6d5499da-66a2-4c05-9bb2-732ec5ebfa11","name":"6d5499da-66a2-4c05-9bb2-732ec5ebfa11","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6d5499da-66a2-4c05-9bb2-732ec5ebfa11","name":"6d5499da-66a2-4c05-9bb2-732ec5ebfa11","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

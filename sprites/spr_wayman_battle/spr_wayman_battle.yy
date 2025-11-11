@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_wayman_battle",
   "bboxMode":0,
   "bbox_bottom":89,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a364bd54-1e61-4ccf-aac0-54bd0a9cff9d","name":"a364bd54-1e61-4ccf-aac0-54bd0a9cff9d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1b98d907-f29f-418b-af7b-0b81de4c0b5f","name":"1b98d907-f29f-418b-af7b-0b81de4c0b5f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a364bd54-1e61-4ccf-aac0-54bd0a9cff9d","name":"a364bd54-1e61-4ccf-aac0-54bd0a9cff9d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1b98d907-f29f-418b-af7b-0b81de4c0b5f","name":"1b98d907-f29f-418b-af7b-0b81de4c0b5f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

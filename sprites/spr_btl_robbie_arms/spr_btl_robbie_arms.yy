@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_btl_robbie_arms",
   "bboxMode":0,
   "bbox_bottom":49,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"037edf58-ea6a-4061-ae37-16a4c415e33d","name":"037edf58-ea6a-4061-ae37-16a4c415e33d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"79a65465-025e-45e8-87c9-c1925da58173","name":"79a65465-025e-45e8-87c9-c1925da58173","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"037edf58-ea6a-4061-ae37-16a4c415e33d","name":"037edf58-ea6a-4061-ae37-16a4c415e33d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"79a65465-025e-45e8-87c9-c1925da58173","name":"79a65465-025e-45e8-87c9-c1925da58173","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

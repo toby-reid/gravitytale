@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_atk_blendin_laser",
   "bboxMode":0,
   "bbox_bottom":8,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"11450c70-db53-4b61-8d60-885aa0d649c0","name":"11450c70-db53-4b61-8d60-885aa0d649c0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"524600c9-b941-4c30-86bd-573d6c9e8e93","name":"524600c9-b941-4c30-86bd-573d6c9e8e93","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"11450c70-db53-4b61-8d60-885aa0d649c0","name":"11450c70-db53-4b61-8d60-885aa0d649c0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"524600c9-b941-4c30-86bd-573d6c9e8e93","name":"524600c9-b941-4c30-86bd-573d6c9e8e93","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

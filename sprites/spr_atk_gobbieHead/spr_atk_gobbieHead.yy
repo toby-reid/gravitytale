@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_atk_gobbieHead",
   "bboxMode":1,
   "bbox_bottom":13,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"464d560b-5a69-42bf-b8d0-a52d9ca43b3e","name":"464d560b-5a69-42bf-b8d0-a52d9ca43b3e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"481035be-6a71-46ce-9b86-4329b06c4868","name":"481035be-6a71-46ce-9b86-4329b06c4868","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"464d560b-5a69-42bf-b8d0-a52d9ca43b3e","name":"464d560b-5a69-42bf-b8d0-a52d9ca43b3e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"481035be-6a71-46ce-9b86-4329b06c4868","name":"481035be-6a71-46ce-9b86-4329b06c4868","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

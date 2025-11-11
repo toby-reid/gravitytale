@@ -1,0 +1,2 @@
+/// @description Flashbang (noop)
+// noop

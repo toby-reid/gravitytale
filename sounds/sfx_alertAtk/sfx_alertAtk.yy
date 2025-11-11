@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"sfx_alertAtk",
   "audioGroupId":{
     "name":"Battle",
     "path":"audiogroups/Battle",
   },
   "bitDepth":0,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":1.008617,
+  "exportDir":"",
   "name":"sfx_alertAtk",
   "parent":{
     "name":"Battle",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_alertAtk.wav",
-  "type":0,
   "volume":1.0,
 }

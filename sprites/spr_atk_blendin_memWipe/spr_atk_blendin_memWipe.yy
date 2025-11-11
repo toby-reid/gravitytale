@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_atk_blendin_memWipe",
   "bboxMode":1,
   "bbox_bottom":14,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d1cad314-223d-4610-bfa8-c31e467c93b1","name":"d1cad314-223d-4610-bfa8-c31e467c93b1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d1cad314-223d-4610-bfa8-c31e467c93b1","name":"d1cad314-223d-4610-bfa8-c31e467c93b1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_arcade",
   "bboxMode":0,
   "bbox_bottom":59,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"7dbc8327-e664-4ea4-8ffe-07d6c57fd082","name":"7dbc8327-e664-4ea4-8ffe-07d6c57fd082","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7dbc8327-e664-4ea4-8ffe-07d6c57fd082","name":"7dbc8327-e664-4ea4-8ffe-07d6c57fd082","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":20,
   "gridY":20,

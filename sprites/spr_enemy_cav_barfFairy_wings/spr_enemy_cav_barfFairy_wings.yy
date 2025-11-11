@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_cav_barfFairy_wings",
   "bboxMode":0,
   "bbox_bottom":16,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"90839bd8-6292-4dd9-984b-683cbd14121c","name":"90839bd8-6292-4dd9-984b-683cbd14121c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"7a2b85de-709e-4727-9beb-b690f8d7bdaa","name":"7a2b85de-709e-4727-9beb-b690f8d7bdaa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"90839bd8-6292-4dd9-984b-683cbd14121c","name":"90839bd8-6292-4dd9-984b-683cbd14121c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7a2b85de-709e-4727-9beb-b690f8d7bdaa","name":"7a2b85de-709e-4727-9beb-b690f8d7bdaa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

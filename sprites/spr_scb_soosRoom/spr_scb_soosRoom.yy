@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_scb_soosRoom",
   "bboxMode":0,
   "bbox_bottom":119,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ce3c8192-42b7-445c-b63d-747f9d7da3b2","name":"ce3c8192-42b7-445c-b63d-747f9d7da3b2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ce3c8192-42b7-445c-b63d-747f9d7da3b2","name":"ce3c8192-42b7-445c-b63d-747f9d7da3b2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":20,
   "gridY":20,

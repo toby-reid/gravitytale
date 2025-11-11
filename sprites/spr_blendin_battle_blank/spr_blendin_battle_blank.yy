@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_blendin_battle_blank",
   "bboxMode":0,
   "bbox_bottom":82,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"4a19e6c8-10b0-44aa-b55b-8d26c3d9c31e","name":"4a19e6c8-10b0-44aa-b55b-8d26c3d9c31e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"4a19e6c8-10b0-44aa-b55b-8d26c3d9c31e","name":"4a19e6c8-10b0-44aa-b55b-8d26c3d9c31e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

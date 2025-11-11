@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_scb_sDuck",
   "bboxMode":0,
   "bbox_bottom":49,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3c866161-abdb-4458-9d9a-3c366c55cd51","name":"3c866161-abdb-4458-9d9a-3c366c55cd51","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"197944c9-7a9d-4e24-922c-a7246f3299b3","name":"197944c9-7a9d-4e24-922c-a7246f3299b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3c866161-abdb-4458-9d9a-3c366c55cd51","name":"3c866161-abdb-4458-9d9a-3c366c55cd51","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"197944c9-7a9d-4e24-922c-a7246f3299b3","name":"197944c9-7a9d-4e24-922c-a7246f3299b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

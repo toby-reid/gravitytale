@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_robbieStand",
   "bboxMode":0,
   "bbox_bottom":78,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3d4f9a2c-dbfc-4b1f-afde-549fe8405b78","name":"3d4f9a2c-dbfc-4b1f-afde-549fe8405b78","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3d4f9a2c-dbfc-4b1f-afde-549fe8405b78","name":"3d4f9a2c-dbfc-4b1f-afde-549fe8405b78","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

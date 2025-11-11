@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_cav_eyebat",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"19473eb0-ad4d-414f-98c5-74ac36f434b7","name":"19473eb0-ad4d-414f-98c5-74ac36f434b7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"9ba3d5bb-8598-4f3a-a481-3e169080b1a3","name":"9ba3d5bb-8598-4f3a-a481-3e169080b1a3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"19473eb0-ad4d-414f-98c5-74ac36f434b7","name":"19473eb0-ad4d-414f-98c5-74ac36f434b7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9ba3d5bb-8598-4f3a-a481-3e169080b1a3","name":"9ba3d5bb-8598-4f3a-a481-3e169080b1a3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

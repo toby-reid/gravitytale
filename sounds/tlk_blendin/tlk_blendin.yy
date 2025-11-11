@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"tlk_blendin",
   "audioGroupId":{
     "name":"Talk",
     "path":"audiogroups/Talk",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":0.069943,
+  "exportDir":"",
   "name":"tlk_blendin",
   "parent":{
     "name":"Talk",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"tlk_blendin",
-  "type":0,
   "volume":1.0,
 }

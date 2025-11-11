@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_stans_head_BOeye",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"14bf4160-4440-44d5-b590-39cd2addcfc4","name":"14bf4160-4440-44d5-b590-39cd2addcfc4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e9c97eb1-cbaa-4625-8100-8193a392ccf0","name":"e9c97eb1-cbaa-4625-8100-8193a392ccf0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"14bf4160-4440-44d5-b590-39cd2addcfc4","name":"14bf4160-4440-44d5-b590-39cd2addcfc4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e9c97eb1-cbaa-4625-8100-8193a392ccf0","name":"e9c97eb1-cbaa-4625-8100-8193a392ccf0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

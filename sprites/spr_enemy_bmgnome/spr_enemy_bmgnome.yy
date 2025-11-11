@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_bmgnome",
   "bboxMode":0,
   "bbox_bottom":57,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"11dd3350-d940-467e-8357-85f52a3537cd","name":"11dd3350-d940-467e-8357-85f52a3537cd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d30e0e95-b68b-4c6f-804b-ae95a2ef19e8","name":"d30e0e95-b68b-4c6f-804b-ae95a2ef19e8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"11dd3350-d940-467e-8357-85f52a3537cd","name":"11dd3350-d940-467e-8357-85f52a3537cd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d30e0e95-b68b-4c6f-804b-ae95a2ef19e8","name":"d30e0e95-b68b-4c6f-804b-ae95a2ef19e8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

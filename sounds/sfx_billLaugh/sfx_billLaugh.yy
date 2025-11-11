@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"sfx_billLaugh",
   "audioGroupId":{
     "name":"SFX",
     "path":"audiogroups/SFX",
   },
   "bitDepth":0,
-  "bitRate":64,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":1,
   "conversionMode":0,
   "duration":5.95025,
+  "exportDir":"",
   "name":"sfx_billLaugh",
   "parent":{
     "name":"SFX",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_billLaugh.mp3",
-  "type":0,
   "volume":1.0,
 }

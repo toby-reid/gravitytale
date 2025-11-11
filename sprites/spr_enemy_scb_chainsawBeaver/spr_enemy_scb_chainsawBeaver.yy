@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_scb_chainsawBeaver",
   "bboxMode":0,
   "bbox_bottom":96,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9da0fd3e-1b2b-4000-9c48-b897e6917e4e","name":"9da0fd3e-1b2b-4000-9c48-b897e6917e4e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9da0fd3e-1b2b-4000-9c48-b897e6917e4e","name":"9da0fd3e-1b2b-4000-9c48-b897e6917e4e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":11,
   "gridY":11,

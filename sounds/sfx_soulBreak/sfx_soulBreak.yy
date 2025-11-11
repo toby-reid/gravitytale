@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"sfx_soulBreak",
   "audioGroupId":{
     "name":"Battle",
     "path":"audiogroups/Battle",
   },
   "bitDepth":0,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":0.715068,
+  "exportDir":"",
   "name":"sfx_soulBreak",
   "parent":{
     "name":"Battle",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_soulBreak",
-  "type":0,
   "volume":1.0,
 }

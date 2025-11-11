@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_manDan",
   "bboxMode":0,
   "bbox_bottom":120,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"eaf46d29-cb55-4d1f-b067-0a96e9401391","name":"eaf46d29-cb55-4d1f-b067-0a96e9401391","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"94eb1bf7-14fa-42f3-8338-235c889babe2","name":"94eb1bf7-14fa-42f3-8338-235c889babe2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"eaf46d29-cb55-4d1f-b067-0a96e9401391","name":"eaf46d29-cb55-4d1f-b067-0a96e9401391","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"94eb1bf7-14fa-42f3-8338-235c889babe2","name":"94eb1bf7-14fa-42f3-8338-235c889babe2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_bill_eye",
   "bboxMode":0,
   "bbox_bottom":41,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"8196de1c-ce77-4f28-ae4e-1acafdd5487b","name":"8196de1c-ce77-4f28-ae4e-1acafdd5487b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"8196de1c-ce77-4f28-ae4e-1acafdd5487b","name":"8196de1c-ce77-4f28-ae4e-1acafdd5487b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

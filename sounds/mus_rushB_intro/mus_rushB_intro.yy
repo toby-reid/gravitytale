@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"mus_rushB_intro",
   "audioGroupId":{
     "name":"Wayman",
     "path":"audiogroups/Wayman",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":17.663855,
+  "exportDir":"",
   "name":"mus_rushB_intro",
   "parent":{
     "name":"Wayman",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mus_rushB_intro.wav",
-  "type":0,
   "volume":1.0,
 }

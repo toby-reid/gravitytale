@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_fst_pPus_hat",
   "bboxMode":1,
   "bbox_bottom":29,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c94e71b9-76a2-42b7-806b-2f36514ae999","name":"c94e71b9-76a2-42b7-806b-2f36514ae999","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"2e285865-76eb-401a-ad7b-78b82fd3bc60","name":"2e285865-76eb-401a-ad7b-78b82fd3bc60","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c94e71b9-76a2-42b7-806b-2f36514ae999","name":"c94e71b9-76a2-42b7-806b-2f36514ae999","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"2e285865-76eb-401a-ad7b-78b82fd3bc60","name":"2e285865-76eb-401a-ad7b-78b82fd3bc60","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

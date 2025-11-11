@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_paz_putt_ball",
   "bboxMode":0,
   "bbox_bottom":139,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5a0d3f68-eb7e-43db-bcc1-3e8277df8e90","name":"5a0d3f68-eb7e-43db-bcc1-3e8277df8e90","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5a0d3f68-eb7e-43db-bcc1-3e8277df8e90","name":"5a0d3f68-eb7e-43db-bcc1-3e8277df8e90","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

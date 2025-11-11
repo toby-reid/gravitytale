@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_fst_qQuail",
   "bboxMode":0,
   "bbox_bottom":57,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a060eda3-75f6-4ada-8f13-172bf4e68363","name":"a060eda3-75f6-4ada-8f13-172bf4e68363","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"729d5ee9-ab54-45fc-86a0-f023354d987e","name":"729d5ee9-ab54-45fc-86a0-f023354d987e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a060eda3-75f6-4ada-8f13-172bf4e68363","name":"a060eda3-75f6-4ada-8f13-172bf4e68363","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"729d5ee9-ab54-45fc-86a0-f023354d987e","name":"729d5ee9-ab54-45fc-86a0-f023354d987e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

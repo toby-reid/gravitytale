@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_stans_atk_cane",
   "bboxMode":1,
   "bbox_bottom":51,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"e9a56e07-9ba1-4179-af5f-cd6671787b97","name":"e9a56e07-9ba1-4179-af5f-cd6671787b97","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e9a56e07-9ba1-4179-af5f-cd6671787b97","name":"e9a56e07-9ba1-4179-af5f-cd6671787b97","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"tlk_bill_creepy",
   "audioGroupId":{
     "name":"Talk",
     "path":"audiogroups/Talk",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":0.070374,
+  "exportDir":"",
   "name":"tlk_bill_creepy",
   "parent":{
     "name":"Talk",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"tlk_bill_creepy",
-  "type":0,
   "volume":1.0,
 }

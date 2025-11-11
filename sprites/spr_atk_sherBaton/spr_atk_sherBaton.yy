@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_atk_sherBaton",
   "bboxMode":2,
   "bbox_bottom":8,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f057e106-03a0-478e-bf56-542e37a92282","name":"f057e106-03a0-478e-bf56-542e37a92282","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1abaaa25-f4e9-4ee0-a2cf-01d5bae05c16","name":"1abaaa25-f4e9-4ee0-a2cf-01d5bae05c16","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f057e106-03a0-478e-bf56-542e37a92282","name":"f057e106-03a0-478e-bf56-542e37a92282","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1abaaa25-f4e9-4ee0-a2cf-01d5bae05c16","name":"1abaaa25-f4e9-4ee0-a2cf-01d5bae05c16","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

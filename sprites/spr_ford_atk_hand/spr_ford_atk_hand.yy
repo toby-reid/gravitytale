@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_ford_atk_hand",
   "bboxMode":1,
   "bbox_bottom":45,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3bdfef9b-6f29-4e41-b479-a17a013788cd","name":"3bdfef9b-6f29-4e41-b479-a17a013788cd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"10cefa4c-344b-420b-8e77-c746bad3cd32","name":"10cefa4c-344b-420b-8e77-c746bad3cd32","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3bdfef9b-6f29-4e41-b479-a17a013788cd","name":"3bdfef9b-6f29-4e41-b479-a17a013788cd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"10cefa4c-344b-420b-8e77-c746bad3cd32","name":"10cefa4c-344b-420b-8e77-c746bad3cd32","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":12,
   "gridY":100,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_fst_bCub_shaved",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"051706e1-3cf0-41e6-b51c-b69fecf1ab1f","name":"051706e1-3cf0-41e6-b51c-b69fecf1ab1f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"008bba59-6ac5-43a6-b7c8-f1402eceef48","name":"008bba59-6ac5-43a6-b7c8-f1402eceef48","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"051706e1-3cf0-41e6-b51c-b69fecf1ab1f","name":"051706e1-3cf0-41e6-b51c-b69fecf1ab1f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"008bba59-6ac5-43a6-b7c8-f1402eceef48","name":"008bba59-6ac5-43a6-b7c8-f1402eceef48","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":10,
   "gridY":10,

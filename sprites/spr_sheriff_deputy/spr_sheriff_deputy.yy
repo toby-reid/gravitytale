@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_sheriff_deputy",
   "bboxMode":0,
   "bbox_bottom":35,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"4aa29ee4-3cc5-4eea-b118-11443faf97ab","name":"4aa29ee4-3cc5-4eea-b118-11443faf97ab","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"54574357-7cef-4b99-9dc8-a1fc3a53fe40","name":"54574357-7cef-4b99-9dc8-a1fc3a53fe40","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"4aa29ee4-3cc5-4eea-b118-11443faf97ab","name":"4aa29ee4-3cc5-4eea-b118-11443faf97ab","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"54574357-7cef-4b99-9dc8-a1fc3a53fe40","name":"54574357-7cef-4b99-9dc8-a1fc3a53fe40","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

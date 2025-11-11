@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cav_spotlight",
   "bboxMode":2,
   "bbox_bottom":108,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"53dfe1f5-9d59-480e-9752-81a2ade81448","name":"53dfe1f5-9d59-480e-9752-81a2ade81448","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"53dfe1f5-9d59-480e-9752-81a2ade81448","name":"53dfe1f5-9d59-480e-9752-81a2ade81448","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

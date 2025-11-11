@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_mg_date_giffany_happy",
   "bboxMode":2,
   "bbox_bottom":70,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d9af3c41-3db7-4dbf-b24c-e43f5ad5bdef","name":"d9af3c41-3db7-4dbf-b24c-e43f5ad5bdef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d9af3c41-3db7-4dbf-b24c-e43f5ad5bdef","name":"d9af3c41-3db7-4dbf-b24c-e43f5ad5bdef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":11,
   "gridY":11,

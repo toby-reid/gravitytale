@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_wendyne_axe_btl",
   "bboxMode":1,
   "bbox_bottom":9,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"252061cf-29ce-4b8e-ae73-9a25a3269206","name":"252061cf-29ce-4b8e-ae73-9a25a3269206","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"252061cf-29ce-4b8e-ae73-9a25a3269206","name":"252061cf-29ce-4b8e-ae73-9a25a3269206","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

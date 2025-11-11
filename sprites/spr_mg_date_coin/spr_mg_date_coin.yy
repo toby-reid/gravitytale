@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_mg_date_coin",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"df1979db-0e7d-4ae4-9f2c-ecf6e153bb68","name":"df1979db-0e7d-4ae4-9f2c-ecf6e153bb68","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f7afad33-553b-408c-99db-2c10d04103c2","name":"f7afad33-553b-408c-99db-2c10d04103c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"df1979db-0e7d-4ae4-9f2c-ecf6e153bb68","name":"df1979db-0e7d-4ae4-9f2c-ecf6e153bb68","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f7afad33-553b-408c-99db-2c10d04103c2","name":"f7afad33-553b-408c-99db-2c10d04103c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

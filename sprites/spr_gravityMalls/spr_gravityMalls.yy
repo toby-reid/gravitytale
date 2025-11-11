@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_gravityMalls",
   "bboxMode":0,
   "bbox_bottom":59,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"7c2fae0c-b29c-4e6a-ace2-2f2cb79a88cd","name":"7c2fae0c-b29c-4e6a-ace2-2f2cb79a88cd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7c2fae0c-b29c-4e6a-ace2-2f2cb79a88cd","name":"7c2fae0c-b29c-4e6a-ace2-2f2cb79a88cd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

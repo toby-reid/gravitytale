@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_tyler",
   "bboxMode":0,
   "bbox_bottom":79,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f947d011-72c5-4f38-95b6-eb1cfde3475a","name":"f947d011-72c5-4f38-95b6-eb1cfde3475a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"c07d5af1-8422-4d00-ae98-4729927e9b6e","name":"c07d5af1-8422-4d00-ae98-4729927e9b6e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f947d011-72c5-4f38-95b6-eb1cfde3475a","name":"f947d011-72c5-4f38-95b6-eb1cfde3475a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c07d5af1-8422-4d00-ae98-4729927e9b6e","name":"c07d5af1-8422-4d00-ae98-4729927e9b6e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

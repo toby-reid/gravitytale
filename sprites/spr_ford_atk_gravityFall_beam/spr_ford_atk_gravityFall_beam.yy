@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_ford_atk_gravityFall_beam",
   "bboxMode":0,
   "bbox_bottom":175,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6d0806af-f7e2-4b18-8ce9-ce3c6fb14709","name":"6d0806af-f7e2-4b18-8ce9-ce3c6fb14709","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"cdab4f12-9471-447f-ab30-4efb95ef39c5","name":"cdab4f12-9471-447f-ab30-4efb95ef39c5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6d0806af-f7e2-4b18-8ce9-ce3c6fb14709","name":"6d0806af-f7e2-4b18-8ce9-ce3c6fb14709","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"cdab4f12-9471-447f-ab30-4efb95ef39c5","name":"cdab4f12-9471-447f-ab30-4efb95ef39c5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

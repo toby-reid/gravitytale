@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_atk_killClaws",
   "bboxMode":1,
   "bbox_bottom":17,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f394717a-c9c7-459e-9d36-fa1f47584d7f","name":"f394717a-c9c7-459e-9d36-fa1f47584d7f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e8ed8bcf-817f-42d1-98bc-5015db840530","name":"e8ed8bcf-817f-42d1-98bc-5015db840530","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f394717a-c9c7-459e-9d36-fa1f47584d7f","name":"f394717a-c9c7-459e-9d36-fa1f47584d7f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e8ed8bcf-817f-42d1-98bc-5015db840530","name":"e8ed8bcf-817f-42d1-98bc-5015db840530","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

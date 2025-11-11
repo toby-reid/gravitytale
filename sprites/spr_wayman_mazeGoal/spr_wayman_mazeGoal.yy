@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_wayman_mazeGoal",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"97f91817-5998-43b0-b32a-72cb0fe3bc03","name":"97f91817-5998-43b0-b32a-72cb0fe3bc03","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"97f91817-5998-43b0-b32a-72cb0fe3bc03","name":"97f91817-5998-43b0-b32a-72cb0fe3bc03","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

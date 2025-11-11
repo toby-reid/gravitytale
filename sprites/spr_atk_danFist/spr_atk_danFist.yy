@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_atk_danFist",
   "bboxMode":1,
   "bbox_bottom":18,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"67b222c2-5731-4476-b22d-ac3fea778b0e","name":"67b222c2-5731-4476-b22d-ac3fea778b0e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"67b222c2-5731-4476-b22d-ac3fea778b0e","name":"67b222c2-5731-4476-b22d-ac3fea778b0e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

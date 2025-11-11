@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"sfx_guitar",
   "audioGroupId":{
     "name":"Battle",
     "path":"audiogroups/Battle",
   },
   "bitDepth":0,
-  "bitRate":64,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":1,
   "conversionMode":0,
   "duration":1.584422,
+  "exportDir":"",
   "name":"sfx_guitar",
   "parent":{
     "name":"Battle",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"sfx_guitar.wav",
-  "type":0,
   "volume":1.0,
 }

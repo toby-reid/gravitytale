@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"mus_mg_date_mainTheme",
   "audioGroupId":{
     "name":"Minigames",
     "path":"audiogroups/Minigames",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":1,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":12.805,
+  "exportDir":"",
   "name":"mus_mg_date_mainTheme",
   "parent":{
     "name":"Music",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mus_mg_date_mainTheme.ogg",
-  "type":0,
   "volume":0.6,
 }

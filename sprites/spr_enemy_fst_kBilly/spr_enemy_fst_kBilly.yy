@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_fst_kBilly",
   "bboxMode":0,
   "bbox_bottom":97,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b0428815-700f-4a83-a824-c3b77a9afc25","name":"b0428815-700f-4a83-a824-c3b77a9afc25","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"c9a476d3-181f-4b78-b900-e70cbf94fade","name":"c9a476d3-181f-4b78-b900-e70cbf94fade","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b0428815-700f-4a83-a824-c3b77a9afc25","name":"b0428815-700f-4a83-a824-c3b77a9afc25","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c9a476d3-181f-4b78-b900-e70cbf94fade","name":"c9a476d3-181f-4b78-b900-e70cbf94fade","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

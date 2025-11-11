@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_wendyne_hot",
   "bboxMode":0,
   "bbox_bottom":20,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"e98ce95f-d5a0-4733-a8cc-2787ee0fac5b","name":"e98ce95f-d5a0-4733-a8cc-2787ee0fac5b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e98ce95f-d5a0-4733-a8cc-2787ee0fac5b","name":"e98ce95f-d5a0-4733-a8cc-2787ee0fac5b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_enemy_scb_merman",
   "bboxMode":0,
   "bbox_bottom":25,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0b471cd2-6771-48f6-a31b-375909ab4f11","name":"0b471cd2-6771-48f6-a31b-375909ab4f11","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"5e080eb0-714c-42e7-a22f-f94e9b94bfca","name":"5e080eb0-714c-42e7-a22f-f94e9b94bfca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0b471cd2-6771-48f6-a31b-375909ab4f11","name":"0b471cd2-6771-48f6-a31b-375909ab4f11","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5e080eb0-714c-42e7-a22f-f94e9b94bfca","name":"5e080eb0-714c-42e7-a22f-f94e9b94bfca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

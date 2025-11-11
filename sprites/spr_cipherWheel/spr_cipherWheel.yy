@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cipherWheel",
   "bboxMode":0,
   "bbox_bottom":86,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bd7d1628-0ea2-4d3b-99e1-1e23a19d07fe","name":"bd7d1628-0ea2-4d3b-99e1-1e23a19d07fe","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bd7d1628-0ea2-4d3b-99e1-1e23a19d07fe","name":"bd7d1628-0ea2-4d3b-99e1-1e23a19d07fe","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -32,8 +32,8 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"get","filters":[],"listItems":[],"multiselect":false,"name":"get","rangeEnabled":false,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"ITEM_NAME.NONE","varType":1,},
-    {"$GMObjectProperty":"v1","%Name":"newText","filters":[],"listItems":[
+    {"$GMObjectProperty":"v2","%Name":"get","filters":[],"listItems":[],"multiselect":false,"name":"get","rangeEnabled":false,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"ITEM_NAME.NONE","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"newText","filters":[],"listItems":[
         "\"If you are reading this, #an error has occurred.&Error Code: @ff0000TRASH\"",
       ],"multiselect":false,"name":"newText","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"If you are reading this, #an error has occurred.&Error Code: @ff0000TRASH\"","varType":6,},
   ],

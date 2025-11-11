@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_mg_date_anthyding",
   "bboxMode":0,
   "bbox_bottom":179,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"79fa1210-a2c6-41e6-9c1c-9c7ebab1f11d","name":"79fa1210-a2c6-41e6-9c1c-9c7ebab1f11d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"79fa1210-a2c6-41e6-9c1c-9c7ebab1f11d","name":"79fa1210-a2c6-41e6-9c1c-9c7ebab1f11d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":11,
   "gridY":11,

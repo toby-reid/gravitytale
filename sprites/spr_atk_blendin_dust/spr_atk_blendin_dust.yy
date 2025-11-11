@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_atk_blendin_dust",
   "bboxMode":1,
   "bbox_bottom":10,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b03d4e5c-0425-4652-ab8a-17238ff4650f","name":"b03d4e5c-0425-4652-ab8a-17238ff4650f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b03d4e5c-0425-4652-ab8a-17238ff4650f","name":"b03d4e5c-0425-4652-ab8a-17238ff4650f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

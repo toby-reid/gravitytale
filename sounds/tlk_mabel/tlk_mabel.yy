@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"tlk_mabel",
   "audioGroupId":{
     "name":"Talk",
     "path":"audiogroups/Talk",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":2,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":0.070533,
+  "exportDir":"",
   "name":"tlk_mabel",
   "parent":{
     "name":"Talk",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"tlk_mabel",
-  "type":0,
   "volume":1.0,
 }

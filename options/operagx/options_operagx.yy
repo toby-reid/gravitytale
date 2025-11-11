@@ -1,5 +1,5 @@
 {
-  "$GMOperaGXOptions":"",
+  "$GMOperaGXOptions":"v1",
   "%Name":"operagx",
   "name":"operagx",
   "option_operagx_display_cursor":true,
@@ -23,6 +23,7 @@
   "option_operagx_team_id":"7677e36c-4f2b-4dc7-9dfa-b2a1ab66a7d5",
   "option_operagx_team_name":"gravitytale studio",
   "option_operagx_texture_page":"2048x2048",
+  "option_operagx_transparent_background":false,
   "option_operagx_version":"1.0.0.1",
   "resourceType":"GMOperaGXOptions",
   "resourceVersion":"2.0",

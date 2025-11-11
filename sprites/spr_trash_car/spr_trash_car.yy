@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_trash_car",
   "bboxMode":0,
   "bbox_bottom":43,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"17db9cf7-5960-46d8-8854-0c54f3124e18","name":"17db9cf7-5960-46d8-8854-0c54f3124e18","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"b5ffdfb4-0919-4add-9690-5fd82b662934","name":"b5ffdfb4-0919-4add-9690-5fd82b662934","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"17db9cf7-5960-46d8-8854-0c54f3124e18","name":"17db9cf7-5960-46d8-8854-0c54f3124e18","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b5ffdfb4-0919-4add-9690-5fd82b662934","name":"b5ffdfb4-0919-4add-9690-5fd82b662934","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":10,
   "gridY":10,
