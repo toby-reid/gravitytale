@@ -9,8 +9,8 @@ if (instance_exists(obj_dipper))
                 {
                     obj_dipper.canMove = false;
                     audio_stop_all();
-                    self.hspeed = 0.2;
-                    self.vspeed = 0.5;
+                    self.hspeed = 0.5;
+                    self.vspeed = 0.25;
                 }
             }
             else if (self.y >= 90)
@@ -24,17 +24,13 @@ if (instance_exists(obj_dipper))
             }
             else
             {
-                if (self.x <= self.xstart - 20)
+                if (self.x < self.xstart)
                 {
-                    self.hspeed = abs(self.hspeed);
+                    self.hspeed += 0.02;
                 }
-                else if (self.x >= self.xstart + 20)
+                else if (self.x > self.xstart)
                 {
-                    self.hspeed = -abs(self.hspeed);
-                }
-                else if (irandom(30) == 0)
-                {
-                    self.hspeed = -self.hspeed;
+                    self.hspeed -= 0.02;
                 }
             }
         break;
@@ -76,6 +72,7 @@ if (instance_exists(obj_dipper))
             {
                 self.alarm[2] = 180;
                 self.arm_index = 0;
+                self.image_speed = 0;
                 audio_stop_all();
                 self.stage++;
             }
@@ -140,6 +137,7 @@ if (instance_exists(obj_dipper))
                     changed_9 = false;
                     changed_13 = false;
                 }
+                self.image_speed = 1;
                 audio_play_sound(mus_showtime, 0, true);
                 ++self.stage;
             }
@@ -148,49 +146,67 @@ if (instance_exists(obj_dipper))
             if (instance_exists(obj_textbox))
             {
                 self.arm_index = obj_textbox.face;
-                self.face = (string_upper(obj_textbox.text[obj_textbox.page]) == obj_textbox.text[obj_textbox.page])
-                    ? spr_gideon_tv_face_cheery
-                    : spr_gideon_tv_face_neutral;
+                if (obj_textbox.text[obj_textbox.page] != ". . .")
+                {
+                    self.face = (string_upper(obj_textbox.text[obj_textbox.page]) == obj_textbox.text[obj_textbox.page])
+                        ? spr_gideon_tv_face_cheery
+                        : spr_gideon_tv_face_neutral;
+                }
                 with obj_textbox
                 {
-                    if (not changed_9 and page >= 10)
+                    if (not changed_9)
                     {
-                        if (action[9] == 0)
+                        if (page == 9)
                         {
-                            text[10] = string_concat(
-                                global.player.name,
-                                ", hm?&",
-                                (
-                                    (global.player.mabel and string_lower(global.player.name) == "mabel")
-                                    or (not global.player.mabel and string_lower(global.player.name) == "dipper")
-                                ) ? "That... makes sense somehow." : "Seems odd to me, but I reckon #you know it better."
-                            );
-                            text[11] = "WELL, CHECK OUT THIS BOLD #" + (global.player.mabel ? "BEAUTY" : "ADVENTURER") + ", FOLKS!";
-                            text[12] = (global.player.mabel ? "S" : "") + "HE'S NOT AFRAID TO PROCLAIM IT #TO THE WORLD!";
+                            if (charCount >= 26) charCount = string_length(text[page]);
                         }
-                        changed_9 = true;
+                        else if (page >= 10)
+                        {
+                            if (action[9] == 0)
+                            {
+                                text[10] = string_concat(
+                                    global.player.name,
+                                    ", hm?&",
+                                    (
+                                        (global.player.mabel and string_lower(global.player.name) == "mabel")
+                                        or (not global.player.mabel and string_lower(global.player.name) == "dipper")
+                                    ) ? "That... makes sense somehow." : "Seems odd to me, but I reckon #you know it better."
+                                );
+                                text[11] = "WELL, CHECK OUT THIS BOLD #" + (global.player.mabel ? "BEAUTY" : "ADVENTURER") + ", FOLKS!";
+                                text[12] = (global.player.mabel ? "S" : "") + "HE'S NOT AFRAID TO PROCLAIM IT #TO THE WORLD!";
+                            }
+                            changed_9 = true;
+                        }
                     }
-                    else if (not changed_13 and page >= 14)
+                    else if (not changed_13)
                     {
-                        if (action[13] == 1)
+                        if (page == 13)
                         {
-                            text[14] = text[15] = ". . .";
-                            if (global.player.mabel)
-                            {
-                                text[16] = "Well, I...&I'm honored, sugar!";
-                                text[17] = "BEAUTY @ffff00AND@ffffff BRAINS, FOLKS!&SHE'S THE TOTAL PACKAGE!";
-                                text[18] = "OF COURSE SHE'D GO FOR WIDDLE OL' ME!";
-                                text[19] = "SHE KNOWS TO LOOK PAST MY ADORABLE LOOKS TO THE REAL STUD BENEATH!";
-                            }
-                            else
-                            {
-                                text[16] = "Well, that's no surprise.";
-                                text[17] = "THAT'S RIGHT, FOLKS!&THIS BOY CAME CLEAR FROM CALIFORNIA";
-                                text[18] = "JUST TO GET A GLIMPSE AT WIDDLE OL' ME!";
-                                text[19] = "HE CERTAINLY KNOWS A STAR WHEN HE SEES ONE!";
-                            }
+                            if (charCount >= 46) charCount = string_length(text[page]);
                         }
-                        changed_13 = true;
+                        else if (page >= 14)
+                        {
+                            if (action[13] == 1)
+                            {
+                                text[14] = ". . .";
+                                text[15] = ". . .";
+                                if (global.player.mabel)
+                                {
+                                    text[16] = "Well, I...&I'm honored, sugar!";
+                                    text[17] = "BEAUTY @ffff00AND@ffffff BRAINS, FOLKS!&SHE'S THE TOTAL PACKAGE!";
+                                    text[18] = "OF COURSE SHE'D GO FOR #WIDDLE OL' ME!";
+                                    text[19] = "SHE KNOWS TO LOOK PAST MY #ADORABLE LOOKS TO THE REAL STUD BENEATH!";
+                                }
+                                else
+                                {
+                                    text[16] = "Well, that's no surprise.";
+                                    text[17] = "THAT'S RIGHT, FOLKS!&THIS BOY CAME CLEAR FROM #CALIFORNIA";
+                                    text[18] = "JUST TO GET A GLIMPSE AT #WIDDLE OL' ME!";
+                                    text[19] = "HE CERTAINLY KNOWS A STAR #WHEN HE SEES ONE!";
+                                }
+                            }
+                            changed_13 = true;
+                        }
                     }
                 }
             }
@@ -215,26 +231,31 @@ if (instance_exists(obj_dipper))
             {
                 self.arm = spr_gideon_tv_arm_move;
                 self.alarm[4] = 60;
+                self.xstart = self.x;
                 ++self.stage;
             }
         break;
         case 8:
             if (self.alarm[4] == -1)
             {
-                if (self.x >= room_width + 40)
+                if (self.x >= room_width + 60)
                 {
                     obj_dipper.canMove = true;
+                    audio_stop_sound(mus_showtime);
+                    audio_sound_gain(mus_showtime, 1);
+                    audio_play_sound(mus_wind, 0, true);
                     instance_destroy();
                 }
-                else if (self.hspeed > 0.5)
+                else if (self.hspeed > 0.2)
                 {
-                    self.hspeed -= 0.5;
+                    self.hspeed -= 0.1;
                 }
                 else
                 {
                     self.hspeed = 0;
-                    self.alarm[4] = 20;
+                    self.alarm[4] = 60;
                 }
+                audio_sound_gain(mus_showtime, 1 - ((self.x - self.xstart) / (room_width + 40 - self.xstart)));
             }
         break;
     }
