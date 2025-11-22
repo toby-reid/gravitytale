@@ -9,7 +9,7 @@ if (instance_exists(obj_dipper)) switch (stage) {
 	case 1:
 		if (alarm[0] == -1) {
 			vspeed += .05;
-			if (draw_y < sprite_height) {
+			if (draw_y > -1 and draw_y < sprite_height) {
 				draw_y++;
 			} else {
 				draw_y = -1; // indicates to 'Draw' event to draw full self
@@ -18,7 +18,6 @@ if (instance_exists(obj_dipper)) switch (stage) {
 				vspeed = 0;
 				y = 120;
 				alarm[1] = 45 + irandom(30);
-                self.draw_y = -1; // TODO: REMOVE
 				stage++;
 				audio_sound_pitch(sfx_whoosh, 1);
 				audio_play_sound(sfx_grass, 0, false);
@@ -74,7 +73,7 @@ if (instance_exists(obj_dipper)) switch (stage) {
 			audio_play_sound(mus_wind, 0, true);
 			room_goto(ow_min_02_start);
 		} else {
-			alpha += .05;
+			alpha += .02;
 		}
 		break;
 }
