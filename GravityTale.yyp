@@ -93,6 +93,8 @@
     {"$GMFolder":"","%Name":"Forest","folderPath":"folders/Sprites/Battle/Forest.yy","name":"Forest","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Attacks","folderPath":"folders/Sprites/Battle/Forest/Attacks.yy","name":"Attacks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Grunts","folderPath":"folders/Sprites/Battle/Forest/Grunts.yy","name":"Grunts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Mines","folderPath":"folders/Sprites/Battle/Mines.yy","name":"Mines","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Grunts","folderPath":"folders/Sprites/Battle/Mines/Grunts.yy","name":"Grunts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scuttlebutt","folderPath":"folders/Sprites/Battle/Scuttlebutt.yy","name":"Scuttlebutt","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Attacks","folderPath":"folders/Sprites/Battle/Scuttlebutt/Attacks.yy","name":"Attacks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Soul","folderPath":"folders/Sprites/Battle/Soul.yy","name":"Soul","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -151,7 +153,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.0.207",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"GravityTale",
   "resources":[
@@ -923,6 +925,9 @@
     {"id":{"name":"spr_min_hole","path":"sprites/spr_min_hole/spr_min_hole.yy",},},
     {"id":{"name":"spr_min_leaf_pile","path":"sprites/spr_min_leaf_pile/spr_min_leaf_pile.yy",},},
     {"id":{"name":"spr_min_tile","path":"sprites/spr_min_tile/spr_min_tile.yy",},},
+    {"id":{"name":"spr_min_unicorn_attacking","path":"sprites/spr_min_unicorn_attacking/spr_min_unicorn_attacking.yy",},},
+    {"id":{"name":"spr_min_unicorn_shaved","path":"sprites/spr_min_unicorn_shaved/spr_min_unicorn_shaved.yy",},},
+    {"id":{"name":"spr_min_unicorn","path":"sprites/spr_min_unicorn/spr_min_unicorn.yy",},},
     {"id":{"name":"spr_moreText","path":"sprites/spr_moreText/spr_moreText.yy",},},
     {"id":{"name":"spr_multiware_talking","path":"sprites/spr_multiware_talking/spr_multiware_talking.yy",},},
     {"id":{"name":"spr_multiware","path":"sprites/spr_multiware/spr_multiware.yy",},},
