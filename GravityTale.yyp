@@ -397,6 +397,7 @@
     {"id":{"name":"btl_fst_21_ford","path":"rooms/btl_fst_21_ford/btl_fst_21_ford.yy",},},
     {"id":{"name":"btl_fst_9_manDan","path":"rooms/btl_fst_9_manDan/btl_fst_9_manDan.yy",},},
     {"id":{"name":"btl_fst_general","path":"rooms/btl_fst_general/btl_fst_general.yy",},},
+    {"id":{"name":"btl_min_general","path":"rooms/btl_min_general/btl_min_general.yy",},},
     {"id":{"name":"btl_scb_1_billBattle","path":"rooms/btl_scb_1_billBattle/btl_scb_1_billBattle.yy",},},
     {"id":{"name":"btl_scb_11_blendin","path":"rooms/btl_scb_11_blendin/btl_scb_11_blendin.yy",},},
     {"id":{"name":"btl_scb_12_beaver","path":"rooms/btl_scb_12_beaver/btl_scb_12_beaver.yy",},},
@@ -1230,6 +1231,7 @@
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_scb_12_puzzle5","path":"rooms/ow_scb_12_puzzle5/ow_scb_12_puzzle5.yy",},},
     {"roomId":{"name":"ow_min_","path":"rooms/ow_min_/ow_min_.yy",},},
+    {"roomId":{"name":"btl_min_general","path":"rooms/btl_min_general/btl_min_general.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

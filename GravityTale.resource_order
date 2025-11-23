@@ -272,6 +272,7 @@
     {"name":"btl_fst_21_ford","order":25,"path":"rooms/btl_fst_21_ford/btl_fst_21_ford.yy",},
     {"name":"btl_fst_9_manDan","order":12,"path":"rooms/btl_fst_9_manDan/btl_fst_9_manDan.yy",},
     {"name":"btl_fst_general","order":5,"path":"rooms/btl_fst_general/btl_fst_general.yy",},
+    {"name":"btl_min_general","order":6,"path":"rooms/btl_min_general/btl_min_general.yy",},
     {"name":"btl_scb_1_billBattle","order":2,"path":"rooms/btl_scb_1_billBattle/btl_scb_1_billBattle.yy",},
     {"name":"btl_scb_11_blendin","order":13,"path":"rooms/btl_scb_11_blendin/btl_scb_11_blendin.yy",},
     {"name":"btl_scb_12_beaver","order":15,"path":"rooms/btl_scb_12_beaver/btl_scb_12_beaver.yy",},
