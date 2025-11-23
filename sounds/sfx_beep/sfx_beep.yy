@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.023401,
+  "duration":0.023401361,
   "exportDir":"",
   "name":"sfx_beep",
   "parent":{

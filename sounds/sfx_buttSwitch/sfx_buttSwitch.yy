@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.313583,
+  "duration":0.31358278,
   "exportDir":"",
   "name":"sfx_buttSwitch",
   "parent":{

@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.40325,
+  "duration":2.4032652,
   "exportDir":"",
   "name":"sfx_bell",
   "parent":{

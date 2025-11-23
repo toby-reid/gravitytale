@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.735057,
+  "duration":0.7350567,
   "exportDir":"",
   "name":"sfx_barrierClosing",
   "parent":{

@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":1,
   "conversionMode":0,
-  "duration":5.95025,
+  "duration":5.9559183,
   "exportDir":"",
   "name":"sfx_billLaugh",
   "parent":{
