@@ -914,6 +914,8 @@
     {"id":{"name":"spr_mg_date_numbers","path":"sprites/spr_mg_date_numbers/spr_mg_date_numbers.yy",},},
     {"id":{"name":"spr_mg_date_textbox","path":"sprites/spr_mg_date_textbox/spr_mg_date_textbox.yy",},},
     {"id":{"name":"spr_mg_ssf2_title","path":"sprites/spr_mg_ssf2_title/spr_mg_ssf2_title.yy",},},
+    {"id":{"name":"spr_min_arach_human","path":"sprites/spr_min_arach_human/spr_min_arach_human.yy",},},
+    {"id":{"name":"spr_min_arach_spider","path":"sprites/spr_min_arach_spider/spr_min_arach_spider.yy",},},
     {"id":{"name":"spr_min_faithPlate_anyDir","path":"sprites/spr_min_faithPlate_anyDir/spr_min_faithPlate_anyDir.yy",},},
     {"id":{"name":"spr_min_faithPlate_d_reversed","path":"sprites/spr_min_faithPlate_d_reversed/spr_min_faithPlate_d_reversed.yy",},},
     {"id":{"name":"spr_min_faithPlate_d","path":"sprites/spr_min_faithPlate_d/spr_min_faithPlate_d.yy",},},

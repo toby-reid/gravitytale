@@ -748,6 +748,8 @@
     {"name":"spr_mg_date_letters","order":7,"path":"sprites/spr_mg_date_letters/spr_mg_date_letters.yy",},
     {"name":"spr_mg_date_numbers","order":5,"path":"sprites/spr_mg_date_numbers/spr_mg_date_numbers.yy",},
     {"name":"spr_mg_date_textbox","order":12,"path":"sprites/spr_mg_date_textbox/spr_mg_date_textbox.yy",},
+    {"name":"spr_min_arach_human","order":11,"path":"sprites/spr_min_arach_human/spr_min_arach_human.yy",},
+    {"name":"spr_min_arach_spider","order":12,"path":"sprites/spr_min_arach_spider/spr_min_arach_spider.yy",},
     {"name":"spr_min_faithPlate_d_reversed","order":2,"path":"sprites/spr_min_faithPlate_d_reversed/spr_min_faithPlate_d_reversed.yy",},
     {"name":"spr_min_faithPlate_d","order":1,"path":"sprites/spr_min_faithPlate_d/spr_min_faithPlate_d.yy",},
     {"name":"spr_min_faithPlate_l_reversed","order":4,"path":"sprites/spr_min_faithPlate_l_reversed/spr_min_faithPlate_l_reversed.yy",},
