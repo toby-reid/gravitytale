@@ -927,6 +927,7 @@
     {"id":{"name":"spr_min_leaf_pile","path":"sprites/spr_min_leaf_pile/spr_min_leaf_pile.yy",},},
     {"id":{"name":"spr_min_leprecorn_shine","path":"sprites/spr_min_leprecorn_shine/spr_min_leprecorn_shine.yy",},},
     {"id":{"name":"spr_min_leprecorn","path":"sprites/spr_min_leprecorn/spr_min_leprecorn.yy",},},
+    {"id":{"name":"spr_min_mockroach","path":"sprites/spr_min_mockroach/spr_min_mockroach.yy",},},
     {"id":{"name":"spr_min_tile","path":"sprites/spr_min_tile/spr_min_tile.yy",},},
     {"id":{"name":"spr_min_unicorn_attacking","path":"sprites/spr_min_unicorn_attacking/spr_min_unicorn_attacking.yy",},},
     {"id":{"name":"spr_min_unicorn_shaved","path":"sprites/spr_min_unicorn_shaved/spr_min_unicorn_shaved.yy",},},

@@ -760,6 +760,7 @@
     {"name":"spr_min_leaf_pile","order":1,"path":"sprites/spr_min_leaf_pile/spr_min_leaf_pile.yy",},
     {"name":"spr_min_leprecorn_shine","order":5,"path":"sprites/spr_min_leprecorn_shine/spr_min_leprecorn_shine.yy",},
     {"name":"spr_min_leprecorn","order":4,"path":"sprites/spr_min_leprecorn/spr_min_leprecorn.yy",},
+    {"name":"spr_min_mockroach","order":10,"path":"sprites/spr_min_mockroach/spr_min_mockroach.yy",},
     {"name":"spr_min_unicorn_attacking","order":2,"path":"sprites/spr_min_unicorn_attacking/spr_min_unicorn_attacking.yy",},
     {"name":"spr_min_unicorn_shaved","order":3,"path":"sprites/spr_min_unicorn_shaved/spr_min_unicorn_shaved.yy",},
     {"name":"spr_min_unicorn","order":1,"path":"sprites/spr_min_unicorn/spr_min_unicorn.yy",},
