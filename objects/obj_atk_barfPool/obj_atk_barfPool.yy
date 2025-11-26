@@ -2,7 +2,6 @@
   "$GMObject":"",
   "%Name":"obj_atk_barfPool",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_soul","path":"objects/obj_soul/obj_soul.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":73,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -16,8 +15,8 @@
     "path":"folders/Objects/Battle/Caves/Attacks.yy",
   },
   "parentObjectId":{
-    "name":"obj_battleAttack",
-    "path":"objects/obj_battleAttack/obj_battleAttack.yy",
+    "name":"obj_atk_beaver",
+    "path":"objects/obj_atk_beaver/obj_atk_beaver.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

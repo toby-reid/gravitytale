@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_enemy_min_mockroach",
+    "path":"sprites/spr_enemy_min_mockroach/spr_enemy_min_mockroach.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

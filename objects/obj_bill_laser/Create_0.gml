@@ -1,4 +1,5 @@
 at = 1
+destroy_on_impact = true;
 image_xscale = 2 - 4*(x<320)
 image_yscale = 2
 dir = irandom(359)

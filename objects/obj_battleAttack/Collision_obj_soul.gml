@@ -1,5 +1,3 @@
-/// @description Override if not destroy
-
 if obj_soul.alarm[0] == -1 or at < 0 {
 	if(!((image_blend == c_orange and other.moving) or (image_blend == c_aqua and !other.moving))) {
 		global.player.hp -= at;
@@ -13,6 +11,6 @@ if obj_soul.alarm[0] == -1 or at < 0 {
 				global.player.hp = global.player.maxHp;
 			}
 		}
-		instance_destroy();
+        if (destroy_on_impact) instance_destroy();
 	}
 }

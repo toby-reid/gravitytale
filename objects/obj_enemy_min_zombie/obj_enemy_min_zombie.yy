@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_enemy_min_zombie",
+    "path":"sprites/spr_enemy_min_zombie/spr_enemy_min_zombie.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

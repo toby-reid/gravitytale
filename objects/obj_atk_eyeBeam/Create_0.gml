@@ -1,4 +1,5 @@
 at = obj_enemy_cav_eyebat.at
+destroy_on_impact = false;
 image_xscale = 0
 image_yscale = 2
 if x < 300 image_angle = 265

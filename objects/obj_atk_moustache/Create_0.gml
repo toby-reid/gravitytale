@@ -1,4 +1,5 @@
 at = obj_enemy_fst_bCub.at
+destroy_on_impact = true;
 image_xscale = 2
 image_yscale = 2
 

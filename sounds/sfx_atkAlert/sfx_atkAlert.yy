@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.091689,
+  "duration":0.086689346,
   "exportDir":"",
   "name":"sfx_atkAlert",
   "parent":{

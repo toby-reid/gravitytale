@@ -2,7 +2,12 @@ global.battleTimer = 300
 
 if global.areaKills[? AREA.MINES].killCount < global.areaKills[? AREA.MINES].MAX_KILLS {
 	var enemyCT = irandom(1) + 1;
-	var enemies = array_create_ext(enemyCT, function(_) { return choose(); });
+	var enemies = array_create_ext(enemyCT, function(_) { return choose(obj_enemy_min_arachnimorph,
+                                                                        obj_enemy_min_leprecorn,
+                                                                        obj_enemy_min_mockroach,
+                                                                        obj_enemy_min_soothsquito,
+                                                                        obj_enemy_min_unicorn,
+                                                                        obj_enemy_min_zombie); });
 	switch enemyCT {
 		case 3://We shouldn't have 3 enemies, but I'll leave this just in case
 			global.enemy[1] = instance_create_layer(128,160,"Instances",enemies[1]);

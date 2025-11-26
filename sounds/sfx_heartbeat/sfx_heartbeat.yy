@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_heartbeat",
+  "audioGroupId":{
+    "name":"Battle",
+    "path":"audiogroups/Battle",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":8,
+  "conversionMode":0,
+  "duration":0.509932,
+  "exportDir":"",
+  "name":"sfx_heartbeat",
+  "parent":{
+    "name":"Battle",
+    "path":"folders/Sounds/SFX/Battle.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_heartbeat.wav",
+  "volume":1.0,
+}
