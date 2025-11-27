@@ -47,10 +47,10 @@ switch global.stage[0] {
 		image_alpha = 1
 		if active if instance_exists(obj_battleBox) switch image_index {
 			case 0://Blue - Pine Tree
-				if keyboard_check(vk_down)  if !place_meeting(x,y+2,obj_battleBox) y+=2
-				if keyboard_check(vk_up)    if !place_meeting(x,y-2,obj_battleBox) y-=2
-				if keyboard_check(vk_right) if !place_meeting(x+2,y,obj_battleBox) x+=2
-				if keyboard_check(vk_left)  if !place_meeting(x-2,y,obj_battleBox) x-=2
+				if keyboard_check(vk_down)  if !place_meeting(x,y+2,obj_battleBox) y += self.is_slow ? 1 : 2;
+				if keyboard_check(vk_up)    if !place_meeting(x,y-2,obj_battleBox) y -= self.is_slow ? 1 : 2;
+				if keyboard_check(vk_right) if !place_meeting(x+2,y,obj_battleBox) x += self.is_slow ? 1 : 2;
+				if keyboard_check(vk_left)  if !place_meeting(x-2,y,obj_battleBox) x -= self.is_slow ? 1 : 2;
 			break
 			case 1://Bluer - Gravity Falling (Ford)
 				if image_angle != rot if instance_exists(obj_battleBox) {//to prevent wall warping

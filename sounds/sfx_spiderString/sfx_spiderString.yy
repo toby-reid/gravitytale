@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfx_alertAtk",
+  "%Name":"sfx_spiderString",
   "audioGroupId":{
-    "name":"Battle",
-    "path":"audiogroups/Battle",
+    "name":"SFX",
+    "path":"audiogroups/SFX",
   },
-  "bitDepth":0,
+  "bitDepth":1,
   "channelFormat":0,
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.0086168,
+  "duration":1.4964626,
   "exportDir":"",
-  "name":"sfx_alertAtk",
+  "name":"sfx_spiderString",
   "parent":{
     "name":"Battle",
     "path":"folders/Sounds/SFX/Battle.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_alertAtk.wav",
+  "soundFile":"sfx_spiderString.wav",
   "volume":1.0,
 }
