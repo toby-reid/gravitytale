@@ -8,8 +8,8 @@ if global.areaKills[? AREA.MINES].killCount < global.areaKills[? AREA.MINES].MAX
                                                                         obj_enemy_min_soothsquito,
                                                                         obj_enemy_min_unicorn,
                                                                         obj_enemy_min_zombie); });
-    enemies[0] = obj_enemy_min_arachnimorph;
-    enemies[1] = obj_enemy_min_arachnimorph;
+    enemies[0] = obj_enemy_min_mockroach;
+    enemies[1] = obj_enemy_min_mockroach;
 	switch enemyCT {
 		case 3://We shouldn't have 3 enemies, but I'll leave this just in case
 			global.enemy[1] = instance_create_layer(128,160,"Instances",enemies[1]);

@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy_min_mockroach",
-  "eventList":[],
+  "%Name":"obj_leprecorn_sparkle",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_enemy_min_mockroach",
+  "name":"obj_leprecorn_sparkle",
   "overriddenProperties":[],
   "parent":{
     "name":"Grunts",
     "path":"folders/Objects/Battle/Mines (Amber Tunnels)/Grunts.yy",
   },
-  "parentObjectId":{
-    "name":"obj_battleEnemy",
-    "path":"objects/obj_battleEnemy/obj_battleEnemy.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy_min_mockroach",
-    "path":"sprites/spr_enemy_min_mockroach/spr_enemy_min_mockroach.yy",
+    "name":"spr_enemy_min_leprecorn_shine",
+    "path":"sprites/spr_enemy_min_leprecorn_shine/spr_enemy_min_leprecorn_shine.yy",
   },
   "spriteMaskId":null,
   "visible":true,

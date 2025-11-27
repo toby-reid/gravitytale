@@ -26,7 +26,7 @@ if (instance_number(obj_battleEnemy) > 1)
     switch instance_find(obj_battleEnemy,0).object_index
     {
     	case obj_enemy_min_arachnimorph: obj_battleCore.text[0] = "A legendary magical creature #stands to judge a very normal #guy!"; break;
-        case obj_enemy_min_leprecorn: obj_battleCore.text[0] = "What's this?&Two Shiny creatures at once?&You feel extremely lucky!"; break;
+        case obj_enemy_min_leprecorn: obj_battleCore.text[0] = "One horn plays rave music, #the other \"Danny Boy\".&How dreadful."; break;
         case obj_enemy_min_mockroach: obj_battleCore.text[0] = "You prepare yourself for the #ridicule at never being truly #pure of heart."; break;
         case obj_enemy_min_soothsquito: obj_battleCore.text[0] = "Suddenly, a mosquito-bite #message appears on your arm:&NAVE ITS SHECK"; break;
         case obj_enemy_min_unicorn: obj_battleCore.text[0] = "Good, twice the annoyance, #double the rave music."; break;
