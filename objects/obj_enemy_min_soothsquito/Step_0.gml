@@ -21,3 +21,8 @@ if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4
 
 self.image_xscale = (self.maxhp >= 5) ? 2 : (0.75 + (0.25 * self.maxhp));
 self.image_yscale = self.image_xscale;
+if (irandom(2) == 0)
+{
+    self.x = self.xstart + irandom_range(-2, 2);
+    self.y = self.ystart + irandom_range(-2, 2);
+}

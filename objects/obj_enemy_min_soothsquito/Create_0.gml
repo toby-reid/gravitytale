@@ -7,7 +7,7 @@ hp = 1;
 maxhp = hp;
 at = 1;
 lv = false;
-sb = 0;
+sb = 8;
 area = AREA.MINES;
 timer = 0;
 create = true;
@@ -19,6 +19,7 @@ cilantro = false;
 image_xscale = 1;
 image_yscale = 1;
 y -= 100;
+ystart = y;
 
 obj_battleCore.text[0] = "It was so small, you almost #didn't notice.&That's what you said, anyway.";
 if instance_number(obj_battleEnemy) > 1

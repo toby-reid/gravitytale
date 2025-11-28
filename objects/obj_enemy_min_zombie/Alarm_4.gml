@@ -12,7 +12,7 @@ else
         self.bucket ? "there's #bucket #on my #head" : (self.cone ? "road #cones #protect #my head" : "there's #nothing #on my #head"),
         "we are #the #undead",
         "i used #to play #football",
-        "i have #returned #from the #grave to #give the #living #haircuts",
+        "returned #from the #grave to #give the #living #haircuts", // max line count is 6
         "it's not #original #but it's #true: #i love #brains",
         "erm... #brians?",
         "hello, #i'm #Rob #Armoury"

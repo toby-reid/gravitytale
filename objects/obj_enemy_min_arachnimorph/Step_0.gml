@@ -24,7 +24,9 @@ if image_alpha == 1
                 instance_create_layer(obj_battleBox.x + irandom_range(-70, 70), obj_battleBox.y + irandom_range(-50, 50), layer, obj_atk_spiderweb);
             }
         }
-        else if (self.timer == 420 or (self.timer == 300 and instance_number(obj_battleEnemy) > 1))
+        else if (self.timer == 420
+                 or (self.timer == 180 and !self.is_spider and instance_number(obj_battleEnemy) == 1)
+                 or (self.timer == 300 and instance_number(obj_battleEnemy) > 1))
         {
             ++global.stage[0];
         }

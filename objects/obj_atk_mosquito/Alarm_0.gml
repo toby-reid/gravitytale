@@ -6,5 +6,6 @@ if (self.host != noone)
 {
     self.host.maxhp += self.at;
     self.host.hp += self.at;
+    ++self.host.at;
 }
 instance_destroy();

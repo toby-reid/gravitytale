@@ -12,6 +12,7 @@ if (self.image_index == 1)
         if (self.heartbeat_index == 0)
         {
             self.heartbeat_color = choose(c_orange, c_aqua);
+            self.image_blend = self.heartbeat_color;
         }
         else if (self.heartbeat_index == 3)
         {
@@ -21,7 +22,7 @@ if (self.image_index == 1)
             }
             audio_play_sound(sfx_heartbeat, 0, false);
         }
-        self.image_blend = self.heartbeat_color;
+        else self.image_blend = self.heartbeat_color;
         self.heartbeat_index = (self.heartbeat_index + 1) mod 4;
     }
 }
