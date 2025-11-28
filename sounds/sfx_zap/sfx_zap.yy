@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.862948,
+  "duration":0.8629478,
   "exportDir":"",
   "name":"sfx_zap",
   "parent":{

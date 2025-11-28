@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfx_guitar",
+  "%Name":"sfx_burp",
   "audioGroupId":{
     "name":"Battle",
     "path":"audiogroups/Battle",
   },
-  "bitDepth":0,
+  "bitDepth":1,
   "channelFormat":0,
   "compression":2,
-  "compressionQuality":1,
+  "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.5844218,
+  "duration":1.3214059,
   "exportDir":"",
-  "name":"sfx_guitar",
+  "name":"sfx_burp",
   "parent":{
     "name":"Battle",
     "path":"folders/Sounds/SFX/Battle.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_guitar.wav",
+  "soundFile":"sfx_burp.wav",
   "volume":1.0,
 }

@@ -4,9 +4,11 @@ if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4
     if (self.timer == 0)
     {
         if (self.sprite_index != spr_enemy_min_unicorn_shaved) self.sprite_index = spr_enemy_min_unicorn_attacking;
+        var dir = irandom(359);
+        var dist = obj_battleBox.sprite_width / 2;
         with instance_create_layer(
-            obj_battleBox.x + irandom(obj_battleBox.sprite_width) - (obj_battleBox.sprite_width / 2),
-            obj_battleBox.y + irandom(obj_battleBox.sprite_height) - (obj_battleBox.sprite_height / 2),
+            obj_battleBox.x + lengthdir_x(dist, dir),
+            obj_battleBox.y + lengthdir_y(dist, dir),
             layer,
             obj_atk_unicornHeart
         )
@@ -16,13 +18,6 @@ if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4
                 heartbeat *= 2;
                 alarm[0] = heartbeat;
                 if (instance_number(obj_battleAttack) > 1) delay = 2;
-            }
-            var attempts = 0;
-            while (attempts < 5 and instance_place(x, y, [obj_atk_unicornHeart, obj_soul]) != noone)
-            {
-                x = obj_battleBox.x + irandom(obj_battleBox.sprite_width) - (obj_battleBox.sprite_width / 2);
-                y = obj_battleBox.y + irandom(obj_battleBox.sprite_height) - (obj_battleBox.sprite_height / 2);
-                ++attempts;
             }
         }
     }
