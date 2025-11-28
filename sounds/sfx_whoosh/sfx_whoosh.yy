@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.449417,
+  "duration":0.44408163,
   "exportDir":"",
   "name":"sfx_whoosh",
   "parent":{

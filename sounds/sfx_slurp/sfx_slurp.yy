@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.719728,
+  "duration":0.7197279,
   "exportDir":"",
   "name":"sfx_slurp",
   "parent":{
