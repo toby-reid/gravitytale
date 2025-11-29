@@ -6,11 +6,11 @@ else if instance_exists(obj_dipper) {
 	if obj_dipper.canMove and obj_dipper.moving {
 		if irandom(1500) == 0 or global.battleTimer <= -1800 {
 			switch loc {
-				case AREA.SCUTTLEBUTT:	goto = btl_scb_general; prevMusic = mus_ruins break
-				case AREA.FOREST:		goto = btl_fst_general; prevMusic = mus_snowy break
-				case AREA.CAVES:		goto = btl_cav_general; /*prevMusic set at CC*/ break
-			
-				//More areas - tent, ufo
+				case AREA.SCUTTLEBUTT:	goto = btl_scb_general; prevMusic = mus_ruins;  break;
+				case AREA.FOREST:		goto = btl_fst_general; prevMusic = mus_snowy;  break;
+				case AREA.CAVES:		goto = btl_cav_general; /*prevMusic set at CC*/ break;
+				case AREA.MINES:        goto = btl_min_general; prevMusic = mus_medium; break;
+				case AREA.TENT:         break; // TODO: Implement when you add the room
 			}
 			if loc != AREA.UNKNOWN {
 				alarm[0] = 30

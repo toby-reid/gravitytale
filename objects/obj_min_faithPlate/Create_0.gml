@@ -1,5 +1,5 @@
 self.launchTime = 40;
-self.turnTime = self.launchTime / 4;
+self.turnTime = floor(self.launchTime / 4);
 self.delta_y = 0.2;
 
 if (self.is_any_direction)

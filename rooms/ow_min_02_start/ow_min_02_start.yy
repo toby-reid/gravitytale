@@ -14,6 +14,7 @@
     {"name":"inst_2C45AF11","path":"rooms/ow_min_02_start/ow_min_02_start.yy",},
     {"name":"inst_3AA68BDD","path":"rooms/ow_min_02_start/ow_min_02_start.yy",},
     {"name":"inst_74474BBC","path":"rooms/ow_min_02_start/ow_min_02_start.yy",},
+    {"name":"inst_1D4CC16E","path":"rooms/ow_min_02_start/ow_min_02_start.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -30,6 +31,9 @@
         {"$GMRInstance":"v4","%Name":"inst_74474BBC","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_74474BBC","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_toRoom","path":"objects/obj_toRoom/obj_toRoom.yy",},"propertyId":{"name":"goto","path":"objects/obj_toRoom/obj_toRoom.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"ow_min_03_gideon1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":320.0,"y":100.0,},
+        {"$GMRInstance":"v4","%Name":"inst_1D4CC16E","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1D4CC16E","objectId":{"name":"obj_randBattle","path":"objects/obj_randBattle/obj_randBattle.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_randBattle","path":"objects/obj_randBattle/obj_randBattle.yy",},"propertyId":{"name":"loc","path":"objects/obj_randBattle/obj_randBattle.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"AREA.MINES",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":20.0,"y":20.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_3","depth":200,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":16,"TileCompressedData":[
           2,-2147483648,69,-7,67,1,85,-7,-2147483648,1,112,-15,-2147483648,1,112,-15,-2147483648,1,112,-15,-2147483648,
