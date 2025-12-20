@@ -4,8 +4,8 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
 	file_delete("Info.save"); // bitfile for in-game global variables
 	// Rest.save is the information that stays between Resets & Saves, like how many times a person has killed you
 
-// TODO: Include global.dummy, global.ghost
-// global.study, global.defeated_unicorn, global.hat, global.costume
+// TODO: Investigate global.dip_pos, global.dummy, global.teleport, global.ghost, global.load,
+// global.study, global.defeated_unicorn, global.hat, global.costume, global.music
 
 	ini_open("Prof.save");
 	ini_write_string("Profile","NM",global.player.name);
