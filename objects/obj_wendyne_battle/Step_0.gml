@@ -28,7 +28,7 @@ if image_alpha == 1 if(instance_exists(obj_battleBox)) if global.stage[0] == 4 {
 			}
 			else global.stage[0]++;
 		}
-		else if(global.wendyne < 21) {//first time
+		else if(global.wendy < 21) {//first time
 			switch trap {
 				case 5://3 from the top
 					if(audio_is_playing(sfx_damageTaken)) if(hp == maxhp) {
@@ -75,7 +75,7 @@ if image_alpha == 1 if(instance_exists(obj_battleBox)) if global.stage[0] == 4 {
 							makeaxe(obj_soul.x+320*_lr,obj_soul.y);
 						}
 						else if(timer == 375) instance_create_layer(obj_soul.x-320,obj_soul.y,layer,obj_wendyne_axe_yellow);
-						else if(timer >= 720) timer = 3000;//global.wendyne covered in Begin Step
+						else if(timer >= 720) timer = 3000;//global.wendy covered in Begin Step
 					}
 					break;
 			}

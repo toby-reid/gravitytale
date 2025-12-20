@@ -29,8 +29,10 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v2","%Name":"loc","filters":[],"listItems":[],"multiselect":false,"name":"loc","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"AREA.UNKNOWN","varType":1,},
-    {"$GMObjectProperty":"v2","%Name":"prevMusic","filters":[],"listItems":[],"multiselect":false,"name":"prevMusic","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"loc","filters":[],"listItems":[],"multiselect":false,"name":"loc","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"AREA.UNKNOWN","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"prevMusic","filters":[
+        "GMSound",
+      ],"listItems":[],"multiselect":false,"name":"prevMusic","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

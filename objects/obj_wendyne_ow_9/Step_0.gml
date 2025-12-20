@@ -22,7 +22,7 @@ if instance_exists(obj_dipper) switch stage {
 	case 2:
 		if index < 7 index += .25
 		with obj_dipper if x > 320 if place_meeting(x,y,obj_toRoom)
-			if global.wendyne < 9 global.wendyne = 9
+			if global.wendy < 9 global.wendy = 9
 		if obj_dipper.x >= xstart x = obj_dipper.x
 		if x <= 260 { if y < ystart y += 2 }
 		else if x > 285 and x <= 345 { if y > 80 y -= 2; else if y < 80 y += 2 }

@@ -24,7 +24,7 @@ vspeed = .4;
 obj_soul.image_index = 3;
 
 global.enemy = [id];
-if(!variable_global_exists("wendyne")) global.wendyne = 20;
+if(!variable_global_exists("wendy")) global.wendy = 20;
 
 obj_battleCore.text[0] = "Wendy Corduroy is here to end #this!&Let's end her first!";
 trap = 5;

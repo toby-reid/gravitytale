@@ -53,7 +53,7 @@ if hp <= 0 {
 		}
 		else if(!instance_exists(obj_textBubble)) {//actually dead
 			if(!instance_exists(obj_textBubble)) {
-				if(global.wendyne < 22) {
+				if(global.wendy < 22) {
 					bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble);
 					with bubble {
 						text = [
@@ -80,7 +80,7 @@ if hp <= 0 {
 							charRate[i] = .2;
 						}
 					}
-					global.wendyne = 22;
+					global.wendy = 22;
 				}
 				else {
 					if(image_alpha == 1) {

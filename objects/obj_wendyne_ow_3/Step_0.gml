@@ -34,7 +34,7 @@ if instance_exists(obj_dipper) switch stage {
 		image_speed = 1
 		if obj_dipper.x >= 1270 {
 			with obj_dipper while !place_meeting(x,y,obj_toRoom) x++
-			global.wendyne = 3
+			global.wendy = 3
 			audio_group_unload(Battle)
 			stage++
 		}

@@ -51,7 +51,7 @@
     {"$GMFolder":"","%Name":"Battle","folderPath":"folders/Objects/Characters/Soos/Battle.yy","name":"Battle","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Stans","folderPath":"folders/Objects/Characters/Stans.yy","name":"Stans","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Battle","folderPath":"folders/Objects/Characters/Stans/Battle.yy","name":"Battle","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Wendyne","folderPath":"folders/Objects/Characters/Wendyne.yy","name":"Wendyne","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Wendy","folderPath":"folders/Objects/Characters/Wendy.yy","name":"Wendy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Meta","folderPath":"folders/Objects/Meta.yy","name":"Meta","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Minigames","folderPath":"folders/Objects/Minigames.yy","name":"Minigames","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Overworld","folderPath":"folders/Objects/Overworld.yy","name":"Overworld","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -155,7 +155,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.1.210",
+    "IDEVersion":"2024.14.2.213",
   },
   "name":"GravityTale",
   "resources":[
@@ -1137,6 +1137,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"ow_min_05_pz1","path":"rooms/ow_min_05_pz1/ow_min_05_pz1.yy",},},
     {"roomId":{"name":"ow_min_06_pz2","path":"rooms/ow_min_06_pz2/ow_min_06_pz2.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
@@ -1268,7 +1269,6 @@
     {"roomId":{"name":"ow_cav_7_manCave","path":"rooms/ow_cav_7_manCave/ow_cav_7_manCave.yy",},},
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_scb_12_puzzle5","path":"rooms/ow_scb_12_puzzle5/ow_scb_12_puzzle5.yy",},},
-    {"roomId":{"name":"ow_min_05_pz1","path":"rooms/ow_min_05_pz1/ow_min_05_pz1.yy",},},
     {"roomId":{"name":"ow_min_","path":"rooms/ow_min_/ow_min_.yy",},},
   ],
   "templateType":null,

@@ -15,8 +15,8 @@ else if timer >= 180 {
 	alpha++
 	if alpha == 1 {
 		var rm = room
-		if global.wendyne < 3 rm = ow_cav_3_chase1
-		else if global.wendyne < 9 rm = ow_cav_9_chase2
+		if global.wendy < 3 rm = ow_cav_3_chase1
+		else if global.wendy < 9 rm = ow_cav_9_chase2
 		room_goto(rm)
 	}
 }

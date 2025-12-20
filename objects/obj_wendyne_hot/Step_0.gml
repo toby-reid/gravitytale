@@ -5,7 +5,7 @@ switch stage {
 				obj_dipper.canMove = false;
 				image_speed = .25;
 				hspeed = .25;
-                global.wendyne = 23;
+                global.wendy = 23;
 			}
 			else {
 				if(image_index%2 == 1) audio_play_sound(sfx_wendyne_step,0,false);

@@ -45,11 +45,11 @@ if(image_alpha==1 and alarm[11]==-1 and !instance_exists(bubble) and alpha==0 an
 			global.stage[0]++;
 		}
 		else {
-			if(global.wendyne < 21) {
+			if(global.wendy < 21) {
 				if(timer < 240) {
 					if(timer%60 == 30) makeaxe(obj_soul.x,obj_soul.y-240);
 				}
-				else global.wendyne = 21;
+				else global.wendy = 21;
 			}
 			else {
 				if(timer == 60) attack = 5//irandom(5);

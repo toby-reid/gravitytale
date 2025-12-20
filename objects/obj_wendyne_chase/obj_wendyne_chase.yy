@@ -11,8 +11,8 @@
   "name":"obj_wendyne_chase",
   "overriddenProperties":[],
   "parent":{
-    "name":"Wendyne",
-    "path":"folders/Objects/Characters/Wendyne.yy",
+    "name":"Wendy",
+    "path":"folders/Objects/Characters/Wendy.yy",
   },
   "parentObjectId":null,
   "persistent":false,

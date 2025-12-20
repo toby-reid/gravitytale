@@ -5,5 +5,5 @@ index = 0
 count = 0
 alpha = 0
 
-if !variable_global_exists("wendyne") global.wendyne = 13
-else if global.wendyne >= 14 instance_destroy()
+if !variable_global_exists("wendy") global.wendy = 13
+else if global.wendy >= 14 instance_destroy()

@@ -12,8 +12,8 @@
   "name":"obj_wendyne_ow_9",
   "overriddenProperties":[],
   "parent":{
-    "name":"Wendyne",
-    "path":"folders/Objects/Characters/Wendyne.yy",
+    "name":"Wendy",
+    "path":"folders/Objects/Characters/Wendy.yy",
   },
   "parentObjectId":null,
   "persistent":false,

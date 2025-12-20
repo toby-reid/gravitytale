@@ -11,7 +11,7 @@ with instance_create_layer(240,760,layer,obj_save) {
 	loc = AREA.CAVES;
 }
 instance_destroy(obj_dontGo);
-if (global.wendyne < 22) global.wendyne = 22;
+if (global.wendy < 22) global.wendy = 22;
 with inst_toRoom_cav_21 {
 	goto = ow_min_00_hotwendy;
 	music = mus_wind;

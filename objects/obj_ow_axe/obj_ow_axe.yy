@@ -14,8 +14,8 @@
   "name":"obj_ow_axe",
   "overriddenProperties":[],
   "parent":{
-    "name":"Wendyne",
-    "path":"folders/Objects/Characters/Wendyne.yy",
+    "name":"Wendy",
+    "path":"folders/Objects/Characters/Wendy.yy",
   },
   "parentObjectId":null,
   "persistent":false,
