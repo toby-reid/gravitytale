@@ -1,135 +1,94 @@
 /// @param {bool} _softload: Set to 'true' to avoid resetting certain variables, such as global.soos
 function scr_load() {
-	var _bin = file_bin_open("Info.save",0); // open in 'read' mode
+    var _bin = file_bin_open(global.SAVE_FILES.SAVE_DATA, 0); // open in 'read' mode
 
-	if (read_bin_string(_bin) != GM_version) {
-		file_bin_close(_bin);
-		return false;
-	}
-	room_goto(asset_get_index(read_bin_string(_bin)));
-	window_set_caption(read_bin_string(_bin));
+    if (scr_readString(_bin) != global.ENCRYPTION_KEY)
+    {
+        file_bin_close(_bin);
+        return false;
+    }
+    room_goto(asset_get_index(scr_readString(_bin)));
+    window_set_caption(scr_readString(_bin));
 
-	{
-		var _name = read_bin_string(_bin);
-		var _mabel = bool(file_bin_read_byte(_bin));
-		var _time = array_create(file_bin_read_byte(_bin), 0);
-		for (var i = 0; i < array_length(_time); i++) _time[i] = file_bin_read_byte(_bin);
-		var _kills = file_bin_read_byte(_bin);
-		var _spares = file_bin_read_byte(_bin);
-		var _hp = file_bin_read_byte(_bin);
-		var _maxHp = file_bin_read_byte(_bin);
-		var _money = read_bytes(_bin, 2);
-		var _lv = file_bin_read_byte(_bin);
-		var _at_df = file_bin_read_byte(_bin);
-		var _bag_coupon = file_bin_read_byte(_bin);
-		var _genocide = file_bin_read_byte(_bin);
-		var _pic_potty = file_bin_read_byte(_bin);
-		global.player = {
-			name: _name,
-			mabel: _mabel,
-			time: _time,
-			kills: _kills,
-			spares: _spares,
-			hp: _hp,
-			maxHp: _maxHp,
-			money: _money,
-			lv: _lv,
-			at: _at_df >> 4,
-			df: _at_df & 0xf,
-			bag: _bag_coupon >> 4,
-			coupon: _bag_coupon & 0xf,
-			genocide: _genocide,
-			beaverPic: _pic_potty >> 4,
-			portalPotty: _pic_potty & 0xf
-		}
-	}
+    global.player.name = scr_readString(_bin);
+    global.player.mabel = scr_readBools(_bin, 1)[0];
+    global.player.time = scr_readArray(_bin);
+    global.player.kills = scr_readInteger(_bin, 2);
+    global.player.spares = scr_readInteger(_bin, 2);
+    global.player.hp = scr_readInteger(_bin, 1);
+    global.player.maxhp = scr_readInteger(_bin, 1);
+    global.player.money = scr_readInteger(_bin, 4);
+    global.player.lv = scr_readInteger(1);
+    {
+        var at_df_bag_coupon = scr_readInteger(_bin);
+        global.player.at = (at_df_bag_coupon >> 6) & 0b11;
+        global.player.df = (at_df_bag_coupon >> 4) & 0b11;
+        global.player.bag = (at_df_bag_coupon >> 2) & 0b11;
+        global.player.coupon = (at_df_bag_coupon & 1) == 1;
+    }
+    {
+        var geno_beaver_potty = scr_readInteger(_bin);
+        global.player.genocide = (geno_beaver_potty >> 6) & 0b11;
+        global.player.beaverPic = (geno_beaver_potty >> 3) & 0b111;
+        global.player.portalPotty = geno_beaver_potty & 0b111;
+    }
 
-	global.inventory = array_create(file_bin_read_byte(_bin), ITEM_NAME.NONE);
-	for (var i = 0; i < array_length(global.inventory); i++) {
-		global.inventory[i] = file_bin_read_byte(_bin);
-	}
+    global.inventory = scr_readArray(_bin);
+    global.costume = scr_readInteger(_bin);
+    global.menu = scr_readArray(_bin);
+    global.battleTimer = scr_readInteger(_bin, 2);
 
-	global.menu = [file_bin_read_byte(_bin), file_bin_read_byte(_bin)];
-	global.battleTimer = read_bytes(_bin, 2);
+    global.enemy_killed = scr_readBools(_bin, ENEMY.TOTAL);
+    global.enemy_spared = scr_readBools(_bin, ENEMY.TOTAL);
 
-	var size = file_bin_read_byte(_bin);
-	global.enemy_killed = array_create(size, false);
-	global.enemy_spared = array_create(size, false);
-	var enemy_killed = 0;
-	var enemy_spared = 0;
-	for (var i = 8 * floor(size / 8); i >= 0; i -= 8) {
-		enemy_killed += (file_bin_read_byte(_bin) << i);
-		enemy_spared += (file_bin_read_byte(_bin) << i);
-	}
-	for (var i = size - 1; i >= 0; i--) {
-		global.enemy_killed[i] = bool(enemy_killed & 0x1);
-		enemy_killed = enemy_killed >> 1;
-		global.enemy_spared[i] = bool(enemy_spared & 0x1);
-		enemy_spared = enemy_spared >> 1;
-	}
+    {
+        var dummy_ghost = scr_readInteger(_bin);
+        global.dummy = (dummy_ghost >> 4) & 0b1111;
+        global.ghost = dummy_ghost & 0b1111;
+    }
+    {
+        var study_unicorn_hat = scr_readBools(_bin, 3);
+        global.study = study_unicorn_hat[0];
+        global.defeated_unicorn = study_unicorn_hat[1];
+        global.hat = study_unicorn_hat[2];
+    }
 
-	for (var i = 0; i < AREA.TOTAL; i++) {
-		global.areaKills[? i].killCount = file_bin_read_byte(_bin);
-	}
+    // TODO: Update global.areaKills to be an array of objects
+    for (var i = 0; i < AREA.TOTAL; i++)
+    {
+        global.areaKills[? i].killCount = scr_readInteger(_bin, 1);
+    }
 
-	{
-		var _x = read_bytes(_bin, 4);
-		var _y = read_bytes(_bin, 4);
-		global.dip_pos = [_x, _y];
-	}
+    {
+        var _x = scr_readInteger(_bin, 4);
+        var _y = scr_readInteger(_bin, 4);
+        global.dip_pos = [_x, _y];
+    }
 
-	var _music = asset_get_index(read_bin_string(_bin));
-	if (_music != silence) {
-		audio_stop_all();
-		audio_play_sound(_music, 0, true);
-	}
+    {
+        var _music = asset_get_index(scr_readString(_bin));
+        if (_music != silence)
+        {
+            audio_group_stop_all(Music);
+            audio_play_sound(_music, 0, true);
+        }
+    }
 
-	global.soos   = file_bin_read_byte(_bin);
-	global.stans  = file_bin_read_byte(_bin);
-	global.toby   = file_bin_read_byte(_bin);
-	global.wendy  = file_bin_read_byte(_bin);
-	global.gideon = file_bin_read_byte(_bin);
+    global.soos   = scr_readInteger(_bin);
+    global.stans  = scr_readInteger(_bin);
+    global.toby   = scr_readInteger(_bin);
+    global.wendy  = scr_readInteger(_bin);
+    global.gideon = scr_readInteger(_bin);
 
-	var next = file_bin_read_byte(_bin);
-	global.hamstick = (next >> 4) & 0b1111;
-	global.fairydust = next & 0b1111;
+    {
+        var ham_fairy = scr_readBools(_bin, 2);
+        global.hamstick = ham_fairy[0];
+        global.fairydust = ham_fairy[1];
+    }
 
-	global.buttSwitch = array_create(read_bytes(_bin, 2), "");
-	for (var i = 0; i < array_length(global.buttSwitch); i++) {
-		global.buttSwitch[i] = read_bin_string(_bin);
-	}
+    global.buttSwitch = scr_readArray(_bin, scr_readString);
+    global.trashCan = scr_readArray(_bin, function(b) { return scr_readInteger(b, 8); });
 
-	global.trashCan = array_create(read_bytes(_bin, 2));
-	for (var i = 0; i < array_length(global.trashCan); i++) {
-		global.trashCan[i] = read_bytes(_bin, 4);
-	}
-
-	file_bin_close(_bin);
-	return true;
-}
-
-/// @desc Returns a string representation of the next string found in the file. Assumes _bin was already opened.
-function read_bin_string(_bin) {
-	var _next = file_bin_read_byte(_bin);
-	var _str = "";
-	for(var i = 0; i < _next; i++) {
-		var _chr = file_bin_read_byte(_bin);
-		if(_chr < 32) _chr += 32;
-		else if(_chr >= 128) _chr -= 128;
-		_str += chr(_chr - 2);
-	}
-	return _str;
-}
-
-/// @desc Reads the next 'count' bytes and returns the full number represented thereby.
-/// @param {id.BinaryFile} _bin: A binary file already opened in Read mode
-/// @param {real} count: The number of bytes to read as a single number
-/// @return {real} The value that was stored in the next 'count' bytes
-function read_bytes(_bin, count) {
-	var total = 0;
-	for (var i = 0; i < count; i++) {
-		total += file_bin_read_byte(_bin);
-		total = total << 8;
-	}
-	return (total >> 8);
+    file_bin_close(_bin);
+    return true;
 }
