@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_save_old",
+  "%Name":"scr_xorEncrypt",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_save_old",
+  "name":"scr_xorEncrypt",
   "parent":{
-    "name":"SaveLoad",
-    "path":"folders/Scripts/SaveLoad.yy",
+    "name":"Utility",
+    "path":"folders/Scripts/SaveLoad/Utility.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_writeInteger",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_writeInteger",
+  "parent":{
+    "name":"Utility",
+    "path":"folders/Scripts/SaveLoad/Utility.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

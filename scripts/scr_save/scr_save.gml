@@ -1,136 +1,102 @@
 /// @param {string} rmName: The name of the current room, to be used in Prof.save
 function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
-	file_delete("Prof.save"); // ini for obj_startMenu info
-	file_delete("Info.save"); // bitfile for in-game global variables
+	file_delete(global.SAVE_FILES.PROFILE); // ini for obj_startMenu info
+	file_delete(global.SAVE_FILES.SAVE_DATA); // bitfile for in-game global variables
 	// Rest.save is the information that stays between Resets & Saves, like how many times a person has killed you
 
 // TODO: Include global.dummy, global.ghost
 // global.study, global.defeated_unicorn, global.hat, global.costume
 
-	ini_open("Prof.save");
-	ini_write_string("Profile","NM",global.player.name);
-	ini_write_real("Profile","LV",global.player.lv);
-	ini_write_string("Profile","RM",rmName);
-	ini_write_string("Profile","TM",scr_format_time());
+	ini_open(global.SAVE_FILES.PROFILE.NAME);
+	ini_write_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY,global.SAVE_FILES.PROFILE.KEYS.PLAYER_NAME,global.player.name);
+	ini_write_real(global.SAVE_FILES.PROFILE.KEYS.PRIMARY,global.SAVE_FILES.PROFILE.KEYS.LV,global.player.lv);
+	ini_write_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY,global.SAVE_FILES.PROFILE.KEYS.ROOM_NAME,rmName);
+	ini_write_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY,global.SAVE_FILES.PROFILE.KEYS.PLAY_TIME,scr_format_time());
 	ini_close();
 
-	var _bin = file_bin_open("Info.save", 1); // opens new binary file in write mode
+	var _bin = file_bin_open(global.SAVE_FILES.SAVE_DATA.NAME, 1); // opens new binary file in write mode
 
 	// The following must be read/written in order.
-	write_bin_string(_bin, GM_version);
-	write_bin_string(_bin, room_get_name(room));
-	write_bin_string(_bin, window_get_caption());
+	scr_writeString(_bin, global.ENCRYPTION_KEY);
+	scr_writeString(_bin, room_get_name(room));
+	scr_writeString(_bin, window_get_caption());
 
-	write_bin_string(_bin, global.player.name);
-	file_bin_write_byte(_bin, global.player.mabel);
-	file_bin_write_byte(_bin, array_length(global.player.time));
-	for (var i = 0; i < array_length(global.player.time); i++) {
-		file_bin_write_byte(_bin, global.player.time[i]);
-	}
-	file_bin_write_byte(_bin, global.player.kills);
-	file_bin_write_byte(_bin, global.player.spares);
-	file_bin_write_byte(_bin, global.player.hp);
-	file_bin_write_byte(_bin, global.player.maxHp);
-	write_bytes(_bin, global.player.money, 2);
-	file_bin_write_byte(_bin, global.player.lv);
-	var at_df = (global.player.at << 4) + global.player.df;
-	file_bin_write_byte(_bin, at_df);
-	var bonus = (global.player.bag << 4) + global.player.coupon;
-	file_bin_write_byte(_bin, bonus);
-	file_bin_write_byte(_bin, global.player.genocide);
-	var progress = (global.player.beaverPic << 4) + global.player.portalPotty;
-	file_bin_write_byte(_bin, progress);
+	scr_writeString(_bin, global.player.name);
+	scr_writeBools(_bin, [global.player.mabel]);
+    // Assuming the player hasn't been playing for 256 hours, 1 byte should be plenty for each unit of time
+    scr_writeArray(_bin, global.player.time);
+    // Depending on how it goes, the player may have a lot of kills/spares... so allocate 2 bytes for each
+    scr_writeInteger(_bin, global.player.kills, 2);
+    scr_writeInteger(_bin, global.player.spares, 2);
+    scr_writeInteger(_bin, global.player.hp, 1); // This should never exceed 99 normally
+    scr_writeInteger(_bin, global.player.maxhp, 1); // Same
+    scr_writeInteger(_bin, global.player.money, 4); // Absurdly large, but ya never know!
+    scr_writeInteger(_bin, global.player.lv, 1); // This should never exceed 20 normally
+    var at_df_bag_coupon = (
+        (global.player.at << 6) // 0-2 (2 bits)
+        + (global.player.df << 4) // 0-2 (2 bits)
+        + (global.player.bag << 2) // 0-3 (2 bits)
+        + (global.player.coupon ? 1 : 0) // 0-1 (1 bit)
+    );
+    scr_writeInteger(_bin, at_df_bag_coupon, 1);
+    var geno_beaver_potty = (
+        (global.player.genocide << 6) // 0-2 (2 bits)
+        + (global.player.beaverPic << 3) // 0-4 (3 bits)
+        + global.player.portalPotty // 0-4 (3 bits)
+    );
+    scr_writeInteger(_bin, geno_beaver_potty, 1);
 
-	file_bin_write_byte(_bin, array_length(global.inventory));
-	for(var i = 0; i < array_length(global.inventory); i++) {
-		file_bin_write_byte(_bin, global.inventory[i]);
-	}
+    scr_writeArray(_bin, global.inventory);
+    scr_writeInteger(_bin, global.costume);
+    scr_writeArray(_bin, global.menu);
+    scr_writeInteger(_bin, global.battleTimer, 2);
 
-	file_bin_write_byte(_bin, global.menu[0]);
-	file_bin_write_byte(_bin, global.menu[1]);
-	write_bytes(_bin, global.battleTimer, 2);
+    scr_writeBools(_bin, global.enemy_killed);
+    scr_writeBools(_bin, global.enemy_spared);
 
-	// Write a set of bytes that directly interprets a 1 as 'true' and 0 as 'false'
-	var enemy_killed = 0;
-	var enemy_spared = 0;
-	file_bin_write_byte(_bin, ENEMY.TOTAL); // counts the number of bits to write/read
-	for(var i = 0; i < ENEMY.TOTAL; i++) {
-		enemy_killed = enemy_killed << 1; // shift left 1 bit
-		if (global.enemy_killed[i]) enemy_killed++; // turns the last bit into a 1 if killed
-		enemy_spared = enemy_spared << 1;
-		if (global.enemy_spared[i]) enemy_spared++;
-	}
-	for(var i = 8 * floor(ENEMY.TOTAL / 8); i >= 0; i -= 8) {
-		file_bin_write_byte(_bin, (enemy_killed >> i) & 0xff); // retrieves the relevant bit sequence, starting at the leftmost, then &'s with 0b11111111 to get only that byte
-		file_bin_write_byte(_bin, (enemy_spared >> i) & 0xff);
-	}
+    if (!variable_global_exists("dummy")) global.dummy = 0;
+    if (!variable_global_exists("ghost")) global.ghost = 0;
+    scr_writeInteger(_bin, (global.dummy << 4) + global.ghost);
+    if (!variable_global_exists("study"))            global.study = false;
+    if (!variable_global_exists("defeated_unicorn")) global.defeated_unicorn = false;
+    if (!variable_global_exists("hat"))              global.hat = false;
+    scr_writeBools(_bin, [global.study, global.defeated_unicorn, global.hat]);
 
+    // TODO: Update global.areaKills to be an array of objects, not this DS crap
 	for (var i = 0; i < AREA.TOTAL; i++) {
-		file_bin_write_byte(_bin, global.areaKills[? i].killCount);
+		scr_writeInteger(_bin, global.areaKills[? i].killCount, 1);
 	}
 
 	if (instance_exists(obj_dipper)) {
-		write_bytes(_bin, obj_dipper.x, 4);
-		write_bytes(_bin, obj_dipper.y, 4);
+		scr_writeInteger(_bin, round(obj_dipper.x), 4);
+		scr_writeInteger(_bin, round(obj_dipper.y), 4);
 	}
-	else for(var i = 0; i < 8; i++) file_bin_write_byte(_bin, irandom(0xff)); // writes garbage data for Dipper's x/y
+    else scr_writeInteger(_bin, irandom(0xffff_ffff_ffff_ffff), 8); // doesn't matter; just write garbage data
 
-	write_bin_string(_bin, audio_get_name(_music));
+	scr_writeString(_bin, audio_get_name(_music));
 
 	if (!variable_global_exists("soos"))   global.soos   = 0;
 	if (!variable_global_exists("stans"))  global.stans  = 0;
 	if (!variable_global_exists("toby"))   global.toby   = 0;
 	if (!variable_global_exists("wendy"))  global.wendy  = 0;
 	if (!variable_global_exists("gideon")) global.gideon = 0;
-	file_bin_write_byte(_bin, global.soos);
-	file_bin_write_byte(_bin, global.stans);
-	file_bin_write_byte(_bin, global.toby);
-	file_bin_write_byte(_bin, global.wendy);
-	file_bin_write_byte(_bin, global.gideon);
+	scr_writeInteger(_bin, global.soos);
+	scr_writeInteger(_bin, global.stans);
+	scr_writeInteger(_bin, global.toby);
+	scr_writeInteger(_bin, global.wendy);
+	scr_writeInteger(_bin, global.gideon);
 
 	if (!variable_global_exists("hamstick"))  global.hamstick  = false;
 	if (!variable_global_exists("fairydust")) global.fairydust = false;
-	file_bin_write_byte(_bin, (global.hamstick << 4) + global.fairydust);
+	scr_writeBools(_bin, [global.hamstick, global.fairydust]);
 
 	if (!variable_global_exists("buttSwitch")) global.buttSwitch = [];
-	write_bytes(_bin, array_length(global.buttSwitch), 2);
-	for (var i = 0; i < array_length(global.buttSwitch); i++) {
-		write_bin_string(_bin, global.buttSwitch[i]);
-	}
+    scr_writeArray(_bin, global.buttSwitch, scr_writeString);
 
 	if (!variable_global_exists("trashCan")) global.trashCan = [];
-	write_bytes(_bin, array_length(global.trashCan), 2);
-	for (var i = 0; i < array_length(global.trashCan); i++) {
-		write_bytes(_bin, int64(global.trashCan[i]), 4);
-	}
+    scr_writeArray(_bin, global.trashCan, function(b, e) { scr_writeInteger(b, int64(e), 8); });
 
 	file_bin_close(_bin);
 
 	if (_playsound) audio_play_sound(sfx_save,0,false);
-}
-
-/// @desc Writes 2 length bytes, then each character in the string as a byte. Assumes the file is already opened.
-/// @param {id.BinaryFile} _bin: A binary file already opened in Write mode
-/// @param {String} _str: The string whose data are being written
-function write_bin_string(_bin, _str) {
-	file_bin_write_byte(_bin, string_length(_str));
-	for (var i = 1; i <= string_length(_str); i++) {
-		var _ord = string_ord_at(_str, i) + 2;
-		if(32 <= _ord and _ord < 64 and irandom(1) == 0) 
-			file_bin_write_byte(_bin, _ord - 32);
-		else
-			file_bin_write_byte(_bin, _ord + 128*irandom(1));
-	}
-}
-
-/// @desc Writes the given value to the given file using 'count' number of bytes.
-/// So, for example, if given 'count=4', it would write 'value' as a 32-bit number.
-/// @param {id.BinaryFile} _bin: A binary file already opened in Write mode
-/// @param {real} value: The value to write to the file
-/// @param {real} count: The number of bytes to use to write 'value' to the file
-function write_bytes(_bin, value, count) {
-	for (var i = 0; i < count; i++) {
-		var shift = ((count - 1) * 8) - (8 * i);
-		file_bin_write_byte(_bin, (value >> shift) & 0xff);
-	}
 }

@@ -36,8 +36,9 @@ enum BEAVER_PIC {
 	SOLD_NEWSPAPER
 }
 
+/// @description Resetting global.player{}
 function scr_new_global_player() {
-	/// @description Resetting global.player{}
+    /// If anything here is changed, scr_save and scr_load will also need updates
 	global.player = {
 		name: "Dipper",
 		mabel: variable_global_exists("player") ? bool(global.player.mabel) : false,

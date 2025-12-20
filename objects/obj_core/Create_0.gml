@@ -34,11 +34,41 @@ scr_generate_item_index();
 }
 order = 0; // marks the GRAVITYTALE cheat code order
 
+enum ROUTES
+{
+    NONE,
+    NEUTRAL,
+    PACIFIST,
+    GENOCIDE
+}
 global.SAVE_FILES = {
-    PERS_RESET: "Rset.save", // C,N/P/G/W/L,timesCompleted/waymanDefeated?/lastRun0none1neut2pac3geno; K/S/D,ENEMY.#,killed?/spared?/diedTo?
-    PROFILE: "Prof.save", // Profile,Name/LV/Hours/Minutes/Seconds/RoomName
-    SAVE_DATA: "Save.save" // Binary save data
+    PERS_RESET: {
+        NAME: "Rset.save", // C,N/P/G/W/L,timesCompleted/waymanDefeated?/lastRun0none1neut2pac3geno; K/S/D,ENEMY.#,killed?/spared?/diedTo?
+        KEYS: {
+            COMPLETED_COUNT: "C", // second key is ROUTE
+            WAYMAN_BOOL: "W", // double up
+            LAST_ROUTE: "L", // double up
+            KILLED_COUNT: "K", // second key is ENEMY
+            SPARED_COUNT: "B", // second key is ENEMY
+            DIED_TO_COUNT: "D" // second key is ENEMY
+        }
+    },
+    PROFILE: {
+        NAME: "Prof.save", // Profile,Name/LV/Hours/Minutes/Seconds/RoomName
+        KEYS: {
+            PRIMARY: "P", // top-level key; others are second-level
+            PLAYER_NAME: "N",
+            LV: "L",
+            PLAY_TIME: "T",
+            ROOM_NAME: "R"
+        }
+    },
+    SAVE_DATA: {
+        NAME: "Save.save" // Binary save data
+    }
 };
+global.ENCRYPTION_KEY = scr_xorEncrypt("GravityTale", GM_version);
+global.BITS_PER_BYTE = 8;
 /*
 Files used:
 Reset.save - "C","N"/P/G/W,#timesCompleted/WaymanDefeated?; "R","R",0none/1neut/2pac/3geno just reset; "K",ENEMY.#,T/F killed; "S",ENEMY.#,T/F spared; "D",ENEMY.#,# died

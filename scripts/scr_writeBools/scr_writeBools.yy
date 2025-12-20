@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_writeBools",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_writeBools",
+  "parent":{
+    "name":"Utility",
+    "path":"folders/Scripts/SaveLoad/Utility.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
