@@ -5,12 +5,12 @@ if save > 0 switch save {
 	case 2:
 		if instance_exists(obj_textbox) {if obj_textbox.grow < 0 size += .1}
 		else {
-			draw_text(140,ybox-67,nm)
-			draw_text(280,ybox-67,"LV "+string(lv))
-			draw_set_halign(fa_right)
-			draw_text(500,ybox-67,time)
-			draw_set_halign(fa_left)
-			draw_text(140,ybox-17,rm)
+			draw_text(140,ybox-67,profile.name);
+			draw_text(280,ybox-67,string_concat("LV ", profile.lv));
+			draw_set_halign(fa_right);
+			draw_text(500,ybox-67,profile.play_time);
+			draw_set_halign(fa_left);
+			draw_text(140,ybox-17,profile.room_name);
 			if save == 1 {
 				draw_text_color(169,ybox+36,"Save",c_yellow,c_yellow,c_yellow,c_yellow,1)
 				draw_text(320,ybox+36,"Return")
@@ -19,7 +19,10 @@ if save > 0 switch save {
 					save = 3
 					alarm[0] = 15
 					scr_save(rmName, music);
-					time = scr_format_time();
+                    profile.name = global.player.name;
+					profile.lv = global.player.lv;
+                    profile.play_time = scr_format_time();
+                    profile.room_name = self.rmName;
 				}
 			}
 			else {
@@ -35,12 +38,12 @@ if save > 0 switch save {
 	case 3:
 		if alarm[0] > -1 {
 			draw_set_color(c_yellow)
-			draw_text(140,ybox-67,global.player.name)
-			draw_text(280,ybox-67,"LV "+string(global.player.lv))
+			draw_text(140,ybox-67,profile.name)
+			draw_text(280,ybox-67,"LV "+string(profile.lv))
 			draw_set_halign(fa_right)
-			draw_text(500,ybox-67,string_copy(time,1,8))
+			draw_text(500,ybox-67,string_copy(profile.play_time,1,8))
 			draw_set_halign(fa_left)
-			draw_text(140,ybox-17,rmName)
+			draw_text(140,ybox-17,profile.room_name)
 			draw_text(169,ybox+36,"Game has been saved!")
 			draw_set_color(c_white)
 		}

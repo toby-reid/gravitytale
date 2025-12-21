@@ -5,9 +5,7 @@ switch stage {
 		audio_group_stop_all(Music)
 		audio_play_sound(mus_nyeh,0,true)
 		with instance_create_layer(160,192,"Instances",obj_textbox) {
-			ini_open("Reset.save")
-			var died = (ini_read_real("D",ENEMY.FORD,0) > 0)
-			ini_close()
+			var died = scr_getDeathCount(ENEMY.FORD) > 0;
 			if global.player.genocide == RUN.ACTIVE and global.areaKills[? area].killCount >= global.areaKills[? area].MAX_KILLS {
 				text = [
 					"CHILD!",

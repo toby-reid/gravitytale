@@ -1,14 +1,13 @@
-/// @param {string} rmName: The name of the current room, to be used in Prof.save
 function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
     file_delete(global.SAVE_FILES.PROFILE); // ini for obj_startMenu info
     file_delete(global.SAVE_FILES.SAVE_DATA); // bitfile for in-game global variables
-    // Rest.save is the information that stays between Resets & Saves, like how many times a person has killed you
+    // The RESET file is the information that stays between Resets & Saves, like how many times a person has killed you
 
     ini_open(global.SAVE_FILES.PROFILE.NAME);
-    ini_write_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY,global.SAVE_FILES.PROFILE.KEYS.PLAYER_NAME,global.player.name);
-    ini_write_real(global.SAVE_FILES.PROFILE.KEYS.PRIMARY,global.SAVE_FILES.PROFILE.KEYS.LV,global.player.lv);
-    ini_write_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY,global.SAVE_FILES.PROFILE.KEYS.ROOM_NAME,rmName);
-    ini_write_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY,global.SAVE_FILES.PROFILE.KEYS.PLAY_TIME,scr_format_time());
+    ini_write_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.PLAYER_NAME, global.player.name);
+    ini_write_real(  global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.LV, global.player.lv);
+    ini_write_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.ROOM_NAME, rmName);
+    ini_write_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.PLAY_TIME, scr_format_time());
     ini_close();
 
     var _bin = file_bin_open(global.SAVE_FILES.SAVE_DATA.NAME, 1); // opens new binary file in write mode

@@ -2,8 +2,7 @@
 with instance_create_layer(160,192,layer,obj_textbox) {
 	var soul = global.player.mabel ? "@CC277AShooting Star@ffffff" : "@1970ffPine Tree@ffffff";
 	var sibling = global.player.mabel ? "@1970ffbrother@ffffff" : "@CC277Asister@ffffff";
-	ini_open("Reset.save")
-	if global.player.genocide == RUN.ACTIVE and ini_read_real("C","G",0) > 0 {
+	if global.player.genocide == RUN.ACTIVE and scr_getRouteCompletions(ROUTES.GENOCIDE) > 0 {
 		text = [
 			"Ah hahahahaha!&Hahaha!",
 			"Oh, it's beautiful...&Kid, you were beautiful #back there!",
@@ -67,7 +66,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_neutral,
 			spr_bill_face_neutral
 		]
-	} else if global.enemy_spared[ENEMY.SOOS] and ini_read_real("K",ENEMY.SOOS,0) >= 1 {
+	} else if global.enemy_spared[ENEMY.SOOS] and scr_getKillCount(ENEMY.SOOS) >= 1 {
 		text = [
 			"Well, howdy, #"+soul+"!",
 			"So ya messed up.",
@@ -92,7 +91,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_smile,
 			spr_bill_face_neutral
 		]
-	} else if global.enemy_killed[ENEMY.SOOS] and ini_read_real("K",ENEMY.SOOS,0) > 1 {
+	} else if global.enemy_killed[ENEMY.SOOS] and scr_getKillCount(ENEMY.SOOS) > 1 {
 		text = [
 			"Well, hey there, #"+soul+"!",
 			"You truly are the lowest #scum in history!",
@@ -113,7 +112,7 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 			spr_bill_face_neutral_side,
 			spr_bill_face_neutral
 		]
-	} else if global.enemy_killed[ENEMY.SOOS] and ini_read_real("S",ENEMY.SOOS,0) >= 1 {
+	} else if global.enemy_killed[ENEMY.SOOS] and scr_getSpareCount(ENEMY.SOOS) >= 1 {
 		text = [
 			"Well, howdy indeed, #"+soul+"!",
 			"I gotta say, I was not #expecting that!",
@@ -280,7 +279,6 @@ with instance_create_layer(160,192,layer,obj_textbox) {
 		font[i] = fnt_bill_gui
 		style[i] = 2
 	}
-	ini_close()
 }
 audio_play_sound(mus_bestFriend,0,true)
 stage++

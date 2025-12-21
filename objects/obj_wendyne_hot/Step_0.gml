@@ -56,11 +56,8 @@ switch stage {
 		if(!instance_exists(obj_textbox)) if(keyboard_check_pressed(vk_enter) and place_meeting(x+2,y,obj_dipper) and obj_dipper.dir == 2) {
 			if(obj_icebox.ice) {
 				obj_icebox.ice = false;
-				global.enemy_spared[ENEMY.WENDY] = true;
 				global.player.spares++;
-				ini_open("Reset.save");
-				ini_write_real("S",ENEMY.WENDY,ini_read_real("S",ENEMY.WENDY,0)+1);
-				ini_close();
+                scr_sparedEnemy(ENEMY.WENDY);
 				alarm[0] = 30;
 				obj_dipper.canMove = false;
 				stage++;

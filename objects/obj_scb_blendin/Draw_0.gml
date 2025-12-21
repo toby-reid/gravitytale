@@ -9,9 +9,8 @@ switch stage {
 		stage++
 	} break
 	case 2: if !instance_exists(obj_toBattle) {
-		ini_open("Reset.save")
 		if global.enemy_killed[ENEMY.BLENDIN] {
-			if ini_read_real("K",ENEMY.BLENDIN,false) with instance_create_layer(160,192,"Instances",obj_textbox) {
+			if scr_getKillCount(ENEMY.BLENDIN) > 0 with instance_create_layer(160,192,"Instances",obj_textbox) {
 				text = [
 					"d... did you just...",
 					"did you reset the timeline #just to kill me again?",
@@ -29,10 +28,10 @@ switch stage {
 				]
 				sound = [tlk_blendin,tlk_blendin]
 			}
-			ini_write_real("K",ENEMY.BLENDIN,ini_read_real("K",ENEMY.BLENDIN,0)+1)
+			scr_killedEnemy(ENEMY.BLENDIN);
 		}
 		else if global.enemy_spared[ENEMY.BLENDIN] {
-			if ini_read_real("K",ENEMY.BLENDIN,false) with instance_create_layer(160,192,"Instances",obj_textbox) {
+			if scr_getKillCount(ENEMY.BLENDIN) > 0 with instance_create_layer(160,192,"Instances",obj_textbox) {
 				text = [
 					"thanks for letting me talk...",
 					"i've never really had a friend #before...",
@@ -59,10 +58,9 @@ switch stage {
 				for(var i = 0; i < array_length(text); i++) sound[i] = tlk_blendin
 			}
 			sprite_index = spr_blendin_r_hair
-			ini_write_real("S",ENEMY.BLENDIN,ini_read_real("S",ENEMY.BLENDIN,0)+1)
+			scr_sparedEnemy(ENEMY.BLENDIN);
 		}
 		else {room_persistent = false; room_restart()}
-		ini_close()
 		stage++
 	} break
 	case 3:

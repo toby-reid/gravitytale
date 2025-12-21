@@ -18,12 +18,7 @@ if save == 0 if instance_exists(obj_dipper) if obj_dipper.canMove {
 		}
 		save = 1
 		size = 0
-		ini_open("Prof.save");
-		nm = ini_read_string("Profile","NM","EMPTY");
-		lv = ini_read_real("Profile","LV",0);
-		time = ini_read_string("Profile","TM",scr_format_time(0,0,0));
-		rm = ini_read_string("Profile","RM","--");
-		ini_close();
+        profile = scr_getSaveProfile();
 		global.player.hp = global.player.maxHp;
 		audio_play_sound(sfx_heal,0,false)
 	}

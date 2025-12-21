@@ -17,8 +17,6 @@ if (global.player.genocide == RUN.ACTIVE) or spare {
 }
 
 if global.player.hp <= 0 {
-	ini_open("Reset.save")
-	ini_write_real("D",ENEMY.ROBBIE,ini_read_real("D",ENEMY.ROBBIE,0)+1)
-	ini_close()
+	scr_diedToEnemy(ENEMY.ROBBIE);
 }
 if global.stage[0] == 5 {timer = 0; create = true}

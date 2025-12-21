@@ -26,9 +26,7 @@ else if variable_instance_exists(id,"result") switch result {
 }
 
 if global.player.hp <= 0 {
-	ini_open("Reset.save")
-	ini_write_real("D",ENEMY.SOOS,ini_read_real("D",ENEMY.SOOS,0)+1)
-	ini_close()
+	scr_diedToEnemy(ENEMY.SOOS);
 }
 if (global.player.genocide == RUN.ACTIVE) or spare {
 	if global.stage[4] > 0 and global.stage[1] == 0 {

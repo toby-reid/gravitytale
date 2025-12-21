@@ -8,3 +8,8 @@ if hp <= 0 { if global.stage[0] != 3 {
 else if hp == 1 {obj_battleCore.text[0] = "Black Market Gnome is on his #last leg!"}
 
 if global.stage[0] == 5 {timer = 0}
+
+if (global.player.hp <= 0)
+{
+    scr_diedToEnemy(ENEMY.BLACK_MKT_GNOME);
+}

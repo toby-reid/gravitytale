@@ -34,13 +34,6 @@ scr_generate_item_index();
 }
 order = 0; // marks the GRAVITYTALE cheat code order
 
-enum ROUTES
-{
-    NONE,
-    NEUTRAL,
-    PACIFIST,
-    GENOCIDE
-}
 global.SAVE_FILES = {
     PERS_RESET: {
         NAME: "Rset.save", // C,N/P/G/W/L,timesCompleted/waymanDefeated?/lastRun0none1neut2pac3geno; K/S/D,ENEMY.#,killed?/spared?/diedTo?
@@ -50,7 +43,8 @@ global.SAVE_FILES = {
             LAST_ROUTE: "L", // double up
             KILLED_COUNT: "K", // second key is ENEMY
             SPARED_COUNT: "B", // second key is ENEMY
-            DIED_TO_COUNT: "D" // second key is ENEMY
+            DIED_TO_COUNT: "D", // second key is ENEMY
+            IS_MABEL: "M" // double up
         }
     },
     PROFILE: {
@@ -58,6 +52,7 @@ global.SAVE_FILES = {
         KEYS: {
             PRIMARY: "P", // top-level key; others are second-level
             PLAYER_NAME: "N",
+            IS_MABEL: "M",
             LV: "L",
             PLAY_TIME: "T",
             ROOM_NAME: "R"
@@ -69,11 +64,5 @@ global.SAVE_FILES = {
 };
 global.ENCRYPTION_KEY = scr_xorEncrypt("GravityTale", GM_version);
 global.BITS_PER_BYTE = 8;
-/*
-Files used:
-Reset.save - "C","N"/P/G/W,#timesCompleted/WaymanDefeated?; "R","R",0none/1neut/2pac/3geno just reset; "K",ENEMY.#,T/F killed; "S",ENEMY.#,T/F spared; "D",ENEMY.#,# died
-Info.save  - "Profile","NM"/LV/HR/MN/SC/RM/MS,string except for MS name/lv/hour/minute/second/room/music
-Save.save  - game save file
-*/
 
 scr_generate_area_kills();

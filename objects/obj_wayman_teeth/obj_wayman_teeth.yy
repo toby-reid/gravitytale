@@ -16,7 +16,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Wayman",
-    "path":"folders/Objects/Wayman.yy",
+    "path":"folders/Objects/Characters/Wayman.yy",
   },
   "parentObjectId":null,
   "persistent":false,

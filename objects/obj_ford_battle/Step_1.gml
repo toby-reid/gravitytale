@@ -15,8 +15,6 @@ if hp <= 0 if global.stage[0] != 3 if !instance_exists(obj_textBubble) {
 if spare if global.stage[0] == 3 if global.stage[1] == 0 if global.stage[4] > 0 global.stage[4] = 9999
 
 if global.player.hp <= 0 {
-	ini_open("Reset.save")
-	ini_write_real("D",ENEMY.FORD,ini_read_real("D",ENEMY.FORD,0)+1)
-	ini_close()
+	scr_diedToEnemy(ENEMY.FORD);
 }
 if global.stage[0] == 5 {timer = 0; create = true}

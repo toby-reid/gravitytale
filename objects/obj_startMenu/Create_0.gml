@@ -2,14 +2,10 @@ if !audio_is_playing(mus_menu) {
 	audio_stop_all();
 	audio_play_sound(mus_menu,0,true);
 }
-if(file_exists("Info.save")) {
+if (file_exists(global.SAVE_FILES.SAVE_DATA.NAME)) {
 	image_index = 2;
-	ini_open("Prof.save");
-		nm = ini_read_string("Profile","NM","ERROR");
-		lv = ini_read_string("Profile","LV","00");
-		time = ini_read_string("Profile","TM","00:00:00");
-		rm = ini_read_string("Profile","RM","ERROR");
-	ini_close();
+    // TODO: These values seem to be unused. See TODO on Draw GUI
+	profile = scr_getSaveProfile();
 }
 else {
 	size = 0;
@@ -20,8 +16,9 @@ else {
 	confirm = [false,0,1,c_aqua]//Confirm Y/N, Tries, Size, Color
 	response = ["",0,fnt_basic_gui,tlk_default,c_gray,true]//Response, charCount, font, sound, color, can use?*/
 }
-if file_exists("Reset.save") {
-	ini_open("Reset.save");
-	global.player.mabel = bool(ini_read_real("State","M",false));//this value will be set when creating the character
+if file_exists(global.SAVE_FILES.PERS_RESET.NAME) {
+	ini_open(global.SAVE_FILES.PERS_RESET.NAME);
+    // this value will be set when entering Bill's domain (ow_scb_0 CC)
+	global.player.mabel = bool(ini_read_real(global.SAVE_FILES.PERS_RESET.KEYS.IS_MABEL, global.SAVE_FILES.PERS_RESET.KEYS.IS_MABEL, false));
 	ini_close();
 }

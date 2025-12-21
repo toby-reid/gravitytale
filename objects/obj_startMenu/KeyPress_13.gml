@@ -3,7 +3,7 @@ switch image_index {
 		if !instance_exists(obj_textbox) { if size == 0 {
 			scr_new_global_player()
 			with instance_create_layer(320,376,layer,obj_textbox) {
-				if !file_exists("Reset.save") {
+				if !file_exists(global.SAVE_FILES.PERS_RESET.NAME) {
 					text = [
 						"Greetings, Child!#`(...or adult)",
 						"Welcome to the world of #GRAVITYTALE.",
@@ -44,9 +44,11 @@ switch image_index {
 				} else {//invalid or 'no' to name
 					page -= 2
 					alarm[2] = 1
-					var index = file_exists("Reset.save") ? 4 : 7;
-					if !file_exists("Reset.save") {
-						choice[7] = 1
+					var index = 4;
+					if (!file_exists(global.SAVE_FILES.PERS_RESET.NAME))
+                    {
+                        index = 7;
+						choice[index] = 1;
 					}
 					text[index] = "&@ffffffIs this name correct?     #       yes         no"
 					other.name = ""
@@ -62,16 +64,9 @@ switch image_index {
 		break
 	case 3: image_index = 5; audio_play_sound(sfx_select,0,false) break
 	case 4:
-		file_delete("Info.save")
-		file_delete("Prof.save")
-		file_delete("Save.save")
-		ini_open("Reset.save")//not deleting "C" unless true reset
-		ini_section_delete("K")
-		ini_section_delete("S")
-		ini_section_delete("D")
-		ini_close()
-		audio_play_sound(sfx_select,0,false)
-		room_restart()
+		scr_reset(false);
+		audio_play_sound(sfx_select, 0, false);
+		room_restart();
 		break
 	case 5: image_index = 3; audio_play_sound(sfx_beep,0,false) break
 }

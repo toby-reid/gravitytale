@@ -3,12 +3,7 @@ if !instance_exists(obj_textbox) {
 	if instance_exists(obj_dipper) if obj_dipper.canMove {
 		if place_meeting(x,y+2,obj_dipper) and obj_dipper.dir==1 {
 			if (!cantp) {
-				if (global.enemy_spared[ENEMY.WAYMAN]) cantp = true;
-				else {
-					ini_open("Reset.save")
-					if (ini_read_real("C","W",false)) cantp = true;
-					ini_close();
-				}
+                cantp = scr_isWaymanDefeated();
 			}
 			
 			var _text = "(Seems the Potty isn't #functioning right...&(Here we go...)";

@@ -3,14 +3,10 @@
 //Alarm[4]: text bubble (global.stage[0] = 4)
 //Alarm[5-6]: Spare/Run actions
 
-ini_open("Reset.save")
 if global.enemy_killed[ENEMY.STANS_CAVE] {
-	ini_write_real("K",ENEMY.STANS_CAVE,ini_read_real("K",ENEMY.STANS_CAVE,0)+1);
-	global.areaKills[? area].killCount++;
+    scr_killedEnemy(ENEMY.STANS_CAVE);
 	// do not increment global.player.kills - he didn't actually die
 } else {
-	global.player.spares++
-	global.enemy_spared[ENEMY.STANS_CAVE] = true
-	ini_write_real("S",ENEMY.STANS_CAVE,ini_read_real("S",ENEMY.STANS_CAVE,0)+1);
+	global.player.spares++;
+    scr_sparedEnemy(ENEMY.STANS_CAVE);
 }
-ini_close()

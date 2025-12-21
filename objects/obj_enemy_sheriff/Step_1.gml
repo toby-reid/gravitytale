@@ -10,5 +10,9 @@ if hp <= 0 {
 		instance_destroy(bubble)
 	}
 }
+if (global.player.hp <= 0)
+{
+    scr_diedToEnemy(ENEMY.SHERIFF);
+}
 
 if global.stage[0] == 5 {timer = 0; create = true; bubbleText = "Solvin' some big crisis, city boy?"}

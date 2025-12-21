@@ -10,5 +10,9 @@ if hp <= 0 {
 		instance_destroy(bubble)
 	}
 }
+if (global.player.hp <= 0)
+{
+    scr_diedToEnemy(ENEMY.DEPUTY);
+}
 
 if global.stage[0] == 5 {timer = 0; create = true; bubbleText = "WOOOOOO!\nWE'RE GONNA GETCHA, CITY BOOOOOY!"}

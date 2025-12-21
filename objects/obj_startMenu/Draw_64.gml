@@ -50,3 +50,4 @@ if image_index == 0 {//new game
 		draw_set_halign(fa_left)
 	}
 }
+// TODO: Add checks & logic for drawing save data (as retrieved in Create)

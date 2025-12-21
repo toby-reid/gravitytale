@@ -16,9 +16,7 @@ if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 
 	}
 	else if !instance_exists(obj_enemy_manDan) global.stage[0]++
 	if global.player.hp <= 0 if !instance_exists(obj_enemy_manDan) {
-		ini_open("Reset.save")
-		ini_write_real("D",ENEMY.TYLER,ini_read_real("D",ENEMY.TYLER,0)+1)
-		ini_close()
+		scr_diedToEnemy(ENEMY.TYLER);
 		global.stage[0]++
 	}
 	timer++

@@ -6,9 +6,6 @@
 if instance_number(obj_enemy_cav_ghost) == 1 {
 	global.ghost++
 	global.player.spares++;
-	global.enemy_spared[ENEMY.GHOSTS] = true;
-	ini_open("Reset.save")
-	ini_write_real("S", ENEMY.GHOSTS, ini_read_real("S", ENEMY.GHOSTS, 0) + 1);
-	ini_close()
+    scr_sparedEnemy(ENEMY.GHOSTS);
 	room_persistent = false
 }

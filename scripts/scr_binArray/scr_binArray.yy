@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_writeInteger",
+  "%Name":"scr_binArray",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_writeInteger",
+  "name":"scr_binArray",
   "parent":{
     "name":"Utility",
     "path":"folders/Scripts/SaveLoad/Utility.yy",

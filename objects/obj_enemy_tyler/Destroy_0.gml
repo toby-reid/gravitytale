@@ -3,18 +3,14 @@
 //Alarm[4]: text bubble (global.stage[0] = 4)
 //Alarm[5-6]: Spare/Run actions
 
-ini_open("Reset.save")
 if hp <= 0 {
 	obj_battleCore.lv++
 	global.areaKills[? area].killCount++;
 	global.player.kills++;
 	obj_battleCore.sb += sb
-	global.enemy_killed[ENEMY.TYLER] = true
-	ini_write_real("K",ENEMY.TYLER,ini_read_real("K",ENEMY.TYLER,0)+1)
+    scr_killedEnemy(ENEMY.TYLER);
 } else {
 	global.player.spares++
 	obj_battleCore.sb += ceil(sb/2)
-	global.enemy_spared[ENEMY.TYLER] = true
-	ini_write_real("S",ENEMY.TYLER,ini_read_real("S",ENEMY.TYLER,0)+1)
+    scr_sparedEnemy(ENEMY.TYLER);
 }
-ini_close()

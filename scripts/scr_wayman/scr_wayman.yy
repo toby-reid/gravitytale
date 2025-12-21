@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_readBools",
+  "%Name":"scr_wayman",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_readBools",
+  "name":"scr_wayman",
   "parent":{
-    "name":"Utility",
-    "path":"folders/Scripts/SaveLoad/Utility.yy",
+    "name":"SaveLoad",
+    "path":"folders/Scripts/SaveLoad.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

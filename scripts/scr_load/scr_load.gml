@@ -92,3 +92,15 @@ function scr_load() {
     file_bin_close(_bin);
     return true;
 }
+
+function scr_getSaveProfile()
+{
+    var profile = {};
+    ini_open(global.SAVE_FILES.PROFILE.NAME);
+    profile.name = ini_read_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.PLAYER_NAME, "ERROR");
+    profile.lv = floor(ini_read_real(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.LV, 1));
+    profile.room_name = ini_read_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.ROOM_NAME, "ERROR");
+    profile.play_time = ini_read_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.PLAY_TIME, scr_format_time(0, 0, 0));
+    ini_close()
+    return profile;
+}

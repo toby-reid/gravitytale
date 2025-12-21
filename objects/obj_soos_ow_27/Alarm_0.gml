@@ -14,8 +14,7 @@ switch sprite_index {
 			if global.player.mabel slang = "Girl" + slang;
 			var col = global.player.mabel ? "CC277A" : "1970FF";
 			if global.soos < 27 {
-				ini_open("Reset.save")
-				if ini_read_real("K",ENEMY.SOOS,0) > 0 {
+				if scr_getKillCount(ENEMY.SOOS) > 0 {
 					text = [
 						". . .",
 						"You all right there, #"+slang+"?",
@@ -47,7 +46,7 @@ switch sprite_index {
 						spr_soos_face_disappoint
 					]
 				}
-				else if ini_read_real("S",ENEMY.SOOS,0) > 0 or ini_read_real("D",ENEMY.SOOS,0) > 0 {
+				else if scr_getSpareCount(ENEMY.SOOS) > 0 or scr_getDeathCount(ENEMY.SOOS) > 0 {
 					text = [
 						". . .",
 						"Are you all right, #"+slang+"?",
@@ -107,7 +106,6 @@ switch sprite_index {
 						spr_soos_face_disappoint
 					]
 				}
-				ini_close()
 			}
 			else {
 				text = [

@@ -91,7 +91,7 @@ else {
 				"Buy gold!",
 				"Byyyyyyyyyye!"
 			]
-			if file_exists("Reset.save") {
+			if (self.completed_routes > 0) {
 				text[5] = "I'm still #willing to #offer you #that deal."
 				text[6] = "Remember, I #was meant to #gain full power #with a... #certain deal."
 			}

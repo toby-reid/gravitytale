@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_readArray",
+  "%Name":"scr_routes",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_readArray",
+  "name":"scr_routes",
   "parent":{
-    "name":"Utility",
-    "path":"folders/Scripts/SaveLoad/Utility.yy",
+    "name":"SaveLoad",
+    "path":"folders/Scripts/SaveLoad.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

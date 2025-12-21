@@ -84,9 +84,9 @@ else if image_index >= 19 {
 				with instance_create_layer(160,196,"Instances",obj_textbox) {
 					var col = (global.player.mabel) ? "@CC277A" : "@1970ff";
 					var soul = (global.player.mabel) ? "Shooting Star" : "Pine Tree";
-					ini_open("Reset.save")
-					switch ini_read_real("R","R",0) {
-						case 0://no previous resets
+                    var prev_run = scr_getPreviousRoute();
+					switch prev_run {
+						case ROUTES.NONE://no previous resets
 							text = [
 								"Hey there, kid!",
 								"The name's @ffff00Bill Cipher@ffffff!",
@@ -112,7 +112,7 @@ else if image_index >= 19 {
 								spr_bill_face_smile
 							]
 							break
-						case 1://just reset Neutral
+						case ROUTES.NEUTRAL:
 							text = [
 								"Hey there, kid!",
 								"The name's @ffff00Bill Cipher@ffffff -`#but I'll skip the #pleasantries!",
@@ -142,7 +142,7 @@ else if image_index >= 19 {
 								spr_bill_face_smile
 							]
 							break
-						case 2://just reset Pacifist
+						case ROUTES.PACIFIST:
 							text = [
 								"Hey there, kid!",
 								"The name's @ffff00Bill Cipher@ffffff -`#but I'll skip the #pleasantries!",
@@ -171,7 +171,7 @@ else if image_index >= 19 {
 							sound[3] = tlk_bill_creepy
 							style[3] = 3
 							break
-						case 3://just reset Genocide
+						case ROUTES.GENOCIDE:
 							text = [
 								"Well, well, well, well, #well well well well #wellwellwell!",
 								"Aren't you a sight for #sore eye!",
@@ -203,7 +203,6 @@ else if image_index >= 19 {
 							style[8] = 3
 							break
 					}
-					ini_close()
 					sound[array_length(text)] = 0
 					font[array_length(text)]  = 0
 					style[array_length(text)] = 0

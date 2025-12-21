@@ -2,10 +2,7 @@ name = "???"
 act = ["???","???","???","???"]
 check = "???"
 spare = false
-run = false
-ini_open("Reset.save")
-if ini_read_real("C","W",0) > 0 run = true
-ini_close()
+run = scr_isWaymanDefeated();
 hp = 1
 maxhp = hp
 at = 0
