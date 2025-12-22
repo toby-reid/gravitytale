@@ -1,4 +1,5 @@
-/// @param {bool} _softload: Set to 'true' to avoid resetting certain variables, such as global.soos
+/// @desc Loads the latest save from the binary Save file.
+/// @return {Bool}: Whether loading was successful
 function scr_load() {
     var _bin = file_bin_open(global.SAVE_FILES.SAVE_DATA, 0); // open in 'read' mode
 
@@ -93,6 +94,8 @@ function scr_load() {
     return true;
 }
 
+/// Reads the user's profile data from the Profile ini save file.
+/// The file should already exist before invoking this function.
 function scr_getSaveProfile()
 {
     var profile = {};

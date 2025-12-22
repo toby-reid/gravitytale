@@ -1,3 +1,7 @@
+/// Saves profile and binary Save data to file.
+/// @param {String} rmName: The current room's user-readable name, for profile data
+/// @param {Asset.GMSound} _music: The music to play when loading save data, if any
+/// @param {Bool} _playsound: Whether to play the "save" sound effect
 function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
     file_delete(global.SAVE_FILES.PROFILE); // ini for obj_startMenu info
     file_delete(global.SAVE_FILES.SAVE_DATA); // bitfile for in-game global variables
@@ -93,5 +97,8 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
 
     file_bin_close(_bin);
 
-    if (_playsound) audio_play_sound(sfx_save,0,false);
+    if (_playsound)
+	{
+		audio_play_sound(sfx_save,0,false);
+	}
 }
