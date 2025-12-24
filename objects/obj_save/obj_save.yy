@@ -31,7 +31,16 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"rmName","filters":[
+        "GMSound",
+      ],"listItems":[],"multiselect":false,"name":"rmName","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"???","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"text","filters":[],"listItems":[],"multiselect":false,"name":"text","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"global.player.mabel ? \"(You excite your #imagination.)\" : \"(You are filled with #dedication.)\"","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"music","filters":[
+        "GMSound",
+      ],"listItems":[],"multiselect":false,"name":"music","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"silence","path":"sounds/silence/silence.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"silence","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"loc","filters":[],"listItems":[],"multiselect":false,"name":"loc","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"AREA.UNKNOWN","varType":4,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
