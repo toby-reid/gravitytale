@@ -19,7 +19,11 @@ function scr_load() {
     global.player.hp = scr_readInteger(_bin, 1);
     global.player.maxhp = scr_readInteger(_bin, 1);
     global.player.money = scr_readInteger(_bin, 4);
-    global.player.lv = scr_readInteger(1);
+    {
+        var lv_costume = scr_readInteger(_bin, 1);
+        global.player.lv = (lv_costume >> 3) & 0b11111;
+		global.player.costume = lv_costume & 0b11;
+	}
     {
         var at_df_bag_coupon = scr_readInteger(_bin);
         global.player.at = (at_df_bag_coupon >> 6) & 0b11;
@@ -35,7 +39,6 @@ function scr_load() {
     }
 
     global.inventory = scr_readArray(_bin);
-    global.costume = scr_readInteger(_bin);
     global.menu = scr_readArray(_bin);
     global.battleTimer = scr_readInteger(_bin, 2);
 
@@ -100,10 +103,10 @@ function scr_getSaveProfile()
 {
     var profile = {};
     ini_open(global.SAVE_FILES.PROFILE.NAME);
-    profile.name = ini_read_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.PLAYER_NAME, "ERROR");
-    profile.lv = floor(ini_read_real(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.LV, 1));
-    profile.room_name = ini_read_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.ROOM_NAME, "ERROR");
+    profile.name = ini_read_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.PLAYER_NAME, "---");
+    profile.lv = floor(ini_read_real(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.LV, 0));
+    profile.room_name = ini_read_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.ROOM_NAME, "---");
     profile.play_time = ini_read_string(global.SAVE_FILES.PROFILE.KEYS.PRIMARY, global.SAVE_FILES.PROFILE.KEYS.PLAY_TIME, scr_format_time(0, 0, 0));
-    ini_close()
+    ini_close();
     return profile;
 }

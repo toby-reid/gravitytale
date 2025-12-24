@@ -35,6 +35,12 @@ enum BEAVER_PIC {
 	SOLD_CASH,
 	SOLD_NEWSPAPER
 }
+enum COSTUME {
+	DEFAULT,
+	NO_DF, // No hat / no sweater
+	DF_NORMAL, // Pine tree hat / SS sweater
+	DF_UPGRADE // Newspaper hat / Moth sweater
+}
 
 /// @description Resetting global.player{}
 function scr_new_global_player() {
@@ -49,6 +55,7 @@ function scr_new_global_player() {
 		maxHp: 20,
 		money: 0,
 		lv: 1,
+		costume: COSTUME.DEFAULT,
 		at: AT_DF.NONE,
 		df: AT_DF.NONE,
 		bag: BAG.NONE,

@@ -29,9 +29,13 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
     scr_writeInteger(_bin, global.player.kills, 2);
     scr_writeInteger(_bin, global.player.spares, 2);
     scr_writeInteger(_bin, global.player.hp, 1); // This should never exceed 99 normally
-    scr_writeInteger(_bin, global.player.maxhp, 1); // Same
+    scr_writeInteger(_bin, global.player.maxHp, 1); // Same
     scr_writeInteger(_bin, global.player.money, 4); // Absurdly large, but ya never know!
-    scr_writeInteger(_bin, global.player.lv, 1); // This should never exceed 20 normally
+    var lv_costume = (
+        ((global.player.lv << 3) & 0b11111) // 0-20 (5 bits)
+        + (global.player.costume & 0b11) // 0-3 (2 bits)
+    );
+    scr_writeInteger(_bin, lv_costume, 1);
     var at_df_bag_coupon = (
         ((global.player.at << 6) & 0b11) // 0-2 (2 bits)
         + ((global.player.df << 4) & 0b11) // 0-2 (2 bits)
@@ -47,7 +51,6 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
     scr_writeInteger(_bin, geno_beaver_potty);
 
     scr_writeArray(_bin, global.inventory);
-    scr_writeInteger(_bin, global.costume);
     scr_writeArray(_bin, global.menu);
     scr_writeInteger(_bin, global.battleTimer, 2);
 
@@ -98,7 +101,7 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
     file_bin_close(_bin);
 
     if (_playsound)
-	{
-		audio_play_sound(sfx_save,0,false);
-	}
+    {
+        audio_play_sound(sfx_save,0,false);
+    }
 }

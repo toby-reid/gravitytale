@@ -28,8 +28,8 @@ if canMove {
 	}
 	else {
 		if string_lower(global.player.name) == "lamby" sprite_index = spr_diplamb
-		else if global.player.df == AT_DF.NONE /*or global.costume == 0*/ sprite_index = spr_dipper
-		else if global.player.df == AT_DF.UPGRADE /*and global.costume == 2*/ sprite_index = spr_dippaper
+		else if global.player.df == AT_DF.NONE or global.player.costume == COSTUME.DF_NORMAL sprite_index = spr_dipper
+		else if global.player.df == AT_DF.UPGRADE and global.player.costume == COSTUME.DF_UPGRADE sprite_index = spr_dippaper
 		else if string_lower(global.player.name) == "mason" sprite_index = spr_dipstar
 		else sprite_index = spr_diphat
 	}
