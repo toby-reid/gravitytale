@@ -356,6 +356,7 @@
     {"name":"ow_min_05_pz1","order":7,"path":"rooms/ow_min_05_pz1/ow_min_05_pz1.yy",},
     {"name":"ow_min_06_pz2","order":8,"path":"rooms/ow_min_06_pz2/ow_min_06_pz2.yy",},
     {"name":"ow_min_07_pz3","order":9,"path":"rooms/ow_min_07_pz3/ow_min_07_pz3.yy",},
+    {"name":"ow_min_08_cookingDate","order":10,"path":"rooms/ow_min_08_cookingDate/ow_min_08_cookingDate.yy",},
     {"name":"ow_scb_0_meetBill","order":1,"path":"rooms/ow_scb_0_meetBill/ow_scb_0_meetBill.yy",},
     {"name":"ow_scb_10_puzzle4","order":11,"path":"rooms/ow_scb_10_puzzle4/ow_scb_10_puzzle4.yy",},
     {"name":"ow_scb_11_blendin","order":12,"path":"rooms/ow_scb_11_blendin/ow_scb_11_blendin.yy",},
