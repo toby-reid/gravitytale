@@ -1149,6 +1149,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"ow_min_08_cookingDate","path":"rooms/ow_min_08_cookingDate/ow_min_08_cookingDate.yy",},},
     {"roomId":{"name":"ow_min_07_pz3","path":"rooms/ow_min_07_pz3/ow_min_07_pz3.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
@@ -1283,7 +1284,6 @@
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_scb_12_puzzle5","path":"rooms/ow_scb_12_puzzle5/ow_scb_12_puzzle5.yy",},},
     {"roomId":{"name":"ow_min_","path":"rooms/ow_min_/ow_min_.yy",},},
-    {"roomId":{"name":"ow_min_08_cookingDate","path":"rooms/ow_min_08_cookingDate/ow_min_08_cookingDate.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

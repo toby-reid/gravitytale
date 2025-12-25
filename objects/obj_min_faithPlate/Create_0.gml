@@ -25,7 +25,7 @@ else switch (self.dir)
 }
 
 if (!self.is_active)
-    self.image_blend = c_ltgrey;
+    self.image_blend = c_grey;
 else if (self.is_strong and self.is_reversed)
     self.image_blend = c_orange;
 else if (self.is_strong)
