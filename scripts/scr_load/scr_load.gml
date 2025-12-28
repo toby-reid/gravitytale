@@ -1,7 +1,7 @@
 /// @desc Loads the latest save from the binary Save file.
 /// @return {Bool}: Whether loading was successful
 function scr_load() {
-    var _bin = file_bin_open(global.SAVE_FILES.SAVE_DATA, 0); // open in 'read' mode
+    var _bin = file_bin_open(global.SAVE_FILES.SAVE_DATA.NAME, 0); // open in 'read' mode
 
     if (scr_readString(_bin) != global.ENCRYPTION_KEY)
     {

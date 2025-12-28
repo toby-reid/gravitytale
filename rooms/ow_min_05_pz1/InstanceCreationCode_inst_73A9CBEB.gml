@@ -1,5 +1,5 @@
 text = [
-    "(You hear voices echoing from the depths...)",
+    "(You hear voices echoing from #the depths...)",
     "See, what did I tell you?&A quick treatment from our #revolutionary new",
     "Focal Science Innovators #Dependable Regenerative #Ultracellular Growth Serum",
     "and he's as good as new!",
