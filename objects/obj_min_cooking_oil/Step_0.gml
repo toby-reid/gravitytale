@@ -1,0 +1,28 @@
+if (self.isActive)
+{
+    if (instance_exists(obj_textbox))
+    {
+        with obj_textbox
+        {
+            if (page == 1)
+            {
+                if (charCount >= 40)
+                {
+                    if (keyboard_check_pressed(vk_enter))
+                    {
+                        obj_min_cookingDate.is_butter_fried = (action[1] == 0);
+                        other.isActive = false;
+                    }
+                }
+                else if (charCount >= 17)
+                {
+                    charCount = 40;
+                }
+            }
+        }
+    }
+    else
+    {
+        self.isActive = false;
+    }
+}
