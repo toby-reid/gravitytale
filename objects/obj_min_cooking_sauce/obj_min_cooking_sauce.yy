@@ -1,7 +1,11 @@
 {
   "$GMObject":"",
   "%Name":"obj_min_cooking_sauce",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":13,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_min_cooking_sauce",
   "overriddenProperties":[],
@@ -9,7 +13,10 @@
     "name":"GideonDates",
     "path":"folders/Objects/Overworld/Mines/GideonDates.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_sign",
+    "path":"objects/obj_sign/obj_sign.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
