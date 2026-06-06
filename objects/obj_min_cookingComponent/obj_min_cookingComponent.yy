@@ -1,21 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_min_cooking_oil",
+  "%Name":"obj_min_cookingComponent",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":13,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_min_cooking_oil",
+  "name":"obj_min_cookingComponent",
   "overriddenProperties":[],
   "parent":{
     "name":"CookingDate",
     "path":"folders/Objects/Overworld/Mines/CookingDate.yy",
   },
   "parentObjectId":{
-    "name":"obj_min_cookingComponent",
-    "path":"objects/obj_min_cookingComponent/obj_min_cookingComponent.yy",
+    "name":"obj_sign",
+    "path":"objects/obj_sign/obj_sign.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_gideonDate_cooking_counter_cOil",
-    "path":"sprites/spr_gideonDate_cooking_counter_cOil/spr_gideonDate_cooking_counter_cOil.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

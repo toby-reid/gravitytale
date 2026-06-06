@@ -59,7 +59,7 @@
     {"$GMFolder":"","%Name":"Caves","folderPath":"folders/Objects/Overworld/Caves.yy","name":"Caves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Forest","folderPath":"folders/Objects/Overworld/Forest.yy","name":"Forest","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Mines","folderPath":"folders/Objects/Overworld/Mines.yy","name":"Mines","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"GideonDates","folderPath":"folders/Objects/Overworld/Mines/GideonDates.yy","name":"GideonDates","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"CookingDate","folderPath":"folders/Objects/Overworld/Mines/CookingDate.yy","name":"CookingDate","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scuttlebutt","folderPath":"folders/Objects/Overworld/Scuttlebutt.yy","name":"Scuttlebutt","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Shops","folderPath":"folders/Objects/Shops.yy","name":"Shops","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Paths","folderPath":"folders/Paths.yy","name":"Paths","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -158,7 +158,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.3.217",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"GravityTale",
   "resources":[
@@ -323,6 +323,8 @@
     {"id":{"name":"obj_min_cooking_butter","path":"objects/obj_min_cooking_butter/obj_min_cooking_butter.yy",},},
     {"id":{"name":"obj_min_cooking_oil","path":"objects/obj_min_cooking_oil/obj_min_cooking_oil.yy",},},
     {"id":{"name":"obj_min_cooking_sauce","path":"objects/obj_min_cooking_sauce/obj_min_cooking_sauce.yy",},},
+    {"id":{"name":"obj_min_cooking_sink","path":"objects/obj_min_cooking_sink/obj_min_cooking_sink.yy",},},
+    {"id":{"name":"obj_min_cookingComponent","path":"objects/obj_min_cookingComponent/obj_min_cookingComponent.yy",},},
     {"id":{"name":"obj_min_cookingDate","path":"objects/obj_min_cookingDate/obj_min_cookingDate.yy",},},
     {"id":{"name":"obj_min_faithPlate","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},},
     {"id":{"name":"obj_multiware","path":"objects/obj_multiware/obj_multiware.yy",},},

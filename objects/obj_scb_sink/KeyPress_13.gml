@@ -11,6 +11,9 @@ if !instance_exists(obj_textbox) {
 	}
 } else if active if obj_textbox.page == 1 {
 	obj_textbox.text[2] = "(Sanitization is important.)"
-	obj_scb_toilet.washed = true
+    if (washed_checker != noone and instance_exists(washed_checker))
+    {
+        washed_checker.washed = true;
+    }
 	active = false
 }

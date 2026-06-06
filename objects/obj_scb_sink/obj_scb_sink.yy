@@ -29,7 +29,11 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"washed_checker","filters":[
+        "GMObject",
+      ],"listItems":[],"multiselect":false,"name":"washed_checker","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_scb_toilet","path":"objects/obj_scb_toilet/obj_scb_toilet.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_scb_toilet","varType":5,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

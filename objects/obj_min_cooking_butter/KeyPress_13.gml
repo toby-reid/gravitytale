@@ -7,7 +7,7 @@ if (!instance_exists(obj_textbox) and instance_exists(obj_dipper) and obj_dipper
             {
                 text = [
                     "(It's an infinite stick of #butter.)",
-                    "(Take a stick?)##       Yes         No"
+                    "(Take a cube?)##       Yes         No"
                 ];
                 choice = [0, 1];
                 other.isActive = true;

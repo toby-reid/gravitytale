@@ -9,8 +9,8 @@
   "name":"obj_min_cookingDate",
   "overriddenProperties":[],
   "parent":{
-    "name":"GideonDates",
-    "path":"folders/Objects/Overworld/Mines/GideonDates.yy",
+    "name":"CookingDate",
+    "path":"folders/Objects/Overworld/Mines/CookingDate.yy",
   },
   "parentObjectId":null,
   "persistent":false,

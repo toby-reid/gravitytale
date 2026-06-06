@@ -10,12 +10,12 @@
   "name":"obj_min_cooking_butter",
   "overriddenProperties":[],
   "parent":{
-    "name":"GideonDates",
-    "path":"folders/Objects/Overworld/Mines/GideonDates.yy",
+    "name":"CookingDate",
+    "path":"folders/Objects/Overworld/Mines/CookingDate.yy",
   },
   "parentObjectId":{
-    "name":"obj_sign",
-    "path":"objects/obj_sign/obj_sign.yy",
+    "name":"obj_min_cookingComponent",
+    "path":"objects/obj_min_cookingComponent/obj_min_cookingComponent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
