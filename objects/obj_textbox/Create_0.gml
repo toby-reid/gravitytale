@@ -3,6 +3,7 @@ image_yscale = 0
 if(x < 320) x *= 2
 if(y < 240) y *= 2
 grow = .2
+setMove = false;
 if instance_exists(obj_dipper) {
 	setMove = obj_dipper.canMove
 	obj_dipper.canMove = false

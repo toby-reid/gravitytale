@@ -212,6 +212,7 @@
     {"name":"obj_mallody","order":2,"path":"objects/obj_mallody/obj_mallody.yy",},
     {"name":"obj_mg_date_answerBox","order":3,"path":"objects/obj_mg_date_answerBox/obj_mg_date_answerBox.yy",},
     {"name":"obj_mg_date_giffany","order":1,"path":"objects/obj_mg_date_giffany/obj_mg_date_giffany.yy",},
+    {"name":"obj_min_cooking_knives","order":6,"path":"objects/obj_min_cooking_knives/obj_min_cooking_knives.yy",},
     {"name":"obj_min_cooking_oil","order":2,"path":"objects/obj_min_cooking_oil/obj_min_cooking_oil.yy",},
     {"name":"obj_min_cooking_sauce","order":3,"path":"objects/obj_min_cooking_sauce/obj_min_cooking_sauce.yy",},
     {"name":"obj_min_cooking_sink","order":4,"path":"objects/obj_min_cooking_sink/obj_min_cooking_sink.yy",},

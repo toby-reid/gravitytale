@@ -321,6 +321,7 @@
     {"id":{"name":"obj_mg_date_cursor","path":"objects/obj_mg_date_cursor/obj_mg_date_cursor.yy",},},
     {"id":{"name":"obj_mg_date_giffany","path":"objects/obj_mg_date_giffany/obj_mg_date_giffany.yy",},},
     {"id":{"name":"obj_min_cooking_butter","path":"objects/obj_min_cooking_butter/obj_min_cooking_butter.yy",},},
+    {"id":{"name":"obj_min_cooking_knives","path":"objects/obj_min_cooking_knives/obj_min_cooking_knives.yy",},},
     {"id":{"name":"obj_min_cooking_oil","path":"objects/obj_min_cooking_oil/obj_min_cooking_oil.yy",},},
     {"id":{"name":"obj_min_cooking_sauce","path":"objects/obj_min_cooking_sauce/obj_min_cooking_sauce.yy",},},
     {"id":{"name":"obj_min_cooking_sink","path":"objects/obj_min_cooking_sink/obj_min_cooking_sink.yy",},},

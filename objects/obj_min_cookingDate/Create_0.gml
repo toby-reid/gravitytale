@@ -4,4 +4,7 @@ washed = false; // make sure it's named `washed`, or at least whatever obj_min_c
 has_butter = false;
 is_butter_fried = false;
 is_butter_dipped = false;
-is_butter_chopped = false;
+was_fried_first = false;
+
+correct_count = 0;
+failed_count = 0;

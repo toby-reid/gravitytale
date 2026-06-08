@@ -11,6 +11,7 @@ if (self.isActive)
                     if (keyboard_check_pressed(vk_enter))
                     {
                         obj_min_cookingDate.is_butter_dipped = (action[1] == 0);
+                        obj_min_cookingDate.was_fried_first = obj_min_cookingDate.is_butter_fried;
                         other.isActive = false;
                     }
                 }
