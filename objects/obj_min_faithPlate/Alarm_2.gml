@@ -31,4 +31,11 @@ self.alarm[0] = self.launchTime;
 self.alarm[1] = floor(self.turnTime / 2); // offset the turning time
 
 audio_play_sound(sfx_buttSwitch, 0, false);
+for (var i = 0; i < array_length(affected_plates); ++i)
+{
+    with affected_plates[i]
+    {
+        event_user(0);
+    }
+}
 self.image_index = 1;

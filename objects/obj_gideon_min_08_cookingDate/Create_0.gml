@@ -18,3 +18,5 @@ else if (global.gideon >= 8)
 {
     instance_destroy();
 }
+
+task_success = false;

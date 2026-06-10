@@ -150,62 +150,73 @@ if (instance_exists(obj_dipper))
         case 6:
             if (obj_dipper.canMove)
             {
-                var _text = [];
+                var _finish = false;
                 if (obj_min_cookingDate.correct_count >= 3)
                 {
-                    _text = global.player.mabel
-                        ? [
-                            "AND THAT'S IT!&Y'ALL DID WONDERFULLY!",
-                            "OF COURSE, THE OUTCOME WAS #NEVER REALLY IN DOUBT!"
-                        ] : [
-                            "AND THAT'S IT!&Y'ALL DID QUITE WELL!",
-                            "I MUST SAY, I'M IMPRESSED!&YOU REALLY SHOWED A TRUE TEXAN SPIRIT THERE!"
-                        ];
+                    _finish = true;
+                    task_success = true;
                 }
                 else if (obj_min_cookingDate.failed_count >= 10)
                 {
-                    _text = global.player.mabel
-                        ? [
-                            "AND THAT'S IT!&LET'S CALL IT A DAY!",
-                            "YOU PERFORMED WONDERFULLY UNDER OVERWHELMING PRESSURE!"
-                        ] : [
-                            "AND THAT'S IT!&...LET'S JUST STOP THIS HERE.",
-                            "YOU CERTAINLY KEPT TRYING, #AND THAT CERTAINLY MATTERS!"
-                        ];
+                    _finish = true;
+                    task_success = false;
                 }
-                if (array_length(_text) != 0)
+                if (_finish)
                 {
-                    with instance_create_layer(160, 192, layer, obj_textbox)
-                    {
-                        text = array_concat(
-                            _text,
-                            global.player.mabel
-                                ? [
-                                    "WOW, SEE WHAT AN AMAZING JOB WE DO AS A TEAM?",
-                                    "CLEARLY, MY SUPPORT IS WHAT ENCOURAGED YOU THROUGH THIS ORDEAL!",
-                                    "IN FACT, MIGHT I SAY, YOU LOOK JUST AT HOME IN--"
-                                ] : [
-                                    "WOW, SEE HOW ENCOURAGING I CAN BE?",
-                                    "CLEARLY, I AM THE OPTIMAL PARTNER FOR THE OPTIMAL WOMAN!",
-                                    "IN FACT, MAYBE I SHOULD JUST TAKE HER AWAY AND--"
-                                ],
-                            [
-                                ". . .",
-                                "THAT'S ALL FOR TODAY, FOLKS!&TUNE IN NEXT TIME!"
-                            ]);
-                        for (var i = 0; i < array_length(_text); ++i)
-                        {
-                            sound[i] = tlk_gideon;
-                        }
-                    }
+                    audio_play_sound(task_success ? sfx_puzDone : sfx_puzDone_distort, 0, false);
+                    audio_stop_sound(mus_dateStart);
                     ++self.stage;
                 }
             }
             break;
         case 7:
+            if (alarm[2] == -1)
+            {
+                with instance_create_layer(160, 192, layer, obj_textbox)
+                {
+                    var _result_feedback;
+                    if (other.task_success)
+                    {
+                        _result_feedback = global.player.mabel
+                            ? [ "AND THAT'S IT!&Y'ALL DID WONDERFULLY!",
+                                "OF COURSE, THE OUTCOME WAS #NEVER REALLY IN DOUBT!" ]
+                            : [ "AND THAT'S IT!&Y'ALL DID QUITE WELL!",
+                                "I MUST SAY, I'M IMPRESSED!&YOU REALLY SHOWED A TRUE #TEXAN SPIRIT THERE!" ];
+                    }
+                    else
+                    {
+                        _result_feedback = global.player.mabel
+                            ? [ "AND THAT'S IT!&LET'S CALL IT A DAY!",
+                                "YOU PERFORMED WONDERFULLY UNDER #OVERWHELMING PRESSURE!" ]
+                            : [ "AND THAT'S IT!&...LET'S JUST STOP THIS HERE.",
+                                "YOU CERTAINLY KEPT TRYING, #AND THAT CERTAINLY MATTERS!" ];
+                    }
+                    text = array_concat(
+                        _result_feedback,
+                        global.player.mabel
+                            ? [ "WOW, SEE WHAT AN AMAZING JOB #WE DO AS A TEAM?",
+                                "CLEARLY, MY SUPPORT IS WHAT #ENCOURAGED YOU THROUGH THIS ORDEAL!",
+                                "IN FACT, MIGHT I SAY, YOU LOOK #JUST AT HOME IN--" ]
+                            : [ "WOW, SEE HOW ENCOURAGING #I CAN BE?",
+                                "CLEARLY, I AM THE OPTIMAL #PARTNER FOR THE OPTIMAL WOMAN!",
+                                "IN FACT, MAYBE I SHOULD JUST #TAKE HER AWAY AND--" ],
+                        [ ". . .",
+                          "THAT'S ALL FOR TODAY, FOLKS!&TUNE IN NEXT TIME!" ]
+                    );
+                    for (var i = 0; i < array_length(text); ++i)
+                    {
+                        sound[i] = tlk_gideon;
+                    }
+                }
+                audio_play_sound(mus_showtime, 0, true);
+                ++stage;
+            }
+            break;
+        case 8:
             if (!instance_exists(obj_textbox))
             {
                 // TODO: Start the 'move out' animation...
+                // Also make sure to fade the music and whatnot
                 // For now, we'll just
                 instance_destroy();
             }

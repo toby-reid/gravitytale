@@ -24,13 +24,4 @@ else switch (self.dir)
     case 3: self.sprite_index = spr_min_faithPlate_d; break;
 }
 
-if (!self.is_active)
-    self.image_blend = c_grey;
-else if (self.is_strong and self.is_reversed)
-    self.image_blend = c_orange;
-else if (self.is_strong)
-    self.image_blend = c_fuchsia;
-else if (self.is_reversed)
-    self.image_blend = c_yellow;
-else
-    self.image_blend = c_aqua;
+event_user(1);

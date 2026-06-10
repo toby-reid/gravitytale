@@ -492,6 +492,8 @@
     {"id":{"name":"ow_min_06_pz2","path":"rooms/ow_min_06_pz2/ow_min_06_pz2.yy",},},
     {"id":{"name":"ow_min_07_pz3","path":"rooms/ow_min_07_pz3/ow_min_07_pz3.yy",},},
     {"id":{"name":"ow_min_08_cookingDate","path":"rooms/ow_min_08_cookingDate/ow_min_08_cookingDate.yy",},},
+    {"id":{"name":"ow_min_09_pz4","path":"rooms/ow_min_09_pz4/ow_min_09_pz4.yy",},},
+    {"id":{"name":"ow_min_10_pz5","path":"rooms/ow_min_10_pz5/ow_min_10_pz5.yy",},},
     {"id":{"name":"ow_scb_0_meetBill","path":"rooms/ow_scb_0_meetBill/ow_scb_0_meetBill.yy",},},
     {"id":{"name":"ow_scb_10_puzzle4","path":"rooms/ow_scb_10_puzzle4/ow_scb_10_puzzle4.yy",},},
     {"id":{"name":"ow_scb_11_blendin","path":"rooms/ow_scb_11_blendin/ow_scb_11_blendin.yy",},},
@@ -1165,7 +1167,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
-    {"roomId":{"name":"ow_min_08_cookingDate","path":"rooms/ow_min_08_cookingDate/ow_min_08_cookingDate.yy",},},
+    {"roomId":{"name":"ow_min_09_pz4","path":"rooms/ow_min_09_pz4/ow_min_09_pz4.yy",},},
     {"roomId":{"name":"ow_min_07_pz3","path":"rooms/ow_min_07_pz3/ow_min_07_pz3.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
@@ -1295,11 +1297,13 @@
         {"roomId":{"name":"ow_min_04_pz0","path":"rooms/ow_min_04_pz0/ow_min_04_pz0.yy",},},
         {"roomId":{"name":"ow_min_05_pz1","path":"rooms/ow_min_05_pz1/ow_min_05_pz1.yy",},},
         {"roomId":{"name":"ow_min_06_pz2","path":"rooms/ow_min_06_pz2/ow_min_06_pz2.yy",},},
+        {"roomId":{"name":"ow_min_08_cookingDate","path":"rooms/ow_min_08_cookingDate/ow_min_08_cookingDate.yy",},},
       ],"groupName":"Mines",},
     {"roomId":{"name":"ow_cav_7_manCave","path":"rooms/ow_cav_7_manCave/ow_cav_7_manCave.yy",},},
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_scb_12_puzzle5","path":"rooms/ow_scb_12_puzzle5/ow_scb_12_puzzle5.yy",},},
     {"roomId":{"name":"ow_min_","path":"rooms/ow_min_/ow_min_.yy",},},
+    {"roomId":{"name":"ow_min_10_pz5","path":"rooms/ow_min_10_pz5/ow_min_10_pz5.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
