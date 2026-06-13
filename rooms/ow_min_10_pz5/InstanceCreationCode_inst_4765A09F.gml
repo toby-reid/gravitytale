@@ -4,7 +4,7 @@ text = [
     "with the simple flick of a #switch!",
     ". . .",
     "Naturally, the wiring is too #complex for a single switch #to do the job!",
-    "Sometimes they need a little...^^^#coaxing.",
+    "Sometimes they need a little...```#coaxing.",
     "See, if we trigger this PLATE #over here...",
     "...the impact knocks the wires #back there into place!",
     "Of course, the impact MAY end #up knocking some other wires #out of place...",
