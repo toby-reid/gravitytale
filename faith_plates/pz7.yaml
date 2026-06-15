@@ -1,0 +1,110 @@
+groups:
+  A:
+    A1:
+      sends_to_group: B
+      starts_active: true
+      toggles_plates:
+        - B3
+    A2:
+      sends_to_group: C
+      starts_active: false
+      toggles_plates:
+        - C2
+  B:
+    B1:
+      sends_to_group: C
+      starts_active: false
+      toggles_plates:
+        - E2
+    B2:
+      sends_to_group: D
+      starts_active: true
+      toggles_plates:
+        - E2
+        - D1
+    B3:
+      sends_to_group: A
+      starts_active: false
+      toggles_plates:
+        - D4
+        - C2
+    B4:
+      sends_to_group: E
+      starts_active: false
+      toggles_plates:
+        - F2
+  C:
+    C1:
+      sends_to_group: A
+      starts_active: false
+      toggles_plates:
+        - C1
+    C2:
+      sends_to_group: D
+      starts_active: true
+      toggles_plates:
+        - E2
+    C3:
+      sends_to_group: F
+      starts_active: false
+      toggles_plates:
+        - E2
+  D:
+    D1:
+      sends_to_group: B
+      starts_active: false
+      toggles_plates:
+        - A1
+        - E1
+    D2:
+      sends_to_group: E
+      starts_active: true
+      toggles_plates:
+        - E2
+        - C3
+    D3:
+      sends_to_group: F
+      starts_active: false
+      toggles_plates:
+        - C2
+        - B2
+    D4:
+      sends_to_group: A
+      starts_active: true
+      toggles_plates:
+        - D4
+    D5:
+      sends_to_group: C
+      starts_active: false
+      toggles_plates:
+        - C3
+        - A2
+  E:
+    E1:
+      sends_to_group: F
+      starts_active: true
+      toggles_plates:
+        - B2
+    E2:
+      sends_to_group: B
+      starts_active: false
+      toggles_plates:
+        - B4
+        - D4
+  F:
+    F1:
+      sends_to_group: E
+      starts_active: true
+      toggles_plates:
+        - B2
+        - D3
+    F2:
+      sends_to_group: END
+      starts_active: false
+  END:
+start_group: A
+end_group: END
+ok_deadend_groups:
+  - A
+  - E
+  - F
