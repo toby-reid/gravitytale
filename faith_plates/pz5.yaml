@@ -1,0 +1,86 @@
+groups:
+  lowest:
+    lowest_left:
+      sends_to_group: bottom-center
+      starts_active: false
+    lowest_right:
+      starts_active: true
+      toggles_plates:
+        - lowest_left
+        - bottom-center_right
+  bottom-center:
+    bottom-center_right:
+      sends_to_group: middle-right
+      starts_active: true
+    bottom-center_left:
+      sends_to_group: middle-left
+      starts_active: true
+      toggles_plates:
+        - middle-left_bottom
+  middle-left:
+    middle-left_bottom:
+      sends_to_group: lowest
+      starts_active: true
+    middle-left_top:
+      sends_to_group: top-left
+      starts_active: true
+      toggles_plates:
+        - middle-right_top
+  middle-right:
+    middle-right_bottom:
+      sends_to_group: lowest
+      starts_active: true
+    middle-right_top:
+      sends_to_group: top-right
+      starts_active: false
+      toggles_plates:
+        - top-right
+        - exit-blocker
+  middle-center:
+    middle-center_top-left:
+      sends_to_group: top-left
+      starts_active: true
+    middle-center_bottom-left:
+      sends_to_group: bottom-center
+      starts_active: true
+      toggles_plates:
+        - middle-right_top
+    middle-center_bottom-right:
+      sends_to_group: top-center
+      starts_active: true
+    middle-center_top-right:
+      sends_to_group: top-right
+      starts_active: true
+      toggles_plates:
+        - middle-right_top
+        - middle-left_bottom
+  top-left:
+    top-left_bottom:
+      sends_to_group: middle-left
+      starts_active: true
+      toggles_plates:
+        - lowest_left
+    top-left_middle:
+      sends_to_group: middle-center
+      starts_active: true
+    top-left_top:
+      sends_to_group: top-center
+      starts_active: true
+  top-center:
+    top-center:
+      sends_to_group: middle-center
+      starts_active: true
+      toggles_plates:
+        - middle-center_bottom-right
+  top-right:
+    top-right:
+      sends_to_group: middle-right
+      starts_active: true
+    exit-blocker:
+      sends_to_group: END
+      starts_active: false
+  END:
+start_group: lowest
+end_group: END
+ok_deadend_groups:
+  - lowest

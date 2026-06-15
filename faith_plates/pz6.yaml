@@ -1,0 +1,79 @@
+groups:
+  main:
+    main_0:
+      starts_active: true
+      toggles_plates:
+        - main_2
+        - main_0
+    main_1:
+      starts_active: true
+      toggles_plates:
+        - main_3
+        - main_1
+    main_2:
+      starts_active: true
+      toggles_plates:
+        - main_4
+        - main_2
+    main_3:
+      starts_active: false
+      toggles_plates:
+        - main_5
+        - main_3
+    main_4:
+      starts_active: false
+      toggles_plates:
+        - main_6
+        - main_4
+        - end_1
+    main_5:
+      starts_active: false
+      toggles_plates:
+        - main_5
+        - end_2
+    main_6:
+      starts_active: false
+      toggles_plates:
+        - main_6
+        - end_3
+    end_0:
+      sends_to_group: end_1
+      starts_active: true
+      toggles_plates:
+        - end_4
+  end_1:
+    end_1:
+      sends_to_group: end_2
+      starts_active: true
+    ret_1:
+      sends_to_group: main
+      starts_active: true
+  end_2:
+    end_2:
+      sends_to_group: end_3
+      starts_active: false
+    ret_2:
+      sends_to_group: main
+      starts_active: true
+  end_3:
+    end_3:
+      sends_to_group: end_4
+      starts_active: false
+    ret_3:
+      sends_to_group: main
+      starts_active: true
+  end_4:
+    end_4:
+      sends_to_group: END
+      starts_active: false
+    ret_4:
+      sends_to_group: main
+      starts_active: true
+  END:
+    ret_end:
+      sends_to_group: main
+      starts_active: true
+start_group: main
+end_group: END
+ok_deadend_groups:
+  - main

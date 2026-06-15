@@ -1,0 +1,31 @@
+groups:
+  start:
+    start:
+      sends_to_group: main
+      starts_active: true
+  main:
+    middle-left:
+      starts_active: true
+      toggles_plates:
+        - top-center
+    bottom-left:
+      starts_active: false
+      toggles_plates:
+        - middle-left
+        - bottom-center
+    top-center:
+      starts_active: false
+      toggles_plates:
+        - middle-right
+    bottom-center:
+      starts_active: true
+      toggles_plates:
+        - bottom-left
+    middle-right:
+      sends_to_group: END
+      starts_active: false
+  END:
+start_group: start
+end_group: END
+ok_deadend_groups:
+  - start

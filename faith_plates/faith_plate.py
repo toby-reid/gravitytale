@@ -23,10 +23,12 @@ class Plate:
     toggles_plates: set[PlateName] = field(default_factory=set)
 
     @classmethod
-    def from_json(cls, name: PlateName, config: ConfigT) -> Optional["Plate"]:
+    def from_json(
+        cls, group_name: GroupName, name: PlateName, config: ConfigT
+    ) -> Optional["Plate"]:
         """TODO"""
         try:
-            sends_to_group = _get_value(config, "sends_to_group", GroupName)
+            sends_to_group = _get_value(config, "sends_to_group", GroupName, group_name)
             plate = cls(name=name, sends_to_group=sends_to_group)
         except KeyError as e:
             print(f"Error parsing {config}: {e}")
@@ -61,7 +63,7 @@ class Config:
                     print(f"Skipping group {group_name} because {plates} is not dict")
                     continue
                 for plate_name, plate_config in plates.items():
-                    plate = Plate.from_json(plate_name, plate_config)
+                    plate = Plate.from_json(group_name, plate_name, plate_config)
                     if plate is None:
                         print(f"Error parsing {config}")
                         return None
@@ -90,7 +92,8 @@ class Graph:
         """TODO"""
 
         current_group: GroupName
-        active: dict[PlateName, bool]
+        last_plate: Optional[PlateName]
+        active_state: dict[PlateName, bool]
         routes: list["Graph.Node"] = field(
             default_factory=list, init=False, repr=False, compare=False
         )
@@ -100,11 +103,11 @@ class Graph:
             cls, start_group: GroupName, full_map: dict[GroupName, dict[PlateName, Plate]]
         ) -> "Graph.Node":
             """TODO"""
-            active: dict[PlateName, bool] = {}
+            active_state: dict[PlateName, bool] = {}
             for plates in full_map.values():
                 for plate_name, plate in plates.items():
-                    active[plate_name] = plate.starts_active
-            start = Graph.Node(start_group, active)
+                    active_state[plate_name] = plate.starts_active
+            start = Graph.Node(start_group, None, active_state)
             start.make_connections(full_map, [start])
             return start
 
@@ -119,7 +122,7 @@ class Graph:
         ) -> None:
             """TODO"""
             for plate_name, plate in full_map[self.current_group].items():
-                if self.active[plate_name]:
+                if self.active_state[plate_name]:
                     connection = self._step_plate(plate)
                     if connection not in known_nodes:
                         known_nodes.append(connection)
@@ -140,20 +143,24 @@ class Graph:
         def _step_plate(self, on_plate: Plate) -> "Graph.Node":
             """TODO"""
             new_group = on_plate.sends_to_group
-            now_active = self.active.copy()
+            now_active = self.active_state.copy()
             for affected_plate in on_plate.toggles_plates:
                 now_active[affected_plate] = not now_active[affected_plate]
-            return Graph.Node(new_group, now_active)
+            return Graph.Node(new_group, on_plate.name, now_active)
 
         def __repr__(self):
             return (
                 f"{self.__class__.__name__} "
                 f"{{{self.current_group} -> {set(str(route) for route in self.routes)}; "
-                f"{self.active}}}"
+                f"{self.active_state}}}"
             )
 
         def __str__(self):
-            return str(self.current_group)
+            return (
+                self.current_group
+                if self.last_plate is None
+                else f"{self.last_plate} -> {self.current_group}"
+            )
 
     END_GROUP = "END"
 
