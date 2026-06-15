@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.493152,
+  "duration":0.49315193,
   "exportDir":"",
   "name":"sfx_rocket",
   "parent":{

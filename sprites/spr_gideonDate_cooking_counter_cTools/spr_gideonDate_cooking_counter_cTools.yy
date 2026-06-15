@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"GideonDates",
-    "path":"folders/Sprites/Overworld/Mines/GideonDates.yy",
+    "name":"Cooking",
+    "path":"folders/Sprites/Overworld/Mines/GideonDates/Cooking.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
