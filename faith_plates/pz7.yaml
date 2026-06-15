@@ -91,6 +91,9 @@ groups:
       toggles_plates:
         - B4
         - D4
+    EA:
+      sends_to_group: A
+      starts_active: true
   F:
     F1:
       sends_to_group: E
@@ -106,5 +109,3 @@ start_group: A
 end_group: END
 ok_deadend_groups:
   - A
-  - E
-  - F

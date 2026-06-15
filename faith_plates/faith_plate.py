@@ -91,7 +91,7 @@ class Graph:
         """TODO"""
 
         current_group: GroupName
-        last_plate: Optional[PlateName]
+        last_plate: Optional[PlateName] = field(compare=False)
         active_state: dict[PlateName, bool]
         routes: list["Graph.Node"] = field(
             default_factory=list, init=False, repr=False, compare=False
@@ -146,13 +146,6 @@ class Graph:
             for affected_plate in on_plate.toggles_plates:
                 now_active[affected_plate] = not now_active[affected_plate]
             return Graph.Node(new_group, on_plate.name, now_active)
-
-        def __repr__(self):
-            return (
-                f"{self.__class__.__name__} "
-                f"{{{self.current_group} -> {set(str(route) for route in self.routes)}; "
-                f"{self.active_state}}}"
-            )
 
         def __str__(self):
             return (
