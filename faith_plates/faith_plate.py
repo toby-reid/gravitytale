@@ -60,7 +60,6 @@ class Config:
             for group_name, plates in groups.items():
                 config_obj.groups[group_name] = {}
                 if not isinstance(plates, dict):
-                    print(f"Skipping group {group_name} because {plates} is not dict")
                     continue
                 for plate_name, plate_config in plates.items():
                     plate = Plate.from_json(group_name, plate_name, plate_config)
