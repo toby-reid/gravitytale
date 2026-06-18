@@ -22,7 +22,7 @@ switch self.stage
         if (alarm[1] == -1 && alarm[3] == -1)
         {
             self.arm = spr_gideon_tv_arm_talk;
-            audio_play_sound(mus_showtime, 0, true);
+            audio_play_sound(mus_newsreport, 0, true);
             with instance_create_layer(160, 192, layer, obj_textbox)
             {
                 text = [

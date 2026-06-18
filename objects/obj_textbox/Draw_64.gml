@@ -92,7 +92,7 @@ else {
 		}
 	}
 	else if(alarm[0] == -1) alarm[0] = charRate[page]
-	if keyboard_check_pressed(vk_shift) {
+	if keyboard_check_pressed(vk_shift) and skippable {
 		segment = array_length(segText)-1
 		charCount = string_length(segText[segment])+15
 		for(var i = 0; i < array_length(swapTime); i++) swapTime[i] = 15

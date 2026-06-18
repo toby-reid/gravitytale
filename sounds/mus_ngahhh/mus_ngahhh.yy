@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":80.63494,
+  "duration":0.0,
   "exportDir":"",
   "name":"mus_ngahhh",
   "parent":{

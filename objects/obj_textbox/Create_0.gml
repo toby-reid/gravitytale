@@ -18,6 +18,7 @@ sound = []//default tlk_default
 choice = []//default 0; 1 two choices; 2 three; 3 four choices
 charCount = 0;
 swapTime = [];
+skippable = true;
 
 action = []//set when choice[page] > 0
 face = 0//used to specify frame of a talking animation
