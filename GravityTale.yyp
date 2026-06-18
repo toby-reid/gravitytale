@@ -1182,6 +1182,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"ow_min_01_dump","path":"rooms/ow_min_01_dump/ow_min_01_dump.yy",},},
     {"roomId":{"name":"ow_min_13_newsReport","path":"rooms/ow_min_13_newsReport/ow_min_13_newsReport.yy",},},
     {"roomId":{"name":"ow_min_07_pz3","path":"rooms/ow_min_07_pz3/ow_min_07_pz3.yy",},},
     {"children":[
@@ -1306,7 +1307,6 @@
     {"children":[
         {"roomId":{"name":"btl_min_general","path":"rooms/btl_min_general/btl_min_general.yy",},},
         {"roomId":{"name":"ow_min_00_hotwendy","path":"rooms/ow_min_00_hotwendy/ow_min_00_hotwendy.yy",},},
-        {"roomId":{"name":"ow_min_01_dump","path":"rooms/ow_min_01_dump/ow_min_01_dump.yy",},},
         {"roomId":{"name":"ow_min_02_start","path":"rooms/ow_min_02_start/ow_min_02_start.yy",},},
         {"roomId":{"name":"ow_min_03_gideon1","path":"rooms/ow_min_03_gideon1/ow_min_03_gideon1.yy",},},
         {"roomId":{"name":"ow_min_04_pz0","path":"rooms/ow_min_04_pz0/ow_min_04_pz0.yy",},},
