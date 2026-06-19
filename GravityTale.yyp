@@ -567,6 +567,7 @@
     {"id":{"name":"scr_load","path":"scripts/scr_load/scr_load.yy",},},
     {"id":{"name":"scr_menu_itemSelect","path":"scripts/scr_menu_itemSelect/scr_menu_itemSelect.yy",},},
     {"id":{"name":"scr_new_global_player","path":"scripts/scr_new_global_player/scr_new_global_player.yy",},},
+    {"id":{"name":"scr_pad_string","path":"scripts/scr_pad_string/scr_pad_string.yy",},},
     {"id":{"name":"scr_reset","path":"scripts/scr_reset/scr_reset.yy",},},
     {"id":{"name":"scr_routes","path":"scripts/scr_routes/scr_routes.yy",},},
     {"id":{"name":"scr_save","path":"scripts/scr_save/scr_save.yy",},},

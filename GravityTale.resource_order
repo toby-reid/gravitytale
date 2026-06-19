@@ -435,6 +435,7 @@
     {"name":"scr_hexdec","order":2,"path":"scripts/scr_hexdec/scr_hexdec.yy",},
     {"name":"scr_menu_itemSelect","order":2,"path":"scripts/scr_menu_itemSelect/scr_menu_itemSelect.yy",},
     {"name":"scr_new_global_player","order":1,"path":"scripts/scr_new_global_player/scr_new_global_player.yy",},
+    {"name":"scr_pad_string","order":26,"path":"scripts/scr_pad_string/scr_pad_string.yy",},
     {"name":"scr_reset","order":4,"path":"scripts/scr_reset/scr_reset.yy",},
     {"name":"scr_routes","order":8,"path":"scripts/scr_routes/scr_routes.yy",},
     {"name":"scr_save","order":2,"path":"scripts/scr_save/scr_save.yy",},

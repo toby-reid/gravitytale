@@ -1,7 +1,13 @@
 {
   "$GMObject":"",
   "%Name":"obj_min_gideon_bombDate_doll",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":73,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":13,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_min_gideon_bombDate_doll",
   "overriddenProperties":[],
@@ -9,7 +15,10 @@
     "name":"BombDate",
     "path":"folders/Objects/Overworld/Mines/BombDate.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_sign",
+    "path":"objects/obj_sign/obj_sign.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -23,11 +32,16 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"tool_to_extinguish","filters":[],"listItems":[],"multiselect":false,"name":"tool_to_extinguish","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[\"your\", \"mother\"]","varType":4,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_gideon_doll",
+    "path":"sprites/spr_gideon_doll/spr_gideon_doll.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
