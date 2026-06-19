@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.569138,
+  "duration":0.56913835,
   "exportDir":"",
   "name":"sfx_grass",
   "parent":{

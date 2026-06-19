@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.435374,
+  "duration":0.43537414,
   "exportDir":"",
   "name":"sfx_heal",
   "parent":{

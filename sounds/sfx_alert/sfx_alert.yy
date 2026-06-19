@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.256553,
+  "duration":1.2565533,
   "exportDir":"",
   "name":"sfx_alert",
   "parent":{

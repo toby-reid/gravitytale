@@ -1,14 +1,11 @@
-if (doll_count == 0 && alarm[2] > 0)
+if (!done && doll_count == 0 && time_left > 0)
 {
-    ++alarm[2]; // keep the visible timer in place
-    if (!done)
-    {
-        audio_group_stop_all(Music);
-        audio_play_sound(sfx_puzDone, 0, false);
-        alarm[1] = audio_sound_length(sfx_puzDone) * gamespeed_fps;
-        obj_dipper.canMove = false;
-        done = true;
-    }
+    alarm[2] = -1;
+    audio_group_stop_all(Music);
+    audio_play_sound(sfx_puzDone, 0, false);
+    alarm[3] = audio_sound_length(sfx_puzDone) * gamespeed_fps;
+    obj_dipper.canMove = false;
+    done = true;
 }
 
 if (instance_exists(obj_textbox) && obj_textbox.sound[obj_textbox.page] == tlk_gideon)

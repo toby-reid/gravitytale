@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.609524,
+  "duration":0.60952383,
   "exportDir":"",
   "name":"sfx_glass",
   "parent":{

@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.1885,
+  "duration":1.1885034,
   "exportDir":"",
   "name":"sfx_fabric_rip",
   "parent":{

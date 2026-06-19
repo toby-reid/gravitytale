@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.146576,
+  "duration":0.14657596,
   "exportDir":"",
   "name":"sfx_noise",
   "parent":{

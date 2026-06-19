@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.837188,
+  "duration":2.8371882,
   "exportDir":"",
   "name":"sfx_fall",
   "parent":{

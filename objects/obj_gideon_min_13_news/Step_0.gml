@@ -90,6 +90,10 @@ switch self.stage
                             action[11] = 0; // just to avoid doing this again
                         }
                         break;
+                    case 15:
+                        other.flaming_doll = true;
+                        other.alarm[5] = other.flame_speed;
+                        break;
                     case 19: other.face = spr_gideon_tv_face_neutral; break;
                     case 21: other.face = spr_gideon_tv_face_determined; break;
                     case 22: other.face = spr_gideon_tv_face_cheery; break;

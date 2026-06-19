@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.471655,
+  "duration":0.47165534,
   "exportDir":"",
   "name":"sfx_ding",
   "parent":{
