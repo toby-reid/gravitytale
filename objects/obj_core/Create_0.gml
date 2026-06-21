@@ -77,7 +77,17 @@ global.TEXT_FLAGS = {
     NEWLINE_BUTTON: "&",
     PAUSE: "`",
     COLOR: "@",
-    ESCAPE: "\\"
+    ESCAPE: "\\",
+    HARD_PUNCTUATION: [
+        ".",
+        "!",
+        "?"
+    ],
+    SOFT_PUNCTUATION: [
+        ",",
+        ";",
+        ":"
+    ]
 }
 
 scr_generate_area_kills();

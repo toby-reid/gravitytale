@@ -4,7 +4,7 @@
 /// @return {Bool} Whether the given flag is found in the given value
 function scr_has_enum_flag(_check_value, _flag)
 {
-    return (_check_value ^ _flag) != 0;
+    return (_check_value & _flag) != 0;
 }
 
 /// @desc Returns an enum value that contains all of the given flags, or joins two values

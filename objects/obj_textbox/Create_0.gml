@@ -1,3 +1,9 @@
+if (x < 320)
+{
+    x *= 2;
+    y *= 2;
+}
+
 image_xscale = 0;
 image_yscale = 0;
 m_growRate = 0.2;
@@ -49,20 +55,8 @@ m_pageConfig = {
 };
 m_DEFAULTS = variable_clone(m_pageConfig);
 m_CHAR_WAVES = {
-    TOP: {
-        LOWER_LIMIT: 0,
-        UPPER_LIMIT: 20,
-        PEAK: 10,
-        Y_OFFSET_DIR: -1
-    },
-    BOTTOM: {
-        LOWER_LIMIT: -20,
-        UPPER_LIMIT: 0, // matches TOP.LOWER_LIMIT
-        PEAK: -10,
-        Y_OFFSET_DIR: 1
-    },
-    UPPER_LIMIT: 20,
-    LOWER_LIMIT: -20
+    LIMIT: 32,
+    SCALAR: 4
 }
 
 /// @desc Private method to set array-based variable value (does not work on array of arrays)
@@ -102,7 +96,7 @@ m_set_range = function(_var_name, _value, _default, _start_index, _end_index)
         self[$ _var_name][array_length(self[$ _var_name])] = _default;
     }
     var _endex = (_end_index < 0) ? array_length(m_text) : _end_index;
-    for (var i = _start_index; i < _end_index; ++i)
+    for (var i = _start_index; i < _endex; ++i)
     {
         self[$ _var_name][i] = _value;
     }
@@ -121,38 +115,38 @@ set_head = function(_new_heads, _start_index = -1) { m_set_array("m_heads", _new
 /// @desc Set fonts at (or starting at) the given index
 /// @param {Array<Asset.GMFont>|Asset.GMFont} _new_fonts
 /// @param {Real} _start_index Omit to set full font array
-set_font = function(_new_fonts, _start_index = -1) { m_set_array("m_fonts", _new_fonts, _start_index); }
+set_fonts = function(_new_fonts, _start_index = -1) { m_set_array("m_fonts", _new_fonts, _start_index); }
 /// @desc Set font for all values in range
 /// @param {Asset.GMFont} _font The font to set
 /// @param {Real} _start_index First index at which to set this font (inclusive); omit to perform on full text array
 /// @param {Real} _end_index Last index at which to set this font (exclusive); omit to go to the end of text array
-set_fonts = function(_font, _start_index = 0, _end_index = -1) { m_set_range("m_fonts", _font, m_DEFAULTS.font, _start_index, _end_index); }
+set_font_range = function(_font, _start_index = 0, _end_index = -1) { m_set_range("m_fonts", _font, m_DEFAULTS.font, _start_index, _end_index); }
 
 /// @desc Set text styles at (or starting at) the given index
 /// @param {Array<Enum.TEXT_STYLE>|Enum.TEXT_STYLE} _new_styles Pass an enum or integer style ID
 /// @param {Real} _start_index Omit to set full style array
-set_style = function(_new_styles, _start_index = -1) { m_set_array("m_styles", _new_styles, _start_index); }
+set_styles = function(_new_styles, _start_index = -1) { m_set_array("m_styles", _new_styles, _start_index); }
 /// @desc Set text style for all values in range
 /// @param {Enum.TEXT_STYLE} _style The text style(s) to set
 /// @param {Real} _start_index First index at which to set this style (inclusive); omit to perform on full text array
 /// @param {Real} _end_index Last index at which to set this style (exclusive); omit to go to the end of text array
-set_styles = function(_style, _start_index = 0, _end_index = -1) { m_set_range("m_styles", _style, m_DEFAULTS.style, _start_index, _end_index); }
+set_style_range = function(_style, _start_index = 0, _end_index = -1) { m_set_range("m_styles", _style, m_DEFAULTS.style, _start_index, _end_index); }
 
 /// @desc Set voice or sound effects at (or starting at) the given index
 /// @param {Array<Asset.GMSound>|Asset.GMSound} _new_sounds
 /// @param {Real} _start_index Omit to set full sound array
-set_sound = function(_new_sounds, _start_index = -1) { m_set_array("m_sounds", _new_sounds, _start_index); }
+set_sounds = function(_new_sounds, _start_index = -1) { m_set_array("m_sounds", _new_sounds, _start_index); }
 /// @desc Set sound for all values in range
 /// @param {Asset.GMSound} _sound The `tlk_*` sound to set
 /// @param {Real} _start_index First index at which to set this sound (inclusive); omit to perform on full text array
 /// @param {Real} _end_index Last index at which to set this sound (exclusive); omit to go to the end of text array
-set_sounds = function(_sound, _start_index = 0, _end_index = -1) { m_set_range("m_sounds", _sound, m_DEFAULTS.sound, _start_index, _end_index); }
+set_sound_range = function(_sound, _start_index = 0, _end_index = -1) { m_set_range("m_sounds", _sound, m_DEFAULTS.sound, _start_index, _end_index); }
 
 /// @desc Set branch choices at (or starting at) the given index
-/// @param {Real} _choice_count Number of choices the player can use (supports 1-4, inclusive)
 /// @param {Real} _index The index with choices
+/// @param {Real} _choice_count Number of choices the player can use (supports 1-4, inclusive)
 /// @param {Array<Function>} _actions_for_choices Optional actions to take depending on the choice (must be same length as `_choice_count`)
-set_choiceCount = function(_choice_count, _index, _actions_for_choices = [])
+set_choiceCount = function(_index, _choice_count, _actions_for_choices = [])
 {
     while (array_length(m_choiceCounts) < _index)
     {
@@ -172,7 +166,12 @@ set_choiceCount = function(_choice_count, _index, _actions_for_choices = [])
 /// @desc Set character typing speeds at (or starting at) the given index
 /// @param {Array<Real>|Real} _new_char_rates Characters per frame or second
 /// @param {Real} _start_index Omit to set full rate array
-set_charRate = function(_new_char_rates, _start_index = -1) { m_set_array("m_charRates", _new_char_rates, _start_index); }
+set_charRates = function(_new_char_rates, _start_index = -1) { m_set_array("m_charRates", _new_char_rates, _start_index); }
+/// @desc Set char rate for all values in range
+/// @param {Real} _char_rate The char rate to set
+/// @param {Real} _start_index First index at which to set this char rate (inclusive); omit to perform on full text array
+/// @param {Real} _end_index Last index at which to set this char rate (exclusive); omit to go to the end of text array
+set_charRate_range = function(_char_rate, _start_index = 0, _end_index = -1) { m_set_range("m_charRates", _char_rate, m_DEFAULTS.charRate, _start_index, _end_index); }
 
 /// @desc Determine whether a given page's text animation can be skipped with X/Shift (default, enabled)
 /// @param {Bool} _is_skippable Whether this page is skippable
@@ -261,8 +260,13 @@ m_process_page = function(_page)
         switch string_char_at(_page_text, _char_index)
         {
             case global.TEXT_FLAGS.COLOR:
-                m_pageSegmentText[array_length(m_pageSegmentText)] = string_copy(_page_text, _segment_start, _char_index - _segment_start);
-                m_pageSegmentColors[array_length(m_pageSegmentColors)] = _current_color;
+                if (_char_index != 1)
+                {
+                    // Treat it special if this is the first character - don't make an extra segment for nothing
+                    // This also enables the initial * to be displayed with color
+                    m_pageSegmentText[array_length(m_pageSegmentText)] = string_copy(_page_text, _segment_start, _char_index - _segment_start);
+                    m_pageSegmentColors[array_length(m_pageSegmentColors)] = _current_color;
+                }
                 _current_color = scr_hexdec(string_copy(_page_text, _char_index + 1, 6));
                 _char_index += 6;
                 _segment_start = _char_index + 1;
@@ -309,7 +313,7 @@ m_process_page = function(_page)
     
     charCount = 0;
     m_choiceSelection = 0;
-    m_fontSwapTimers = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.FONT_SWAP) ? array_create(m_charCountTarget, 10) : [];
+    m_fontSwapTimers = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.FONT_SWAP) ? array_create(m_charCountTarget, 20) : [];
     m_charWaveTimer = 0;
     
     alarm[0] = m_pageConfig.charRate;
@@ -331,7 +335,7 @@ m_char_at = function(_index)
     // Allow a GMS2 error otherwise... something went wrong
 }
 
-m_skip_text = function()
+skip_text = function()
 {
     charCount = m_charCountTarget;
     if (scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.FONT_SWAP))
@@ -345,13 +349,43 @@ m_skip_text = function()
 }
 
 /// @desc Determines a text-wave Y-offset
-/// @param {Real} _wave The "wave" value, which should be between `m_CHAR_WAVES.LOWER_LIMIT` and `m_CHAR_WAVES.UPPER_LIMIT`
+/// @param {Real} _wave The "wave" value, which should be between positive and negative `m_CHAR_WAVES.LIMIT` (positive limit exclusive)
 /// @return {Real} The Y-offset to use for this character based on that wave value
 m_wave_offset = function(_wave)
 {
-    var _is_on_top = scr_is_in_range(_wave, m_CHAR_WAVES.TOP.LOWER_LIMIT, m_CHAR_WAVES.TOP.UPPER_LIMIT);
-    var _config = _is_on_top ? m_CHAR_WAVES.TOP : m_CHAR_WAVES.BOTTOM;
-    var _peak_point = ceil((_config.LOWER_LIMIT + _config.UPPER_LIMIT) / 2);
-    var _distance_from_peak = abs(_peak_point - _wave);
-    return _config.Y_OFFSET_DIR * _distance_from_peak;
+    var _peak = (m_CHAR_WAVES.LIMIT div m_CHAR_WAVES.SCALAR) div 2;
+    if (_wave < 0)
+    {
+        var _wave_strength = (_wave + m_CHAR_WAVES.LIMIT) div m_CHAR_WAVES.SCALAR;
+        return abs(_wave_strength - _peak) - _peak; // abs(wave_strength + 2*peak - peak) - peak
+    }
+    var _wave_strength = _wave div m_CHAR_WAVES.SCALAR;
+    return _peak - abs(_peak - _wave_strength);
+}
+
+/// @desc Loads the next page or closes the textbox if we've reached the end.
+/// Also invokes any choice actions if relevant
+/// @return {Bool} Whether we've reached the end (and this textbox is going away)
+next_page = function()
+{
+    if (m_pageConfig.choiceCount > 1)
+    {
+        if (array_length(m_pageConfig.choiceActions) > m_choiceSelection)
+        {
+            m_pageConfig.choiceActions[m_choiceSelection]();
+        }
+        while (array_length(choices_made) < page)
+        {
+            choices_made[array_length(choices_made)] = 0;
+        }
+        choices_made[page] = m_choiceSelection;
+    }
+    ++page;
+    if (page == array_length(m_text))
+    {
+        m_growRate = -0.2;
+        return true;
+    }
+    m_process_page(page);
+    return false;
 }

@@ -1,3 +1,4 @@
+draw_self();
 if (m_growRate != 0)
 {
     image_xscale += m_growRate;
@@ -31,7 +32,13 @@ else
     var _shake_text = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.SHAKE);
     if (m_pageConfig.font != fnt_papyrus_gui)
     {
-        draw_text(_x_current + (_shake_text ? irandom_range(-1, 1) : 0), _y_current + (_shake_text ? irandom_range(-1, 1) : 0), "*");
+        // To make the initial asterisk a different color, simply start your text as "@ffffff@aaaaaaMy text" (i.e., make an empty color to start)
+        var _first_color = m_pageSegmentColors[0];
+        draw_text_colour(
+            _x_current + (_shake_text ? irandom_range(-1, 1) : 0), _y_current + (_shake_text ? irandom_range(-1, 1) : 0),
+            "*",
+            _first_color, _first_color, _first_color, _first_color, 1
+        );
         _x_current += string_width("* ");
     }
     
@@ -47,8 +54,8 @@ else
         var _segment_text = m_pageSegmentText[_segment_index];
         var _segment_color = m_pageSegmentColors[_segment_index];
         for (
-            var _char_index = 1, _segment_length = string_length(m_pageSegmentText);
-            _char_index < _segment_length && _total_char_count < charCount;
+            var _char_index = 1, _segment_length = string_length(_segment_text);
+            _char_index <= _segment_length && _total_char_count < charCount;
             ++_char_index
         )
         {
@@ -64,9 +71,9 @@ else
             if (_wave_text)
             {
                 ++_wave;
-                if (_wave >= m_CHAR_WAVES.UPPER_LIMIT)
+                if (_wave >= m_CHAR_WAVES.LIMIT)
                 {
-                    _wave = m_CHAR_WAVES.LOWER_LIMIT;
+                    _wave = -m_CHAR_WAVES.LIMIT;
                 }
             }
             
@@ -82,7 +89,11 @@ else
                     _y_current += 35;
                     if (m_pageConfig.font != fnt_papyrus_gui)
                     {
-                        draw_text(_x_current + (_shake_text ? irandom_range(-1, 1) : 0), _y_current + (_shake_text ? irandom_range(-1, 1) : 0), "*");
+                        draw_text_colour(
+                            _x_current + (_shake_text ? irandom_range(-1, 1) : 0), _y_current + (_shake_text ? irandom_range(-1, 1) : 0),
+                            "*",
+                            _segment_color, _segment_color, _segment_color, _segment_color, 1
+                        );
                         _x_current += string_width("* ");
                     }
                     break;
@@ -171,9 +182,9 @@ else
     }
     
     ++m_charWaveTimer;
-    if (m_charWaveTimer >= m_CHAR_WAVES.UPPER_LIMIT)
+    if (m_charWaveTimer >= m_CHAR_WAVES.LIMIT)
     {
-        m_charWaveTimer = m_CHAR_WAVES.LOWER_LIMIT;
+        m_charWaveTimer = -m_CHAR_WAVES.LIMIT;
     }
+    show_debug_message($"charWaveTimer: {m_charWaveTimer}; y-offset: {m_wave_offset(m_charWaveTimer)}");
 }
-draw_self();
