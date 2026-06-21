@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_textbox_old",
+  "%Name":"obj_textbox",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_textbox_old",
+  "name":"obj_textbox",
   "overriddenProperties":[],
   "parent":{
     "name":"Meta",
