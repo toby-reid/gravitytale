@@ -19,6 +19,12 @@ choices_made = [];
 head_frame = 0;
 page = 0;
 auto_linebreak = false; // TODO: Implement auto newlines
+setCanMove = false;
+if (instance_exists(obj_dipper))
+{
+    setCanMove = obj_dipper.canMove;
+    obj_dipper.canMove = false;
+}
 
 m_charCountTarget = 0;
 m_continueArrowIndex = 0;
