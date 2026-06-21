@@ -1,13 +1,25 @@
 /// @desc sound/char
 
-++charCount;
-if (m_pageConfig.autoskipAt > 0 && charCount >= m_pageConfig.autoskipAt)
+if (charCount < m_charCountTarget)
 {
-    charCount = m_charCountTarget;
+    ++charCount;
+    if (m_pageConfig.autoskipAt > 0 && charCount >= m_pageConfig.autoskipAt)
+    {
+        m_skip_text();
+    }
+    else
+    {
+        alarm[0] = m_pageConfig.charRate;
+    }
 }
-else if (charCount < m_charCountTarget)
+else
 {
-    alarm[0] = m_pageConfig.charRate;
+    if (m_pageConfig.autocontinue)
+    {
+        ++page;
+        m_process_page(page);
+    }
+    exit;
 }
 
 var _char = m_char_at(charCount);

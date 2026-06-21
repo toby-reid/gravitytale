@@ -18,16 +18,16 @@ charCount = 0;
 choices_made = [];
 head_frame = 0;
 page = 0;
-auto_linebreak = true;
+auto_linebreak = false; // TODO: Implement auto newlines
 
 m_charCountTarget = 0;
 m_continueArrowIndex = 0;
 m_continueArrowSpeed = 7;
 m_pageSegmentText = [];
 m_pageSegmentColors = [];
-m_pageSegmentIndex = 0;
-m_fontSwapTimes = [];
-m_charWaveTimer = 0; // used for the first character, to determine whether it's going up/down and for how long
+m_fontSwapTimers = [];
+m_charWaveTimer = 0; // used for the first character, to determine whether it's going up/down and for how long; positive is on the topside, negative on bottomside; 0-9 / -20--11 going up, 10-19 / -10--1 going down
+m_choiceSelection = 0;
 
 m_pageConfig = {
     head: -1,
@@ -35,13 +35,29 @@ m_pageConfig = {
     style: TEXT_STYLE.NONE,
     sound: tlk_default,
     choiceCount: 1,
-    choiceActions: [], // TODO: Implement
+    choiceActions: [],
     charRate: 2,
     autoskipAt: -1,
-    autocontinue: false, // TODO: Implement
-    isSkippable: true // TODO: Implement
+    autocontinue: false,
+    isSkippable: true
 };
 m_DEFAULTS = variable_clone(m_pageConfig);
+m_CHAR_WAVES = {
+    TOP: {
+        LOWER_LIMIT: 0,
+        UPPER_LIMIT: 20,
+        PEAK: 10,
+        Y_OFFSET_DIR: -1
+    },
+    BOTTOM: {
+        LOWER_LIMIT: -20,
+        UPPER_LIMIT: 0, // matches TOP.LOWER_LIMIT
+        PEAK: -10,
+        Y_OFFSET_DIR: 1
+    },
+    UPPER_LIMIT: 20,
+    LOWER_LIMIT: -20
+}
 
 /// @desc Private method to set array-based variable value (does not work on array of arrays)
 /// @param {String} _var_name The name of the variable to change (e.g., `m_text`)
@@ -285,8 +301,10 @@ m_process_page = function(_page)
     m_pageConfig.autocontinue = (array_length(m_autocontinues) > _page) ? m_autocontinues[_page] : m_DEFAULTS.autocontinue;
     m_pageConfig.isSkippable = (array_length(m_skippables) > _page) ? m_skippables[_page] : m_DEFAULTS.isSkippable;
     
-    m_pageSegmentIndex = 0;
     charCount = 0;
+    m_choiceSelection = 0;
+    m_fontSwapTimers = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.FONT_SWAP) ? array_create(m_charCountTarget, 10) : [];
+    m_charWaveTimer = 0;
     
     alarm[0] = m_pageConfig.charRate;
     alarm[1] = m_continueArrowSpeed;
@@ -305,4 +323,29 @@ m_char_at = function(_index)
         _remaining -= _segment_length;
     }
     // Allow a GMS2 error otherwise... something went wrong
+}
+
+m_skip_text = function()
+{
+    charCount = m_charCountTarget;
+    if (scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.FONT_SWAP))
+    {
+        for (var i = 0, _timers_length = array_length(m_fontSwapTimers); i < _timers_length; ++i)
+        {
+            m_fontSwapTimers[i] = 0;
+        }
+    }
+    alarm[0] = m_pageConfig.charRate;
+}
+
+/// @desc Determines a text-wave Y-offset
+/// @param {Real} _wave The "wave" value, which should be between `m_CHAR_WAVES.LOWER_LIMIT` and `m_CHAR_WAVES.UPPER_LIMIT`
+/// @return {Real} The Y-offset to use for this character based on that wave value
+m_wave_offset = function(_wave)
+{
+    var _is_on_top = scr_is_in_range(_wave, m_CHAR_WAVES.TOP.LOWER_LIMIT, m_CHAR_WAVES.TOP.UPPER_LIMIT);
+    var _config = _is_on_top ? m_CHAR_WAVES.TOP : m_CHAR_WAVES.BOTTOM;
+    var _peak_point = ceil((_config.LOWER_LIMIT + _config.UPPER_LIMIT) / 2);
+    var _distance_from_peak = abs(_peak_point - _wave);
+    return _config.Y_OFFSET_DIR * _distance_from_peak;
 }
