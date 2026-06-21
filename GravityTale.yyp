@@ -365,7 +365,7 @@
     {"id":{"name":"obj_sheriffCar","path":"objects/obj_sheriffCar/obj_sheriffCar.yy",},},
     {"id":{"name":"obj_shop","path":"objects/obj_shop/obj_shop.yy",},},
     {"id":{"name":"obj_sign_noCollide","path":"objects/obj_sign_noCollide/obj_sign_noCollide.yy",},},
-    {"id":{"name":"obj_sign","path":"objects/obj_sign/obj_sign.yy",},},
+    {"id":{"name":"obj_sign_old","path":"objects/obj_sign_old/obj_sign_old.yy",},},
     {"id":{"name":"obj_soos_battle","path":"objects/obj_soos_battle/obj_soos_battle.yy",},},
     {"id":{"name":"obj_soos_ow_16","path":"objects/obj_soos_ow_16/obj_soos_ow_16.yy",},},
     {"id":{"name":"obj_soos_ow_17","path":"objects/obj_soos_ow_17/obj_soos_ow_17.yy",},},

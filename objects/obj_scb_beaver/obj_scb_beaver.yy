@@ -12,8 +12,8 @@
     "path":"folders/Objects/Overworld/Scuttlebutt.yy",
   },
   "parentObjectId":{
-    "name":"obj_sign",
-    "path":"objects/obj_sign/obj_sign.yy",
+    "name":"obj_sign_old",
+    "path":"objects/obj_sign_old/obj_sign_old.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
