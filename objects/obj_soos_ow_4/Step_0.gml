@@ -1,7 +1,7 @@
 if instance_exists(obj_dipper) switch stage {
 	case 0: if obj_dipper.x >= 100 {
 		obj_dipper.canMove = false
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = [
 				"You see those switches on #the ground, dude?",
 				"Those are old traps left #from...",
@@ -22,7 +22,7 @@ if instance_exists(obj_dipper) switch stage {
 		}
 		stage++
 	} break
-	case 1: if !instance_exists(obj_textbox) {
+	case 1: if !instance_exists(obj_textbox_old) {
 		speed = 1
 		image_speed = 1
 		if x >= 210 {
@@ -54,7 +54,7 @@ if instance_exists(obj_dipper) switch stage {
 		image_speed = 0
 		image_index = 0
 		sprite_index = spr_soos_d
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = [
 				"See, not too bad, eh?",
 				"Be sure to step on #them in the right order, #by the way.",
@@ -69,7 +69,7 @@ if instance_exists(obj_dipper) switch stage {
 		}
 		stage++
 	} break
-	case 5: if !instance_exists(obj_textbox) {
+	case 5: if !instance_exists(obj_textbox_old) {
 		speed = 1
 		image_speed = 1
 		sprite_index = spr_soos_u

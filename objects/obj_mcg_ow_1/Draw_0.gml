@@ -15,7 +15,7 @@ if (image_alpha > 0) {
 		}
 	}
 
-	if (stage >= 8 and !instance_exists(obj_textbox)) {
+	if (stage >= 8 and !instance_exists(obj_textbox_old)) {
 		draw_sprite(spr_min_hole, 0, 260, 120);
 	}
 	draw_set_alpha(1);

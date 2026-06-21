@@ -9,7 +9,7 @@ switch sprite_index {
 		alarm[0] = 60 - 45*(global.soos >= 27)
 		break
 	case spr_soos_l:
-		with instance_create_layer(160,192,layer,obj_textbox) {
+		with instance_create_layer(160,192,layer,obj_textbox_old) {
 			var slang = "dude"
 			if global.player.mabel slang = "Girl" + slang;
 			var col = global.player.mabel ? "CC277A" : "1970FF";

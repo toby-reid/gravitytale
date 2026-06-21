@@ -1,6 +1,6 @@
 draw_self()
 
-if !instance_exists(obj_textbox) {
+if !instance_exists(obj_textbox_old) {
 	if stage == 3 {
 		if alarm[1] == -1 {
 			alarm[1] = 60
@@ -27,7 +27,7 @@ if !instance_exists(obj_textbox) {
 			audio_play_sound(sfx_door,0,false)
 			obj_dipper.dir = dir
 			obj_dipper.canMove = true
-			with instance_create_layer(160,48,"Instances",obj_textbox) {
+			with instance_create_layer(160,48,"Instances",obj_textbox_old) {
 				if global.player.genocide == RUN.ACTIVE {
 					text = [
 						". . .",
@@ -76,5 +76,5 @@ if !instance_exists(obj_textbox) {
 		}
 	}
 }
-//else if stage == 5 if obj_textbox.page == 3 if obj_textbox.charCount == 1 audio_play_sound(sfx_itemGet,0,false)
+//else if stage == 5 if obj_textbox_old.page == 3 if obj_textbox_old.charCount == 1 audio_play_sound(sfx_itemGet,0,false)
 draw_sprite_ext(spr_fst_jimenez,0,152,191,1,1,0,c_white,alpha);

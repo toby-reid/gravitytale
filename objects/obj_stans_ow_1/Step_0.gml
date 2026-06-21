@@ -7,7 +7,7 @@ switch stage {
 		if camera_get_view_x(view_camera[0]) >= 420 {stage++; alarm[0] = 60}
 	} break
 	case 1: if alarm[0] == -1 {
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = ["b e h o l d . . ."]
 			charRate[0] = .1
 			sound = [silence]
@@ -15,11 +15,11 @@ switch stage {
 		stage += .5
 	} break
 	case 1.5:
-		if !instance_exists(obj_textbox) {
+		if !instance_exists(obj_textbox_old) {
 			if alarm[0] == 119 {audio_play_sound(sfx_click,0,false); audio_stop_sound(mus_wind)}
 			obj_sign.image_blend = c_white
 			if alarm[0] == -1 {
-				with instance_create_layer(160,192,"Instances",obj_textbox) {
+				with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					text = ["the sascrotch!"]
 					font = [fnt_sans_gui]
 					sound = [tlk_stans]
@@ -30,11 +30,11 @@ switch stage {
 		}
 		else alarm[0] = 120
 	break
-	case 2: if !instance_exists(obj_textbox) {
+	case 2: if !instance_exists(obj_textbox_old) {
 		y = 150
 		camera_set_view_pos(view_camera[0],camera_get_view_x(view_camera[0])-1,0)
 		if camera_get_view_x(view_camera[0]) <= 320 {
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"heh, heh...",
 					"what's the matter, kid?",
@@ -71,7 +71,7 @@ switch stage {
 			stage++
 		}
 	} break
-	case 3: if !instance_exists(obj_textbox) {
+	case 3: if !instance_exists(obj_textbox_old) {
 		camera_set_view_target(view_camera[0],obj_dipper)
 		image_speed = 1
 		hspeed = 2.2
@@ -81,7 +81,7 @@ switch stage {
 			image_speed = 0
 			hspeed = 0
 			obj_dipper.hspeed = 0
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"think we should test the #waters, kid?",
 					"see how his latest project's #been going?",
@@ -100,7 +100,7 @@ switch stage {
 			stage++
 		}
 	} break
-	case 4: if !instance_exists(obj_textbox) {
+	case 4: if !instance_exists(obj_textbox_old) {
 		obj_dipper.vspeed = -1
 		obj_dipper.image_speed = .5
 		obj_dipper.dir = 1
@@ -126,7 +126,7 @@ switch stage {
 			obj_ford_ow_1.image_speed = 0
 			obj_ford_ow_1.image_index = 0
 			obj_ford_ow_1.hspeed = 0
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"hey, what's the word, sixer?",
 					"CAN YOU EXPLAIN WHAT #YOU'RE DOING HERE, #STANS?",
@@ -173,7 +173,7 @@ switch stage {
 			stage++
 		}
 	} break
-	case 7: if !instance_exists(obj_textbox) {
+	case 7: if !instance_exists(obj_textbox_old) {
 		if instance_exists(obj_ford_ow_1) {
 			obj_ford_ow_1.sprite_index = spr_ford_r
 			obj_ford_ow_1.image_speed = 1
@@ -185,9 +185,9 @@ switch stage {
 			}
 		}
 		else if alarm[0] == -1 {
-			obj_dipper.canMove = true//Set by obj_textbox now
+			obj_dipper.canMove = true//Set by obj_textbox_old now
 			if global.player.genocide != RUN.ACTIVE {
-				with instance_create_layer(160,192,"Instances",obj_textbox) {
+				with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					text = [
 						"he's gone.&you can take off that #beautiful costume now.",
 						"what, deception?&no...&don't be ridiculous.",
@@ -210,7 +210,7 @@ switch stage {
 					for(var i = 0; i < array_length(text); i++) {sound[i] = tlk_stans; font[i] = fnt_sans_gui}
 				}
 			} else {
-				with instance_create_layer(160,192,"Instances",obj_textbox) {
+				with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					if (string_lower(global.player.name)=="lamby" and !global.player.mabel) or (string_lower(global.player.name)=="waddle" and global.player.mabel) {
 						text = [
 							"he's gone.&take that stupid costume off.",
@@ -269,12 +269,12 @@ switch stage {
 		}
 	} break
 	case 8:
-		if instance_exists(obj_textbox) { if obj_textbox.page == 1 if obj_textbox.charCount == 0 {
+		if instance_exists(obj_textbox_old) { if obj_textbox_old.page == 1 if obj_textbox_old.charCount == 0 {
 			if string_lower(global.player.name) == "mason" {
-				obj_dipper.sprite_index = spr_dipstar; 
+				obj_dipper.sprite_index = spr_dipstar;
 				if !audio_is_playing(sfx_click) audio_play_sound(sfx_click,0,false)
 			} else if string_lower(global.player.name) != "lamby" {
-				obj_dipper.sprite_index = spr_diphat; 
+				obj_dipper.sprite_index = spr_diphat;
 				if !audio_is_playing(sfx_click) audio_play_sound(sfx_click,0,false)
 			}
 		}}
@@ -293,8 +293,8 @@ switch stage {
 			}
 		}
 	break
-	case 9: 
-		if !instance_exists(obj_textbox) sprite_index = spr_stans_d 
+	case 9:
+		if !instance_exists(obj_textbox_old) sprite_index = spr_stans_d
 		if obj_dipper.x <= x-200 instance_destroy()
 		break
 }

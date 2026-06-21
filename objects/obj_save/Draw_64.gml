@@ -3,7 +3,7 @@ draw_set_font(fnt_basic_gui)
 if save > 0 switch save {
 	case 1:
 	case 2:
-		if instance_exists(obj_textbox) {if obj_textbox.grow < 0 size += .1}
+		if instance_exists(obj_textbox_old) {if obj_textbox_old.grow < 0 size += .1}
 		else {
 			draw_text(140,ybox-67,profile.name);
 			draw_text(280,ybox-67,string_concat("LV ", profile.lv));

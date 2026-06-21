@@ -1,15 +1,15 @@
-if !instance_exists(obj_textbox) if instance_exists(obj_dipper) if obj_dipper.canMove {
+if !instance_exists(obj_textbox_old) if instance_exists(obj_dipper) if obj_dipper.canMove {
 	var dir = obj_dipper.dir
-	if (place_meeting(x-2,y,obj_dipper) and dir==0) or (place_meeting(x,y+2,obj_dipper) and dir==1) or (place_meeting(x+2,y,obj_dipper) and dir==2) or (place_meeting(x,y-2,obj_dipper) and dir==3) with instance_create_layer(160,192,"Instances",obj_textbox) {
-		if other.stage < 4 
+	if (place_meeting(x-2,y,obj_dipper) and dir==0) or (place_meeting(x,y+2,obj_dipper) and dir==1) or (place_meeting(x+2,y,obj_dipper) and dir==2) or (place_meeting(x,y-2,obj_dipper) and dir==3) with instance_create_layer(160,192,"Instances",obj_textbox_old) {
+		if other.stage < 4
 			text = ["(Looks like a beat-up old #sheriff patrol vehicle.)","(The sun's reflection on the #glass prevents you from seeing #inside.)"];
-		else if global.enemy_spared[ENEMY.SHERIFF] and global.enemy_spared[ENEMY.DEPUTY] 
+		else if global.enemy_spared[ENEMY.SHERIFF] and global.enemy_spared[ENEMY.DEPUTY]
 			text = ["(You still can't see inside the #vehicle, but you know they're #not here.)"];
-		else if global.enemy_spared[ENEMY.SHERIFF] 
+		else if global.enemy_spared[ENEMY.SHERIFF]
 			text = ["(You still can't see inside the #vehicle, but you can hear soft #weeping for the lost deputy.)"];
-		else if global.enemy_spared[ENEMY.DEPUTY] 
+		else if global.enemy_spared[ENEMY.DEPUTY]
 			text = ["(You still can't see inside the #vehicle, but you can hear the #deputy's wailing from within.)"];
-		else 
+		else
 			text = ["(You stuffed the bodies back #into the vehicle.&(No one needs to know.)"];
 	}
 }

@@ -2,7 +2,7 @@ switch stage {
 	case 0:
 		if obj_dipper.x >= 220 {
 			obj_dipper.canMove = false
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				var slang = "dude"
 				if (global.player.mabel) slang = "girl" + slang;
 				text = [
@@ -26,7 +26,7 @@ switch stage {
 		else if obj_dipper.y > 220 obj_dipper.y = 210
 		break;
 	case 1:
-		if !instance_exists(obj_textbox) {
+		if !instance_exists(obj_textbox_old) {
 			speed = 3
 			image_speed = 2
 			sprite_index = spr_soos_r
@@ -49,7 +49,7 @@ switch stage {
 		if obj_dipper.x >= 1460 {//minimum possible time is 826.66666666666666666666666666
 			obj_dipper.canMove = false
 			var slang = global.player.mabel ? "Hambone" : "dude";
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"Sup, "+slang+"?",
 					"You're finally here!",
@@ -87,7 +87,7 @@ switch stage {
 					spr_soos_face_happy
 				]
 				for(var i = 0; i < array_length(text); i++) sound[i] = tlk_soos
-				if ((global.player.mabel and string_lower(global.player.name)=="waddle") 
+				if ((global.player.mabel and string_lower(global.player.name)=="waddle")
 						or (!global.player.mabel and string_lower(global.player.name)=="lamby")) {
 					text[8] = "Oh, you already have...&that...";
 				}
@@ -97,7 +97,7 @@ switch stage {
 					head[8] = spr_soos_face_happy_side;
 				}
 			}
-			if timer <= 830 with obj_textbox {
+			if timer <= 830 with obj_textbox_old {
 				text[0] = "Wow, "+slang+"!"
 				text[1] = "You reached the other #end in less than 14 #seconds..."
 				text[2] = "Clearly you're in great #physical condition."
@@ -106,22 +106,22 @@ switch stage {
 				head[2] = spr_soos_face_happy_side
 				head[3] = spr_soos_face_happy_closed
 			}
-			else if timer <= 1000 with obj_textbox {
+			else if timer <= 1000 with obj_textbox_old {
 				text[0] = "Nice job, "+slang+"!"
 				text[1] = "You crossed fairly #quickly."
 				text[2] = "Clearly you're in good #physical condition."
 			}
-			else if timer <= 2000 with obj_textbox {
+			else if timer <= 2000 with obj_textbox_old {
 				text[0] = "There ya go, "+slang+"!"
 				text[1] = "You crossed at a #reasonable speed!"
 				text[2] = "Clearly your physical #condition is okay."
 			}
-			else if timer <= 3600 with obj_textbox {
+			else if timer <= 3600 with obj_textbox_old {
 				text[1] = "You feeling all right?"
 				text[2] = "Your physical condition #seems to be..."
 				text[3] = "...&I'll just go on ahead."
 			}
-			else if timer > 18000 with obj_textbox {
+			else if timer > 18000 with obj_textbox_old {
 				text[0] = "Wow..."
 				text[1] = "I didn't think it was #possible to go that #slowly..."
 				text[2] = "But you're here now, #so you must be okay."
@@ -135,7 +135,7 @@ switch stage {
 		}
 	break
 	case 3:
-		if !instance_exists(obj_textbox) {
+		if !instance_exists(obj_textbox_old) {
 			speed = 1
 			sprite_index = spr_soos_r
 			image_speed = 1
@@ -154,7 +154,7 @@ switch stage {
 				}
 			}
 		}
-		else with obj_textbox {
+		else with obj_textbox_old {
 			if page == 7 {
 				if !global.player.mabel {
 					if charCount == 11 audio_play_sound(sfx_itemGet,0,false)
@@ -168,10 +168,10 @@ switch stage {
 	break
 	case 4:
 		with obj_dipper if place_meeting(x,y,obj_toRoom) {global.soos = 7; instance_destroy(other)}
-		if !instance_exists(obj_textbox) {
+		if !instance_exists(obj_textbox_old) {
 			timer++
 			switch timer {//to call at random intervals =P
-				case 3600: with instance_create_layer(160,192,"Instances",obj_textbox) {
+				case 3600: with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					var slang = "dude"
 					if global.player.mabel slang = "Girl" + slang
 					text = [
@@ -196,7 +196,7 @@ switch stage {
 					for(var i = 1; i < array_length(head); i++) if head[i] != noone sound[i] = tlk_soos
 					audio_play_sound(sfx_comlink,0,false)
 				} break
-				case 18000: with instance_create_layer(160,192,"Instances",obj_textbox) {
+				case 18000: with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					var slang = global.player.mabel ? "Hambone" : "dude";
 					text = [
 						"Beep, beep... *",
@@ -218,7 +218,7 @@ switch stage {
 					for(var i = 1; i < array_length(head); i++) if head[i] != noone sound[i] = tlk_soos
 					audio_play_sound(sfx_comlink,0,false)
 				} break
-				case 36000: with instance_create_layer(160,192,"Instances",obj_textbox) {
+				case 36000: with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					var slang = global.player.mabel ? "Hambone" : "dude";
 					text = [
 						"Beep, beep... *",
@@ -238,7 +238,7 @@ switch stage {
 					for(var i = 1; i < array_length(head); i++) if head[i] != noone sound[i] = tlk_soos
 					audio_play_sound(sfx_comlink,0,false)
 				} break
-				case 54000: with instance_create_layer(160,192,"Instances",obj_textbox) {
+				case 54000: with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					var slang = global.player.mabel ? "Hambone" : "dude";
 					text = [
 						"Beep, beep... *",
@@ -258,7 +258,7 @@ switch stage {
 					for(var i = 1; i < array_length(head); i++) if head[i] != noone sound[i] = tlk_soos
 					audio_play_sound(sfx_comlink,0,false)
 				} break
-				case 72000: with instance_create_layer(160,192,"Instances",obj_textbox) {
+				case 72000: with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					text = [
 						"Beep, beep... *",
 						". . .",

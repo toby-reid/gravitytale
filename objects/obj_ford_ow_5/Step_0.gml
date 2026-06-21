@@ -1,7 +1,7 @@
 switch stage {
 	case 0: if obj_dipper.y <= 520 {
 		obj_dipper.canMove = false
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			var slang = global.player.mabel ? "CHILD" : "BOY";
 			text = [
 				"HELLO AGAIN, CHILD.",
@@ -41,7 +41,7 @@ switch stage {
 		audio_play_sound(mus_nyeh,0,true)
 		stage++
 	} break
-	case 1: if !instance_exists(obj_textbox) {
+	case 1: if !instance_exists(obj_textbox_old) {
 		vspeed = -2
 		sprite_index = spr_ford_u
 		image_speed = 1

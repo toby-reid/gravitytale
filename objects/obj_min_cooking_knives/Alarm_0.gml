@@ -1,4 +1,4 @@
-with instance_create_layer(160, 192, layer, obj_textbox)
+with instance_create_layer(160, 192, layer, obj_textbox_old)
 {
     var _success = obj_min_cookingDate.was_fried_first;
     var _feedback;

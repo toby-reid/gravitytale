@@ -2,7 +2,7 @@ if instance_exists(obj_dipper) switch stage {
 	case 0: if obj_dipper.canMove if obj_dipper.x >= 300 {
 		obj_dipper.canMove = false
 		audio_stop_all()
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = global.player.mabel
 				? [
 					"WHOA THERE, GIRLY.&BACK UP A MINUTE.",
@@ -24,7 +24,7 @@ if instance_exists(obj_dipper) switch stage {
 		}
 		stage++
 	} break
-	case 1: if !instance_exists(obj_textbox) {
+	case 1: if !instance_exists(obj_textbox_old) {
 		with instance_create_layer(0,0,"Instances",obj_toBattle) {
 			music = mus_mansong
 			goto = btl_fst_9_manDan
@@ -32,7 +32,7 @@ if instance_exists(obj_dipper) switch stage {
 		stage++
 	} break
 	case 2: if !instance_exists(obj_toBattle) {
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			if global.enemy_spared[ENEMY.MANLY_DAN] and global.enemy_spared[ENEMY.TYLER] {
 				var slang = global.player.mabel ? "GIRLY" : "BOY";
 				text = [
@@ -67,7 +67,7 @@ if instance_exists(obj_dipper) switch stage {
 		stage++
 	} break
 	case 3:
-		if !instance_exists(obj_textbox) instance_destroy()
+		if !instance_exists(obj_textbox_old) instance_destroy()
 		else obj_dipper.canMove = false
 		break
 }

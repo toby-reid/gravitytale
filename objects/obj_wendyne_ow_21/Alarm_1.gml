@@ -1,5 +1,5 @@
 /// @description Seven.
-with instance_create_layer(160,192,layer,obj_textbox) {
+with instance_create_layer(160,192,layer,obj_textbox_old) {
 	text = [
 		"Seven.",
 		"That's how many people I was #able to train with the supplies #I was given.",

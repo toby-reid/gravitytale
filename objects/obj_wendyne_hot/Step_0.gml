@@ -29,7 +29,7 @@ switch stage {
 		break;
 	case 2:
 		if(alarm[0] == -1) {
-			with instance_create_layer(160,192,layer,obj_textbox) {
+			with instance_create_layer(160,192,layer,obj_textbox_old) {
 				text = [
 					". . .",
 					"This... sucks.",
@@ -53,7 +53,7 @@ switch stage {
 		}
 		break;
 	case 3:
-		if(!instance_exists(obj_textbox)) if(keyboard_check_pressed(vk_enter) and place_meeting(x+2,y,obj_dipper) and obj_dipper.dir == 2) {
+		if(!instance_exists(obj_textbox_old)) if(keyboard_check_pressed(vk_enter) and place_meeting(x+2,y,obj_dipper) and obj_dipper.dir == 2) {
 			if(obj_icebox.ice) {
 				obj_icebox.ice = false;
 				global.player.spares++;
@@ -62,7 +62,7 @@ switch stage {
 				obj_dipper.canMove = false;
 				stage++;
 			}
-			else with instance_create_layer(160,192,layer,obj_textbox) {
+			else with instance_create_layer(160,192,layer,obj_textbox_old) {
 				text = ["I'm tired of running.","I just want to prank my #friends with some @99d9eaice@ffffff..."];
 				head = [spr_wendy_head_side,spr_wendy_head_side];
 				sound = [tlk_wendy,tlk_wendy];
@@ -79,7 +79,7 @@ switch stage {
 		break;
 	case 5:
 		if(alarm[0] == -1) {
-			with instance_create_layer(160,192,layer,obj_textbox) {
+			with instance_create_layer(160,192,layer,obj_textbox_old) {
 				text = [
 					". . .",
 					"You're... giving that to #me?",
@@ -131,7 +131,7 @@ switch stage {
 		}
 		break;
 	case 6:
-		if(!instance_exists(obj_textbox)) {
+		if(!instance_exists(obj_textbox_old)) {
 			image_speed = -0.5;
 			hspeed = -0.25;
 			if(image_index%2 == 1) audio_play_sound(sfx_wendyne_step,0,false);

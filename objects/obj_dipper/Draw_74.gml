@@ -39,7 +39,7 @@ if menu[0] > 0 {
 	if global.player.df >= AT_DF.BASE draw_text(55,269,"COMLINK")
 	switch menu[0] {
 		case 1://select
-			if !instance_exists(obj_textbox) {
+			if !instance_exists(obj_textbox_old) {
 				draw_sprite(soul_sprite,0,46,209+global.menu[0]*36)
 				if keyboard_check_pressed(vk_down) {global.menu[0]++; if global.menu[0]>2 or (global.menu[0]>1 and global.player.df == AT_DF.NONE) global.menu[0]=0; audio_play_sound(sfx_beep,0,false)}
 				if keyboard_check_pressed(vk_up) {global.menu[0]--; if global.menu[0]<0 {if global.player.df != AT_DF.NONE global.menu[0]=2; else global.menu[0]=1}; audio_play_sound(sfx_beep,0,false)}
@@ -50,18 +50,18 @@ if menu[0] > 0 {
 								menu[0] = 2;
 							}
 							else {
-								with instance_create_layer(320,192,"Instances",obj_textbox) text = ["(You don't have any Items.&(What's the point of looking?)"]
+								with instance_create_layer(320,192,"Instances",obj_textbox_old) text = ["(You don't have any Items.&(What's the point of looking?)"]
 							}
 							break
 						case 1: menu[0] = 4 break
 						case 2:
 							if global.enemy_killed[ENEMY.SOOS] or instance_exists(obj_bill_overworld) {
-								with instance_create_layer(320,192,"Instances",obj_textbox) {
+								with instance_create_layer(320,192,"Instances",obj_textbox_old) {
 									text = ["(You tried to contact Soos...`````#...but there was no answer.)"];
 								}
 							}
 							else {
-								with instance_create_layer(160,192,"Instances",obj_textbox) {
+								with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 									text = ["Beep, beep... *","Hey, dude!&How's it going?",". . .","Oh, you just #wanted a hint...?"]
 									head = [noone,spr_soos_face_happy,spr_soos_face_neutral,spr_soos_face_disappoint,spr_soos_face_happy]
 									switch room {
@@ -306,7 +306,7 @@ if menu[0] > 0 {
 				}
 				draw_text(212, multipage ? 372 : 340, "USE   INFO  DROP");
 			}
-			if !instance_exists(obj_textbox) {
+			if !instance_exists(obj_textbox_old) {
 				if global.inventory[global.menu[1]] == ITEM_NAME.NONE if !scr_menu_itemSelect(1) menu[0] = 1
 				draw_sprite(soul_sprite,0,202,92+32*global.menu[1])
 				if keyboard_check_pressed(vk_down) scr_menu_itemSelect(1)
@@ -369,7 +369,7 @@ if menu[0] > 0 {
 					case 0://Use
 						if item.usable {
 							if global.player.hp >= global.player.maxHp {
-								with instance_create_layer(160,192,"Instances",obj_textbox) {
+								with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 									text[0] = "(You were going to use the #"+item.name+", #but your HP was already full.)"
 								}
 							}
@@ -380,8 +380,8 @@ if menu[0] > 0 {
 									global.player.hp = global.player.maxHp;
 								}
 								var restore = (global.player.hp == global.player.maxHp) ? "All" : string(heal);
-								if !instance_exists(obj_textbox) {
-									with instance_create_layer(160,192,"Instances",obj_textbox) {
+								if !instance_exists(obj_textbox_old) {
+									with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 										text[0] = string_concat(restore, " HP restored.&", item.useResponse);
 									}
 								}
@@ -390,7 +390,7 @@ if menu[0] > 0 {
 							}
 						}
 						else { // unusable item, such as one for in-battle or an empty cookie jar
-							with instance_create_layer(160, 192, layer, obj_textbox) {
+							with instance_create_layer(160, 192, layer, obj_textbox_old) {
 								text[0] = item.useResponse;
 							}
 						}
@@ -398,8 +398,8 @@ if menu[0] > 0 {
 					case 1://Info
 						var heal = item.heal;
 						var restore = (heal >= 0) ? string(heal) : "all";
-						if !instance_exists(obj_textbox) {
-							with instance_create_layer(160,192,"Instances",obj_textbox) {
+						if !instance_exists(obj_textbox_old) {
+							with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 								text[0] = string_concat(item.name, " - Restores ", restore, " HP.&", item.description);
 							}
 						}
@@ -440,7 +440,7 @@ if menu[0] > 0 {
 								global.inventory[global.menu[1]] = item.useResult;
 								break
 						}
-						with instance_create_layer(160,192,"Instances",obj_textbox) {
+						with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 							text = _text;
 						}
 					break

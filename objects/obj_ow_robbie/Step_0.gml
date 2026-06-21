@@ -9,7 +9,7 @@ switch stage {
 		vspeed = -.1
 		if y <= ystart-20 {
 			vspeed = 0
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = global.player.mabel
 					? [
 						"hey kid",
@@ -37,7 +37,7 @@ switch stage {
 			stage++
 		}
 	} break
-	case 2: if !instance_exists(obj_textbox) {
+	case 2: if !instance_exists(obj_textbox_old) {
 		with instance_create_layer(0,0,"Instances",obj_toBattle) {
 			music = mus_strongerMonsters
 			goto = btl_fst_12_robbie
@@ -46,7 +46,7 @@ switch stage {
 	} break
 	case 3: if !instance_exists(obj_toBattle) {
 		if global.enemy_killed[ENEMY.ROBBIE] instance_destroy()
-		else with instance_create_layer(160,192,"Instances",obj_textbox) {
+		else with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = global.player.mabel
 				? [
 					"hey kid",
@@ -63,7 +63,7 @@ switch stage {
 			other.stage++
 		}
 	} break
-	case 4: if !instance_exists(obj_textbox) {
+	case 4: if !instance_exists(obj_textbox_old) {
 		vspeed = .1
 		if y >= ystart+1 instance_destroy()
 	} break

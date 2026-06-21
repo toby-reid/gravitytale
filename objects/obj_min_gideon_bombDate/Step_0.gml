@@ -1,7 +1,7 @@
 if (!done && doll_count == 0 && time_left > 0)
 {
     alarm[2] = -1;
-    if (!instance_exists(obj_textbox))
+    if (!instance_exists(obj_textbox_old))
     {
         audio_group_stop_all(Music);
         audio_play_sound(sfx_puzDone, 0, false);
@@ -11,16 +11,16 @@ if (!done && doll_count == 0 && time_left > 0)
     }
 }
 
-if (instance_exists(obj_textbox) && obj_textbox.page >= 0 && obj_textbox.sound[obj_textbox.page] == tlk_gideon)
+if (instance_exists(obj_textbox_old) && obj_textbox_old.page >= 0 && obj_textbox_old.sound[obj_textbox_old.page] == tlk_gideon)
 {
-    arm_index = obj_textbox.face;
+    arm_index = obj_textbox_old.face;
 }
 else
 {
     arm_index = 0;
 }
 
-if (done && !instance_exists(obj_textbox) && alarm[3] == -1)
+if (done && !instance_exists(obj_textbox_old) && alarm[3] == -1)
 {
     vspeed = -1;
     audio_group_set_gain(Music, audio_group_get_gain(Music) - 0.01);

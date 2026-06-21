@@ -1,6 +1,6 @@
 if (is_active)
 {
-    if (instance_exists(obj_textbox))
+    if (instance_exists(obj_textbox_old))
     {
         with obj_textbox
         {

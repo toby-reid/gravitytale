@@ -4,7 +4,7 @@ if save == 0 if instance_exists(obj_dipper) if obj_dipper.canMove {
 		obj_dipper.canMove = false
 		if y > camera_get_view_y(view_camera[0])+140 ybox = 96
 		else ybox = 384
-		with instance_create_layer(160,ybox/2,"Instances",obj_textbox) {
+		with instance_create_layer(160,ybox/2,"Instances",obj_textbox_old) {
 			text[0] = other.text
 			sound[0] = silence
 			if global.player.genocide == RUN.ACTIVE {

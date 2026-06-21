@@ -4,7 +4,7 @@ switch stage {
 		obj_dipper.canMove = false
 		sprite_index = spr_stans_d
 		obj_ford_ow_1.sprite_index = spr_ford_d
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = [
 				"GREETINGS, CHILD...",
 				"(DO CHILDREN STILL SAY #\"GREETINGS\" HERE...?)",
@@ -48,7 +48,7 @@ switch stage {
 		audio_play_sound(mus_nyeh,0,true)
 		stage++
 	} break
-	case 1: if !instance_exists(obj_textbox) {
+	case 1: if !instance_exists(obj_textbox_old) {
 		obj_ford_ow_1.sprite_index = spr_ford_u
 		obj_ford_ow_1.image_speed = 1
 		obj_ford_ow_1.vspeed = -2
@@ -75,7 +75,7 @@ switch stage {
 			image_speed = 0
 			image_index = 0
 			if global.player.genocide == RUN.ACTIVE {
-				with instance_create_layer(160,192,"Instances",obj_textbox) {
+				with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					text = [
 						"but you know that's not true, #don't you?",
 						"even though i warned you back #there, you're still coming?",
@@ -95,7 +95,7 @@ switch stage {
 			stage++
 		}
 	} break
-	case 2: if !instance_exists(obj_textbox) {
+	case 2: if !instance_exists(obj_textbox_old) {
 		vspeed = -1
 		image_speed = .5
 		if y <= 120 {

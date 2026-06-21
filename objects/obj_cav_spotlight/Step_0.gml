@@ -1,6 +1,6 @@
 if global.player.genocide != RUN.ACTIVE switch stage {
 	case 1: if !audio_is_playing(sfx_alert) {
-		with instance_create_layer(160,192,layer,obj_textbox) {
+		with instance_create_layer(160,192,layer,obj_textbox_old) {
 			text = [
 				"(. . .)",
 				"(Of course the spotlight #couldn't be for nothing...)",
@@ -10,7 +10,7 @@ if global.player.genocide != RUN.ACTIVE switch stage {
 		}
 		stage++
 	} break
-	case 2: if !instance_exists(obj_textbox) {
+	case 2: if !instance_exists(obj_textbox_old) {
 		with instance_create_layer(0,0,layer,obj_toBattle) {
 			goto = btl_cav_17_ghosts
 			music = mus_dummy
@@ -19,7 +19,7 @@ if global.player.genocide != RUN.ACTIVE switch stage {
 	} break
 	case 3: if !instance_exists(obj_toBattle) {
 		if global.enemy_spared[ENEMY.GHOSTS] {
-			with instance_create_layer(160,192,layer,obj_textbox) {
+			with instance_create_layer(160,192,layer,obj_textbox_old) {
 				setMove = true
 				text = [
 					"(. . .)",

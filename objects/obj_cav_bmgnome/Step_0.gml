@@ -5,15 +5,15 @@ if instance_exists(obj_dipper) switch stage {
 		alarm[0] = 60
 	} break
 	case 1:
-		if instance_exists(obj_textbox) {
-			if obj_textbox.page == 5 {
+		if instance_exists(obj_textbox_old) {
+			if obj_textbox_old.page == 5 {
 				if alarm[1] == -1 alarm[1] = 81
 				if keyboard_check_pressed(vk_shift) event_user(0)
 			}
 		}
 	break
 	case 2: if !instance_exists(obj_toBattle) {
-		with instance_create_layer(160,192,layer,obj_textbox) {
+		with instance_create_layer(160,192,layer,obj_textbox_old) {
 			text = [
 				"(. . .)",
 				"(That was...`#unsettling.)",
@@ -27,7 +27,7 @@ if instance_exists(obj_dipper) switch stage {
 		stage++
 	} break
 	case 3:
-		if !instance_exists(obj_textbox) instance_destroy()
+		if !instance_exists(obj_textbox_old) instance_destroy()
 		else obj_dipper.canMove = false
 	break
 }

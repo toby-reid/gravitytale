@@ -25,7 +25,7 @@ if (instance_exists(obj_dipper)) switch (stage) {
 		}
 		break;
 	case 2:
-		if (alarm[1] == -1 and !instance_exists(obj_textbox)) {
+		if (alarm[1] == -1 and !instance_exists(obj_textbox_old)) {
 			audio_group_stop_all(Music);
 			audio_play_sound(sfx_ding, 0, false);
 			sprite_index = spr_mcg_r;
@@ -42,12 +42,12 @@ if (instance_exists(obj_dipper)) switch (stage) {
 		break;
 	// cases 3-7 covered entirely in alarm[2]
 	case 8:
-		if (!instance_exists(obj_textbox)) {
+		if (!instance_exists(obj_textbox_old)) {
 			audio_group_stop_all(Music);
 			audio_play_sound(sfx_click, 0, false);
 			alarm[3] = 60;
 			stage++;
-		} else with obj_textbox {
+		} else with obj_textbox_old {
 			if (page >= 0 and sound[page] == tlk_gideon and charCount < string_length(text[page])) with obj_ford_ow_1 {
 				arm_index += .1;
 				while (arm_index >= 2) {

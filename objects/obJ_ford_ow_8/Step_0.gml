@@ -1,7 +1,7 @@
 switch stage {
 	case 0: if obj_dipper.x >= 140 {
 		obj_dipper.canMove = false
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = [
 				"HELLO AGAIN, TEST #SUBJ-&ER, CHILD.",
 				"IT HAS OCCURRED TO #ME THAT YOU MAY, IN #FACT, BE CHEATING.",
@@ -26,7 +26,7 @@ switch stage {
 		audio_play_sound(mus_nyeh,0,true)
 		stage++
 	} break
-	case 1: if !instance_exists(obj_textbox) {
+	case 1: if !instance_exists(obj_textbox_old) {
 		image_speed = 1
 		hspeed = 2
 		sprite_index = spr_ford_r

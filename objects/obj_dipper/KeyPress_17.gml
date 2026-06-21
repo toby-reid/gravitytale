@@ -3,7 +3,7 @@ if canMove {
 	menu[0] = 1
 	audio_play_sound(sfx_beep,0,false)
 }
-else if menu[0] > 0 if !instance_exists(obj_textbox) {
+else if menu[0] > 0 if !instance_exists(obj_textbox_old) {
 	menu[0] = 0
 	canMove = true
 	audio_play_sound(sfx_beep,0,false)

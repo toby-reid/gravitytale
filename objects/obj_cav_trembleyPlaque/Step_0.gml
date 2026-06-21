@@ -1,4 +1,4 @@
-if !instance_exists(obj_textbox) switch stage {
+if !instance_exists(obj_textbox_old) switch stage {
 	case 1: if alarm[0] == -1 {
 		if obj_ford_ow_1.vspeed == 0 {
 			alarm[0] = 240
@@ -14,7 +14,7 @@ if !instance_exists(obj_textbox) switch stage {
 	case 2:
 		if audio_is_playing(sfx_sans_pound) obj_dipper.y++
 	break
-	case 3: 
+	case 3:
 		if !instance_exists(obj_toBattle) {
 			if global.enemy_killed[ENEMY.TREMBLEY] {
 				if(alarm[2] == -1) alarm[2] = 20;

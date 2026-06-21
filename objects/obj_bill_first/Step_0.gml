@@ -81,7 +81,7 @@ else if image_index >= 19 {
 		with instance_find(obj_bill_overworld,1) {
 			if alarm[0] > 0 {if alarm[0] mod 5 == 0 image_alpha += .02}
 			else if alarm[0] == 0 {
-				with instance_create_layer(160,196,"Instances",obj_textbox) {
+				with instance_create_layer(160,196,"Instances",obj_textbox_old) {
 					var col = (global.player.mabel) ? "@CC277A" : "@1970ff";
 					var soul = (global.player.mabel) ? "Shooting Star" : "Pine Tree";
                     var prev_run = scr_getPreviousRoute();
@@ -215,7 +215,7 @@ else if image_index >= 19 {
 				}
 				path_start(pth_float,.1,path_action_continue,false)
 			}
-			else if !instance_exists(obj_textbox) if !instance_exists(obj_toBattle) with instance_create_layer(0,0,"Instances",obj_toBattle) {
+			else if !instance_exists(obj_textbox_old) if !instance_exists(obj_toBattle) with instance_create_layer(0,0,"Instances",obj_toBattle) {
 				goto = btl_scb_1_billBattle
 				music = mus_bestFriend
 				dest = 1

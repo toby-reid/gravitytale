@@ -9,12 +9,12 @@ if instance_exists(obj_dipper) if obj_dipper.canMove
 			global.dir = 4
 		}
 		else if image_index == 0 {//Wax Stans
-			with instance_create_layer(160,48,"Instances",obj_textbox) text = ["I don't think now is the best #time to fight the Dummy again."]
+			with instance_create_layer(160,48,"Instances",obj_textbox_old) text = ["I don't think now is the best #time to fight the Dummy again."]
 		}
 		else if image_index == 1 {//Dummy
-			with instance_create_layer(160,48,"Instances",obj_textbox) text = ["Look at what you've done #to Soos's precious wax figure."]
+			with instance_create_layer(160,48,"Instances",obj_textbox_old) text = ["Look at what you've done #to Soos's precious wax figure."]
 		}
 		else {//Beheaded
-			with instance_create_layer(160,48,"Instances",obj_textbox) text = ["Wax Stans...&He's been...&Murdered!","...you monster."]
+			with instance_create_layer(160,48,"Instances",obj_textbox_old) text = ["Wax Stans...&He's been...&Murdered!","...you monster."]
 		}
 	}

@@ -1,7 +1,7 @@
 switch stage {
 	case 0: if instance_exists(obj_dipper) if obj_dipper.x <= 260 {
 		obj_dipper.canMove = false
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = [
 				"Alright, dude, if you're #planning on staying alive, #you'll need to learn ",
 				"to @FF7F27FIGHT@ffffff.",
@@ -27,7 +27,7 @@ switch stage {
 		stage++
 	} break
 	case 1:
-		if !instance_exists(obj_textbox) {
+		if !instance_exists(obj_textbox_old) {
 			speed = 1.5
 			image_speed = 1
 			direction = 180
@@ -38,7 +38,7 @@ switch stage {
 				stage++
 			}
 		} else if global.player.mabel
-			if obj_textbox.page == 4 and obj_textbox.charCount == 10 
+			if obj_textbox_old.page == 4 and obj_textbox_old.charCount == 10
 				audio_play_sound(sfx_itemGet,0,false)
 	break
 	case 2: if y <= 40 {
@@ -50,12 +50,12 @@ switch stage {
 		stage++
 	} break
 	case 3://Increased by obj_scb_dummy
-		if !instance_exists(obj_textbox) sprite_index = spr_soos_d
+		if !instance_exists(obj_textbox_old) sprite_index = spr_soos_d
 		global.soos = 5.5
 	break
 	case 4: if variable_global_exists("dummy") {
 		switch global.dummy {
-			case 0: with instance_create_layer(160,192,"Instances",obj_textbox) {
+			case 0: with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"You didn't even try, #did you?",
 					"You just walked in and #Spared the thing.",
@@ -69,7 +69,7 @@ switch stage {
 					spr_soos_face_neutral_side
 				]
 			} break
-			case 1: with instance_create_layer(160,192,"Instances",obj_textbox) {
+			case 1: with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"Wow...",
 					"You actually fixed my #Wax Stans...",
@@ -90,7 +90,7 @@ switch stage {
 				]
 				global.player.money += 10
 			} break
-			case 2: case 3: case 5: case 6: with instance_create_layer(160,192,"Instances",obj_textbox) {
+			case 2: case 3: case 5: case 6: with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"You...",
 					"You ruined my Wax #Stans...",
@@ -113,7 +113,7 @@ switch stage {
 				]
 				for(var i = 0; i < array_length(text); i++) charRate[i] = .25
 			} break
-			case 4: with instance_create_layer(160,192,"Instances",obj_textbox) {
+			case 4: with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"Hey, uh...",
 					"You all right there, #dude?",
@@ -142,10 +142,10 @@ switch stage {
 				charRate[7] = .2
 			} break
 		}
-		with obj_textbox for(var i = 0; i < array_length(text); i++) sound[i] = tlk_soos
+		with obj_textbox_old for(var i = 0; i < array_length(text); i++) sound[i] = tlk_soos
 		stage++
 	} break
-	case 5: if !instance_exists(obj_textbox) {
+	case 5: if !instance_exists(obj_textbox_old) {
 		direction = 90
 		speed = 1
 		image_speed = 1

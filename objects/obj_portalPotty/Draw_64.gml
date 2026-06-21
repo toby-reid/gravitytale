@@ -38,7 +38,7 @@ if teleport {//If we're on the front end (the starting point)
 		room_goto(_goto);
 	}
 	obj_dipper.canMove = false
-	instance_destroy(obj_textbox)
+	instance_destroy(obj_textbox_old)
 	draw_set_alpha(alpha)
 	draw_rectangle_color(-320,-240,960,720,0,0,0,0,false)
 	draw_set_alpha(1)

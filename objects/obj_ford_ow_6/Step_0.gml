@@ -1,7 +1,7 @@
 switch stage {
 	case 0: if obj_dipper.x >= 100 {
 		obj_dipper.canMove = false
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = [
 				"WELL, I MUST SAY...",
 				"YOU ARE MUCH MORE #INTELLIGENT #THAN YOU SEEM.",
@@ -42,7 +42,7 @@ switch stage {
 		audio_play_sound(mus_nyeh,0,true)
 		stage++
 	} break
-	case 1: if !instance_exists(obj_textbox) {
+	case 1: if !instance_exists(obj_textbox_old) {
 		if y < 120 {vspeed = 2; image_speed = 1; sprite_index = spr_ford_d}
 		else {vspeed = 0; hspeed = 2; sprite_index = spr_ford_r; if x >= 320 stage++}
 	} break

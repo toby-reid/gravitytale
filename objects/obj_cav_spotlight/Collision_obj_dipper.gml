@@ -6,7 +6,7 @@ if global.player.genocide != RUN.ACTIVE if other.canMove {
 	}
 	else {
 		stage = 2
-		with instance_create_layer(160,192,layer,obj_textbox) {
+		with instance_create_layer(160,192,layer,obj_textbox_old) {
 			text = [
 				"(. . .)",
 				"(...Darn.)",

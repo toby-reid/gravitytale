@@ -1,4 +1,4 @@
-with instance_create_layer(160,192,layer,obj_textbox) {
+with instance_create_layer(160,192,layer,obj_textbox_old) {
 	text = [
 		"(. . .)",
 		"(He left you with a -12 #dollar bill.&(It's less than worthless.)",

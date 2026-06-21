@@ -1,5 +1,5 @@
 /// @description Create first Textbox
-if prev with instance_create_layer(160,192,layer,obj_textbox) {//defeated before
+if prev with instance_create_layer(160,192,layer,obj_textbox_old) {//defeated before
 	text = [
 		"(Everything has gone black.)",
 		"(You can't even see your hand #in front of your face.)",
@@ -14,7 +14,7 @@ if prev with instance_create_layer(160,192,layer,obj_textbox) {//defeated before
 	]
 	charRate = [4,4,4]
 }
-else with instance_create_layer(160,192,layer,obj_textbox) {//first time encountering the Wayman
+else with instance_create_layer(160,192,layer,obj_textbox_old) {//first time encountering the Wayman
 	text = [
 		"(Everything has gone black.)",
 		"(You can't even see your hand #in front of your face.)",
@@ -30,6 +30,6 @@ else with instance_create_layer(160,192,layer,obj_textbox) {//first time encount
 	]
 	charRate = [4,4,4,4]
 }
-with obj_textbox {for(var i = 4; i < array_length(text); i++) if string_copy(text[i],1,1) != "(" {style[i] = 6; font[i] = fnt_bill_gui}}
+with obj_textbox_old {for(var i = 4; i < array_length(text); i++) if string_copy(text[i],1,1) != "(" {style[i] = 6; font[i] = fnt_bill_gui}}
 //audio_play_sound(mus_danger,0,false)
 stage++

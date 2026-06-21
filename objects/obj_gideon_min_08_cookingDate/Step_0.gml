@@ -57,7 +57,7 @@ if (instance_exists(obj_dipper))
         case 3:
             if (alarm[1] == -1)
             {
-                with instance_create_layer(160, 192, layer, obj_textbox)
+                with instance_create_layer(160, 192, layer, obj_textbox_old)
                 {
                     text = [
                         "PREVIOUSLY, ON LI'L GIDEON'S #LI'L TOWN:",
@@ -123,7 +123,7 @@ if (instance_exists(obj_dipper))
             }
             break;
         case 4:
-            if (!instance_exists(obj_textbox))
+            if (!instance_exists(obj_textbox_old))
             {
                 alarm[2] = 60;
                 ++self.stage;
@@ -172,7 +172,7 @@ if (instance_exists(obj_dipper))
         case 7:
             if (alarm[2] == -1)
             {
-                with instance_create_layer(160, 192, layer, obj_textbox)
+                with instance_create_layer(160, 192, layer, obj_textbox_old)
                 {
                     var _result_feedback;
                     if (other.task_success)
@@ -213,7 +213,7 @@ if (instance_exists(obj_dipper))
             }
             break;
         case 8:
-            if (!instance_exists(obj_textbox))
+            if (!instance_exists(obj_textbox_old))
             {
                 // TODO: Start the 'move out' animation...
                 // Also make sure to fade the music and whatnot

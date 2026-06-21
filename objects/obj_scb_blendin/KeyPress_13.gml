@@ -1,7 +1,7 @@
 if stage == 0 if instance_exists(obj_dipper) if obj_dipper.canMove
 	if (place_meeting(x-2,y,obj_dipper) and obj_dipper.dir==0) or (place_meeting(x,y+2,obj_dipper) and obj_dipper.dir==1) or (place_meeting(x+2,y,obj_dipper) and obj_dipper.dir==2) or (place_meeting(x,y-2,obj_dipper) and obj_dipper.dir==3) {
 		obj_dipper.canMove = false
-		if (scr_getKillCount(ENEMY.BLENDIN) == 0) with instance_create_layer(160,192,"Instances",obj_textbox) {
+		if (scr_getKillCount(ENEMY.BLENDIN) == 0) with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = [
 				". . .",
 				"huh?",
@@ -13,7 +13,7 @@ if stage == 0 if instance_exists(obj_dipper) if obj_dipper.canMove
 			]
 			for(var i = 0; i < array_length(text); i++) sound[i] = tlk_blendin
 		}
-		else with instance_create_layer(160,192,"Instances",obj_textbox) {
+		else with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = [
 				". . .",
 				"huh?",

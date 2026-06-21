@@ -4,15 +4,15 @@ if image_index == 0 {//new game
 		draw_text_transformed_color(56+string_width("* "),325,global.player.name,size,size,0,c_aqua,c_aqua,c_aqua,c_aqua,1)
 		size += .01
 	}
-	else if instance_exists(obj_textbox) with obj_textbox {
+	else if instance_exists(obj_textbox_old) with obj_textbox_old {
 		if page == 4 and choice[7] == 1 {
 			global.player.mabel = bool(action[4]);
 		}
 		else if (choice[7] == 1 and page == 6) or (choice[7] == 0 and page == 3) {
 			keyboard_unset_map()
 			if charCount >= 32 with other {
-				obj_textbox.charCount = 32
-				if keyboard_check_pressed(vk_enter) { if string_length(name) >= 1 with obj_textbox {
+				obj_textbox_old.charCount = 32
+				if keyboard_check_pressed(vk_enter) { if string_length(name) >= 1 with obj_textbox_old {
 					alarm[2] = 1
 					response = ["",tlk_title,fnt_basic_gui,0/*style*/,1/*choice[4] and choice[7]*/]
 					switch string_lower(other.name) {

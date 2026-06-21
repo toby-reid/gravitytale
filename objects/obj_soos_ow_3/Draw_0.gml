@@ -10,7 +10,7 @@ switch stage {
 			image_speed = 0
 			speed = 0
 			obj_dipper.dir = 0
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				var slang = global.player.mabel ? "Hambone" : "dude";
 				var col = global.player.mabel ? "@CC277A" : "@1970FF";
 				text = [
@@ -31,7 +31,7 @@ switch stage {
 					"Life forms are more #likely to die when #they're alive.",
 					"Follow me, "+slang+".&And hurry -` these parts #can be dangerous.",
 				]
-				if (global.player.mabel and string_lower(global.player.name)=="mabel") 
+				if (global.player.mabel and string_lower(global.player.name)=="mabel")
 						or (!global.player.mabel and string_lower(global.player.name)=="dipper") {
 					text[12] = col+global.player.name+"@ffffff, huh?&I thought as much."
 				}
@@ -60,7 +60,7 @@ switch stage {
 		}
 		break
 	case 3:
-		if !instance_exists(obj_textbox) {
+		if !instance_exists(obj_textbox_old) {
 			sprite_index = spr_soos_r
 			direction = 0
 			speed = 1.5

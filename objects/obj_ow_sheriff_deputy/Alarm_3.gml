@@ -1,5 +1,5 @@
 /// @description after-battle dialogue
-with instance_create_layer(160,192,layer,obj_textbox) {
+with instance_create_layer(160,192,layer,obj_textbox_old) {
 	if global.enemy_spared[ENEMY.SHERIFF] and global.enemy_spared[ENEMY.DEPUTY] {
 		var slang = global.player.mabel ? "little missy" : "city boy";
 		text = [

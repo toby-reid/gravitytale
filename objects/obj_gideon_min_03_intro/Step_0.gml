@@ -48,7 +48,7 @@ if (instance_exists(obj_dipper))
                 self.arm = spr_gideon_tv_arm_talk;
                 audio_sound_pitch(mus_gameshow_tv, 0.8);
                 audio_play_sound(mus_gameshow_tv, 0, true);
-                with instance_create_layer(160, 192, self.layer, obj_textbox)
+                with instance_create_layer(160, 192, self.layer, obj_textbox_old)
                 {
                     text = [
                         "HELLO, AMERICA!",
@@ -68,7 +68,7 @@ if (instance_exists(obj_dipper))
             }
         break;
         case 3:
-            if (!instance_exists(obj_textbox))
+            if (!instance_exists(obj_textbox_old))
             {
                 self.alarm[2] = 180;
                 self.arm_index = 0;
@@ -78,14 +78,14 @@ if (instance_exists(obj_dipper))
             }
             else
             {
-                self.arm_index = obj_textbox.face;
-                self.face = (obj_textbox.page <= 1) ? spr_gideon_tv_face_cheery : spr_gideon_tv_face_neutral;
+                self.arm_index = obj_textbox_old.face;
+                self.face = (obj_textbox_old.page <= 1) ? spr_gideon_tv_face_cheery : spr_gideon_tv_face_neutral;
             }
         break;
         case 4:
             if (self.alarm[2] == -1 and self.alarm[3] == -1)
             {
-                with instance_create_layer(160, 192, layer, obj_textbox)
+                with instance_create_layer(160, 192, layer, obj_textbox_old)
                 {
                     text = [
                         "ISN'T THIS MUCH BETTER?&NOW Y'ALL CAN SEE MY #ADOWABLE FACE!",
@@ -143,12 +143,12 @@ if (instance_exists(obj_dipper))
             }
         break;
         case 5:
-            if (instance_exists(obj_textbox))
+            if (instance_exists(obj_textbox_old))
             {
-                self.arm_index = obj_textbox.face;
-                if (obj_textbox.text[obj_textbox.page] != ". . .")
+                self.arm_index = obj_textbox_old.face;
+                if (obj_textbox_old.text[obj_textbox_old.page] != ". . .")
                 {
-                    self.face = (string_upper(obj_textbox.text[obj_textbox.page]) == obj_textbox.text[obj_textbox.page])
+                    self.face = (string_upper(obj_textbox_old.text[obj_textbox_old.page]) == obj_textbox_old.text[obj_textbox_old.page])
                         ? spr_gideon_tv_face_cheery
                         : spr_gideon_tv_face_neutral;
                 }

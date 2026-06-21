@@ -55,7 +55,7 @@ with obj_ford_ow_1 {
             other.alarm[2] = 120;
             break;
         case 7: // start the Gideon craze!
-            with instance_create_layer(160, 192, layer, obj_textbox) {
+            with instance_create_layer(160, 192, layer, obj_textbox_old) {
                 text = [
                     "HELLO AMERICA!",
                     "IT IS SUCH A GIFT TO BE WITH #Y'ALL TODAY!&SUCH A GIFT!",

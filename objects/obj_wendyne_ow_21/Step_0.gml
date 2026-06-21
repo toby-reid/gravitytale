@@ -19,12 +19,12 @@ if(instance_exists(obj_dipper)) switch stage {
 		}
 		break;
 	case 1:
-		if(!instance_exists(obj_textbox)) {
+		if(!instance_exists(obj_textbox_old)) {
 			alarm[0] = 90;
 			stage++;
 			audio_sound_gain(mus_wind,0,500);
 		}
-		else switch obj_textbox.page {
+		else switch obj_textbox_old.page {
 			case 1:
 			case 3:
 				sprite_index = spr_wendyne_l;
@@ -41,12 +41,12 @@ if(instance_exists(obj_dipper)) switch stage {
 		break;
 	case 2://NGAHHH
 		if (alarm[0] == -1) {
-			if (!instance_exists(obj_textbox)) {
+			if (!instance_exists(obj_textbox_old)) {
 				audio_stop_sound(mus_wind);
 				audio_sound_gain(mus_wind,1,0);
 				if (global.enemy_killed[ENEMY.MANLY_DAN]) {
 					stage++;
-				} else with instance_create_layer(160,192,layer,obj_textbox) {
+				} else with instance_create_layer(160,192,layer,obj_textbox_old) {
 					text = [
 						". . .",
 						"No, you know what?",
@@ -56,8 +56,8 @@ if(instance_exists(obj_dipper)) switch stage {
 					];
 				}
 			} else {
-				if (!audio_is_playing(mus_ngahhh)) if (obj_textbox.page == 1) audio_play_sound(mus_ngahhh,0,true);
-				if (obj_textbox.alarm[2] > -1 and obj_textbox.page > 0) {
+				if (!audio_is_playing(mus_ngahhh)) if (obj_textbox_old.page == 1) audio_play_sound(mus_ngahhh,0,true);
+				if (obj_textbox_old.alarm[2] > -1 and obj_textbox_old.page > 0) {
 					alpha = 1;
 					var _cam = view_camera[0];
 					camera_set_view_size(_cam,camera_get_view_width(_cam)-40,camera_get_view_height(_cam)-30);
@@ -65,12 +65,12 @@ if(instance_exists(obj_dipper)) switch stage {
 					camera_set_view_angle(_cam,-30 + irandom(60));
 				}
 				else if(alpha > 0) alpha -= .05;
-				if(obj_textbox.grow < 0) stage++;
+				if(obj_textbox_old.grow < 0) stage++;
 			}
 		}
 		break;
 	case 3://fadeflash
-		if(!instance_exists(obj_textbox)) {
+		if(!instance_exists(obj_textbox_old)) {
 			if(alpha < 1) alpha += .01;
 			else {
 				var _cam = view_camera[0];
@@ -92,7 +92,7 @@ if(instance_exists(obj_dipper)) switch stage {
 				image_speed = 0;
 				if (alarm[0] == -1) alarm[0] = 60;
 				else if (alarm[0] == 0) {
-					with instance_create_layer(160,192,layer,obj_textbox) {
+					with instance_create_layer(160,192,layer,obj_textbox_old) {
 						if (global.player.genocide == RUN.ACTIVE) {
 							text = [
 								"You.",
@@ -269,7 +269,7 @@ if(instance_exists(obj_dipper)) switch stage {
 		}
 		break;
 	case 5://return to sender
-		if(!instance_exists(obj_textbox)) {
+		if(!instance_exists(obj_textbox_old)) {
 			var _viewy = camera_get_view_y(view_camera[0]);
 			if(_viewy < obj_dipper.y-120) camera_set_view_pos(view_camera[0],0,_viewy+4);
 			else {

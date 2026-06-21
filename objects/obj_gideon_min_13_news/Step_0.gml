@@ -23,7 +23,7 @@ switch self.stage
         {
             self.arm = spr_gideon_tv_arm_talk;
             audio_play_sound(mus_newsreport, 0, true);
-            with instance_create_layer(160, 192, layer, obj_textbox)
+            with instance_create_layer(160, 192, layer, obj_textbox_old)
             {
                 text = [
                     "GOOD MORNING, AMERICA!",
@@ -73,9 +73,9 @@ switch self.stage
         }
         break;
     case 3:
-        if (instance_exists(obj_textbox))
+        if (instance_exists(obj_textbox_old))
         {
-            self.arm_index = obj_textbox.face;
+            self.arm_index = obj_textbox_old.face;
             with obj_textbox
             {
                 switch (page)

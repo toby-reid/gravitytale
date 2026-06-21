@@ -1,6 +1,6 @@
 if (self.isActive)
 {
-    if (instance_exists(obj_textbox))
+    if (instance_exists(obj_textbox_old))
     {
         with obj_textbox
         {
@@ -39,7 +39,7 @@ if (self.isActive)
         self.isActive = false;
     }
 }
-else if (ready_for_completion && !instance_exists(obj_textbox))
+else if (ready_for_completion && !instance_exists(obj_textbox_old))
 {
     alarm[0] = 30;
     ready_for_completion = false;

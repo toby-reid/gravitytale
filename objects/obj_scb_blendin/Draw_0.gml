@@ -1,6 +1,6 @@
 draw_self()
 switch stage {
-	case 1: if !instance_exists(obj_textbox) {
+	case 1: if !instance_exists(obj_textbox_old) {
 		with instance_create_layer(0,0,"Instances",obj_toBattle) {
 			music = mus_ghostFight
 			goto = btl_scb_11_blendin
@@ -10,7 +10,7 @@ switch stage {
 	} break
 	case 2: if !instance_exists(obj_toBattle) {
 		if global.enemy_killed[ENEMY.BLENDIN] {
-			if scr_getKillCount(ENEMY.BLENDIN) > 0 with instance_create_layer(160,192,"Instances",obj_textbox) {
+			if scr_getKillCount(ENEMY.BLENDIN) > 0 with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"d... did you just...",
 					"did you reset the timeline #just to kill me again?",
@@ -21,7 +21,7 @@ switch stage {
 				]
 				sound = [tlk_blendin,tlk_blendin,tlk_blendin,tlk_blendin,tlk_blendin,tlk_blendin]
 			}
-			else with instance_create_layer(160,192,"Instances",obj_textbox) {
+			else with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"m-my body is a temple!&how dare you!",
 					"i-i'll be back...&eventually..."
@@ -31,7 +31,7 @@ switch stage {
 			scr_killedEnemy(ENEMY.BLENDIN);
 		}
 		else if global.enemy_spared[ENEMY.BLENDIN] {
-			if scr_getKillCount(ENEMY.BLENDIN) > 0 with instance_create_layer(160,192,"Instances",obj_textbox) {
+			if scr_getKillCount(ENEMY.BLENDIN) > 0 with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"thanks for letting me talk...",
 					"i've never really had a friend #before...",
@@ -43,7 +43,7 @@ switch stage {
 				]
 				for(var i = 0; i < array_length(text); i++) sound[i] = tlk_blendin
 			}
-			else with instance_create_layer(160,192,"Instances",obj_textbox) {
+			else with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"thanks for letting me talk...",
 					"i've never really had a friend #before...",
@@ -64,7 +64,7 @@ switch stage {
 		stage++
 	} break
 	case 3:
-		if !instance_exists(obj_textbox) {
+		if !instance_exists(obj_textbox_old) {
 			if timer == 0 audio_play_sound(sfx_fadeWhite,0,false)
 			if timer < 20 drawx += 3
 			else if timer < 30 drawx++

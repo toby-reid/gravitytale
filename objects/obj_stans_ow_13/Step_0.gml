@@ -1,7 +1,7 @@
 switch stage {
 	case 0: if obj_dipper.y <= 350 {
 		obj_dipper.canMove = false
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = [
 				"hey, kid, you made it.&nice job.",
 				"you've beaten manly men, #impossible puzzles, #and teenage angst...",
@@ -54,7 +54,7 @@ switch stage {
 		audio_play_sound(mus_nyeh,0,true)
 		stage++
 	} break
-	case 1: if !instance_exists(obj_textbox) {
+	case 1: if !instance_exists(obj_textbox_old) {
 		obj_ford_ow_1.vspeed = -2
 		obj_ford_ow_1.sprite_index = spr_ford_u
 		obj_ford_ow_1.image_speed = 1
@@ -64,7 +64,7 @@ switch stage {
 			audio_sound_gain(mus_nyeh,1,0)
 			instance_destroy(obj_ford_ow_1)
 			if global.player.genocide != RUN.ACTIVE {
-				with instance_create_layer(160,192,"Instances",obj_textbox) {
+				with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					text = [
 						"look, kid...&i don't know if you were #aware...",
 						"but my brother's a little...&eccentric.",
@@ -88,7 +88,7 @@ switch stage {
 					for(var i = 0; i < array_length(text); i++) {sound[i] = tlk_stans; font[i] = fnt_sans_gui}
 				}
 			} else {
-				with instance_create_layer(160,192,"Instances",obj_textbox) {
+				with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					text = [
 						"well, kid...&you still haven't given up, eh?",
 						"your murder spree is still #strong, and the fire in your #eyes is only brighter.",
@@ -124,7 +124,7 @@ switch stage {
 			stage++
 		}
 	} break
-	case 2: if !instance_exists(obj_textbox) {
+	case 2: if !instance_exists(obj_textbox_old) {
 		vspeed = -.5
 		image_speed = .5
 		if y <= 200 {global.stans = 13; instance_destroy()}

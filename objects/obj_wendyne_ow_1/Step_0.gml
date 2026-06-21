@@ -1,6 +1,6 @@
 if instance_exists(obj_dipper) switch stage {
 	case 0: if obj_dipper.x >= 130 {
-		with instance_create_layer(160,48,"Instances",obj_textbox) {
+		with instance_create_layer(160,48,"Instances",obj_textbox_old) {
 			if global.enemy_spared[ENEMY.SOOS] {
 				var slang = global.player.mabel ? "Hambone" : "dude";
 				text = [
@@ -118,7 +118,7 @@ if instance_exists(obj_dipper) switch stage {
 		if !global.enemy_spared[ENEMY.SOOS] instance_destroy()
 	} break
 	case 3: if obj_dipper.x >= 830 {
-		with instance_create_layer(160,48,"Instances",obj_textbox) {
+		with instance_create_layer(160,48,"Instances",obj_textbox_old) {
 			var slang = "dude"
 			if (global.player.mabel) slang = "Girl" + slang;
 			text = [

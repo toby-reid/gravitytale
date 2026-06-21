@@ -10,20 +10,20 @@ if instance_exists(obj_dipper) switch stage {
 		}
 		stage++
 	} break
-	case 2: 
+	case 2:
 		if(alpha < 1) alpha += .005
 		if audio_sound_get_gain(mus_wind) < 1 audio_sound_gain(mus_wind,audio_sound_get_gain(mus_wind)+.01,0)
 		break
-	case 3: 
-		if !instance_exists(obj_textbox) {
+	case 3:
+		if !instance_exists(obj_textbox_old) {
 			audio_stop_sound(mus_dgame)
 			with instance_create_layer(0,0,layer,obj_toBattle) {
 				music = silence
 				goto = btl_wayman
 			}
 			stage++
-		} 
-		else with obj_textbox if page >= 0 if string_copy(text[page],1,3) == "Oi," if !audio_is_playing(mus_dgame) {audio_stop_sound(mus_wind); audio_play_sound(mus_dgame,0,true)}
+		}
+		else with obj_textbox_old if page >= 0 if string_copy(text[page],1,3) == "Oi," if !audio_is_playing(mus_dgame) {audio_stop_sound(mus_wind); audio_play_sound(mus_dgame,0,true)}
 		break
 	case 4:
 		if !instance_exists(obj_toBattle) {//we've defeated the Wayman
@@ -35,7 +35,7 @@ if instance_exists(obj_dipper) switch stage {
 			else {
 				obj_dipper.canMove = true
 				if global.enemy_killed[ENEMY.WAYMAN] or global.enemy_spared[ENEMY.WAYMAN]//won't make textbox if we just ran
-					if prev with instance_create_layer(160,192,layer,obj_textbox) {
+					if prev with instance_create_layer(160,192,layer,obj_textbox_old) {
 						text = [
 							"(You can now use Portal-#Potties.)",
 							". . .",
@@ -44,7 +44,7 @@ if instance_exists(obj_dipper) switch stage {
 							"(Ok bye)"
 						]
 					}
-					else with instance_create_layer(160,192,layer,obj_textbox) {
+					else with instance_create_layer(160,192,layer,obj_textbox_old) {
 						text = [
 							"(You can now use Portal-#Potties.)",
 							"(Well done...)",

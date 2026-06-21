@@ -1,6 +1,6 @@
 /// @desc Shandra Jimenez, a real reporter
 stage++
-with instance_create_layer(160,48,"Instances",obj_textbox) {
+with instance_create_layer(160,48,"Instances",obj_textbox_old) {
 	text = [
 		"Shandra Jimenez, #a real reporter.",
 		"I'll pay 300 Stan Bucks for #that picture.",

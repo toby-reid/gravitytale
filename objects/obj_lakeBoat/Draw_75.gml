@@ -2,7 +2,7 @@ if stage == 0 {
 	if (x>=480 and image_xscale==-1) or (x<=860 and image_xscale==1) {
 		x += 320*image_xscale
 		/*if !global.enemy_killed[ENEMY.SOOS] {
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				//randomize()
 				text = [". . .","Da dada da da...",other.text[irandom(array_length(other.text)-1)]]
 				sound = [tlk_soos,tlk_soos,tlk_soos]
@@ -14,7 +14,7 @@ if stage == 0 {
 	if alpha > 0 alpha -= .02
 }
 else if stage == 1 {
-	if !instance_exists(obj_textbox) {
+	if !instance_exists(obj_textbox_old) {
 		if (x>=1280 and image_xscale==-1) or (x<=60 and image_xscale==1) {
 			alpha += .025
 			if alpha == 1 instance_destroy()

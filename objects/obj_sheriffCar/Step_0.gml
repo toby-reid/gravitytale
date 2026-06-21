@@ -9,7 +9,7 @@ switch stage {
 		stage++
 	} break
 	case 1: if alarm[0] == -1 {
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			var slang = global.player.mabel ? "little missy" : "city boy";
 			text = [
 				"Whoa there, "+slang+".&That's the town up ahead.",
@@ -24,7 +24,7 @@ switch stage {
 		audio_sound_pitch(sfx_horn,1)
 		stage++
 	} break
-	case 2: if !instance_exists(obj_textbox) {
+	case 2: if !instance_exists(obj_textbox_old) {
 		instance_create_layer(x+80,y+20,layer,obj_ow_sheriff_deputy)
 		with instance_create_layer(x+20,y+20,layer,obj_ow_sheriff_deputy) image_index = 1
 		audio_play_sound(mus_dogbass,0,false)

@@ -4,7 +4,7 @@ switch stage {
 		obj_dipper.x -= 2
 		audio_group_stop_all(Music)
 		audio_play_sound(mus_nyeh,0,true)
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			var died = scr_getDeathCount(ENEMY.FORD) > 0;
 			if global.player.genocide == RUN.ACTIVE and global.areaKills[? area].killCount >= global.areaKills[? area].MAX_KILLS {
 				text = [
@@ -41,7 +41,7 @@ switch stage {
 					spr_ford_head_bashful,
 					spr_ford_head_neutral,
 					spr_ford_head_bashful
-				]	
+				]
 			} else if global.player.genocide == RUN.ACTIVE {//Genocide, but not enough kills to continue
 				if died {
 					text = [
@@ -212,7 +212,7 @@ switch stage {
 		}
 		stage++
 	} break
-	case 1: if !instance_exists(obj_textbox) {
+	case 1: if !instance_exists(obj_textbox_old) {
 		with instance_create_layer(0,0,"Instances",obj_toBattle) {
 			goto = btl_fst_21_ford
 			dest = 1
@@ -226,7 +226,7 @@ switch stage {
 		if global.enemy_killed[ENEMY.FORD] instance_destroy()
 		else if global.enemy_spared[ENEMY.FORD] {
 			obj_dipper.canMove = false
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				if global.player.genocide == RUN.ABORTED {
 					text = [
 						"THANK YOU, CHILD...",
@@ -283,7 +283,7 @@ switch stage {
 			stage++
 		} else {//Ran
 			obj_dipper.canMove = true//The textbox will make him move after it's done
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"AN EXCELLENT CHOICE, #CHILD!",
 					"PERHAPS YOU TRULY #ARE MILDLY #INTELLIGENT...",
@@ -303,7 +303,7 @@ switch stage {
 		}
 	} break
 	case 3:
-		if !instance_exists(obj_textbox) {
+		if !instance_exists(obj_textbox_old) {
 			path_start(pth_ford,1.5,path_action_stop,false)
 			alarm[0] = 1
 			image_speed = 2
@@ -315,11 +315,11 @@ switch stage {
 		if x < 280 instance_destroy()
 		//for(var i = 0; i < instance_number(obj_ford_ow_1); i++) with instance_find(obj_ford_ow_1,i) {if y >= 140 {vspeed = 0; image_alpha -= .1; if image_alpha <= 0 instance_destroy();}}
 	break
-	case 5: if !instance_exists(obj_textbox) {
+	case 5: if !instance_exists(obj_textbox_old) {
 		if obj_dipper.x >= 480 {
 			obj_dipper.canMove = false
 			obj_dipper.x -= 2
-			with instance_create_layer(160,192,"Instances",obj_textbox) {
+			with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [
 					"AH, I SEE...",
 					"SO YOU HAVE CHANGED #YOUR MIND AGAIN?",

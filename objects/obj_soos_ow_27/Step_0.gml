@@ -1,4 +1,4 @@
-/// @description 
+/// @description
 if !active {
 	if obj_dipper.x >= 110 {
 		obj_dipper.x -= 2
@@ -11,7 +11,7 @@ if !active {
 		image_speed = 0
 	}
 }
-else if !instance_exists(obj_textbox) and !instance_exists(obj_toBattle) {
+else if !instance_exists(obj_textbox_old) and !instance_exists(obj_toBattle) {
 	if global.enemy_killed[ENEMY.SOOS] instance_destroy()
 	else if global.soos < 27 {
 		with instance_create_layer(0,0,layer,obj_toBattle) {
@@ -21,7 +21,7 @@ else if !instance_exists(obj_textbox) and !instance_exists(obj_toBattle) {
 		}
 		global.soos = 27
 	}
-	else if global.soos == 27 with instance_create_layer(160,192,layer,obj_textbox) {
+	else if global.soos == 27 with instance_create_layer(160,192,layer,obj_textbox_old) {
 		setMove = true
 		if global.enemy_spared[ENEMY.SOOS] {
 			var col = global.player.mabel ? "CC277A" : "1970FF";
@@ -63,4 +63,4 @@ else if !instance_exists(obj_textbox) and !instance_exists(obj_toBattle) {
 		if x >= 228 instance_destroy()
 	}
 }
-if instance_exists(obj_textbox) if obj_textbox.grow > 0 obj_dipper.canMove = false
+if instance_exists(obj_textbox_old) if obj_textbox_old.grow > 0 obj_dipper.canMove = false

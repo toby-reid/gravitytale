@@ -3,7 +3,7 @@ if instance_exists(obj_dipper) if !audio_is_playing(mus_gravityfalls) if obj_dip
 		audio_play_sound(mus_gravityfalls,0,false)
 		audio_sound_gain(mus_home,0,0)
 		obj_dipper.canMove = false
-		with instance_create_layer(160,192,"Instances",obj_textbox) {
+		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = [
 				"(. . .)",
 				"(It's...)",

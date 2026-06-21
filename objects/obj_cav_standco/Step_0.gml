@@ -1,6 +1,6 @@
 if stage == 2 if !instance_exists(obj_toBattle) {//post-battle thing
 	obj_dipper.canMove = false
-	with instance_create_layer(160,48,layer,obj_textbox) {
+	with instance_create_layer(160,48,layer,obj_textbox_old) {
 		if global.enemy_killed[ENEMY.STANS_CAVE] {
 			text = [
 				"whoa, there, kiddo.",

@@ -1,5 +1,5 @@
 /// @description Bill's message
-with instance_create_layer(160,192,layer,obj_textbox) {
+with instance_create_layer(160,192,layer,obj_textbox_old) {
 	var soul = global.player.mabel ? "@CC277AShooting Star@ffffff" : "@1970ffPine Tree@ffffff";
 	var sibling = global.player.mabel ? "@1970ffbrother@ffffff" : "@CC277Asister@ffffff";
 	if global.player.genocide == RUN.ACTIVE and scr_getRouteCompletions(ROUTES.GENOCIDE) > 0 {

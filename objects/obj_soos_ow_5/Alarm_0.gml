@@ -1,7 +1,7 @@
 ///@desc start
 if global.soos <= 4 {
 	obj_dipper.canMove = false
-	with instance_create_layer(160,192,"Instances",obj_textbox) {
+	with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 		text = [
 			"Here, this puzzle #shouldn't be too #challenging for you...",
 			"As you can tell, there are #two buttons up ahead.",

@@ -1,9 +1,9 @@
 /// @description Kill with time / Destroy
 if !instance_exists(obj_ford_ow_1) {
-	if !instance_exists(obj_textbox) if global.player.genocide == RUN.ACTIVE {
+	if !instance_exists(obj_textbox_old) if global.player.genocide == RUN.ACTIVE {
 		if obj_dipper.x >= x-200 killTime++
 		else killTime = 0
-		if killTime == 900 with instance_create_layer(160,192,"Instances",obj_textbox) {
+		if killTime == 900 with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			text = ["hey, kid...","didn't i warn you there would #be consequences if you stuck #around?"]
 			head = [spr_stans_head_content,spr_stans_head_hollowEye]
 			font = [fnt_sans_gui,fnt_sans_gui]
@@ -12,6 +12,6 @@ if !instance_exists(obj_ford_ow_1) {
 			audio_group_load(Battle)
 			room_persistent = false
 		}
-		if killTime > 900 if !instance_exists(obj_textbox) with instance_create_layer(2*(obj_dipper.x+camera_get_view_x(view_camera[0])),2*obj_dipper.y,"Instances",obj_soul_broken) image_blend = 0xff7019
+		if killTime > 900 if !instance_exists(obj_textbox_old) with instance_create_layer(2*(obj_dipper.x+camera_get_view_x(view_camera[0])),2*obj_dipper.y,"Instances",obj_soul_broken) image_blend = 0xff7019
 	}
 }

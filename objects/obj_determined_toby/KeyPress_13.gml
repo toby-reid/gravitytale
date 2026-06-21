@@ -1,9 +1,9 @@
-if !instance_exists(obj_textbox) {
+if !instance_exists(obj_textbox_old) {
 	if instance_exists(obj_dipper) if obj_dipper.canMove {
 		var dir = obj_dipper.dir
 		var ybox = (y > (camera_get_view_y(view_camera[0]) + 140)) ? 48 : 192;
 		if (place_meeting(x-2,y,obj_dipper) and dir==0) or (place_meeting(x,y+2,obj_dipper) and dir==1) or (place_meeting(x+2,y,obj_dipper) and dir==2) or (place_meeting(x,y-2,obj_dipper) and dir==3) {
-			with instance_create_layer(160,ybox,"Instances",obj_textbox) {
+			with instance_create_layer(160,ybox,"Instances",obj_textbox_old) {
 				switch other.stage {
 					case 0:
 						text = [
@@ -73,30 +73,30 @@ if !instance_exists(obj_textbox) {
 			}
 		}
 	}
-} else if (obj_textbox.charCount >= string_length(obj_textbox.segText[array_length(obj_textbox.segText)-1])-10) {
-	if (stage == 2 and array_length(obj_textbox.choice) > 3) if (obj_textbox.choice[3] == 1) {
-		if obj_textbox.page == 3 {
-			if obj_textbox.action[3] == 0 {
-				obj_textbox.text[4] = "Great!&...&I don't have much moneywise...";
-				obj_textbox.text[5] = "How about a trade instead?##       Yes         No";
-				obj_textbox.text[6] = "Aww...&I guess I'll try again later...";
+} else if (obj_textbox_old.charCount >= string_length(obj_textbox_old.segText[array_length(obj_textbox_old.segText)-1])-10) {
+	if (stage == 2 and array_length(obj_textbox_old.choice) > 3) if (obj_textbox_old.choice[3] == 1) {
+		if obj_textbox_old.page == 3 {
+			if obj_textbox_old.action[3] == 0 {
+				obj_textbox_old.text[4] = "Great!&...&I don't have much moneywise...";
+				obj_textbox_old.text[5] = "How about a trade instead?##       Yes         No";
+				obj_textbox_old.text[6] = "Aww...&I guess I'll try again later...";
 			}
 		}
-		if obj_textbox.page == 5 {
-			if obj_textbox.action[5] == 0 {
-				obj_textbox.text[6] = "Oh, thank you, sir!&I'll go and--";
-				obj_textbox.text[7] = "Hold it right there!!";
-				obj_textbox.setMove = false;
+		if obj_textbox_old.page == 5 {
+			if obj_textbox_old.action[5] == 0 {
+				obj_textbox_old.text[6] = "Oh, thank you, sir!&I'll go and--";
+				obj_textbox_old.text[7] = "Hold it right there!!";
+				obj_textbox_old.setMove = false;
 				stage++;
 			}
 		}
 	}
-	if stage == 4 and array_length(obj_textbox.choice) > 8 if obj_textbox.choice[8] == 1 {
-		if obj_textbox.page == 8 {
-			if obj_textbox.action[8] == 0 {//Toby's trade
+	if stage == 4 and array_length(obj_textbox_old.choice) > 8 if obj_textbox_old.choice[8] == 1 {
+		if obj_textbox_old.page == 8 {
+			if obj_textbox_old.action[8] == 0 {//Toby's trade
 				//don't add new DF item yet
-				obj_textbox.text[9] = "Hmph.&I suppose the allure of mystery #weighs more than gold, hm?";
-				obj_textbox.text[10] = "Well, then, I'll be off.&Congratulations on your prize, #Mr. Determined.";
+				obj_textbox_old.text[9] = "Hmph.&I suppose the allure of mystery #weighs more than gold, hm?";
+				obj_textbox_old.text[10] = "Well, then, I'll be off.&Congratulations on your prize, #Mr. Determined.";
 				global.player.beaverPic = BEAVER_PIC.SOLD_NEWSPAPER;
 			} else {
 				global.player.money += 300;

@@ -1,8 +1,8 @@
 switch image_index {
 	case 0://Starting new game
-		if !instance_exists(obj_textbox) { if size == 0 {
+		if !instance_exists(obj_textbox_old) { if size == 0 {
 			scr_new_global_player()
-			with instance_create_layer(320,376,layer,obj_textbox) {
+			with instance_create_layer(320,376,layer,obj_textbox_old) {
 				if !file_exists(global.SAVE_FILES.PERS_RESET.NAME) {
 					text = [
 						"Greetings, Child!#`(...or adult)",
@@ -35,7 +35,7 @@ switch image_index {
 			}
 			name = ""
 		}}
-		else with obj_textbox if charCount >= string_length(segText[array_length(segText)-1]) {
+		else with obj_textbox_old if charCount >= string_length(segText[array_length(segText)-1]) {
 			if ((choice[7] == 1 and page == 7) or (choice[7] == 0 and page == 4)) {
 				if choice[4] == 1 and action[page] == 0 {//valid, yes name
 					other.size = 1
@@ -58,9 +58,9 @@ switch image_index {
 		break
 	//shouldn't need a case 1
 	case 2:
-		if(!instance_exists(obj_textbox))
+		if(!instance_exists(obj_textbox_old))
 			if !scr_load()
-				with instance_create_layer(160,192,"Instances",obj_textbox) text = ["@ff0000Whoops!@ffffff&Looks like you've got an old #save loaded!","Contact the Creator if you #believe this is a mistake."];
+				with instance_create_layer(160,192,"Instances",obj_textbox_old) text = ["@ff0000Whoops!@ffffff&Looks like you've got an old #save loaded!","Contact the Creator if you #believe this is a mistake."];
 		break
 	case 3: image_index = 5; audio_play_sound(sfx_select,0,false) break
 	case 4:

@@ -1,4 +1,4 @@
-with instance_create_layer(160,192,layer,obj_textbox) {
+with instance_create_layer(160,192,layer,obj_textbox_old) {
 	text = [
 		"(. . .)",
 		"(...How odd.)",

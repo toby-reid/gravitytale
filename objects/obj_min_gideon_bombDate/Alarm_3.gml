@@ -1,12 +1,12 @@
 /// @desc Fanfare for victory or failure
-if (instance_exists(obj_textbox))
+if (instance_exists(obj_textbox_old))
 {
     alarm[3] = 1;
     exit;
 }
 var _success = doll_count == 0;
 audio_play_sound(_success ? mus_showtime : mus_gameshow_tv, 0, true);
-with instance_create_layer(160, 192, layer, obj_textbox)
+with instance_create_layer(160, 192, layer, obj_textbox_old)
 {
     text = [
         _success
@@ -14,7 +14,7 @@ with instance_create_layer(160, 192, layer, obj_textbox)
             : "TIME'S UP!&IT'S A LOST CAUSE!",
         "WELL, THESE PROP DOLLS AND PROP FLAMES AND PROP HIGHLY COMBUSTIBLE FUMES WERE OF COURSE NEVER A THREAT!",
         "THAT'S RIGHT, FOLKS!&I'D NEVER PUT THE GOOD FOLKS OF #GRAVITY FALLS IN DANGER!",
-        _success 
+        _success
             ? string_concat(
                 "ALL TO KEEP OUR GUEST ON H",
                 global.player.mabel ? "ER" : "IS",

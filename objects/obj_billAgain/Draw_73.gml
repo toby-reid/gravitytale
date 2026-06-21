@@ -1,5 +1,5 @@
 /// @description draw greyout
-if stage == 0 or instance_exists(obj_textbox) {
+if stage == 0 or instance_exists(obj_textbox_old) {
 	if alarm[0] > -1 {index += (1-alpha); if index >= 40 index -= 40}
 	for(var i = 0; i < 640; i += 20) for(var j = 0; j < 240; j += 20) draw_sprite(spr_bill_greyout_lake,(index/20)+2,i,j)
 	with obj_lakeBoat {
