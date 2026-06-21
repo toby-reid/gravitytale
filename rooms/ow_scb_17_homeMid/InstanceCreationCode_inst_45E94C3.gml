@@ -9,7 +9,7 @@ else {
 		"(Heat is hot.)",
 		"(I don't think you should touch #it.)"
 	]
-	with instance_create_layer(x,y,layer,obj_sign) {
+	with instance_create_layer(x,y,layer,obj_sign_old) {
 		text = other.text
 		sprite_index = spr_scb_fireplace
 	}

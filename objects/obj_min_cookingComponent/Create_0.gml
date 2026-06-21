@@ -1,6 +1,6 @@
 if (global.player.genocide == RUN.ACTIVE || global.gideon >= 8)
 {
-    with instance_create_layer(x, y, layer, obj_sign)
+    with instance_create_layer(x, y, layer, obj_sign_old)
     {
         text = other.text;
         sprite_index = other.sprite_index;

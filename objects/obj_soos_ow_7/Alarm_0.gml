@@ -1,5 +1,5 @@
 /// @description Set new values...
-obj_sign.text = [
+obj_sign_old.text = [
 	"Upon this island lies a key:&A miniboss within the trees...",
 	"The battle waits behind a gap,&Four rooms beyond this #puzzle map.",
 	"The town his home, #a goblin sits,&Looking for his next big hits...",
@@ -15,10 +15,10 @@ obj_sign.text = [
 	"(That was just a bunch of #symbols we don't understand.)"
 ];
 if global.player.mabel {
-	obj_sign.text[11] = "(Oh, wow!&(There's definitely something #here...!)"
-	obj_sign.text[12] = "(If only we had the brains or #tenacity to figure out those #symbols...)"
+	obj_sign_old.text[11] = "(Oh, wow!&(There's definitely something #here...!)"
+	obj_sign_old.text[12] = "(If only we had the brains or #tenacity to figure out those #symbols...)"
 }
-obj_sign.font = [fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui]
+obj_sign_old.font = [fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui,fnt_bill_gui]
 instance_destroy(obj_scb_barrier)
 with instance_create_layer( 80,220,"Instances",obj_scb_barrier_closed) image_index = 1
 with instance_create_layer(100,220,"Instances",obj_scb_barrier_closed) image_index = 3

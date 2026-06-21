@@ -17,7 +17,7 @@ switch stage {
 	case 1.5:
 		if !instance_exists(obj_textbox_old) {
 			if alarm[0] == 119 {audio_play_sound(sfx_click,0,false); audio_stop_sound(mus_wind)}
-			obj_sign.image_blend = c_white
+			obj_sign_old.image_blend = c_white
 			if alarm[0] == -1 {
 				with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 					text = ["the sascrotch!"]
