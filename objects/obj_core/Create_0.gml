@@ -65,4 +65,19 @@ global.SAVE_FILES = {
 global.ENCRYPTION_KEY = scr_xorEncrypt("GravityTale", GM_version);
 global.BITS_PER_BYTE = 8;
 
+enum TEXT_STYLE
+{
+    NONE = 0,
+    SHAKE = 1 << 1,
+    FONT_SWAP = 1 << 2,
+    WAVE = 1 << 3
+}
+global.TEXT_FLAGS = {
+    NEWLINE: "#",
+    NEWLINE_BUTTON: "&",
+    PAUSE: "`",
+    COLOR: "@",
+    ESCAPE: "\\"
+}
+
 scr_generate_area_kills();
