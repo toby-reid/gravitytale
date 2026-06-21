@@ -29,21 +29,25 @@ else
     var _swap_text = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.FONT_SWAP);
     draw_set_font(_swap_text ? m_DEFAULTS.font : m_pageConfig.font);
     
+    var _wave_text = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.WAVE);
+    var _wave = m_charWaveTimer;
+    
     var _shake_text = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.SHAKE);
     if (m_pageConfig.font != fnt_papyrus_gui)
     {
         // To make the initial asterisk a different color, simply start your text as "@ffffff@aaaaaaMy text" (i.e., make an empty color to start)
         var _first_color = m_pageSegmentColors[0];
         draw_text_colour(
-            _x_current + (_shake_text ? irandom_range(-1, 1) : 0), _y_current + (_shake_text ? irandom_range(-1, 1) : 0),
+            _x_current + (_shake_text ? irandom_range(-1, 1) : 0), _y_current + (_shake_text ? irandom_range(-1, 1) : 0) + (_wave_text ? m_wave_offset(_wave) : 0),
             "*",
             _first_color, _first_color, _first_color, _first_color, 1
         );
+        if (_wave_text)
+        {
+            _wave = m_increment_wave(_wave, 2);
+        }
         _x_current += string_width("* ");
     }
-    
-    var _wave_text = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.WAVE);
-    var _wave = m_charWaveTimer;
     
     for (
         var _segment_index = 0, _segment_count = array_length(m_pageSegmentText), _total_char_count = 0;
@@ -68,14 +72,6 @@ else
                     --m_fontSwapTimers[_swap_index];
                 }
             }
-            if (_wave_text)
-            {
-                ++_wave;
-                if (_wave >= m_CHAR_WAVES.LIMIT)
-                {
-                    _wave = -m_CHAR_WAVES.LIMIT;
-                }
-            }
             
             var _char = string_char_at(_segment_text, _char_index);
             switch (_char)
@@ -90,10 +86,14 @@ else
                     if (m_pageConfig.font != fnt_papyrus_gui)
                     {
                         draw_text_colour(
-                            _x_current + (_shake_text ? irandom_range(-1, 1) : 0), _y_current + (_shake_text ? irandom_range(-1, 1) : 0),
+                            _x_current + (_shake_text ? irandom_range(-1, 1) : 0), _y_current + (_shake_text ? irandom_range(-1, 1) : 0) + (_wave_text ? m_wave_offset(_wave) : 0),
                             "*",
                             _segment_color, _segment_color, _segment_color, _segment_color, 1
                         );
+                        if (_wave_text)
+                        {
+                            _wave = m_increment_wave(_wave, 2);
+                        }
                         _x_current += string_width("* ");
                     }
                     break;
@@ -136,6 +136,10 @@ else
                         _char,
                         _segment_color, _segment_color, _segment_color, _segment_color, 1
                     );
+                    if (_wave_text)
+                    {
+                        _wave = m_increment_wave(_wave, 1);
+                    }
                     _x_current += string_width(_char);
                     break;
             }
@@ -181,10 +185,5 @@ else
         head_frame = 0;
     }
     
-    ++m_charWaveTimer;
-    if (m_charWaveTimer >= m_CHAR_WAVES.LIMIT)
-    {
-        m_charWaveTimer = -m_CHAR_WAVES.LIMIT;
-    }
-    show_debug_message($"charWaveTimer: {m_charWaveTimer}; y-offset: {m_wave_offset(m_charWaveTimer)}");
+    m_charWaveTimer = m_increment_wave(m_charWaveTimer, -1);
 }

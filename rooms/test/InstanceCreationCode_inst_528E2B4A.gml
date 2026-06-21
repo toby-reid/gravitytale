@@ -4,4 +4,4 @@ text = [
     "123456789012345678901234567890"
 ];
 fonts = fnt_bill_gui;
-styles = TEXT_STYLE.WAVE; //scr_flag_enum([TEXT_STYLE.FONT_SWAP, TEXT_STYLE.SHAKE]);
+styles = scr_flag_enum([TEXT_STYLE.FONT_SWAP, TEXT_STYLE.SHAKE, TEXT_STYLE.WAVE]);

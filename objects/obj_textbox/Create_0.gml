@@ -314,12 +314,14 @@ m_process_page = function(_page)
     charCount = 0;
     m_choiceSelection = 0;
     m_fontSwapTimers = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.FONT_SWAP) ? array_create(m_charCountTarget, 20) : [];
-    m_charWaveTimer = 0;
     
     alarm[0] = m_pageConfig.charRate;
     alarm[1] = m_continueArrowSpeed;
 }
 
+/// @desc Retrieves the character found at the given index of the current page, accounting for all page segments
+/// @param {Real} _index 1-based index for the character to locate
+/// @return {String} The character at the given index; raises an error if no such character
 m_char_at = function(_index)
 {
     var _remaining = _index;
@@ -335,6 +337,7 @@ m_char_at = function(_index)
     // Allow a GMS2 error otherwise... something went wrong
 }
 
+/// @desc Skip the text animation, set charCount, etc.
 skip_text = function()
 {
     charCount = m_charCountTarget;
@@ -345,7 +348,7 @@ skip_text = function()
             m_fontSwapTimers[i] = 0;
         }
     }
-    alarm[0] = m_pageConfig.charRate;
+    alarm[0] = m_pageConfig.charRate; // set it one last time in case of autocontinue
 }
 
 /// @desc Determines a text-wave Y-offset
@@ -361,6 +364,23 @@ m_wave_offset = function(_wave)
     }
     var _wave_strength = _wave div m_CHAR_WAVES.SCALAR;
     return _peak - abs(_peak - _wave_strength);
+}
+/// @desc Increments a wave value in either direction, wrapping to fit within limits as necessary
+/// @param {Real} _wave The "wave" value to modify
+/// @param {Real} _direction The incremental value to add to `_wave` (default `1` to increment)
+/// @return {Real} The new "wave" value that can then be assigned
+m_increment_wave = function(_wave, _direction = 1)
+{
+    var _new_wave = _wave + _direction;
+    while (_new_wave >= m_CHAR_WAVES.LIMIT)
+    {
+        _new_wave -= 2 * m_CHAR_WAVES.LIMIT;
+    }
+    while (_new_wave < -m_CHAR_WAVES.LIMIT)
+    {
+        _new_wave += 2 * m_CHAR_WAVES.LIMIT;
+    }
+    return _new_wave;
 }
 
 /// @desc Loads the next page or closes the textbox if we've reached the end.
