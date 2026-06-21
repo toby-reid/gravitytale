@@ -11,7 +11,7 @@ if (!is_active && !instance_exists(obj_textbox) && instance_exists(obj_dipper) &
     {
         with instance_create_layer(160, ybox, layer, obj_textbox)
         {
-            if (other.is_flaming)
+            if (instance_exists(other.flame) && instance_exists(obj_min_gideon_bombDate))
             {
                 text = array_concat(
                     [
@@ -52,7 +52,7 @@ if (!is_active && !instance_exists(obj_textbox) && instance_exists(obj_dipper) &
                 ];
             }
         }
-        if (is_flaming)
+        if (instance_exists(flame))
         {
             is_active = true;
         }

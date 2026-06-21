@@ -1,4 +1,4 @@
-var _hud_width = sprite_get_width(spr_min_news_hud);
+var _hud_width = sprite_get_width(spr_min_news_hud) * 2;
 draw_sprite_ext(spr_min_news_hud, 0, 0, 0, 2, 2, 0, c_white, 1);
 draw_sprite_ext(spr_min_news_hud, 1, _hud_width, 0, 2, 2, 0, c_white, 1);
 
@@ -22,8 +22,8 @@ else
     _time_color = c_purple;
 }
 
-var _number_offset = [56, 4];
-var _number_spacing = 11;
+var _number_offset = [112, 8];
+var _number_spacing = 22;
 var _number_count = 3;
 var _doll_numbering = scr_format_int(doll_count, _number_count);
 var _time_numbering = scr_format_int(time_left, _number_count);

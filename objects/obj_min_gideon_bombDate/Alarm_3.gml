@@ -1,4 +1,9 @@
 /// @desc Fanfare for victory or failure
+if (instance_exists(obj_textbox))
+{
+    alarm[3] = 1;
+    exit;
+}
 var _success = doll_count == 0;
 audio_play_sound(_success ? mus_showtime : mus_gameshow_tv, 0, true);
 with instance_create_layer(160, 192, layer, obj_textbox)
@@ -63,4 +68,4 @@ with instance_create_layer(160, 192, layer, obj_textbox)
     head[12] = spr_mcg_head_crazy;
     head[13] = spr_mcg_head_suavemente;
 }
-// TODO: Remove barriers
+instance_destroy(obj_dontGo);

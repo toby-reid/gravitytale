@@ -1,6 +1,7 @@
 event_inherited();
 doll_count = 0; // add 1 per doll created
-alarm[2] = gamespeed_fps;
+one_second = game_get_speed(gamespeed_fps);
+alarm[2] = one_second;
 time_left = 300; // seconds
 done = false;
 
