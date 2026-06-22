@@ -257,6 +257,12 @@ set_skippable = function(_is_skippable = true, _page = -1)
     }
     m_skippables[_page] = _is_skippable;
 }
+/// @desc Determine whether a given page range's text animations can be skipped with X/Shift (default, enabled)
+/// @param {Real} _is_skippable Whether this range can be skipped
+/// @param {Real} _start_index First index at which to set skippable (inclusive); omit to perform on full text array
+/// @param {Real} _end_index Last index at which to set skippable (exclusive); omit to go to the end of text array
+set_skippable_range = function(_is_skippable = true, _start_index = 0, _end_index = -1) { m_set_range("m_skippables", _is_skippable, m_DEFAULTS.isSkippable, _start_index, _end_index); }
+
 /// @desc When the given page reaches the given index, skip the remainder of the text animation and jump to the finished product
 /// @param {Real} _on_page Page index at which this autoskip takes effect (0-indexed; array); omit to skip text on all pages
 /// @param {Real} _at_page_index Character index on that page at which to skip (1-indexed; string); omit to skip entire page
@@ -386,14 +392,14 @@ m_process_page = function(_page)
 
 /// @desc Retrieves the character found at the given index of the current page, accounting for all page segments
 /// @param {Real} _index 1-based index for the character to locate
-/// @return {String} The character at the given index; raises an error if no such character
+/// @return {String} The character at the given index
 m_char_at = function(_index)
 {
     var _remaining = _index;
     for (var _segment_index = 0, _segment_count = array_length(m_pageSegmentText); _segment_index < _segment_count; ++_segment_index)
     {
         var _segment_length = string_length(m_pageSegmentText[_segment_index]);
-        if (_segment_length > _remaining)
+        if (_segment_length >= _remaining)
         {
             return string_char_at(m_pageSegmentText[_segment_index], _remaining);
         }
@@ -457,7 +463,11 @@ next_page = function()
     {
         if (array_length(m_pageConfig.choiceActions) > m_choiceSelection)
         {
-            m_pageConfig.choiceActions[m_choiceSelection]();
+            var _action = m_pageConfig.choiceActions[m_choiceSelection];
+            if (!is_undefined(_action) && _action != -1)
+            {
+                _action();
+            }
         }
         while (array_length(choices_made) < page)
         {

@@ -419,6 +419,7 @@
     {"name":"rm_menu","order":1,"path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"rm_title","order":2,"path":"rooms/rm_title/rm_title.yy",},
     {"name":"test","order":8,"path":"rooms/test/test.yy",},
+    {"name":"noop","order":29,"path":"scripts/noop/noop.yy",},
     {"name":"scr_array_range","order":24,"path":"scripts/scr_array_range/scr_array_range.yy",},
     {"name":"scr_bigEnemy","order":5,"path":"scripts/scr_bigEnemy/scr_bigEnemy.yy",},
     {"name":"scr_billeyes","order":13,"path":"scripts/scr_billeyes/scr_billeyes.yy",},

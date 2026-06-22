@@ -28,11 +28,12 @@ function scr_join_strings(_base_string, _new_string, _new_index)
     var _new_length = string_length(_new_string);
     var _base_return = _new_index + _new_length;
     var _padded_string = scr_pad_string(_base_string, _new_index - 1, fa_left);
-    return string_concat(
+    var _joined_string = string_concat(
         string_copy(_padded_string, 1, _new_index - 1),
         _new_string,
-        string_copy(_base_string, _base_return, _base_length - _base_return)
+        string_copy(_base_string, _base_return, _base_length)
     );
+    return _joined_string;
 }
 
 function scr_string_diff_index(_string_0, _string_1)

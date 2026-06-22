@@ -548,6 +548,7 @@
     {"id":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
     {"id":{"name":"start","path":"rooms/start/start.yy",},},
     {"id":{"name":"test","path":"rooms/test/test.yy",},},
+    {"id":{"name":"noop","path":"scripts/noop/noop.yy",},},
     {"id":{"name":"scr_array_range","path":"scripts/scr_array_range/scr_array_range.yy",},},
     {"id":{"name":"scr_bigEnemy","path":"scripts/scr_bigEnemy/scr_bigEnemy.yy",},},
     {"id":{"name":"scr_billeyes","path":"scripts/scr_billeyes/scr_billeyes.yy",},},
@@ -1196,7 +1197,6 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
-    {"roomId":{"name":"test","path":"rooms/test/test.yy",},},
     {"roomId":{"name":"ow_min_14_bombDate","path":"rooms/ow_min_14_bombDate/ow_min_14_bombDate.yy",},},
     {"roomId":{"name":"ow_min_07_pz3","path":"rooms/ow_min_07_pz3/ow_min_07_pz3.yy",},},
     {"children":[
@@ -1207,6 +1207,7 @@
         {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
         {"roomId":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
         {"roomId":{"name":"btl_wayman","path":"rooms/btl_wayman/btl_wayman.yy",},},
+        {"roomId":{"name":"test","path":"rooms/test/test.yy",},},
       ],"groupName":"Misc.",},
     {"children":[
         {"roomId":{"name":"mg_date","path":"rooms/mg_date/mg_date.yy",},},

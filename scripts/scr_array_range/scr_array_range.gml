@@ -17,10 +17,11 @@ function scr_pad_array(_array, _desired_length, _pad_with, _place_at_index = -1)
         {
             _array[array_length(_array)] = _pad_with;
         }
-        return;
+        return _array;
     }
     while (array_length(_array) < _desired_length)
     {
         array_insert(_array, _place_at_index, _pad_with);
     }
+    return _array;
 }

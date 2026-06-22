@@ -34,7 +34,11 @@ if (array_contains(global.TEXT_FLAGS.SOFT_PUNCTUATION, _char))
 }
 else if (array_contains(global.TEXT_FLAGS.HARD_PUNCTUATION, _char) || _char == global.TEXT_FLAGS.PAUSE)
 {
-    alarm[0] *= 10;
+    var _next_char = m_char_at(charCount + 1);
+    if (_next_char != ")")
+    {
+        alarm[0] *= 10;
+    }
 }
 else if (_char == global.TEXT_FLAGS.ESCAPE)
 {
