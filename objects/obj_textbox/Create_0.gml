@@ -1,3 +1,10 @@
+/// @desc For reference:
+/// Max char count with no head: 31
+/// Max char count with head: ??
+/// Char count until Left (0) choice with no head: 7 spaces
+/// Char count until Right (1) choice with no head: 19 (including whitespace leading up to Left choice)
+/// Char count until Up (2) or Down (3) choice with no head: 14
+
 if (x < 320)
 {
     x *= 2;
@@ -142,7 +149,7 @@ set_sounds = function(_new_sounds, _start_index = -1) { m_set_array("m_sounds", 
 /// @param {Real} _end_index Last index at which to set this sound (exclusive); omit to go to the end of text array
 set_sound_range = function(_sound, _start_index = 0, _end_index = -1) { m_set_range("m_sounds", _sound, m_DEFAULTS.sound, _start_index, _end_index); }
 
-/// @desc Set branch choices at (or starting at) the given index
+/// @desc Set branch choice count at the given index
 /// @param {Real} _index The index with choices
 /// @param {Real} _choice_count Number of choices the player can use (supports 1-4, inclusive)
 /// @param {Array<Function>} _actions_for_choices Optional actions to take depending on the choice (must be same length as `_choice_count`)
@@ -161,6 +168,64 @@ set_choiceCount = function(_index, _choice_count, _actions_for_choices = [])
         }
         m_choiceActions[_index] = _actions_for_choices;
     }
+}
+/// @desc Set choices for the given index.
+/// This will also modify `m_text`, autoskip, and (of course) choice counts for this index.
+/// This function is not appropriate for use with strings with any special characters, such as pauses, newlines with bullets (`&`), colors (`@`), etc.
+/// @param {Real} _index The index with choices
+/// @param {Array<String>} _choices The actual choices. Indicate newline splits with `#`
+/// @param {Array<Function>} _actions_for_choices Optional actions to take depending on the choice (must be same length as `_choices`)
+set_choices = function(_index, _choices, _actions_for_choices = [])
+{
+    var _choice_count = array_length(_choices);
+    set_choiceCount(_index, _choice_count, _actions_for_choices);
+    
+    // TODO: Account for special characters, like color...
+    var _lineCount = 3; // max supported by textbox
+    var _splitCount = _lineCount - 1;
+    var _base_text = (array_length(m_text) > _index)
+        ? scr_pad_array(string_split_ext(m_text[_index], [global.TEXT_FLAGS.NEWLINE, global.TEXT_FLAGS.NEWLINE_BUTTON], false, _splitCount), _lineCount, "")
+        : array_create(_lineCount, "");
+    
+    var _has_up = _choice_count >= 3;
+    var _has_down = _choice_count == 4;
+    var _left = _has_down ? ["", _choices[0], ""] : scr_pad_array(string_split(_choices[0], global.TEXT_FLAGS.NEWLINE, false, _splitCount), _lineCount, "", 0);
+    var _right = _has_down ? ["", _choices[1], ""] : scr_pad_array(string_split(_choices[1], global.TEXT_FLAGS.NEWLINE, false, _splitCount), _lineCount, "", 0);
+    var _up = _has_down ? [_choices[2], "", ""] : (_has_up ? scr_pad_array(string_split(_choices[2], global.TEXT_FLAGS.NEWLINE, false, _splitCount), _lineCount, "") : array_create(_lineCount, ""));
+    var _down = _has_down ? ["", "", _choices[3]] : array_create(_lineCount, "");
+    
+    var _padding = {
+        left: 7,
+        right: 19,
+        up: 14,
+        down: 14
+    };
+    var _final_text = array_create(_lineCount);
+    for (var i = 0; i < _lineCount; ++i)
+    {
+        _final_text[i] =
+            scr_join_strings(
+                scr_join_strings(
+                    scr_join_strings(
+                        scr_join_strings(
+                            _base_text[i],
+                            _left[i],
+                            _padding.left + 1
+                        ),
+                        _up[i],
+                        _padding.up + 1
+                    ),
+                    _down[i],
+                    _padding.down + 1
+                ),
+                _right[i],
+                _padding.right + 1
+            );
+    }
+    // TODO: account for NEWLINE_BUTTON as well
+    var _new_string = string_join_ext(global.TEXT_FLAGS.NEWLINE, _final_text);
+    set_autoskip(_index, scr_string_diff_index(m_text[_index], _new_string));
+    m_text[_index] = _new_string;
 }
 
 /// @desc Set character typing speeds at (or starting at) the given index
