@@ -14,7 +14,7 @@ else if (self.is_strong)
 }
 else if (self.is_reversed)
 {
-    self.image_blend = c_yellow;
+    self.image_blend = c_lime;
 }
 else
 {

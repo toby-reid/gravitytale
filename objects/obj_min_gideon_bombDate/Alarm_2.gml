@@ -11,7 +11,14 @@ if (time_left == 0)
 else
 {
     alarm[2] = one_second;
-    if (time_left > 200)
+    if (time_left > 500)
+    {
+        if (time_left % 25 == 0)
+        {
+            audio_play_sound(sfx_beep, 0, false);
+        }
+    }
+    else if (time_left > 300)
     {
         if (time_left % 10 == 0)
         {
@@ -27,6 +34,6 @@ else
     }
     else
     {
-        audio_play_sound(sfx_beep, 0, false);
+        audio_play_sound(time_left > 10 ? sfx_beep : sfx_atkAlert, 0, false);
     }
 }

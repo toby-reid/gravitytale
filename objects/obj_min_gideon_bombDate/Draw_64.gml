@@ -2,10 +2,10 @@ var _hud_width = sprite_get_width(spr_min_news_hud) * 2;
 draw_sprite_ext(spr_min_news_hud, 0, 0, 0, 2, 2, 0, c_white, 1);
 draw_sprite_ext(spr_min_news_hud, 1, _hud_width, 0, 2, 2, 0, c_white, 1);
 
-var _doll_color = (doll_count > 0) ? c_red : c_aqua;
+var _doll_color = (doll_count > 0) ? c_red : c_blue;
 
 var _time_color;
-if (time_left > 200)
+if (time_left > 300)
 {
     _time_color = c_yellow;
 }

@@ -518,7 +518,7 @@
     {"name":"mus_wind","order":5,"path":"sounds/mus_wind/mus_wind.yy",},
     {"name":"sfx_alert","order":2,"path":"sounds/sfx_alert/sfx_alert.yy",},
     {"name":"sfx_alertAtk","order":14,"path":"sounds/sfx_alertAtk/sfx_alertAtk.yy",},
-    {"name":"sfx_atkAlert","order":12,"path":"sounds/sfx_atkAlert/sfx_atkAlert.yy",},
+    {"name":"sfx_atkAlert","order":46,"path":"sounds/sfx_atkAlert/sfx_atkAlert.yy",},
     {"name":"sfx_barrierClosing","order":3,"path":"sounds/sfx_barrierClosing/sfx_barrierClosing.yy",},
     {"name":"sfx_beamFire","order":1,"path":"sounds/sfx_beamFire/sfx_beamFire.yy",},
     {"name":"sfx_beep","order":4,"path":"sounds/sfx_beep/sfx_beep.yy",},

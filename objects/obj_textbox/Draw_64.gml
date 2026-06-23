@@ -20,20 +20,20 @@ else
     var _x_current = x - 264;
     var _y_current = y - 51;
     
-    if (m_pageConfig.head != -1)
+    if (currentPageConfig.head != -1)
     {
         _x_current += 104;
-        draw_sprite_ext(m_pageConfig.head, head_frame, x - 224, y, 2, 2, 0, c_white, 1);
+        draw_sprite_ext(currentPageConfig.head, head_frame, x - 224, y, 2, 2, 0, c_white, 1);
     }
     
-    var _swap_text = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.FONT_SWAP);
-    draw_set_font(_swap_text ? m_DEFAULTS.font : m_pageConfig.font);
+    var _swap_text = scr_has_enum_flag(currentPageConfig.style, TEXT_STYLE.FONT_SWAP);
+    draw_set_font(_swap_text ? m_DEFAULTS.font : currentPageConfig.font);
     
-    var _wave_text = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.WAVE);
+    var _wave_text = scr_has_enum_flag(currentPageConfig.style, TEXT_STYLE.WAVE);
     var _wave = m_charWaveTimer;
     
-    var _shake_text = scr_has_enum_flag(m_pageConfig.style, TEXT_STYLE.SHAKE);
-    if (m_pageConfig.font != fnt_papyrus_gui)
+    var _shake_text = scr_has_enum_flag(currentPageConfig.style, TEXT_STYLE.SHAKE);
+    if (currentPageConfig.font != fnt_papyrus_gui)
     {
         // To make the initial asterisk a different color, simply start your text as "@ffffff@aaaaaaMy text" (i.e., make an empty color to start)
         var _first_color = m_pageSegmentColors[0];
@@ -78,12 +78,12 @@ else
             {
                 case global.TEXT_FLAGS.NEWLINE_BUTTON:
                     _x_current = x - 264;
-                    if (m_pageConfig.head != -1)
+                    if (currentPageConfig.head != -1)
                     {
                         _x_current += 104;
                     }
                     _y_current += 35;
-                    if (m_pageConfig.font != fnt_papyrus_gui)
+                    if (currentPageConfig.font != fnt_papyrus_gui)
                     {
                         draw_text_colour(
                             _x_current + (_shake_text ? irandom_range(-1, 1) : 0), _y_current + (_shake_text ? irandom_range(-1, 1) : 0) + (_wave_text ? m_wave_offset(_wave) : 0),
@@ -99,11 +99,11 @@ else
                     break;
                 case global.TEXT_FLAGS.NEWLINE:
                     _x_current = x - 264;
-                    if (m_pageConfig.head != -1)
+                    if (currentPageConfig.head != -1)
                     {
                         _x_current += 104;
                     }
-                    if (m_pageConfig.font != fnt_papyrus_gui)
+                    if (currentPageConfig.font != fnt_papyrus_gui)
                     {
                         _x_current += string_width("* ");
                     }
@@ -128,7 +128,7 @@ else
                         var _swap_index = _total_char_count - 1;
                         if (m_fontSwapTimers[_swap_index] > 0)
                         {
-                            draw_set_font(m_pageConfig.font);
+                            draw_set_font(currentPageConfig.font);
                         }
                     }
                     draw_text_colour(
@@ -150,7 +150,7 @@ else
     {
         var _arrow_color = c_white;
         var _rotation = (page < array_length(m_text) - 1) ? 0 : 90;
-        if (m_pageConfig.choiceCount > 1)
+        if (currentPageConfig.choiceCount > 1)
         {
             _arrow_color = global.player.mabel ? scr_hexdec("CC277A") : scr_hexdec("3280ff");
             _rotation = 90;
@@ -160,15 +160,15 @@ else
             switch m_choiceSelection
             {
                 case 0: // left
-                    _x = x - ((m_pageConfig.head == -1) ? 132 : 138);
-                    if (m_pageConfig.choiceCount >= 3)
+                    _x = x - ((currentPageConfig.head == -1) ? 132 : 138);
+                    if (currentPageConfig.choiceCount >= 3)
                     {
                         _y -= 35;
                     }
                     break;
                 case 1: // right
-                    _x = x + ((m_pageConfig.head == -1) ? 60 : 66);
-                    if (m_pageConfig.choiceCount >= 3)
+                    _x = x + ((currentPageConfig.head == -1) ? 60 : 66);
+                    if (currentPageConfig.choiceCount >= 3)
                     {
                         _y -= 35;
                     }

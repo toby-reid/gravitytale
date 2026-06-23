@@ -1,4 +1,4 @@
-if (m_pageConfig.choiceCount > 1)
+if (currentPageConfig.choiceCount > 1)
 {
     if (m_choiceSelection != 0)
     {

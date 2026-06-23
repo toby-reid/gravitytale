@@ -23,25 +23,25 @@ switch self.stage
         {
             self.arm = spr_gideon_tv_arm_talk;
             audio_play_sound(mus_newsreport, 0, true);
-            with instance_create_layer(160, 192, layer, obj_textbox_old)
+            with instance_create_layer(160, 192, layer, obj_textbox)
             {
-                text = [
+                set_text([
                     "GOOD MORNING, AMERICA!",
                     "WE START OFF OUR BROADCAST TODAY #WITH SOME BREAKING NEWS!",
                     "PAY CLOSE ATTENTION!&THIS INFORMATION JUST MAY #SAVE YOUR LIFE!",
-                    "BUT FIRST, A WORD FROM OUR #SPONSOR:&ME!",
+                    "BUT FIRST, A WORD FROM OUR #SPONSOR:&@99D9EAME@ffffff!",
                     "WE HERE (AND BY \"WE\", OF COURSE, #I MEAN \"I\") HAVE BEEN SERVIN' #Y'ALL FOR WELL OVER A YEAR!",
                     "WHAT A LONG-STANDING LEGACY!",
                     "AND THANKS IN PART TO YOUR #LOVING SUPPORT, I AM PLEASED #TO ANNOUNCE",
-                    "THE LATEST IN OUR POPULAR #GIDEONTERTAINMENT `(trademarked)` #LINE OF MERCHANDISE:",
-                    "THIS ADORABLE, HUGGABLE GIDEON #DOLL!",
+                    "THE LATEST IN OUR POPULAR #@99D9EAGIDEONTERTAINMENT@ffffff `(trademarked)` #LINE OF MERCHANDISE:",
+                    "THIS ADORABLE, HUGGABLE @99D9EAGIDEON #DOLL@ffffff!",
                     "BUT DON'T JUST TAKE MY WORD #FOR IT!&WE HAVE A SPECIAL GUEST TODAY!",
                     string_concat(
                         "ALRIGHT THEN, ",
                         global.player.mabel ? "MY SWEET" : "FRIEND",
                         "...&CARE TO SHARE A FEW WORDS ABOUT #WIDDLE OL' WIDDLE OL' ME?"
                     ),
-                    "       It is#       indeed      It looks#       little      flammable",
+                    "It is",
                     ". . .",
                     "OF COURSE!&IT WAS MADE IN MY OWN IMAGE, #AFTER ALL!",
                     "BUT THESE DOLLS HAVE A BONUS #SPECIAL SECRET FEATURE!",
@@ -49,9 +49,13 @@ switch self.stage
                     "SO JUST LIKE I'M THE IDEAL #COMPANION IN LIFE,",
                     "THESE DOLLS ARE THE IDEAL #COMPANION IN ANY SURVIVAL #SITUATION!",
                     ". . .",
+                    "THIS JUST IN: #\"ME\" IS NOT A VALID SPONSOR.",
+                    "SO FOR OUR NEXT SEGMENT, #I'LL BE TAKING ON A FEW #SPONSORSHIPS!",
+                    "PLEASE @99D9EADON'T SKIP THE ADS@ffffff!&THEY HELP SUPPORT US HERE AT #@99D9EAGIDEONTERTAINMENT@ffffff `(trademarked)`!",
+                    ". . .",
                     "UHHH...",
                     "WELL, FOLKS, I'VE JUST RECEIVED #WORD THAT MINES CAN EMIT HIGHLY #FLAMMABLE FUMES,",
-                    "SO WE HERE AT GIDEONTERTAINMENT #`(trademarked)` CANNOT OFFICIALLY #ENDORSE THEIR USE HERE.",
+                    "SO WE HERE AT @99D9EAGIDEONTERTAINMENT@ffffff #`(trademarked)` CANNOT OFFICIALLY #ENDORSE THEIR USE HERE.",
                     "BUT THIS BRINGS US TO OUR NEXT #SEGMENT!&IT'S TIME FOR:",
                     "GATHER ALL THE FLAMING DOLLS #BEFORE EVERYTHING BLOWS UP #AND KILLS EVERYONE!",
                     string_concat(
@@ -60,43 +64,39 @@ switch self.stage
                         "?"
                     ),
                     "HERE WE GO!"
-                ];
-                for (var i = 0; i < array_length(text); ++i)
-                {
-                    sound[i] = tlk_gideon;
-                }
-                sound[11] = tlk_default;
-                choice[11] = 1;
+                ]);
+                set_sound_range(tlk_gideon);
+                set_sounds(tlk_default, 11);
+                set_choices(11, ["indeed#small", "flammable"], [
+                    noop,
+                    method({target: id}, function() { with target {
+                        set_text([
+                            "OF COURSE!&THEY ARE ONLY MADE WITH THE #HIGHEST-QUALITY MATERIALS!",
+                            "BUT I'M IMPRESSED!&YOU DISCOVERED THEIR BONUS #SPECIAL SECRET FEATURE!"
+                        ], page + 2);
+                    }})
+                ]);
             }
             obj_dipper.dir = 3;
             ++stage;
         }
         break;
     case 3:
-        if (instance_exists(obj_textbox_old))
+        if (instance_exists(obj_textbox))
         {
-            self.arm_index = obj_textbox_old.face;
             with obj_textbox
             {
+                other.arm_index = head_frame;
                 switch (page)
                 {
                     case 8: other.showing_doll = true; break;
-                    case 11: charCount = string_length(text[page]); break;
-                    case 12:
-                        if (action[11] == 1)
-                        {
-                            text[13] = "OF COURSE!&THEY ARE ONLY MADE WITH THE #HIGHEST-QUALITY MATERIALS!";
-                            text[14] = "BUT I'M IMPRESSED!&YOU DISCOVERED THEIR BONUS #SPECIAL SECRET FEATURE!";
-                            action[11] = 0; // just to avoid doing this again
-                        }
-                        break;
                     case 15:
                         other.flaming_doll = true;
                         other.alarm[5] = other.flame_speed;
                         break;
-                    case 19: other.face = spr_gideon_tv_face_neutral; break;
-                    case 21: other.face = spr_gideon_tv_face_determined; break;
-                    case 22: other.face = spr_gideon_tv_face_cheery; break;
+                    case 23: other.face = spr_gideon_tv_face_neutral; break;
+                    case 25: other.face = spr_gideon_tv_face_determined; break;
+                    case 26: other.face = spr_gideon_tv_face_cheery; break;
                 }
             }
         }
@@ -143,6 +143,7 @@ switch self.stage
                 is_active = true;
                 alarm[2] = 30;
             }
+            global.teleport = true;
             global.gideon = 13;
             ++stage;
         }

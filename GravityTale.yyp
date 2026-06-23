@@ -1197,6 +1197,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"ow_min_13_newsReport","path":"rooms/ow_min_13_newsReport/ow_min_13_newsReport.yy",},},
     {"roomId":{"name":"ow_min_14_bombDate","path":"rooms/ow_min_14_bombDate/ow_min_14_bombDate.yy",},},
     {"roomId":{"name":"ow_min_07_pz3","path":"rooms/ow_min_07_pz3/ow_min_07_pz3.yy",},},
     {"children":[
@@ -1332,7 +1333,6 @@
         {"roomId":{"name":"ow_min_10_pz5","path":"rooms/ow_min_10_pz5/ow_min_10_pz5.yy",},},
         {"roomId":{"name":"ow_min_11_pz6","path":"rooms/ow_min_11_pz6/ow_min_11_pz6.yy",},},
         {"roomId":{"name":"ow_min_12_pz7","path":"rooms/ow_min_12_pz7/ow_min_12_pz7.yy",},},
-        {"roomId":{"name":"ow_min_13_newsReport","path":"rooms/ow_min_13_newsReport/ow_min_13_newsReport.yy",},},
       ],"groupName":"Mines",},
     {"roomId":{"name":"ow_cav_7_manCave","path":"rooms/ow_cav_7_manCave/ow_cav_7_manCave.yy",},},
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},

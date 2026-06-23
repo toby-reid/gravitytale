@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"sfx_atkAlert",
   "audioGroupId":{
-    "name":"Battle",
-    "path":"audiogroups/Battle",
+    "name":"SFX",
+    "path":"audiogroups/SFX",
   },
   "bitDepth":0,
   "channelFormat":0,
@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sfx_atkAlert",
   "parent":{
-    "name":"Battle",
-    "path":"folders/Sounds/SFX/Battle.yy",
+    "name":"SFX",
+    "path":"folders/Sounds/SFX.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

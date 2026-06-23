@@ -21,7 +21,6 @@ if (!instance_exists(obj_textbox_old) && instance_exists(obj_dipper) && obj_dipp
                 ];
                 var _base_text_length = array_length(_base_text);
                 set_text(array_concat(_base_text, other.text));
-                set_sounds(other.sound, _base_text_length);
                 set_sound_range(tlk_gideon, max(_base_text_length, array_length(m_sounds)));
                 set_choices(1, [ "yes", "no" ], [
                     noop,
@@ -42,8 +41,14 @@ if (!instance_exists(obj_textbox_old) && instance_exists(obj_dipper) && obj_dipp
                         m_text[page + 1] = "(Yeah, that sounds like a dumb #tool to use.&(Let's just give up.)";
                     }})
                 ]);
-                set_charRate_range(other.charRate, _base_text_length);
                 set_skippable_range(false, _base_text_length);
+            }
+            else if (instance_exists(other.flame))
+            {
+                set_text([
+                    "(It's a Gideon doll.)",
+                    "(The threat is gone, so there's #no need to extinguish it now.&(Let him burn.)"
+                ]);
             }
             else
             {
