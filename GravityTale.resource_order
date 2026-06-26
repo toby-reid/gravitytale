@@ -372,6 +372,7 @@
     {"name":"ow_min_03_gideon1","order":4,"path":"rooms/ow_min_03_gideon1/ow_min_03_gideon1.yy",},
     {"name":"ow_min_04_pz0","order":5,"path":"rooms/ow_min_04_pz0/ow_min_04_pz0.yy",},
     {"name":"ow_min_05_pz1","order":7,"path":"rooms/ow_min_05_pz1/ow_min_05_pz1.yy",},
+    {"name":"ow_min_05b_connect07","order":18,"path":"rooms/ow_min_05b_connect07/ow_min_05b_connect07.yy",},
     {"name":"ow_min_06_pz2","order":8,"path":"rooms/ow_min_06_pz2/ow_min_06_pz2.yy",},
     {"name":"ow_min_07_pz3","order":9,"path":"rooms/ow_min_07_pz3/ow_min_07_pz3.yy",},
     {"name":"ow_min_08_cookingDate","order":10,"path":"rooms/ow_min_08_cookingDate/ow_min_08_cookingDate.yy",},

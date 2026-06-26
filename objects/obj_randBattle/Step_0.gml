@@ -21,7 +21,7 @@ else if instance_exists(obj_dipper) {
 				image_alpha = 1
 				obj_dipper.canMove = false
 			}
-			else with instance_create_layer(160,192,"Instances",obj_textbox_old) text = ["An error has occurred.&Please report this!&Error code: @ff0000BTLOC"]
+			else with instance_create_layer(160,192,layer,obj_textbox_old) text = ["An error has occurred.&Please report this!&Error code: @ff0000BTLOC"]
 		}
 		else global.battleTimer--
 	}

@@ -499,6 +499,7 @@
     {"id":{"name":"ow_min_03_gideon1","path":"rooms/ow_min_03_gideon1/ow_min_03_gideon1.yy",},},
     {"id":{"name":"ow_min_04_pz0","path":"rooms/ow_min_04_pz0/ow_min_04_pz0.yy",},},
     {"id":{"name":"ow_min_05_pz1","path":"rooms/ow_min_05_pz1/ow_min_05_pz1.yy",},},
+    {"id":{"name":"ow_min_05b_connect07","path":"rooms/ow_min_05b_connect07/ow_min_05b_connect07.yy",},},
     {"id":{"name":"ow_min_06_pz2","path":"rooms/ow_min_06_pz2/ow_min_06_pz2.yy",},},
     {"id":{"name":"ow_min_07_pz3","path":"rooms/ow_min_07_pz3/ow_min_07_pz3.yy",},},
     {"id":{"name":"ow_min_08_cookingDate","path":"rooms/ow_min_08_cookingDate/ow_min_08_cookingDate.yy",},},
@@ -1339,6 +1340,7 @@
     {"roomId":{"name":"ow_scb_12_puzzle5","path":"rooms/ow_scb_12_puzzle5/ow_scb_12_puzzle5.yy",},},
     {"roomId":{"name":"ow_min_","path":"rooms/ow_min_/ow_min_.yy",},},
     {"roomId":{"name":"ow_min_15_pz8","path":"rooms/ow_min_15_pz8/ow_min_15_pz8.yy",},},
+    {"roomId":{"name":"ow_min_05b_connect07","path":"rooms/ow_min_05b_connect07/ow_min_05b_connect07.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

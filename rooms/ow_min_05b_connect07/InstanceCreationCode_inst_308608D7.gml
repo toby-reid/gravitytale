@@ -1,0 +1,21 @@
+text = [
+    "(You hear voices echoing from #the depths...)",
+    "(It seems to be a #continuation...)",
+    "That's exactly right, #gentlemen.",
+    "I'm talking about a full-scale #dinosaur-themed park.",
+    "I can picture it now:&Battle royale.&Slowest kid loses.",
+    ". . .",
+    "Or, I guess if you want to #make it @FFFF00boring@FFFFFF, you could #make it a safari thing.",
+    "Let me tell you though, as #someone who's been in the #business for a while:",
+    "If you want to appeal to the #kids, you gotta make it @FFFF00cool@FFFFFF.",
+    "Staring at a bunch of smelly #bird-lizard things?&Not cool.",
+    "No, what's hip with the kids #these days are @FFFF00sunglasses@FFFFFF and #@FFFF00leather jackets@FFFFFF.",
+    "The good news:&Science is incredibly cool.",
+    "If you gentlemen are willing #to invest, I can have my boys #science up some improvements.",
+    "Yes, I can see it already:&Science p'terodactyls.&The scourge of the skateparks.",
+    "We pronounce the \"P\" because #\"`These aren't your grandma's #dinosaurs!\"",
+    "No, these are @FFFF00cool@FFFFFF #dinosaurs.&\"Bros\", as the kids say.",
+    "Gentlemen, I can @FFFF00guarantee@FFFFFF a #successful park with these #\"bad\" boys.",
+    "So how many can I start you #with?",
+    "(The voices fade into the #abyss.)"
+];
