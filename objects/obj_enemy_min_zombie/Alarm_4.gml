@@ -17,5 +17,5 @@ else
         "erm... #brians?",
         "hello, #i'm #Rob #Armoury"
     );
-    self.bubble.style[0] = 1;
+    self.bubble.style[0] = TEXT_STYLE.SHAKE;
 }

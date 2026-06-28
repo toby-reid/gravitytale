@@ -21,6 +21,7 @@ image_xscale = 2
 image_yscale = 2
 image_speed = 0
 alarm[11] = 20
+image_index = irandom((image_number div 2) - 1); // randomize Gnome type
 
 obj_battleCore.text[0] = "Common Gnome enters the scene;&this common Gnome, he seeks a #queen."
 if instance_number(obj_battleEnemy) > 1 {

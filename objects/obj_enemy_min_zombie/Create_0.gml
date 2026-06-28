@@ -28,7 +28,7 @@ image_yscale = 2;
 self.alarm[11] = irandom_range(60, 600);
 self.image_speed = 0;
 
-obj_battleCore.text[0] = "Hide your kids, #hide your plant life.";
+obj_battleCore.text[0] = "Hide your kids, #hide your plant wife.";
 if instance_number(obj_battleEnemy) > 1 switch instance_find(obj_battleEnemy,0).object_index
 {
     case obj_enemy_min_arachnimorph: obj_battleCore.text[0] = "This man must be careful of #the Zombie, because he is very #infectable!"; break;
