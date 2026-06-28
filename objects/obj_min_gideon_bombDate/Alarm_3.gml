@@ -63,8 +63,8 @@ with instance_create_layer(160, 192, layer, obj_textbox)
         global.player.mabel ? "AND NOT EVEN THE NICE KIND #OF... HEAT!" : "SEE WHAT I DID THERE?",
         "ALRIGHT THEN, I'M OUT OF HERE!&SEE YOU AT MY @99D9EATENT OF TELEPATHY@ffffff!"
     ]);
-    set_sound_range(tlk_gideon);
-    set_sound_range(tlk_mcg, 8, 15);
+    set_sounds(tlk_gideon);
+    set_sounds(tlk_mcg, 8, 15);
     set_heads([
         spr_mcg_head_uncertain,
         spr_mcg_head_ohcrap,

@@ -65,8 +65,8 @@ switch self.stage
                     ),
                     "HERE WE GO!"
                 ]);
-                set_sound_range(tlk_gideon);
-                set_sounds(tlk_default, 11);
+                set_sounds(tlk_gideon);
+                set_sound(11, tlk_default);
                 set_choices(11, ["indeed#small", "flammable"], [
                     noop,
                     method({target: id}, function() { with target {

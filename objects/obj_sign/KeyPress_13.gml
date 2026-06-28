@@ -12,64 +12,41 @@ if (!instance_exists(obj_textbox) && instance_exists(obj_dipper) && obj_dipper.c
         with instance_create_layer(160, _ybox, layer, obj_textbox)
         {
             set_text(other.text);
-            set_head(other.heads);
-            if (is_array(other.fonts))
+            set_heads(other.heads);
+            set_fonts(other.fonts);
+            set_styles(other.styles);
+            set_sounds(other.sounds);
+            set_charRates(other.charRates);
+            set_choiceCounts(other.choiceCounts);
+            set_actions_all(other.actions);
+            for (var i = 0, _actions_length = array_length(other.actions); i < _actions_length; ++i)
             {
-                set_fonts(other.fonts);
-            }
-            else
-            {
-                set_font_range(other.fonts);
-            }
-            if (is_array(other.styles))
-            {
-                set_styles(other.styles);
-            }
-            else
-            {
-                set_style_range(other.styles);
-            }
-            if (is_array(other.sounds))
-            {
-                set_sounds(other.sounds);
-            }
-            else
-            {
-                set_sound_range(other.sounds);
-            }
-            if (is_array(other.charRates))
-            {
-                set_charRates(other.charRates);
-            }
-            else
-            {
-                set_charRate_range(other.charRates);
-            }
-            for (var i = 0, _choiceCounts = array_length(other.choiceCounts), _choiceActions = array_length(other.choiceActions); i < _choiceCounts; ++i)
-            {
-                if (i < _choiceActions)
+                var _actions = other.actions[i];
+                if (is_array(_actions)) // if it's a callable or Undefined, there is no choice to make
                 {
-                    set_choiceCount(i, other.choiceCounts[i], other.choiceActions[i]);
-                }
-                else
-                {
-                    set_choiceCount(i, other.choiceCounts[i]);
+                    var _action_count = array_length(_actions);
+                    if (array_length(m_choiceCounts) < i || m_choiceCounts[i] < _action_count)
+                    {
+                        set_choiceCount(i, _action_count);
+                    }
                 }
             }
-            for (var i = 0, _autoskips = array_length(other.autoskips); i < _autoskips; ++i)
+            set_autoskips(other.autoskips);
+            for (var i = 0, _choices_length = array_length(other.choices); i < _choices_length; ++i)
             {
-                set_autoskip(i, other.autoskips[i]);
+                var _choices = other.choices[i];
+                if (is_array(_choices) && array_length(_choices) != 0)
+                {
+                    set_choices(i, _choices);
+                }
             }
         }
     }
     else if (place_meeting(x, y - 2, obj_dipper) && _dip_dir == 3)
-    { // Looking at a sign from behind
-        with instance_create_layer(160, _ybox, layer, obj_textbox_old)
+    {
+        with instance_create_layer(160, _ybox, layer, obj_textbox)
         {
-            text = ["(You try to read the sign, #but there is nothing written #on this side.)"]
-            font = [fnt_basic_gui]
-            sound = [tlk_default]
-            charRate = [.5]
+            set_text(other.back_of_sign);
         }
     }
 }

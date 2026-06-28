@@ -21,7 +21,7 @@ m_fonts = [];
 m_styles = [];
 m_sounds = [];
 m_choiceCounts = [];
-m_choiceActions = [];
+m_actions = [];
 m_charRates = [];
 m_autoskips = [];
 m_autocontinues = [];
@@ -53,7 +53,7 @@ currentPageConfig = {
     style: TEXT_STYLE.NONE,
     sound: tlk_default,
     choiceCount: 1,
-    choiceActions: [],
+    actions: [],
     charRate: 2,
     autoskipAt: -1,
     autocontinue: false,
@@ -69,7 +69,7 @@ m_CHAR_WAVES = {
 /// @param {String} _var_name The name of the variable to change (e.g., `m_text`)
 /// @param {Array<Any>|Any} _new_data The new data to place at `_start_index`
 /// @param {Real} _start_index Omit (or set negative) to replace entire array
-/// /// @param {Any} _default The default value with which to populate values before the given start index
+/// @param {Any} _default The default value with which to populate values before the given start index
 m_set_array = function(_var_name, _new_data, _start_index = -1, _default = -1)
 {
     var _is_single_value = !is_array(_new_data);
@@ -94,7 +94,7 @@ m_set_array = function(_var_name, _new_data, _start_index = -1, _default = -1)
         self[$ _var_name][_start_index + i] = _new_data[i];
     }
 }
-/// @desc Private method to set all values in a given range to the given value
+/// @desc Private method to set all values in a given range to the given value.
 /// @param {String} _var_name The name of the variable to change (e.g., `m_text`)
 /// @param {Any} _value The value with which to fill the range
 /// @param {Any} _default The default value with which to populate values before the given range
@@ -112,67 +112,117 @@ m_set_range = function(_var_name, _value, _default, _start_index, _end_index)
         self[$ _var_name][i] = _value;
     }
 }
+/// @desc Private method to set an array or range to the given value.
+/// If the value is an array, only the start index (not the end) is considered.
+/// @param {String} _var_name The name of the variable to change (e.g., `m_text`)
+/// @param {Any|Array<Any>} _value_or_data The value with which to fill the range, or the array to set
+/// @param {Any} _default The default value with which to populate values before the given range
+/// @param {Real} _start_index The index at which to start the range (inclusive)
+/// @param {Real} _end_index The index at which to end the range (exclusive); ignored for arrays
+m_set_value = function(_var_name, _value_or_data, _default, _start_index = -1, _end_index = -1)
+{
+    var _is_single_value = !is_array(_value_or_data);
+    if (_is_single_value)
+    {
+        m_set_range(_var_name, _value_or_data, _default, (_start_index < 0) ? 0 : _start_index, _end_index);
+        return;
+    }
+    m_set_array(_var_name, _value_or_data, _start_index, _default);
+}
 
-/// @desc Set text at (or starting at) the given index
+/// @desc Set text at (or starting at) the given index.
 /// @param {Array<String>|String} _new_text
 /// @param {Real} _start_index Omit to replace *all* text
 set_text = function(_new_text, _start_index = -1) { m_set_array("m_text", _new_text, _start_index, "(An error has occurred.&(Please report this!&(Code: @ff0000STTXT@ffffff)"); }
 
-/// @desc Set faces at (or starting at) the given index
-/// @param {Array<Asset.GMSprite>|Asset.GMSprite} _new_heads
-/// @param {Real} _start_index Omit to set full head array
-set_heads = function(_new_heads, _start_index = -1) { m_set_array("m_heads", _new_heads, _start_index, m_DEFAULTS.head); }
+/// @desc Set head for all indices in range, or set as the given array.
+/// @param {Asset.GMSprite|Array<Asset.GMSprite>} _head_or_heads The value to set for the given range, or the array to set starting at the given index
+/// @param {Real} _start_index First index at which to set this value the index at which to start this array (inclusive); omit to perform on full text array
+/// @param {Real} _end_index Last index at which to set this value (exclusive); omit to go to the end of text array; unused when given an array
+set_heads = function(_head_or_heads, _start_index = -1, _end_index = -1) { m_set_value("m_heads", _head_or_heads, m_DEFAULTS.head, _start_index, _end_index); }
+/// @desc Set head for the given index.
+/// @param {Real} _index The index at which to set the given value
+/// @param {Asset.GMSprite} _head The value to set at the given index
+set_head = function(_index, _head) { set_heads(_head, _index, _index + 1); }
 
-/// @desc Set fonts at (or starting at) the given index
-/// @param {Array<Asset.GMFont>|Asset.GMFont} _new_fonts
-/// @param {Real} _start_index Omit to set full font array
-set_fonts = function(_new_fonts, _start_index = -1) { m_set_array("m_fonts", _new_fonts, _start_index, m_DEFAULTS.font); }
-/// @desc Set font for all values in range
-/// @param {Asset.GMFont} _font The font to set
-/// @param {Real} _start_index First index at which to set this font (inclusive); omit to perform on full text array
-/// @param {Real} _end_index Last index at which to set this font (exclusive); omit to go to the end of text array
-set_font_range = function(_font, _start_index = 0, _end_index = -1) { m_set_range("m_fonts", _font, m_DEFAULTS.font, _start_index, _end_index); }
+/// @desc Set font for all indices in range, or set as the given array.
+/// @param {Asset.GMFont|Array<Asset.GMFont>} _font_or_fonts The value to set for the given range, or the array to set starting at the given index
+/// @param {Real} _start_index First index at which to set this value (inclusive); omit to perform on full text array
+/// @param {Real} _end_index Last index at which to set this value (exclusive); omit to go to the end of text array; unused when given an array
+set_fonts = function(_font_or_fonts, _start_index = -1, _end_index = -1) { m_set_value("m_fonts", _font_or_fonts, m_DEFAULTS.font, _start_index, _end_index); }
+/// @desc Set font for the given index.
+/// @param {Real} _index The index at which to set the given value
+/// @param {Asset.GMFont} _font The value to set at the given index
+set_font = function(_index, _font) { set_fonts(_font, _index, _index + 1); }
 
-/// @desc Set text styles at (or starting at) the given index
-/// @param {Array<Enum.TEXT_STYLE>|Enum.TEXT_STYLE} _new_styles Pass an enum or integer style ID
-/// @param {Real} _start_index Omit to set full style array
-set_styles = function(_new_styles, _start_index = -1) { m_set_array("m_styles", _new_styles, _start_index, m_DEFAULTS.style); }
-/// @desc Set text style for all values in range
-/// @param {Enum.TEXT_STYLE} _style The text style(s) to set
-/// @param {Real} _start_index First index at which to set this style (inclusive); omit to perform on full text array
-/// @param {Real} _end_index Last index at which to set this style (exclusive); omit to go to the end of text array
-set_style_range = function(_style, _start_index = 0, _end_index = -1) { m_set_range("m_styles", _style, m_DEFAULTS.style, _start_index, _end_index); }
+/// @desc Set text style for all indices in range, or set as the given array.
+/// @param {Enum.TEXT_STYLE|Array<Enum.TEXT_STYLE>} _style_or_styles The value to set for the given range, or the array to set starting at the given index
+/// @param {Real} _start_index First index at which to set this value (inclusive); omit to perform on full text array
+/// @param {Real} _end_index Last index at which to set this value (exclusive); omit to go to the end of text array; unused when given an array
+set_styles = function(_style_or_styles, _start_index = -1, _end_index = -1) { m_set_value("m_styles", _style_or_styles, m_DEFAULTS.style, _start_index, _end_index); }
+/// @desc Set text style for the given index.
+/// @param {Real} _index The index at which to set the given value
+/// @param {Enum.TEXT_STYLE} _style The value to set at the given index
+set_style = function(_index, _style) { set_styles(_style, _index, _index + 1); }
 
-/// @desc Set voice or sound effects at (or starting at) the given index
-/// @param {Array<Asset.GMSound>|Asset.GMSound} _new_sounds
-/// @param {Real} _start_index Omit to set full sound array
-set_sounds = function(_new_sounds, _start_index = -1) { m_set_array("m_sounds", _new_sounds, _start_index, m_DEFAULTS.sound); }
-/// @desc Set sound for all values in range
-/// @param {Asset.GMSound} _sound The `tlk_*` sound to set
-/// @param {Real} _start_index First index at which to set this sound (inclusive); omit to perform on full text array
-/// @param {Real} _end_index Last index at which to set this sound (exclusive); omit to go to the end of text array
-set_sound_range = function(_sound, _start_index = 0, _end_index = -1) { m_set_range("m_sounds", _sound, m_DEFAULTS.sound, _start_index, _end_index); }
+/// @desc Set talking sound effect for all indices in range, or set as the given array.
+/// @param {Asset.GMSound|Array<Asset.GMSound>} _sound_or_sounds The value to set for the given range, or the array to set starting at the given index
+/// @param {Real} _start_index First index at which to set this value (inclusive); omit to perform on full text array
+/// @param {Real} _end_index Last index at which to set this value (exclusive); omit to go to the end of text array; unused when given an array
+set_sounds = function(_sound_or_sounds, _start_index = -1, _end_index = -1) { m_set_value("m_sounds", _sound_or_sounds, m_DEFAULTS.sound, _start_index, _end_index); }
+/// @desc Set talking sound effect for the given index.
+/// @param {Real} _index The index at which to set the given value
+/// @param {Asset.GMSound} _sound The value to set at the given index
+set_sound = function(_index, _sound) { set_sounds(_sound, _index, _index + 1); }
 
-/// @desc Set branch choice count at the given index
-/// @param {Real} _index The index with choices
-/// @param {Real} _choice_count Number of choices the player can use (supports 1-4, inclusive)
-/// @param {Array<Function>} _actions_for_choices Optional actions to take depending on the choice (must be same length as `_choice_count`)
-set_choiceCount = function(_index, _choice_count, _actions_for_choices = [])
+/// @desc Set number of choices for all indices in range, or set as the given array.
+/// @param {Real|Array<Real>} _count_or_counts The value to set for the given range, or the array to set starting at the given index
+/// @param {Real} _start_index First index at which to set this value (inclusive); omit to perform on full text array
+/// @param {Real} _end_index Last index at which to set this value (exclusive); omit to go to the end of text array; unused when given an array
+set_choiceCounts = function(_count_or_counts, _start_index = -1, _end_index = -1) { m_set_value("m_choiceCounts", _count_or_counts, m_DEFAULTS.choiceCount, _start_index, _end_index); }
+/// @desc Set number of choices for the given index.
+/// @param {Real} _index The index at which to set the given value
+/// @param {Real} _count The value to set at the given index
+set_choiceCount = function(_index, _count) { set_choiceCounts(_count, _index, _index + 1); }
+
+/// @desc Set action to take when the given index (page) ends (either by autocontinue or user continue action).
+/// **Does not modify choice count.**
+/// # Warning
+/// This function is not equipped to take an array of arrays (i.e., an array containing actions for each step).
+/// To do that, use `set_actions_all`.
+/// @param {Real} _index Page at which to set the given action
+/// @param {Function|Array<Function>} _action_or_actions Action or actions to take at the end of the given page
+set_actions = function(_index, _action_or_actions)
 {
-    while (array_length(m_choiceCounts) < _index)
+    var _actions = is_callable(_action_or_actions) ? [_action_or_actions] : _action_or_actions;
+    m_set_range("m_actions", _actions, m_DEFAULTS.actions, _index, _index + 1);
+}
+/// @desc Set action or actions to take at each page (corresponding with `m_text`).
+/// **Does not modify choice count.**
+/// # Warning
+/// This function takes an array of arrays (i.e., an array containing actions for each step); it **does not** take the actual actions array.
+/// To do that, use `set_actions`.
+/// @param {Array<Function|Undefined|Array<Function|Undefined>>} _all_actions Array of actions for each page. If the value at any `_actions` index is a function, it will be the *only* action for that page
+/// @param {Real} _start_index The index at which to start inserting the given actions (omit to replace entire array)
+set_actions_all = function(_all_actions, _start_index = -1)
+{
+    var _all_actions_length = array_length(_all_actions);
+    var _start = _start_index;
+    if (_start_index < 0)
     {
-        m_choiceCounts[array_length(m_choiceCounts)] = m_DEFAULTS.choiceCount;
+        m_actions = array_create(_all_actions_length, m_DEFAULTS.actions);
+        _start = 0;
     }
-    m_choiceCounts[_index] = _choice_count;
-    if (array_length(_actions_for_choices) > 0)
+    for (var i = 0; i < _all_actions_length; ++i)
     {
-        while (array_length(m_choiceActions) < _index)
+        var _actions = _all_actions[i];
+        if (!is_undefined(_actions))
         {
-            m_choiceActions[array_length(m_choiceActions)] = m_DEFAULTS.choiceActions;
+            set_actions(_start + i, _actions);
         }
-        m_choiceActions[_index] = _actions_for_choices;
     }
 }
+
 /// @desc Set choices for the given index.
 /// This will also modify `m_text`, autoskip, and (of course) choice counts for this index.
 /// This function is not appropriate for use with strings with any special characters, such as pauses, newlines with bullets (`&`), colors (`@`), etc.
@@ -182,7 +232,11 @@ set_choiceCount = function(_index, _choice_count, _actions_for_choices = [])
 set_choices = function(_index, _choices, _actions_for_choices = [])
 {
     var _choice_count = array_length(_choices);
-    set_choiceCount(_index, _choice_count, _actions_for_choices);
+    if (array_length(_actions_for_choices) > 0)
+    {
+        set_actions(_index, _actions_for_choices);
+    }
+    set_choiceCount(_index, _choice_count);
     
     // TODO: Account for special characters, like color...
     var _lineCount = 3; // max supported by textbox
@@ -232,90 +286,51 @@ set_choices = function(_index, _choices, _actions_for_choices = [])
     m_text[_index] = _new_string;
 }
 
-/// @desc Set character typing speeds at (or starting at) the given index
-/// @param {Array<Real>|Real} _new_char_rates Characters per frame or second
-/// @param {Real} _start_index Omit to set full rate array
-set_charRates = function(_new_char_rates, _start_index = -1) { m_set_array("m_charRates", _new_char_rates, _start_index, m_DEFAULTS.charRate); }
-/// @desc Set char rate for all values in range
-/// @param {Real} _char_rate The char rate to set
-/// @param {Real} _start_index First index at which to set this char rate (inclusive); omit to perform on full text array
-/// @param {Real} _end_index Last index at which to set this char rate (exclusive); omit to go to the end of text array
-set_charRate_range = function(_char_rate, _start_index = 0, _end_index = -1) { m_set_range("m_charRates", _char_rate, m_DEFAULTS.charRate, _start_index, _end_index); }
+/// @desc Set text animation rate (in terms of alarm values) for all indices in range, or set as the given array.
+/// @param {Real|Array<Real>} _rate_or_rates The value to set for the given range, or the array to set starting at the given index
+/// @param {Real} _start_index First index at which to set this value (inclusive); omit to perform on full text array
+/// @param {Real} _end_index Last index at which to set this value (exclusive); omit to go to the end of text array; unused when given an array
+set_charRates = function(_rate_or_rates, _start_index = -1, _end_index = -1) { m_set_value("m_charRates", _rate_or_rates, m_DEFAULTS.charRate, _start_index, _end_index); }
+/// @desc Set text animation rate (in terms of alarm value) for the given index.
+/// @param {Real} _index The index at which to set the given value
+/// @param {Real} _rate The value to set at the given index
+set_charRate = function(_index, _rate) { set_charRates(_rate, _index, _index + 1); }
 
-/// @desc Determine whether a given page's text animation can be skipped with X/Shift (default, enabled)
-/// @param {Bool} _is_skippable Whether this page is skippable
-/// @param {Real} _page Page index to determine skippability (0-indexed); omit to set for all pages
-set_skippable = function(_is_skippable = true, _page = -1)
-{
-    if (_page < 0)
-    {
-        for (var i = 0, _page_count = array_length(m_text); i < _page_count; ++i)
-        {
-            m_skippables[i] = _is_skippable;
-        }
-        return;
-    }
-    while (array_length(m_skippables) < _page)
-    {
-        m_skippables[array_length(m_skippables)] = m_DEFAULTS.isSkippable;
-    }
-    m_skippables[_page] = _is_skippable;
-}
-/// @desc Determine whether a given page range's text animations can be skipped with X/Shift (default, enabled)
-/// @param {Real} _is_skippable Whether this range can be skipped
+/// @desc Determine whether a given page range's text animations can be skipped with X/Shift (default, enabled).
+/// @param {Bool|Array<Bool>} _skippable_or_skippables Whether this range (or each value therein, if an array) can be skipped
 /// @param {Real} _start_index First index at which to set skippable (inclusive); omit to perform on full text array
 /// @param {Real} _end_index Last index at which to set skippable (exclusive); omit to go to the end of text array
-set_skippable_range = function(_is_skippable = true, _start_index = 0, _end_index = -1) { m_set_range("m_skippables", _is_skippable, m_DEFAULTS.isSkippable, _start_index, _end_index); }
+set_skippables = function(_skippable_or_skippables, _start_index = -1, _end_index = -1) { m_set_value("m_skippables", _skippable_or_skippables, m_DEFAULTS.isSkippable, _start_index, _end_index); }
+/// @desc Set whether the given index can be skipped manually by the player.
+/// @param {Real} _index The index at which to set the given value
+/// @param {Bool} _is_skippable The value to set at the given index
+set_skippable = function(_index, _is_skippable) { set_skippables(_is_skippable, _index, _index + 1); }
 
-/// @desc When the given page reaches the given index, skip the remainder of the text animation and jump to the finished product
+/// @desc Set autoskip text index for all pages in range, or set as the given array.
+/// @param {Real|Array<Real>} _skipAt_or_skipAts The value to set for the given range, or the array to set starting at the given index
+/// @param {Real} _start_index First index at which to set this value (inclusive); omit to perform on full text array
+/// @param {Real} _end_index Last index at which to set this value (exclusive); omit to go to the end of text array; unused when given an array
+set_autoskips = function(_skipAt_or_skipAts, _start_index = -1, _end_index = -1) { m_set_value("m_autoskips", _skipAt_or_skipAts, m_DEFAULTS.autoskipAt, _start_index, _end_index); }
+/// @desc When the given page reaches the given index, skip the remainder of the text animation and jump to the finished product.
 /// @param {Real} _on_page Page index at which this autoskip takes effect (0-indexed; array); omit to skip text on all pages
 /// @param {Real} _at_page_index Character index on that page at which to skip (1-indexed; string); omit to skip entire page
-set_autoskip = function(_on_page = -1, _at_page_index = 1)
-{
-    if (_on_page < 0)
-    {
-        for (var i = 0, _page_count = array_length(m_text); i < _page_count; ++i)
-        {
-            m_autoskips[i] = _at_page_index;
-        }
-        return;
-    }
-    while (array_length(m_autoskips) < _on_page)
-    {
-        m_autoskips[array_length(m_autoskips)] = m_DEFAULTS.autoskipAt;
-    }
-    m_autoskips[_on_page] = _at_page_index;
-}
-/// @desc When the given page finishes text animation, immediately move to the next page (or dismiss textbox).
-/// Recommended to set skippable false for each index, hence the convenient flag.
-/// @param {Real} _on_page Page index where the text does not wait for user input (immediately proceeds); omit to continue on all pages
-/// @param {Bool} _set_unskippable Whether to set this page as not manually skippable
-set_autocontinue = function(_on_page = -1, _set_unskippable = true)
-{
-    if (_on_page < 0)
-    {
-        for (var i = 0, _page_count = array_length(m_text); i < _page_count; ++i)
-        {
-            m_autocontinues[i] = true;
-            if (_set_unskippable)
-            {
-                m_skippables[i] = false;
-            }
-        }
-        return;
-    }
-    while (array_length(m_autocontinues) < _on_page)
-    {
-        m_autocontinues[array_length(m_autocontinues)] = m_DEFAULTS.autocontinue;
-    }
-    m_autocontinues[_on_page] = true;
-    if (_set_unskippable)
-    {
-        set_skippable(false, _on_page);
-    }
-}
+set_autoskip = function(_on_page = -1, _at_page_index = 1) { set_autoskips(_at_page_index, _on_page, _on_page + 1); }
+
+/// @desc Determine whether a given page range automatically continues to the next page when its animation finishes.
+/// Recommended to set each page as unskippable as well.
+/// @param {Bool|Array<Bool>} _autocontinue_or_autocontinues Whether this range (or each value therein, if an array) automagically continues
+/// @param {Real} _start_index First index at which to set skippable (inclusive); omit to perform on full text array
+/// @param {Real} _end_index Last index at which to set skippable (exclusive); omit to go to the end of text array
+set_autocontinues = function(_autocontinue = true, _start_index = -1, _end_index = -1) { m_set_value("m_autocontinues", _autocontinue, m_DEFAULTS.autocontinue, _start_index, _end_index); }
+/// @desc Determines whether the given page automatically continues to the next when its animation finishes.
+/// Recommended to set each autocontinue page as unskippable.
+/// @param {Real} _index The index at which to set the given value
+/// @param {Bool} _autocontinue The value to set at the given index
+set_autocontinue = function(_index, _autocontinue = true) { set_autocontinues(_autocontinue, _index, _index + 1); }
 
 
+/// @desc Sets all relevant member variables, extracts colors and current page configurations, alarm values, etc.
+/// @param _page The index of `m_text` (and other member-variable arrays) to process
 m_process_page = function(_page)
 {
     m_pageSegmentText = [];
@@ -379,7 +394,7 @@ m_process_page = function(_page)
     currentPageConfig.style = (array_length(m_styles) > _page) ? m_styles[_page] : m_DEFAULTS.style;
     currentPageConfig.sound = (array_length(m_sounds) > _page) ? m_sounds[_page] : m_DEFAULTS.sound;
     currentPageConfig.choiceCount = (array_length(m_choiceCounts) > _page) ? m_choiceCounts[_page] : m_DEFAULTS.choiceCount;
-    currentPageConfig.choiceActions = (array_length(m_choiceActions) > _page) ? m_choiceActions[_page] : m_DEFAULTS.choiceActions;
+    currentPageConfig.actions = (array_length(m_actions) > _page) ? m_actions[_page] : m_DEFAULTS.actions;
     currentPageConfig.charRate = (array_length(m_charRates) > _page) ? m_charRates[_page] : m_DEFAULTS.charRate;
     // autoskip already set along with colors
     currentPageConfig.autocontinue = (array_length(m_autocontinues) > _page) ? m_autocontinues[_page] : m_DEFAULTS.autocontinue;
@@ -462,22 +477,24 @@ m_increment_wave = function(_wave, _direction = 1)
 /// @return {Bool} Whether we've reached the end (and this textbox is going away)
 next_page = function()
 {
+    // Allow for taking an action even without choices
+    if (array_length(currentPageConfig.actions) > m_choiceSelection)
+    {
+        var _action = currentPageConfig.actions[m_choiceSelection];
+        if (is_callable(_action))
+        {
+            _action();
+        }
+    }
     if (currentPageConfig.choiceCount > 1)
     {
-        if (array_length(currentPageConfig.choiceActions) > m_choiceSelection)
-        {
-            var _action = currentPageConfig.choiceActions[m_choiceSelection];
-            if (!is_undefined(_action) && _action != -1)
-            {
-                _action();
-            }
-        }
         while (array_length(choices_made) < page)
         {
             choices_made[array_length(choices_made)] = 0;
         }
         choices_made[page] = m_choiceSelection;
     }
+    
     ++page;
     if (page == array_length(m_text))
     {
