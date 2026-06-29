@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_btl_enemySelect",
+  "%Name":"scr_select_array",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_btl_enemySelect",
+  "name":"scr_select_array",
   "parent":{
-    "name":"Battle",
-    "path":"folders/Scripts/Battle.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

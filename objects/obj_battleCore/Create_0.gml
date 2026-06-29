@@ -1,7 +1,6 @@
 ///@desc Room CC: text[0],global.enemy[]
 ///@desc obj_toBattle: goto
 global.stage = [0,0,0,0,-1,0]
-scr_btl_itemSelect(1)
 //[0]whereWeAre (0battleButtons, 1enemySelect/itemSelect, 2fightTarget/actionSelect/spareRun, 3damageAnimation/textResponse (create text bubble), 4battle, 5transition
 //[1]battleButtons 0-3;
 //[2]enemyList 0-2;
@@ -18,7 +17,76 @@ music = silence;//Music to play after battle Ends. Will not play if still noone.
 battle = false
 run = true;
 
-inventory = scr_getBattleInventory();
+// TODO: Investigate inventory. Might need to reselect after using item, etc.
+m_get_inventory = function()
+{
+    var _inv = [];
+    for (var i = 0, _inventory_size = array_length(global.inventory); i < _inventory_size; ++i)
+    {
+        var _item = global.inventory[i];
+        if (_item != ITEM_NAME.NONE)
+        {
+            array_push(_inv, _item);
+        }
+    }
+    return _inv;
+}
+inventory = m_get_inventory();
+m_select_item = function(_dir)
+{
+    var _current_selection = global.stage[3];
+    var _is_on_top = (_current_selection % 2) == 0;
+    var _check_dir = _is_on_top ? 1 : -1;
+    var _page_size = 4;
+    if (_dir == DIRECTION.UP || _dir == DIRECTION.DOWN)
+    {
+        var _straight_index = _current_selection + _check_dir;
+        if (inventory[_straight_index] != ITEM_NAME.NONE)
+        {
+            audio_play_sound(sfx_beep, 0, false);
+            global.stage[3] = _straight_index;
+            return true;
+        }
+        var _offset_index = (_page_size - 1) - _current_selection + (_page_size * floor(_current_selection / _page_size));
+        if (inventory[_straight_index] != ITEM_NAME.NONE)
+        {
+            audio_play_sound(sfx_beep, 0, false);
+            global.stage[3] = _straight_index;
+            return true;
+        }
+        return false;
+    }
+    for (var _increment = (_dir == DIRECTION.RIGHT) ? 2 : -2, i = _current_selection + _increment, _inventory_size = array_length(inventory); i != _current_selection; i += _increment)
+    {
+        if (i > _inventory_size)
+        {
+            i = _is_on_top ? 0 : 1;
+        }
+        else if (i < 0)
+        {
+            i = _inventory_size - 1;
+            if ((_is_on_top && (_inventory_size % 2) == 0) || (!_is_on_top && (_inventory_size % 2) != 0))
+            {
+                --i;
+            }
+        }
+        if (inventory[i] != ITEM_NAME.NONE)
+        {
+            audio_play_sound(sfx_beep, 0, false);
+            global.stage[3] = i;
+            return true;
+        }
+        var _check_index = i + _check_dir;
+        if (_inventory_size > _check_index && inventory[_check_index] != ITEM_NAME.NONE)
+        {
+            audio_play_sound(sfx_beep, 0, false);
+            global.stage[3] = _check_index;
+            return true;
+        }
+    }
+    return false;
+}
+global.stage[3] = 0;
 
 for(var i = 0; i < 4; i++) with instance_create_layer(33+i*156,431,"Instances",obj_battleButtons) image_index = i;
 
@@ -28,3 +96,56 @@ audio_group_load(Battle)
 image_yscale = 2
 image_xscale = 2
 alarm[0] = 1
+
+/// @desc Sets `global.stage[2]` to the next enemy that matches the direction selected.
+/// @param {Enum.DIRECTION} _dir The direction in which to select the enemy
+select_enemy = function(_dir = DIRECTION.DOWN)
+{
+    var _enemy_alive = function(_inst_id) { return instance_exists(_inst_id); };
+    var _enemy_count = array_length(global.enemy);
+    var _current_selection = global.stage[2];
+    var _max_in_col = 3;
+    var _has_2_col = _enemy_count > _max_in_col; // useful more for optimization
+    if (_has_2_col)
+    {
+        var _first_col = array_create(_max_in_col);
+        var _second_col = array_create(_enemy_count - _max_in_col);
+        array_copy(_first_col, 0, global.enemy, 0, _max_in_col);
+        array_copy(_second_col, 0, global.enemy, _max_in_col, _enemy_count - _max_in_col);
+        var _is_first_col = _current_selection < _max_in_col;
+        if (_dir == DIRECTION.LEFT || _dir == DIRECTION.RIGHT)
+        {
+            var _col_index = _is_first_col ? _current_selection : (_current_selection - _max_in_col);
+            var _target_col = _is_first_col ? _second_col : _first_col;
+            var _is_backward = _dir == DIRECTION.LEFT;
+            var _new_col_index = scr_select_array(_target_col, _enemy_alive, _is_backward, _col_index, true);
+            if (instance_exists(_target_col[_new_col_index]))
+            {
+                audio_play_sound(sfx_beep, 0, false);
+                global.stage[2] = _is_first_col ? _new_col_index : (_new_col_index + _max_in_col);
+            }
+        }
+        else // up/down
+        {
+            var _col_index = _is_first_col ? _current_selection : (_current_selection - _max_in_col);
+            var _target_col = _is_first_col ? _first_col : _second_col;
+            var _is_backward = _dir == DIRECTION.UP;
+            var _new_col_index = scr_select_array(_target_col, _enemy_alive, _is_backward, _col_index, false);
+            if (_new_col_index != _col_index)
+            {
+                audio_play_sound(sfx_beep, 0, false);
+                global.stage[2] = _is_first_col ? _new_col_index : (_new_col_index + _max_in_col);
+            }
+        }
+    }
+    else if (_dir == DIRECTION.UP || _dir == DIRECTION.DOWN) // ignore left/right with 1 column
+    {
+        var _is_backward = _dir == DIRECTION.UP;
+        var _new_index = scr_select_array(global.enemy, _enemy_alive, _is_backward, _current_selection, false);
+        if (_new_index != _current_selection)
+        {
+            audio_play_sound(sfx_beep, 0, false);
+            global.stage[2] = _new_index;
+        }
+    }
+}

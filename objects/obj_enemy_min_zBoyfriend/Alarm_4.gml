@@ -3,7 +3,7 @@ with instance_create_layer(x + 60, y - 100, layer, obj_textBubble)
 {
     if (other.spare && global.stage[1] == 3 && global.stage[4] == 1)
     {
-        text = ["Just don't freak out, okay?", "Just keep an open mind, be cool..."];
+        text = ["Just don't freak out, okay?", "Keep an open mind, be cool..."];
         other.revealed = true;
     }
     else

@@ -10,6 +10,7 @@ lv = false;//set true if killing person increases LV
 sb = 0;
 area = AREA.MINES;
 timer = 0;
+deathx = 0;
 
 blood = false;
 door = false;
@@ -17,6 +18,7 @@ revealed = false;
 
 image_xscale = 2;
 image_yscale = 2;
+alarm[11] = irandom_range(30, 120);
 
 obj_battleCore.text[0] = global.player.mabel ? "It's... a teenager?&A little moody, but attractive.&Lesser folk might think zombie." : "Just another generic zombie.&We've encountered these before.";
 global.enemy = [id];
