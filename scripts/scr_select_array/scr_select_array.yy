@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_select_array",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Arrays",
+    "path":"folders/Scripts/Arrays.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

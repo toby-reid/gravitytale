@@ -1,5 +1,5 @@
 /// @desc Adds a kill tracker to the given enemy's timeline-based kill counter.
-/// @param {Real} enemy: The enemy (ENEMY enum) to check
+/// @param {Enum.ENEMY} enemy: The enemy (ENEMY enum) to check
 function scr_killedEnemy(enemy)
 {
     global.enemy_killed[enemy] = true;
@@ -10,7 +10,7 @@ function scr_killedEnemy(enemy)
 }
 
 /// @desc Determines how many times the given enemy has been killed in previous timelines.
-/// @param {Real} enemy: The enemy (ENEMY enum) to check
+/// @param {Enum.ENEMY} enemy: The enemy (ENEMY enum) to check
 /// @return {Bool}: The number of times the enemy has been killed
 function scr_getKillCount(enemy)
 {
@@ -21,7 +21,7 @@ function scr_getKillCount(enemy)
 }
 
 /// @desc Adds a kill tracker to the given enemy's timeline-based spare counter.
-/// @param {Real} enemy: The enemy (ENEMY enum) to check
+/// @param {Enum.ENEMY} enemy: The enemy (ENEMY enum) to check
 function scr_sparedEnemy(enemy)
 {
     global.enemy_spared[enemy] = true;
@@ -32,7 +32,7 @@ function scr_sparedEnemy(enemy)
 }
 
 /// @desc Determines how many times the given enemy has been spared in previous timelines.
-/// @param {Real} enemy: The enemy (ENEMY enum) to check
+/// @param {Enum.ENEMY} enemy: The enemy (ENEMY enum) to check
 /// @return {Bool}: The number of times the enemy has been spared
 function scr_getSpareCount(enemy)
 {
@@ -43,7 +43,7 @@ function scr_getSpareCount(enemy)
 }
 
 /// @desc Adds a death tracker to the given enemy's timeline-based death counter.
-/// @param {Real} enemy: The enemy (ENEMY enum) to check
+/// @param {Enum.ENEMY} enemy: The enemy (ENEMY enum) to check
 function scr_diedToEnemy(enemy)
 {
     ini_open(global.SAVE_FILES.PERS_RESET.NAME);
@@ -53,7 +53,7 @@ function scr_diedToEnemy(enemy)
 }
 
 /// @desc Determines how many times the given enemy has killed the player in previous timelines.
-/// @param {Real} enemy: The enemy (ENEMY enum) to check
+/// @param {Enum.ENEMY} enemy: The enemy (ENEMY enum) to check
 /// @return {Real}: The number of times the player has died to this enemy
 function scr_getDeathCount(enemy)
 {

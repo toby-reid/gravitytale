@@ -13,13 +13,7 @@ else if instance_exists(obj_dipper) {
 				case AREA.TENT:         break; // TODO: Implement when you add the room
 			}
 			if loc != AREA.UNKNOWN {
-				alarm[0] = 30
-				audio_stop_all()
-				audio_play_sound(sfx_alert,0,false)
-				x = obj_dipper.x
-				y = obj_dipper.y - 20
-				image_alpha = 1
-				obj_dipper.canMove = false
+				start_alert();
 			}
 			else with instance_create_layer(160,192,layer,obj_textbox_old) text = ["An error has occurred.&Please report this!&Error code: @ff0000BTLOC"]
 		}

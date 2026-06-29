@@ -20,4 +20,9 @@ if hp <= 0
     }
 }
 
+if (global.player.hp <= 0)
+{
+    scr_diedToEnemy(ENEMY.ZOMBIE_BOYFRIEND);
+}
+
 if global.stage[0] == 5 {timer = 0;}

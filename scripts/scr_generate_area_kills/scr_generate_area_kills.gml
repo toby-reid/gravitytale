@@ -29,7 +29,7 @@ function scr_generate_area_kills(){
 	};
 	global.areaKills[? AREA.MINES] = {
 		killCount: 0,
-		MAX_KILLS: 20 // change as needed
+		MAX_KILLS: 36 // Includes 5 Gnomes for the boyfriend
 	};
 	global.areaKills[? AREA.TENT] = {
 		killCount: 0,

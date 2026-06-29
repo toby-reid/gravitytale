@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_hexdec",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Strings",
+    "path":"folders/Scripts/Strings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
