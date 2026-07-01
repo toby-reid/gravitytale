@@ -1,0 +1,106 @@
+groups:
+  bottom-right:
+    br-bc:
+      sends_to_group: bottom-center
+      starts_active: true
+      toggles_plates:
+        - ml-mr
+    br-bl:
+      sends_to_group: bottom-left
+      starts_active: true
+      toggles_plates:
+        - bc-mr
+        - tc-bc
+  bottom-center:
+    bc-mr:
+      sends_to_group: middle-right
+      starts_active: true
+      toggles_plates:
+        - ml-tl
+        - br-bl
+    bc-ml:
+      sends_to_group: middle-left
+      starts_active: false
+      toggles_plates:
+        - tc-bc
+  bottom-left:
+    bl-br:
+      sends_to_group: bottom-right
+      starts_active: true
+      toggles_plates:
+        - bc-mr
+    bl-ml:
+      sends_to_group: middle-left
+      starts_active: false
+      toggles_plates:
+        - bl-br
+  middle-right:
+    mr-br:
+      sends_to_group: bottom-right
+      starts_active: true
+      toggles_plates:
+        - tc-tr
+    mr-tr:
+      sends_to_group: top-right
+      starts_active: false
+      toggles_plates:
+        - mr-tc
+    mr-tc:
+      sends_to_group: top-center
+      starts_active: true
+      toggles_plates:
+        - mr-tr
+        - tc-bc
+  middle-left:
+    ml-bc:
+      sends_to_group: bottom-center
+      starts_active: true
+      toggles_plates:
+        - mr-tr
+    ml-mr:
+      sends_to_group: middle-right
+      starts_active: true
+      toggles_plates:
+        - mr-tc
+    ml-tl:
+      sends_to_group: top-left
+      starts_active: false
+      toggles_plates:
+        - tl-tr
+        - bl-br
+  top-right:
+    tr-tc:
+      sends_to_group: top-center
+      starts_active: true
+      toggles_plates:
+        - ml-bc
+  top-center:
+    tc-bc:
+      sends_to_group: bottom-center
+      starts_active: false
+      toggles_plates:
+        - tc-bc
+    tc-tr:
+      sends_to_group: top-right
+      starts_active: false
+      toggles_plates:
+        - mr-br
+    tc-tl:
+      sends_to_group: top-left
+      starts_active: true
+  top-left:
+    tl-ml:
+      sends_to_group: middle-left
+      starts_active: false
+      toggles_plates:
+        - tc-tr
+    tl-tr:
+      sends_to_group: top-right
+      starts_active: false
+      toggles_plates:
+        - bl-ml
+start_group: bottom-right
+end_group: top-right
+ok_deadend_groups:
+  - bottom-right
+  - top-left
