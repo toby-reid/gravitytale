@@ -7,8 +7,8 @@ switch global.stage[0] {
 	case 1:
 		switch global.stage[1] {
 			case 0: case 1: case 3://Enemy select
-				x = 63
-				y = 282+35*global.stage[2]
+				x = 63 + (272 * (global.stage[2] div 3));
+				y = 282 + (35 * (global.stage[2] mod 3));
 			break
 			case 2://item select
 				x = 63+272*(floor(global.stage[3]/2)%2)

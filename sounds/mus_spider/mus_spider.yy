@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":100.17669,
+  "duration":100.166534,
   "exportDir":"",
   "name":"mus_spider",
   "parent":{

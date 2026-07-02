@@ -91,8 +91,8 @@ if !instance_exists(obj_toBattle) {
                             }
                             if (global.stage[1] == 0) // Fight; draw healthbar
                             {
-                                var _name_width = _bullet_offset + string_width(_enemy.name);
-                                draw_healthbar(_draw_x + _name_width, _draw_y + 8, _draw_x + _name_width + 80, _draw_y + 24, 100 * (_enemy.hp / _enemy.maxhp), c_red, c_lime, c_lime, 0, true, false);
+                                var _name_width = _bullet_offset + string_width(" " + _enemy.name);
+                                draw_healthbar(_draw_x + _name_width, _draw_y + 3, _draw_x + _name_width + 80, _draw_y + 20, 100 * (_enemy.hp / _enemy.maxhp), c_red, c_lime, c_lime, 0, true, false);
                             }
                             if (global.stage[2] != i) // not currently selected
                             {
@@ -220,9 +220,6 @@ if !instance_exists(obj_toBattle) {
                         charCount = 0
                         global.stage[0]++
                         audio_play_sound(sfx_select,0,false)
-                        if global.stage[5] == 0 {
-                            text[1] = string_concat(string_upper(string(e.name)), " - AT ", e.at, " HP ", e.hp, "&", e.check);
-                        }
                     } else if keyboard_check_pressed(vk_shift) {
                         global.stage[0]--;
                         audio_play_sound(sfx_beep,0,false);

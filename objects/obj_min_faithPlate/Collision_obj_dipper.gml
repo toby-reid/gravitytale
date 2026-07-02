@@ -8,4 +8,8 @@ if (self.is_active and other.canMove) // i.e., not greyed out
     {
         other.dir = is_reversed ? reverse_dir(dir) : dir;
     }
+    else if (is_reversed && !dipper_set_dir)
+    {
+        other.dir = reverse_dir(other.dir);
+    }
 }

@@ -37,9 +37,12 @@ m_create_gnomes = function()
     for (var i = 0; i < _gnome_count; ++i)
     {
         var _gnome_position = _gnome_positions[i];
-        _gnomes[i] = instance_create_layer(_gnome_position[0], _gnome_position[1], layer, obj_enemy_min_gnome);
-        var _stacked_gnome = _gnome_position[2];
-        _gnomes[i].stacked_gnome = (_stacked_gnome < 0) ? noone : _gnomes[_stacked_gnome];
+        with instance_create_layer(_gnome_position[0], _gnome_position[1], layer, obj_enemy_min_gnome)
+        {
+            _gnomes[i] = id;
+            var _stacked_gnome = _gnome_position[2];
+            stacked_gnome = (_stacked_gnome < 0) ? noone : _gnomes[_stacked_gnome];
+        }
     }
     global.enemy = _gnomes;
 }

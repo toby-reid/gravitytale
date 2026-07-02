@@ -1,6 +1,7 @@
 self.launchTime = 40;
-self.turnTime = floor(self.launchTime / 4);
+self.turnTime = self.launchTime div 4;
 self.delta_y = 0.2;
+self.dipper_set_dir = false;
 
 if (self.is_any_direction)
 {
@@ -39,11 +40,11 @@ set_color = function()
     {
         self.image_blend = c_grey;
     }
-    else if (self.is_strong and self.is_reversed)
+    else if ((self.is_strong || self.short_strong) and self.is_reversed)
     {
         self.image_blend = c_orange;
     }
-    else if (self.is_strong)
+    else if (self.is_strong || self.short_strong)
     {
         self.image_blend = c_fuchsia;
     }

@@ -11,7 +11,7 @@ function scr_select_array(_array, _criteria, _seek_backward = false, _start_inde
     if (_seek_backward)
     {
         var _start_at = _arr_length - 1;
-        if (_start_index >= 0)
+        if (_start_index >= 0 && _start_index < _arr_length)
         {
             _start_at = _start_index;
             if (!_include_start)
@@ -37,7 +37,7 @@ function scr_select_array(_array, _criteria, _seek_backward = false, _start_inde
     else
     {
         var _start_at = 0;
-        if (_start_index >= 0)
+        if (_start_index >= 0 && _start_index < _arr_length)
         {
             _start_at = _start_index;
             if (!_include_start)

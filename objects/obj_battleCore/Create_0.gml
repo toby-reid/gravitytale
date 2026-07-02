@@ -122,7 +122,7 @@ select_enemy = function(_dir = DIRECTION.DOWN)
             if (instance_exists(_target_col[_new_col_index]))
             {
                 audio_play_sound(sfx_beep, 0, false);
-                global.stage[2] = _is_first_col ? _new_col_index : (_new_col_index + _max_in_col);
+                global.stage[2] = _is_first_col ? (_new_col_index + _max_in_col) : _new_col_index;
             }
         }
         else // up/down

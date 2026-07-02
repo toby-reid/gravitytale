@@ -13,6 +13,5 @@ if instance_exists(obj_dipper) {
 	y = 2*(obj_dipper.y-camera_get_view_y(view_camera[0]))
 }
 image_alpha = 0
-//audio_stop_all()
 global.dir = 4
 if global.player.mabel sprite_index = spr_soulM

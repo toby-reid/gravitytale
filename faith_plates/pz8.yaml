@@ -103,4 +103,4 @@ start_group: bottom-right
 end_group: top-right
 ok_deadend_groups:
   - bottom-right
-  - top-left
+  - top-left  # have confirmed: no path from tl to tr, but no dead ends

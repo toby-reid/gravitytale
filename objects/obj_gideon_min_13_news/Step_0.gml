@@ -138,9 +138,9 @@ switch self.stage
         {
             with instance_create_layer(obj_dipper.x - 10, obj_dipper.y, layer, obj_min_faithPlate)
             {
-                dir = 0;
-                is_strong = true;
-                is_active = true;
+                dir = 3;
+                short_strong = true;
+                visible = false;
                 alarm[2] = 30;
             }
             global.teleport = true;

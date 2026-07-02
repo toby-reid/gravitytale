@@ -1,3 +1,6 @@
+// Fits 8 per row, ? rows on index 0
+// Fits ? per row, ? rows on index 1
+
 text = [". . ."]//Change in creation code
 charRate = []//Change if needed; default .5
 sound = []//Change if needed; default silence
