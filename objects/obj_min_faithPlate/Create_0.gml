@@ -10,18 +10,50 @@ else if (self.is_reversed)
 {
     switch (self.dir)
     {
-        case 0: self.sprite_index = spr_min_faithPlate_r_reversed; break;
-        case 1: self.sprite_index = spr_min_faithPlate_u_reversed; break;
-        case 2: self.sprite_index = spr_min_faithPlate_l_reversed; break;
-        case 3: self.sprite_index = spr_min_faithPlate_d_reversed; break;
+        case DIRECTION.RIGHT: self.sprite_index = spr_min_faithPlate_r_reversed; break;
+        case DIRECTION.UP:    self.sprite_index = spr_min_faithPlate_u_reversed; break;
+        case DIRECTION.LEFT:  self.sprite_index = spr_min_faithPlate_l_reversed; break;
+        case DIRECTION.DOWN:  self.sprite_index = spr_min_faithPlate_d_reversed; break;
     }
 }
 else switch (self.dir)
 {
-    case 0: self.sprite_index = spr_min_faithPlate_r; break;
-    case 1: self.sprite_index = spr_min_faithPlate_u; break;
-    case 2: self.sprite_index = spr_min_faithPlate_l; break;
-    case 3: self.sprite_index = spr_min_faithPlate_d; break;
+    case DIRECTION.RIGHT: self.sprite_index = spr_min_faithPlate_r; break;
+    case DIRECTION.UP:    self.sprite_index = spr_min_faithPlate_u; break;
+    case DIRECTION.LEFT:  self.sprite_index = spr_min_faithPlate_l; break;
+    case DIRECTION.DOWN:  self.sprite_index = spr_min_faithPlate_d; break;
 }
 
-event_user(1);
+set_active = function(_set_active)
+{
+    // always flash; assume the caller has already checked as necessary
+    self.is_active = _set_active;
+    self.image_blend = self.is_active ? c_white : c_dkgrey;
+    self.alarm[3] = 15;
+}
+toggle_active = function() { set_active(!is_active); }
+
+set_color = function()
+{
+    if (!self.is_active)
+    {
+        self.image_blend = c_grey;
+    }
+    else if (self.is_strong and self.is_reversed)
+    {
+        self.image_blend = c_orange;
+    }
+    else if (self.is_strong)
+    {
+        self.image_blend = c_fuchsia;
+    }
+    else if (self.is_reversed)
+    {
+        self.image_blend = c_lime;
+    }
+    else
+    {
+        self.image_blend = c_aqua;
+    }
+}
+set_color();

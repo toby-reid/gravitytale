@@ -14,14 +14,6 @@ audio_group_load(SFX);
 global.menu = [0, 0];
 global.battleTimer = 0; // I would do an alarm, but I only want it going down when not in battle rooms
 
-enum DIRECTION
-{
-    RIGHT = 0,
-    UP = 1,
-    LEFT = 2,
-    DOWN = 3
-}
-
 scr_generate_enemy_indices();
 
 scr_generate_item_index();

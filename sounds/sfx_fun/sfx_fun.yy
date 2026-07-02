@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.018776,
+  "duration":0.9937188,
   "exportDir":"",
   "name":"sfx_fun",
   "parent":{

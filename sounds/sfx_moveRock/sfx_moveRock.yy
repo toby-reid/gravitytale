@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.644082,
+  "duration":0.64408165,
   "exportDir":"",
   "name":"sfx_moveRock",
   "parent":{

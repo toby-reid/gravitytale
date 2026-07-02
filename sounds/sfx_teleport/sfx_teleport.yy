@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":5.084819,
+  "duration":5.0798187,
   "exportDir":"",
   "name":"sfx_teleport",
   "parent":{

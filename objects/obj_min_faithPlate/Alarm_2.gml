@@ -1,6 +1,6 @@
 /// @description Wait to fire
 
-if (self.is_any_direction) self.dir = obj_dipper.dir;
+if (self.is_any_direction) self.dir = is_reversed ? reverse_dir(obj_dipper.dir) : obj_dipper.dir;
 
 // Note: These values were calculated based on distances to travel within launchTime frames,
 // based on the delta_y:
@@ -33,9 +33,6 @@ self.alarm[1] = floor(self.turnTime / 2); // offset the turning time
 audio_play_sound(sfx_buttSwitch, 0, false);
 for (var i = 0; i < array_length(affected_plates); ++i)
 {
-    with affected_plates[i]
-    {
-        event_user(0);
-    }
+    affected_plates[i].toggle_active();
 }
 self.image_index = 1;

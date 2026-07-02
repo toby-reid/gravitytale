@@ -1,0 +1,23 @@
+text = [
+    "(You hear echoes from the #depths...)",
+    "Gentlemen, fear not.&We at Focal Science Innovators #have heard your feedback",
+    "regarding the minimal #potential for death after #falling from a platform.",
+    "We also understand that our #Focal FAITH PLATEs may be a #minor catalyst",
+    "for such incidents, especially #when placed near the edge of a #platform without guard rails.",
+    "Thus, I am proud to present:",
+    "The Focal Science Innovators #Personnel Rescue Operative to #Warp to Land, or PROWL.",
+    "Of course, they aren't actually #warping or teleporting.",
+    "You can't just make a portal #out of thin air!",
+    "Though a gun that shoots #portals could be pretty #interesting.",
+    "You know, maybe I'll have the #boys start sciencing up some #prototypes.",
+    "In the meantime, with these #machines on the PROWL, your #employees couldn't feel safer!",
+    "Just look at that cuddly, #cold steel design!",
+    "Alright, alright.&I hear you:&They look like murder drones.",
+    "Well, with the simple flip of #a switch, they turn invisible!&No more intimidating PROWLers!",
+    ". . .",
+    "Well, making them visible again #is an undeveloped science, #but let me tell you:",
+    "The power sources on these #bad boys can outlast entire #civilizations!",
+    "So now that fleet of PROWLers #is on the loose, I will need #some compensation.",
+    "It ain't easy to PROWL the #neighborhood, after all.",
+    "(The voices fade into the #abyss.)"
+];
