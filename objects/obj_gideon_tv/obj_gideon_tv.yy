@@ -14,7 +14,10 @@
     "name":"Gideon",
     "path":"folders/Objects/Characters/Gideon.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_collide",
+    "path":"objects/obj_collide/obj_collide.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

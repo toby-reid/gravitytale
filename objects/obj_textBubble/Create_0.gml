@@ -1,4 +1,4 @@
-// Fits 8 per row, ? rows on index 0
+// Fits 8 per row, 6 rows on index 0
 // Fits ? per row, ? rows on index 1
 
 text = [". . ."]//Change in creation code

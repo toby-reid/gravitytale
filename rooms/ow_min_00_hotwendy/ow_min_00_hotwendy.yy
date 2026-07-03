@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"ow_min_00_hotwendy",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/ow_min_00_hotwendy/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,

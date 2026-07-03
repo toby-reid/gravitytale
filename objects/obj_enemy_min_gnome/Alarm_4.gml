@@ -1,4 +1,4 @@
-if (stacked_gnome == noone)
+if (is_leader)
 {
     event_inherited();
     if (!revealed)
@@ -12,6 +12,6 @@ if (stacked_gnome == noone)
             global.player.mabel ? "Will you join us in holy matri-\ngnome-\ny?" : "Will you give your sister your blessing?"
         ];
         bubble.image_index = 1;
-        revealed = true;
+        object_index.revealed = true;
     }
 }

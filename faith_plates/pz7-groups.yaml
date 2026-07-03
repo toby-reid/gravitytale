@@ -3,8 +3,6 @@ groups:
     A1:
       sends_to_group: B
       starts_active: true
-      toggles_plates:
-        - B3
     A2:
       sends_to_group: C
       starts_active: false
@@ -37,8 +35,8 @@ groups:
     C1:
       sends_to_group: A
       starts_active: false
-      toggles_plates:
-        - C1
+      # toggles_plates:  # TODO: This presents a dead end.......
+      #   - C1
     C2:
       sends_to_group: D
       starts_active: true

@@ -10,7 +10,6 @@ instance_create_layer(320,249,layer,obj_nyarfGun)
 stop_the_bar = function()
 {
     alarm[0] = -1;
-    alarm[1] = -1;
     hspeed = 0;
     image_speed = 1;
     // TODO: At some point, make these collision detectors, to avoid all these magic numbers.
@@ -23,4 +22,5 @@ stop_the_bar = function()
     else if (alarm[1] >=  1) global.stage[4] = 1;
     else global.stage[4] = 0;
     if (global.player.at == AT_DF.UPGRADE) global.stage[4] *= 2;
+    alarm[1] = -1;
 }

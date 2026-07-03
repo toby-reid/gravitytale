@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"ow_min_14_bombDate",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/ow_min_14_bombDate/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
@@ -375,7 +375,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_min_faithPlate","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},"propertyId":{"name":"is_reversed","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":100.0,},
         {"$GMRInstance":"v4","%Name":"inst_A5A59B4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_A5A59B4","objectId":{"name":"obj_min_faithPlate","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},"properties":[
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_min_faithPlate","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},"propertyId":{"name":"dir","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_min_faithPlate","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},"propertyId":{"name":"dir","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"3",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_min_faithPlate","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},"propertyId":{"name":"is_reversed","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":60.0,"y":120.0,},
         {"$GMRInstance":"v4","%Name":"inst_89D04C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_89D04C","objectId":{"name":"obj_min_faithPlate","path":"objects/obj_min_faithPlate/obj_min_faithPlate.yy",},"properties":[

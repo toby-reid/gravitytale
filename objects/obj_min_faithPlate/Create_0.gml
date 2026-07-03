@@ -3,9 +3,10 @@ self.turnTime = self.launchTime div 4;
 self.delta_y = 0.2;
 self.dipper_set_dir = false;
 
+
 if (self.is_any_direction)
 {
-    self.sprite_index = spr_min_faithPlate_anyDir;
+    self.sprite_index = self.is_reversed ? spr_min_faithPlate_anyDir_reversed : spr_min_faithPlate_anyDir;
 }
 else if (self.is_reversed)
 {
@@ -29,7 +30,7 @@ set_active = function(_set_active)
 {
     // always flash; assume the caller has already checked as necessary
     self.is_active = _set_active;
-    self.image_blend = self.is_active ? c_white : c_dkgrey;
+    self.image_blend = _set_active ? c_white : c_dkgrey;
     self.alarm[3] = 15;
 }
 toggle_active = function() { set_active(!is_active); }
@@ -40,17 +41,17 @@ set_color = function()
     {
         self.image_blend = c_grey;
     }
-    else if ((self.is_strong || self.short_strong) and self.is_reversed)
+    else if (self.is_reversed && (self.is_strong || self.short_strong))
     {
         self.image_blend = c_orange;
-    }
-    else if (self.is_strong || self.short_strong)
-    {
-        self.image_blend = c_fuchsia;
     }
     else if (self.is_reversed)
     {
         self.image_blend = c_lime;
+    }
+    else if (self.is_strong || self.short_strong)
+    {
+        self.image_blend = c_fuchsia;
     }
     else
     {

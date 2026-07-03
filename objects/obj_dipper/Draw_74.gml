@@ -1,6 +1,7 @@
 ///@desc in-game menu
 if menu[0] > 0 {
 	var soul_sprite = global.player.mabel ? spr_soulM : spr_soul;
+    
 	var multipage = array_length(global.inventory) > 8;
 	if multipage {
 		multipage = false;
@@ -309,8 +310,8 @@ if menu[0] > 0 {
 			if !instance_exists(obj_textbox_old) {
 				if global.inventory[global.menu[1]] == ITEM_NAME.NONE if !scr_menu_itemSelect(1) menu[0] = 1
 				draw_sprite(soul_sprite,0,202,92+32*global.menu[1])
-				if keyboard_check_pressed(vk_down) scr_menu_itemSelect(1)
-				if keyboard_check_pressed(vk_up) scr_menu_itemSelect(-1)
+				if keyboard_check_pressed(vk_down) scr_menu_itemSelect(1) // TODO: Swap this out for the standard item select
+				if keyboard_check_pressed(vk_up) scr_menu_itemSelect(-1) // TODO: ...just redo this entire thing. It's not worth it
 				if keyboard_check_pressed(vk_enter) {
 					if global.inventory[global.menu[1]] != ITEM_NAME.NONE {
 						menu = [3,0];

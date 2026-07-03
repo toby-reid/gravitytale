@@ -8,6 +8,10 @@ stacked_gnome = noone;
 revealed = false;
 initial_round = false;
 
+is_leader = instance_number(object_index) == 1;
+
+attack_on = 75;
+
 move_dependents = function(_move_time = 30)
 {
     if (stacked_gnome != noone)
@@ -35,6 +39,7 @@ remove_from_chain = function()
         if (_gnome.stacked_gnome == id)
         {
             _gnome.stacked_gnome = stacked_gnome;
+            _gnome.is_leader = is_leader;
         }
     }
 }

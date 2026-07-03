@@ -2,7 +2,7 @@
 
 import sys
 from dataclasses import dataclass, field
-from enum import IntEnum
+from enum import IntEnum, StrEnum
 from pathlib import Path
 from typing import Any, Optional, Self, cast, get_origin
 
@@ -12,6 +12,18 @@ Row = int
 Column = int
 
 
+class Color(StrEnum):
+    """TODO"""
+
+    RED = "\033[0;31m"
+    GREEN = "\033[0;32m"
+    PURPLE = "\033[0;35m"
+    CYAN = "\033[0;36m"
+    YELLOW = "\033[1;33m"
+    LT_BLUE = "\033[1;34m"
+    RESET = "\033[0m"
+
+
 class Direction(IntEnum):
     """TODO"""
 
@@ -19,6 +31,11 @@ class Direction(IntEnum):
     UP = 1
     LEFT = 2
     DOWN = 3
+
+
+DIRECTION_VIZ = ["E", "N", "W", "S"]
+ALL_DIRECTION = "A"
+NO_ENTRY = " "
 
 
 @dataclass(order=True, slots=True, frozen=True)
@@ -122,6 +139,7 @@ class Graph:
     """TODO"""
 
     full_map: dict[Optional[Coordinate], set[Optional[Plate]]]
+    plates: dict[Coordinate, Plate]
 
     @classmethod
     def from_config(cls, config: Config) -> Self:
@@ -139,7 +157,39 @@ class Graph:
             if plate.reaches_end:
                 connections.add(None)
             full_map[coord] = connections
-        return cls(full_map)
+        return cls(full_map, config.plates)
+
+    def __str__(self) -> str:
+        graph_rows: list[list[str]] = []
+        start_coords = {plate.coordinate for plate in self.full_map[None] if plate is not None}
+        max_col = 0
+        for coord in sorted(key for key in self.full_map.keys() if key is not None):
+            while len(graph_rows) <= coord.row:
+                graph_rows.append([])
+            row = graph_rows[coord.row]
+            while len(row) < coord.col:
+                row.append(NO_ENTRY)
+            max_col = max(max_col, coord.col)
+            plate = self.plates[coord]
+            icon = DIRECTION_VIZ[plate.direction] if plate.direction is not None else ALL_DIRECTION
+            color = Color.RESET
+            if plate.is_strong and plate.coordinate in start_coords:
+                color = Color.CYAN
+            elif plate.is_strong and None in self.full_map[plate.coordinate]:
+                color = Color.PURPLE
+            elif plate.is_strong:
+                color = Color.YELLOW
+            elif plate.coordinate in start_coords:
+                color = Color.GREEN
+            elif None in self.full_map[plate.coordinate]:
+                color = Color.RED
+            row.append(f"{color}{icon}{Color.RESET}")
+        col_header = ["  "] + [f"{Color.LT_BLUE}{col}{Color.RESET}" for col in range(max_col + 1)]
+        console_rows = [" ".join(col_header)] + [
+            f"{Color.LT_BLUE}{row_index:>2}{Color.RESET} {' '.join(row)}"
+            for row_index, row in enumerate(graph_rows)
+        ]
+        return "\n".join(console_rows)
 
     def find_path_to_exit(self) -> Optional[list[Coordinate]]:
         """TODO"""
@@ -159,6 +209,18 @@ class Graph:
             reached_coords.add(reached_coord)
         return None
 
+    def find_unreachable_coords(self) -> set[Coordinate]:
+        """TODO"""
+        unreached_coords = {key for key in self.full_map.keys() if key is not None}
+        reached_queue: set[Optional[Coordinate]] = {None}
+        while reached_queue:
+            coord = reached_queue.pop()
+            for connection in self.full_map[coord]:
+                if connection is not None and connection.coordinate in unreached_coords:
+                    unreached_coords.remove(connection.coordinate)
+                    reached_queue.add(connection.coordinate)
+        return unreached_coords
+
 
 def main(args: list[str]) -> int:
     """TODO"""
@@ -177,7 +239,15 @@ def main(args: list[str]) -> int:
     if path_to_exit is None:
         print("No path to exit")
         return 2
-    print(f"Shortest path to exit (row, col): {', '.join([str(coord) for coord in path_to_exit])}")
+    print(f"Shortest path to exit (row,col): {', '.join([str(coord) for coord in path_to_exit])}")
+    unreachable = graph.find_unreachable_coords()
+    if unreachable:
+        print(
+            f"Unreachable coordinates (row,col): {', '.join([str(coord) for coord in sorted(unreachable)])}"
+        )
+    else:
+        print("No unreachable coords")
+    print(f"Graph:\n{str(graph)}")
     return 0
 
 

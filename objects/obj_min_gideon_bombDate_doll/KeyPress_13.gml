@@ -21,6 +21,17 @@ if (!instance_exists(obj_textbox_old) && instance_exists(obj_dipper) && obj_dipp
                 ];
                 var _base_text_length = array_length(_base_text);
                 set_text(array_concat(_base_text, other.text));
+                if (obj_min_gideon_bombDate.doll_count == 2)
+                {
+                    var _last_index = array_length(m_text);
+                    set_text(["Unless you'd like to #hear that again?", "Alrighty, if y'all say so."], _last_index);
+                    set_choices(_last_index, ["Yes!!!", "Maybe not"], [
+                        method({target: id, _back_to_page: _base_text_length - 1}, function() {
+                            target.page = _back_to_page;
+                        })
+                    ]);
+                    set_charRate(_last_index, 1);
+                }
                 set_sounds(tlk_gideon, max(_base_text_length, array_length(m_sounds)));
                 set_choices(1, [ "yes", "no" ], [
                     noop,

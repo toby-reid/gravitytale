@@ -18,22 +18,15 @@ battle = false
 run = true;
 
 // TODO: Investigate inventory. Might need to reselect after using item, etc.
-m_get_inventory = function()
-{
-    var _inv = [];
-    for (var i = 0, _inventory_size = array_length(global.inventory); i < _inventory_size; ++i)
-    {
-        var _item = global.inventory[i];
-        if (_item != ITEM_NAME.NONE)
-        {
-            array_push(_inv, _item);
-        }
-    }
-    return _inv;
-}
-inventory = m_get_inventory();
+inventory = scr_get_inventory();
 m_select_item = function(_dir)
 {
+    var _inventory_size = array_length(inventory);
+    if (_inventory_size <= 1)
+    {
+        global.stage[3] = 0;
+        return false;
+    }
     var _current_selection = global.stage[3];
     var _is_on_top = (_current_selection % 2) == 0;
     var _check_dir = _is_on_top ? 1 : -1;
@@ -41,50 +34,83 @@ m_select_item = function(_dir)
     if (_dir == DIRECTION.UP || _dir == DIRECTION.DOWN)
     {
         var _straight_index = _current_selection + _check_dir;
-        if (inventory[_straight_index] != ITEM_NAME.NONE)
+        if (_straight_index < _inventory_size)
         {
             audio_play_sound(sfx_beep, 0, false);
             global.stage[3] = _straight_index;
             return true;
         }
-        var _offset_index = (_page_size - 1) - _current_selection + (_page_size * floor(_current_selection / _page_size));
-        if (inventory[_straight_index] != ITEM_NAME.NONE)
+        if (_current_selection % _page_size == 2)
         {
             audio_play_sound(sfx_beep, 0, false);
-            global.stage[3] = _straight_index;
+            global.stage[3] = _current_selection - 1;
             return true;
         }
         return false;
     }
-    for (var _increment = (_dir == DIRECTION.RIGHT) ? 2 : -2, i = _current_selection + _increment, _inventory_size = array_length(inventory); i != _current_selection; i += _increment)
+    if (_dir == DIRECTION.LEFT)
     {
-        if (i > _inventory_size)
+        if (_current_selection == 0 || _current_selection == 1)
         {
-            i = _is_on_top ? 0 : 1;
-        }
-        else if (i < 0)
-        {
-            i = _inventory_size - 1;
-            if ((_is_on_top && (_inventory_size % 2) == 0) || (!_is_on_top && (_inventory_size % 2) != 0))
+            var _new_index = _inventory_size - 1;
+            if (_is_on_top && (_inventory_size % 2) == 0)
             {
-                --i;
+                --_new_index;
             }
+            if (_new_index >= 0 && _new_index != _current_selection)
+            {
+                audio_play_sound(sfx_beep, 0, false);
+                global.stage[3] = _new_index;
+                return true;
+            }
+            return false;
         }
-        if (inventory[i] != ITEM_NAME.NONE)
-        {
-            audio_play_sound(sfx_beep, 0, false);
-            global.stage[3] = i;
-            return true;
-        }
-        var _check_index = i + _check_dir;
-        if (_inventory_size > _check_index && inventory[_check_index] != ITEM_NAME.NONE)
-        {
-            audio_play_sound(sfx_beep, 0, false);
-            global.stage[3] = _check_index;
-            return true;
-        }
+        audio_play_sound(sfx_beep, 0, false);
+        global.stage[3] = _current_selection - 2;
+        return true;
     }
-    return false;
+    if (_current_selection == _inventory_size - 2 && _current_selection % _page_size == 1)
+    {
+        audio_play_sound(sfx_beep, 0, false);
+        global.stage[3] = _current_selection + 1;
+        return true;
+    }
+    if (_current_selection == _inventory_size - 2 || _current_selection == _inventory_size - 1)
+    {
+        var _new_index = _current_selection % 2;
+        if (_new_index != _current_selection)
+        {
+            audio_play_sound(sfx_beep, 0, false);
+            global.stage[3] = _new_index;
+            return true;
+        }
+        return false;
+    }
+    audio_play_sound(sfx_beep, 0, false);
+    global.stage[3] = _current_selection + 2;
+    return true;
+}
+m_remove_item = function(_local_inventory_index, _item)
+{
+    var _global_inventory_index = -1;
+    for (var i = 0; i <= _local_inventory_index; ++i)
+    {
+        _global_inventory_index = scr_select_array(global.inventory, function(item) {return item != ITEM_NAME.NONE;}, false, _global_inventory_index);
+    }
+    var _success = true;
+    if (
+        _global_inventory_index < 0
+        || _global_inventory_index >= array_length(global.inventory)
+        || global.inventory[_global_inventory_index] != inventory[_local_inventory_index]
+    )
+    {
+        show_debug_message($"Failed to register global inventory; got {_global_inventory_index} from {global.inventory}; defaulting to 0");
+        _global_inventory_index = array_get_index(global.inventory, inventory[_local_inventory_index]);
+        _success = false;
+    }
+    global.inventory[_global_inventory_index] = _item.useResult;
+    inventory = scr_get_inventory();
+    return _success;
 }
 global.stage[3] = 0;
 

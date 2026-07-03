@@ -11,6 +11,7 @@ sb = 200;
 area = AREA.UNKNOWN;
 timer = 0;
 deathx = 0;
+bubble = noone; // for Spare
 
 rounds_left = 18;
 player_stuck_for = 9;

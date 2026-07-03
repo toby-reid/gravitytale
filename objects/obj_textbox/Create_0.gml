@@ -496,7 +496,7 @@ next_page = function()
     }
     
     ++page;
-    if (page == array_length(m_text))
+    if (page >= array_length(m_text))
     {
         m_growRate = -0.2;
         return true;

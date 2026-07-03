@@ -4,7 +4,7 @@ if (self.drawy < 36)
 {
     --self.y;
     ++self.drawy;
-    self.alarm[3] = 15;
+    self.alarm[3] = 5;
 }
 else
 {

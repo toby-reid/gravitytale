@@ -85,9 +85,9 @@ if (instance_exists(obj_dipper))
         case 4:
             if (self.alarm[2] == -1 and self.alarm[3] == -1)
             {
-                with instance_create_layer(160, 192, layer, obj_textbox_old)
+                with instance_create_layer(160, 192, layer, obj_textbox)
                 {
-                    text = [
+                    set_text([
                         "ISN'T THIS MUCH BETTER?&NOW Y'ALL CAN SEE MY #ADOWABLE FACE!",
                         "ALRIGHT, LET'S TRY THIS AGAIN!",
                         "HELLO, AMERICA!",
@@ -97,20 +97,11 @@ if (instance_exists(obj_dipper))
                         "NOW, TODAY WE HAVE A TREAT #FOR YOU!",
                         "THIS " + (global.player.mabel ? "DARLING BEAUTY" : "HANDSOME ROGUE") + " HAPPENED #ACROSS OUR STUDIOS!&WHAT A COINCIDENCE!",
                         "LET'S FIND OUT A LITTLE MORE #ABOUT THIS MYSTERIOUS STRANGER!",
-                        string_concat(
-                            "WHAT'S YOUR NAME, ",
-                            global.player.mabel ? "SUGAR" : "PARTNER",
-                            "?#",
-                            string_repeat(" ", 19),
-                            "(Say#       ",
-                            global.player.name,
-                            string_repeat(" ", 12 - string_length(global.player.name)),
-                            "nothing)"
-                        ),
+                        string_concat("WHAT'S YOUR NAME, ", global.player.mabel ? "SUGAR" : "PARTNER", "?"),
                         ". . .",
                         "CHECK OUT THIS " + (global.player.mabel ? "SILENT BEAUTY, #" : "COOL-HEADED #STOIC, ") + "FOLKS!",
                         (global.player.mabel ? "S" : "") + "HE'S NOT LETTING ANYTHING #DISTRACT H" + (global.player.mabel ? "ER" : "IM") + "!",
-                        "WELL, THEN, WHAT BRINGS YOU #TO GRAVITY FALLS?#       " + (global.player.mabel ? "Brother" : "Sister ") + "     You",
+                        "WELL, THEN, WHAT BRINGS YOU #TO GRAVITY FALLS?",
                         ". . .&Ah, I see.",
                         "I'm sorry to hear that, #" + (global.player.mabel ? "sweetie" : "partner") + ".",
                         ". . .",
@@ -126,16 +117,47 @@ if (instance_exists(obj_dipper))
                         "BUT IT LOOKS LIKE WE'RE #OUT OF TIME FOR TODAY, FOLKS!",
                         "LET'S ALL BID THIS " + (global.player.mabel ? "BEAUTY" : "FELLA") + " A #FOND FAREWELL!",
                         "WE'LL MEET AGAIN, " + (global.player.mabel ? "SWEETCAKES" : "PARTNER") + "!&DON'T DIE OUT THERE!"
-                    ];
-                    for (var i = 0; i < array_length(text); ++i)
-                    {
-                        sound[i] = tlk_gideon;
-                        choice[i] = 0;
-                    }
-                    choice[9] = 1;
-                    choice[13] = 1;
-                    changed_9 = false;
-                    changed_13 = false;
+                    ]);
+                    set_sounds(tlk_gideon);
+                    set_choices(9, [global.player.name, "(Say#nothing)"], [
+                        method({target: id}, function() { with target {
+                            set_text([
+                                string_concat(
+                                    global.player.name,
+                                    ", huh?&",
+                                    scr_name_matches() ? "That... makes sense somehow." : "Seems odd to me, but I reckon #y'all know it better."
+                                ),
+                                string_concat(
+                                    "WELL, CHECK OUT THIS BOLD #",
+                                    global.player.mabel ? "BEAUTY" : "ADVENTURER",
+                                    ", FOLKS!"
+                                ),
+                                string_concat(
+                                    global.player.mabel ? "S" : "",
+                                    "HE'S NOT AFRAID TO PROCLAIM IT #TO THE WORLD!"
+                                )
+                            ], page + 1);
+                        }})
+                    ]);
+                    set_choices(13, [global.player.mabel ? "Brother" : "Sister", "You"], [
+                        noop,
+                        method({target: id}, function() { with target {
+                            set_text(array_concat(
+                                [". . .", ". . ."],
+                                global.player.mabel ? [
+                                    "Well, I...&I'm honored, sugar!",
+                                    "BEAUTY @ffff00AND@ffffff BRAINS, FOLKS!&SHE'S THE TOTAL PACKAGE!",
+                                    "OF COURSE SHE'D GO FOR #WIDDLE OL' ME!",
+                                    "SHE KNOWS TO LOOK PAST MY #ADORABLE LOOKS TO THE REAL STUD BENEATH!"
+                                ] : [
+                                    "Well, that's no surprise.",
+                                    "THAT'S RIGHT, FOLKS!&THIS BOY CAME CLEAR FROM #CALIFORNIA",
+                                    "JUST TO GET A GLIMPSE AT #WIDDLE OL' ME!",
+                                    "HE CERTAINLY KNOWS A STAR #WHEN HE SEES ONE!"
+                                ]
+                            ), page + 1);
+                        }})
+                    ]);
                 }
                 self.image_speed = 1;
                 audio_play_sound(mus_showtime, 0, true);
@@ -143,72 +165,9 @@ if (instance_exists(obj_dipper))
             }
         break;
         case 5:
-            if (instance_exists(obj_textbox_old))
+            if (instance_exists(obj_textbox))
             {
-                self.arm_index = obj_textbox_old.face;
-                if (obj_textbox_old.text[obj_textbox_old.page] != ". . .")
-                {
-                    self.face = (string_upper(obj_textbox_old.text[obj_textbox_old.page]) == obj_textbox_old.text[obj_textbox_old.page])
-                        ? spr_gideon_tv_face_cheery
-                        : spr_gideon_tv_face_neutral;
-                }
-                with obj_textbox
-                {
-                    if (not changed_9)
-                    {
-                        if (page == 9)
-                        {
-                            if (charCount >= 26) charCount = string_length(text[page]);
-                        }
-                        else if (page >= 10)
-                        {
-                            if (action[9] == 0)
-                            {
-                                text[10] = string_concat(
-                                    global.player.name,
-                                    ", hm?&",
-                                    (
-                                        (global.player.mabel and string_lower(global.player.name) == "mabel")
-                                        or (not global.player.mabel and string_lower(global.player.name) == "dipper")
-                                    ) ? "That... makes sense somehow." : "Seems odd to me, but I reckon #you know it better."
-                                );
-                                text[11] = "WELL, CHECK OUT THIS BOLD #" + (global.player.mabel ? "BEAUTY" : "ADVENTURER") + ", FOLKS!";
-                                text[12] = (global.player.mabel ? "S" : "") + "HE'S NOT AFRAID TO PROCLAIM IT #TO THE WORLD!";
-                            }
-                            changed_9 = true;
-                        }
-                    }
-                    else if (not changed_13)
-                    {
-                        if (page == 13)
-                        {
-                            if (charCount >= 46) charCount = string_length(text[page]);
-                        }
-                        else if (page >= 14)
-                        {
-                            if (action[13] == 1)
-                            {
-                                text[14] = ". . .";
-                                text[15] = ". . .";
-                                if (global.player.mabel)
-                                {
-                                    text[16] = "Well, I...&I'm honored, sugar!";
-                                    text[17] = "BEAUTY @ffff00AND@ffffff BRAINS, FOLKS!&SHE'S THE TOTAL PACKAGE!";
-                                    text[18] = "OF COURSE SHE'D GO FOR #WIDDLE OL' ME!";
-                                    text[19] = "SHE KNOWS TO LOOK PAST MY #ADORABLE LOOKS TO THE REAL STUD BENEATH!";
-                                }
-                                else
-                                {
-                                    text[16] = "Well, that's no surprise.";
-                                    text[17] = "THAT'S RIGHT, FOLKS!&THIS BOY CAME CLEAR FROM #CALIFORNIA";
-                                    text[18] = "JUST TO GET A GLIMPSE AT #WIDDLE OL' ME!";
-                                    text[19] = "HE CERTAINLY KNOWS A STAR #WHEN HE SEES ONE!";
-                                }
-                            }
-                            changed_13 = true;
-                        }
-                    }
-                }
+                self.arm_index = obj_textbox.head_frame;
             }
             else
             {

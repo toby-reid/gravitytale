@@ -19,8 +19,15 @@ if !instance_exists(obj_toBattle) {
             if keyboard_check_pressed(vk_enter) {
                 audio_play_sound(sfx_select,0,false)
                 if global.stage[1] == 2 {
-                    if array_length(inventory) > 0 global.stage[0]++;
-                    // do nothing if our inventory is empty
+                    var _inventory_size = array_length(inventory);
+                    if (_inventory_size > 0) // do nothing if our inventory is empty
+                    {
+                        global.stage[0]++;
+                        if (global.stage[3] >= _inventory_size)
+                        {
+                            global.stage[3] = 0;
+                        }
+                    }
                 }
                 else global.stage[0]++
             }
@@ -109,84 +116,85 @@ if !instance_exists(obj_toBattle) {
                     var item_index = global.stage[3];
                     var item_name = inventory[item_index];
                     if keyboard_check_pressed(vk_enter) {
-                        if item_name != ITEM_NAME.NONE {
-                            var item = global.ITEM[? item_name];
-                            if item_name != ITEM_NAME.HOLY_WATER {
-                                var heal = item.heal;
-                                if (item.usable) {
-                                    global.player.hp += (heal >= 0) ? heal : global.player.maxHp;
-                                    if (global.player.hp > global.player.maxHp) {
-                                        global.player.hp = global.player.maxHp;
-                                    }
-                                    if (heal != 0) {
-                                        audio_play_sound(sfx_heal, 0, false);
-                                    }
-                                    var restore = (heal >= 0) ? string(heal) : "All";
-                                    text[1] = restore + " HP restored.";
-                                    var global_index = array_get_index(global.inventory, item_name);
-                                    global.inventory[global_index] = item.useResult;
-                                    inventory = m_get_inventory();
-                                } else {
-                                    text[1] = item.name + " can't be used here!&" + item.useResponse;
+                        var item = global.ITEM[? item_name];
+                        if item_name != ITEM_NAME.HOLY_WATER {
+                            var heal = item.heal;
+                            if (item.usable) {
+                                global.player.hp += (heal >= 0) ? heal : global.player.maxHp;
+                                if (global.player.hp > global.player.maxHp) {
+                                    global.player.hp = global.player.maxHp;
                                 }
-                                text[1] = string_concat(text[1], "&", item.useResponse);
-                                if (!audio_is_playing(sfx_heal)) {
-                                    audio_play_sound(sfx_select, 0, false);
+                                if (heal != 0) {
+                                    audio_play_sound(sfx_heal, 0, false);
                                 }
+                                var restore = (heal >= 0) ? string(heal) : "All";
+                                text[1] = restore + " HP restored.";
+                                m_remove_item(item_index, item);
                             } else {
-                                var enemies = [
-                                    obj_enemy_scb_beaver,
-                                    obj_enemy_scb_sDuck,
-                                    obj_enemy_scb_merman,
-                                    obj_enemy_scb_hawktopus,
-                                    obj_enemy_scb_gobbie,
-                                    obj_enemy_fst_plaidypus,
-                                    obj_enemy_cav_scampfire,
-                                    obj_enemy_cav_geodite,
-                                    obj_enemy_cav_gobber,
-                                    obj_enemy_min_mockroach,
-                                    obj_enemy_min_zombie,
-                                    obj_enemy_tnt_clone,
-                                    obj_enemy_scb_chainsawBeaver,
-                                    obj_enemy_cav_ghost,
-                                    obj_enemy_min_zBoyfriend
-                                ];
-                                audio_play_sound(sfx_glass,0,false)
-                                text[1] = "You threw the bottle at the enemy.&Nothing happened.&Seems it only works on certain types."
-                                for(var i = 0; i < array_length(enemies); i++) {
-                                    if instance_exists(enemies[i]) {
-                                        enemies[i].hp = 0;
-                                        text[1] = "You threw the bottle at the enemy.&Undead, Water, and Abomination #types were dispelled!";
-                                        // Do not break from loop; all enemies should be checked and killed
-                                    }
-                                }
-                                var global_index = array_get_index(global.inventory, item_name);
-                                global.inventory[global_index] = item.useResult;
-                                inventory = m_get_inventory();
+                                text[1] = item.name + " can't be used here!";
                             }
-
-                            global.stage[0] = 3;
-                            charCount = 0;
+                            text[1] = string_concat(text[1], "&", item.useResponse);
+                            if (!audio_is_playing(sfx_heal)) {
+                                audio_play_sound(sfx_select, 0, false);
+                            }
+                        } else {
+                            var enemies = [
+                                obj_enemy_scb_beaver,
+                                obj_enemy_scb_sDuck,
+                                obj_enemy_scb_merman,
+                                obj_enemy_scb_hawktopus,
+                                obj_enemy_scb_gobbie,
+                                obj_enemy_fst_plaidypus,
+                                obj_enemy_cav_scampfire,
+                                obj_enemy_cav_geodite,
+                                obj_enemy_cav_gobber,
+                                obj_enemy_min_mockroach,
+                                obj_enemy_min_zombie,
+                                obj_enemy_tnt_clone,
+                                obj_enemy_scb_chainsawBeaver,
+                                obj_enemy_cav_ghost,
+                                obj_enemy_min_zBoyfriend
+                            ];
+                            audio_play_sound(sfx_glass,0,false)
+                            text[1] = "You threw the bottle at the enemy.&Nothing happened.&Seems it only works on certain types."
+                            for(var i = 0; i < array_length(enemies); i++) {
+                                if instance_exists(enemies[i]) {
+                                    enemies[i].hp = 0;
+                                    text[1] = "You threw the bottle at the enemy.&Undead, Water, and Abomination #types were dispelled!";
+                                    // Do not break from loop; all enemies should be checked and killed
+                                }
+                            }
+                            m_remove_item(item_index, item);
                         }
+
+                        global.stage[0] = 3;
+                        charCount = 0;
                     }
-                    for (var i = 0, item_page = 4 * floor(global.stage[3]/4); i < 4; i++) {
+                    for (var i = 0, item_page = 4 * (global.stage[3] div 4), inventory_length = array_length(inventory); i < 4; i++) {
                         var draw_item_index = item_page + i;
+                        if (draw_item_index >= inventory_length)
+                        {
+                            break;
+                        }
                         var draw_item_name = inventory[draw_item_index];
                         if (draw_item_name != ITEM_NAME.NONE) {
                             var draw_item = global.ITEM[? draw_item_name];
                             draw_text(
-                                55  + 272*floor(i/2) + string_width("* "),
-                                269 +  35*(i%2),
-                                string_copy(draw_item.name, 1, 13));
+                                55 + (272 * (i div 2)) + string_width("* "),
+                                269 + (35 * (i % 2)),
+                                string_copy(draw_item.name, 1, 14));
                             if draw_item_index != global.stage[3] { // we'll want to draw the player's SOUL here instead
                                 draw_text(55 + 272*floor(i/2), 269 + 35*(i%2), "*");
                             }
                         }
                     }
 
-                    var this_page = floor(global.stage[3]/4) + 1;
-                    var pages = floor(array_length(inventory)/4) + 1;
-                    draw_text(407, 339, string_concat("Page ", this_page, " of ", pages));
+                    var pages = ((array_length(inventory) - 1) div 4) + 1;
+                    if (pages > 1)
+                    {
+                        var this_page = (global.stage[3] div 4) + 1;
+                        draw_text(407, 339, string_concat("Page ", this_page, " of ", pages));
+                    }
                 break;
                 case 3:
                     global.stage[4] = 0;

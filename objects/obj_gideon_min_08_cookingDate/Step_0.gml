@@ -13,13 +13,13 @@ if (instance_exists(obj_dipper))
                     {
                         image_xscale = 2;
                         text = ["OH, C'MON, HON!&Y'ALL DON'T WANNA PARTICIPATE?"];
-                        dir = 1;
+                        set_dir = DIRECTION.UP;
                     }
                     with instance_create_layer(620, 120, layer, obj_dontGo)
                     {
                         image_yscale = 2;
                         text = ["OH, C'MON, HON!&Y'ALL DON'T WANNA PARTICIPATE?"];
-                        dir = 2;
+                        set_dir = DIRECTION.LEFT;
                     }
                     self.alarm[2] = 60;
                     ++self.stage;
@@ -35,13 +35,13 @@ if (instance_exists(obj_dipper))
                 {
                     camera_set_view_target(camera, noone);
                 }
-                else if (currentX < 320)
+                else if (currentX < 300)
                 {
                     camera_set_view_pos(camera, currentX + 1, 0);
                 }
                 else
                 {
-                    camera_set_view_pos(camera, 320, 0);
+                    camera_set_view_pos(camera, 300, 0);
                     self.alarm[3] = 120;
                     ++self.stage;
                 }
@@ -143,6 +143,7 @@ if (instance_exists(obj_dipper))
                     camera_set_view_target(camera, obj_dipper);
                     audio_stop_sound(mus_showtime);
                     audio_play_sound(mus_dateStart, 0, true);
+                    obj_dipper.canMove = true;
                     ++self.stage;
                 }
             }
@@ -220,5 +221,13 @@ if (instance_exists(obj_dipper))
                 // For now, we'll just
                 instance_destroy();
             }
+    }
+}
+
+with obj_textbox_old
+{
+    if (page >= 0 && sound[page] == tlk_gideon)
+    {
+        other.arm_index = face;
     }
 }

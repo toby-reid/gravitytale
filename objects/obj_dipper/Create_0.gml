@@ -17,3 +17,5 @@ if (global.player.mabel) {
 	else sprite_index = spr_diphat
 }
 if (!variable_global_exists("dip_pos")) global.dip_pos = [];
+
+inventory = []; // TODO: Unused

@@ -20,7 +20,7 @@ if (!instance_exists(obj_textbox_old) and instance_exists(obj_dipper) and obj_di
             {
                 text = [
                     "(It's a bottomless well of #boiling oil.)",
-                    "(Perhaps^^--and dare I say #it?--^^you have enough oil #for now.)"
+                    "(Perhaps`--and dare I say #it?--`you have enough oil #for now.)"
                 ];
             }
             else

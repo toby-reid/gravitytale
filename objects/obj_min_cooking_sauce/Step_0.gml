@@ -2,7 +2,7 @@ if (self.isActive)
 {
     if (instance_exists(obj_textbox_old))
     {
-        with obj_textbox
+        with obj_textbox_old
         {
             if (page == 1)
             {
