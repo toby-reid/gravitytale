@@ -3,7 +3,6 @@
 import sys
 from dataclasses import dataclass, field
 from enum import IntEnum
-from functools import cached_property
 from pathlib import Path
 from typing import Any, Optional, Self, cast, get_origin
 
@@ -34,7 +33,6 @@ class Coordinate:
     def __str__(self):
         return f"({self.row},{self.col})"
 
-    @cached_property
     def neighbors(self) -> list[Self]:
         """TODO"""
         return [
@@ -56,8 +54,8 @@ class Coordinate:
     def get_directions(self, direction: Optional[Direction]) -> set[Self]:
         """TODO"""
         if direction is not None:
-            return {self.neighbors[direction]}
-        return set(self.neighbors)
+            return {self.neighbors()[direction]}
+        return set(self.neighbors())
 
 
 @dataclass(order=True, slots=True, frozen=True)
@@ -78,7 +76,8 @@ class Plate:
         if config is None:
             return None
         try:
-            direction = _get_value(config, "direction", Direction, default=None, none_ok=True)
+            config_dir = config["direction"]
+            direction = Direction(config_dir) if config_dir is not None else None
             is_strong = _get_value(config, "is_strong", bool, default=False)
             at_start = _get_value(config, "at_start", bool, default=False)
             reaches_end = _get_value(config, "reaches_end", bool, default=False)
@@ -90,15 +89,15 @@ class Plate:
         )
 
 
-@dataclass(slots=True, init=False)
+@dataclass(slots=True)
 class Config:
     """TODO"""
 
     ConfigT = list[list[Plate.ConfigT]]
 
-    plates: dict[Coordinate, Plate] = field(default_factory=dict)
-    starting_plates: set[Coordinate] = field(default_factory=set)
-    ending_plates: set[Coordinate] = field(default_factory=set)
+    plates: dict[Coordinate, Plate] = field(default_factory=dict, init=False)
+    starting_plates: set[Coordinate] = field(default_factory=set, init=False)
+    ending_plates: set[Coordinate] = field(default_factory=set, init=False)
 
     @classmethod
     def from_json(cls, config: ConfigT) -> Optional[Self]:
@@ -168,7 +167,7 @@ def main(args: list[str]) -> int:
         print("Requires YAML or JSON configuration file as arg 1")
         return 1
     input_file = Path(args[0]).resolve()
-    with input_file.open('r', encoding="utf-8") as file:
+    with input_file.open("r", encoding="utf-8") as file:
         config_file = yaml.safe_load(file)
     config = Config.from_json(config_file)
     if config is None:
@@ -178,7 +177,7 @@ def main(args: list[str]) -> int:
     if path_to_exit is None:
         print("No path to exit")
         return 2
-    print(f"Shortest path to exit: {path_to_exit}")
+    print(f"Shortest path to exit: {', '.join([str(coord) for coord in path_to_exit])}")
     return 0
 
 

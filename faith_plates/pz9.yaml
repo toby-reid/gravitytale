@@ -1,0 +1,14 @@
+- - direction: 2
+  - direction: 0
+  - direction: null
+  - direction: 2
+- - direction: 0
+  - direction: 1
+  - direction: 0
+  - direction: null
+    reaches_end: true
+- - direction: null
+    at_start: true
+  - direction: 0
+  - direction: 3
+  - direction: 2
