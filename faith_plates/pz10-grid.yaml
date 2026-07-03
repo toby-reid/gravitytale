@@ -1,0 +1,31 @@
+- - direction: 2
+  - direction: 1
+    reaches_end: true
+  - direction: 3
+  - direction: null
+    is_strong: true
+- - direction: 3
+  - direction: 0
+    is_strong: true
+  - direction: 2
+    is_strong: true
+  - direction: 1
+- - direction: 1
+    is_strong: true
+  - direction: null
+  - direction: null
+    is_strong: true
+  - direction: 2
+- - direction: null
+    at_start: true
+  - direction: 0
+    is_strong: true
+  - direction: 0
+    is_strong: true
+  - direction: 1
+- - direction: 2
+  - direction: 1
+    is_strong: true
+  - direction: null
+  - direction: 0
+    at_start: true

@@ -527,6 +527,7 @@
     {"id":{"name":"ow_min_16_pz9","path":"rooms/ow_min_16_pz9/ow_min_16_pz9.yy",},},
     {"id":{"name":"ow_min_17_pz10","path":"rooms/ow_min_17_pz10/ow_min_17_pz10.yy",},},
     {"id":{"name":"ow_min_18_pacifica","path":"rooms/ow_min_18_pacifica/ow_min_18_pacifica.yy",},},
+    {"id":{"name":"ow_min_19_pz11","path":"rooms/ow_min_19_pz11/ow_min_19_pz11.yy",},},
     {"id":{"name":"ow_scb_0_meetBill","path":"rooms/ow_scb_0_meetBill/ow_scb_0_meetBill.yy",},},
     {"id":{"name":"ow_scb_10_puzzle4","path":"rooms/ow_scb_10_puzzle4/ow_scb_10_puzzle4.yy",},},
     {"id":{"name":"ow_scb_11_blendin","path":"rooms/ow_scb_11_blendin/ow_scb_11_blendin.yy",},},
@@ -1365,6 +1366,7 @@
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
     {"roomId":{"name":"ow_scb_12_puzzle5","path":"rooms/ow_scb_12_puzzle5/ow_scb_12_puzzle5.yy",},},
     {"roomId":{"name":"ow_min_","path":"rooms/ow_min_/ow_min_.yy",},},
+    {"roomId":{"name":"ow_min_19_pz11","path":"rooms/ow_min_19_pz11/ow_min_19_pz11.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

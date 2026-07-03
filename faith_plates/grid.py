@@ -33,15 +33,6 @@ class Coordinate:
     def __str__(self):
         return f"({self.row},{self.col})"
 
-    def neighbors(self) -> list[Self]:
-        """TODO"""
-        return [
-            self.__class__(self.row, self.col + 1),
-            self.__class__(self.row - 1, self.col),
-            self.__class__(self.row, self.col - 1),
-            self.__class__(self.row + 1, self.col),
-        ]
-
     @classmethod
     def from_json(cls, config: ConfigT) -> Optional[Self]:
         """TODO"""
@@ -51,11 +42,18 @@ class Coordinate:
             print(f"Error parsing coordinates from {config}: {e}")
             return None
 
-    def get_directions(self, direction: Optional[Direction]) -> set[Self]:
+    def get_directions(self, direction: Optional[Direction], is_strong: bool = False) -> set[Self]:
         """TODO"""
+        distance = 2 if is_strong else 1
+        neighbors = [
+            self.__class__(self.row, self.col + distance),
+            self.__class__(self.row - distance, self.col),
+            self.__class__(self.row, self.col - distance),
+            self.__class__(self.row + distance, self.col),
+        ]
         if direction is not None:
-            return {self.neighbors()[direction]}
-        return set(self.neighbors())
+            return {neighbors[direction]}
+        return set(neighbors)
 
 
 @dataclass(order=True, slots=True, frozen=True)
@@ -131,7 +129,9 @@ class Graph:
         full_map: dict[Optional[Coordinate], set[Optional[Plate]]] = {None: set()}
         for coord, plate in config.plates.items():
             connections: set[Optional[Plate]] = set()
-            for connection_coord in coord.get_directions(plate.direction):
+            for connection_coord in coord.get_directions(
+                plate.direction, is_strong=plate.is_strong
+            ):
                 if connection_coord in config.plates:
                     connections.add(config.plates[connection_coord])
             if plate.at_start:
@@ -177,7 +177,7 @@ def main(args: list[str]) -> int:
     if path_to_exit is None:
         print("No path to exit")
         return 2
-    print(f"Shortest path to exit: {', '.join([str(coord) for coord in path_to_exit])}")
+    print(f"Shortest path to exit (row, col): {', '.join([str(coord) for coord in path_to_exit])}")
     return 0
 
 

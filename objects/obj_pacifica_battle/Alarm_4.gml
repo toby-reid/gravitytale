@@ -5,8 +5,11 @@ with instance_create_layer(x + 100, y - 40, layer, obj_textBubble)
     {
         case 18:
             text = [
-                
+                "something #something"
             ];
+            break;
+        default:
+            text = ["Placeholder #text"];
             break;
     }
     for (var i = 0, _text_length = array_length(text); i < _text_length; ++i)
