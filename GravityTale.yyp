@@ -1218,6 +1218,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"ow_min_17_pz10","path":"rooms/ow_min_17_pz10/ow_min_17_pz10.yy",},},
     {"roomId":{"name":"btl_min_pacifica","path":"rooms/btl_min_pacifica/btl_min_pacifica.yy",},},
     {"roomId":{"name":"ow_min_18_pacifica","path":"rooms/ow_min_18_pacifica/ow_min_18_pacifica.yy",},},
     {"children":[
@@ -1360,7 +1361,6 @@
         {"roomId":{"name":"ow_min_14_bombDate","path":"rooms/ow_min_14_bombDate/ow_min_14_bombDate.yy",},},
         {"roomId":{"name":"ow_min_15_pz8","path":"rooms/ow_min_15_pz8/ow_min_15_pz8.yy",},},
         {"roomId":{"name":"ow_min_16_pz9","path":"rooms/ow_min_16_pz9/ow_min_16_pz9.yy",},},
-        {"roomId":{"name":"ow_min_17_pz10","path":"rooms/ow_min_17_pz10/ow_min_17_pz10.yy",},},
       ],"groupName":"Mines",},
     {"roomId":{"name":"ow_cav_7_manCave","path":"rooms/ow_cav_7_manCave/ow_cav_7_manCave.yy",},},
     {"roomId":{"name":"btl_cav_7_leaderaur","path":"rooms/btl_cav_7_leaderaur/btl_cav_7_leaderaur.yy",},},
