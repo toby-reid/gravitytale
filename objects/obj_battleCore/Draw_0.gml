@@ -129,7 +129,8 @@ if !instance_exists(obj_toBattle) {
                                 }
                                 var restore = (heal >= 0) ? string(heal) : "All";
                                 text[1] = restore + " HP restored.";
-                                m_remove_item(item_index, item);
+                                scr_remove_local_item(inventory, item_index);
+                                inventory = scr_get_inventory();
                             } else {
                                 text[1] = item.name + " can't be used here!";
                             }
@@ -164,7 +165,8 @@ if !instance_exists(obj_toBattle) {
                                     // Do not break from loop; all enemies should be checked and killed
                                 }
                             }
-                            m_remove_item(item_index, item);
+                            scr_remove_local_item(inventory, item_index);
+                            inventory = scr_get_inventory();
                         }
 
                         global.stage[0] = 3;

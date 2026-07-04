@@ -12,6 +12,7 @@ audio_group_load(Music);
 audio_group_load(Talk);
 audio_group_load(SFX);
 global.menu = [0, 0];
+global.dir = DIRECTION.DOWN;
 global.battleTimer = 0; // I would do an alarm, but I only want it going down when not in battle rooms
 
 scr_generate_enemy_indices();

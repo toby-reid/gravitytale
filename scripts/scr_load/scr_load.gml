@@ -63,10 +63,10 @@ function scr_load() {
         global.areaKills[? i].killCount = scr_readInteger(_bin, 1);
     }
 
+    with instance_create_layer(0, 0, layer, obj_dipperLoader)
     {
-        var _x = scr_readInteger(_bin, 4);
-        var _y = scr_readInteger(_bin, 4);
-        global.dip_pos = [_x, _y];
+        dipper_x = scr_readInteger(_bin, 4);
+        dipper_y = scr_readInteger(_bin, 4);
     }
 
     {

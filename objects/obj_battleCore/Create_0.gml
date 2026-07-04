@@ -90,28 +90,6 @@ m_select_item = function(_dir)
     global.stage[3] = _current_selection + 2;
     return true;
 }
-m_remove_item = function(_local_inventory_index, _item)
-{
-    var _global_inventory_index = -1;
-    for (var i = 0; i <= _local_inventory_index; ++i)
-    {
-        _global_inventory_index = scr_select_array(global.inventory, function(item) {return item != ITEM_NAME.NONE;}, false, _global_inventory_index);
-    }
-    var _success = true;
-    if (
-        _global_inventory_index < 0
-        || _global_inventory_index >= array_length(global.inventory)
-        || global.inventory[_global_inventory_index] != inventory[_local_inventory_index]
-    )
-    {
-        show_debug_message($"Failed to register global inventory; got {_global_inventory_index} from {global.inventory}; defaulting to 0");
-        _global_inventory_index = array_get_index(global.inventory, inventory[_local_inventory_index]);
-        _success = false;
-    }
-    global.inventory[_global_inventory_index] = _item.useResult;
-    inventory = scr_get_inventory();
-    return _success;
-}
 global.stage[3] = 0;
 
 for(var i = 0; i < 4; i++) with instance_create_layer(33+i*156,431,"Instances",obj_battleButtons) image_index = i;

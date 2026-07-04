@@ -15,7 +15,9 @@ function scr_pad_string(str, length, _alignment = fa_right, pad_char = " ")
         case fa_left:
             return string_concat(str, string_repeat(pad_char, _pad_length));
         case fa_center:
-            return string_concat(string_repeat(pad_char, floor(_pad_length / 2)), str, string_repeat(pad_char, ceil(_pad_length / 2)));
+            var _odd_add = _pad_length % 2;
+            _pad_length = _pad_length div 2;
+            return string_concat(string_repeat(pad_char, _pad_length), str, string_repeat(pad_char, _pad_length + _odd_add));
         case fa_right:
         default:
             return string_concat(string_repeat(pad_char, _pad_length), str);
