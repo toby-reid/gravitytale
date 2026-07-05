@@ -45,7 +45,7 @@ enum ITEM_INDEX
     TOTAL
 }
 
-/// @desc Constructs a new item.
+/// @desc Constructs a new item information struct.
 /// @param {Enum.ITEM_INDEX} _index The item's index, for redundancy's sake
 /// @param {String} _name The item's pretty-print name (should be shortenable to <=13 characters)
 /// @param {String} _description A brief (2-line) description of the item
@@ -66,21 +66,13 @@ function ItemInfo(_index, _name, _description, _use_response, _price, _heal = 0,
     useResult = _use_result;
 }
 
-
-/// @desc Creates the global.ITEM_INFO struct for all known items.
-function scr_generate_item_index()
+/// @desc Creates item info for all known items.
+/// @return {Array<Struct.ItemInfo>}
+function scr_generate_item_info()
 {
-    global.ITEM_INFO = array_create(ITEM_INDEX.TOTAL);
-    global.ITEM_INFO[ITEM_INDEX.NONE] = ItemInfo(
-        ITEM_INDEX.NONE,
-        "",
-        "Literally nothing.",
-        "You ate nothing.&...Good job?",
-        0,
-        0,
-        false
-    );
-    global.ITEM_INFO[ITEM_INDEX.LOSER_CANDY] = ItemInfo(
+    var _item_info = array_create(ITEM_INDEX.TOTAL);
+    _item_info[ITEM_INDEX.NONE] = ;
+    _item_info[ITEM_INDEX.LOSER_CANDY] = ItemInfo(
         ITEM_INDEX.LOSER_CANDY,
         "Loser Candy",
         "Some old, unwanted Halloween #candy.",
@@ -88,7 +80,7 @@ function scr_generate_item_index()
         15,
         5
     );
-    global.ITEM_INFO[ITEM_INDEX.POPSICLE] = ItemInfo(
+    _item_info[ITEM_INDEX.POPSICLE] = ItemInfo(
         ITEM_INDEX.POPSICLE,
         "Popsicle",
         "A Popsicle-on-a-Stick.&Somehow, it's always frozen.",
@@ -96,7 +88,7 @@ function scr_generate_item_index()
         25,
         10
     );
-    global.ITEM_INFO[ITEM_INDEX.MILK_HALF] = ItemInfo(
+    _item_info[ITEM_INDEX.MILK_HALF] = ItemInfo(
         ITEM_INDEX.MILK_HALF,
         "[1] LanLan Milk",
         "From the Legend of Zeppeli.&Half the bottle remains.",
@@ -104,7 +96,7 @@ function scr_generate_item_index()
         15,
         10
     );
-    global.ITEM_INFO[ITEM_INDEX.MILK_FULL] = ItemInfo(
+    _item_info[ITEM_INDEX.MILK_FULL] = ItemInfo(
         ITEM_INDEX.MILK_FULL,
         "[2] LanLan Milk",
         "From the Legend of Zeppeli.&Contains 2 doses.",
@@ -114,7 +106,7 @@ function scr_generate_item_index()
         true,
         ITEM_INDEX.MILK_HALF
     );
-    global.ITEM_INFO[ITEM_INDEX.PANCAKE] = ItemInfo(
+    _item_info[ITEM_INDEX.PANCAKE] = ItemInfo(
         ITEM_INDEX.PANCAKE,
         "Stancake",
         "Retrieved from Greasy's.&Supposedly the best cakes in town.",
@@ -122,7 +114,7 @@ function scr_generate_item_index()
         45,
         20
     );
-    global.ITEM_INFO[ITEM_INDEX.CHIPACKERZ] = ItemInfo(
+    _item_info[ITEM_INDEX.CHIPACKERZ] = ItemInfo(
         ITEM_INDEX.CHIPACKERZ,
         "Chipackerz",
         "The Chip-flavored Crackers!&Not to be confused with Crackips.",
@@ -130,7 +122,7 @@ function scr_generate_item_index()
         50,
         20
     );
-    global.ITEM_INFO[ITEM_INDEX.HAMSTICK] = ItemInfo(
+    _item_info[ITEM_INDEX.HAMSTICK] = ItemInfo(
         ITEM_INDEX.HAMSTICK,
         "Ham-on-a-Stick",
         "A large slab of meat on a #stick, fresh from Meat Cute!",
@@ -138,7 +130,7 @@ function scr_generate_item_index()
         120,
         45
     );
-    global.ITEM_INFO[ITEM_INDEX.PIZZA_REFRESHING] = ItemInfo(
+    _item_info[ITEM_INDEX.PIZZA_REFRESHING] = ItemInfo(
         ITEM_INDEX.PIZZA_REFRESHING,
         "[Re] PIZZA!",
         "Soos's infinite pizza slice.&Will regenerate at time rifts.",
@@ -148,7 +140,7 @@ function scr_generate_item_index()
         false,
         ITEM_INDEX.PIZZA_REFRESHING
     );
-    global.ITEM_INFO[ITEM_INDEX.PIZZA_INFINITE] = ItemInfo(
+    _item_info[ITEM_INDEX.PIZZA_INFINITE] = ItemInfo(
         ITEM_INDEX.PIZZA_INFINITE,
         "PIZZA!",
         "Soos's infinite pizza slice.&Reforms at time rifts.",
@@ -158,7 +150,7 @@ function scr_generate_item_index()
         true,
         ITEM_INDEX.PIZZA_REFRESHING
     );
-    global.ITEM_INFO[ITEM_INDEX.SMILE_DIP] = ItemInfo(
+    _item_info[ITEM_INDEX.SMILE_DIP] = ItemInfo(
         ITEM_INDEX.SMILE_DIP,
         "Smile Dip",
         "The classic sugarish snack.&Banned in 27 countries.",
@@ -166,7 +158,7 @@ function scr_generate_item_index()
         90,
         40
     );
-    global.ITEM_INFO[ITEM_INDEX.COOKIE_JAR_EMPTY] = ItemInfo(
+    _item_info[ITEM_INDEX.COOKIE_JAR_EMPTY] = ItemInfo(
         ITEM_INDEX.COOKIE_JAR_EMPTY,
         "[E] Cookie Jar",
         "Jar of Slow the Cookie Man.&Maybe someone can fill it?",
@@ -179,7 +171,7 @@ function scr_generate_item_index()
     for (var i = ITEM_INDEX.COOKIE_JAR_1; i < ITEM_INDEX.COOKIE_JAR_FULL; ++i)
     {
         var _cookie_count = i - ITEM_INDEX.COOKIE_JAR_EMPTY;
-        global.ITEM_INFO[i] = ItemInfo(
+        _item_info[i] = ItemInfo(
             i,
             $"[{_cookie_count}] Cookie Jar",
             $"Jar of Slow the Cookie Man.&A baker could top it off.",
@@ -190,7 +182,7 @@ function scr_generate_item_index()
             i - 1
         );
     }
-    global.ITEM_INFO[ITEM_INDEX.COOKIE_JAR_FULL] = ItemInfo(
+    _item_info[ITEM_INDEX.COOKIE_JAR_FULL] = ItemInfo(
         ITEM_INDEX.COOKIE_JAR_FULL,
         $"[{ITEM_INDEX.COOKIE_JAR_FULL - ITEM_INDEX.COOKIE_JAR_EMPTY}] Cookie Jar",
         "It's completely full.&Small jar or big cookies?",
@@ -200,7 +192,7 @@ function scr_generate_item_index()
         true,
         ITEM_INDEX.COOKIE_JAR_FULL - 1
     );
-    global.ITEM_INFO[ITEM_INDEX.SPAGHETTI] = ItemInfo(
+    _item_info[ITEM_INDEX.SPAGHETTI] = ItemInfo(
         ITEM_INDEX.SPAGHETTI,
         "T-1 Spaghetti",
         "A delicious bowl of spaghetti.&A famous skeleton's recipe.",
@@ -211,7 +203,7 @@ function scr_generate_item_index()
     for (var i = ITEM_INDEX.ONION_1; i <= ITEM_INDEX.ONION_MAX; ++i)
     {
         var _layer_count = i - ITEM_INDEX.ONION_1 + 1;
-        global.ITEM_INFO[i] = ItemInfo(
+        _item_info[i] = ItemInfo(
             i,
             $"[{_layer_count}] Onionsan",
             "It's an onion.&Comes in many layers.",
@@ -224,7 +216,7 @@ function scr_generate_item_index()
     }
     //FAIRY_DUST,
     //PB_SHARD,
-    global.ITEM_INFO[ITEM_INDEX.HOLY_WATER] = ItemInfo(
+    _item_info[ITEM_INDEX.HOLY_WATER] = ItemInfo(
         ITEM_INDEX.HOLY_WATER,
         "Holy Moley Water",
         "Seems as legit as it comes.&Dispels Undead and some other types.",
@@ -233,7 +225,7 @@ function scr_generate_item_index()
         5
     );
     //JERKY,
-    global.ITEM_INFO[ITEM_INDEX.PITT_COLA] = ItemInfo(
+    _item_info[ITEM_INDEX.PITT_COLA] = ItemInfo(
         ITEM_INDEX.PITT_COLA,
         "Pitt Cola",
         "A common refreshing beverage.&\"It's the pitts!\"",
@@ -245,7 +237,7 @@ function scr_generate_item_index()
     //GIDEON_DOLL,
     //LOTION,
     //WHISTLE,
-    global.ITEM_INFO[ITEM_INDEX.MAGIC_ARMOR] = ItemInfo(
+    _item_info[ITEM_INDEX.MAGIC_ARMOR] = ItemInfo(
         ITEM_INDEX.MAGIC_ARMOR,
         "Magic Armor",
         "Almost as strong as Plot Armor.&Could even revive the dead.",
@@ -254,4 +246,5 @@ function scr_generate_item_index()
         0,
         false
     );
+    return _item_info; // returning is about the only way to force type hinting :( I hate GML - more like FML, amirite?
 }

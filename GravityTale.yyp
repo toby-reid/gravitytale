@@ -585,7 +585,7 @@
     {"id":{"name":"scr_format_time","path":"scripts/scr_format_time/scr_format_time.yy",},},
     {"id":{"name":"scr_generate_area_kills","path":"scripts/scr_generate_area_kills/scr_generate_area_kills.yy",},},
     {"id":{"name":"scr_generate_enemy_indices","path":"scripts/scr_generate_enemy_indices/scr_generate_enemy_indices.yy",},},
-    {"id":{"name":"scr_generate_item_index","path":"scripts/scr_generate_item_index/scr_generate_item_index.yy",},},
+    {"id":{"name":"scr_generate_item_info","path":"scripts/scr_generate_item_info/scr_generate_item_info.yy",},},
     {"id":{"name":"scr_genoMusic","path":"scripts/scr_genoMusic/scr_genoMusic.yy",},},
     {"id":{"name":"scr_get_inventory","path":"scripts/scr_get_inventory/scr_get_inventory.yy",},},
     {"id":{"name":"scr_get_item","path":"scripts/scr_get_item/scr_get_item.yy",},},

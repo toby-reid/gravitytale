@@ -17,7 +17,7 @@ global.battleTimer = 0; // I would do an alarm, but I only want it going down wh
 
 scr_generate_enemy_indices();
 
-scr_generate_item_index();
+global.ITEM_INFO = scr_generate_item_info();
 {
 	var bag_size = 8;
 	switch global.player.bag {
