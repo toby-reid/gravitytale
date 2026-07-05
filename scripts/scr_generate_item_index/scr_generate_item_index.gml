@@ -1,240 +1,257 @@
-/// @desc Creates the global.ITEM_INFO struct for all known items.
-function scr_generate_item_index()
+enum ITEM_INDEX
 {
-    enum ITEM_INDEX {
-        NONE,
-        LOSER_CANDY,
-        POPSICLE,
-        MILK_HALF,
-        MILK_FULL,
-        PANCAKE,
-        CHIPACKERZ,
-        HAMSTICK,
-        PIZZA_REFRESHING,
-        PIZZA_INFINITE,
-        SMILE_DIP,
-        COOKIE_JAR_EMPTY,
-        COOKIE_JAR_1,
-        COOKIE_JAR_2,
-        COOKIE_JAR_FULL,
-        SPAGHETTI,
-        ONION_1,
-        ONION_2,
-        ONION_3,
-        ONION_4,
-        ONION_5,
-        ONION_6,
-        ONION_7,
-        ONION_8,
-        ONION_9,
-        ONION_10,
-        ONION_11,
-        ONION_12,
-        ONION_13,
-        ONION_14,
-        ONION_15,
-        ONION_MAX,
-        //FAIRY_DUST,
-        //PB_SHARD,
-        HOLY_WATER,
-        //JERKY,
-        PITT_COLA,
-        //MABEL_JUICE,
-        //GIDEON_DOLL,
-        //LOTION,
-        //WHISTLE,
-        MAGIC_ARMOR,
-        TOTAL
-    }
-    global.ITEM_INFO = ds_map_create();
-    global.ITEM_INFO[? ITEM_INDEX.NONE] = {
-        name: "",
-        description: "Literally nothing.",
-        usable: false,
-        useResponse: "You ate nothing.&...Good job?",
-        heal: 0,
-        price: 0,
-        useResult: ITEM_INDEX.NONE
-    };
-    global.ITEM_INFO[? ITEM_INDEX.LOSER_CANDY] = {
-        name: "Loser Candy",
-        description: "Some old, unwanted Halloween #candy.",
-        usable: true,
-        useResponse: "You feel sick.",
-        heal: 5,
-        price: 15,
-        useResult: ITEM_INDEX.NONE
-    };
-    global.ITEM_INFO[? ITEM_INDEX.POPSICLE] = {
-        name: "Popsicle",
-        description: "A Popsicle-on-a-Stick.&Somehow, it's always frozen.",
-        usable: true,
-        useResponse: "The stick has a skeleton pun.&How dreadful.",
-        heal: 10,
-        price: 25,
-        useResult: ITEM_INDEX.NONE
-    };
-    global.ITEM_INFO[? ITEM_INDEX.MILK_HALF] = {
-        name: "[1] LanLan Milk",
-        description: "From the Legend of Zeppeli.&Half the bottle remains.",
-        usable: true,
-        useResponse: "Discarded the empty bottle.&Don't drive yourself home.",
-        heal: 10,
-        price: 15,
-        useResult: ITEM_INDEX.NONE
-    };
-    global.ITEM_INFO[? ITEM_INDEX.MILK_FULL] = {
-        name: "[2] LanLan Milk",
-        description: "From the Legend of Zeppeli.&Contains 2 doses.",
-        usable: true,
-        useResponse: "Drank half.&Make sure to pace yourself.",
-        heal: 10,
-        price: 55,
-        useResult: ITEM_INDEX.MILK_HALF
-    };
-    global.ITEM_INFO[? ITEM_INDEX.PANCAKE] = {
-        name: "Stancake",
-        description: "Retrieved from Greasy's.&Supposedly the best cakes in town.",
-        usable: true,
-        useResponse: "What's this? They have some of #Grunkle Stans's hair in them...",
-        heal: 20,
-        price: 45,
-        useResult: ITEM_INDEX.NONE
-    };
-    global.ITEM_INFO[? ITEM_INDEX.CHIPACKERZ] = {
-        name: "Chipackerz",
-        description: "The Chip-flavored Crackers!&Not to be confused with Crackips.",
-        usable: true,
-        useResponse: "They look like crackers...#`but they taste like chips..",
-        heal: 20,
-        price: 50,
-        useResult: ITEM_INDEX.NONE
-    };
-    global.ITEM_INFO[? ITEM_INDEX.HAMSTICK] = {
-        name: "Ham-on-a-Stick",
-        description: "A large slab of meat on a #stick, fresh from Meat Cute!",
-        usable: true,
-        useResponse: "Extreme lunch meats are the food #of the future!",
-        heal: 45,
-        price: 120,
-        useResult: ITEM_INDEX.NONE
-    };
-    global.ITEM_INFO[? ITEM_INDEX.PIZZA_REFRESHING] = {
-        name: "[Re] PIZZA!",
-        description: "Soos's infinite pizza slice.&Will regenerate at time rifts.",
-        usable: false,
-        useResponse: "You can't eat what isn't there.&Grow some patience, monster.",
-        heal: 10,
-        price: 0,
-        useResult: ITEM_INDEX.PIZZA_REFRESHING
-    };
-    global.ITEM_INFO[? ITEM_INDEX.PIZZA_INFINITE] = {
-        name: "PIZZA!",
-        description: "Soos's infinite pizza slice.&Reforms at time rifts.",
-        usable: true,
-        useResponse: "Remember Soos as it reforms.&Credits: @ef7000Spin Clipper@ffffff.",
-        heal: 10,
-        price: 0,
-        useResult: ITEM_INDEX.PIZZA_REFRESHING
-    };
-    global.ITEM_INFO[? ITEM_INDEX.SMILE_DIP] = {
-        name: "Smile Dip",
-        description: "The classic sugarish snack.&Banned in 27 countries.",
-        usable: true,
-        useResponse: "You feel weird...&What was that about 27 countries...?",
-        heal: 40,
-        price: 90,
-        useResult: ITEM_INDEX.NONE
-    };
-    global.ITEM_INFO[? ITEM_INDEX.COOKIE_JAR_EMPTY] = {
-        name: "[E] Cookie Jar",
-        description: "Jar of Slow the Cookie Man.&Maybe someone can fill it?",
-        usable: false,
-        useResponse: "You gnawed on the glass, #but it didn't taste very good.",
-        heal: 0,
-        price: 0,
-        useResult: ITEM_INDEX.COOKIE_JAR_EMPTY
-    };
-    global.ITEM_INFO[? ITEM_INDEX.COOKIE_JAR_1] = {
-        name: "[1] Cookie Jar",
-        description: "Jar of Slow the Cookie Man.&1 cookie remains.",
-        usable: true,
-        useResponse: "Welp, I reckon that's that.&The jar is now empty.",
-        heal: 20,
-        price: 0,
-        useResult: ITEM_INDEX.COOKIE_JAR_EMPTY
-    };
-    global.ITEM_INFO[? ITEM_INDEX.COOKIE_JAR_2] = {
-        name: "[2] Cookie Jar",
-        description: "Jar of Slow the Cookie Man.&There are 2 cookies left.",
-        usable: true,
-        useResponse: "MORE COOKIE&1 cookie remains.",
-        heal: 20,
-        price: 0,
-        useResult: ITEM_INDEX.COOKIE_JAR_1
-    };
-    global.ITEM_INFO[? ITEM_INDEX.COOKIE_JAR_FULL] = {
-        name: "[3] Cookie Jar",
-        description: "Jar of Slow the Cookie Man.&It holds 3 cookies.",
-        usable: true,
-        useResponse: "ME LOVE COOKIE&2 cookies left.",
-        heal: 20,
-        price: 0,
-        useResult: ITEM_INDEX.COOKIE_JAR_2
-    };
-    global.ITEM_INFO[? ITEM_INDEX.SPAGHETTI] = {
-        name: "T-1 Spaghetti",
-        description: "A delicious bowl of spaghetti.&A famous skeleton's recipe.",
-        usable: true,
-        useResponse: "SOMEBODY TOUCH-A MY SPAGHET!&...it was delicious, at least.",
-        heal: -1,
-        price: 300,
-        useResult: ITEM_INDEX.NONE
-    };
-    for (var i = ITEM_INDEX.ONION_1; i <= ITEM_INDEX.ONION_MAX; i++) {
-        var layers = i - ITEM_INDEX.ONION_1 + 1;
-        global.ITEM_INFO[? i] = {
-            name: "[" + string(layers) + "] Onionsan",
-            description: "It's an onion.&Comes in many layers.",
-            usable: true,
-            useResponse: "It's just like ogres:&It makes you cry...",
-            heal: 4,
-            price: 25,
-            useResult: (layers != 1) ? i-1 : ITEM_INDEX.NONE
-        };
-    }
+    NONE,
+    LOSER_CANDY,
+    POPSICLE,
+    MILK_HALF,
+    MILK_FULL,
+    PANCAKE,
+    CHIPACKERZ,
+    HAMSTICK,
+    PIZZA_REFRESHING,
+    PIZZA_INFINITE,
+    SMILE_DIP,
+    COOKIE_JAR_EMPTY,
+    COOKIE_JAR_1,
+    COOKIE_JAR_2,
+    COOKIE_JAR_FULL,
+    SPAGHETTI,
+    ONION_1,
+    ONION_2,
+    ONION_3,
+    ONION_4,
+    ONION_5,
+    ONION_6,
+    ONION_7,
+    ONION_8,
+    ONION_9,
+    ONION_10,
+    ONION_11,
+    ONION_12,
+    ONION_13,
+    ONION_14,
+    ONION_15,
+    ONION_MAX,
     //FAIRY_DUST,
     //PB_SHARD,
-    global.ITEM_INFO[? ITEM_INDEX.HOLY_WATER] = {
-        name: "Holy Moley Water",
-        description: "Seems as legit as it comes.&Dispels Undead and some other types.",
-        usable: true,
-        useResponse: "It tastes like tap water.&There's a better use for this...",
-        heal: 5,
-        price: 40,
-        useResult: ITEM_INDEX.NONE
-    };
+    HOLY_WATER,
     //JERKY,
-    global.ITEM_INFO[? ITEM_INDEX.PITT_COLA] = {
-        name: "Pitt Cola",
-        description: "A common refreshing beverage.&\"It's the pitts!\"",
-        usable: true,
-        useResponse: "What's this in there...?&I always forget about the pit.",
-        heal: 12,
-        price: 20,
-        useResult: ITEM_INDEX.NONE
-    };
+    PITT_COLA,
     //MABEL_JUICE,
     //GIDEON_DOLL,
     //LOTION,
     //WHISTLE,
-    global.ITEM_INFO[? ITEM_INDEX.MAGIC_ARMOR] = {
-        name: "Magic Armor",
-        description: "Can't actually be acquired.&Funny how that works.",
-        usable: false,
-        useResponse: "Hmm, not sure how you got that #or consumed it, but ok.",
-        heal: 0,
-        price: 0, // Set it to whatever the user has, plus the combined cost of all of their items, plus 1
-        useResult: ITEM_INDEX.NONE
-    };
+    MAGIC_ARMOR,
+    TOTAL
+}
+
+/// @desc Constructs a new item.
+/// @param {Enum.ITEM_INDEX} _index The item's index, for redundancy's sake
+/// @param {String} _name The item's pretty-print name (should be shortenable to <=13 characters)
+/// @param {String} _description A brief (2-line) description of the item
+/// @param {String} _use_response A response to using the item (if usable) or attempting to use the item (if unusable)
+/// @param {Real} _price The standard cost of this item (sell cost is just halved)
+/// @param {Real} _heal How much this item heals the player. Omit for battle-only items
+/// @param {Bool} _usable Whether this item can be consumed or used in any way
+/// @param {Enum.ITEM_INDEX} _use_result If this item is trashed or used, with what should it be replaced in the player's inventory?
+function ItemInfo(_index, _name, _description, _use_response, _price, _heal = 0, _usable = true, _use_result = ITEM_INDEX.NONE) constructor
+{
+    index = _index;
+    name = _name;
+    description = _description;
+    useResponse = _use_response;
+    price = _price;
+    heal = _heal;
+    usable = _usable;
+    useResult = _use_result;
+}
+
+
+/// @desc Creates the global.ITEM_INFO struct for all known items.
+function scr_generate_item_index()
+{
+    global.ITEM_INFO = array_create(ITEM_INDEX.TOTAL);
+    global.ITEM_INFO[ITEM_INDEX.NONE] = ItemInfo(
+        ITEM_INDEX.NONE,
+        "",
+        "Literally nothing.",
+        "You ate nothing.&...Good job?",
+        0,
+        0,
+        false
+    );
+    global.ITEM_INFO[ITEM_INDEX.LOSER_CANDY] = ItemInfo(
+        ITEM_INDEX.LOSER_CANDY,
+        "Loser Candy",
+        "Some old, unwanted Halloween #candy.",
+        "You feel sick.",
+        15,
+        5
+    );
+    global.ITEM_INFO[ITEM_INDEX.POPSICLE] = ItemInfo(
+        ITEM_INDEX.POPSICLE,
+        "Popsicle",
+        "A Popsicle-on-a-Stick.&Somehow, it's always frozen.",
+        "The stick has a skeleton pun.&How dreadful.",
+        25,
+        10
+    );
+    global.ITEM_INFO[ITEM_INDEX.MILK_HALF] = ItemInfo(
+        ITEM_INDEX.MILK_HALF,
+        "[1] LanLan Milk",
+        "From the Legend of Zeppeli.&Half the bottle remains.",
+        "Discarded the empty bottle.&Don't drive yourself home.",
+        15,
+        10
+    );
+    global.ITEM_INFO[ITEM_INDEX.MILK_FULL] = ItemInfo(
+        ITEM_INDEX.MILK_FULL,
+        "[2] LanLan Milk",
+        "From the Legend of Zeppeli.&Contains 2 doses.",
+        "Drank half.&Make sure to pace yourself.",
+        55,
+        10,
+        true,
+        ITEM_INDEX.MILK_HALF
+    );
+    global.ITEM_INFO[ITEM_INDEX.PANCAKE] = ItemInfo(
+        ITEM_INDEX.PANCAKE,
+        "Stancake",
+        "Retrieved from Greasy's.&Supposedly the best cakes in town.",
+        "What's this? They have some of #Grunkle Stans's hair in them...",
+        45,
+        20
+    );
+    global.ITEM_INFO[ITEM_INDEX.CHIPACKERZ] = ItemInfo(
+        ITEM_INDEX.CHIPACKERZ,
+        "Chipackerz",
+        "The Chip-flavored Crackers!&Not to be confused with Crackips.",
+        "They look like crackers...#`but they taste like chips..",
+        50,
+        20
+    );
+    global.ITEM_INFO[ITEM_INDEX.HAMSTICK] = ItemInfo(
+        ITEM_INDEX.HAMSTICK,
+        "Ham-on-a-Stick",
+        "A large slab of meat on a #stick, fresh from Meat Cute!",
+        "Extreme lunch meats are the food #of the future!",
+        120,
+        45
+    );
+    global.ITEM_INFO[ITEM_INDEX.PIZZA_REFRESHING] = ItemInfo(
+        ITEM_INDEX.PIZZA_REFRESHING,
+        "[Re] PIZZA!",
+        "Soos's infinite pizza slice.&Will regenerate at time rifts.",
+        "You can't eat what isn't there.&Grow some patience, monster.",
+        0,
+        10,
+        false,
+        ITEM_INDEX.PIZZA_REFRESHING
+    );
+    global.ITEM_INFO[ITEM_INDEX.PIZZA_INFINITE] = ItemInfo(
+        ITEM_INDEX.PIZZA_INFINITE,
+        "PIZZA!",
+        "Soos's infinite pizza slice.&Reforms at time rifts.",
+        "Remember Soos as it reforms.&Credits: @ef7000Spin Clipper@ffffff.",
+        0,
+        10,
+        true,
+        ITEM_INDEX.PIZZA_REFRESHING
+    );
+    global.ITEM_INFO[ITEM_INDEX.SMILE_DIP] = ItemInfo(
+        ITEM_INDEX.SMILE_DIP,
+        "Smile Dip",
+        "The classic sugarish snack.&Banned in 27 countries.",
+        "You feel weird...&What was that about 27 countries...?",
+        90,
+        40
+    );
+    global.ITEM_INFO[ITEM_INDEX.COOKIE_JAR_EMPTY] = ItemInfo(
+        ITEM_INDEX.COOKIE_JAR_EMPTY,
+        "[E] Cookie Jar",
+        "Jar of Slow the Cookie Man.&Maybe someone can fill it?",
+        "You gnawed on the ceramic, #but it didn't taste very good.",
+        0,
+        20,
+        false,
+        ITEM_INDEX.COOKIE_JAR_EMPTY
+    );
+    for (var i = ITEM_INDEX.COOKIE_JAR_1; i < ITEM_INDEX.COOKIE_JAR_FULL; ++i)
+    {
+        var _cookie_count = i - ITEM_INDEX.COOKIE_JAR_EMPTY;
+        global.ITEM_INFO[i] = ItemInfo(
+            i,
+            $"[{_cookie_count}] Cookie Jar",
+            $"Jar of Slow the Cookie Man.&A baker could top it off.",
+            "You stole the cookies #from the cookie jar!",
+            0, // can't be bought or sold; you lack a food handler's permit
+            20,
+            true,
+            i - 1
+        );
+    }
+    global.ITEM_INFO[ITEM_INDEX.COOKIE_JAR_FULL] = ItemInfo(
+        ITEM_INDEX.COOKIE_JAR_FULL,
+        $"[{ITEM_INDEX.COOKIE_JAR_FULL - ITEM_INDEX.COOKIE_JAR_EMPTY}] Cookie Jar",
+        "It's completely full.&Small jar or big cookies?",
+        "Who stole the cookies #from the cookie jar?",
+        0,
+        20,
+        true,
+        ITEM_INDEX.COOKIE_JAR_FULL - 1
+    );
+    global.ITEM_INFO[ITEM_INDEX.SPAGHETTI] = ItemInfo(
+        ITEM_INDEX.SPAGHETTI,
+        "T-1 Spaghetti",
+        "A delicious bowl of spaghetti.&A famous skeleton's recipe.",
+        "SOMEBODY TOUCH-A MY SPAGHET!&...this was written a while ago.",
+        300,
+        -1
+    );
+    for (var i = ITEM_INDEX.ONION_1; i <= ITEM_INDEX.ONION_MAX; ++i)
+    {
+        var _layer_count = i - ITEM_INDEX.ONION_1 + 1;
+        global.ITEM_INFO[i] = ItemInfo(
+            i,
+            $"[{_layer_count}] Onionsan",
+            "It's an onion.&Comes in many layers.",
+            "It's just like ogres:&It makes you cry...",
+            16 * _layer_count,
+            8,
+            true,
+            (i == ITEM_INDEX.ONION_1) ? ITEM_INDEX.NONE : (i - 1)
+        );
+    }
+    //FAIRY_DUST,
+    //PB_SHARD,
+    global.ITEM_INFO[ITEM_INDEX.HOLY_WATER] = ItemInfo(
+        ITEM_INDEX.HOLY_WATER,
+        "Holy Moley Water",
+        "Seems as legit as it comes.&Dispels Undead and some other types.",
+        "It tastes like tap water.&There's a better use for this...",
+        40,
+        5
+    );
+    //JERKY,
+    global.ITEM_INFO[ITEM_INDEX.PITT_COLA] = ItemInfo(
+        ITEM_INDEX.PITT_COLA,
+        "Pitt Cola",
+        "A common refreshing beverage.&\"It's the pitts!\"",
+        "What's this in there...?&I always forget about the pit.",
+        20,
+        12
+    );
+    //MABEL_JUICE,
+    //GIDEON_DOLL,
+    //LOTION,
+    //WHISTLE,
+    global.ITEM_INFO[ITEM_INDEX.MAGIC_ARMOR] = ItemInfo(
+        ITEM_INDEX.MAGIC_ARMOR,
+        "Magic Armor",
+        "Almost as strong as Plot Armor.&Could even revive the dead.",
+        "You acquired the unacquirable.&You have my respect.",
+        0, // Set it to whatever the user has, plus the combined sale price of all of their items, plus 1
+        0,
+        false
+    );
 }
