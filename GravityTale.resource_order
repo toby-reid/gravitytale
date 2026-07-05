@@ -152,7 +152,6 @@
     {"name":"obj_core","order":1,"path":"objects/obj_core/obj_core.yy",},
     {"name":"obj_cutscene","order":2,"path":"objects/obj_cutscene/obj_cutscene.yy",},
     {"name":"obj_determined_toby","order":6,"path":"objects/obj_determined_toby/obj_determined_toby.yy",},
-    {"name":"obj_dipper_old","order":7,"path":"objects/obj_dipper_old/obj_dipper_old.yy",},
     {"name":"obj_dipper","order":5,"path":"objects/obj_dipper/obj_dipper.yy",},
     {"name":"obj_dipperLoader","order":13,"path":"objects/obj_dipperLoader/obj_dipperLoader.yy",},
     {"name":"obj_dontGo","order":11,"path":"objects/obj_dontGo/obj_dontGo.yy",},

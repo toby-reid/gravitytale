@@ -249,7 +249,6 @@
     {"id":{"name":"obj_core","path":"objects/obj_core/obj_core.yy",},},
     {"id":{"name":"obj_cutscene","path":"objects/obj_cutscene/obj_cutscene.yy",},},
     {"id":{"name":"obj_determined_toby","path":"objects/obj_determined_toby/obj_determined_toby.yy",},},
-    {"id":{"name":"obj_dipper_old","path":"objects/obj_dipper_old/obj_dipper_old.yy",},},
     {"id":{"name":"obj_dipper","path":"objects/obj_dipper/obj_dipper.yy",},},
     {"id":{"name":"obj_dipperLoader","path":"objects/obj_dipperLoader/obj_dipperLoader.yy",},},
     {"id":{"name":"obj_dontGo","path":"objects/obj_dontGo/obj_dontGo.yy",},},
