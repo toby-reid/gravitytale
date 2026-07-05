@@ -71,8 +71,16 @@ function ItemInfo(_index, _name, _description, _use_response, _price, _heal = 0,
 function scr_generate_item_info()
 {
     var _item_info = array_create(ITEM_INDEX.TOTAL);
-    _item_info[ITEM_INDEX.NONE] = ;
-    _item_info[ITEM_INDEX.LOSER_CANDY] = ItemInfo(
+    _item_info[ITEM_INDEX.NONE] = new ItemInfo(
+        ITEM_INDEX.NONE,
+        "",
+        "Literally nothing.",
+        "You somehow consumed nothing.&...Good job.",
+        0,
+        0,
+        false
+    );
+    _item_info[ITEM_INDEX.LOSER_CANDY] = new ItemInfo(
         ITEM_INDEX.LOSER_CANDY,
         "Loser Candy",
         "Some old, unwanted Halloween #candy.",
@@ -80,7 +88,7 @@ function scr_generate_item_info()
         15,
         5
     );
-    _item_info[ITEM_INDEX.POPSICLE] = ItemInfo(
+    _item_info[ITEM_INDEX.POPSICLE] = new ItemInfo(
         ITEM_INDEX.POPSICLE,
         "Popsicle",
         "A Popsicle-on-a-Stick.&Somehow, it's always frozen.",
@@ -88,7 +96,7 @@ function scr_generate_item_info()
         25,
         10
     );
-    _item_info[ITEM_INDEX.MILK_HALF] = ItemInfo(
+    _item_info[ITEM_INDEX.MILK_HALF] = new ItemInfo(
         ITEM_INDEX.MILK_HALF,
         "[1] LanLan Milk",
         "From the Legend of Zeppeli.&Half the bottle remains.",
@@ -96,7 +104,7 @@ function scr_generate_item_info()
         15,
         10
     );
-    _item_info[ITEM_INDEX.MILK_FULL] = ItemInfo(
+    _item_info[ITEM_INDEX.MILK_FULL] = new ItemInfo(
         ITEM_INDEX.MILK_FULL,
         "[2] LanLan Milk",
         "From the Legend of Zeppeli.&Contains 2 doses.",
@@ -106,7 +114,7 @@ function scr_generate_item_info()
         true,
         ITEM_INDEX.MILK_HALF
     );
-    _item_info[ITEM_INDEX.PANCAKE] = ItemInfo(
+    _item_info[ITEM_INDEX.PANCAKE] = new ItemInfo(
         ITEM_INDEX.PANCAKE,
         "Stancake",
         "Retrieved from Greasy's.&Supposedly the best cakes in town.",
@@ -114,7 +122,7 @@ function scr_generate_item_info()
         45,
         20
     );
-    _item_info[ITEM_INDEX.CHIPACKERZ] = ItemInfo(
+    _item_info[ITEM_INDEX.CHIPACKERZ] = new ItemInfo(
         ITEM_INDEX.CHIPACKERZ,
         "Chipackerz",
         "The Chip-flavored Crackers!&Not to be confused with Crackips.",
@@ -122,7 +130,7 @@ function scr_generate_item_info()
         50,
         20
     );
-    _item_info[ITEM_INDEX.HAMSTICK] = ItemInfo(
+    _item_info[ITEM_INDEX.HAMSTICK] = new ItemInfo(
         ITEM_INDEX.HAMSTICK,
         "Ham-on-a-Stick",
         "A large slab of meat on a #stick, fresh from Meat Cute!",
@@ -130,7 +138,7 @@ function scr_generate_item_info()
         120,
         45
     );
-    _item_info[ITEM_INDEX.PIZZA_REFRESHING] = ItemInfo(
+    _item_info[ITEM_INDEX.PIZZA_REFRESHING] = new ItemInfo(
         ITEM_INDEX.PIZZA_REFRESHING,
         "[Re] PIZZA!",
         "Soos's infinite pizza slice.&Will regenerate at time rifts.",
@@ -140,7 +148,7 @@ function scr_generate_item_info()
         false,
         ITEM_INDEX.PIZZA_REFRESHING
     );
-    _item_info[ITEM_INDEX.PIZZA_INFINITE] = ItemInfo(
+    _item_info[ITEM_INDEX.PIZZA_INFINITE] = new ItemInfo(
         ITEM_INDEX.PIZZA_INFINITE,
         "PIZZA!",
         "Soos's infinite pizza slice.&Reforms at time rifts.",
@@ -150,7 +158,7 @@ function scr_generate_item_info()
         true,
         ITEM_INDEX.PIZZA_REFRESHING
     );
-    _item_info[ITEM_INDEX.SMILE_DIP] = ItemInfo(
+    _item_info[ITEM_INDEX.SMILE_DIP] = new ItemInfo(
         ITEM_INDEX.SMILE_DIP,
         "Smile Dip",
         "The classic sugarish snack.&Banned in 27 countries.",
@@ -158,7 +166,7 @@ function scr_generate_item_info()
         90,
         40
     );
-    _item_info[ITEM_INDEX.COOKIE_JAR_EMPTY] = ItemInfo(
+    _item_info[ITEM_INDEX.COOKIE_JAR_EMPTY] = new ItemInfo(
         ITEM_INDEX.COOKIE_JAR_EMPTY,
         "[E] Cookie Jar",
         "Jar of Slow the Cookie Man.&Maybe someone can fill it?",
@@ -171,7 +179,7 @@ function scr_generate_item_info()
     for (var i = ITEM_INDEX.COOKIE_JAR_1; i < ITEM_INDEX.COOKIE_JAR_FULL; ++i)
     {
         var _cookie_count = i - ITEM_INDEX.COOKIE_JAR_EMPTY;
-        _item_info[i] = ItemInfo(
+        _item_info[i] = new ItemInfo(
             i,
             $"[{_cookie_count}] Cookie Jar",
             $"Jar of Slow the Cookie Man.&A baker could top it off.",
@@ -182,7 +190,7 @@ function scr_generate_item_info()
             i - 1
         );
     }
-    _item_info[ITEM_INDEX.COOKIE_JAR_FULL] = ItemInfo(
+    _item_info[ITEM_INDEX.COOKIE_JAR_FULL] = new ItemInfo(
         ITEM_INDEX.COOKIE_JAR_FULL,
         $"[{ITEM_INDEX.COOKIE_JAR_FULL - ITEM_INDEX.COOKIE_JAR_EMPTY}] Cookie Jar",
         "It's completely full.&Small jar or big cookies?",
@@ -192,7 +200,7 @@ function scr_generate_item_info()
         true,
         ITEM_INDEX.COOKIE_JAR_FULL - 1
     );
-    _item_info[ITEM_INDEX.SPAGHETTI] = ItemInfo(
+    _item_info[ITEM_INDEX.SPAGHETTI] = new ItemInfo(
         ITEM_INDEX.SPAGHETTI,
         "T-1 Spaghetti",
         "A delicious bowl of spaghetti.&A famous skeleton's recipe.",
@@ -203,7 +211,7 @@ function scr_generate_item_info()
     for (var i = ITEM_INDEX.ONION_1; i <= ITEM_INDEX.ONION_MAX; ++i)
     {
         var _layer_count = i - ITEM_INDEX.ONION_1 + 1;
-        _item_info[i] = ItemInfo(
+        _item_info[i] = new ItemInfo(
             i,
             $"[{_layer_count}] Onionsan",
             "It's an onion.&Comes in many layers.",
@@ -216,7 +224,7 @@ function scr_generate_item_info()
     }
     //FAIRY_DUST,
     //PB_SHARD,
-    _item_info[ITEM_INDEX.HOLY_WATER] = ItemInfo(
+    _item_info[ITEM_INDEX.HOLY_WATER] = new ItemInfo(
         ITEM_INDEX.HOLY_WATER,
         "Holy Moley Water",
         "Seems as legit as it comes.&Dispels Undead and some other types.",
@@ -225,7 +233,7 @@ function scr_generate_item_info()
         5
     );
     //JERKY,
-    _item_info[ITEM_INDEX.PITT_COLA] = ItemInfo(
+    _item_info[ITEM_INDEX.PITT_COLA] = new ItemInfo(
         ITEM_INDEX.PITT_COLA,
         "Pitt Cola",
         "A common refreshing beverage.&\"It's the pitts!\"",
@@ -237,7 +245,7 @@ function scr_generate_item_info()
     //GIDEON_DOLL,
     //LOTION,
     //WHISTLE,
-    _item_info[ITEM_INDEX.MAGIC_ARMOR] = ItemInfo(
+    _item_info[ITEM_INDEX.MAGIC_ARMOR] = new ItemInfo(
         ITEM_INDEX.MAGIC_ARMOR,
         "Magic Armor",
         "Almost as strong as Plot Armor.&Could even revive the dead.",

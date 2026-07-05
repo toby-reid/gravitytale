@@ -71,8 +71,8 @@ if !instance_exists(obj_toBattle) {
                     if keyboard_check_pressed(vk_enter) if instance_exists(global.enemy[global.stage[2]]) {
                         global.stage[0]++
                         if global.stage[1] == 0 {
-                            instance_create_layer(39,257,layer,obj_battleTarget)
-                            global.stage[4] = -1
+                            instance_create_layer(x, y, layer, obj_battleTarget);
+                            global.stage[4] = -1;
                         }
                         audio_play_sound(sfx_select,0,false)
                     }

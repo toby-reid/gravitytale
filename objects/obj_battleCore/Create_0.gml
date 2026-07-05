@@ -17,7 +17,6 @@ music = silence;//Music to play after battle Ends. Will not play if still noone.
 battle = false
 run = true;
 
-// TODO: Investigate inventory. Might need to reselect after using item, etc.
 inventory = scr_get_inventory();
 m_select_item = function(_dir)
 {
