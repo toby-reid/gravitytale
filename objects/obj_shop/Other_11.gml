@@ -6,15 +6,15 @@ switch stage {
 	case 1:
 		if choice[1] < array_length(buy) {
 			var item_name = buy[choice[1]];
-			var item = global.ITEM[? item_name];
-			var price = (item_name == ITEM_NAME.MAGIC_ARMOR) ? (global.player.money + 1) : item.price;
+			var item = global.ITEM_INFO[? item_name];
+			var price = (item_name == ITEM_INDEX.MAGIC_ARMOR) ? (global.player.money + 1) : item.price;
 			var heal = item.heal;
 			if heal < 0 heal = "full";
 			text[1] = string_concat("Heals ", heal, ".#Buy for#$", price, ".");
 			if global.player.money < price text[1] += "#Low funds!";
 			var itemCt = 0; //Leave it like this since Pizza won't be in local.inventory
 			for(var i = 0; i < array_length(global.inventory); i++) {
-				if global.inventory[i] != ITEM_NAME.NONE itemCt++;
+				if global.inventory[i] != ITEM_INDEX.NONE itemCt++;
 			}
 			if itemCt >= array_length(global.inventory) {
 				text[1] = string_concat(heal, " HP#$", price, "#Inventory#space low!");

@@ -7,7 +7,7 @@ if menu[0] > 0 {
 		multipage = false;
 		// determine if there's a "page 1"
 		for (var i = 0; i < 8; i++) {
-			if global.inventory[i] != ITEM_NAME.NONE {
+			if global.inventory[i] != ITEM_INDEX.NONE {
 				multipage = true;
 				break;
 			}
@@ -16,7 +16,7 @@ if menu[0] > 0 {
 			multipage = false;
 			// determine if there's a "page 2"
 			for (var i = 8; i < array_length(global.inventory); i++) {
-				if global.inventory[i] != ITEM_NAME.NONE {
+				if global.inventory[i] != ITEM_INDEX.NONE {
 					multipage = true;
 					break;
 				}
@@ -47,7 +47,7 @@ if menu[0] > 0 {
 				if keyboard_check_pressed(vk_enter) {
 					switch global.menu[0] {
 						case 0:
-							if (global.inventory[global.menu[1]] != ITEM_NAME.NONE or scr_menu_itemSelect(1)) {
+							if (global.inventory[global.menu[1]] != ITEM_INDEX.NONE or scr_menu_itemSelect(1)) {
 								menu[0] = 2;
 							}
 							else {
@@ -295,8 +295,8 @@ if menu[0] > 0 {
 				var inv = "";
 				for(var i = 0, base = 8 * page_number; i < 8; i++) {
 					var item_name = global.inventory[base + i];
-					if (item_name != ITEM_NAME.NONE) {
-						inv += global.ITEM[? item_name].name;
+					if (item_name != ITEM_INDEX.NONE) {
+						inv += global.ITEM_INFO[? item_name].name;
 					}
 					inv += "\n";
 				}
@@ -308,12 +308,12 @@ if menu[0] > 0 {
 				draw_text(212, multipage ? 372 : 340, "USE   INFO  DROP");
 			}
 			if !instance_exists(obj_textbox_old) {
-				if global.inventory[global.menu[1]] == ITEM_NAME.NONE if !scr_menu_itemSelect(1) menu[0] = 1
+				if global.inventory[global.menu[1]] == ITEM_INDEX.NONE if !scr_menu_itemSelect(1) menu[0] = 1
 				draw_sprite(soul_sprite,0,202,92+32*global.menu[1])
 				if keyboard_check_pressed(vk_down) scr_menu_itemSelect(1) // TODO: Swap this out for the standard item select
 				if keyboard_check_pressed(vk_up) scr_menu_itemSelect(-1) // TODO: ...just redo this entire thing. It's not worth it
 				if keyboard_check_pressed(vk_enter) {
-					if global.inventory[global.menu[1]] != ITEM_NAME.NONE {
+					if global.inventory[global.menu[1]] != ITEM_INDEX.NONE {
 						menu = [3,0];
 						audio_play_sound(sfx_select,0,false);
 					}
@@ -324,7 +324,7 @@ if menu[0] > 0 {
 				}
 			}
 			else {
-				draw_text_color(212,78+32*global.menu[1],global.ITEM[? global.inventory[global.menu[1]]].name,c_yellow,c_yellow,c_yellow,c_yellow,1)
+				draw_text_color(212,78+32*global.menu[1],global.ITEM_INFO[? global.inventory[global.menu[1]]].name,c_yellow,c_yellow,c_yellow,c_yellow,1)
 				switch menu[1] {
 					case 0: draw_text_color(212,340,"USE",c_yellow,c_yellow,c_yellow,c_yellow,1) break
 					case 1: draw_text_color(212+string_width("USE   "),340,"INFO",c_yellow,c_yellow,c_yellow,c_yellow,1) break
@@ -339,13 +339,13 @@ if menu[0] > 0 {
 				var inv = ""
 				for(var i = 0, base = 8 * page_number; i < 8; i++) {
 					var item_name = global.inventory[base + i];
-					if (item_name != ITEM_NAME.NONE) {
-						inv += global.ITEM[? item_name].name;
+					if (item_name != ITEM_INDEX.NONE) {
+						inv += global.ITEM_INFO[? item_name].name;
 					}
 					inv += "\n";
 				}
 				draw_text_ext(212,78,inv,32,1500);
-				draw_text_color(212,78+32*global.menu[1],global.ITEM[? global.inventory[global.menu[1]]].name,c_yellow,c_yellow,c_yellow,c_yellow,1);
+				draw_text_color(212,78+32*global.menu[1],global.ITEM_INFO[? global.inventory[global.menu[1]]].name,c_yellow,c_yellow,c_yellow,c_yellow,1);
 				if (multipage) {
 					// align the page number right above the DRO of DROP
 					draw_text(212 + string_width("USE   INFO  "), 340, string_concat(page_number + 1, "/2"));
@@ -365,7 +365,7 @@ if menu[0] > 0 {
 			}
 			if keyboard_check_pressed(vk_enter) {
 				var item_name = global.inventory[global.menu[1]];
-				var item = global.ITEM[? item_name];
+				var item = global.ITEM_INFO[? item_name];
 				
 				menu[0] = 2
 				if !audio_is_playing(sfx_heal) audio_play_sound(sfx_select,0,false)

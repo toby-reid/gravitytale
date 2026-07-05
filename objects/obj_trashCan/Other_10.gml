@@ -1,3 +1,3 @@
 ///@desc Emptied trash
-get = ITEM_NAME.NONE
+get = ITEM_INDEX.NONE
 text = newText

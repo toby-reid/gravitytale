@@ -36,7 +36,7 @@ for(var i = 1; i <= string_length(text[1]); i++) {
 draw_text(458,421,string_concat("$", global.player.money));
 draw_set_halign(fa_right)
 var itemCt = 0
-for(var i = 0; i < array_length(global.inventory); i++) if global.inventory[i] != ITEM_NAME.NONE itemCt++
+for(var i = 0; i < array_length(global.inventory); i++) if global.inventory[i] != ITEM_INDEX.NONE itemCt++
 draw_text(602,421,string_concat(itemCt, "/", array_length(global.inventory)));
 draw_set_halign(fa_left)
 

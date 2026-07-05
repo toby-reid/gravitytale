@@ -6,9 +6,9 @@ if other.canMove {
 		style[0] = 5
 	}
 	for(var i = 0; i < array_length(global.inventory); i++) {
-		if global.inventory[i] == ITEM_NAME.NONE {
-			if shrek global.inventory[i] = ITEM_NAME.ONION_MAX;
-			else global.inventory[i] = ITEM_NAME.ONION_1 + irandom(3)
+		if global.inventory[i] == ITEM_INDEX.NONE {
+			if shrek global.inventory[i] = ITEM_INDEX.ONION_MAX;
+			else global.inventory[i] = ITEM_INDEX.ONION_1 + irandom(3)
 		}
 	}
 	other.dir = dir

@@ -35,7 +35,7 @@ if (!instance_exists(obj_textbox))
     else if (m_menu == DIPPER_MENU.ITEM_ACTION)
     {
         var _item_name = m_inventory[m_menu_item];
-        var _item = global.ITEM[? _item_name];
+        var _item = global.ITEM_INFO[? _item_name];
         m_consumed_item = false;
         switch m_menu_itemAction
         {
@@ -93,28 +93,28 @@ if (!instance_exists(obj_textbox))
                 var _disposed = false;
                 switch _item_name
                 {
-                    case ITEM_NAME.PIZZA_INFINITE:
+                    case ITEM_INDEX.PIZZA_INFINITE:
                         _disposed = true;
                         //fallthrough
-                    case ITEM_NAME.PIZZA_REFRESHING:
+                    case ITEM_INDEX.PIZZA_REFRESHING:
                         _text = ["(You tried tossing the pizza, #but it returned to your pocket.)", "(May the overwhelming guilt #destroy you.)"];
                         break;
-                    case ITEM_NAME.COOKIE_JAR_FULL:
-                    case ITEM_NAME.COOKIE_JAR_2:
-                    case ITEM_NAME.COOKIE_JAR_1:
+                    case ITEM_INDEX.COOKIE_JAR_FULL:
+                    case ITEM_INDEX.COOKIE_JAR_2:
+                    case ITEM_INDEX.COOKIE_JAR_1:
                         _disposed = true;
                         _text = "(You threw away Slow's Cookie.&(Probably had coconut in it #or something.)";
                         break;
-                    case ITEM_NAME.COOKIE_JAR_EMPTY:
+                    case ITEM_INDEX.COOKIE_JAR_EMPTY:
                         _text = ["(You were going to throw away #Slow's Cookie Jar,", "but you liked its articulate #designs too much.)"];
                         break;
-                    case ITEM_NAME.ONION_1:
+                    case ITEM_INDEX.ONION_1:
                         _disposed = true;
                         _text = ["(You threw away the rest #of the onion.)", "(Left too long in the sunlight, #it will soon get brown and #hairy.)"];
                         break;
                     default:
                         _disposed = true;
-                        if _item_name >= ITEM_NAME.ONION_1 && _item_name <= ITEM_NAME.ONION_MAX
+                        if _item_name >= ITEM_INDEX.ONION_1 && _item_name <= ITEM_INDEX.ONION_MAX
                         {
                             _text = "(You peeled off a layer of the #onion and tossed it away.&(Now you're making me cry.)";
                         }

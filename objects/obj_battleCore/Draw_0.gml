@@ -116,8 +116,8 @@ if !instance_exists(obj_toBattle) {
                     var item_index = global.stage[3];
                     var item_name = inventory[item_index];
                     if keyboard_check_pressed(vk_enter) {
-                        var item = global.ITEM[? item_name];
-                        if item_name != ITEM_NAME.HOLY_WATER {
+                        var item = global.ITEM_INFO[? item_name];
+                        if item_name != ITEM_INDEX.HOLY_WATER {
                             var heal = item.heal;
                             if (item.usable) {
                                 global.player.hp += (heal >= 0) ? heal : global.player.maxHp;
@@ -179,8 +179,8 @@ if !instance_exists(obj_toBattle) {
                             break;
                         }
                         var draw_item_name = inventory[draw_item_index];
-                        if (draw_item_name != ITEM_NAME.NONE) {
-                            var draw_item = global.ITEM[? draw_item_name];
+                        if (draw_item_name != ITEM_INDEX.NONE) {
+                            var draw_item = global.ITEM_INFO[? draw_item_name];
                             draw_text(
                                 55 + (272 * (i div 2)) + string_width("* "),
                                 269 + (35 * (i % 2)),
@@ -378,8 +378,8 @@ if !instance_exists(obj_toBattle) {
                 }
                 audio_play_sound(sfx_lvup,0,false);
                 for(var i = 0; i < array_length(global.inventory); i++) {
-                    if global.inventory[i] == ITEM_NAME.PIZZA_REFRESHING {
-                        global.inventory[i] = ITEM_NAME.PIZZA_INFINITE;
+                    if global.inventory[i] == ITEM_INDEX.PIZZA_REFRESHING {
+                        global.inventory[i] = ITEM_INDEX.PIZZA_INFINITE;
                         break;
                     }
                 }

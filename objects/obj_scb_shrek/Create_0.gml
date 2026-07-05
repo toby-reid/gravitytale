@@ -14,7 +14,7 @@ if string_lower(global.player.name)=="shrek" or string_lower(global.player.name)
 }
 dir = 2
 for(var i = 0; i < array_length(global.inventory); i++) {
-	if global.inventory[i] >= ITEM_NAME.ONION_1 and global.inventory[i] <= ITEM_NAME.ONION_MAX {
+	if global.inventory[i] >= ITEM_INDEX.ONION_1 and global.inventory[i] <= ITEM_INDEX.ONION_MAX {
 		instance_destroy()
 	}
 }

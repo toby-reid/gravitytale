@@ -16,7 +16,7 @@ if keyboard_check_pressed(vk_anykey) {
 		order++
 		if order == 11 {
 			order = 0
-			scr_get_item(ITEM_NAME.SPAGHETTI,true)
+			scr_get_item(ITEM_INDEX.SPAGHETTI,true)
 		}
 	}
 	else order = 0

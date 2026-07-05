@@ -1,3 +1,3 @@
-get = ITEM_NAME.SPAGHETTI;
+get = ITEM_INDEX.SPAGHETTI;
 text = ["(You found a bowl of spaghetti.&(Must be this creep's breakfast.&(You take it anyway.)"];
 newText = ["(All that remains is #expired pasta sauce.&(Seems mighty saucepicious...)"];

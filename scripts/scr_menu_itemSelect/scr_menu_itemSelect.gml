@@ -3,7 +3,7 @@
 function scr_menu_itemSelect(dir) {
 	var inv = false;
 	for(var i = 0; i < array_length(global.inventory); i++) {
-		if (global.inventory[i] != ITEM_NAME.NONE) {
+		if (global.inventory[i] != ITEM_INDEX.NONE) {
 			inv = true;
 			break;
 		}
@@ -16,7 +16,7 @@ function scr_menu_itemSelect(dir) {
 			else if i >= array_length(global.inventory) {
 				i = 0;
 			}
-			if global.inventory[i] != ITEM_NAME.NONE {
+			if global.inventory[i] != ITEM_INDEX.NONE {
 				if (i != global.menu[1]) {
 					audio_play_sound(sfx_beep,0,false)
 				}

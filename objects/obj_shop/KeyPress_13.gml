@@ -5,7 +5,7 @@ switch stage {
 				stage = 1
 				text[0] = ""
 				for(var i = 0; i < array_length(buy); i++) {
-					text[0] += global.ITEM[? buy[i]].name + "#";
+					text[0] += global.ITEM_INFO[? buy[i]].name + "#";
 				}
 				text[0] += "Back..."
 				audio_play_sound(sfx_shop_select,0,false)
@@ -33,11 +33,11 @@ switch stage {
 		if choice[1] < array_length(buy) {
 			var itemCt = 0//Leave it like this since Pizza won't be in this.inventory
 			for(var i = 0; i < array_length(global.inventory); i++) {
-				if global.inventory[i] != ITEM_NAME.NONE itemCt++
+				if global.inventory[i] != ITEM_INDEX.NONE itemCt++
 			}
 			if itemCt < array_length(global.inventory) {
 				var item_name = buy[choice[1]];
-				var item = global.ITEM[? item_name];
+				var item = global.ITEM_INFO[? item_name];
 				if !confirm {
 					if global.player.money >= item.price {
 						confirm = true
@@ -49,7 +49,7 @@ switch stage {
 						global.player.money -= item.price
 						scr_get_item(item_name,false)
 						audio_play_sound(sfx_shop_purchase,0,false)
-						if item_name == ITEM_NAME.HAMSTICK global.hamstick = true
+						if item_name == ITEM_INDEX.HAMSTICK global.hamstick = true
 					}
 					else audio_play_sound(sfx_select,0,false)
 					confirm = false

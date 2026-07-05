@@ -8,7 +8,7 @@ if !instance_exists(obj_textbox_old) if instance_exists(obj_dipper) if obj_dippe
 			sound = other.sound
 			charRate = other.charRate
 		}
-		if get != ITEM_NAME.NONE {
+		if get != ITEM_INDEX.NONE {
 			if scr_get_item(get, true) {
 				event_user(0);
 				array_push(global.trashCan, id);

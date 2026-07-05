@@ -46,7 +46,7 @@ if (m_menu != DIPPER_MENU.CLOSED)
             for (var i = 0, _page_base = _max_inventory * _page, _max = min(_max_inventory, _inventory_size - _page_base); i < _max; ++i)
             {
                 var _item_name = m_inventory[_page_base + i];
-                draw_text(212, 78 + (32 * i), global.ITEM[? _item_name].name);
+                draw_text(212, 78 + (32 * i), global.ITEM_INFO[? _item_name].name);
             }
             var _button_offset = 0;;
             if (_inventory_page_count > 1)
@@ -64,7 +64,7 @@ if (m_menu != DIPPER_MENU.CLOSED)
                     // implies we've just interacted with an item, so we should draw the colors
                     if (!m_consumed_item)
                     {
-                        draw_text_colour(212, 78 + (32 * _page_index), global.ITEM[? m_inventory[m_menu_item]].name, c_yellow, c_yellow, c_yellow, c_yellow, 1);
+                        draw_text_colour(212, 78 + (32 * _page_index), global.ITEM_INFO[? m_inventory[m_menu_item]].name, c_yellow, c_yellow, c_yellow, c_yellow, 1);
                     }
                     var _text;
                     switch m_menu_itemAction
@@ -82,7 +82,7 @@ if (m_menu != DIPPER_MENU.CLOSED)
             }
             else
             {
-                draw_text_colour(212, 78 + (32 * _page_index), global.ITEM[? m_inventory[m_menu_item]].name, c_yellow, c_yellow, c_yellow, c_yellow, 1);
+                draw_text_colour(212, 78 + (32 * _page_index), global.ITEM_INFO[? m_inventory[m_menu_item]].name, c_yellow, c_yellow, c_yellow, c_yellow, 1);
                 draw_sprite(_soul, 0, 202 + (m_menu_itemAction * string_width("USE   ")), 352 + _button_offset);
             }
         }

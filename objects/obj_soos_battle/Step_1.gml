@@ -6,7 +6,7 @@ if hp <= 0 if global.stage[0] != 3 if !instance_exists(obj_textBubble) {
 		global.enemy[0].image_index = 0
 	}
 	image_alpha -= .05
-	if image_alpha == 0 {scr_get_item(ITEM_NAME.PIZZA_INFINITE, false); instance_destroy()}
+	if image_alpha == 0 {scr_get_item(ITEM_INDEX.PIZZA_INFINITE, false); instance_destroy()}
 	instance_destroy(bubble)
 }
 else if variable_instance_exists(id,"result") switch result {

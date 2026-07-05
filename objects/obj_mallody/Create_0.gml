@@ -2,7 +2,7 @@
 event_inherited();
 
 sprite = [spr_mallody,spr_mallody_talking];
-buy = [ITEM_NAME.PITT_COLA, ITEM_NAME.POPSICLE, ITEM_NAME.CHIPACKERZ, ITEM_NAME.HAMSTICK];
+buy = [ITEM_INDEX.PITT_COLA, ITEM_INDEX.POPSICLE, ITEM_INDEX.CHIPACKERZ, ITEM_INDEX.HAMSTICK];
 talk = ["Meat Cute","Magicians","Hoo-Ha Owl's","Melody"];
 msg = {
 	l_greeting: "Hi!&Welcome to Meat Cute, #home of the original #Ham-on-a-Stick!",

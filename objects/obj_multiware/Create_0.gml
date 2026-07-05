@@ -2,7 +2,7 @@
 event_inherited();
 
 sprite = [spr_multiware,spr_multiware_talking];
-buy = [ITEM_NAME.POPSICLE, ITEM_NAME.SMILE_DIP, ITEM_NAME.PITT_COLA, ITEM_NAME.MAGIC_ARMOR];
+buy = [ITEM_INDEX.POPSICLE, ITEM_INDEX.SMILE_DIP, ITEM_INDEX.PITT_COLA, ITEM_INDEX.MAGIC_ARMOR];
 talk = ["Multibear","Manotaurs","Heads","Magic Armor"];
 msg = {
 	l_greeting: "Greetings, child, and #welcome to my lair.",

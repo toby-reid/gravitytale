@@ -5,9 +5,9 @@ if !instance_exists(obj_textbox_old) if instance_exists(obj_dipper) if obj_dippe
 		with instance_create_layer(160,ybox,"Instances",obj_textbox_old) {
 			text = other.text
 			for(var i = 0; i < array_length(global.inventory); i++) {
-				if global.inventory[i] >= ITEM_NAME.COOKIE_JAR_EMPTY and global.inventory[i] <= ITEM_NAME.COOKIE_JAR_FULL {
+				if global.inventory[i] >= ITEM_INDEX.COOKIE_JAR_EMPTY and global.inventory[i] <= ITEM_INDEX.COOKIE_JAR_FULL {
 					text = other.newText
-					global.inventory[i] = ITEM_NAME.COOKIE_JAR_FULL;
+					global.inventory[i] = ITEM_INDEX.COOKIE_JAR_FULL;
 					break
 				}
 			}

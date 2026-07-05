@@ -6,7 +6,7 @@ if(!global.hamstick)
 		if(choice[1] == 0)
 			if(page == 9)
 				if(global.player.genocide != RUN.ACTIVE) {
-					if(scr_get_item(ITEM_NAME.HAMSTICK, true)) {
+					if(scr_get_item(ITEM_INDEX.HAMSTICK, true)) {
 						global.hamstick = true;
 						msg.l_topic0[8] = "Just... please...&Leave me alone...";
 						msg.l_topic0[9] = "(This poor girl.&(Maybe we should back #off on this front.)";

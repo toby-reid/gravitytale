@@ -31,7 +31,7 @@ scr_generate_item_index();
 		default:
 			break;
 	}
-	global.inventory = array_create(bag_size, ITEM_NAME.NONE);
+	global.inventory = array_create(bag_size, ITEM_INDEX.NONE);
 }
 order = 0; // marks the GRAVITYTALE cheat code order
 

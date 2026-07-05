@@ -6,7 +6,7 @@ charRate = []//Change as needed
 //head not needed.
 //alarm[0] = 1
 
-get = ITEM_NAME.NONE;
+get = ITEM_INDEX.NONE;
 newText = text
 if !variable_global_exists("trashCan") global.trashCan = []; // array of IDs
 for (var i = 0; i < array_length(global.trashCan); i++) {
