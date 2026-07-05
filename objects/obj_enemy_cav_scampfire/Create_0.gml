@@ -10,7 +10,7 @@ lv = false//set true if killing person increases LV
 sb = 12
 area = AREA.CAVES;
 timer = 0
-if instance_number(obj_battleEnemy) == 2 timer = 30
+if instance_number(obj_enemy) == 2 timer = 30
 create = true
 bubble = noone
 deathx = 0
@@ -19,8 +19,8 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "A scampering campfire arrives #to feed on your combustible #Items."
-if instance_number(obj_battleEnemy) > 1 {
-	switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 {
+	switch instance_find(obj_enemy,0).object_index {
 		case obj_enemy_cav_eyebat_passive:	obj_battleCore.text[0] = "An Eyebat arrives, disturbed by #the light of fire." break
 		case obj_enemy_cav_fairy:			obj_battleCore.text[0] = "Vomit and fire don't mix.&Just trust me on that." break
 		case obj_enemy_cav_geodite:			obj_battleCore.text[0] = "Geodites can be struck together #to create spark.&Maybe that created Scampfire?" break

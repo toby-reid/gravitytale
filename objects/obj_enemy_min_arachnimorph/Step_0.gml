@@ -25,12 +25,12 @@ if image_alpha == 1
             }
         }
         else if (self.timer == 420
-                 or (self.timer == 180 and !self.is_spider and instance_number(obj_battleEnemy) == 1)
-                 or (self.timer == 300 and instance_number(obj_battleEnemy) > 1))
+                 or (self.timer == 180 and !self.is_spider and instance_number(obj_enemy) == 1)
+                 or (self.timer == 300 and instance_number(obj_enemy) > 1))
         {
             ++global.stage[0];
         }
-        else if (self.is_spider and self.timer mod ((instance_number(obj_battleEnemy) > 1) ? 60 : 30) == 0)
+        else if (self.is_spider and self.timer mod ((instance_number(obj_enemy) > 1) ? 60 : 30) == 0)
         {
             var bbox_dir = irandom(3);
             var spider_x = (bbox_dir mod 2 == 0) ? (400 - (80 * bbox_dir)) : irandom_range(240, 400);

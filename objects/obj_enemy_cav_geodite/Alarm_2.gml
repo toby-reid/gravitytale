@@ -9,13 +9,13 @@ else if act[2] == "Scissors" {
 	spare = true
 }
 else {//rock
-	if instance_number(obj_battleEnemy) < 2 or ((x == 128 or x == 512 or x == 320) and instance_number(obj_battleEnemy) < 3) {
+	if instance_number(obj_enemy) < 2 or ((x == 128 or x == 512 or x == 320) and instance_number(obj_enemy) < 3) {
 		var ecks = 320
 		if (x == 128 or x == 512 or x == 320) for(var i = 128; i <= 512; i += 192) {
-			if !(obj_battleEnemy.x == i) {ecks = i; break}
+			if !(obj_enemy.x == i) {ecks = i; break}
 		}
 		else {
-			ecks = !(obj_battleEnemy.x == 192) ? 192 : 448;
+			ecks = !(obj_enemy.x == 192) ? 192 : 448;
 		}
 		var j = 0;
 		for(; j < array_length(global.enemy); j++) {

@@ -20,8 +20,8 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "An unkempt Beard Cub arrives #to steal your aftershave!"
-if instance_number(obj_battleEnemy) > 1 {
-	switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 {
+	switch instance_find(obj_enemy,0).object_index {
 		case obj_enemy_fst_bCub:		obj_battleCore.text[0] = "Two Beard Cubs battle for #a place on the face!" break
 		case obj_enemy_fst_gnome:		obj_battleCore.text[0] = "I've never been a beast of #bearden...&er, burden." break
 		case obj_enemy_fst_gremloblin:	obj_battleCore.text[0] = "Gremloblin does not know why #he is here!&A Beard Cub wants to face off!" break

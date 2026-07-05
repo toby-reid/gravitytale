@@ -22,8 +22,8 @@ image_speed = .5
 //if instance_exists(obj_toBattle) obj_toBattle.music = mus_mansong
 
 obj_battleCore.text[0] = "A Gremloblin smashes its way #into view, confused why it is #here."
-if instance_number(obj_battleEnemy) > 1 {
-	switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 {
+	switch instance_find(obj_enemy,0).object_index {
 		case obj_enemy_fst_bCub:		obj_battleCore.text[0] = "Gremloblin does not know why #he is here!&Beard Cub wants to face off!" break
 		case obj_enemy_fst_gnome:		obj_battleCore.text[0] = "Gnome has been running from #Gremloblin!&Gremloblin doesn't know why!" break
 		case obj_enemy_fst_gremloblin:	obj_battleCore.text[0] = "Gremloblin does not know why #he is here!&Gremloblin doesn't know either!" break

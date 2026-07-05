@@ -18,7 +18,7 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "A pair of glowing eyes watches #you from the darkness!"
-if instance_number(obj_battleEnemy) > 1 switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 switch instance_find(obj_enemy,0).object_index {
 	case obj_enemy_cav_eyebat_passive:	obj_battleCore.text[0] = "A pair of glowing eyes and a #single floating eye...&Better watch yourself." break
 	case obj_enemy_cav_fairy:			obj_battleCore.text[0] = "Of quartz it's a Barf Fairy.&You recognized its foul stench #the moment you entered." break
 	case obj_enemy_cav_geodite:			obj_battleCore.text[0] = "It seems we have reentered the #Stone Age." break

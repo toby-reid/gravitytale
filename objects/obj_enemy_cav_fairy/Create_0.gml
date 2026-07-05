@@ -20,8 +20,8 @@ image_yscale = 2
 if !variable_global_exists("fairydust") global.fairydust = 0
 
 obj_battleCore.text[0] = "I'm fairy certain this will be #a cinch."
-if instance_number(obj_battleEnemy) > 1 {
-	switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 {
+	switch instance_find(obj_enemy,0).object_index {
 		//case obj_enemy_cav_eyebat:
 		case obj_enemy_cav_eyebat_passive:	obj_battleCore.text[0] = "Two flying beasts have arrived #to fight!" break
 		case obj_enemy_cav_fairy:			obj_battleCore.text[0] = "Tatl and Tael are here for #Skull Kid's...&Wait..." break

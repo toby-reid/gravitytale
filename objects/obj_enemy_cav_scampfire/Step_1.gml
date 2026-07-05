@@ -11,6 +11,6 @@ else if hp == 1 if !spare {spare = true; obj_battleCore.text[0] = "Scampfire is 
 
 if global.stage[0] == 5 {
 	timer = 0
-	if instance_number(obj_battleEnemy) == 2 if global.enemy[1] == id timer = 30
+	if instance_number(obj_enemy) == 2 if global.enemy[1] == id timer = 30
 	create = true
 }

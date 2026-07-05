@@ -17,7 +17,7 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "A local Beaver is curious about #your presence."
-if instance_number(obj_battleEnemy) > 1 {
+if instance_number(obj_enemy) > 1 {
 	switch global.enemy[0].object_index {
 		case obj_enemy_scb_beaver:    obj_battleCore.text[0] = "Two Beavers have met to hug." break
 		case obj_enemy_scb_cowl:      obj_battleCore.text[0] = "You stumble upon a Cowl.&Beaver wants to see." break

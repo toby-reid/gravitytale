@@ -25,8 +25,8 @@ alarm[11] = 20
 image_index = irandom((image_number div 2) - 1); // randomize Gnome type
 
 obj_battleCore.text[0] = "Common Gnome enters the scene;&this common Gnome, he seeks a #queen."
-if instance_number(obj_battleEnemy) > 1 {
-    switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 {
+    switch instance_find(obj_enemy,0).object_index {
         case obj_enemy_fst_bCub:        obj_battleCore.text[0] = "I've never been a beast of #bearden...&er, burden." break
         case obj_enemy_fst_gnome:        obj_battleCore.text[0] = "Two Gnomes have teamed up!&Their AT have increased by 2!&(Gnomes together strong)"; obj_enemy_fst_gnome.at += 2 break
         case obj_enemy_fst_gremloblin:    obj_battleCore.text[0] = "Gnome has been running from #Gremloblin!&Gremloblin doesn't know why!" break

@@ -18,8 +18,8 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "Owls say \"WHO.\"&This bird says \"WHERE?\", #\"WHY?\", and \"WHEN?\"."
-if instance_number(obj_battleEnemy) > 1 {
-	switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 {
+	switch instance_find(obj_enemy,0).object_index {
 		case obj_enemy_fst_bCub:		obj_battleCore.text[0] = "Question Quail arrives to #question the plausibility of #a sentient beard." break
 		case obj_enemy_fst_gnome:		obj_battleCore.text[0] = "Question Quail arrives to #question why Gnomes must kidnap #to get a queen." break
 		case obj_enemy_fst_gremloblin:	obj_battleCore.text[0] = "Question Quail arrives to #question how water makes #Gremloblins stronger." break

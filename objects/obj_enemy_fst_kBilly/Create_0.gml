@@ -19,8 +19,8 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "Kill Billy arrives to suck #your blood and steal your #overalls!"
-if instance_number(obj_battleEnemy) > 1 {
-	switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 {
+	switch instance_find(obj_enemy,0).object_index {
 		case obj_enemy_fst_bCub:		obj_battleCore.text[0] = "Two unkempt beards...&Actually, that one's something #else entirely..." break
 		case obj_enemy_fst_gnome:		obj_battleCore.text[0] = "Kill Billy will eat anything!&Gnome does not want to be #\"anything\"!" break
 		case obj_enemy_fst_gremloblin:	obj_battleCore.text[0] = "The two most lethal forces in #the Forest have arrived for a #fierce beatdown!" break

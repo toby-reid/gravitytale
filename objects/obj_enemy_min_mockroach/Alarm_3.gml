@@ -1,7 +1,7 @@
 /// @description Huckle
 
 obj_battleCore.text[1] = "You lay out some huckleberries #for the Mockroach.&";
-if (!self.huckled and instance_number(obj_battleEnemy) == 1)
+if (!self.huckled and instance_number(obj_enemy) == 1)
 {
     self.huckled = true;
     obj_battleCore.text[1] += "Another roach takes the bait!";

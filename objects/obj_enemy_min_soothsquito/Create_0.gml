@@ -22,10 +22,10 @@ y -= 100;
 ystart = y;
 
 obj_battleCore.text[0] = "It was so small, you almost #didn't notice.&That's what you said, anyway.";
-if instance_number(obj_battleEnemy) > 1
+if instance_number(obj_enemy) > 1
 {
     ++self.image_index;
-    switch instance_find(obj_battleEnemy,0).object_index
+    switch instance_find(obj_enemy,0).object_index
     {
         case obj_enemy_min_arachnimorph: obj_battleCore.text[0] = "Suddenly, a mosquito-bite #message appears on your arm:&SPOLLOW THE FIDERS"; break;
         case obj_enemy_min_leprecorn: obj_battleCore.text[0] = "Suddenly, a mosquito-bite #message appears on your arm:&NLOO PH SOHDVH"; break;

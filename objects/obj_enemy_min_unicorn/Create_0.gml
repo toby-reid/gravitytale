@@ -20,10 +20,10 @@ image_xscale = 2;
 image_yscale = 2;
 
 obj_battleCore.text[0] = "It's a legendary magical #creature, perfect in every way!&Just look at those stats!";
-if (instance_number(obj_battleEnemy) > 1)
+if (instance_number(obj_enemy) > 1)
 {
     ++self.image_index;
-    switch instance_find(obj_battleEnemy,0).object_index
+    switch instance_find(obj_enemy,0).object_index
     {
     	case obj_enemy_min_arachnimorph: obj_battleCore.text[0] = "A legendary magical creature #stands to judge a very normal #guy!"; break;
         case obj_enemy_min_leprecorn: obj_battleCore.text[0] = "One horn plays rave music, #the other \"Danny Boy\".&How dreadful."; break;

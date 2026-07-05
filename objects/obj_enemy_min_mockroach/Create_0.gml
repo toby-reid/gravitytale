@@ -20,10 +20,10 @@ image_xscale = 2;
 image_yscale = 2;
 
 obj_battleCore.text[0] = "Loud laughter fills the room.&You instantly feel bad about #yourself.";
-if instance_number(obj_battleEnemy) > 1
+if instance_number(obj_enemy) > 1
 {
     ++self.image_index;
-    switch instance_find(obj_battleEnemy,0).object_index
+    switch instance_find(obj_enemy,0).object_index
     {
         case obj_enemy_min_arachnimorph: obj_battleCore.text[0] = "You see, it's funny because of #how normal he is.&Just like you."; break;
         case obj_enemy_min_leprecorn: obj_battleCore.text[0] = "Pain is hilarious!   #- you, probably"; break;

@@ -20,8 +20,8 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "He's a semi-aquatic, egg-laying #mammal of...&Flannel..."
-if instance_number(obj_battleEnemy) > 1 {
-	switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 {
+	switch instance_find(obj_enemy,0).object_index {
 		case obj_enemy_fst_bCub:		obj_battleCore.text[0] = "Uhhhh...&You ever seen a bearded #Plaidypus before?" break
 		case obj_enemy_fst_gnome:		obj_battleCore.text[0] = "Plaidypus may or may not be #investigating Dr. Shmebulock's #next evil -inator." break
 		case obj_enemy_fst_gremloblin:	obj_battleCore.text[0] = "Gremloblin seeks a new hat!&Plaidypus seeks not to become #one!" break

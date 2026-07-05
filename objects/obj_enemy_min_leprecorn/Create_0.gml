@@ -23,7 +23,7 @@ self.sparkle_range_x = [self.x - self.sprite_xoffset - 10, self.x + (self.sprite
 self.sparkle_range_y = [self.y - self.sprite_yoffset - 10, self.y + (self.sprite_height - self.sprite_yoffset)];
 
 obj_battleCore.text[0] = "You hear the clinking of gold #coins falling to the ground.&Wait, no, they're plastic.";
-if instance_number(obj_battleEnemy) > 1 switch instance_find(obj_battleEnemy,0).object_index
+if instance_number(obj_enemy) > 1 switch instance_find(obj_enemy,0).object_index
 {
     case obj_enemy_min_arachnimorph: obj_battleCore.text[0] = "Pay no attention to that man #behind the legendary creature."; break;
     case obj_enemy_min_leprecorn: obj_battleCore.text[0] = "You can smell sugary marsh-#mallow cereal nearby.&Also rainbows somehow."; break;

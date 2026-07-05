@@ -10,4 +10,4 @@ for(var i = -1*j; i <= j; i += 20) with instance_create_layer(x,y,"Instances",ob
 	at = other.at
 }
 alarm[0] = 120
-if instance_number(obj_battleEnemy) == 1 alarm[0] = 60
+if instance_number(obj_enemy) == 1 alarm[0] = 60

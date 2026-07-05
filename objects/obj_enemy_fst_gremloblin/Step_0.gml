@@ -13,9 +13,9 @@ if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 
 		}
 		lasers[i].num = num
 	}*///old system.
-	if timer == 0 if instance_find(obj_battleEnemy,1) == id timer += 40
-	if timer%80==0 and instance_number(obj_battleEnemy)>1 instance_create_layer(x-2-5*(timer%160)/16,y-76,"Instances",obj_atk_grem_laser)
-	else if timer%40==0 and instance_number(obj_battleEnemy)==1 instance_create_layer(x-2-5*(timer%80)/8,y-76,"Instances",obj_atk_grem_laser)
+	if timer == 0 if instance_find(obj_enemy,1) == id timer += 40
+	if timer%80==0 and instance_number(obj_enemy)>1 instance_create_layer(x-2-5*(timer%160)/16,y-76,"Instances",obj_atk_grem_laser)
+	else if timer%40==0 and instance_number(obj_enemy)==1 instance_create_layer(x-2-5*(timer%80)/8,y-76,"Instances",obj_atk_grem_laser)
 	if timer >= 360 global.stage[0]++
 	timer++
 }

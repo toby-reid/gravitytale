@@ -5,7 +5,7 @@ if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 
 		if timer == 60 if instance_exists(obj_battleAttack) create = false
 		if create {
 			instance_create_layer(x,y,"Instances",obj_atk_moustache)
-			if instance_number(obj_battleEnemy) == 2 other.create = false
+			if instance_number(obj_enemy) == 2 other.create = false
 		}
 		else create = true
 	}

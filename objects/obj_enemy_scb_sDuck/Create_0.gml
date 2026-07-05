@@ -18,8 +18,8 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "A Stomach-Faced Duck #approaches, quacking #aggressively."
-if instance_number(obj_battleEnemy) > 1 {
-	switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 {
+	switch instance_find(obj_enemy,0).object_index {
 		case obj_enemy_scb_beaver:    obj_battleCore.text[0] = "Stomach-Faced Duck wants to #fight!&Beaver just wants to watch." break
 		case obj_enemy_scb_cowl:      obj_battleCore.text[0] = "You stumble upon a Cowl.&Stomach-Faced Duck now wants #to battle." break
 		case obj_enemy_scb_gobbie:    obj_battleCore.text[0] = "A Stomach-Faced Duck challenges #you to a duel.&Gobblewonkie wants a snack." break

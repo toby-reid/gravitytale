@@ -19,8 +19,8 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "A Hawktopus emerges to #continue its lifecycle!"
-if instance_number(obj_battleEnemy) > 1 {
-	switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 {
+	switch instance_find(obj_enemy,0).object_index {
 		case obj_enemy_scb_beaver:    obj_battleCore.text[0] = "A Beaver curiously watches you.&A nearby baby Hawktopus #investigates its prey." break
 		case obj_enemy_scb_cowl:      obj_battleCore.text[0] = "You stumble upon a Cowl.&Hawktopus emerges to stumble #upon you." break
 		case obj_enemy_scb_gobbie:    obj_battleCore.text[0] = "A Hawktopus enters the scene.&Gobblewonkie just wants a #snack." break

@@ -20,7 +20,7 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "Mermando... attacks?"
-if instance_number(obj_battleEnemy) > 1 switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 switch instance_find(obj_enemy,0).object_index {
 	case obj_enemy_scb_beaver:    obj_battleCore.text[0] = "A Merman... attacks..?&A Beaver stops to help." break
 	case obj_enemy_scb_cowl:      obj_battleCore.text[0] = "You trip over both Merman and #Cowl at the same time." break
 	case obj_enemy_scb_gobbie:    obj_battleCore.text[0] = "A Gobblewonkie finds its meal.&A Merman sits helplessly." break

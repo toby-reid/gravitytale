@@ -20,7 +20,7 @@ image_yscale = 2
 alarm[11] = 1+irandom(60)
 
 obj_battleCore.text[0] = "A Manotaur arrives to #de-man-strate the essence of #true manliness!"
-if instance_number(obj_battleEnemy) > 1 switch instance_find(obj_battleEnemy,0).object_index {
+if instance_number(obj_enemy) > 1 switch instance_find(obj_enemy,0).object_index {
 	case obj_enemy_cav_eyebat_passive:	obj_battleCore.text[0] = "A true Man has no fear of bats.&(I'm looking at you, #Eyebatman.)" break
 	case obj_enemy_cav_fairy:			obj_battleCore.text[0] = "A Manotaur arrives, prepared to #install a bathroom exhaust fan." break
 	case obj_enemy_cav_geodite:			obj_battleCore.text[0] = "A Geodite silently watches you.&A nearby Manotaur has found a #head-bashing rock." break
