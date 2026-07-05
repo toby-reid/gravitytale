@@ -5,7 +5,7 @@ switch stage {
 				stage = 1
 				text[0] = ""
 				for(var i = 0; i < array_length(buy); i++) {
-					text[0] += global.ITEM_INFO[? buy[i]].name + "#";
+					text[0] += global.ITEM_INFO[buy[i]].name + "#";
 				}
 				text[0] += "Back..."
 				audio_play_sound(sfx_shop_select,0,false)
@@ -37,7 +37,7 @@ switch stage {
 			}
 			if itemCt < array_length(global.inventory) {
 				var item_name = buy[choice[1]];
-				var item = global.ITEM_INFO[? item_name];
+				var item = global.ITEM_INFO[item_name];
 				if !confirm {
 					if global.player.money >= item.price {
 						confirm = true

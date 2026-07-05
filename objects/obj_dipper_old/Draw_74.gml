@@ -296,7 +296,7 @@ if menu[0] > 0 {
 				for(var i = 0, base = 8 * page_number; i < 8; i++) {
 					var item_name = global.inventory[base + i];
 					if (item_name != ITEM_INDEX.NONE) {
-						inv += global.ITEM_INFO[? item_name].name;
+						inv += global.ITEM_INFO[item_name].name;
 					}
 					inv += "\n";
 				}
@@ -324,7 +324,7 @@ if menu[0] > 0 {
 				}
 			}
 			else {
-				draw_text_color(212,78+32*global.menu[1],global.ITEM_INFO[? global.inventory[global.menu[1]]].name,c_yellow,c_yellow,c_yellow,c_yellow,1)
+				draw_text_color(212,78+32*global.menu[1],global.ITEM_INFO[global.inventory[global.menu[1]]].name,c_yellow,c_yellow,c_yellow,c_yellow,1)
 				switch menu[1] {
 					case 0: draw_text_color(212,340,"USE",c_yellow,c_yellow,c_yellow,c_yellow,1) break
 					case 1: draw_text_color(212+string_width("USE   "),340,"INFO",c_yellow,c_yellow,c_yellow,c_yellow,1) break
@@ -340,12 +340,12 @@ if menu[0] > 0 {
 				for(var i = 0, base = 8 * page_number; i < 8; i++) {
 					var item_name = global.inventory[base + i];
 					if (item_name != ITEM_INDEX.NONE) {
-						inv += global.ITEM_INFO[? item_name].name;
+						inv += global.ITEM_INFO[item_name].name;
 					}
 					inv += "\n";
 				}
 				draw_text_ext(212,78,inv,32,1500);
-				draw_text_color(212,78+32*global.menu[1],global.ITEM_INFO[? global.inventory[global.menu[1]]].name,c_yellow,c_yellow,c_yellow,c_yellow,1);
+				draw_text_color(212,78+32*global.menu[1],global.ITEM_INFO[global.inventory[global.menu[1]]].name,c_yellow,c_yellow,c_yellow,c_yellow,1);
 				if (multipage) {
 					// align the page number right above the DRO of DROP
 					draw_text(212 + string_width("USE   INFO  "), 340, string_concat(page_number + 1, "/2"));
@@ -365,7 +365,7 @@ if menu[0] > 0 {
 			}
 			if keyboard_check_pressed(vk_enter) {
 				var item_name = global.inventory[global.menu[1]];
-				var item = global.ITEM_INFO[? item_name];
+				var item = global.ITEM_INFO[item_name];
 				
 				menu[0] = 2
 				if !audio_is_playing(sfx_heal) audio_play_sound(sfx_select,0,false)

@@ -116,7 +116,7 @@ if !instance_exists(obj_toBattle) {
                     var item_index = global.stage[3];
                     var item_name = inventory[item_index];
                     if keyboard_check_pressed(vk_enter) {
-                        var item = global.ITEM_INFO[? item_name];
+                        var item = global.ITEM_INFO[item_name];
                         if item_name != ITEM_INDEX.HOLY_WATER {
                             var heal = item.heal;
                             if (item.usable) {
@@ -180,7 +180,7 @@ if !instance_exists(obj_toBattle) {
                         }
                         var draw_item_name = inventory[draw_item_index];
                         if (draw_item_name != ITEM_INDEX.NONE) {
-                            var draw_item = global.ITEM_INFO[? draw_item_name];
+                            var draw_item = global.ITEM_INFO[draw_item_name];
                             draw_text(
                                 55 + (272 * (i div 2)) + string_width("* "),
                                 269 + (35 * (i % 2)),

@@ -35,7 +35,7 @@ if (!instance_exists(obj_textbox))
     else if (m_menu == DIPPER_MENU.ITEM_ACTION)
     {
         var _item_name = m_inventory[m_menu_item];
-        var _item = global.ITEM_INFO[? _item_name];
+        var _item = global.ITEM_INFO[_item_name];
         m_consumed_item = false;
         switch m_menu_itemAction
         {

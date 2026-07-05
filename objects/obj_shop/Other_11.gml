@@ -6,7 +6,7 @@ switch stage {
 	case 1:
 		if choice[1] < array_length(buy) {
 			var item_name = buy[choice[1]];
-			var item = global.ITEM_INFO[? item_name];
+			var item = global.ITEM_INFO[item_name];
 			var price = (item_name == ITEM_INDEX.MAGIC_ARMOR) ? (global.player.money + 1) : item.price;
 			var heal = item.heal;
 			if heal < 0 heal = "full";

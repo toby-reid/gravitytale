@@ -13,7 +13,7 @@ function scr_remove_local_item(_local_inventory, _local_index)
         _success = false;
         _global_index = array_get_index(global.inventory, _item_name);
     }
-    var _item = global.ITEM_INFO[? _item_name];
+    var _item = global.ITEM_INFO[_item_name];
     global.inventory[_global_index] = _item.useResult;
     return _success;
 }
