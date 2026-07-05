@@ -10,7 +10,7 @@ if hp <= 0 {
 		instance_destroy(bubble)
 	}
 }
-if (global.player.hp <= 0)
+else if (global.player.hp <= 0)
 {
     scr_diedToEnemy(ENEMY.SHERIFF);
 }

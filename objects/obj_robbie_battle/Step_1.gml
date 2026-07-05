@@ -17,6 +17,6 @@ if (global.player.genocide == RUN.ACTIVE) or spare {
 }
 
 if global.player.hp <= 0 {
-	scr_diedToEnemy(ENEMY.ROBBIE);
+	scr_diedToEnemy(enemy_index);
 }
 if global.stage[0] == 5 {timer = 0; create = true}

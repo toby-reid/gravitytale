@@ -11,3 +11,8 @@ else if hp < 5 obj_battleCore.text[0] = "Manly Dan takes a knee, #refusing to gi
 else if obj_battleCore.text[0] == "Manly Dan takes a knee, #refusing to give up." {if stage < 3 spare = false; obj_battleCore.text[0] = "Manly Dan stands up once more, #ready to fight once again."}
 
 if global.stage[0] == 5 {timer = 0; buffed = false; encouraged = false; audio_sound_pitch(sfx_whoosh,1)}
+
+if (global.player.hp <= 0)
+{
+    scr_diedToEnemy(enemy_index);
+}

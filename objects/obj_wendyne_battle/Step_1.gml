@@ -24,3 +24,8 @@ if(global.stage[0] == 5) if(timer != 0) {
 		run = false;
 	}
 }
+
+if (global.player.hp <= 0)
+{
+    scr_diedToEnemy(enemy_index);
+}

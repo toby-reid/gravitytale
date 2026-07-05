@@ -7,7 +7,7 @@ if(instance_exists(obj_dipper)) switch stage {
 				alarm[0] = 30;
 				camera_set_view_target(view_camera[0],noone);
 				if (global.player.genocide == RUN.ACTIVE) { // Abort geno if not enough kills
-					if (global.areaKills[? AREA.CAVES].killCount < global.areaKills[? AREA.CAVES].MAX_KILLS) {
+					if (global.areaKills[AREA.CAVES] < global.MAX_KILLS[AREA.CAVES]) {
 						global.player.genocide = RUN.ABORTED;
 					}
 				}

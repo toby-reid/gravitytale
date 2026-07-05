@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_generate_enemy_indices(){
 	enum ENEMY {
+        NONE,
 		BLENDIN, //from SCB
 		BEAVER, //BONUS - with a chainsaw
 		SOOS, //FINAL - SCB

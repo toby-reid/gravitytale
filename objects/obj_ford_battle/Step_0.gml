@@ -2,7 +2,7 @@
 if image_alpha == 1 if !instance_exists(obj_textBubble) {
 	if global.stage[0] == 4 {
 		if stage != -1 {
-			if global.player.genocide == RUN.ACTIVE and global.areaKills[? AREA.FOREST].killCount >= global.areaKills[? AREA.FOREST].MAX_KILLS {
+			if is_genocide {
 				global.stage[0]++ // he won't attack if you're in full geno
 			}
 			else if(global.stage[1] == 0 and global.stage[4] != 0) {//shot down

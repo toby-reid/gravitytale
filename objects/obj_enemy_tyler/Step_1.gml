@@ -7,7 +7,18 @@ if hp <= 0 { if global.stage[0] != 3 {
 	if image_alpha == 0 instance_destroy()
 	instance_destroy(bubble)
 }}
-else if hp == 1 if !spare {spare = true; obj_battleCore.text[0] = "Tyler is ready to collapse, #but his resolve holds strong."}
+else if (hp == 1)
+{
+    if (!spare)
+    {
+        spare = true;
+        obj_battleCore.text[0] = "Tyler is ready to collapse, #but his resolve holds strong.";
+    }
+}
+else if (global.player.hp <= 0)
+{
+    scr_diedToEnemy(enemy_index);
+}
 
 if global.stage[0] == 5 {
 	timer = 0

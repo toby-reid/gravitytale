@@ -19,6 +19,4 @@ image_xscale = 2
 image_yscale = 2
 
 obj_battleCore.text[0] = "An enemy is here!"
-/*if instance_number(obj_battleEnemy) > 1 switch instance_find(obj_battleEnemy,0).object_index {
-	
-}
+// if (instance_number(obj_battleEnemy) > 1) switch instance_find(obj_battleEnemy,0).object_index { }

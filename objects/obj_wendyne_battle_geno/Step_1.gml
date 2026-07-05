@@ -96,6 +96,10 @@ if hp <= 0 {
 	}
 	else if(sprite_index != spr_wendyne_btl_dying) audio_stop_all()
 }
+else if (global.player.hp <= 0)
+{
+    scr_diedToEnemy(enemy_index);
+}
 else if(global.stage[0] == 3 and global.stage[1] == 0 and global.stage[4] > 0 and global.stage[4] <= 10) {
 	if(sprite_index == spr_wendyne_btl_legs) global.stage[4] = 999999;
 	else {

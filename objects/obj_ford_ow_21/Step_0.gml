@@ -6,7 +6,7 @@ switch stage {
 		audio_play_sound(mus_nyeh,0,true)
 		with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 			var died = scr_getDeathCount(ENEMY.FORD) > 0;
-			if global.player.genocide == RUN.ACTIVE and global.areaKills[? area].killCount >= global.areaKills[? area].MAX_KILLS {
+			if global.player.genocide == RUN.ACTIVE and global.areaKills[AREA.FOREST] >= global.MAX_KILLS[AREA.FOREST] {
 				text = [
 					"CHILD!",
 					"YOU HAVE FINALLY #REACHED THE FINAL #BOSS!",

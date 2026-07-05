@@ -19,8 +19,8 @@
     "path":"folders/Objects/Battle/Caves/Grunts.yy",
   },
   "parentObjectId":{
-    "name":"obj_battleEnemy",
-    "path":"objects/obj_battleEnemy/obj_battleEnemy.yy",
+    "name":"obj_enemy",
+    "path":"objects/obj_enemy/obj_enemy.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

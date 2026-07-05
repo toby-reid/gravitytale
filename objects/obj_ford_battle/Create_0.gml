@@ -33,6 +33,7 @@ timer = 0
 create = true
 deathx = 0
 stage = -1
+is_genocide = false;
 
 image_xscale = 2
 image_yscale = 2
@@ -40,7 +41,9 @@ image_speed = 0
 
 global.enemy = [id]
 obj_battleCore.text[0] = "Grunkle Ford can save this #dimension when all of Bill's #puppets are destroyed!"
-if global.player.genocide == RUN.ACTIVE and global.areaKills[? AREA.FOREST].killCount >= global.areaKills[? AREA.FOREST].MAX_KILLS {
+if (global.player.genocide == RUN.ACTIVE and global.areaKills[AREA.FOREST] >= global.MAX_KILLS[AREA.FOREST])
+{
+    is_genocide = true;
 	obj_battleCore.text[0] = "Grunkle Ford demonstrates how #to win without killing!&He is trying to spare you!"
 	run = false
 	spare = true

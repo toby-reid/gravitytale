@@ -5,7 +5,6 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":3,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
@@ -17,14 +16,16 @@
   ],
   "managed":true,
   "name":"obj_ford_battle",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_boss","path":"objects/obj_enemy_boss/obj_enemy_boss.yy",},"propertyId":{"name":"enemy_index","path":"objects/obj_enemy_boss/obj_enemy_boss.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"ENEMY.FORD",},
+  ],
   "parent":{
     "name":"Ford",
     "path":"folders/Objects/Characters/Ford.yy",
   },
   "parentObjectId":{
-    "name":"obj_battleEnemy",
-    "path":"objects/obj_battleEnemy/obj_battleEnemy.yy",
+    "name":"obj_enemy_boss",
+    "path":"objects/obj_enemy_boss/obj_enemy_boss.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

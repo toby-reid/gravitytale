@@ -65,9 +65,8 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
     if (!variable_global_exists("hat"))              global.hat = false;
     scr_writeBools(_bin, [global.study, global.defeated_unicorn, global.hat]);
 
-    // TODO: Update global.areaKills to be an array of objects, not this DS crap
     for (var i = 0; i < AREA.TOTAL; i++) {
-        scr_writeInteger(_bin, global.areaKills[? i].killCount, 1);
+        scr_writeInteger(_bin, global.areaKills[i], 1);
     }
 
     if (instance_exists(obj_dipper)) {

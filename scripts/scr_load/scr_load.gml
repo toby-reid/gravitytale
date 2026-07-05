@@ -1,11 +1,13 @@
 /// @desc Loads the latest save from the binary Save file.
 /// @return {Bool}: Whether loading was successful
-function scr_load() {
+function scr_load()
+{
     var _bin = file_bin_open(global.SAVE_FILES.SAVE_DATA.NAME, 0); // open in 'read' mode
 
     if (scr_readString(_bin) != global.ENCRYPTION_KEY)
     {
         file_bin_close(_bin);
+        show_debug_message("Got invalid encryption key");
         return false;
     }
     room_goto(asset_get_index(scr_readString(_bin)));
@@ -57,10 +59,9 @@ function scr_load() {
         global.hat = study_unicorn_hat[2];
     }
 
-    // TODO: Update global.areaKills to be an array of objects
     for (var i = 0; i < AREA.TOTAL; i++)
     {
-        global.areaKills[? i].killCount = scr_readInteger(_bin, 1);
+        global.areaKills[i] = scr_readInteger(_bin, 1);
     }
 
     with instance_create_layer(0, 0, layer, obj_dipperLoader)

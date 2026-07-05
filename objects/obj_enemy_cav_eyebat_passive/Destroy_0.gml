@@ -4,8 +4,5 @@
 //Alarm[5-6]: Spare/Run actions
 
 if hp <= 0 {//possible if they use the AT upgrade
-	obj_battleCore.lv += lv
-	global.areaKills[? area].killCount++;
-	global.player.kills++
-	obj_battleCore.sb += sb
+	event_inherited();
 }

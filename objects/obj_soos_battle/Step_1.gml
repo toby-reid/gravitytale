@@ -26,7 +26,7 @@ else if variable_instance_exists(id,"result") switch result {
 }
 
 if global.player.hp <= 0 {
-	scr_diedToEnemy(ENEMY.SOOS);
+	scr_diedToEnemy(enemy_index);
 }
 if (global.player.genocide == RUN.ACTIVE) or spare {
 	if global.stage[4] > 0 and global.stage[1] == 0 {
