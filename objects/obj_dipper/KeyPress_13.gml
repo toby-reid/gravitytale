@@ -77,6 +77,11 @@ if (!instance_exists(obj_textbox))
                     {
                         set_text(_item.useResponse);
                     }
+                    if (_item_name == ITEM_INDEX.GLITTER)
+                    {
+                        scr_get_item(_item_name, false);
+                        m_inventory = scr_get_inventory();
+                    }
                     audio_play_sound(sfx_select, 0, false);
                 }
                 break;
@@ -90,11 +95,11 @@ if (!instance_exists(obj_textbox))
                 break;
             case DIPPER_MENU_ITEM.DROP:
                 var _text;
-                var _disposed = false;
+                var _dispose = false;
                 switch _item_name
                 {
                     case ITEM_INDEX.PIZZA_INFINITE:
-                        _disposed = true;
+                        _dispose = true;
                         //fallthrough
                     case ITEM_INDEX.PIZZA_REFRESHING:
                         _text = ["(You tried tossing the pizza, #but it returned to your pocket.)", "(May the overwhelming guilt #destroy you.)"];
@@ -102,18 +107,33 @@ if (!instance_exists(obj_textbox))
                     case ITEM_INDEX.COOKIE_JAR_FULL:
                     case ITEM_INDEX.COOKIE_JAR_2:
                     case ITEM_INDEX.COOKIE_JAR_1:
-                        _disposed = true;
+                        _dispose = true;
                         _text = "(You threw away Slow's Cookie.&(Probably had coconut in it #or something.)";
                         break;
                     case ITEM_INDEX.COOKIE_JAR_EMPTY:
                         _text = ["(You were going to throw away #Slow's Cookie Jar,", "but you liked its articulate #designs too much.)"];
                         break;
                     case ITEM_INDEX.ONION_1:
-                        _disposed = true;
+                        _dispose = true;
                         _text = ["(You threw away the rest #of the onion.)", "(Left too long in the sunlight, #it will soon get brown and #hairy.)"];
                         break;
+                    case ITEM_INDEX.GLITTER:
+                        _dispose = true;
+                        if (scr_count_array(m_inventory, _item_name) == 1)
+                        {
+                            _text = "(You throw away a handful #of glitter.&(It replenishes itself.)";
+                        }
+                        else
+                        {
+                            _text = "(You throw away the entire #bottle.&(Some glitter still lingers.)";
+                            call_later(1, time_source_units_frames, function() {
+                                scr_remove_local_item(m_inventory, m_menu_item, ITEM_INDEX.NONE);
+                                m_inventory = scr_get_inventory();
+                            }, false);
+                        }
+                        break;
                     default:
-                        _disposed = true;
+                        _dispose = true;
                         if _item_name >= ITEM_INDEX.ONION_1 && _item_name <= ITEM_INDEX.ONION_MAX
                         {
                             _text = "(You peeled off a layer of the #onion and tossed it away.&(Now you're making me cry.)";
@@ -128,14 +148,14 @@ if (!instance_exists(obj_textbox))
                 {
                     set_text(_text);
                 }
-                if (_disposed)
+                if (_dispose)
                 {
                     audio_play_sound(sfx_grass, 0, false);
                     scr_remove_local_item(m_inventory, m_menu_item);
                     m_inventory = scr_get_inventory();
                     m_consumed_item = true;
                 }
-                else
+                else if (!audio_is_playing(sfx_grass))
                 {
                     audio_play_sound(sfx_select, 0, false);
                 }

@@ -10,7 +10,7 @@ else if instance_exists(obj_dipper) {
 				case AREA.FOREST:		goto = btl_fst_general; prevMusic = mus_snowy;  break;
 				case AREA.CAVES:		goto = btl_cav_general; /*prevMusic set at CC*/ break;
 				case AREA.MINES:        goto = btl_min_general; prevMusic = mus_medium; break;
-				case AREA.TENT:         break; // TODO: Implement when you add the room
+				// AREA.TENT should not have random encounters
 			}
 			if loc != AREA.UNKNOWN {
 				start_alert();

@@ -1,4 +1,3 @@
-/// @desc TODO: Draw Butter
 if (has_butter)
 {
     var _blend = c_white;

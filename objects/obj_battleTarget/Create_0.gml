@@ -1,5 +1,5 @@
 image_speed = 0;
-alarm[0] = irandom_range(5, 15);
+alarm[0] = obj_battleCore.enemies_glittered ? 20 : irandom_range(5, 15);
 total_distance_to_travel = 560;
 travel_time = 70;
 var _halfway = (total_distance_to_travel div 2) - 3; // arbitrary -3 to get it in the right spot

@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.997891,
+  "duration":1.9978912,
   "exportDir":"",
   "name":"sfx_seismic_charge",
   "parent":{

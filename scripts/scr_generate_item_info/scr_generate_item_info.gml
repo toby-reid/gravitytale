@@ -32,6 +32,7 @@ enum ITEM_INDEX
     ONION_14,
     ONION_15,
     ONION_MAX,
+    GLITTER,
     //FAIRY_DUST,
     //PB_SHARD,
     HOLY_WATER,
@@ -222,6 +223,16 @@ function scr_generate_item_info()
             (i == ITEM_INDEX.ONION_1) ? ITEM_INDEX.NONE : (i - 1)
         );
     }
+    _item_info[ITEM_INDEX.GLITTER] = new ItemInfo(
+        ITEM_INDEX.GLITTER,
+        "Glitter",
+        "Multiplies and replenishes.&You'll hit easier with it.",
+        "Wow! Look at that shine!&The glitter replenished itself.",
+        0,
+        0,
+        false,
+        ITEM_INDEX.GLITTER
+    );
     //FAIRY_DUST,
     //PB_SHARD,
     _item_info[ITEM_INDEX.HOLY_WATER] = new ItemInfo(

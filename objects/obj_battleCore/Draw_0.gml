@@ -109,69 +109,6 @@ if !instance_exists(obj_toBattle) {
                     }
                 break
                 case 2://inventory. 0 > 2 \n 1 > 3; 4 > 6 \n 5 > 7
-                    if keyboard_check_pressed(vk_down) m_select_item(DIRECTION.DOWN) ;
-                    if keyboard_check_pressed(vk_up) m_select_item(DIRECTION.UP);
-                    if keyboard_check_pressed(vk_right) m_select_item(DIRECTION.RIGHT);
-                    if keyboard_check_pressed(vk_left) m_select_item(DIRECTION.LEFT);
-                    var item_index = global.stage[3];
-                    var item_name = inventory[item_index];
-                    if keyboard_check_pressed(vk_enter) {
-                        var item = global.ITEM_INFO[item_name];
-                        if item_name != ITEM_INDEX.HOLY_WATER {
-                            var heal = item.heal;
-                            if (item.usable) {
-                                global.player.hp += (heal >= 0) ? heal : global.player.maxHp;
-                                if (global.player.hp > global.player.maxHp) {
-                                    global.player.hp = global.player.maxHp;
-                                }
-                                if (heal != 0) {
-                                    audio_play_sound(sfx_heal, 0, false);
-                                }
-                                var restore = (heal >= 0) ? string(heal) : "All";
-                                text[1] = restore + " HP restored.";
-                                scr_remove_local_item(inventory, item_index);
-                                inventory = scr_get_inventory();
-                            } else {
-                                text[1] = item.name + " can't be used here!";
-                            }
-                            text[1] = string_concat(text[1], "&", item.useResponse);
-                            if (!audio_is_playing(sfx_heal)) {
-                                audio_play_sound(sfx_select, 0, false);
-                            }
-                        } else {
-                            var enemies = [
-                                obj_enemy_scb_beaver,
-                                obj_enemy_scb_sDuck,
-                                obj_enemy_scb_merman,
-                                obj_enemy_scb_hawktopus,
-                                obj_enemy_scb_gobbie,
-                                obj_enemy_fst_plaidypus,
-                                obj_enemy_cav_scampfire,
-                                obj_enemy_cav_geodite,
-                                obj_enemy_cav_gobber,
-                                obj_enemy_min_mockroach,
-                                obj_enemy_min_zombie,
-                                obj_enemy_tnt_clone,
-                                obj_enemy_scb_chainsawBeaver,
-                                obj_enemy_cav_ghost,
-                                obj_enemy_min_zBoyfriend
-                            ];
-                            audio_play_sound(sfx_glass,0,false)
-                            text[1] = "You threw the bottle at the enemy.&Nothing happened.&Seems it only works on certain types."
-                            for(var i = 0; i < array_length(enemies); i++) {
-                                if instance_exists(enemies[i]) {
-                                    enemies[i].hp = 0;
-                                    text[1] = "You threw the bottle at the enemy.&Undead, Water, and Abomination #types were dispelled!";
-                                    // Do not break from loop; all enemies should be checked and killed
-                                }
-                            }
-                            scr_remove_local_item(inventory, item_index);
-                            inventory = scr_get_inventory();
-                        }
-
-                        global.stage[0] = 3;
-                        charCount = 0;
-                    }
                     for (var i = 0, item_page = 4 * (global.stage[3] div 4), inventory_length = array_length(inventory); i < 4; i++) {
                         var draw_item_index = item_page + i;
                         if (draw_item_index >= inventory_length)
@@ -190,12 +127,85 @@ if !instance_exists(obj_toBattle) {
                             }
                         }
                     }
-
                     var pages = ((array_length(inventory) - 1) div 4) + 1;
                     if (pages > 1)
                     {
                         var this_page = (global.stage[3] div 4) + 1;
                         draw_text(407, 339, string_concat("Page ", this_page, " of ", pages));
+                    }
+
+                    if keyboard_check_pressed(vk_down) m_select_item(DIRECTION.DOWN) ;
+                    if keyboard_check_pressed(vk_up) m_select_item(DIRECTION.UP);
+                    if keyboard_check_pressed(vk_right) m_select_item(DIRECTION.RIGHT);
+                    if keyboard_check_pressed(vk_left) m_select_item(DIRECTION.LEFT);
+                    var item_index = global.stage[3];
+                    var item_name = inventory[item_index];
+                    if keyboard_check_pressed(vk_enter) {
+                        var item = global.ITEM_INFO[item_name];
+                        switch item_name
+                        {
+                            case ITEM_INDEX.GLITTER:
+                                text[1] = enemies_glittered ? "Nothing happens.&Your previous glitter colonies #are still thriving." : "You throw glitter around.&It doesn't reach everywhere, but #it certainly gets everywhere.";
+                                audio_play_sound(sfx_grass, 0, false);
+                                scr_get_item(item_name, false);
+                                inventory = scr_get_inventory();
+                                enemies_glittered = true;
+                                break;
+                            case ITEM_INDEX.HOLY_WATER:
+                                var enemies = [
+                                    obj_enemy_scb_beaver,
+                                    obj_enemy_scb_sDuck,
+                                    obj_enemy_scb_merman,
+                                    obj_enemy_scb_hawktopus,
+                                    obj_enemy_scb_gobbie,
+                                    obj_enemy_fst_plaidypus,
+                                    obj_enemy_cav_scampfire,
+                                    obj_enemy_cav_geodite,
+                                    obj_enemy_cav_gobber,
+                                    obj_enemy_min_mockroach,
+                                    obj_enemy_min_zombie,
+                                    obj_enemy_tnt_clone,
+                                    obj_enemy_scb_chainsawBeaver,
+                                    obj_enemy_cav_ghost,
+                                    obj_enemy_min_zBoyfriend
+                                ];
+                                text[1] = "You threw the bottle at the enemy.&Nothing happened.&Seems it only works on certain types.";
+                                array_foreach(enemies, function(_enemy) {
+                                    with _enemy // `with` ensures this only triggers if the enemy exists
+                                    {
+                                        hp = 0;
+                                        other.text[1] = "You threw the bottle at the enemy.&It dissolves into a disgusting #pile of goop.";
+                                    }
+                                });
+                                audio_play_sound(sfx_glass,0,false);
+                                scr_remove_local_item(inventory, item_index);
+                                inventory = scr_get_inventory();
+                                break;
+                            default:
+                                var heal = item.heal;
+                                if (item.usable) {
+                                    global.player.hp += (heal >= 0) ? heal : global.player.maxHp;
+                                    if (global.player.hp > global.player.maxHp) {
+                                        global.player.hp = global.player.maxHp;
+                                    }
+                                    if (heal != 0) {
+                                        audio_play_sound(sfx_heal, 0, false);
+                                    }
+                                    var restore = (heal >= 0) ? string(heal) : "All";
+                                    text[1] = restore + " HP restored.";
+                                    scr_remove_local_item(inventory, item_index);
+                                    inventory = scr_get_inventory();
+                                } else {
+                                    text[1] = item.name + " can't be used here!";
+                                }
+                                text[1] = string_concat(text[1], "&", item.useResponse);
+                                if (!audio_is_playing(sfx_heal)) {
+                                    audio_play_sound(sfx_select, 0, false);
+                                }
+                                break;
+                        }
+                        global.stage[0] = 3;
+                        charCount = 0;
                     }
                 break;
                 case 3:
@@ -413,4 +423,12 @@ if !instance_exists(obj_toBattle) {
     draw_healthbar(280, 400, 300 + 4*global.player.lv, 420, 100 * (global.player.hp/global.player.maxHp), c_red, c_yellow, c_yellow, 0, true, false);
     draw_text(315 + 4*global.player.lv, 403, string_concat(global.player.hp, " / ", global.player.maxHp));
     //if instance_exists(obj_stans_battle) we'll move that text, add a second healthbar, draw hpkr,1, and calculate Karma
+}
+
+if (enemies_glittered)
+{
+    for (var i = 0, _sparkle_count = irandom_range(2, 5); i < _sparkle_count; ++i)
+    {
+        instance_create_layer(irandom(room_width), irandom(room_height div 2), layer, obj_leprecorn_sparkle);
+    }
 }

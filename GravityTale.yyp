@@ -581,6 +581,7 @@
     {"id":{"name":"scr_binInt","path":"scripts/scr_binInt/scr_binInt.yy",},},
     {"id":{"name":"scr_binString","path":"scripts/scr_binString/scr_binString.yy",},},
     {"id":{"name":"scr_call_soos","path":"scripts/scr_call_soos/scr_call_soos.yy",},},
+    {"id":{"name":"scr_count_array","path":"scripts/scr_count_array/scr_count_array.yy",},},
     {"id":{"name":"scr_direction","path":"scripts/scr_direction/scr_direction.yy",},},
     {"id":{"name":"scr_enum_flag","path":"scripts/scr_enum_flag/scr_enum_flag.yy",},},
     {"id":{"name":"scr_format_int","path":"scripts/scr_format_int/scr_format_int.yy",},},

@@ -16,6 +16,7 @@ goto = room_previous(room)//Should be changed by obj_toBattle
 music = silence;//Music to play after battle Ends. Will not play if still noone.
 battle = false
 run = true;
+enemies_glittered = false;
 
 inventory = scr_get_inventory();
 m_select_item = function(_dir)

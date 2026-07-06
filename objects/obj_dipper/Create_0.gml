@@ -47,6 +47,7 @@ set_costume = function()
     if (global.player.mabel)
     {
         if (_name == "waddle") sprite_index = spr_mabdles;
+        else if (global.player.df == AT_DF.NONE || global.player.costume == COSTUME.NO_DF) sprite_index = spr_mabel; // TODO: Add Mabel without a sweater
         else if (
             global.player.df == AT_DF.UPGRADE
             && (global.player.costume == COSTUME.DF_UPGRADE || global.player.costume == COSTUME.DEFAULT)

@@ -1,2 +1,2 @@
-/// @description Timer / Time's up
+/// @description Time's up
 stop_the_bar(0);

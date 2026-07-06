@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_count_array",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_count_array",
+  "parent":{
+    "name":"Arrays",
+    "path":"folders/Scripts/Arrays.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
