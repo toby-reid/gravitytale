@@ -34,8 +34,8 @@ groups:
   C:
     C1:
       sends_to_group: A
-      starts_active: false
-      # toggles_plates:  # TODO: This presents a dead end.......
+      starts_active: true
+      # toggles_plates:  # TODO: This should(?) present a dead end.......
       #   - C1
     C2:
       sends_to_group: D

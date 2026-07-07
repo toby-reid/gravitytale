@@ -1,51 +1,72 @@
-- -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-- -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-- - direction: 0
-    at_start: true
+- - direction: 3
+  - direction: null
+  - direction: null
+  - direction: 3
     is_strong: true
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-- -
+  - direction: 1
+  - direction: 2
+  - direction: null
+  - direction: 2
+    is_strong: false
+- - direction: 1
+    is_strong: true
+  - direction: 1
+  - direction: 0
+    is_strong: true
+  - direction: 2
+    is_strong: true
+  - direction: null
+    is_strong: true
+  - direction: null
+  - direction: 2
+    is_strong: true
+  - direction: null
+    reaches_end: true
+- - direction: 0
+  - direction: 1
+    is_strong: true
+  - direction: 3
+    is_strong: true
+  - direction: 1
+  - direction: 2
+    is_strong: true
+  - direction: null
+  - direction: 2
+  - direction: 1
+- - direction: null
+    is_strong: true
   - direction: null
     at_start: true
-  -
-  -
-  -
-  -
-  -
-  -
-- -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-- -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
+  - direction: 2
+    is_strong: true
+  - direction: null
+    is_strong: true
+  - direction: 2
+  - direction: 2
+  - direction: null
+  - direction: 2
+    is_strong: true
+- - direction: null
+  - direction: 2
+  - direction: null
+  - direction: 0
+    is_strong: true
+  - direction: 1
+  - direction: null
+  - direction: 3
+    is_strong: true
+  - direction: null
+    is_strong: true
+- - direction: 0
+  - direction: 2
+    is_strong: true
+  - direction: null
+    is_strong: true
+  - direction: 2
+  - direction: 0
+    is_strong: true
+  - direction: 0
+    is_strong: true
+  - direction: null
+    is_strong: true
+  - direction: 1

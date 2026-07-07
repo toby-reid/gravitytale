@@ -128,9 +128,6 @@ class Config:
                         config_obj.starting_plates.add(coordinate)
                     if plate.reaches_end:
                         config_obj.ending_plates.add(coordinate)
-        if not config_obj.starting_plates or not config_obj.ending_plates:
-            print(f"Config {config} has no starting and/or ending plates")
-            return None
         return config_obj
 
 
@@ -235,6 +232,7 @@ def main(args: list[str]) -> int:
     if config is None:
         return 1
     graph = Graph.from_config(config)
+    print(f"Graph:\n{str(graph)}")
     path_to_exit = graph.find_path_to_exit()
     if path_to_exit is None:
         print("No path to exit")
@@ -247,7 +245,6 @@ def main(args: list[str]) -> int:
         )
     else:
         print("No unreachable coords")
-    print(f"Graph:\n{str(graph)}")
     return 0
 
 

@@ -1,0 +1,100 @@
+groups:
+  top-hook:
+    th_tip-down:
+      sends_to_group: bottom-hook
+      starts_active: true
+      toggles_plates:
+        - th_handle-weak
+        - bh_tip-up
+    th_tip-left:
+      sends_to_group: top-pod
+      starts_active: false
+      toggles_plates:
+        - tp_up
+        - tp_down-weak
+    th_handle-weak:
+      sends_to_group: top-pod
+      starts_active: true
+      toggles_plates:
+        - tp_down-strong
+    th_handle-strong:
+      sends_to_group: bottom-pod
+      starts_active: false
+      toggles_plates:
+        - bp_up-strong
+        - bp_down
+    th_exit:
+      sends_to_group: END
+      starts_active: false
+  top-pod:
+    tp_up:
+      sends_to_group: top-hook
+      starts_active: true
+      toggles_plates:
+        - th_tip-down
+        - th_handle-strong
+    tp_down-weak:
+      sends_to_group: bottom-pod
+      starts_active: true
+      toggles_plates:
+        - bp_up-weak
+    tp_down-strong:
+      sends_to_group: bottom-hook
+      starts_active: false
+      toggles_plates:
+        - bh_handle-strong
+    tp_return:
+      sends_to_group: START
+      starts_active: true
+  bottom-pod:
+    bp_down:
+      sends_to_group: bottom-hook
+      starts_active: true
+      toggles_plates:
+        - bh_tip-left
+    bp_up-weak:
+      sends_to_group: top-pod
+      starts_active: false
+      toggles_plates:
+        - tp_up
+        - tp_down-strong
+    bp_up-strong:
+      sends_to_group: top-hook
+      starts_active: false
+      toggles_plates:
+        - th_exit
+        - th_tip-down
+    bp_return:
+      sends_to_group: START
+      starts_active: true
+  bottom-hook:
+    bh_tip-up:
+      sends_to_group: top-hook
+      starts_active: true
+    bh_tip-left:
+      sends_to_group: bottom-pod
+      starts_active: false
+      toggles_plates:
+        - bp_up-strong
+    bh_handle-weak:
+      sends_to_group: bottom-pod
+      starts_active: true
+      toggles_plates:
+        - bp_down
+    bh_handle-strong:
+      sends_to_group: top-pod
+      starts_active: false
+      toggles_plates:
+        - tp_down-weak
+        - th_handle-weak
+  END:
+  START:
+    start:
+      sends_to_group: bottom-hook
+      starts_active: true
+      toggles_plates:
+        - start
+start_group: START
+end_group: END
+ok_deadend_groups:
+  - START

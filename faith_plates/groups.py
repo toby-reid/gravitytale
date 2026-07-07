@@ -91,7 +91,7 @@ class Graph:
         """TODO"""
 
         current_group: GroupName
-        last_plate: Optional[PlateName] = field(compare=False)
+        last_plate: Optional[PlateName]
         active_state: dict[PlateName, bool]
         routes: list["Graph.Node"] = field(
             default_factory=list, init=False, repr=False, compare=False
@@ -107,39 +107,32 @@ class Graph:
                 for plate_name, plate in plates.items():
                     active_state[plate_name] = plate.starts_active
             start = Graph.Node(start_group, None, active_state)
-            start.make_connections(full_map, [start])
+            start.make_connections(full_map)
             return start
 
         def is_dead_end(self) -> bool:
             """TODO"""
             return len(self.routes) == 0
 
-        def make_connections(
-            self,
-            full_map: dict[GroupName, dict[PlateName, Plate]],
-            known_nodes: list["Graph.Node"],
-        ) -> None:
+        def make_connections(self, full_map: dict[GroupName, dict[PlateName, Plate]]) -> None:
             """TODO"""
-            for plate_name, plate in full_map[self.current_group].items():
-                if self.active_state[plate_name]:
-                    connection = self._step_plate(plate)
-                    if connection not in known_nodes:
-                        known_nodes.append(connection)
-                        known_nodes.append(connection)
-                        self.routes.append(connection)
-                        connection.make_connections(full_map, known_nodes)
-                    else:
-                        connection_index = known_nodes.index(connection)
-                        connection = known_nodes[connection_index]
-                        found_connection = False
-                        for route in self.routes:
-                            if route == connection:
-                                found_connection = True
-                                break
-                        if not found_connection:
-                            self.routes.append(known_nodes[connection_index])
+            known_nodes = [self]
+            queue = [self]
+            while queue:
+                node = queue.pop(0)
+                for plate_name, plate in full_map[node.current_group].items():
+                    if node.active_state[plate_name]:
+                        connection = node.step_plate(plate)
+                        if connection not in known_nodes:
+                            known_nodes.append(connection)
+                            node.routes.append(connection)
+                            queue.append(connection)
+                        else:
+                            connection = known_nodes[known_nodes.index(connection)]
+                            if connection not in node.routes:
+                                node.routes.append(connection)
 
-        def _step_plate(self, on_plate: Plate) -> "Graph.Node":
+        def step_plate(self, on_plate: Plate) -> "Graph.Node":
             """TODO"""
             new_group = on_plate.sends_to_group
             now_active = self.active_state.copy()
@@ -176,21 +169,19 @@ class Graph:
 
     def has_dead_ends(self) -> bool:
         """TODO"""
-        checked_nodes: list[Graph.Node] = []
+        checked_nodes: list[Graph.Node] = [self.start_state]
         queue = [[self.start_state]]
         while queue:
             path = queue.pop(0)
             next_check = path[-1]
-            if next_check in checked_nodes:
-                continue
+            checked_nodes.append(next_check)
             if next_check.is_dead_end() and next_check.current_group not in self.ok_dead_ends:
                 print(
                     f"Dead end found in state {next_check} "
                     f"(Path to reach: {[str(node) for node in path]})"
                 )
                 return True
-            queue.extend((path + [route]) for route in next_check.routes)
-            checked_nodes.append(next_check)
+            queue.extend((path + [route]) for route in next_check.routes if route not in checked_nodes)
         return False
 
     def check_plate_names(self) -> bool:
