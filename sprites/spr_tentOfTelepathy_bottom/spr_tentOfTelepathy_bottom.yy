@@ -1,8 +1,8 @@
 {
   "$GMSprite":"v2",
-  "%Name":"spr_tentOfTelepathy",
+  "%Name":"spr_tentOfTelepathy_bottom",
   "bboxMode":0,
-  "bbox_bottom":405,
+  "bbox_bottom":85,
   "bbox_left":0,
   "bbox_right":307,
   "bbox_top":0,
@@ -16,13 +16,13 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":406,
+  "height":86,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"c9813b7a-e5c7-4646-9acc-c9ba9312558b","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"c9813b7a-e5c7-4646-9acc-c9ba9312558b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
     {"$GMImageLayer":"","%Name":"68d72a55-94ff-4907-aac8-5edff40daf5b","blendMode":0,"displayName":"default","isLocked":false,"name":"68d72a55-94ff-4907-aac8-5edff40daf5b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_tentOfTelepathy",
+  "name":"spr_tentOfTelepathy_bottom",
   "nineSlice":null,
   "origin":1,
   "parent":{
@@ -34,7 +34,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"spr_tentOfTelepathy",
+    "%Name":"spr_tentOfTelepathy_bottom",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -58,7 +58,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_tentOfTelepathy",
+    "name":"spr_tentOfTelepathy_bottom",
     "playback":1,
     "playbackSpeed":5.0,
     "playbackSpeedType":0,
@@ -70,7 +70,7 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"62c57a82-e01f-46d1-8738-b412b220a767","path":"sprites/spr_tentOfTelepathy/spr_tentOfTelepathy.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"62c57a82-e01f-46d1-8738-b412b220a767","path":"sprites/spr_tentOfTelepathy_bottom/spr_tentOfTelepathy_bottom.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"36907065-da5d-46e3-83b7-55317a64854a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
