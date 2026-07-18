@@ -57,7 +57,6 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
     scr_writeBools(_bin, global.enemy_killed);
     scr_writeBools(_bin, global.enemy_spared);
 
-    if (!variable_global_exists("dummy")) global.dummy = 0;
     if (!variable_global_exists("ghost")) global.ghost = 0;
     scr_writeInteger(_bin, ((global.dummy << 4) & 0b1111) + (global.ghost & 0b1111));
     if (!variable_global_exists("study"))            global.study = false;

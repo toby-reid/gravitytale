@@ -7,11 +7,17 @@ switch stage {
 				"to @FF7F27FIGHT@ffffff.",
 				"If possible, always try #to @FF7F27ACT @ffffffon Enemies instead #of attacking.",
 				"Sometimes, however, you #can't spare them, in #which case...",
-				"Here's a @ff7f27NYARF GUN @ffffffI #found in my work trash.&Use it as needed.",
+                string_concat(
+                    "Here's a @ff7f27",
+                    global.player.mabel ? "GRAPPLING HOOK" : "NYARF GUN",
+                    "@ffffff ",
+                    global.player.mabel ? "from #the gift shop at my work" : "I #found in the trash at work",
+                    ".&Use it only as needed."
+                ),
 				"Then, to defend yourself, #you'll need to know the #basics...",
 				"Why don't you try ACTing #on that @993D3DDUMMY @ffffffover there?"
 			]
-			if global.player.mabel text[4] = "Here's a @ff7f27GRAPPLING HOOK @fffffffrom #the gift shop at my work.&Use it only as needed."
+			if global.player.mabel text[4] = 
 			head = [
 				spr_soos_face_happy,
 				spr_soos_face_happy,
@@ -53,7 +59,7 @@ switch stage {
 		if !instance_exists(obj_textbox_old) sprite_index = spr_soos_d
 		global.soos = 5.5
 	break
-	case 4: if variable_global_exists("dummy") {
+	case 4: if (global.enemy_killed[ENEMY.DUMMY] || global.enemy_spared[ENEMY.DUMMY]) {
 		switch global.dummy {
 			case 0: with instance_create_layer(160,192,"Instances",obj_textbox_old) {
 				text = [

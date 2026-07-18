@@ -1,6 +1,6 @@
 if instance_exists(obj_dipper) if obj_dipper.canMove
 	if (place_meeting(x-2,y,obj_dipper) and obj_dipper.dir==0) or (place_meeting(x,y+2,obj_dipper) and obj_dipper.dir==1) or (place_meeting(x+2,y,obj_dipper) and obj_dipper.dir==2) or (place_meeting(x,y-2,obj_dipper) and obj_dipper.dir==3) {
-		if !variable_global_exists("dummy") {
+		if (!global.enemy_killed[ENEMY.DUMMY] && !global.enemy_spared[ENEMY.DUMMY]) {
 			obj_soos_ow_6.stage++
 			with instance_create_layer(0,0,"Instances",obj_toBattle) {
 				music = mus_anticipation

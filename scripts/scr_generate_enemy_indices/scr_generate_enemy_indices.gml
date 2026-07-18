@@ -3,6 +3,7 @@
 function scr_generate_enemy_indices(){
 	enum ENEMY {
         NONE,
+        DUMMY,
 		BLENDIN, //from SCB
 		BEAVER, //BONUS - with a chainsaw
 		SOOS, //FINAL - SCB

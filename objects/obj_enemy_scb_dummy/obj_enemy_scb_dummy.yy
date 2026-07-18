@@ -15,14 +15,16 @@
   ],
   "managed":true,
   "name":"obj_enemy_scb_dummy",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy_boss","path":"objects/obj_enemy_boss/obj_enemy_boss.yy",},"propertyId":{"name":"enemy_index","path":"objects/obj_enemy_boss/obj_enemy_boss.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"ENEMY.DUMMY",},
+  ],
   "parent":{
     "name":"Scuttlebutt",
     "path":"folders/Objects/Battle/Scuttlebutt.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy",
-    "path":"objects/obj_enemy/obj_enemy.yy",
+    "name":"obj_enemy_boss",
+    "path":"objects/obj_enemy_boss/obj_enemy_boss.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
