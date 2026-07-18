@@ -9,7 +9,7 @@ function scr_generate_statuses()
     global.oneTimeInstances = []; // Array of instance IDs for objects with a one-time effect
     global.completedPuzzleRooms = []; // Array of room names for completed puzzles
 
-    global.ghost = 0;
+    global.ghost = 0; // the highest category of ghost we have defeated
     global.hat = false;
     global.dummy = 0;
     global.study = false; // hawktopus study

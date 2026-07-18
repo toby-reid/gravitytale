@@ -6,5 +6,4 @@ if global.enemy_killed[ENEMY.TREMBLEY] or global.enemy_spared[ENEMY.TREMBLEY] or
 	grow = true
 	
 	stage = 0
-	if !variable_global_exists("ghost") global.ghost = 0
 }
