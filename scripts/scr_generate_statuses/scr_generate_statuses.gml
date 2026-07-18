@@ -14,7 +14,7 @@ function scr_generate_statuses()
     global.dummy = 0;
     global.studied_hawktopus = false;
     global.karen = false; // whether Karen can be encountered
-    global.defeated_unicorn = false;
+    global.defeated_unicorn = false; // TODO: This is unused
 
     global.teleport = false;
     global.toRoom_num = 0;
