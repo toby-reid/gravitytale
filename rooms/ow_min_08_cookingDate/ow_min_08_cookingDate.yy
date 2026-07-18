@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"ow_min_08_cookingDate",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/ow_min_08_cookingDate/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,

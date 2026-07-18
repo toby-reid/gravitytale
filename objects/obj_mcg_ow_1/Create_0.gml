@@ -1,7 +1,7 @@
-if (!variable_global_exists("gideon")) {
-	global.gideon = 0;
-} else if (global.gideon >= 1) {
-	instance_destroy();
+if (global.gideon >= 1)
+{
+    instance_destroy();
+    exit;
 }
 
 draw_y = 21;

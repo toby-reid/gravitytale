@@ -1,6 +1,7 @@
-if (variable_global_exists("gideon") and global.gideon > 8)
+if (global.gideon > 8)
 {
     instance_destroy();
+    exit;
 }
 sprite_index = spr_gideonDate_cooking_backdrop;
 text = [
