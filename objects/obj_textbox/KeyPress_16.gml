@@ -1,5 +1,12 @@
 /// @desc Skip text (if skippable)
-if (currentPageConfig.isSkippable && charCount < m_charCountTarget)
+if (charCount < m_charCountTarget)
 {
-    skip_text();
+    if (currentPageConfig.isSkippable)
+    {
+        skip_text();
+    }
+}
+else if (!is_undefined(currentPageConfig.cancelAction))
+{
+    currentPageConfig.cancelAction();
 }

@@ -22,6 +22,7 @@ m_styles = [];
 m_sounds = [];
 m_choiceCounts = [];
 m_actions = [];
+m_cancelActions = [];
 m_charRates = [];
 m_autoskips = [];
 m_autocontinues = [];
@@ -54,6 +55,7 @@ currentPageConfig = {
     sound: tlk_default,
     choiceCount: 1,
     actions: [],
+    cancelAction: undefined,
     charRate: 2,
     autoskipAt: -1,
     autocontinue: false,
@@ -190,7 +192,7 @@ set_choiceCount = function(_index, _count) { set_choiceCounts(_count, _index, _i
 /// # Warning
 /// This function is not equipped to take an array of arrays (i.e., an array containing actions for each step).
 /// To do that, use `set_actions_all`.
-/// @param {Real} _index Page at which to set the given action
+/// @param {Real} _index Page at which to set the given action(s)
 /// @param {Function|Array<Function>} _action_or_actions Action or actions to take at the end of the given page
 set_actions = function(_index, _action_or_actions)
 {
@@ -223,19 +225,54 @@ set_actions_all = function(_all_actions, _start_index = -1)
     }
 }
 
+/// @desc Set action to take when the user presses the cancel/skip button (X/ENTER) when text is already full.
+/// Especially useful for choices.
+/// @param {Real} _index Page at which to set the given action
+/// @param {Function} _action Action to take on a cancel event
+set_cancelAction = function(_index, _action)
+{
+    m_set_range("m_cancelActions", _action, m_DEFAULTS.cancelAction, _index, _index + 1);
+}
+/// @desc Set actions to take when the user presses the cancel/skip button when text is already full at each respective page.
+/// @param {Array<Function|Undefined>} _all_actions Array of actions for each page
+/// @param {Real} _start_index The index at which to start inserting the given actions (omit to replace entire array)
+set_cancelAction_all = function(_all_actions, _start_index = -1)
+{
+    var _all_actions_length = array_length(_all_actions);
+    var _start = _start_index;
+    if (_start_index < 0)
+    {
+        m_cancelActions = array_create(_all_actions_length, m_DEFAULTS.cancelAction);
+        _start = 0;
+    }
+    for (var i = 0; i < _all_actions_length; ++i)
+    {
+        var _action = _all_actions[i];
+        if (!is_undefined(_action))
+        {
+            set_cancelAction(_start + i, _action);
+        }
+    }
+}
+
 /// @desc Set choices for the given index.
 /// This will also modify `m_text`, autoskip, and (of course) choice counts for this index.
 /// This function is not appropriate for use with strings with any special characters, such as pauses, newlines with bullets (`&`), colors (`@`), etc.
 /// @param {Real} _index The index with choices
 /// @param {Array<String>} _choices The actual choices. Indicate newline splits with `#`
 /// @param {Array<Function>} _actions_for_choices Optional actions to take depending on the choice (must be same length as `_choices`)
-set_choices = function(_index, _choices, _actions_for_choices = [])
+/// @param {Function|Undefined} _cancel_action Optional action to take if the user hits the cancel key (`X` or `ENTER`)
+set_choices = function(_index, _choices, _actions_for_choices = [], _cancel_action = undefined)
 {
-    var _choice_count = array_length(_choices);
     if (array_length(_actions_for_choices) > 0)
     {
         set_actions(_index, _actions_for_choices);
     }
+    if (!is_undefined(_cancel_action))
+    {
+        set_cancelAction(_index, _cancel_action);
+    }
+    var _choice_count = array_length(_choices);
     set_choiceCount(_index, _choice_count);
     
     // TODO: Account for special characters, like color...
@@ -395,6 +432,7 @@ m_process_page = function(_page)
     currentPageConfig.sound = (array_length(m_sounds) > _page) ? m_sounds[_page] : m_DEFAULTS.sound;
     currentPageConfig.choiceCount = (array_length(m_choiceCounts) > _page) ? m_choiceCounts[_page] : m_DEFAULTS.choiceCount;
     currentPageConfig.actions = (array_length(m_actions) > _page) ? m_actions[_page] : m_DEFAULTS.actions;
+    currentPageConfig.cancelAction = (array_length(m_cancelActions) > _page) ? m_actions[_page] : m_DEFAULTS.cancelAction;
     currentPageConfig.charRate = (array_length(m_charRates) > _page) ? m_charRates[_page] : m_DEFAULTS.charRate;
     // autoskip already set along with colors
     currentPageConfig.autocontinue = (array_length(m_autocontinues) > _page) ? m_autocontinues[_page] : m_DEFAULTS.autocontinue;
