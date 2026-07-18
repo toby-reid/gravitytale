@@ -77,12 +77,10 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
 
     scr_writeString(_bin, audio_get_name(_music));
 
-    if (!variable_global_exists("toby"))   global.toby   = 0;
     if (!variable_global_exists("wendy"))  global.wendy  = 0;
     if (!variable_global_exists("gideon")) global.gideon = 0;
     scr_writeInteger(_bin, global.soos);
     scr_writeInteger(_bin, global.stans);
-    scr_writeInteger(_bin, global.toby);
     scr_writeInteger(_bin, global.wendy);
     scr_writeInteger(_bin, global.gideon);
     scr_writeInteger(_bin, global.gideon_tent);

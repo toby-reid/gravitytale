@@ -81,7 +81,6 @@ function scr_load()
 
     global.soos   = scr_readInteger(_bin);
     global.stans  = scr_readInteger(_bin);
-    global.toby   = scr_readInteger(_bin);
     global.wendy  = scr_readInteger(_bin);
     global.gideon = scr_readInteger(_bin);
     global.gideon_tent = scr_readInteger(_bin);
