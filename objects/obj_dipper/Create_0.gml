@@ -56,6 +56,7 @@ set_costume = function()
     }
     else
     {
+        // TODO: Add fedora (global.has_fedora)
         if (_name == "lamby") sprite_index = spr_diplamb;
         else if (global.player.df == AT_DF.NONE || global.player.costume == COSTUME.NO_DF) sprite_index = spr_dipper;
         else if (

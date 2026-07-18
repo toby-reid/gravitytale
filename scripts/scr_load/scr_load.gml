@@ -56,7 +56,7 @@ function scr_load()
         var study_unicorn_hat = scr_readBools(_bin, 3);
         global.studied_hawktopus = study_unicorn_hat[0];
         global.defeated_unicorn = study_unicorn_hat[1];
-        global.hat = study_unicorn_hat[2];
+        global.has_fedora = study_unicorn_hat[2];
     }
 
     for (var i = 0; i < AREA.TOTAL; i++)

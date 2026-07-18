@@ -10,7 +10,7 @@ function scr_generate_statuses()
     global.completedPuzzleRooms = []; // Array of room names for completed puzzles
 
     global.ghost = 0; // the highest category of ghost we have defeated
-    global.hat = false;
+    global.has_fedora = false; // as acquired from Plaidypus
     global.dummy = 0;
     global.studied_hawktopus = false;
     global.karen = false; // whether Karen can be encountered
