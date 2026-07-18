@@ -1,13 +1,7 @@
-if (!instance_exists(obj_textbox) && instance_exists(obj_dipper) && obj_dipper.canMove)
+if (is_interaction())
 {
-    var _dip_dir = obj_dipper.dir;
     var _ybox = (y > camera_get_view_y(view_camera[0]) + 140) ? 48 : 192;
-    if (
-        (place_meeting(x - 2, y, obj_dipper) && _dip_dir == 0)
-        || (place_meeting(x, y + 2, obj_dipper) && _dip_dir == 1)
-        || (place_meeting(x + 2, y, obj_dipper) && _dip_dir == 2)
-        || (place_meeting(x, y - 2, obj_dipper) && _dip_dir == 3 && sprite_index != spr_sign)
-    )
+    if (sprite_index != spr_sign || obj_dipper.dir != DIRECTION.DOWN)
     {
         with instance_create_layer(160, _ybox, layer, obj_textbox)
         {
@@ -42,7 +36,7 @@ if (!instance_exists(obj_textbox) && instance_exists(obj_dipper) && obj_dipper.c
             }
         }
     }
-    else if (place_meeting(x, y - 2, obj_dipper) && _dip_dir == 3)
+    else
     {
         with instance_create_layer(160, _ybox, layer, obj_textbox)
         {

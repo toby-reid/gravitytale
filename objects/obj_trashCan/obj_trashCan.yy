@@ -4,19 +4,19 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":13,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":73,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_trashCan",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_sign","path":"objects/obj_sign/obj_sign.yy",},"propertyId":{"name":"text","path":"objects/obj_sign/obj_sign.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[\"An error occurred.&Please report this!&Code: @ff0000TSHTX\"]",},
+  ],
   "parent":{
     "name":"Overworld",
     "path":"folders/Objects/Overworld.yy",
   },
   "parentObjectId":{
-    "name":"obj_sign_old",
-    "path":"objects/obj_sign_old/obj_sign_old.yy",
+    "name":"obj_sign",
+    "path":"objects/obj_sign/obj_sign.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -32,10 +32,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v2","%Name":"get","filters":[],"listItems":[],"multiselect":false,"name":"get","rangeEnabled":false,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"ITEM_NAME.NONE","varType":1,},
-    {"$GMObjectProperty":"v2","%Name":"newText","filters":[],"listItems":[
-        "\"If you are reading this, #an error has occurred.&Error Code: @ff0000TRASH\"",
-      ],"multiselect":false,"name":"newText","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"If you are reading this, #an error has occurred.&Error Code: @ff0000TRASH\"","varType":6,},
+    {"$GMObjectProperty":"v2","%Name":"get","filters":[],"listItems":[],"multiselect":false,"name":"get","rangeEnabled":false,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"ITEM_INDEX.NONE","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"newText","filters":[],"listItems":[],"multiselect":false,"name":"newText","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[\"(The trash can is empty.)\"]","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"full_inventory_text","filters":[],"listItems":[],"multiselect":false,"name":"full_inventory_text","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[\"(You can see an #[ITEM], #but your inventory is full.)\"]","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

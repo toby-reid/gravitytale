@@ -6,7 +6,8 @@ function scr_generate_statuses()
     global.gideon = 0;
     global.gideon_tent = 0;
 
-    global.completedPuzzleRooms = []; // Array of room names for completed puzzles
+    global.oneTimeInstances = []; // Array of instance IDs for objects with a one-time effect
+    global.buttSwitch = []; // Array of room names for completed puzzles
 
     global.fairydust = 0;
     global.ghost = 0;

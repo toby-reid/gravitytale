@@ -9,7 +9,7 @@ if get != ITEM_INDEX.NONE {
 					with instance_create_layer(160,ybox,"Instances",obj_textbox_old) {
 						text = [string_concat("Got ", item.name, " - Heals ", item.heal, ".&", item.description)];
 					}
-					array_push(global.trashCan, id);
+					array_push(global.oneTimeInstances, id);
 					instance_destroy()
 				} else with instance_create_layer(160,ybox,"Instances",obj_textbox_old) {
 					text = ["(Whoops!&(Looks like your inventory is #already full.)"];

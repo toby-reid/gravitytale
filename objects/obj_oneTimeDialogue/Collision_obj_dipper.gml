@@ -8,6 +8,6 @@ if (other.canMove)
         set_sounds(other.sounds);
         set_styles(other.styles);
     }
-    array_push(global.trashCan, id);
+    array_push(global.oneTimeInstances, id);
     instance_destroy();
 }

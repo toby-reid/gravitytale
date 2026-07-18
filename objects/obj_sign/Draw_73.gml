@@ -1,4 +1,4 @@
 if (instance_exists(obj_dipper) && obj_dipper.y < y)
 {
-    draw_self()
+    draw_self();
 }

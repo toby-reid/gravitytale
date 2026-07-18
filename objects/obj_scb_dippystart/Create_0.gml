@@ -1,17 +1,15 @@
-if !variable_global_exists("trashCan") global.trashCan = []
-var inst = false;
-for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == id {
-	instance_destroy(id, false)
-	inst = true
-	break
+if (array_contains(global.oneTimeInstances, id))
+{
+    instance_destroy(id, false);
+    exit;
 }
-if !inst {
-	with obj_dipper {
-		canMove = false
-		image_angle = 90
-		image_index = 0
-		dir = 0
-	}
-	alarm[0] = 120
-	global.dir = 0
+
+with obj_dipper
+{
+    canMove = false
+    image_angle = 90
+    image_index = 0
+    dir = 0
 }
+alarm[0] = 120
+global.dir = 0

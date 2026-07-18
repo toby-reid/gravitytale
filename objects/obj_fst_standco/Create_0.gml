@@ -23,7 +23,8 @@ head = [
 	spr_stans_head_neutral
 ]
 for(var i = 0; i < array_length(text); i++) if head[i] != noone {font[i] = fnt_sans_gui; sound[i] = tlk_stans}
-active = false
-if !variable_global_exists("trashCan") global.trashCan = [];
-else for(var i = 0; i < array_length(global.trashCan); i++) if global.trashCan[i] == id {image_index = 1; break}
-if global.player.genocide == RUN.ACTIVE or global.enemy_killed[ENEMY.FORD] image_index = 1
+active = false;
+if (array_contains(global.oneTimeInstances, id) || global.player.genocide == RUN.ACTIVE || global.enemy_killed[ENEMY.FORD])
+{
+    image_index = 1;
+}

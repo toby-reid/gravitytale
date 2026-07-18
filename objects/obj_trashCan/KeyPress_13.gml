@@ -1,19 +1,23 @@
-if !instance_exists(obj_textbox_old) if instance_exists(obj_dipper) if obj_dipper.canMove {
-	var dir = obj_dipper.dir
-	var ybox = (y > camera_get_view_y(view_camera[0]) + 140) ? 48 : 192;
-	if (place_meeting(x-2,y,obj_dipper) and dir==0) or (place_meeting(x,y+2,obj_dipper) and dir==1) or (place_meeting(x+2,y,obj_dipper) and dir==2) or (place_meeting(x,y-2,obj_dipper) and dir==3) {
-		with instance_create_layer(160,ybox,"Instances",obj_textbox_old) {
-			text = other.text
-			font = other.font
-			sound = other.sound
-			charRate = other.charRate
-		}
-		if get != ITEM_INDEX.NONE {
-			if scr_get_item(get, true) {
-				event_user(0);
-				array_push(global.trashCan, id);
-			}
-			else obj_textbox_old.text[array_length(obj_textbox_old.text)] = "(Whoops!&(You lack inventory space.&(Come back later...)"
-		}
-	}
+if (is_interaction())
+{
+    event_inherited();
+    if (get != ITEM_INDEX.NONE)
+    {
+        if (scr_get_item(get, true))
+        {
+            empty_can();
+            array_push(global.oneTimeInstances, id);
+        }
+        else
+        {
+            var _full_text = is_array(full_inventory_text) ? full_inventory_text : [full_inventory_text];
+            var _full_length = array_length(_full_text);
+            var _new_text = array_create(_full_length);
+            for (var i = 0; i < _full_length; ++i)
+            {
+                _new_text[i] = string_replace(_full_text[i], "[ITEM]", global.ITEM_INFO[get].name);
+            }
+            obj_textbox.set_text(_new_text);
+        }
+    }
 }

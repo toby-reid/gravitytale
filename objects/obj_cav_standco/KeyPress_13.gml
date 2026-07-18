@@ -22,7 +22,7 @@ else if stage == 1 with obj_textbox_old {
 	else if page == 12 if charCount >= string_length(text[12]) {
 		with other {
 			alarm[0] = 5;
-			array_push(global.trashCan, id);
+			array_push(global.oneTimeInstances, id);
 		}
 	}
 }

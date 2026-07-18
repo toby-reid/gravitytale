@@ -15,5 +15,5 @@ else if active if obj_textbox_old.page == array_length(obj_textbox_old.text)-1 i
 	image_index++
 	active = false
 	audio_play_sound(sfx_click,0,false)
-	array_push(global.trashCan, id);
+	array_push(global.oneTimeInstances, id);
 }

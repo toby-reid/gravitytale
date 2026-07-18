@@ -28,11 +28,7 @@ head = [
 	spr_stans_head_hollowEye
 ]
 stage = 0
-if !variable_global_exists("trashCan") global.trashCan = []
-else for(var i = 0; i < array_length(global.trashCan); i++) {
-	if global.trashCan[i] == id {
-		image_index = 1; 
-		break;
-	}
+if (array_contains(global.oneTimeInstances, id) || global.player.genocide == RUN.ACTIVE || global.enemy_killed[ENEMY.FORD])
+{
+    image_index = 1;
 }
-if global.enemy_killed[ENEMY.FORD] image_index = 1;
