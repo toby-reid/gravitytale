@@ -17,7 +17,6 @@ harvested = false
 
 image_xscale = 2
 image_yscale = 2
-if !variable_global_exists("fairydust") global.fairydust = 0
 
 obj_battleCore.text[0] = "I'm fairy certain this will be #a cinch."
 if instance_number(obj_enemy) > 1 {

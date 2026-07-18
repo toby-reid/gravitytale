@@ -33,7 +33,7 @@ enum ITEM_INDEX
     ONION_15,
     ONION_MAX,
     GLITTER,
-    //FAIRY_DUST,
+    FAIRY_DUST,
     //PB_SHARD,
     HOLY_WATER,
     //JERKY,
@@ -233,7 +233,15 @@ function scr_generate_item_info()
         false,
         ITEM_INDEX.GLITTER
     );
-    //FAIRY_DUST,
+    _item_info[ITEM_INDEX.FAIRY_DUST] = new ItemInfo(
+        ITEM_INDEX.FAIRY_DUST,
+        "Fairy Dust",
+        "Powerful, yet illegal.&Puts enemies to sleep.",
+        "Now is not the time #to use that !",
+        0,
+        0,
+        false
+    );
     //PB_SHARD,
     _item_info[ITEM_INDEX.HOLY_WATER] = new ItemInfo(
         ITEM_INDEX.HOLY_WATER,

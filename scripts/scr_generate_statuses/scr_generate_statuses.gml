@@ -7,9 +7,8 @@ function scr_generate_statuses()
     global.gideon_tent = 0;
 
     global.oneTimeInstances = []; // Array of instance IDs for objects with a one-time effect
-    global.buttSwitch = []; // Array of room names for completed puzzles
+    global.completedPuzzleRooms = []; // Array of room names for completed puzzles
 
-    global.fairydust = 0;
     global.ghost = 0;
     global.hat = false;
     global.dummy = 0;
@@ -21,4 +20,4 @@ function scr_generate_statuses()
     global.teleport = false;
     global.toRoom_num = 0;
 }
-// TODO: Investigate buttSwitch, trashCan, battleTimer
+// TODO: Investigate battleTimer

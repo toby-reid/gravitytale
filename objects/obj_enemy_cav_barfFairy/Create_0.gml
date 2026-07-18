@@ -19,7 +19,6 @@ index = 0//used for the wings
 image_xscale = 2 - 4*(x > 340) - 4*(x == 320)*irandom(1)
 image_yscale = 2
 image_speed = 0
-if !variable_global_exists("fairydust") global.fairydust = 0
 
 obj_battleCore.text[0] = "Perhaps you should don a #rain jacket."
 if instance_number(obj_enemy) > 1 {

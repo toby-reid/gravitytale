@@ -86,9 +86,8 @@ function scr_load()
     global.gideon = scr_readInteger(_bin);
 
     {
-        var ham_fairy = scr_readBools(_bin, 2);
-        global.hamstick = ham_fairy[0];
-        global.fairydust = ham_fairy[1];
+        var ham = scr_readBools(_bin, 1);
+        global.hamstick = ham[0];
     }
 
     global.completedPuzzleRooms = scr_readArray(_bin, scr_readString);

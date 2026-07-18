@@ -151,6 +151,13 @@ if !instance_exists(obj_toBattle) {
                                 inventory = scr_get_inventory();
                                 enemies_glittered = true;
                                 break;
+                            case ITEM_INDEX.FAIRY_DUST:
+                                // TODO: Implement fairy dust
+                                text[1] = "Whoops&Fairy dust hasn't been #implemented yet.";
+                                text[0] = "Seems you just wasted an item.&And a turn.";
+                                scr_remove_local_item(inventory, item_index);
+                                inventory = scr_get_inventory();
+                                break;
                             case ITEM_INDEX.HOLY_WATER:
                                 var enemies = [
                                     obj_enemy_scb_beaver,
