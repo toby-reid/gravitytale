@@ -98,7 +98,9 @@ if instance_exists(obj_dipper) switch stage {
 		}
 		audio_play_sound(sfx_comlink,0,false)
 		stage++
-		global.wendy = .1
+        // TODO: Make a more elegant solution than a collision object
+        regression_prevention = instance_create_layer(obj_dipper.x - 40, 0, layer, obj_collide);
+        regression_prevention.image_yscale = 12;
 	} break
 	case 1: if alarm[1] == -1 if obj_dipper.x >= 640 {
 		obj_dipper.canMove = false
@@ -114,8 +116,8 @@ if instance_exists(obj_dipper) switch stage {
 		hspeed = 0
 		stage++
 		obj_dipper.canMove = true
-		global.wendy = .3
 		if !global.enemy_spared[ENEMY.SOOS] instance_destroy()
+        else regression_prevention.x = obj_dipper.x - 40;
 	} break
 	case 3: if obj_dipper.x >= 830 {
 		with instance_create_layer(160,48,"Instances",obj_textbox_old) {
