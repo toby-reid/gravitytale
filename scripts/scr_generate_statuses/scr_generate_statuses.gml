@@ -10,13 +10,15 @@ function scr_generate_statuses()
     global.completedPuzzleRooms = []; // Array of room names for completed puzzles
 
     global.ghost = 0; // the highest category of ghost we have defeated
-    global.has_fedora = false; // as acquired from Plaidypus
-    global.dummy = 0;
-    global.studied_hawktopus = false;
+    global.has_fedora = false; // as acquired from Plaidypus - TODO: This is unused
+    global.dummy = 0; // the outcome of the wax stans fight
+    global.studied_hawktopus = false; // whether we have studied the hawktopus
     global.karen = false; // whether Karen can be encountered
     global.defeated_unicorn = false; // TODO: This is unused
 
+    // Used by obj_toRoom
     global.teleport = false;
     global.toRoom_num = 0;
+    global.dir = DIRECTION.DOWN;
 }
 // TODO: Investigate battleTimer

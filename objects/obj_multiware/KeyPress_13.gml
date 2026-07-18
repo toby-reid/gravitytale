@@ -25,8 +25,7 @@ if(!global.karen)
 					"And it seems the pro-#gram has prepared a #special hell for peo-#ple like you.",
 					"Good luck with her #when you reach the #tent, child."
 				];
-				buy = [buy[0],buy[1],buy[2]];
-				talk = [talk[0],talk[1],talk[2]];
+				m_remove_armor();
 				text[0] = dialogue[0];
 				audio_play_sound(sfx_select,0,false);
 				charCount = 0;

@@ -35,22 +35,23 @@ msg = {
 			"I discovered it many #years ago, when a #mute cross-dressing #child wandered #through here.",
 			"Being an RPG shop-#keeper, I was com-#pelled to purchase #all his useless junk.",
 			"I would dearly love #to part with it, but #it seems to be truly #magic...&Or cursed.",
-			"As you may have #noticed, it adjusts #its own prices.",
-			"I can't ever sell it #for less than what #it's listed for.",
 			"So, child, the only #thing I can say is #that it is pointless #to look into.",
 			"Now, then, what is it #you actually wanted #to buy?"
 		]],
 	l_talkGenocide: [
 		"Oh, the small human #wishes to speak?",
-		"I find it quite #ironic, child, that #between you and me, #they would likely #still consider me #the monster.",
+		"I find it quite #ironic, child, that #between you and me, #they would #still consider me #the monster.",
 		"But, of course, such is life.",
 		"Now, then, I think we both know you're not here to chat.&What is it you wanted to buy?" ],
 	r_sellFor: "I can buy#that for"
 };
 text[0] = msg.l_greeting;
-if(!variable_global_exists("karen")) global.karen = false;//set to 'true' if Karen *can* be encountered.
 armor = 0;
+
+m_remove_armor = function() {
+    array_resize(buy, 3);
+    array_resize(talk, 3);
+}
 if (global.karen) {
-	buy = [buy[0],buy[1],buy[2]];
-	talk = [talk[0],talk[1],talk[2]];
+    m_remove_armor();
 }
