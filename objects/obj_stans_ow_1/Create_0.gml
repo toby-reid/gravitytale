@@ -1,15 +1,17 @@
 stage = 0
 image_speed = 0
 killTime = 0
-if !variable_global_exists("stans") global.stans = 0
+make_save = function(_music) {
+    with instance_create_layer(1220,60,layer,obj_save) {
+        rmName = "Forest - Grunkle Stans"
+        text = "(Meeting such eccentric old men #fills you with anticipation.)"
+        music = _music;
+        music_nbs = _music;
+        loc = AREA.FOREST
+    }
+}
 if global.stans >= 1 {
-	with instance_create_layer(1220,60,"Instances",obj_save) {
-		rmName = "Forest - Grunkle Stans"
-		text = "(Meeting such eccentric old men #fills you with anticipation.)"
-		music = mus_snowy
-		music_nbs = mus_snowy
-		loc = AREA.FOREST
-	}
-	instance_destroy(obj_ford_ow_1)
-	instance_destroy()
+    make_save(mus_snowy);
+    instance_destroy(obj_ford_ow_1);
+    instance_destroy();
 }

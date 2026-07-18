@@ -1,4 +1,3 @@
-if !variable_global_exists("stans") global.stans = 21
 global.stage[0] = 4
 global.stage[1] = 4
 bubble = instance_create_layer(x+60,y,"Instances",obj_textBubble)
