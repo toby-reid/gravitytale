@@ -1,6 +1,9 @@
 /// @description
-if variable_global_exists("soos") {if global.soos >= soos instance_destroy()}
-else global.soos = 0
+if global.soos >= soos
+{
+    instance_destroy();
+    exit;
+}
 
 if instance_exists(obj_dipper) {
 	if !active {
