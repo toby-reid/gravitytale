@@ -92,8 +92,7 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
     if (!variable_global_exists("fairydust")) global.fairydust = false;
     scr_writeBools(_bin, [global.hamstick, global.fairydust]);
 
-    if (!variable_global_exists("buttSwitch")) global.buttSwitch = [];
-    scr_writeArray(_bin, global.buttSwitch, scr_writeString);
+    scr_writeArray(_bin, global.completedPuzzleRooms, scr_writeString);
     if (!variable_global_exists("trashCan")) global.trashCan = [];
     scr_writeArray(_bin, global.trashCan, function(b, e) { scr_writeInteger(b, int64(e), 8); });
 

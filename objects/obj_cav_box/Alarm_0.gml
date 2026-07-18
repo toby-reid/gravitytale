@@ -15,7 +15,7 @@ else {
 					obj_buttSwitch.done = false
 			}
 			if obj_buttSwitch.done {
-				array_push(global.buttSwitch, room_get_name(room));
+				array_push(global.completedPuzzleRooms, room_get_name(room));
 			}
 		}
 	}

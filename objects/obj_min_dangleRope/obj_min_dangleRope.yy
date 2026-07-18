@@ -3,7 +3,6 @@
   "%Name":"obj_min_dangleRope",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":13,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_min_dangleRope",
@@ -12,7 +11,10 @@
     "name":"Mines",
     "path":"folders/Objects/Overworld/Mines.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_ladder",
+    "path":"objects/obj_ladder/obj_ladder.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_dangleRope",
+    "path":"sprites/spr_dangleRope/spr_dangleRope.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

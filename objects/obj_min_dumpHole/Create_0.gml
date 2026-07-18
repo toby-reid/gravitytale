@@ -3,6 +3,13 @@ if (global.gideon == 0)
     instance_destroy();
     exit;
 }
+with instance_create_layer(x, y, layer, obj_toRoom)
+{
+    goto = ow_min_02_start;
+    dir = DIRECTION.DOWN;
+    num = 1;
+    music = mus_medium;
+}
 
 is_jump_down = false;
 prepare_jump = function(_is_down) {

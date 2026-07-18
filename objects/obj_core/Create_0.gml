@@ -16,6 +16,7 @@ global.dir = DIRECTION.DOWN;
 global.battleTimer = 0; // I would do an alarm, but I only want it going down when not in battle rooms
 
 scr_generate_enemy_indices();
+scr_generate_statuses();
 
 global.ITEM_INFO = scr_generate_item_info();
 {

@@ -91,7 +91,7 @@ function scr_load()
         global.fairydust = ham_fairy[1];
     }
 
-    global.buttSwitch = scr_readArray(_bin, scr_readString);
+    global.completedPuzzleRooms = scr_readArray(_bin, scr_readString);
     global.trashCan = scr_readArray(_bin, function(b) { return scr_readInteger(b, 8); });
 
     file_bin_close(_bin);

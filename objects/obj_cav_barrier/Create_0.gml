@@ -7,18 +7,14 @@ else while cam[1] > room_height-240 cam[1]--
 
 tiledata = [20,5,15]//by default: path edges, walls, base
 
-if !variable_global_exists("buttSwitch") global.buttSwitch = []
-var butt = false;
-var room_name = room_get_name(room);
-for(var i = 0; i < array_length(global.buttSwitch); i++) {
-	if global.buttSwitch[i] == room_name {
-		stage = 4
-		event_user(0)
-		instance_destroy()
-		butt = true
-		break
-	}
+var _room_name = room_get_name(room);
+if (array_contains(global.completedPuzzleRooms, _room_name))
+{
+    stage = 4
+    event_user(0)
+    instance_destroy()
 }
-if !butt and global.player.genocide == RUN.ACTIVE {
-	array_push(global.buttSwitch, room_name);
+else if global.player.genocide == RUN.ACTIVE
+{
+    array_push(global.completedPuzzleRooms, _room_name);
 }

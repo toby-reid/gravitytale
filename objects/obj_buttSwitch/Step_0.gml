@@ -4,7 +4,7 @@ if !done {
 			active++
 			if active == array_length(order) {
 				done = true;
-				array_push(global.buttSwitch, room_get_name(room));
+				array_push(global.completedPuzzleRooms, room_get_name(room));
 			}
 		}
 		else active = 0

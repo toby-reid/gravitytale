@@ -1,4 +1,4 @@
-if (variable_global_exists("gideon") and global.gideon >= 3)
+if (global.gideon >= 3)
 {
     layer_set_visible(layer_get_id("Tiles_1"), false);
     layer_set_visible(layer_get_id("Tiles_2"), true);
