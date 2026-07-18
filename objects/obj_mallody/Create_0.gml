@@ -55,10 +55,11 @@ msg = {
 if (global.enemy_killed[ENEMY.SOOS]) msg.l_topic2[6]       = "(What a shame...&(Soos probably loved #that place...)";
 if (global.enemy_killed[ENEMY.FORD]) msg.l_talkGenocide[3] = "Mr. Pines - the #tricky one - has #already evacuated #everyone else...";
 text[0] = msg.l_greeting;
-if(!variable_global_exists("hamstick")) global.hamstick = false;
-if(!global.hamstick) {
-	msg.l_topic0[6] = "Oh, but you probably #can't afford it, #huh...?";
-	msg.l_topic0[7] = "Not that I'm calling #you poor or anything, #of course!!";
-	msg.l_topic0[8] = "...&Just...&Take a sample and #go... please.";
-	msg.l_topic0[9] = "(Got the Ham-on-a-#Stick for free!&(Probably shouldn't #push your luck for #more.)";
+
+given_hamstick = array_contains(global.oneTimeInstances, id);
+if (!given_hamstick) {
+    msg.l_topic0[6] = "Oh, but you probably #can't afford it, #huh...?";
+    msg.l_topic0[7] = "Not that I'm calling #you poor or anything, #of course!!";
+    msg.l_topic0[8] = "...&Just...&Take a sample and #go... please.";
+    msg.l_topic0[9] = "(Got the Ham-on-a-#Stick for free!&(Probably shouldn't #push your luck for #more.)";
 }

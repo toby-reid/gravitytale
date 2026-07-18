@@ -49,7 +49,6 @@ switch stage {
 						global.player.money -= item.price
 						scr_get_item(item_name,false)
 						audio_play_sound(sfx_shop_purchase,0,false)
-						if item_name == ITEM_INDEX.HAMSTICK global.hamstick = true
 					}
 					else audio_play_sound(sfx_select,0,false)
 					confirm = false

@@ -13,7 +13,6 @@ function scr_generate_statuses()
     global.hat = false;
     global.dummy = 0;
     global.study = false; // hawktopus study
-    global.hamstick = false; // free sample
     global.karen = false; // whether Karen can be encountered
     global.defeated_unicorn = false;
 

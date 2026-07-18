@@ -87,9 +87,7 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
     scr_writeInteger(_bin, global.toby);
     scr_writeInteger(_bin, global.wendy);
     scr_writeInteger(_bin, global.gideon);
-
-    if (!variable_global_exists("hamstick"))  global.hamstick  = false;
-    scr_writeBools(_bin, [global.hamstick]);
+    scr_writeInteger(_bin, global.gideon_tent);
 
     scr_writeArray(_bin, global.completedPuzzleRooms, scr_writeString);
     scr_writeArray(_bin, global.oneTimeInstances, function(b, e) { scr_writeInteger(b, int64(e), 8); });

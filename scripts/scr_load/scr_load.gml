@@ -84,11 +84,7 @@ function scr_load()
     global.toby   = scr_readInteger(_bin);
     global.wendy  = scr_readInteger(_bin);
     global.gideon = scr_readInteger(_bin);
-
-    {
-        var ham = scr_readBools(_bin, 1);
-        global.hamstick = ham[0];
-    }
+    global.gideon_tent = scr_readInteger(_bin);
 
     global.completedPuzzleRooms = scr_readArray(_bin, scr_readString);
     global.oneTimeInstances = scr_readArray(_bin, function(b) { return scr_readInteger(b, 8); });
