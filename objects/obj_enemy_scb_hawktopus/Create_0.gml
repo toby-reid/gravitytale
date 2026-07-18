@@ -13,7 +13,6 @@ timer = 0
 bubble = noone
 deathx = 0
 
-if !variable_global_exists("study") global.study = false
 ink = 0
 image_xscale = 2
 image_yscale = 2

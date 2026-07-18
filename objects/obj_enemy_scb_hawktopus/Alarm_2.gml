@@ -1,5 +1,5 @@
 /// @description Feed
-if !global.study {
+if !global.studied_hawktopus {
 	obj_battleCore.text[1] = "You try to feed Hawktopus, but #you don't know what it eats."
 	obj_battleCore.text[0] = "Perhaps you should look into #Hawktopus's diet."
 }

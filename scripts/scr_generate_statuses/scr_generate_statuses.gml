@@ -12,7 +12,7 @@ function scr_generate_statuses()
     global.ghost = 0; // the highest category of ghost we have defeated
     global.hat = false;
     global.dummy = 0;
-    global.study = false; // hawktopus study
+    global.studied_hawktopus = false;
     global.karen = false; // whether Karen can be encountered
     global.defeated_unicorn = false;
 
