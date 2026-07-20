@@ -49,16 +49,16 @@ if (is_initialized)
         {
             switch destination
             {
-                case PP_DESTINATION.FOREST:
+                case PORTAL_POTTY.FOREST_START:
                     _goto = ow_fst_1_meetStans;
                     break;
-                case PP_DESTINATION.CAVES:
+                case PORTAL_POTTY.CAVES_START:
                     _goto = ow_fst_22_caves;
                     break;
-                case PP_DESTINATION.DUMP:
+                case PORTAL_POTTY.MINES_START:
                     _goto = ow_min_01_dump;
                     break;
-                case PP_DESTINATION.UFO:
+                case PORTAL_POTTY.UFO_START:
                     // TODO: Add UFO destination when applicable
                     break;
             }

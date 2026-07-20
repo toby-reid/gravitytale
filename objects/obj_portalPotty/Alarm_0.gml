@@ -1,12 +1,4 @@
-if (destination != PP_DESTINATION.NONE)
-{
-    alpha += 0.025;
-}
-else if (global.teleport)
-{
-    alpha -= 0.025;
-}
-
+alpha += global.teleport ? -0.025 : 0.025;
 if (alpha > 0 and alpha < 1)
 {
     alarm[0] = 1

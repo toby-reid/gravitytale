@@ -1,36 +1,63 @@
-if !instance_exists(obj_textbox_old) {
-    active = false
-    if instance_exists(obj_dipper) if obj_dipper.canMove {
-        if place_meeting(x,y+2,obj_dipper) and obj_dipper.dir==1 {
-            if (!cantp) {
-                cantp = scr_isWaymanDefeated();
-            }
-
-            var _text = "(Seems the Potty isn't #functioning right...&(Here we go...)";
-            var _choice = 0;
-            if (cantp) switch global.player.portalPotty {
-                case PORTAL_POTTY.FOREST_START: _text = "(Go where?)##       Forest      (Cancel)"; _choice = 1; break;
-                case PORTAL_POTTY.CAVES_START:  _text = "(Go where?)##       Forest      Caves"; _choice = 1; break;
-                case PORTAL_POTTY.MINES_START:  _text = "(Go where?)   Dump##       Forest      Caves"; _choice = 2; break;
-                case PORTAL_POTTY.UFO_START:    _text = "(Go where?)   Dump#       Forest      Caves#              UFO"; _choice = 3; break;
-            }
-            with instance_create_layer(160,192,"Instances",obj_textbox_old) {
-                text[0] = _text;
-                choice[0] = _choice;
-            }
-            active = true
+if (obj_dipper.canMove && !instance_exists(obj_textbox))
+{
+    if (is_interaction())
+    {
+        if (!cantp)
+        {
+            cantp = scr_isWaymanDefeated();
         }
-        else if (place_meeting(x-2,y,obj_dipper) and obj_dipper.dir==0) or (place_meeting(x+2,y,obj_dipper) and obj_dipper.dir==2) or (place_meeting(x,y-2,obj_dipper) and obj_dipper.dir==3)
-            with instance_create_layer(160,192,"Instances",obj_textbox_old) text = ["SomeBODY once told me-&Wait...&No...","It's a Portal Potty.&A mysterious system of #space-warping outhouses."];
+        with instance_create_layer(160, 192, layer, obj_textbox)
+        {
+            if (obj_dipper.dir == DIRECTION.UP)
+            {
+                set_text(other.cantp ? "(Go where?)" : "(You aren't sure how to use #the Potty...&(Here we go...)");
+                if (other.cantp)
+                {
+                    var _choice_count = 0;
+                    switch global.player.portalPotty
+                    {
+                        case PORTAL_POTTY.FOREST_START:
+                            _choice_count = 1;
+                            break;
+                        case PORTAL_POTTY.CAVES_START:
+                            _choice_count = 2;
+                            break;
+                        case PORTAL_POTTY.MINES_START:
+                            _choice_count = 3;
+                            break;
+                        case PORTAL_POTTY.UFO_START:
+                            _choice_count = 4;
+                            break;
+                    }
+                    var _choices = ["Forest", "Caves", "Dump", "UFO"];
+                    var _action_destinations = [PORTAL_POTTY.FOREST_START, PORTAL_POTTY.CAVES_START, PORTAL_POTTY.MINES_START, PORTAL_POTTY.UFO_START];
+                    array_resize(_choices, _choice_count);
+                    array_resize(_action_destinations, _choice_count);
+                    if (_choice_count == 1)
+                    {
+                        array_push(_choices, "(Cancel)");
+                    }
+                    var _actions = array_create(_choice_count);
+                    for (var i = 0; i < _choice_count; ++i)
+                    {
+                        _actions[i] = method({target: other.id, destination: _action_destinations[i]}, function() { target.teleport(destination); });
+                    }
+                    set_choices(0, _choices, _actions, method({target: id}, function() { next_page(); }));
+                }
+                else
+                {
+                    set_actions(0, method({target: other.id}, function() { target.teleport(PORTAL_POTTY.NONE); }));
+                }
+            }
+            else
+            {
+                set_text([
+                    "Some`BODY once told me--&(Wait...&(No, that's not right.)",
+                    "(It's a Portal Potty.)",
+                    "(More formally, one entry in a #mysterious system of space-#warping outhouses.)",
+                    string_concat("(You ", other.cantp ? "feel like you know" : "have no idea", " how #to control the destination.")
+                ]);
+            }
+        }
     }
-}
-else if active if obj_textbox_old.charCount >= string_length(obj_textbox_old.text[0]) {
-    if global.player.portalPotty != PORTAL_POTTY.NONE or obj_textbox_old.action[0] != 1 {
-        outgoing_teleport = true
-        drawx[320] = 0
-        destination = obj_textbox_old.action[0]
-        //not defeating Wayman already covered elsewhere
-        //active = false
-    }
-    active = false
 }

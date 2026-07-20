@@ -1,13 +1,6 @@
-enum PP_DESTINATION
-{
-    NONE,
-    FOREST,
-    CAVES,
-    DUMP,
-    UFO
-}
+event_inherited();
 
-destination = PP_DESTINATION.NONE;
+destination = PORTAL_POTTY.NONE;
 
 CAMERA_HEIGHT = 240;
 screen = -1;
@@ -18,7 +11,7 @@ delta_delta = [];
 alpha = 0;
 is_initialized = false;
 
-cantp = false; // set each time the player interacts, in case the Wayman has been defeated
+cantp = scr_isWaymanDefeated();
 if (!global.enemy_spared[ENEMY.WAYMAN] and !global.enemy_killed[ENEMY.WAYMAN])
 {
     instance_create_layer(0, 0, layer, obj_wayman_ow);
@@ -67,12 +60,13 @@ reset_init = function()
 }
 teleport = function(_destination)
 {
-    if (_destination != PP_DESTINATION.NONE)
+    destination = _destination;
+    with obj_textbox
     {
-        destination = _destination;
-        instance_destroy(obj_textbox);
-        initialize(false);
+        setCanMove = false;
+        instance_destroy();
     }
+    initialize(false);
 }
 m_all_together = function()
 {
