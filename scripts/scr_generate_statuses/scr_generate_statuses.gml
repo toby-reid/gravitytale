@@ -20,7 +20,8 @@ function scr_generate_statuses()
     global.defeated_unicorn = false; // TODO: This is unused
 
     // Used by obj_toRoom
-    global.teleport = false;
+    global.toRoom = false;
+    global.teleport = true; // start true: lets us spawn in right where obj_dipper is for testing purposes
     global.toRoom_num = 0;
     global.dir = DIRECTION.DOWN;
 }

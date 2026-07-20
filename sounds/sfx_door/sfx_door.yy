@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.857687,
+  "duration":0.85768706,
   "exportDir":"",
   "name":"sfx_door",
   "parent":{

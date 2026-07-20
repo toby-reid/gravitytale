@@ -112,7 +112,7 @@ m_set_range = function(_var_name, _value, _default, _start_index, _end_index)
     for (var i = _start_index; i < _endex; ++i)
     {
         self[$ _var_name][i] = _value;
-    } string_replace_all
+    }
 }
 /// @desc Private method to set an array or range to the given value.
 /// If the value is an array, only the start index (not the end) is considered.

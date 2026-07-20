@@ -13,5 +13,3 @@ done = false;
 
 x = -40;
 y = -40;
-
-audio_play_sound(mus_deathreport, 0, true);

@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.660317,
+  "duration":0.6603175,
   "exportDir":"",
   "name":"sfx_wendyne_axe_fly",
   "parent":{

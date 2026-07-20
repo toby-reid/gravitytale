@@ -143,7 +143,6 @@ switch self.stage
                 visible = false;
                 alarm[2] = 30;
             }
-            global.teleport = true;
             global.gideon = 13;
             ++stage;
         }

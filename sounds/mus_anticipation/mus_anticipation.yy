@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":20.952473,
+  "duration":20.95247,
   "exportDir":"",
   "name":"mus_anticipation",
   "parent":{

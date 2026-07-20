@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.682086,
+  "duration":0.68208617,
   "exportDir":"",
   "name":"sfx_wendyne_step",
   "parent":{

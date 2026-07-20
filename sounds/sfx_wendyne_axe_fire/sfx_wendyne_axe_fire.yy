@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.50068,
+  "duration":0.50068027,
   "exportDir":"",
   "name":"sfx_wendyne_axe_fire",
   "parent":{

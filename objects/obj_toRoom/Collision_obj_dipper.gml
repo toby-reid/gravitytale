@@ -1,12 +1,13 @@
-if obj_dipper.canMove {
-	if alarm[0] > -1 or alarm[1] > -1 switch dir {
-		case 0: obj_dipper.x -= 2 break
-		case 1: obj_dipper.y += 2 break
-		case 2: obj_dipper.x += 2 break
-		case 3: obj_dipper.y -= 2 break
-	} else {
-		obj_dipper.canMove = false
-		room_persistent = false
-		alarm[1] = 1
-	}
+if (obj_dipper.canMove && goto != -1)
+{
+    obj_dipper.canMove = false;
+    fade = 0.1;
+    if (music != -1 && music != noone)
+    {
+        audio_group_set_gain(Music, 0, MUSIC_FADE_SPEED);
+    }
+    if (door)
+    {
+        audio_play_sound(sfx_door, 0, false);
+    }
 }
