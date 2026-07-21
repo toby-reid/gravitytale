@@ -37,6 +37,7 @@ switch state
             profile.lv = global.player.lv;
             profile.play_time = scr_format_time();
             profile.room_name = rmName;
+            alarm[0] = 60;
         }
         else
         {
@@ -44,6 +45,7 @@ switch state
         }
         break;
     case 3:
+        alarm[0] = -1;
         ++state;
         break;
     // Case 4 is while shrinking

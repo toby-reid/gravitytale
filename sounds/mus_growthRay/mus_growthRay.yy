@@ -1,9 +1,9 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfx_shrinkRay",
+  "%Name":"mus_growthRay",
   "audioGroupId":{
-    "name":"SFX",
-    "path":"audiogroups/SFX",
+    "name":"Music",
+    "path":"audiogroups/Music",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -12,15 +12,15 @@
   "conversionMode":0,
   "duration":3.2,
   "exportDir":"",
-  "name":"sfx_shrinkRay",
+  "name":"mus_growthRay",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sounds/SFX.yy",
+    "name":"Music",
+    "path":"folders/Sounds/Music.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_shrinkRay.wav",
+  "soundFile":"mus_growthRay.wav",
   "volume":1.0,
 }
