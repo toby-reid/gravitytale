@@ -20,6 +20,8 @@ switch state
                 set_sounds(silence);
                 set_actions(array_length(m_text) - 1, method({target: other.id}, function() { target.state = 1; }));
             }
+            ybox += ybox;
+            action_save = true;
             profile = scr_getSaveProfile();
             global.player.hp = global.player.maxHp;
             audio_play_sound(sfx_heal, 0, false);

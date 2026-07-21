@@ -19,7 +19,6 @@
   "height":320,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"c9813b7a-e5c7-4646-9acc-c9ba9312558b","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"c9813b7a-e5c7-4646-9acc-c9ba9312558b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
     {"$GMImageLayer":"","%Name":"68d72a55-94ff-4907-aac8-5edff40daf5b","blendMode":0,"displayName":"default","isLocked":false,"name":"68d72a55-94ff-4907-aac8-5edff40daf5b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_tentOfTelepathy_top",
