@@ -85,7 +85,7 @@ switch stage
         {
             audio_play_sound(sfx_click, 0, false);
             audio_play_sound(sfx_shrinkRay, 0, true);
-            alarm[2] = 60;
+            alarm[2] = 120;
             ++stage;
         }
         break;
@@ -96,6 +96,33 @@ switch stage
             obj_dipper.image_yscale -= 0.001;
             if (obj_dipper.image_xscale <= 0.01)
             {
+                audio_stop_sound(sfx_shrinkRay);
+                audio_play_sound(sfx_click, 0, false);
+                alarm[2] = 60;
+                ++stage;
+            }
+        }
+        break;
+    case 13:
+        if (alarm[2] == -1)
+        {
+            audio_play_sound(sfx_click, 0, false);
+            audio_play_sound(sfx_shrinkRay, 0, true);
+            alarm[2] = 60;
+            ++stage;
+        }
+        break;
+    case 14:
+        if (alarm[2] == -1)
+        {
+            image_xscale -= 0.01;
+            x += 0.1;
+            image_yscale -= 0.01;
+            y += 0.15;
+            if (image_xscale <= 0.01)
+            {
+                audio_stop_sound(sfx_shrinkRay);
+                audio_play_sound(sfx_click, 0, false);
                 with instance_create_layer(obj_dipper.x - 10, obj_dipper.y - 10, layer, obj_toRoom)
                 {
                     goto = ow_ttn_03_start;
@@ -107,6 +134,7 @@ switch stage
             }
         }
         break;
-    case 13: // wait for Dipper to shrink
+    case 15:
+        // Wait for obj_toRoom
         break;
 }

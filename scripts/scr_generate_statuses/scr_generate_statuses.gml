@@ -21,7 +21,7 @@ function scr_generate_statuses()
 
     // Used by obj_toRoom
     global.toRoom = false;
-    global.teleport = true; // start true: lets us spawn in right where obj_dipper is for testing purposes
+    global.teleport = false;
     global.toRoom_num = 0;
     global.dir = DIRECTION.DOWN;
 }

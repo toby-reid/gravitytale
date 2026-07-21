@@ -19,7 +19,7 @@ function scr_load()
     global.player.kills = scr_readInteger(_bin, 2);
     global.player.spares = scr_readInteger(_bin, 2);
     global.player.hp = scr_readInteger(_bin, 1);
-    global.player.maxhp = scr_readInteger(_bin, 1);
+    global.player.maxHp = scr_readInteger(_bin, 1);
     global.player.money = scr_readInteger(_bin, 4);
     {
         var lv_costume = scr_readInteger(_bin, 1);

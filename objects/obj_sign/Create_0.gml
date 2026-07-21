@@ -11,3 +11,6 @@ is_interaction = function() {
         || (place_meeting(x, y - 2, obj_dipper) && _dip_dir == DIRECTION.DOWN)
     );
 }
+get_ybox = function() {
+    return (y > camera_get_view_y(view_camera[0]) + 140) ? 48 : 192;
+}

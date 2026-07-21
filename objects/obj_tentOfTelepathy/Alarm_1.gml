@@ -6,6 +6,7 @@ if (camera_get_view_y(_cam) >= original_camera_y)
     camera_set_view_target(_cam, obj_dipper);
     array_push(global.oneTimeInstances, id);
     has_done_cutscene = true;
+    obj_save.image_alpha = 1;
     obj_dipper.canMove = true;
 }
 else

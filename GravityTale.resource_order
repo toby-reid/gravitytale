@@ -259,6 +259,7 @@
     {"name":"obj_robbie_battle","order":1,"path":"objects/obj_robbie_battle/obj_robbie_battle.yy",},
     {"name":"obj_robbie_music","order":2,"path":"objects/obj_robbie_music/obj_robbie_music.yy",},
     {"name":"obj_rock","order":3,"path":"objects/obj_rock/obj_rock.yy",},
+    {"name":"obj_save_old","order":14,"path":"objects/obj_save_old/obj_save_old.yy",},
     {"name":"obj_save","order":5,"path":"objects/obj_save/obj_save.yy",},
     {"name":"obj_scb_barrier_closed","order":5,"path":"objects/obj_scb_barrier_closed/obj_scb_barrier_closed.yy",},
     {"name":"obj_scb_beaver","order":1,"path":"objects/obj_scb_beaver/obj_scb_beaver.yy",},
