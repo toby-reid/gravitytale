@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Tent",
-    "path":"folders/Sprites/Overworld/Tent.yy",
+    "name":"TentOfTelepathy",
+    "path":"folders/Sprites/Overworld/Tent/TentOfTelepathy.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
