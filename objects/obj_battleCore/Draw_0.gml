@@ -343,10 +343,13 @@ if !instance_exists(obj_toBattle) {
                     }
                 }
                 if y <= 0 {
-                    audio_group_stop_all(Music);
+                    if (other.music != noone && other.music != -1)
+                    {
+                        audio_group_stop_all(Music);
+                        audio_play_sound(other.music, 0, true);
+                    }
                     audio_stop_sound(sfx_rocket);
                     audio_group_unload(Battle);
-                    audio_play_sound(other.music, 0, true);
                     room_goto(other.goto);
                 }
             }

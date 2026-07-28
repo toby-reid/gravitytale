@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"mus_karsong",
+  "%Name":"mus_dungeon",
   "audioGroupId":{
     "name":"Music",
     "path":"audiogroups/Music",
   },
   "bitDepth":1,
-  "channelFormat":0,
+  "channelFormat":1,
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":5.994331,
+  "duration":34.689182,
   "exportDir":"",
-  "name":"mus_karsong",
+  "name":"mus_dungeon",
   "parent":{
     "name":"Music",
     "path":"folders/Sounds/Music.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"mus_karsong.ogg",
+  "soundFile":"mus_dungeon.wav",
   "volume":1.0,
 }
