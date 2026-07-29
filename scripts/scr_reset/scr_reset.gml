@@ -17,4 +17,5 @@ function scr_reset(true_reset = false)
         ini_section_delete(global.SAVE_FILES.PERS_RESET.KEYS.DIED_TO_COUNT);
         ini_close();
     }
+    // TODO: Add startup functions
 }

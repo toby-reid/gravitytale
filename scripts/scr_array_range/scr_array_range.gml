@@ -1,3 +1,6 @@
+/// @desc Generates an integer array from `start` to `end`
+/// @param {Real} start_i Starting value (inclusive)
+/// @param {Real} end_e End of range (exclusive; must be greater than `start`)
 function scr_array_range(start_i, end_e)
 {
     var length = end_e - start_i;

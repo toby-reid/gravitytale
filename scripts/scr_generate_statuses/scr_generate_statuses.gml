@@ -18,6 +18,7 @@ function scr_generate_statuses()
     global.studied_hawktopus = false; // whether we have studied the hawktopus
     global.karen = false; // whether Karen can be encountered
     global.defeated_unicorn = false; // TODO: This is unused
+    global.tent_battles = TENT_BATTLE.ALL;
 
     // Used by obj_toRoom
     global.toRoom = false;
