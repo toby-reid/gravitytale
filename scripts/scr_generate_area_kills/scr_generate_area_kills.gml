@@ -46,13 +46,8 @@ enum TENT_BATTLE {
     CLONE_5_6_7 = 1 << 7,
     CLONE_8_9_10 = 1 << 8,
     PAPER_JAM = 1 << 9,
-    PARROT_OX_0 = 1 << 10,
-    PARROT_OX_1 = 1 << 11,
-    PARROT_OX_2 = 1 << 12,
-    APOSTO_FINCH_0 = 1 << 13,
-    APOSTO_FINCH_1 = 1 << 14,
-    ALL_WIZARDS = 1 << 15,
-    ALL = 1111_1111_1111_1111
+    ALL_WIZARDS = 1 << 10,
+    ALL = 11_1111_1111
 }
 
 function get_tent_battle()
