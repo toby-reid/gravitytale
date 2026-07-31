@@ -432,7 +432,7 @@ m_process_page = function(_page)
     currentPageConfig.sound = (array_length(m_sounds) > _page) ? m_sounds[_page] : m_DEFAULTS.sound;
     currentPageConfig.choiceCount = (array_length(m_choiceCounts) > _page) ? m_choiceCounts[_page] : m_DEFAULTS.choiceCount;
     currentPageConfig.actions = (array_length(m_actions) > _page) ? m_actions[_page] : m_DEFAULTS.actions;
-    currentPageConfig.cancelAction = (array_length(m_cancelActions) > _page) ? m_actions[_page] : m_DEFAULTS.cancelAction;
+    currentPageConfig.cancelAction = (array_length(m_cancelActions) > _page) ? m_cancelActions[_page] : m_DEFAULTS.cancelAction;
     currentPageConfig.charRate = (array_length(m_charRates) > _page) ? m_charRates[_page] : m_DEFAULTS.charRate;
     // autoskip already set along with colors
     currentPageConfig.autocontinue = (array_length(m_autocontinues) > _page) ? m_autocontinues[_page] : m_DEFAULTS.autocontinue;
@@ -511,12 +511,13 @@ m_increment_wave = function(_wave, _direction = 1)
 }
 
 /// @desc Loads the next page or closes the textbox if we've reached the end.
-/// Also invokes any choice actions if relevant
+/// Also invokes any choice actions if relevant.
+/// @param {Bool} _perform_actions Whether to perform customary actions (particularly useful for Cancel action)
 /// @return {Bool} Whether we've reached the end (and this textbox is going away)
-next_page = function()
+next_page = function(_perform_actions = true)
 {
     // Allow for taking an action even without choices
-    if (array_length(currentPageConfig.actions) > m_choiceSelection)
+    if (_perform_actions && array_length(currentPageConfig.actions) > m_choiceSelection)
     {
         var _action = currentPageConfig.actions[m_choiceSelection];
         if (is_callable(_action))
@@ -532,7 +533,7 @@ next_page = function()
         }
         choices_made[page] = m_choiceSelection;
     }
-    
+
     ++page;
     if (page >= array_length(m_text))
     {
@@ -541,4 +542,11 @@ next_page = function()
     }
     m_process_page(page);
     return false;
+}
+/// @desc Loads the next page without performing actions.
+/// Used as a shortcut for `next_page(false)`.
+/// @return {Bool} Whether we've reached the end (and this textbox is going away)
+skip_page = function()
+{
+    return next_page(false);
 }

@@ -1,6 +1,27 @@
-instance_create_layer(obj_dipper.x, obj_dipper.y, layer, obj_dipperClone, {desaturate_strength: 0.5});
-if (!global.player.mabel && scr_has_enum_flag(global.tent_battles, TENT_BATTLE.TYRONE))
+if (clone_height < sprite_get_height(obj_dipper.sprite_index) + 5)
 {
-    // TODO: Go to Tyrone battle
-    // If playing as Mabel, that battle should have already occurred
+    ++clone_height;
+    alarm[0] = 10;
+}
+else if (clone_offset < 8)
+{
+    ++clone_offset;
+    alarm[0] = 5;
+}
+else
+{
+    instance_create_layer(x + 75, y + 10, layer, obj_dipperClone, {desaturate_strength: desaturate_strength});
+    obj_dipper.dir = DIRECTION.DOWN;
+    obj_dipper.canMove = true;
+    obj_dipper.image_angle = 0;
+    obj_dipper.x = x + 35;
+    obj_dipper.y = y + 30;
+    image_index = 2;
+    clone_height = 0;
+    clone_offset = 0;
+    if (!global.player.mabel && scr_has_enum_flag(global.tent_battles, TENT_BATTLE.TYRONE))
+    {
+        // TODO: Go to Tyrone battle
+        // If playing as Mabel, that battle should have already occurred
+    }
 }

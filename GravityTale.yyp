@@ -253,6 +253,7 @@
     {"id":{"name":"obj_cav_standco","path":"objects/obj_cav_standco/obj_cav_standco.yy",},},
     {"id":{"name":"obj_cav_trembleyPlaque","path":"objects/obj_cav_trembleyPlaque/obj_cav_trembleyPlaque.yy",},},
     {"id":{"name":"obj_cav_waterbarrier","path":"objects/obj_cav_waterbarrier/obj_cav_waterbarrier.yy",},},
+    {"id":{"name":"obj_cloneWall","path":"objects/obj_cloneWall/obj_cloneWall.yy",},},
     {"id":{"name":"obj_collide","path":"objects/obj_collide/obj_collide.yy",},},
     {"id":{"name":"obj_cookieJar","path":"objects/obj_cookieJar/obj_cookieJar.yy",},},
     {"id":{"name":"obj_copyMachine","path":"objects/obj_copyMachine/obj_copyMachine.yy",},},
@@ -1130,6 +1131,7 @@
     {"id":{"name":"spr_paz_putt_ball","path":"sprites/spr_paz_putt_ball/spr_paz_putt_ball.yy",},},
     {"id":{"name":"spr_paz_putt_run","path":"sprites/spr_paz_putt_run/spr_paz_putt_run.yy",},},
     {"id":{"name":"spr_paz_putt_walk","path":"sprites/spr_paz_putt_walk/spr_paz_putt_walk.yy",},},
+    {"id":{"name":"spr_photocopier","path":"sprites/spr_photocopier/spr_photocopier.yy",},},
     {"id":{"name":"spr_playGame","path":"sprites/spr_playGame/spr_playGame.yy",},},
     {"id":{"name":"spr_portalPotty","path":"sprites/spr_portalPotty/spr_portalPotty.yy",},},
     {"id":{"name":"spr_quit","path":"sprites/spr_quit/spr_quit.yy",},},
@@ -1297,6 +1299,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"test","path":"rooms/test/test.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
         {"roomId":{"name":"rm_endDemo","path":"rooms/rm_endDemo/rm_endDemo.yy",},},
@@ -1305,7 +1308,6 @@
         {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
         {"roomId":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
         {"roomId":{"name":"btl_wayman","path":"rooms/btl_wayman/btl_wayman.yy",},},
-        {"roomId":{"name":"test","path":"rooms/test/test.yy",},},
       ],"groupName":"Misc.",},
     {"children":[
         {"roomId":{"name":"mg_date","path":"rooms/mg_date/mg_date.yy",},},

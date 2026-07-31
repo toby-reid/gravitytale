@@ -1,0 +1,43 @@
+{
+  "$GMObject":"",
+  "%Name":"obj_cloneWall",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_dipper","path":"objects/obj_dipper/obj_dipper.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"obj_cloneWall",
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_dontGo","path":"objects/obj_dontGo/obj_dontGo.yy",},"propertyId":{"name":"text","path":"objects/obj_dontGo/obj_dontGo.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[\"(It would be unwise to send #your clone ahead without you.)\"]",},
+  ],
+  "parent":{
+    "name":"Tent",
+    "path":"folders/Objects/Overworld/Tent.yy",
+  },
+  "parentObjectId":{
+    "name":"obj_dontGo",
+    "path":"objects/obj_dontGo/obj_dontGo.yy",
+  },
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":{
+    "name":"spr_playGame",
+    "path":"sprites/spr_playGame/spr_playGame.yy",
+  },
+  "spriteMaskId":null,
+  "visible":true,
+}

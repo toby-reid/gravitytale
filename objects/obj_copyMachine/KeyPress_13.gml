@@ -15,7 +15,7 @@ if (is_interaction())
                 string_concat("(It's ", global.player.mabel ? "Grunkle" : "Great Uncle", " Ford's #copying machine.)"),
                 "(Make a copy?)"
             ]);
-            set_choices(1, ["Me", "Nothing"], [method({target: other.id}, function() { target.make_clone(); }), noop], method({target: id}, function() { target.next_page(); }));
+            set_choices(1, ["Me", "Nothing"], [other.make_clone, noop], skip_page);
         }
     }
 }

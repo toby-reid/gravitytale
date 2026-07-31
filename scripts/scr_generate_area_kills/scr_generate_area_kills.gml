@@ -61,7 +61,7 @@ function get_tent_battle()
         return TENT_BATTLE.TYRONE; // he shall be the first
     }
     var _available_battles = [];
-    for (var i = 1; i <= global.tent_battles; i <<= 1)
+    for (var i = 1; i <= global.tent_battles; i = i << 1)
     {
         if (scr_has_enum_flag(global.tent_battles, i))
         {

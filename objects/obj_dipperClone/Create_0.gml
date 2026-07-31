@@ -1,7 +1,8 @@
-shader_set_uniform_f(shader_get_uniform(shd_desaturate, "strength"), desaturate_strength);
-
 sprite_index = obj_dipper.sprite_index;
 image_index = 8;
+image_speed = 0;
+
+strength_uniform = shader_get_uniform(shd_desaturate, "strength");
 
 swap = function(_target = obj_dipper) {
     var _old_x = _target.x;
