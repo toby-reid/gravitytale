@@ -1,21 +1,11 @@
-if (instance_exists(obj_dipper) && obj_dipper.canMove)
+if (is_interaction())
 {
-    var dir = obj_dipper.dir
-    var ybox = (y > camera_get_view_y(view_camera[0]) + 140) ? 48 : 192;
-    if (
-        (place_meeting(x - 2, y, obj_dipper) and dir == 0)
-        or (place_meeting(x, y + 2, obj_dipper) and dir == 1)
-        or (place_meeting(x + 2, y, obj_dipper) and dir == 2)
-        or (place_meeting(x, y - 2, obj_dipper) and dir == 3)
-    )
+    with instance_create_layer(160, (y > camera_get_view_y(view_camera[0]) + 140) ? 48 : 192, layer, obj_textbox)
     {
-        with instance_create_layer(160, ybox, layer, obj_textbox)
-        {
-            set_text(other.text);
-            set_fonts(other.font);
-            set_sounds(other.sound);
-            set_charRates(other.charRate);
-            set_choiceCounts(other.choice);
-        }
+        set_text(other.text);
+        set_fonts(other.font);
+        set_sounds(other.sound);
+        set_charRates(other.charRate);
+        set_choiceCounts(other.choice);
     }
 }

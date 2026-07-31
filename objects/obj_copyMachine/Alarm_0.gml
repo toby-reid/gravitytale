@@ -15,7 +15,7 @@ else
     obj_dipper.canMove = true;
     obj_dipper.image_angle = 0;
     obj_dipper.x = x + 35;
-    obj_dipper.y = y + 30;
+    obj_dipper.y = y + 22;
     image_index = 2;
     clone_height = 0;
     clone_offset = 0;
