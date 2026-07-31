@@ -10,12 +10,12 @@ else if (clone_offset < 8)
 }
 else
 {
-    instance_create_layer(x + 75, y + 10, layer, obj_dipperClone, {desaturate_strength: desaturate_strength});
+    instance_create_layer(x + 75, y + 10, obj_dipper.layer, obj_dipperClone, {desaturate_strength: desaturate_strength});
     obj_dipper.dir = DIRECTION.DOWN;
     obj_dipper.canMove = true;
     obj_dipper.image_angle = 0;
     obj_dipper.x = x + 35;
-    obj_dipper.y = y + 22;
+    obj_dipper.y = y + 21;
     image_index = 2;
     clone_height = 0;
     clone_offset = 0;

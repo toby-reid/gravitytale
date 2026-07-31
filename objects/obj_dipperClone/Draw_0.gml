@@ -1,7 +1,10 @@
-if (obj_dipper.y >= y)
+if (obj_dipper.y < y)
 {
-    shader_set(shd_desaturate);
-    shader_set_uniform_f(strength_uniform, desaturate_strength);
-    draw_self();
-    shader_reset();
+    m_draw_dipper();
+    m_draw_self();
+}
+else
+{
+    m_draw_self();
+    m_draw_dipper();
 }

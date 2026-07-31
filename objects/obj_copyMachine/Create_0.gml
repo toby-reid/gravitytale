@@ -16,6 +16,6 @@ make_clone = function() {
     obj_dipper.y = y - 8;
     with obj_textbox
     {
-        setMove = false;
+        setCanMove = false;
     }
 }
