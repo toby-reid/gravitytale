@@ -7,7 +7,7 @@
   "managed":true,
   "name":"obj_cloneWall",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_dontGo","path":"objects/obj_dontGo/obj_dontGo.yy",},"propertyId":{"name":"text","path":"objects/obj_dontGo/obj_dontGo.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[\"(It would be unwise to send #your clone ahead without you.)\"]",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_dontGo","path":"objects/obj_dontGo/obj_dontGo.yy",},"propertyId":{"name":"text","path":"objects/obj_dontGo/obj_dontGo.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[\"(It would be unwise to send #your clone ahead without you.&(Return to yourself.)\"]",},
   ],
   "parent":{
     "name":"Tent",
