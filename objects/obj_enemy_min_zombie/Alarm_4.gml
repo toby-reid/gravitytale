@@ -6,7 +6,7 @@ if (self.singing >= 3)
 }
 else
 {
-    self.bubble = instance_create_layer(x + 60, y - 100, layer, obj_textBubble);
+    self.bubble = instance_create_layer(x + 60, y - 100, layer, obj_textBubble_old);
     self.bubble.text[0] = choose(
         "i like #your #tricycle",
         self.bucket ? "there's #bucket #on my #head" : (self.cone ? "road #cones #protect #my head" : "there's #nothing #on my #head"),

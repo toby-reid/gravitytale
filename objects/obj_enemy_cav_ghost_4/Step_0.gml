@@ -1,5 +1,5 @@
 /// @description Attack
-if global.stage[0] == 4 { if !instance_exists(obj_textBubble) {
+if global.stage[0] == 4 { if !instance_exists(obj_textBubble_old) {
 	switch timer {
 		case 0:
 			if spare timer = 479

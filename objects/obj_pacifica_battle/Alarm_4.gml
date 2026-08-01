@@ -1,5 +1,5 @@
 /// @desc text bubble
-with instance_create_layer(x + 100, y - 40, layer, obj_textBubble)
+with instance_create_layer(x + 100, y - 40, layer, obj_textBubble_old)
 {
     switch other.rounds_left
     {

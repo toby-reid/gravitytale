@@ -1,6 +1,6 @@
 /// @description Attack
 if image_alpha == 1 if global.stage[0] == 4 if hp > 0 {
-	if !instance_exists(obj_textBubble) {
+	if !instance_exists(obj_textBubble_old) {
 		if stage < 18 switch attack {
 			case 0://Burrito Bites
 				if timer == 0 instance_create_layer(320,252,"Instances",obj_atk_soos_bBites)
@@ -56,9 +56,9 @@ if image_alpha == 1 if global.stage[0] == 4 if hp > 0 {
 		timer++
 	}
 	else {
-		if variable_instance_exists(instance_find(obj_textBubble,0),"charCount") {
-			if obj_textBubble.image_xscale == 2 {
-				if obj_textBubble.charCount < string_length(obj_textBubble.text[obj_textBubble.page]) {
+		if variable_instance_exists(instance_find(obj_textBubble_old,0),"charCount") {
+			if obj_textBubble_old.image_xscale == 2 {
+				if obj_textBubble_old.charCount < string_length(obj_textBubble_old.text[obj_textBubble_old.page]) {
 					image_index += .1; 
 				} 
 				else image_index = 0
@@ -66,15 +66,15 @@ if image_alpha == 1 if global.stage[0] == 4 if hp > 0 {
 		}
 		if hp <= 0 {
 			if global.player.genocide = RUN.ACTIVE {
-				if obj_textBubble.page == 1 sprite_index = spr_soos_face_surprise_side
+				if obj_textBubble_old.page == 1 sprite_index = spr_soos_face_surprise_side
 			}
-			else if spare switch obj_textBubble.page {
+			else if spare switch obj_textBubble_old.page {
 				case 2: sprite_index = spr_soos_face_surprise_side break
 				case 3: sprite_index = spr_soos_face_disappoint_closed break
 				case 4: sprite_index = spr_soos_face_sad break
 				case 5: sprite_index = spr_soos_face_sad_closed break
 			}
-			else switch obj_textBubble.page {
+			else switch obj_textBubble_old.page {
 				case 1: sprite_index = spr_soos_face_disapsmile_closed break
 				case 2: sprite_index = spr_soos_face_disapsmile break
 				case 3: sprite_index = spr_soos_face_disappoint_closed break

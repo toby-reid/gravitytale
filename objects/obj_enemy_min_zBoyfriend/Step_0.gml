@@ -1,5 +1,5 @@
 /// @description Attack
-if (image_alpha == 1 && !instance_exists(obj_textBubble) && global.stage[0] == 4)
+if (image_alpha == 1 && !instance_exists(obj_textBubble_old) && global.stage[0] == 4)
 {
     if (timer == 360)
     {

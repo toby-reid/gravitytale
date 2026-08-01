@@ -1,5 +1,5 @@
 /// @description There ya go, kid!
-with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
+with instance_create_layer(x+40,y,"Instances",obj_textBubble_old) {
 	text = [
 		"There ya go, #kid! #That's the #ticket!",
 		"But these are #some of my #slowest #attacks.",

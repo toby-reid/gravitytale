@@ -1,6 +1,6 @@
 /// @description Text Bubble
 
-self.bubble = instance_create_layer(x + 60, y - 20, layer, obj_textBubble);
+self.bubble = instance_create_layer(x + 60, y - 20, layer, obj_textBubble_old);
 self.bubble.text[0] = choose(
     "TOP #O' THE #MORNIN' #TO YA!",
     "WHAT'S #THE #CRAIC?",

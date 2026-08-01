@@ -7,4 +7,4 @@ hp = maxhp;
 at = 8;
 check = "The strongest person in town.&Can chop anything, even you.";
 obj_battleCore.text[0] = "The true battle begins.&The wend is howling.";
-instance_destroy(obj_textBubble);
+instance_destroy(obj_textBubble_old);

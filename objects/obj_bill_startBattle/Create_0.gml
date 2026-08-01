@@ -3,7 +3,7 @@ stage = 0
 timer = 0;
 wheel = [0,25,0]//Size, frame speed, frame
 completed_routes = scr_getRouteCompletions();
-with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
+with instance_create_layer(x+40,y,"Instances",obj_textBubble_old) {
 	var col = (global.player.mabel) ? "@CC277A" : "@1970FF"; 
 	var soul = (global.player.mabel) ? "pink star" : "blue tree";
 	switch completed_routes

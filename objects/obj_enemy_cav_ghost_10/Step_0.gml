@@ -1,5 +1,5 @@
 /// @description Attack
-if(image_alpha == 1 or stage == 10) { if !instance_exists(obj_textBubble) if global.stage[0] == 4 {
+if(image_alpha == 1 or stage == 10) { if !instance_exists(obj_textBubble_old) if global.stage[0] == 4 {
 	if timer == 0 {
 		var text = [
 			"Also, \"ain't afraid of no\" is #a double negative, so either #way, the ghosts win.",
@@ -26,16 +26,16 @@ if(image_alpha == 1 or stage == 10) { if !instance_exists(obj_textBubble) if glo
 				path_end()
 				break
 			case 179:
-				bubble = instance_create_layer(x+100,y-40,layer,obj_textBubble)
+				bubble = instance_create_layer(x+100,y-40,layer,obj_textBubble_old)
 				bubble.text = [". . .","what"]
 				bubble.style = [4,4]
 				break
 			case 180:
-				if instance_exists(obj_textBubble) timer--
+				if instance_exists(obj_textBubble_old) timer--
 				else audio_play_sound(sfx_enemyDead,0,false)
 				break
 			case 299:
-				with instance_create_layer(0,80,layer,obj_textBubble) {
+				with instance_create_layer(0,80,layer,obj_textBubble_old) {
 					id.text = [
 						"Nyes, how'd you like that, foul beast?",
 						"A splash of my home-brewed holy moley water - does wonders for the soul!",
@@ -51,7 +51,7 @@ if(image_alpha == 1 or stage == 10) { if !instance_exists(obj_textBubble) if glo
 				}
 				break
 			case 300:
-				if instance_exists(obj_textBubble) timer--
+				if instance_exists(obj_textBubble_old) timer--
 				break
 			case 420:
 				instance_destroy()

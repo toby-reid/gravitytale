@@ -1,6 +1,6 @@
 global.stage[0] = 4
 global.stage[1] = 4
-bubble = instance_create_layer(x+60,y,"Instances",obj_textBubble)
+bubble = instance_create_layer(x+60,y,"Instances",obj_textBubble_old)
 with bubble {
 	image_index = 1
 	headid = -1

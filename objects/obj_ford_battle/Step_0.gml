@@ -1,5 +1,5 @@
 /// @description Attack
-if image_alpha == 1 if !instance_exists(obj_textBubble) {
+if image_alpha == 1 if !instance_exists(obj_textBubble_old) {
 	if global.stage[0] == 4 {
 		if stage != -1 {
 			if is_genocide {

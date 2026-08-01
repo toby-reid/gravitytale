@@ -2,7 +2,7 @@
 
 if (self.is_spider)
 {
-    self.bubble = instance_create_layer(x + 40, y - 40, layer, obj_textBubble);
+    self.bubble = instance_create_layer(x + 40, y - 40, layer, obj_textBubble_old);
     self.bubble.text[0] = choose(
         "I missed the part where that's my problem.",
         "Gonna cry?",
@@ -19,7 +19,7 @@ if (self.is_spider)
 }
 else
 {
-    self.bubble = instance_create_layer(x + 20, y - 70, layer, obj_textBubble);
+    self.bubble = instance_create_layer(x + 20, y - 70, layer, obj_textBubble_old);
     self.bubble.text[0] = choose(
         "Pumpkin spice is the spice of life.",
         "TGIF",

@@ -1,6 +1,6 @@
 /// @description Textbubble
 with obj_ford_battle {
-	bubble = instance_create_layer(x+60,y+20,"Instances",obj_textBubble)
+	bubble = instance_create_layer(x+60,y+20,"Instances",obj_textBubble_old)
 	with bubble {
 		image_index = 1
 		text = [

@@ -10,7 +10,7 @@ if timer < 20 {
 	if timer == 20 alarm[1] = 300
 }
 else {
-	with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
+	with instance_create_layer(x+40,y,"Instances",obj_textBubble_old) {
 		if global.player.hp == global.player.maxHp {
 			text = [
 				"Ha ha... #hahahahaha!",

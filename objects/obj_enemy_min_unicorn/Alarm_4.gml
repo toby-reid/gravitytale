@@ -1,6 +1,6 @@
 /// @description Text bubble
 
-self.bubble = instance_create_layer(x + 90, y - 80, layer, obj_textBubble)
+self.bubble = instance_create_layer(x + 90, y - 80, layer, obj_textBubble_old)
 if (self.spare) self.bubble.text[0] = "NAYYYYYY";
 else self.bubble.text[0] = choose(
     "NEIGHHHH",

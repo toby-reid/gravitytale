@@ -1,5 +1,5 @@
 ///@desc Dying / Round Reset
-if hp <= 0 if global.stage[0] != 3 if !instance_exists(obj_textBubble) {
+if hp <= 0 if global.stage[0] != 3 if !instance_exists(obj_textBubble_old) {
 	if image_alpha == 1 {
 		audio_play_sound(sfx_enemyDead,0,false)
 		global.enemy[0] = instance_create_layer(x,y+40,"Instances",obj_enemySoulBreak)

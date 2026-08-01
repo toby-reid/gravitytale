@@ -1,5 +1,5 @@
 /// @description Just changed, you're screwed.
-bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble);
+bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble_old);
 with bubble {
 	text = [
 		"Never think you've outsmarted a Corduroy.",

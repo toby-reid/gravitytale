@@ -1,5 +1,5 @@
 /// @description Bubble
-bubble = instance_create_layer(x+30,y-40,"Instances",obj_textBubble)
+bubble = instance_create_layer(x+30,y-40,"Instances",obj_textBubble_old)
 if !global.enemy_killed[ENEMY.MANLY_DAN] {
 	if distracted == 0 bubble.text[0] = "Gyit 'em...\nGyit 'em...!"
 	else bubble.text[0] = "Oh, I've got to see this!"

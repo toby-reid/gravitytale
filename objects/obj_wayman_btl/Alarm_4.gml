@@ -1,5 +1,5 @@
 /// @description Text Bubble
-bubble = instance_create_layer(x+60,y-128,layer,obj_textBubble)
+bubble = instance_create_layer(x+60,y-128,layer,obj_textBubble_old)
 if stageRepeating bubble.text = ["Havin' tae go #again, eh, lad?","Right, then.&Here ye go."]
 else switch stage {
 	case 0:

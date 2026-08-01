@@ -1,4 +1,4 @@
-if hp <= 0 if global.stage[0] != 3 if !instance_exists(obj_textBubble) {
+if hp <= 0 if global.stage[0] != 3 if !instance_exists(obj_textBubble_old) {
 	hp = 0
 	if image_alpha == 1 {
 		audio_play_sound(sfx_enemyDead,0,false)
@@ -10,13 +10,13 @@ if hp <= 0 if global.stage[0] != 3 if !instance_exists(obj_textBubble) {
 	instance_destroy(bubble)
 }
 else if variable_instance_exists(id,"result") switch result {
-	case 0: if obj_textBubble.page == 1 sprite_index = spr_soos_face_disappoint_closed break
-	case 1: switch obj_textBubble.page {
+	case 0: if obj_textBubble_old.page == 1 sprite_index = spr_soos_face_disappoint_closed break
+	case 1: switch obj_textBubble_old.page {
 		case 2: sprite_index = spr_soos_face_disappoint break
 		case 3: case 5: sprite_index = spr_soos_face_disappoint_closed break
 		case 4: sprite_index = spr_soos_face_disapsmile break
 	} break
-	case 2: switch obj_textBubble.page {
+	case 2: switch obj_textBubble_old.page {
 		case 0: sprite_index = spr_soos_face_disappoint break
 		case 1: case 3: sprite_index = spr_soos_face_disappoint_closed break
 		case 2: case 5: sprite_index = spr_soos_face_disapsmile break

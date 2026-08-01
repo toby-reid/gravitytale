@@ -1,5 +1,5 @@
 /// @description Attack
-if image_alpha == 1 { if !instance_exists(obj_textBubble) if global.stage[0] == 4 {
+if image_alpha == 1 { if !instance_exists(obj_textBubble_old) if global.stage[0] == 4 {
 	if timer%45 == 0 {
 		var dir = irandom(359)
 		with instance_create_layer(obj_soul.x+lengthdir_x(160,dir),obj_soul.y+lengthdir_y(160,dir),layer,obj_battleAttack) {

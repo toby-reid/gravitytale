@@ -1,6 +1,6 @@
 if (spare)
 {
-    if (revealed && !instance_exists(obj_textBubble))
+    if (revealed && !instance_exists(obj_textBubble_old))
     {
         if (image_alpha == 1)
         {

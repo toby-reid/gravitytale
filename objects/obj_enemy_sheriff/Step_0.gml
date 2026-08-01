@@ -1,5 +1,5 @@
 /// @description Attack
-if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 {
+if image_alpha == 1 if !instance_exists(obj_textBubble_old) if global.stage[0] == 4 {
 	if timer%70 == 0 {
 		if global.enemy_killed[ENEMY.DEPUTY] or timer%140 == 0 with instance_create_layer(400,220,"Instances",obj_atk_sherBaton) {
 			var rot = irandom(1)

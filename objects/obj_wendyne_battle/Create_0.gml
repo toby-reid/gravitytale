@@ -24,7 +24,7 @@ global.enemy = [id];
 //global.stage[0] = 4;
 //global.stage[1] = 4;
 
-bubble = noone//instance_create_layer(x+80,y-100,layer,obj_textBubble);
+bubble = noone//instance_create_layer(x+80,y-100,layer,obj_textBubble_old);
 //bubble.sound = [tlk_wendy];
 if(global.wendy < 21) {
 	obj_battleCore.text[0] = "Wendy Corduroy has arrived to #administer the final test!";

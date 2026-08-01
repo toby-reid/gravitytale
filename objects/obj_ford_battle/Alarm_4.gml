@@ -1,5 +1,5 @@
 /// @description Bubble
-bubble = instance_create_layer(x+60,y,"Instances",obj_textBubble)
+bubble = instance_create_layer(x+60,y,"Instances",obj_textBubble_old)
 with bubble {
 	headid = 0
 	if other.hp <= 0 {

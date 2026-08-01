@@ -1,5 +1,5 @@
 /// @description Attack
-if !instance_exists(obj_textBubble) if global.stage[0] == 4 {
+if !instance_exists(obj_textBubble_old) if global.stage[0] == 4 {
 	if timer >= 450 global.stage[0]++
 	else if timer%30 == 0 {
 		var dir = irandom(60) + 105

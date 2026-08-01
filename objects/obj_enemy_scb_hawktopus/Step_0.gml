@@ -1,5 +1,5 @@
 /// @description Attack
-if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 {
+if image_alpha == 1 if !instance_exists(obj_textBubble_old) if global.stage[0] == 4 {
 	if timer == 0 if instance_exists(obj_atk_hawktoTent) timer += 45
 	if timer mod 90 == 0 {
 		if global.enemy[0] == id

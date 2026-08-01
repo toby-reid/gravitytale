@@ -7,7 +7,7 @@ if (hp <= 0)
         if (image_alpha == 1) audio_play_sound(sfx_enemyDead, 0, false);
         image_alpha -= .05;
         if (image_alpha == 0) instance_destroy();
-        instance_destroy(obj_textBubble);
+        instance_destroy(obj_textBubble_old);
     }
 }
 else if (global.player.hp <= 0)

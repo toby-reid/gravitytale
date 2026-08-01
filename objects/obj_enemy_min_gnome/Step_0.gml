@@ -9,7 +9,7 @@ else if (!initial_round)
 {
     if (is_leader)
     {
-        if (global.stage[0] == 4 && !instance_exists(obj_textBubble))
+        if (global.stage[0] == 4 && !instance_exists(obj_textBubble_old))
         {
             ++global.stage[0];
             object_index.initial_round = true;

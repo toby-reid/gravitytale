@@ -1,5 +1,5 @@
 /// @description Bubble
-bubble = instance_create_layer(x+60,y-80,"Instances",obj_textBubble)
+bubble = instance_create_layer(x+60,y-80,"Instances",obj_textBubble_old)
 if global.enemy_killed[ENEMY.DEPUTY] bubble.text[0] = "Durland...!\nMy precious Deputy Durland!"
 else bubble.text[0] = bubbleText
 

@@ -1,7 +1,7 @@
 obj_battleCore.text[0] = "Grunkle Stans is ready to #fight!"
 global.enemy = [id]
 global.stage[0] = 4
-bubble = instance_create_layer(x+60,y,layer,obj_textBubble)
+bubble = instance_create_layer(x+60,y,layer,obj_textBubble_old)
 with bubble {
 	text = [
 		"it's a beautiful day outside.",

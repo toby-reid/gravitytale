@@ -1,5 +1,5 @@
 /// @description Attack
-if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 {
+if image_alpha == 1 if !instance_exists(obj_textBubble_old) if global.stage[0] == 4 {
 	if stage == -1 {
 		/*switch timer {
 			case 10: case 150: case 360: audio_play_sound(sfx_gobberRoar,0,false) break

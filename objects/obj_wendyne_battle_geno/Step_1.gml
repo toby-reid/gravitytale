@@ -9,9 +9,9 @@ if hp <= 0 {
 	}
 	if(global.stage[0] != 3) {
 		if(sprite_index == spr_wendyne_btl_dying) {//but the earth refused to die
-			if(!instance_exists(obj_textBubble) or alpha != 0) {
+			if(!instance_exists(obj_textBubble_old) or alpha != 0) {
 				if(alpha == 0) {
-					bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble);
+					bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble_old);
 					with bubble {
 						text = [
 							". . .",
@@ -43,7 +43,7 @@ if hp <= 0 {
 					if(alpha >= 1) event_user(0);
 				}
 			}
-			else with obj_textBubble if(page >= 0) {
+			else with obj_textBubble_old if(page >= 0) {
 				if(variable_instance_exists(id,"head")) other.head = head[page];
 				if(page == array_length(text)-1) {
 					if(charCount >= string_length(text[page])-5) charCount = string_length(text[page]) - 4;
@@ -51,10 +51,10 @@ if hp <= 0 {
 				}
 			}
 		}
-		else if(!instance_exists(obj_textBubble)) {//actually dead
-			if(!instance_exists(obj_textBubble)) {
+		else if(!instance_exists(obj_textBubble_old)) {//actually dead
+			if(!instance_exists(obj_textBubble_old)) {
 				if(global.wendy < 22) {
-					bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble);
+					bubble = instance_create_layer(x+60,y-120,layer,obj_textBubble_old);
 					with bubble {
 						text = [
 							"...ah.",

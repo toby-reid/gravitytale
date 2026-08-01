@@ -1,5 +1,5 @@
 /// @description Attack
-if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 {
+if image_alpha == 1 if !instance_exists(obj_textBubble_old) if global.stage[0] == 4 {
 	if timer == 0 if instance_find(obj_enemy_fst_kBilly,1) == id timer += 45
 	if (instance_number(obj_enemy)==1 and timer%45==0) or timer%90==0 {
 		var drawx = irandom(1)

@@ -5,7 +5,7 @@ if stage == 3 {
 	alarm[1] = 120
 }
 else with obj_ford_battle {
-	bubble = instance_create_layer(x+60,y,"Instances",obj_textBubble)
+	bubble = instance_create_layer(x+60,y,"Instances",obj_textBubble_old)
 	with bubble {
 		text = [
 			". . .",

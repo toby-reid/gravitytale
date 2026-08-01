@@ -16,7 +16,7 @@ if hp <= 0
         {
             instance_destroy();
         }
-       	instance_destroy(obj_textBubble);
+       	instance_destroy(obj_textBubble_old);
     }
 }
 

@@ -1,6 +1,6 @@
 /// @description Bubble
-if instance_exists(obj_textBubble) or !instance_exists(obj_enemy_tyler) {
-	bubble = instance_create_layer(x+120,y-120,"Instances",obj_textBubble)
+if instance_exists(obj_textBubble_old) or !instance_exists(obj_enemy_tyler) {
+	bubble = instance_create_layer(x+120,y-120,"Instances",obj_textBubble_old)
 	attack = irandom(3)//0 axe, 1 fists, 2 bad meat, 3 pancakes
 	if instance_exists(obj_enemy_tyler) if obj_enemy_tyler.attack == 0 attack = irandom(2)+1
 	switch attack {

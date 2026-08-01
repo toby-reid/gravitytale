@@ -1,5 +1,5 @@
 /// @description Attack
-if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 {
+if image_alpha == 1 if !instance_exists(obj_textBubble_old) if global.stage[0] == 4 {
 	if timer == 0 attack = irandom(2)//0memWipe, 1timeDust, 2lasers
 	if !spare switch attack {
 		case 0: if timer%15 == 0 with instance_create_layer(x+20,y+20,"Instances",obj_battleAttack) {

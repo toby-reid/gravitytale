@@ -1,5 +1,5 @@
 ///@desc textBubble
-with instance_create_layer(372,64,"Instances",obj_textBubble) {
+with instance_create_layer(372,64,"Instances",obj_textBubble_old) {
 	image_index = 1
 	other.bubble = id
 	if global.stage[1]==3 and global.stage[4]==0 switch other.stage {

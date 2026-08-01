@@ -1,6 +1,6 @@
 /// @description draw_self()
 
-if !instance_exists(obj_textBubble) {//roll, stop, etc.
+if !instance_exists(obj_textBubble_old) {//roll, stop, etc.
 	switch stage {
 		case 1:
 			image_angle -= 8

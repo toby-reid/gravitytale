@@ -2,7 +2,7 @@ draw_self()
 switch stage {
 	case 1:
 		if !instance_exists(obj_bill_laser) and !instance_exists(obj_atk_laser) {
-			with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
+			with instance_create_layer(x+40,y,"Instances",obj_textBubble_old) {
 				if global.player.hp < global.player.maxHp {
 					text = [
 						"Ah hahahahaha!",
@@ -45,7 +45,7 @@ switch stage {
 	case 3:
 		if !instance_exists(obj_bill_laser) and !instance_exists(obj_atk_laser) {
 			if global.player.hp + 2 == global.player.maxHp {
-				with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
+				with instance_create_layer(x+40,y,"Instances",obj_textBubble_old) {
 					text = [
 						"Ah hahahahaha!",
 						"Come on, kid, #you gotta move #your SOUL!",
@@ -90,7 +90,7 @@ switch stage {
 	case 5:
 		if !instance_exists(obj_bill_laser) and !instance_exists(obj_atk_laser) {
 			if global.player.hp + 3 == global.player.maxHp {
-				with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
+				with instance_create_layer(x+40,y,"Instances",obj_textBubble_old) {
 					text = [
 						"Alright, kid, #this is #getting real #old real fast.",
 						"Just move up #or down to #dodge the #attack. #It's not that #hard.",
@@ -113,7 +113,7 @@ switch stage {
 	case 7:
 		if !instance_exists(obj_bill_laser) and !instance_exists(obj_atk_laser) {
 			if global.player.hp + 4 == global.player.maxHp {
-				with instance_create_layer(x+40,y,"Instances",obj_textBubble) {
+				with instance_create_layer(x+40,y,"Instances",obj_textBubble_old) {
 					text = [
 						"Oh, I see.",
 						"You just wanna #mess with me, #huh, kid?",
@@ -143,7 +143,7 @@ switch stage {
 		else with obj_soul if alarm[0] > -1 alarm[0]++
 		break
 	case 8://this is gonna start the onslaught
-		if !instance_exists(obj_textBubble) {
+		if !instance_exists(obj_textBubble_old) {
 			if alarm[1] == -1 {
 				timer = 0
 				alarm[1] = 30
@@ -153,9 +153,9 @@ switch stage {
 		}
 		break
 	case 9:
-		if instance_exists(obj_textBubble) {
+		if instance_exists(obj_textBubble_old) {
 			if !instance_exists(obj_battleButtons_yn) {
-				with obj_textBubble {
+				with obj_textBubble_old {
 					if page == 26 if charCount >= 40 {
 						charCount = string_length(text[page])
 						instance_create_layer(265,261,"Instances",obj_battleButtons_yn)
@@ -171,15 +171,15 @@ switch stage {
 					instance_destroy(obj_battleButtons_yn)
 					audio_play_sound(sfx_select,0,false)
 					stage++
-					if timer == 2 obj_textBubble.page += 8
-					obj_textBubble.alarm[0] = 1
+					if timer == 2 obj_textBubble_old.page += 8
+					obj_textBubble_old.alarm[0] = 1
 				}
 			}
 		}
 		break
 	case 10://create/draw the spinny wheel, create obj_fadeWhite
 		if !instance_exists(obj_fadeWhite) {
-			if instance_exists(obj_textBubble) with obj_textBubble {
+			if instance_exists(obj_textBubble_old) with obj_textBubble_old {
 				if text[page] == "And remember -" {
 					with instance_create_layer(0,0,"Instances",obj_fadeWhite) goto = ow_scb_2_start
 					other.alarm[2] = other.wheel[1]
@@ -190,22 +190,22 @@ switch stage {
 			draw_sprite_ext(spr_cipherWheel_spin,wheel[2],x,y,wheel[0],wheel[0],0,c_white,1)
 			if wheel[0] < 2 {
 				wheel[0] += .1
-				if instance_exists(obj_textBubble) obj_textBubble.x += 2
+				if instance_exists(obj_textBubble_old) obj_textBubble_old.x += 2
 				path_end()
 				y += ceil((ystart-y)/4)
 			}
 		}
 		break
 	default://0,2,4,6
-		if !instance_exists(obj_textBubble) {
+		if !instance_exists(obj_textBubble_old) {
 			if alarm[0] == -1 alarm[0] = 30
 			path_end()
 			y += ceil((ystart-y)/4)
 		}
 		break
 }
-if instance_exists(obj_textBubble) {
-	with obj_textBubble if page >= 0 {
+if instance_exists(obj_textBubble_old) {
+	with obj_textBubble_old if page >= 0 {
 		font[page] = fnt_bill_bubble
 		if sound[page] == silence sound[page] = tlk_bill
 		if style[page] == 0 style[page] = 2

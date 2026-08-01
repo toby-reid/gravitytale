@@ -1,5 +1,5 @@
 /// @description Attack
-if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 {
+if image_alpha == 1 if !instance_exists(obj_textBubble_old) if global.stage[0] == 4 {
 	/*if array_length(lasers) == 0 {
 		lasers[0] = instance_create_layer(x-27,y-78,"Instances",obj_atk_gremEyes)
 		lasers[1] = instance_create_layer(x-2,y-78,"Instances",obj_atk_gremEyes)

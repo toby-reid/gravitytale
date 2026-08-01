@@ -1,5 +1,5 @@
 /// @description Bubble
-bubble = instance_create_layer(x+60,y-80,"Instances",obj_textBubble)
+bubble = instance_create_layer(x+60,y-80,"Instances",obj_textBubble_old)
 if stage == 3 and global.stage[1] == 1 and global.stage[5] == 1 bubble.text[0] = "weeeeen\ndyyyyy"
 else {
 	bubble.text[0] = global.player.mabel

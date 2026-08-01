@@ -1,5 +1,5 @@
 /// @desc text bubble
-with instance_create_layer(x + 60, y - 100, layer, obj_textBubble)
+with instance_create_layer(x + 60, y - 100, layer, obj_textBubble_old)
 {
     if (other.spare && global.stage[1] == 3 && global.stage[4] == 0)
     {

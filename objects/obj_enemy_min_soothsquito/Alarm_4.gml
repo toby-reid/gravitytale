@@ -1,6 +1,6 @@
 /// @description Text Bubble
 
-self.bubble = instance_create_layer(x + 20, y, layer, obj_textBubble);
+self.bubble = instance_create_layer(x + 20, y, layer, obj_textBubble_old);
 self.bubble.text[0] = choose(
     "BATCH OUT FOR WILL",
     "SHEAR THE FAPE\nSHIFTER",

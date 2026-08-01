@@ -1,5 +1,5 @@
 /// @description Attack
-if image_alpha == 1 if !instance_exists(obj_textBubble) if global.stage[0] == 4 {
+if image_alpha == 1 if !instance_exists(obj_textBubble_old) if global.stage[0] == 4 {
 	if distracted == 0 {
 		if timer == 0 {
 			/*if instance_exists(obj_enemy_manDan) and !audio_is_playing(sfx_enemyDead) {
