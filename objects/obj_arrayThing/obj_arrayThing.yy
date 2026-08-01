@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_textBubble",
+  "%Name":"obj_arrayThing",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_textBubble",
+  "name":"obj_arrayThing",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle",
-    "path":"folders/Objects/Battle.yy",
+    "name":"Meta",
+    "path":"folders/Objects/Meta.yy",
   },
-  "parentObjectId":{
-    "name":"obj_textParent",
-    "path":"objects/obj_textParent/obj_textParent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_textBubble",
-    "path":"sprites/spr_textBubble/spr_textBubble.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
