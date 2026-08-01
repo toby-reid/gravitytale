@@ -10,6 +10,7 @@ else if (clone_offset < 8)
 }
 else
 {
+    global.has_clone = true;
     instance_create_layer(x + 75, y + 10, obj_dipper.layer, obj_dipperClone, {desaturate_strength: desaturate_strength});
     obj_dipper.dir = DIRECTION.DOWN;
     obj_dipper.canMove = true;

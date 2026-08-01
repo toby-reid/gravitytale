@@ -17,21 +17,20 @@ function scr_generate_area_kills()
         25, // FOREST
         30, // CAVES
         36, // MINES
-        42 // TENT
+        24 // TENT
         // TENT battles (not in this order):
         // Sev'ral Timez 3
         // Sev'ral Timez 2 + Wizard
         // Sherlock + Larry + Wizard
-        // Lizzie + Groucho + Bird
+        // Lizzie + Groucho
         // Shakespeare + Genghis Kahn
-        // Dipper clones 2-4
+        // Tyrone
+        // Dipper clones 3-4 (the two survivors)
         // Dipper clones 5-7
         // Dipper clones 8-10
         // Paper jam Dipper
-        // Parrot-ox + 2, 3 times
-        // Aposto-Finch + 2, 2 times
         // Oops! All Invisible Wizards (3)
-        // Total: 42
+        // Total: 26, but 3&4 must survive
     ];
 }
 
@@ -47,27 +46,5 @@ enum TENT_BATTLE {
     CLONE_8_9_10 = 1 << 8,
     PAPER_JAM = 1 << 9,
     ALL_WIZARDS = 1 << 10,
-    ALL = 11_1111_1111
-}
-
-function get_tent_battle()
-{
-    if (global.tent_battles == 0)
-    {
-        return 0;
-    }
-    if (global.tent_battles == TENT_BATTLE.ALL)
-    {
-        return TENT_BATTLE.TYRONE; // he shall be the first
-    }
-    var _available_battles = [];
-    for (var i = 1; i <= global.tent_battles; i = i << 1)
-    {
-        if (scr_has_enum_flag(global.tent_battles, i))
-        {
-            array_push(_available_battles, i);
-        }
-    }
-    var _battle_index = irandom(array_length(_available_battles) - 1);
-    return _available_battles[_battle_index];
+    ALL = 111_1111_1111
 }

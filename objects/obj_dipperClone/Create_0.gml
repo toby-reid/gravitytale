@@ -1,3 +1,9 @@
+if (!global.has_clone)
+{
+    instance_destroy();
+    exit;
+}
+
 event_inherited();
 
 strength_uniform = shader_get_uniform(shd_desaturate, "strength");

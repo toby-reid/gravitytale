@@ -10,6 +10,7 @@ function scr_generate_statuses()
     // puzzles & side stuff
     global.oneTimeInstances = []; // Array of instance IDs for objects with a one-time effect
     global.completedPuzzleRooms = []; // Array of room names for completed puzzles
+    global.has_clone = false;
 
     // miscellaneous
     global.ghost = 0; // the highest category of ghost we have defeated
