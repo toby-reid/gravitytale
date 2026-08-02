@@ -39,10 +39,6 @@ if (instance_exists(obj_dipper))
 m_charCountTarget = 0;
 m_continueArrowIndex = 0;
 m_continueArrowSpeed = 7;
-m_pageSegmentText = [];
-m_pageSegmentColors = [];
-m_fontSwapTimers = [];
-m_charWaveTimer = 0; // used for the first character, to determine whether it's going up/down and for how long; positive is on the topside, negative on bottomside; 0-9 / -20--11 going up, 10-19 / -10--1 going down
 m_choiceSelection = 0;
 
 currentPageConfig = {
@@ -59,10 +55,6 @@ currentPageConfig = {
     isSkippable: true
 };
 m_DEFAULTS = variable_clone(currentPageConfig);
-m_CHAR_WAVES = {
-    LIMIT: 32,
-    SCALAR: 4
-}
 
 /// @desc Set head for all indices in range, or set as the given array.
 /// @param {Asset.GMSprite|Array<Asset.GMSprite>} _head_or_heads The value to set for the given range, or the array to set starting at the given index
@@ -307,11 +299,7 @@ m_process_page = function(_page)
     array_push(m_pageSegmentText, string_copy(_page_text, _segment_start, _page_length - _segment_start + 1));
     array_push(m_pageSegmentColors, _current_color);
     
-    m_charCountTarget = 0;
-    for (var i = 0, _segment_count = array_length(m_pageSegmentText); i < _segment_count; ++i)
-    {
-        m_charCountTarget += string_length(m_pageSegmentText[i]);
-    }
+    m_charCountTarget = scr_stringArray_length(m_pageSegmentText);
     
     currentPageConfig.head = scr_array_get(m_heads, _page, m_DEFAULTS.head);
     currentPageConfig.font = scr_array_get(m_fonts, _page, m_DEFAULTS.font);
@@ -327,62 +315,10 @@ m_process_page = function(_page)
     
     charCount = 0;
     m_choiceSelection = 0;
-    m_fontSwapTimers = scr_has_enum_flag(currentPageConfig.style, TEXT_STYLE.FONT_SWAP) ? array_create(m_charCountTarget, 20) : [];
+    m_fontSwapTimers = m_make_fontSwapTimers(m_charCountTarget);
     
     alarm[0] = currentPageConfig.charRate;
     alarm[1] = m_continueArrowSpeed;
-}
-
-/// @desc Retrieves the character found at the given index of the current page, accounting for all page segments
-/// @param {Real} _index 1-based index for the character to locate
-/// @return {String} The character at the given index
-m_char_at = function(_index)
-{
-    var _remaining = _index;
-    for (var _segment_index = 0, _segment_count = array_length(m_pageSegmentText); _segment_index < _segment_count; ++_segment_index)
-    {
-        var _segment_length = string_length(m_pageSegmentText[_segment_index]);
-        if (_segment_length >= _remaining)
-        {
-            return string_char_at(m_pageSegmentText[_segment_index], _remaining);
-        }
-        _remaining -= _segment_length;
-    }
-    // Allow a GMS2 error otherwise... something went wrong
-}
-
-// TODO: Continue from here. Determine whether m_CHAR_WAVES and m_fontSwapTimers, etc. should be moved to parent
-
-/// @desc Determines a text-wave Y-offset
-/// @param {Real} _wave The "wave" value, which should be between positive and negative `m_CHAR_WAVES.LIMIT` (positive limit exclusive)
-/// @return {Real} The Y-offset to use for this character based on that wave value
-m_wave_offset = function(_wave)
-{
-    var _peak = (m_CHAR_WAVES.LIMIT div m_CHAR_WAVES.SCALAR) div 2;
-    if (_wave < 0)
-    {
-        var _wave_strength = (_wave + m_CHAR_WAVES.LIMIT) div m_CHAR_WAVES.SCALAR;
-        return abs(_wave_strength - _peak) - _peak; // abs(wave_strength + 2*peak - peak) - peak
-    }
-    var _wave_strength = _wave div m_CHAR_WAVES.SCALAR;
-    return _peak - abs(_peak - _wave_strength);
-}
-/// @desc Increments a wave value in either direction, wrapping to fit within limits as necessary
-/// @param {Real} _wave The "wave" value to modify
-/// @param {Real} _direction The incremental value to add to `_wave` (default `1` to increment)
-/// @return {Real} The new "wave" value that can then be assigned
-m_increment_wave = function(_wave, _direction = 1)
-{
-    var _new_wave = _wave + _direction;
-    while (_new_wave >= m_CHAR_WAVES.LIMIT)
-    {
-        _new_wave -= 2 * m_CHAR_WAVES.LIMIT;
-    }
-    while (_new_wave < -m_CHAR_WAVES.LIMIT)
-    {
-        _new_wave += 2 * m_CHAR_WAVES.LIMIT;
-    }
-    return _new_wave;
 }
 
 /// @desc Loads the next page or closes the textbox if we've reached the end.

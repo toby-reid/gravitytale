@@ -634,6 +634,7 @@
     {"id":{"name":"scr_save","path":"scripts/scr_save/scr_save.yy",},},
     {"id":{"name":"scr_select_array","path":"scripts/scr_select_array/scr_select_array.yy",},},
     {"id":{"name":"scr_setmap","path":"scripts/scr_setmap/scr_setmap.yy",},},
+    {"id":{"name":"scr_stringArray","path":"scripts/scr_stringArray/scr_stringArray.yy",},},
     {"id":{"name":"scr_wayman","path":"scripts/scr_wayman/scr_wayman.yy",},},
     {"id":{"name":"scr_xorEncrypt","path":"scripts/scr_xorEncrypt/scr_xorEncrypt.yy",},},
     {"id":{"name":"shd_desaturate","path":"shaders/shd_desaturate/shd_desaturate.yy",},},

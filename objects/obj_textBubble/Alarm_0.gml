@@ -3,27 +3,15 @@
 if (charCount < m_charCountTarget)
 {
     ++charCount;
-    if (currentPageConfig.autoskipAt > 0 && charCount > currentPageConfig.autoskipAt)
-    {
-        skip_text();
-        exit;
-    }
-    else
-    {
-        alarm[0] = currentPageConfig.charRate;
-    }
+    alarm[0] = currentPageConfig.charRate;
 }
 else
 {
-    if (currentPageConfig.autocontinue)
-    {
-        next_page();
-    }
     exit;
 }
 
 var _char = scr_stringArray_charAt(m_pageSegmentText, charCount);
-while (_char == global.TEXT_FLAGS.NEWLINE)
+while (_char == global.TEXT_FLAGS.NEWLINE || _char == "\n")
 {
     ++charCount;
     _char = scr_stringArray_charAt(m_pageSegmentText, charCount);
@@ -35,11 +23,7 @@ if (array_contains(global.TEXT_FLAGS.SOFT_PUNCTUATION, _char))
 }
 else if (array_contains(global.TEXT_FLAGS.HARD_PUNCTUATION, _char) || _char == global.TEXT_FLAGS.PAUSE)
 {
-    var _next_char = scr_stringArray_charAt(m_pageSegmentText, charCount + 1);
-    if (_next_char != ")")
-    {
-        alarm[0] *= 10;
-    }
+    alarm[0] *= 10;
 }
 else if (_char != global.TEXT_FLAGS.NEWLINE_BUTTON && _char != " ")
 {

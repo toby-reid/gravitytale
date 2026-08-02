@@ -13,6 +13,19 @@ currentPageConfig = {
 };
 m_DEFAULTS = variable_clone(currentPageConfig);
 
+m_pageSegmentText = [];
+m_pageSegmentColors = [];
+m_fontSwapTimers = [];
+m_fontSwapIndex = 0;
+// used for the first character, to determine whether it's going up/down and for how long
+// positive is on the topside, negative on the bottomside
+// [0:HALFWAY) and [-LIMIT:-HALFWAY) going up; [HALFWAY:LIMIT) and [-HALFWAY:0) going down
+m_charWaveTimer = 0;
+m_CHAR_WAVES = {
+    LIMIT: 16, // TODO: obj_textbox had this at 12. Also, determine whether it would be easier to make this the HALFWAY instead
+    SCALAR: 4 // shrinks the offset by this much, when 'LIMIT / 2' would otherwise be the max offset
+};
+
 /// @desc Private method to set array-based variable value (does not work on array of arrays)
 /// @param {String} _var_name The name of the variable to change (e.g., `m_text`)
 /// @param {Array<Any>|Any} _new_data The new data to place at `_start_index`
@@ -130,4 +143,59 @@ skip_text = function()
     // Easiest solution: Removes the need to change m_fontSwapTimers stuff
     currentPageConfig.style = scr_remove_enum_flag(currentPageConfig.style, TEXT_STYLE.FONT_SWAP);
     alarm[0] = currentPageConfig.charRate; // set it one last time in case of autocontinue
+}
+
+/// @desc Creates a font-swap timers array of the given length iff. this page's style includes font swap.
+/// @param {Real} _length The length of the array to create if font swapping (recommended use full text length)
+/// @param {Real} _timer_value The number of frames until the font is swapped (default 20)
+/// @return {Array<Real>} The font-swap timers array (or an empty array, if not swapping fonts)
+m_make_fontSwapTimers = function(_length, _timer_value = 20)
+{
+    return scr_has_enum_flag(currentPageConfig.style, TEXT_STYLE.FONT_SWAP) ? array_create(_length, _timer_value) : [];
+}
+/// @desc Decrements all font-swap timers (`m_fontSwapTimers`) up to (and including) the given char count.
+/// Also sets `m_fontSwapIndex` to the first non-zero index in the array.
+/// @param {Real} _char_count The current character count
+m_decrement_fontSwapTimers = function(_char_count)
+{
+    for (var i = m_fontSwapIndex, _fontSwap_length = array_length(m_fontSwapTimers); i < _char_count && i < _fontSwap_length; ++i)
+    {
+        --m_fontSwapTimers[i];
+        if (m_fontSwapTimers[i] == 0)
+        {
+            m_fontSwapIndex = i + 1;
+        }
+    }
+}
+
+/// @desc Determines a text-wave Y-offset
+/// @param {Real} _wave The "wave" value, which should be between positive and negative `m_CHAR_WAVES.LIMIT` (positive limit exclusive)
+/// @return {Real} The Y-offset to use for this character based on that wave value
+m_wave_offset = function(_wave)
+{
+    var _peak = (m_CHAR_WAVES.LIMIT div m_CHAR_WAVES.SCALAR) div 2;
+    if (_wave < 0)
+    {
+        var _wave_strength = (_wave + m_CHAR_WAVES.LIMIT) div m_CHAR_WAVES.SCALAR;
+        return abs(_wave_strength - _peak) - _peak; // abs(wave_strength + 2*peak - peak) - peak
+    }
+    var _wave_strength = _wave div m_CHAR_WAVES.SCALAR;
+    return _peak - abs(_peak - _wave_strength);
+}
+/// @desc Increments a wave value in either direction, wrapping to fit within limits as necessary
+/// @param {Real} _wave The "wave" value to modify
+/// @param {Real} _direction The incremental value to add to `_wave` (default `1` to increment)
+/// @return {Real} The new "wave" value that can then be assigned
+m_increment_wave = function(_wave, _direction = 1)
+{
+    var _new_wave = _wave + _direction;
+    while (_new_wave >= m_CHAR_WAVES.LIMIT)
+    {
+        _new_wave -= (m_CHAR_WAVES.LIMIT + m_CHAR_WAVES.LIMIT);
+    }
+    while (_new_wave < -m_CHAR_WAVES.LIMIT)
+    {
+        _new_wave += m_CHAR_WAVES.LIMIT + m_CHAR_WAVES.LIMIT;
+    }
+    return _new_wave;
 }

@@ -68,7 +68,7 @@ m_process_page = function(_page)
     var _page_length = string_length(_page_text);
 
     var _segment_start = 1;
-    var _current_color = c_white;
+    var _current_color = c_black;
     currentPageConfig.autosplit = true;
     for (var _char_index = 1; _char_index < _page_length; ++_char_index)
     {
@@ -79,11 +79,11 @@ m_process_page = function(_page)
                 {
                     array_push(m_pageSegmentText, string_copy(_page_text, _segment_start, _char_index - _segment_start));
                     array_push(m_pageSegmentColors, _current_color);
+                    currentPageConfig.autosplit = false; // allow for autosplitting if the very beginning is color
                 }
                 _current_color = scr_hexdec(string_copy(_page_text, _char_index + 1, 6));
                 _char_index += 6; // will be incremented once more at end of 'for' iteration
                 _segment_start = _char_index + 1; // to account for the extra char_index increment after this iteration
-                currentPageConfig.autosplit = false;
                 break;
             case global.TEXT_FLAGS.ESCAPE:
                 var _next_char = string_char_at(_page_text, _char_index + 1);
@@ -107,11 +107,7 @@ m_process_page = function(_page)
     array_push(m_pageSegmentText, string_copy(_page_text, _segment_start, _page_length - _segment_start + 1));
     array_push(m_pageSegmentColors, _current_color);
 
-    m_charCountTarget = 0;
-    for (var i = 0, _segment_count = array_length(m_pageSegmentText); i < _segment_count; ++i)
-    {
-        m_charCountTarget += string_length(m_pageSegmentText[i]);
-    }
+    m_charCountTarget = scr_stringArray_length(m_pageSegmentText);
 
     currentPageConfig.font = scr_array_get(m_fonts, _page, m_DEFAULTS.font);
     currentPageConfig.style = scr_array_get(m_styles, _page, m_DEFAULTS.style);
@@ -119,6 +115,10 @@ m_process_page = function(_page)
     currentPageConfig.action = scr_array_get(m_actions, _page, m_DEFAULTS.action);
     currentPageConfig.charRate = scr_array_get(m_charRates, _page, m_DEFAULTS.charRate);
     currentPageConfig.isSkippable = scr_array_get(m_skippables, _page, m_DEFAULTS.isSkippable);
+    if (currentPageConfig.style != TEXT_STYLE.NONE)
+    {
+        currentPageConfig.autosplit = false;
+    }
 
     charCount = 0;
     m_fontSwapTimers = scr_has_enum_flag(currentPageConfig.style, TEXT_STYLE.FONT_SWAP) ? array_create(m_charCountTarget, 20) : [];
@@ -127,4 +127,22 @@ m_process_page = function(_page)
     alarm[1] = m_continueArrowSpeed;
 }
 
-// TODO: Continue from here. See obj_textbox
+/// @desc Loads the next page or closes the text bubble if we've reached the end.
+/// Also invokes this page's action, if relevant.
+/// @return {Bool} Whether we've reached the end (and this bubble is going away)
+next_page = function()
+{
+    if (is_callable(currentPageConfig.action))
+    {
+        currentPageConfig.action();
+    }
+
+    ++page;
+    if (page >= array_length(m_text))
+    {
+        m_growRate = -0.1;
+        return true;
+    }
+    m_process_page(page);
+    return false;
+}

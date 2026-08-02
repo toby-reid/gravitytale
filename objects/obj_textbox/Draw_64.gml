@@ -1,21 +1,5 @@
 draw_self();
-if (m_growRate != 0)
-{
-    image_xscale += m_growRate;
-    image_yscale += m_growRate;
-    if (m_growRate > 0 && image_xscale >= 2)
-    {
-        m_growRate = 0;
-        image_xscale = 2;
-        image_yscale = 2;
-        m_process_page(page);
-    }
-    else if (m_growRate < 0 && image_xscale <= 0)
-    {
-        instance_destroy();
-    }
-}
-else
+if (m_growRate == 0)
 {
     var _x_current = x - 264;
     var _y_current = y - 51;
@@ -64,14 +48,6 @@ else
         )
         {
             ++_total_char_count;
-            if (_swap_text)
-            {
-                var _swap_index = _total_char_count - 1;
-                if (m_fontSwapTimers[_swap_index] > 0)
-                {
-                    --m_fontSwapTimers[_swap_index];
-                }
-            }
             
             var _char = string_char_at(_segment_text, _char_index);
             switch (_char)
@@ -114,10 +90,6 @@ else
                     break;
                 case global.TEXT_FLAGS.ESCAPE:
                     ++_char_index;
-                    if (_swap_text)
-                    {
-                        m_fontSwapTimers[_total_char_count] = m_fontSwapTimers[_total_char_count - 1];
-                    }
                     ++_total_char_count;
                     _char = string_char_at(_segment_text, _char_index);
                     // fallthrough
@@ -126,13 +98,14 @@ else
                     if (_swap_text)
                     {
                         var _swap_index = _total_char_count - 1;
-                        if (m_fontSwapTimers[_swap_index] > 0)
+                        if (m_fontSwapIndex >= _swap_index)
                         {
                             draw_set_font(currentPageConfig.font);
                         }
                     }
                     draw_text_colour(
-                        _x_current + (_shake_text ? irandom_range(-1, 1) : 0), _y_current + (_shake_text ? irandom_range(-1, 1) : 0) + (_wave_text ? m_wave_offset(_wave) : 0),
+                        _x_current + (_shake_text ? irandom_range(-1, 1) : 0),
+                        _y_current + (_shake_text ? irandom_range(-1, 1) : 0) + (_wave_text ? m_wave_offset(_wave) : 0),
                         _char,
                         _segment_color, _segment_color, _segment_color, _segment_color, 1
                     );
@@ -184,6 +157,4 @@ else
         draw_sprite_ext(spr_moreText, m_continueArrowIndex, x + 270, y + 50, 3, 3, _rotation, _arrow_color, 1);
         head_frame = 0;
     }
-    
-    m_charWaveTimer = m_increment_wave(m_charWaveTimer, -1);
 }
