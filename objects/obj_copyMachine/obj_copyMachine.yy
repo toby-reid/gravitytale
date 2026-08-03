@@ -34,7 +34,6 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"desaturate_strength","filters":[],"listItems":[],"multiselect":false,"name":"desaturate_strength","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.6","varType":0,},
-    {"$GMObjectProperty":"v2","%Name":"clone_battle","filters":[],"listItems":[],"multiselect":false,"name":"clone_battle","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"TENT_BATTLE.NONE","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

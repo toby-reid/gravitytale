@@ -10,7 +10,7 @@ else if (clone_offset < 8)
 }
 else
 {
-    global.has_clone = true;
+    global.has_clone = true; // persists across rooms
     instance_create_layer(x + 75, y + 10, obj_dipper.layer, obj_dipperClone, {desaturate_strength: desaturate_strength});
     obj_dipper.dir = DIRECTION.DOWN;
     obj_dipper.canMove = true;
@@ -20,9 +20,4 @@ else
     image_index = 2;
     clone_height = 0;
     clone_offset = 0;
-    if (!global.player.mabel && scr_has_enum_flag(global.tent_battles, TENT_BATTLE.TYRONE))
-    {
-        // TODO: Go to Tyrone battle
-        // If playing as Mabel, that battle should have already occurred
-    }
 }
