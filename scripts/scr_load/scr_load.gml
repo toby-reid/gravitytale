@@ -15,7 +15,7 @@ function scr_load()
 
     global.player.name = scr_readString(_bin);
     global.player.mabel = scr_readBools(_bin, 1)[0];
-    global.player.time = scr_readArray(_bin);
+    global.player.time = scr_readTime(_bin);
     global.player.kills = scr_readInteger(_bin, 2);
     global.player.spares = scr_readInteger(_bin, 2);
     global.player.hp = scr_readInteger(_bin, 1);

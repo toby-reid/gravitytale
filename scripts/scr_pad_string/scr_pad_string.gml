@@ -1,26 +1,40 @@
-function scr_pad_string(str, length, _alignment = fa_right, pad_char = " ")
+/// @desc Pads a string (or other object) with the given character.
+/// @param {Any} _object The object to stringify and pad
+/// @param {Real} _length The desired string length
+/// @param {Constant.HAlign} _alignment Where the source string is located (default, `fa_right`, meaning padding is added to the left)
+/// @param {String} _pad_char The character to use for padding (if length is more than 1, only the first character is used)
+/// @return {String} A string of at least length `_length`
+function scr_pad_string(_object, _length, _alignment = fa_right, _pad_char = " ")
 {
-    var _current_length = string_length(str);
-    var _pad_length = length - _current_length;
+    var _string = string(_object);
+    var _current_length = string_length(_string);
+    var _pad_length = _length - _current_length;
     if (_pad_length <= 0)
     {
-        return str;
+        return _string;
     }
-    if (string_length(pad_char) > 1)
+
+    var _pad_char_length = string_length(_pad_char);
+    if (_pad_char_length == 0)
     {
-        pad_char = string_copy(pad_char, 1, 1);
+        _pad_char = " ";
     }
+    else if (_pad_char_length > 1)
+    {
+        _pad_char = string_char_at(_pad_char, 1);
+    }
+
     switch (_alignment)
     {
         case fa_left:
-            return string_concat(str, string_repeat(pad_char, _pad_length));
+            return string_concat(_string, string_repeat(_pad_char, _pad_length));
         case fa_center:
             var _odd_add = _pad_length % 2;
             _pad_length = _pad_length div 2;
-            return string_concat(string_repeat(pad_char, _pad_length), str, string_repeat(pad_char, _pad_length + _odd_add));
+            return string_concat(string_repeat(_pad_char, _pad_length), _string, string_repeat(_pad_char, _pad_length + _odd_add));
         case fa_right:
         default:
-            return string_concat(string_repeat(pad_char, _pad_length), str);
+            return string_concat(string_repeat(_pad_char, _pad_length), _string);
     }
 }
 

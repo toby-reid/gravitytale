@@ -2,7 +2,9 @@ image_alpha = 0;
 image_speed = 0;
 image_yscale = 2;
 image_xscale = 2;
-alarm[0] = 60;
+
+SECOND_FRAMES = game_get_speed(gamespeed_fps);
+alarm[0] = SECOND_FRAMES;
 
 scr_setmap();
 

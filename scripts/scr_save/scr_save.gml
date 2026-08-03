@@ -23,8 +23,7 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
 
     scr_writeString(_bin, global.player.name);
     scr_writeBools(_bin, [global.player.mabel]);
-    // Assuming the player hasn't been playing for 256 hours, 1 byte should be plenty for each unit of time
-    scr_writeArray(_bin, global.player.time);
+    scr_writeTime(_bin, global.player.time);
     // Depending on how it goes, the player may have a lot of kills/spares... so allocate 2 bytes for each
     scr_writeInteger(_bin, global.player.kills, 2);
     scr_writeInteger(_bin, global.player.spares, 2);
