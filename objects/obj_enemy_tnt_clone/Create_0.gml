@@ -1,5 +1,6 @@
 name = string_concat("Number ", clone_number);
 act = ["Check", "Fold", "Water", "WENDY"];
+action = -1;
 switch clone_number
 {
     case 3:
@@ -18,9 +19,10 @@ switch clone_number
         break;
     default:
         check = ""; // will be handled later
+        break;
 }
 spare = false;
-run = true;
+run = false;
 hp = 36;
 maxhp = hp;
 at = 1;

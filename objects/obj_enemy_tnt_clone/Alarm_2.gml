@@ -22,3 +22,4 @@ else
     obj_battleCore.text[0] = "That was disturbing, but you #feel you've seen worse.";
     hp = 0;
 }
+action = 2;

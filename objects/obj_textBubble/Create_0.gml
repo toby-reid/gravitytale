@@ -81,12 +81,21 @@ m_process_page = function(_page)
                     array_push(m_pageSegmentColors, _current_color);
                     currentPageConfig.autosplit = false; // allow for autosplitting if the very beginning is color
                 }
-                _current_color = scr_hexdec(string_copy(_page_text, _char_index + 1, 6));
-                _char_index += 6; // will be incremented once more at end of 'for' iteration
+                var _next_char = string_char_at(_page_text, _char_index + 1);
+                if (_next_char == global.TEXT_FLAGS.COLOR)
+                {
+                    _current_color = c_black;
+                    _char_index += 1;
+                }
+                else
+                {
+                    _current_color = scr_hexdec(string_copy(_page_text, _char_index + 1, 6));
+                    _char_index += 6; // will be incremented once more at end of 'for' iteration
+                }
                 _segment_start = _char_index + 1; // to account for the extra char_index increment after this iteration
                 break;
             case global.TEXT_FLAGS.ESCAPE:
-                var _next_char = string_char_at(_page_text, _char_index + 1);
+                _next_char = string_char_at(_page_text, _char_index + 1);
                 if (_next_char == global.TEXT_FLAGS.COLOR)
                 {
                     // Remove the backslash

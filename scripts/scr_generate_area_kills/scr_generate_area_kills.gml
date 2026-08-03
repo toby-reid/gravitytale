@@ -17,24 +17,26 @@ function scr_generate_area_kills()
         25, // FOREST
         30, // CAVES
         36, // MINES
-        24 // TENT
+        44 // TENT
         // TENT battles (not in this order):
-        // Sev'ral Timez 3
-        // Sev'ral Timez 2 + Wizard
-        // Sherlock + Larry + Wizard
-        // Lizzie + Groucho
-        // Shakespeare + Genghis Kahn
-        // Tyrone
-        // Dipper clones 3-4 (the two survivors)
-        // Dipper clones 5-7
-        // Dipper clones 8-10
-        // Paper jam Dipper
-        // Oops! All Invisible Wizards (3)
-        // Total: 26, but 3&4 must survive
+        // 3: Sev'ral Timez 3
+        // 3: Sev'ral Timez 2 + Wizard
+        // 3: Sherlock + Larry + Wizard
+        // 2: Lizzie + Groucho
+        // 2: Shakespeare + Genghis Kahn
+        // 1: Tyrone
+        // 2: Dipper clones 3-4 (the two survivors)
+        // 3: Dipper clones 5-7
+        // 3: Dipper clones 8-10
+        // 1: Paper jam Dipper
+        // 3: Oops! All Invisible Wizards (3)
+        // Total: 26, but 3&4 must survive, so 24
+        // Plus, an army of Gnomes for Gnomezilla... maybe like 20?
     ];
 }
 
 enum TENT_BATTLE {
+    NONE = 0,
     SEVRAL_TIMEZ_3 = 1 << 0,
     SEVRAL_TIMEZ_2 = 1 << 1,
     SHERLOCK_LARRY = 1 << 2,
@@ -47,4 +49,18 @@ enum TENT_BATTLE {
     PAPER_JAM = 1 << 9,
     ALL_WIZARDS = 1 << 10,
     ALL = 111_1111_1111
+}
+
+function get_random_tent_battle()
+{
+    var _options = [];
+    for (var i = 1; i < TENT_BATTLE.ALL; i = i << 1)
+    {
+        if (scr_has_enum_flag(global.tent_battles, i) && (i < TENT_BATTLE.TYRONE || i > TENT_BATTLE.PAPER_JAM))
+        {
+            array_push(_options, i);
+        }
+    }
+    var _option_count = array_length(_options);
+    return (_option_count == 0) ? TENT_BATTLE.NONE : _options[irandom(_option_count - 1)];
 }

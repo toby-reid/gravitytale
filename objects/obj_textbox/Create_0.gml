@@ -272,16 +272,29 @@ m_process_page = function(_page)
                     array_push(m_pageSegmentText, string_copy(_page_text, _segment_start, _char_index - _segment_start));
                     array_push(m_pageSegmentColors, _current_color);
                 }
-                _current_color = scr_hexdec(string_copy(_page_text, _char_index + 1, 6));
-                _char_index += 6;
-                _segment_start = _char_index + 1;
-                if (_skipPageAt >= _segment_start)
+                var _next_char = string_char_at(_page_text, _char_index + 1);
+                if (_next_char == global.TEXT_FLAGS.COLOR)
                 {
-                    currentPageConfig.autoskipAt -= 7;
+                    _current_color = c_white;
+                    _char_index += 1;
+                    if (_skipPageAt >= _segment_start)
+                    {
+                        currentPageConfig.autoskipAt -= 2;
+                    }
                 }
+                else
+                {
+                    _current_color = scr_hexdec(string_copy(_page_text, _char_index + 1, 6));
+                    _char_index += 6;
+                    if (_skipPageAt >= _segment_start)
+                    {
+                        currentPageConfig.autoskipAt -= 7;
+                    }
+                }
+                _segment_start = _char_index + 1;
                 break;
             case global.TEXT_FLAGS.ESCAPE:
-                var _next_char = string_char_at(_page_text, _char_index + 1);
+                _next_char = string_char_at(_page_text, _char_index + 1);
                 if (_next_char == global.TEXT_FLAGS.COLOR)
                 {
                     array_push(m_pageSegmentText, string_copy(_page_text, _segment_start, _char_index - _segment_start));

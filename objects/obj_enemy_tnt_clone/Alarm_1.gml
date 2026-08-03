@@ -42,3 +42,4 @@ else
     obj_battleCore.text[0] = string_concat(name, " is ready to leave #to practice the new moves on #himself.");
     spare = true;
 }
+action = 1;
