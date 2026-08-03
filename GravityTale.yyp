@@ -613,7 +613,6 @@
     {"id":{"name":"scr_direction","path":"scripts/scr_direction/scr_direction.yy",},},
     {"id":{"name":"scr_enum_flag","path":"scripts/scr_enum_flag/scr_enum_flag.yy",},},
     {"id":{"name":"scr_format_int","path":"scripts/scr_format_int/scr_format_int.yy",},},
-    {"id":{"name":"scr_format_time","path":"scripts/scr_format_time/scr_format_time.yy",},},
     {"id":{"name":"scr_generate_area_kills","path":"scripts/scr_generate_area_kills/scr_generate_area_kills.yy",},},
     {"id":{"name":"scr_generate_enemy_indices","path":"scripts/scr_generate_enemy_indices/scr_generate_enemy_indices.yy",},},
     {"id":{"name":"scr_generate_item_info","path":"scripts/scr_generate_item_info/scr_generate_item_info.yy",},},

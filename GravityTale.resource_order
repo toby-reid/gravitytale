@@ -478,7 +478,6 @@
     {"name":"scr_count_array","order":2,"path":"scripts/scr_count_array/scr_count_array.yy",},
     {"name":"scr_direction","order":33,"path":"scripts/scr_direction/scr_direction.yy",},
     {"name":"scr_enum_flag","order":27,"path":"scripts/scr_enum_flag/scr_enum_flag.yy",},
-    {"name":"scr_format_time","order":1,"path":"scripts/scr_format_time/scr_format_time.yy",},
     {"name":"scr_generate_area_kills","order":4,"path":"scripts/scr_generate_area_kills/scr_generate_area_kills.yy",},
     {"name":"scr_generate_enemy_indices","order":5,"path":"scripts/scr_generate_enemy_indices/scr_generate_enemy_indices.yy",},
     {"name":"scr_generate_item_info","order":3,"path":"scripts/scr_generate_item_info/scr_generate_item_info.yy",},
