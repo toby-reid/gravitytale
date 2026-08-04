@@ -43,7 +43,7 @@ function scr_new_global_player()
     /// If anything here is changed, scr_save and scr_load will also need updates
     global.player = {
         name: "Dipper",
-        mabel: variable_global_exists("player") ? bool(global.player.mabel) : true,
+        mabel: variable_global_exists("player") ? bool(global.player.mabel) : false,
         time: new Time(),
         kills: 0,
         spares: 0,

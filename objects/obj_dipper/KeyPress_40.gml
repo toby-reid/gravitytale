@@ -2,7 +2,8 @@ if (canMove)
 {
     if (image_speed == 0 && image_index % 2 == 0)
     {
-        ++image_index;
+        dir = DIRECTION.DOWN;
+        image_index = clamp_image_index() + 1;
     }
 }
 else if (m_menu != DIPPER_MENU.CLOSED)

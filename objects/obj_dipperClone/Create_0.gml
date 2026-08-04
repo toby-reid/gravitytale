@@ -12,7 +12,8 @@ is_dipper_classic = false;
 
 set_image = function() {
     sprite_index = obj_dipper.sprite_index;
-    image_index = floor(obj_dipper.image_index);
+    // Must clamp here in case obj_dipper's 'Step' hasn't occurred by the time this function is called
+    image_index = obj_dipper.clamp_image_index(obj_dipper.dir, obj_dipper.image_index);
     image_index -= image_index % 2;
 }
 sprite_index = obj_dipper.sprite_index;
@@ -45,9 +46,9 @@ swap = function() {
     {
         obj_dipper.dir = DIRECTION.DOWN;
     }
-    obj_dipper._old_index = _old_index;
+    obj_dipper.image_index = _old_index;
     is_dipper_classic = !is_dipper_classic;
-    audio_play_sound(sfx_mmmm, 0, false); // TODO: find a better sound effect for swapping
+    audio_play_sound(sfx_mmmm, -1, false); // TODO: find a better sound effect for swapping
     alarm[0] = 20;
 }
 

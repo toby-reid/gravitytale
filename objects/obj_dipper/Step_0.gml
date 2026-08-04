@@ -19,20 +19,6 @@ if (canMove)
 moving = (x != xprevious || y != yprevious);
 if (image_speed == 0)
 {
-    image_index = 2 * (image_index div 2);
+    image_index -= image_index % 2;
 }
-switch dir
-{
-    case DIRECTION.RIGHT:
-        if (image_index >= 2) { image_index = 0; }
-        break;
-    case DIRECTION.UP:
-        if (image_index >= 6 or image_index < 2) { image_index = 2; }
-        break;
-    case DIRECTION.LEFT:
-        if (image_index >= 8 or image_index < 6) { image_index = 6; }
-        break;
-    case DIRECTION.DOWN:
-        if (image_index < 8) { image_index = 8; }
-        break;
-}
+image_index = clamp_image_index();

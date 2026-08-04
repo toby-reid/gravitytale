@@ -106,3 +106,15 @@ m_toggle_menu = function()
     }
     audio_play_sound(sfx_beep, 0, false);
 }
+
+m_IMAGE_CLAMPS = [
+    [0, 2],
+    [2, 6],
+    [6, 8],
+    [8, 12]
+];
+clamp_image_index = function(_dir = dir, _index = image_index)
+{
+    var _clamps = m_IMAGE_CLAMPS[_dir];
+    return (_clamps[0] <= _index && _index < _clamps[1]) ? _index : _clamps[0];
+}
