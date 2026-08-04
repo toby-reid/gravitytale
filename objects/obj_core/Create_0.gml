@@ -23,17 +23,14 @@ scr_generate_statuses();
 global.ITEM_INFO = scr_generate_item_info();
 {
 	var bag_size = 8;
-	switch global.player.bag {
-		case BAG.SHOULDER_BAG:
-		case BAG.PIGGER_BAG:
-			bag_size = 12;
-			break;
-		case BAG.BOTH:
-			bag_size = 16;
-			break;
-		default:
-			break;
-	}
+    if (scr_has_enum_flag(global.player.bag, BAG.SHOULDER_BAG))
+    {
+        bag_size += 4;
+    }
+    if (scr_has_enum_flag(global.player.bag, BAG.PIGGER_BAG))
+    {
+        bag_size += 4;
+    }
 	global.inventory = array_create(bag_size, ITEM_INDEX.NONE);
 }
 order = 0; // marks the GRAVITYTALE cheat code order

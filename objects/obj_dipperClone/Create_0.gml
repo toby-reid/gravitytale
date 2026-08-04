@@ -47,6 +47,8 @@ swap = function() {
     }
     obj_dipper._old_index = _old_index;
     is_dipper_classic = !is_dipper_classic;
+    audio_play_sound(sfx_mmmm, 0, false); // TODO: find a better sound effect for swapping
+    alarm[0] = 30;
 }
 
 m_set_shaders = function() {
@@ -68,4 +70,13 @@ m_draw_dipper = function() {
     }
     draw_sprite(obj_dipper.sprite_index, obj_dipper.image_index, obj_dipper.x, obj_dipper.y);
     shader_reset();
+    if (alarm[0] > -1)
+    {
+        if (alarm[0] < 10)
+        {
+            draw_set_alpha(alarm[0] / 10);
+        }
+        draw_sprite(spr_alert, 0, obj_dipper.x, obj_dipper.y - 20);
+        draw_set_alpha(1);
+    }
 }

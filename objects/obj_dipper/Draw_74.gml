@@ -136,8 +136,8 @@ if (m_menu != DIPPER_MENU.CLOSED)
             
             draw_sprite_ext(spr_menuIcons, (global.player.at == AT_DF.UPGRADE) ? 3 : 2, 492, 351, 2, 2, 0, c_white, 1);
             draw_sprite_ext(spr_menuIcons, (global.player.df == AT_DF.UPGRADE) ? 5 : 4, 492, 381, 2, 2, 0, c_white, 1);
-            draw_sprite_ext(spr_menuIcons, (global.player.bag == BAG.BOTH || global.player.bag == BAG.SHOULDER_BAG) ? 7 : 6, 462, 411, 2, 2, 0, c_white, 1);
-            draw_sprite_ext(spr_menuIcons, (global.player.bag == BAG.BOTH || global.player.bag == BAG.PIGGER_BAG)   ? 9 : 8, 492, 411, 2, 2, 0, c_white, 1);
+            draw_sprite_ext(spr_menuIcons, scr_has_enum_flag(global.player.bag, BAG.SHOULDER_BAG) ? 7 : 6, 462, 411, 2, 2, 0, c_white, 1);
+            draw_sprite_ext(spr_menuIcons, scr_has_enum_flag(global.player.bag, BAG.PIGGER_BAG)   ? 9 : 8, 492, 411, 2, 2, 0, c_white, 1);
             draw_sprite_ext(spr_menuIcons, global.player.coupon ? 11 : 10, 492, 201, 2, 2, 0, c_white, 1); // line up with Stan Bucks, above
             
             draw_text(208, 408, scr_format_time());

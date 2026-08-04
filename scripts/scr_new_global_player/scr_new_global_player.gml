@@ -6,10 +6,10 @@ enum AT_DF {
     UPGRADE
 }
 enum BAG {
-    NONE,
-    SHOULDER_BAG,
-    PIGGER_BAG,
-    BOTH
+    NONE = 0,
+    SHOULDER_BAG = 1 << 0,
+    PIGGER_BAG = 1 << 1,
+    BOTH = 0b11
 }
 enum RUN {
     UNSTARTED,
@@ -43,7 +43,7 @@ function scr_new_global_player()
     /// If anything here is changed, scr_save and scr_load will also need updates
     global.player = {
         name: "Dipper",
-        mabel: variable_global_exists("player") ? bool(global.player.mabel) : false,
+        mabel: variable_global_exists("player") ? bool(global.player.mabel) : true,
         time: new Time(),
         kills: 0,
         spares: 0,

@@ -48,7 +48,7 @@ enum TENT_BATTLE {
     CLONE_8_9_10 = 1 << 8,
     PAPER_JAM = 1 << 9,
     ALL_WIZARDS = 1 << 10,
-    ALL = 111_1111_1111
+    ALL = 0b0111_1111_1111
 }
 
 function get_random_tent_battle()

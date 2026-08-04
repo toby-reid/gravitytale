@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.462857,
+  "duration":1.4164172,
   "exportDir":"",
   "name":"sfx_gobberRoar",
   "parent":{
