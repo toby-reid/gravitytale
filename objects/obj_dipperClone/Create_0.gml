@@ -48,7 +48,7 @@ swap = function() {
     obj_dipper._old_index = _old_index;
     is_dipper_classic = !is_dipper_classic;
     audio_play_sound(sfx_mmmm, 0, false); // TODO: find a better sound effect for swapping
-    alarm[0] = 30;
+    alarm[0] = 20;
 }
 
 m_set_shaders = function() {

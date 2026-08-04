@@ -5,7 +5,7 @@ if (is_interaction())
         set_text(
             string_concat(
                 "(It's ",
-                other.is_dipper_classic ? "your clone" : string_concat(global.player.name, " Classic"),
+                other.is_dipper_classic ? string_concat(global.player.name, " Classic") : "your clone",
                 ".",
                 global.player.mabel ? "" : "&(Was your head always this #big?",
                 ")"
