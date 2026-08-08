@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_lizzie",
   "bboxMode":0,
-  "bbox_bottom":0,
+  "bbox_bottom":103,
   "bbox_left":0,
-  "bbox_right":0,
+  "bbox_right":69,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":20,
+  "height":104,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"2eca5a74-a615-4c29-b6c1-10f55ccb230a","blendMode":0,"displayName":"default","isLocked":false,"name":"2eca5a74-a615-4c29-b6c1-10f55ccb230a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":20,
+  "width":70,
 }

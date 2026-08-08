@@ -44,7 +44,8 @@ if (clone_number != 2)
 
 obj_battleCore.text[0] = global.player.mabel ? "The resemblance is uncanny." : "It's like looking in a mirror.";
 
-m_act_before_check = function(_attempted_action) {
+m_act_before_check = function(_attempted_action)
+{
     obj_battleCore.text[1] = string_concat("You were about to ", _attempted_action, " #but you realised you know #nothing about these ", (clone_number == 2) ? "things" : "ones", ".");
     obj_battleCore.text[0] = global.player.mabel
         ? string_concat("In honor of your dear brother, #whose image ", (clone_number == 2) ? "this is" : "these are", ", #you should exercise caution.")

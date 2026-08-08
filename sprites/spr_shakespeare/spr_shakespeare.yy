@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_shakespeare",
   "bboxMode":0,
-  "bbox_bottom":0,
+  "bbox_bottom":75,
   "bbox_left":0,
-  "bbox_right":0,
+  "bbox_right":69,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":20,
+  "height":76,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"2a2fee2c-3cfc-4aa3-8712-8a0342f55149","blendMode":0,"displayName":"default","isLocked":false,"name":"2a2fee2c-3cfc-4aa3-8712-8a0342f55149","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":20,
+  "width":70,
 }

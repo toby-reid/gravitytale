@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_groucho",
   "bboxMode":0,
-  "bbox_bottom":0,
+  "bbox_bottom":85,
   "bbox_left":0,
-  "bbox_right":0,
+  "bbox_right":46,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":20,
+  "height":86,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"d9913a91-070a-4434-96b0-df0db9b08f46","blendMode":0,"displayName":"default","isLocked":false,"name":"d9913a91-070a-4434-96b0-df0db9b08f46","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":20,
+  "width":47,
 }

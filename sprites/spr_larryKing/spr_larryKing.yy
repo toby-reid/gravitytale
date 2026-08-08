@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spr_larryKing",
   "bboxMode":0,
-  "bbox_bottom":0,
+  "bbox_bottom":66,
   "bbox_left":0,
-  "bbox_right":0,
+  "bbox_right":47,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":20,
+  "height":67,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"944f430e-7a76-4f43-978c-9d72ba55c2e9","blendMode":0,"displayName":"default","isLocked":false,"name":"944f430e-7a76-4f43-978c-9d72ba55c2e9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":20,
+  "width":48,
 }
