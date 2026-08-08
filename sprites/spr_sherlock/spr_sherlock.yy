@@ -20,8 +20,6 @@
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"7055acbe-771e-47e8-86d5-6c3a723bb8ac","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"7055acbe-771e-47e8-86d5-6c3a723bb8ac","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"377d1ae1-c69c-4cc1-baff-55b0a73624f5","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"377d1ae1-c69c-4cc1-baff-55b0a73624f5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
-    {"$GMImageLayer":"","%Name":"b1c2cef5-0df1-4d8f-8110-a2bfa989bd1e","blendMode":0,"displayName":"default","isLocked":false,"name":"b1c2cef5-0df1-4d8f-8110-a2bfa989bd1e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
   ],
   "name":"spr_sherlock",
   "nineSlice":null,
