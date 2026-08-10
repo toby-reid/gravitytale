@@ -211,6 +211,7 @@
     {"name":"obj_enemy_tnt_groucho","order":1,"path":"objects/obj_enemy_tnt_groucho/obj_enemy_tnt_groucho.yy",},
     {"name":"obj_enemy_tnt_larryKing","order":2,"path":"objects/obj_enemy_tnt_larryKing/obj_enemy_tnt_larryKing.yy",},
     {"name":"obj_enemy_tnt_lizzie","order":3,"path":"objects/obj_enemy_tnt_lizzie/obj_enemy_tnt_lizzie.yy",},
+    {"name":"obj_enemy_tnt_paperJam","order":5,"path":"objects/obj_enemy_tnt_paperJam/obj_enemy_tnt_paperJam.yy",},
     {"name":"obj_enemy_tnt_sevralTimez","order":4,"path":"objects/obj_enemy_tnt_sevralTimez/obj_enemy_tnt_sevralTimez.yy",},
     {"name":"obj_enemy_tnt_shakespeare","order":4,"path":"objects/obj_enemy_tnt_shakespeare/obj_enemy_tnt_shakespeare.yy",},
     {"name":"obj_enemy_tnt_sherlock","order":5,"path":"objects/obj_enemy_tnt_sherlock/obj_enemy_tnt_sherlock.yy",},
