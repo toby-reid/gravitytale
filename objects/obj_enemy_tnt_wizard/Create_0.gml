@@ -30,10 +30,15 @@ m_reveal = function()
     act = ["Check", "Cast", "Cast", "Cast"];
     check = "Incredibly attractive.&You just can't see it.";
     casts = array_shuffle([CAST.MAGIC, CAST.FISHING, CAST.PERFORMANCE]);
+    sprite_index = spr_wizardOutline;
 }
 if (revealed)
 {
     m_reveal();
+}
+else
+{
+    sprite_index = -1;
 }
 m_enemy_exists = function()
 {
@@ -70,5 +75,13 @@ m_act = function(_action)
             obj_battleCore.text[0] = "The Wizard chooses to preserve #his stunningly good looks #for the big screen.";
             spare = true;
             break;
+    }
+}
+
+restore_soul = function()
+{
+    if (!instance_exists(obj_atk_wizard_biggerizer))
+    {
+        instance_create_layer(0, 0, layer, obj_atk_wizard_biggerizer, {biggerize: false});
     }
 }

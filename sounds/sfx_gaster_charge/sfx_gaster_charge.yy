@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.057959,
+  "duration":1.0579592,
   "exportDir":"",
   "name":"sfx_gaster_charge",
   "parent":{

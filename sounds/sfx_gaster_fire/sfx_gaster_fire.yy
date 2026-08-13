@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.899683,
+  "duration":1.8996825,
   "exportDir":"",
   "name":"sfx_gaster_fire",
   "parent":{

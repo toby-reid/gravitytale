@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.55873,
+  "duration":0.5587302,
   "exportDir":"",
   "name":"sfx_attack",
   "parent":{
