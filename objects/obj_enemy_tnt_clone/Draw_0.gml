@@ -1,3 +1,4 @@
+// TODO: Add wibbly-wobbly paper stuff
 event_inherited();
 if (deathx == 0)
 {

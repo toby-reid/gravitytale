@@ -492,6 +492,7 @@
     {"id":{"name":"btl_scb_general","path":"rooms/btl_scb_general/btl_scb_general.yy",},},
     {"id":{"name":"btl_ttn_03_cheekums","path":"rooms/btl_ttn_03_cheekums/btl_ttn_03_cheekums.yy",},},
     {"id":{"name":"btl_ttn_clone","path":"rooms/btl_ttn_clone/btl_ttn_clone.yy",},},
+    {"id":{"name":"btl_ttn_jam","path":"rooms/btl_ttn_jam/btl_ttn_jam.yy",},},
     {"id":{"name":"btl_ttn_wax","path":"rooms/btl_ttn_wax/btl_ttn_wax.yy",},},
     {"id":{"name":"btl_wayman","path":"rooms/btl_wayman/btl_wayman.yy",},},
     {"id":{"name":"mg_date","path":"rooms/mg_date/mg_date.yy",},},
@@ -657,6 +658,7 @@
     {"id":{"name":"scr_wayman","path":"scripts/scr_wayman/scr_wayman.yy",},},
     {"id":{"name":"scr_xorEncrypt","path":"scripts/scr_xorEncrypt/scr_xorEncrypt.yy",},},
     {"id":{"name":"shd_desaturate","path":"shaders/shd_desaturate/shd_desaturate.yy",},},
+    {"id":{"name":"shd_papercut","path":"shaders/shd_papercut/shd_papercut.yy",},},
     {"id":{"name":"mus_allstar","path":"sounds/mus_allstar/mus_allstar.yy",},},
     {"id":{"name":"mus_alphys","path":"sounds/mus_alphys/mus_alphys.yy",},},
     {"id":{"name":"mus_anticipation","path":"sounds/mus_anticipation/mus_anticipation.yy",},},
@@ -1487,6 +1489,7 @@
     {"roomId":{"name":"btl_ttn_03_cheekums","path":"rooms/btl_ttn_03_cheekums/btl_ttn_03_cheekums.yy",},},
     {"roomId":{"name":"btl_ttn_clone","path":"rooms/btl_ttn_clone/btl_ttn_clone.yy",},},
     {"roomId":{"name":"btl_ttn_wax","path":"rooms/btl_ttn_wax/btl_ttn_wax.yy",},},
+    {"roomId":{"name":"btl_ttn_jam","path":"rooms/btl_ttn_jam/btl_ttn_jam.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
