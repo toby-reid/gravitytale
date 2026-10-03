@@ -105,14 +105,15 @@ on_bar_open = function(_bar_id)
             }
         }
 
-        array_foreach(bars, instance_destroy);
         if (is_solve_permanent)
         {
             array_push(global.oneTimeInstances, id);
+            // Leave the bars in place; good for visuals
             instance_destroy();
         }
         else
         {
+            array_foreach(bars, instance_destroy);
             bars = create_bars(true);
         }
     }
