@@ -16,5 +16,5 @@ remove_subscriber = function(_sub_id)
 }
 m_on_pressed_toggle = function(_is_pressed = is_pressed)
 {
-    array_foreach(subscribers, function(_sub) { _sub.on_press(id, _is_pressed); });
+    array_foreach(subscribers, function(_sub) { _sub.on_press(_is_pressed); });
 }
