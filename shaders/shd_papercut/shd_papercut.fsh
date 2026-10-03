@@ -6,7 +6,7 @@ uniform vec2 lineStarts[MAX_DRAW_LINES];
 uniform vec2 lineEnds[MAX_DRAW_LINES];
 uniform int lineCount;
 const vec4 LINE_COLOUR = vec4(0.8, 0.0, 0.0, 1.0); // slightly darker red
-const int LINE_THICKNESS = 2;
+const float LINE_THICKNESS = 2.0;
 
 float distance_to_line(vec2 _point, vec2 _line_start, vec2 _line_end)
 {

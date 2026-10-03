@@ -9,7 +9,7 @@ else
 
 if (is_horizontal)
 {
-    image_angle = 270;
+    image_angle = 90;
 }
 
 door_speed = 0;

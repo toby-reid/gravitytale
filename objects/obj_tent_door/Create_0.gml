@@ -4,11 +4,14 @@ if (array_contains(global.oneTimeInstances, id))
     exit;
 }
 
+array_foreach(required_buttons, function(_button) { _button.add_subscriber(id); });
+
 is_horizontal = (image_index == 1);
 triggered_info = false;
 
 BAR_WIDTH = 5; // px
 bar_count = (is_horizontal ? sprite_height : sprite_width) div BAR_WIDTH;
+bar_frag_count = bar_count + bar_count;
 
 create_bars = function(_is_open = false)
 {
@@ -16,7 +19,7 @@ create_bars = function(_is_open = false)
     var _bar_half = _bar_length div 2;
     var _bar_split_variation = _bar_length div 4;
 
-    var _bars = array_create(bar_count + bar_count, noone);
+    var _bars = array_create(bar_frag_count, noone);
     for (var i = 0; i < bar_count; ++i)
     {
         var _bar_index = i + i;
@@ -51,8 +54,9 @@ create_bars = function(_is_open = false)
     }
     return _bars;
 }
-bars = create_bars();
-ready_bar_count = bar_count;
+bar_frags = create_bars();
+ready_bar_frag_count = bar_frag_count;
+image_alpha = 0;
 
 create_collider = function()
 {
@@ -64,7 +68,7 @@ on_press = function(_is_button_pressed)
 {
     if (_is_button_pressed)
     {
-        if (array_all(required_buttons, function(_button) { return button.is_pressed; }))
+        if (array_all(required_buttons, function(_button) { return _button.is_pressed; }))
         {
             open();
         }
@@ -77,22 +81,34 @@ on_press = function(_is_button_pressed)
 
 open = function(_open_speed = 1)
 {
-    ready_bar_count = 0;
-    array_foreach(bars, function(_bar) { _bar.open(_open_speed); });
-    audio_play_sound(sfx_hiss, 0, false);
+    ready_bar_frag_count = 0;
+    for (var i = 0; i < bar_frag_count; ++i)
+    {
+        bar_frags[i].open(_open_speed);
+    }
+    if (!audio_is_playing(sfx_hiss))
+    {
+        audio_play_sound(sfx_hiss, 0, false);
+    }
 }
-close = function(_time = 5)
+close = function(_time = 10)
 {
-    ready_bar_count = 0;
-    array_foreach(bars, function(_bar) { _bar.close(_time); });
+    ready_bar_frag_count = 0;
+    for (var i = 0; i < bar_frag_count; ++i)
+    {
+        bar_frags[i].close(_time);
+    }
     collider = create_collider();
-    audio_play_sound(sfx_hiss, 0, false);
+    if (!audio_is_playing(sfx_hiss))
+    {
+        audio_play_sound(sfx_hiss, 0, false);
+    }
 }
 
 on_bar_open = function(_bar_id)
 {
-    ++ready_bar_count;
-    if (ready_bar_count == bar_count)
+    ++ready_bar_frag_count;
+    if (ready_bar_frag_count == bar_frag_count)
     {
         instance_destroy(collider);
         collider = noone;
@@ -113,15 +129,15 @@ on_bar_open = function(_bar_id)
         }
         else
         {
-            array_foreach(bars, instance_destroy);
-            bars = create_bars(true);
+            array_foreach(bar_frags, instance_destroy);
+            bar_frags = create_bars(true);
         }
     }
 }
 on_bar_close = function(_bar_id)
 {
-    ++ready_bar_count;
-    if (ready_bar_count == bar_count)
+    ++ready_bar_frag_count;
+    if (ready_bar_frag_count == bar_frag_count)
     {
         if (!triggered_info && !scr_isOnScreen(id))
         {
@@ -132,7 +148,7 @@ on_bar_close = function(_bar_id)
         }
         triggered_info = true;
 
-        array_foreach(bars, instance_destroy);
-        bars = create_bars(false);
+        array_foreach(bar_frags, instance_destroy);
+        bar_frags = create_bars(false);
     }
 }
