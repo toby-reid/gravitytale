@@ -4,7 +4,7 @@ done = false//True if we've completed the buttons
 order = [noone]//List of different ids
 pressed = noone//Reset every Step. Which button was just pressed?
 var room_name = room_get_name(room);
-if (array_contains(global.completedPuzzleRooms, room_get_name(room)))
+if (array_contains(global.completedPuzzleRooms, room_name))
 {
     for (var j = 0; j < array_length(order); j++)
     {
