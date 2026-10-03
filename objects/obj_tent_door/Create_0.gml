@@ -8,19 +8,16 @@ is_horizontal = (image_index == 1);
 triggered_info = false;
 
 BAR_WIDTH = 5; // px
+bar_count = (is_horizontal ? sprite_height : sprite_width) div BAR_WIDTH;
 
-create_bars = function(_is_open = false, _bar_count = 0)
+create_bars = function(_is_open = false)
 {
-    if (_bar_count == 0)
-    {
-        _bar_count = (is_horizontal ? sprite_height : sprite_width) div BAR_WIDTH;
-    }
     var _bar_length = is_horizontal ? sprite_width : sprite_height;
     var _bar_half = _bar_length div 2;
     var _bar_split_variation = _bar_length div 4;
 
-    var _bars = array_create(_bar_count + _bar_count, noone);
-    for (var i = 0; i < _bar_count; ++i)
+    var _bars = array_create(bar_count + bar_count, noone);
+    for (var i = 0; i < bar_count; ++i)
     {
         var _bar_index = i + i;
         var _bar_offset = i * BAR_WIDTH;
@@ -55,6 +52,7 @@ create_bars = function(_is_open = false, _bar_count = 0)
     return _bars;
 }
 bars = create_bars();
+ready_bar_count = bar_count;
 
 create_collider = function()
 {
@@ -79,26 +77,26 @@ on_press = function(_is_button_pressed)
 
 open = function(_open_speed = 1)
 {
+    ready_bar_count = 0;
     array_foreach(bars, function(_bar) { _bar.open(_open_speed); });
     audio_play_sound(sfx_hiss, 0, false);
 }
 close = function(_time = 5)
 {
+    ready_bar_count = 0;
     array_foreach(bars, function(_bar) { _bar.close(_time); });
     collider = create_collider();
-    alarm[0] = _time;
     audio_play_sound(sfx_hiss, 0, false);
 }
 
 on_bar_open = function(_bar_id)
 {
-    var _bar_index = array_get_index(bars, _bar_id);
-    instance_destroy(bars[_bar_index]);
-    array_delete(bars, _bar_index, 1);
-    if (array_length(bars) == 0)
+    ++ready_bar_count;
+    if (ready_bar_count == bar_count)
     {
         instance_destroy(collider);
         collider = noone;
+
         if (!triggered_info && !scr_isOnScreen(id))
         {
             with instance_create_layer(160, 192, layer, obj_textbox)
@@ -106,6 +104,8 @@ on_bar_open = function(_bar_id)
                 set_text([". . .", "(You heard some light machinery #in the distance.)"]);
             }
         }
+
+        array_foreach(bars, instance_destroy);
         if (is_solve_permanent)
         {
             array_push(global.oneTimeInstances, id);
@@ -119,7 +119,19 @@ on_bar_open = function(_bar_id)
 }
 on_bar_close = function(_bar_id)
 {
-    // All should finish at the same time;
-    // actual close should be handled by alarm.
-    return;
+    ++ready_bar_count;
+    if (ready_bar_count == bar_count)
+    {
+        if (!triggered_info && !scr_isOnScreen(id))
+        {
+            with instance_create_layer(160, 192, layer, obj_textbox)
+            {
+                set_text([". . .", "(You heard the same machinery #again.&(Sounds like it closed.)"]);
+            }
+        }
+        triggered_info = true;
+
+        array_foreach(bars, instance_destroy);
+        bars = create_bars(false);
+    }
 }

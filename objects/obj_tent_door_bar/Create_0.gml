@@ -1,6 +1,6 @@
 if (is_open)
 {
-    image_yscale = 0;
+    image_yscale = is_flipped ? -1 : 1;
 }
 else
 {
@@ -19,13 +19,13 @@ open = function(_open_speed = 1)
 }
 close = function(_close_time = 5)
 {
-    door_speed = -(full_size / _close_time);
+    door_speed = -((full_size - 1) / _close_time);
     alarm[0] = _close_time;
 }
 
 m_finish_open = function()
 {
-    image_yscale = 0;
+    image_yscale = is_flipped ? -1 : 1;
     door_speed = 0;
     if (door_hook != noone)
     {
