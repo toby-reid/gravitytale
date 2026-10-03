@@ -19,7 +19,7 @@ open = function(_open_speed = 1)
 }
 close = function(_close_time = 5)
 {
-    door_speed = -((full_size - 1) / _close_time);
+    door_speed = -((full_size - abs(image_yscale)) / _close_time);
     alarm[0] = _close_time;
 }
 

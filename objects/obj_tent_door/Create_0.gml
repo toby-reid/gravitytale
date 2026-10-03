@@ -27,7 +27,7 @@ create_bars = function(_is_open = false)
         var _bar_split = _bar_half + irandom_range(-_bar_split_variation, _bar_split_variation);
         _bars[_bar_index] = instance_create_layer(
             x + (is_horizontal ? 0 : _bar_offset),
-            y + (is_horizontal ? _bar_offset : 0),
+            y + (is_horizontal ? (_bar_offset + BAR_WIDTH) : 0),
             layer,
             obj_tent_door_bar,
             {
@@ -40,7 +40,7 @@ create_bars = function(_is_open = false)
         );
         _bars[_bar_index + 1] = instance_create_layer(
             x + (is_horizontal ? _bar_length : _bar_offset),
-            y + (is_horizontal ? _bar_offset : _bar_length),
+            y + (is_horizontal ? (_bar_offset + BAR_WIDTH) : _bar_length),
             layer,
             obj_tent_door_bar,
             {
@@ -79,6 +79,15 @@ on_press = function(_is_button_pressed)
     }
 }
 
+m_hiss = function()
+{
+    if (alarm[0] == -1)
+    {
+        audio_play_sound(sfx_hiss, 0, false);
+        alarm[0] = 10;
+    }
+}
+
 open = function(_open_speed = 1)
 {
     ready_bar_frag_count = 0;
@@ -86,10 +95,7 @@ open = function(_open_speed = 1)
     {
         bar_frags[i].open(_open_speed);
     }
-    if (!audio_is_playing(sfx_hiss))
-    {
-        audio_play_sound(sfx_hiss, 0, false);
-    }
+    m_hiss();
 }
 close = function(_time = 10)
 {
@@ -98,11 +104,9 @@ close = function(_time = 10)
     {
         bar_frags[i].close(_time);
     }
+    instance_destroy(collider); // fallback in case the user gets cute with spam
     collider = create_collider();
-    if (!audio_is_playing(sfx_hiss))
-    {
-        audio_play_sound(sfx_hiss, 0, false);
-    }
+    m_hiss();
 }
 
 on_bar_open = function(_bar_id)
