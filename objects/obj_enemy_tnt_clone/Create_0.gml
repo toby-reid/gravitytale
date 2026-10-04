@@ -51,3 +51,32 @@ m_act_before_check = function(_attempted_action)
         ? string_concat("In honor of your dear brother, #whose image ", (clone_number == 2) ? "this is" : "these are", ", #you should exercise caution.")
         : string_concat("You should exercise caution.&", (clone_number == 2) ? "He is" : "They are", " made in your own image, #after all.");
 }
+
+flutter_start = sprite_get_height(sprite_index);
+flutter_width = sprite_get_width(sprite_index);
+
+flutters = [];
+add_flutter = function(_height, _x_scale)
+{
+    array_push(flutters, {
+        size: _height,
+        y_offset: flutter_start,
+        y_endpoint: -_height,
+        x_scale: _x_scale,
+        width: flutter_width * _x_scale
+    });
+}
+update_flutters = function()
+{
+    // Iterate backward to avoid offsetting the indices
+    for (var i = array_length(flutters) - 1; i >= 0; --i)
+    {
+        var _flutter = flutters[i];
+        --_flutter.y_offset;
+        if (_flutter.y_offset == _flutter.y_endpoint)
+        {
+            array_delete(flutters, i, 1);
+        }
+    }
+}
+alarm[11] = 60;
