@@ -13,7 +13,6 @@ run = false;
 hp = 36;
 maxhp = hp;
 at = 2;
-papercuts = [];
 lv = false;
 sb = 50;
 area = AREA.TENT;

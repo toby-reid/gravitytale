@@ -26,27 +26,6 @@ run = false;
 hp = 36;
 maxhp = hp;
 at = 1;
-papercuts = [];
-m_cut = function()
-{
-    array_push(papercuts, [random(1), random(1), random(1), random(1)]);
-    obj_enemy_tnt_clone.papercuts = papercuts;
-}
-if (instance_number(object_index) > 1)
-{
-    var _first = instance_find(object_index, 0);
-    papercut_uniform_starts = _first.papercut_uniform_starts;
-    papercut_uniform_ends = _first.papercut_uniform_ends;
-    papercut_uniform_count = _first.papercut_uniform_count;
-    max_papercuts = _first.max_papercuts;
-}
-else
-{
-    papercut_uniform_starts = shader_get_uniform(shd_papercut, "lineStarts");
-    papercut_uniform_ends = shader_get_uniform(shd_papercut, "lineEnds");
-    papercut_uniform_count = shader_get_uniform(shd_papercut, "lineCount");
-    max_papercuts = 5;
-}
 
 lv = false; // set true if killing person increases LV
 sb = 30;
