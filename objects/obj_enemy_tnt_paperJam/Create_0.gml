@@ -41,4 +41,4 @@ image_xscale = 2;
 image_yscale = 2;
 global.enemy = [id];
 
-obj_battleCore.text[0] = global.player.mabel ? "The resemblance is uncanny.&If your brother got hooked #on drugs, that is." : "It's like looking in a mirror:&A broken, crumbled mess.";
+obj_battleCore.text[0] = global.player.mabel ? "The resemblance is uncanny.&If your brother got hooked #on drugs, that is." : "It's like looking in a mirror:&A broken, crumbled mess.&Oh, in-game too.";
