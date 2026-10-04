@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfx_damageTaken",
+  "%Name":"sfx_paper",
   "audioGroupId":{
     "name":"Battle",
     "path":"audiogroups/Battle",
   },
-  "bitDepth":0,
+  "bitDepth":1,
   "channelFormat":0,
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.4861678,
+  "duration":0.4970975,
   "exportDir":"",
-  "name":"sfx_damageTaken",
+  "name":"sfx_paper",
   "parent":{
     "name":"Battle",
     "path":"folders/Sounds/SFX/Battle.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfx_damageTaken",
+  "soundFile":"sfx_paper.wav",
   "volume":1.0,
 }

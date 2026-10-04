@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.988605,
+  "duration":0.98360544,
   "exportDir":"",
   "name":"sfx_lvup",
   "parent":{
