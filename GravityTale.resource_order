@@ -271,6 +271,7 @@
     {"name":"obj_ow_manDan","order":4,"path":"objects/obj_ow_manDan/obj_ow_manDan.yy",},
     {"name":"obj_ow_sheriff_deputy","order":8,"path":"objects/obj_ow_sheriff_deputy/obj_ow_sheriff_deputy.yy",},
     {"name":"obj_pacifica_ow_perfume","order":1,"path":"objects/obj_pacifica_ow_perfume/obj_pacifica_ow_perfume.yy",},
+    {"name":"obj_paper_flutter","order":7,"path":"objects/obj_paper_flutter/obj_paper_flutter.yy",},
     {"name":"obj_paz_btl_golfBall","order":1,"path":"objects/obj_paz_btl_golfBall/obj_paz_btl_golfBall.yy",},
     {"name":"obj_playGame","order":5,"path":"objects/obj_playGame/obj_playGame.yy",},
     {"name":"obj_portalPotty","order":9,"path":"objects/obj_portalPotty/obj_portalPotty.yy",},
