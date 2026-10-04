@@ -22,8 +22,24 @@ bubble = noone;
 deathx = 0;
 stage = 0;
 
+water_warned = false;
+
+spare_at_stage = 10;
+m_act = function()
+{
+    if (stage < spare_at_stage)
+    {
+        ++stage;
+        if (stage == spare_at_stage)
+        {
+            spare = true;
+            obj_battleCore.text[0] = string_concat(name, " seems to have #stabilized somewhat.&You could back away now.");
+        }
+    }
+}
+
 image_xscale = 2;
 image_yscale = 2;
 global.enemy = [id];
 
-obj_battleCore.text[0] = global.player.mabel ? "The resemblance is uncanny.&If your brother got hooked #on drugs, that is." : "It's like looking in a mirrow:&A broken, crumbled mess.";
+obj_battleCore.text[0] = global.player.mabel ? "The resemblance is uncanny.&If your brother got hooked #on drugs, that is." : "It's like looking in a mirror:&A broken, crumbled mess.";

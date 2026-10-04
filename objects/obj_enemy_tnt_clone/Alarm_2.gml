@@ -20,6 +20,6 @@ else
 {
     obj_battleCore.text[1] = "You hesitate for a moment, #then douse the clone in water.&He immediately starts to melt.";
     obj_battleCore.text[0] = "That was disturbing, but you #feel you've seen worse.";
-    hp = 0;
+    hp = hp div 2;
 }
 action = 2;
