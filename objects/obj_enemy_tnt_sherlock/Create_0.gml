@@ -1,21 +1,21 @@
 name = "Sherlock Holmes";
-act = ["Check", "Talk", "???", "???"];
-check = "???"
-spare = true
-run = true
-hp = 1
-maxhp = hp
-at = 0
-lv = false//set true if killing person increases LV
-sb = 0
-area = AREA.UNKNOWN;
-timer = 0
-create = true
-bubble = noone
-deathx = 0
+act = ["Check", "Discuss", "Challenge", "Perpostulate"];
+check = "You seen his magnifying glass?&It's enormous!";
+spare = false;
+run = false;
+hp = 56; // 56 short stories in Sherlock canon
+maxhp = hp;
+at = 4; // 4 full novels in Sherlock canon
+lv = false;
+sb = 87; // first Sherlock novel 1887
+area = AREA.TENT;
+timer = 0;
+bubble = noone;
+deathx = 0;
 
-image_xscale = 2
-image_yscale = 2
+stage = 0;
 
-obj_battleCore.text[0] = "An enemy is here!"
-// if (instance_number(obj_enemy) > 1) switch instance_find(obj_enemy,0).object_index { }
+image_xscale = 2;
+image_yscale = 2;
+
+obj_battleCore.text[0] = global.player.mabel ? "He's Sherlock bleeding Holmes!&...and some strange... #goblin man?" : "You really think you can #outwit him?&He's Sherlock bleeding Holmes!";

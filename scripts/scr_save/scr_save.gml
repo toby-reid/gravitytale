@@ -56,7 +56,7 @@ function scr_save(rmName="Unknown", _music=silence, _playsound=true) {
     scr_writeBools(_bin, global.enemy_killed);
     scr_writeBools(_bin, global.enemy_spared);
 
-    scr_writeInteger(_bin, ((global.dummy << 4) & 0b1111) + (global.ghost & 0b1111)); // dummy 0-6, ghost 0-10
+    scr_writeInteger(_bin, ((global.dummy << 4) & 0b1111_0000) + (global.ghost & 0b1111)); // dummy 0-7, ghost 0-10
     scr_writeBools(_bin, [global.studied_hawktopus, global.defeated_unicorn, global.has_fedora]);
 
     for (var i = 0; i < AREA.TOTAL; i++) {

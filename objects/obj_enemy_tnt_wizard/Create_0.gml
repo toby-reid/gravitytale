@@ -28,7 +28,7 @@ m_reveal = function()
     revealed = true;
     name = "Invisible Wizard";
     act = ["Check", "Cast", "Cast", "Cast"];
-    check = "Incredibly attractive.&You just can't see it.";
+    check = "Supposedly highly attractive.&So, hear me out...";
     casts = array_shuffle([CAST.MAGIC, CAST.FISHING, CAST.PERFORMANCE]);
     sprite_index = spr_wizardOutline;
 }
