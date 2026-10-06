@@ -40,8 +40,8 @@ enum TENT_BATTLE {
     SEVRAL_TIMEZ_3 = 1 << 0,
     SEVRAL_TIMEZ_2 = 1 << 1,
     SHERLOCK_LARRY = 1 << 2,
-    LIZZIE_GROUCHO = 1 << 3,
-    SHAKESPEARE_GENGHIS = 1 << 4,
+    LIZZIE_SHAKESPEARE = 1 << 3,
+    GROUCHO_GENGHIS = 1 << 4,
     TYRONE = 1 << 5,
     CLONE_3_4 = 1 << 6, // the two survivors
     CLONE_5_6_7 = 1 << 7,

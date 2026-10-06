@@ -17,7 +17,7 @@ else
             obj_battleCore.text[0] = "This is not the time #or place for that.";
             break;
         case 2:
-            obj_battleCore.text[1] = string_concat("You introduce yourself.&", name, " nods and presents #the first topic for today.");
+            obj_battleCore.text[1] = "You introduce yourself.&Larry nods and presents #the first topic for today.";
             obj_battleCore.text[0] = string_concat(name, " patiently #awaits your response.");
             ++stage;
             break;

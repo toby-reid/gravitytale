@@ -2,7 +2,7 @@
 event_inherited();
 if (stage == 0)
 {
-    name = "Larry King";
+    name = "Wax Larry King";
     check = "He'll talk your ear off.&Unless his is bitten off first.";
     stage = 1;
 }
