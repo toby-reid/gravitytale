@@ -1,4 +1,4 @@
-name = "Wax Sherlock Holmes";
+name = "Sherlock Holmes";
 act = ["Check", "Discuss", "Challenge", "Perpostulate"];
 check = "You seen his magnifying glass?&It's enormous!";
 spare = false;
