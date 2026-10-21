@@ -31,8 +31,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"dmg","filters":[],"listItems":[],"multiselect":false,"name":"dmg","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":1,},
-    {"$GMObjectProperty":"v2","%Name":"dmg_interval","filters":[],"listItems":[],"multiselect":false,"name":"dmg_interval","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"300","varType":1,},
-    {"$GMObjectProperty":"v2","%Name":"grow_time","filters":[],"listItems":[],"multiselect":false,"name":"grow_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"60","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"grow_time","filters":[],"listItems":[],"multiselect":false,"name":"grow_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"20","varType":1,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

@@ -35,6 +35,8 @@ bubble = noone;
 deathx = 0;
 stage = 0;
 
+current_attack = noone;
+
 image_xscale = 2;
 image_yscale = 2;
 if (clone_number != 2)
@@ -52,18 +54,18 @@ m_act_before_check = function(_attempted_action)
         : string_concat("You should exercise caution.&", (clone_number == 2) ? "He is" : "They are", " made in your own image, #after all.");
 }
 
-flutter_start = sprite_get_height(sprite_index);
-flutter_width = sprite_get_width(sprite_index);
+unscaled_height = sprite_get_height(sprite_index);
+unscaled_width = sprite_get_width(sprite_index);
 
 flutters = [];
 add_flutter = function(_height, _x_scale)
 {
     array_push(flutters, {
         size: _height,
-        y_offset: flutter_start,
+        y_offset: unscaled_height,
         y_endpoint: -_height,
         x_scale: _x_scale,
-        width: flutter_width * _x_scale
+        width: unscaled_width * _x_scale
     });
 }
 update_flutters = function()

@@ -1,5 +1,5 @@
 event_inherited();
-if (deathx == 0)
+if (deathx == 0 && image_xscale == 2)
 {
     for (var i = 0, _flutter_count = array_length(flutters); i < _flutter_count; ++i)
     {
@@ -10,12 +10,12 @@ if (deathx == 0)
             sprite_index,
             image_index,
             0, _draw_y,
-            flutter_width, _draw_height,
-            x - sprite_xoffset - ((_flutter.width - flutter_width) div 2), y - sprite_yoffset + floor(image_yscale * _draw_y),
-            _flutter.x_scale, image_yscale,
+            unscaled_width, _draw_height,
+            x - sprite_xoffset - ((_flutter.width - unscaled_width) div 2), y - sprite_yoffset + floor(image_yscale * _draw_y),
+            image_xscale * _flutter.x_scale, image_yscale,
             c_white,
             1
         );
     }
-    draw_text_colour(x - 7, y - 52, clone_number, c_black, c_black, c_black, c_black, 1);
+    draw_text_colour(x - 14, y - 104, clone_number, c_black, c_black, c_black, c_black, 1);
 }

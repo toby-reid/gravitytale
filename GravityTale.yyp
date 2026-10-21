@@ -217,6 +217,8 @@
     {"id":{"name":"obj_atk_merGuitar","path":"objects/obj_atk_merGuitar/obj_atk_merGuitar.yy",},},
     {"id":{"name":"obj_atk_mosquito","path":"objects/obj_atk_mosquito/obj_atk_mosquito.yy",},},
     {"id":{"name":"obj_atk_moustache","path":"objects/obj_atk_moustache/obj_atk_moustache.yy",},},
+    {"id":{"name":"obj_atk_paper","path":"objects/obj_atk_paper/obj_atk_paper.yy",},},
+    {"id":{"name":"obj_atk_paperAirplane","path":"objects/obj_atk_paperAirplane/obj_atk_paperAirplane.yy",},},
     {"id":{"name":"obj_atk_qMark","path":"objects/obj_atk_qMark/obj_atk_qMark.yy",},},
     {"id":{"name":"obj_atk_sherBaton","path":"objects/obj_atk_sherBaton/obj_atk_sherBaton.yy",},},
     {"id":{"name":"obj_atk_soos_bBites","path":"objects/obj_atk_soos_bBites/obj_atk_soos_bBites.yy",},},
@@ -653,6 +655,7 @@
     {"id":{"name":"scr_name_matches","path":"scripts/scr_name_matches/scr_name_matches.yy",},},
     {"id":{"name":"scr_new_global_player","path":"scripts/scr_new_global_player/scr_new_global_player.yy",},},
     {"id":{"name":"scr_pad_string","path":"scripts/scr_pad_string/scr_pad_string.yy",},},
+    {"id":{"name":"scr_paper","path":"scripts/scr_paper/scr_paper.yy",},},
     {"id":{"name":"scr_remove_local_item","path":"scripts/scr_remove_local_item/scr_remove_local_item.yy",},},
     {"id":{"name":"scr_reset","path":"scripts/scr_reset/scr_reset.yy",},},
     {"id":{"name":"scr_routes","path":"scripts/scr_routes/scr_routes.yy",},},
@@ -872,6 +875,8 @@
     {"id":{"name":"spr_atk_merNote","path":"sprites/spr_atk_merNote/spr_atk_merNote.yy",},},
     {"id":{"name":"spr_atk_mosquito","path":"sprites/spr_atk_mosquito/spr_atk_mosquito.yy",},},
     {"id":{"name":"spr_atk_moustache","path":"sprites/spr_atk_moustache/spr_atk_moustache.yy",},},
+    {"id":{"name":"spr_atk_paperAirplane","path":"sprites/spr_atk_paperAirplane/spr_atk_paperAirplane.yy",},},
+    {"id":{"name":"spr_atk_paperBoat","path":"sprites/spr_atk_paperBoat/spr_atk_paperBoat.yy",},},
     {"id":{"name":"spr_atk_question","path":"sprites/spr_atk_question/spr_atk_question.yy",},},
     {"id":{"name":"spr_atk_scampfireball","path":"sprites/spr_atk_scampfireball/spr_atk_scampfireball.yy",},},
     {"id":{"name":"spr_atk_sherBaton","path":"sprites/spr_atk_sherBaton/spr_atk_sherBaton.yy",},},
@@ -1337,6 +1342,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"btl_ttn_clone","path":"rooms/btl_ttn_clone/btl_ttn_clone.yy",},},
     {"roomId":{"name":"test","path":"rooms/test/test.yy",},},
     {"children":[
         {"roomId":{"name":"rm_cutscene","path":"rooms/rm_cutscene/rm_cutscene.yy",},},
@@ -1485,6 +1491,8 @@
         {"roomId":{"name":"ow_min_22_transition","path":"rooms/ow_min_22_transition/ow_min_22_transition.yy",},},
       ],"groupName":"Mines",},
     {"children":[
+        {"roomId":{"name":"btl_ttn_wax","path":"rooms/btl_ttn_wax/btl_ttn_wax.yy",},},
+        {"roomId":{"name":"btl_ttn_jam","path":"rooms/btl_ttn_jam/btl_ttn_jam.yy",},},
         {"roomId":{"name":"ow_tnt_00_outside","path":"rooms/ow_tnt_00_outside/ow_tnt_00_outside.yy",},},
         {"roomId":{"name":"ow_tnt_01_inside","path":"rooms/ow_tnt_01_inside/ow_tnt_01_inside.yy",},},
         {"roomId":{"name":"ow_tnt_02_backstage","path":"rooms/ow_tnt_02_backstage/ow_tnt_02_backstage.yy",},},
@@ -1497,9 +1505,6 @@
     {"roomId":{"name":"ow_ttn_03_cheekums","path":"rooms/ow_ttn_03_cheekums/ow_ttn_03_cheekums.yy",},},
     {"roomId":{"name":"ow_ttn_04_pz0","path":"rooms/ow_ttn_04_pz0/ow_ttn_04_pz0.yy",},},
     {"roomId":{"name":"btl_ttn_03_cheekums","path":"rooms/btl_ttn_03_cheekums/btl_ttn_03_cheekums.yy",},},
-    {"roomId":{"name":"btl_ttn_clone","path":"rooms/btl_ttn_clone/btl_ttn_clone.yy",},},
-    {"roomId":{"name":"btl_ttn_wax","path":"rooms/btl_ttn_wax/btl_ttn_wax.yy",},},
-    {"roomId":{"name":"btl_ttn_jam","path":"rooms/btl_ttn_jam/btl_ttn_jam.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

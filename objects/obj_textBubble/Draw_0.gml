@@ -9,6 +9,7 @@ if (m_growRate == 0)
     {
         var _width = (image_index == 1) ? 110 : 65;
         var _color = m_pageSegmentColors[0];
+        draw_set_font(currentPageConfig.font);
         draw_text_ext_colour(_x_current, _y_current, string_copy(m_pageSegmentText[0], 1, charCount), _sep, _width, _color, _color, _color, _color, 1);
     }
     else

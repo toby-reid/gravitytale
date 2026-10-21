@@ -430,7 +430,7 @@ if !instance_exists(obj_toBattle) {
     draw_set_font(fnt_battle);
     draw_text(30, 403, string_concat(global.player.name, "  LV ", global.player.lv));
     draw_sprite(spr_hpkr, 0, 250, 405);
-    draw_healthbar(280, 400, 300 + 4*global.player.lv, 420, 100 * (global.player.hp/global.player.maxHp), c_red, c_yellow, c_yellow, 0, true, false);
+    draw_healthbar(280, 400, 300 + (4 * global.player.lv), 420, 100 * (global.player.hp / global.player.maxHp), c_red, c_yellow, c_yellow, 0, true, false);
     draw_text(315 + 4*global.player.lv, 403, string_concat(global.player.hp, " / ", global.player.maxHp));
     //if instance_exists(obj_stans_battle) we'll move that text, add a second healthbar, draw hpkr,1, and calculate Karma
 }
@@ -439,6 +439,6 @@ if (enemies_glittered)
 {
     for (var i = 0, _sparkle_count = irandom_range(2, 5); i < _sparkle_count; ++i)
     {
-        instance_create_layer(irandom(room_width), irandom(room_height div 2), layer, obj_leprecorn_sparkle);
+        instance_create_layer(irandom(room_width - 1), irandom(room_height div 2), layer, obj_leprecorn_sparkle);
     }
 }

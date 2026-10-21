@@ -7,9 +7,9 @@ with instance_create_layer(0, 0, layer, obj_toBattle)
             // TODO: Sev'ral Timez
             break;
         case TENT_BATTLE.SHERLOCK_LARRY:
-        case TENT_BATTLE.LIZZIE_GROUCHO:
-        case TENT_BATTLE.SHAKESPEARE_GENGHIS:
-            // TODO: Wax figures
+        case TENT_BATTLE.LIZZIE_SHAKESPEARE:
+        case TENT_BATTLE.GROUCHO_GENGHIS:
+            goto = btl_ttn_wax;
             break;
         case TENT_BATTLE.TYRONE:
         case TENT_BATTLE.CLONE_3_4:
@@ -18,7 +18,7 @@ with instance_create_layer(0, 0, layer, obj_toBattle)
             goto = btl_ttn_clone;
             break;
         case TENT_BATTLE.PAPER_JAM:
-            // TODO: Paper Jam
+            goto = btl_ttn_jam;
             break;
         case TENT_BATTLE.ALL_WIZARDS:
             // TODO: Oops! All Wizards
