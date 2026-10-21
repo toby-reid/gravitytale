@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_splash",
+  "audioGroupId":{
+    "name":"Battle",
+    "path":"audiogroups/Battle",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.3501587,
+  "exportDir":"",
+  "name":"sfx_splash",
+  "parent":{
+    "name":"Battle",
+    "path":"folders/Sounds/SFX/Battle.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_splash.wav",
+  "volume":1.0,
+}

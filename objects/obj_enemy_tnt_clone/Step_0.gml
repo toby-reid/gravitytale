@@ -3,7 +3,7 @@ if (image_alpha == 1 && !instance_exists(obj_textBubble) && global.stage[0] == 4
 {
     if (timer == 0)
     {
-        current_attack = choose(obj_atk_paperAirplane, obj_atk_paperAirplane);
+        current_attack = choose(obj_atk_paperAirplane, obj_atk_paperBoat);
         if (!audio_is_playing(sfx_paper))
         {
             audio_play_sound(sfx_paper, 0, false);
@@ -16,7 +16,7 @@ if (image_alpha == 1 && !instance_exists(obj_textBubble) && global.stage[0] == 4
             case obj_atk_paperAirplane:
                 image_xscale -= 0.1;
                 break;
-            case 1: // boat
+            case obj_atk_paperBoat:
                 image_yscale -= 0.1;
                 break;
         }
